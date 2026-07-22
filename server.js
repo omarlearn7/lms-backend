@@ -1,3 +1,10 @@
+// Add this near the top of your file, after app initialization
+app.get('/', (req, res) => {
+  res.status(200).json({ 
+    message: "LMS Backend is running successfully!", 
+    status: "OK" 
+  });
+});
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
