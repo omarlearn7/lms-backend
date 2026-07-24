@@ -1,8 +1,13 @@
 const { createClient } = require('@supabase/supabase-js');
 
 let supabaseUrl = process.env.SUPABASE_URL || '';
-// Sanitize URL if ending with /rest/v1 or trailing slashes
-supabaseUrl = supabaseUrl.replace(/\/rest\/v1\/?$/, '').replace(/\/$/, '');
+try {
+  if (supabaseUrl) {
+    supabaseUrl = new URL(supabaseUrl).origin;
+  }
+} catch (err) {
+  console.error('Error parsing SUPABASE_URL:', err);
+}
 
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
