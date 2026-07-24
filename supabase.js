@@ -1,15 +1,17 @@
 const { createClient } = require('@supabase/supabase-js');
 
-let supabaseUrl = process.env.SUPABASE_URL || '';
+const rawUrl = process.env.SUPABASE_URL || 'https://yvucoankgtvpbxirnvih.supabase.co';
+let supabaseUrl = 'https://yvucoankgtvpbxirnvih.supabase.co';
+
 try {
-  if (supabaseUrl) {
-    supabaseUrl = new URL(supabaseUrl).origin;
+  if (rawUrl) {
+    supabaseUrl = new URL(rawUrl).origin;
   }
 } catch (err) {
-  console.error('Error parsing SUPABASE_URL:', err);
+  console.error('Error parsing SUPABASE_URL, using default base URL:', err);
 }
 
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '***REMOVED***';
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
