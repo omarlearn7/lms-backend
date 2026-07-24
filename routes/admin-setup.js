@@ -32,6 +32,7 @@ router.post('/', async (req, res) => {
     });
 
     if (authError) {
+      console.error('Supabase auth error during admin setup:', authError);
       return res.status(400).json({ error: authError.message });
     }
 
