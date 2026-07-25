@@ -135,6 +135,47 @@ router.post('/confirm-upload', async (req, res) => {
   }
 });
 
+// POST /api/r2/confirm-video-upload
+// After browser uploads to R2, confirm and save to the videos table (course lesson)
+router.post('/confirm-video-upload', async (req, res) => {
+  try {
+    const { r2Key, courseId, title, description, durationMinutes, fileSizeBytes, isFree, uploadedBy } = req.body;
+
+    if (!r2Key || !courseId) {
+      return res.status(400).json({ error: 'r2Key and courseId are required' });
+    }
+
+    const { data: video, error } = await supabase
+      .from('videos')
+      .insert([{
+        course_id: courseId,
+        title: title || 'فيديو مسجل',
+        description: description || null,
+        youtube_video_id: null,
+        source_type: 'r2',
+        r2_key: r2Key,
+        r2_bucket: R2_BUCKET,
+        hls_manifest_key: null,
+        duration_minutes: durationMinutes || 15,
+        is_free: isFree || false,
+      }])
+      .select()
+      .single();
+
+    if (error) throw error;
+
+    // FIFO: Enforce max 10 videos per course
+    if (courseId) {
+      await enforceVideoFIFO(courseId);
+    }
+
+    return res.status(201).json(video);
+  } catch (err) {
+    console.error('Confirm video upload error:', err);
+    return res.status(500).json({ error: err.message });
+  }
+});
+
 // POST /api/r2/presigned-stream
 // Generate presigned GET URL for secure video streaming
 router.post('/presigned-stream', async (req, res) => {
@@ -374,6 +415,33 @@ async function enforceFIFO(courseId) {
     }
   } catch (err) {
     console.error('FIFO enforcement error:', err);
+  }
+}
+
+// Helper: Enforce FIFO for videos table (max 10 per course, delete oldest R2 videos)
+async function enforceVideoFIFO(courseId) {
+  try {
+    const { data: videos } = await supabase
+      .from('videos')
+      .select('id, r2_key, source_type')
+      .eq('course_id', courseId)
+      .order('created_at', { ascending: false });
+
+    if (videos && videos.length > MAX_SESSIONS_PER_COURSE) {
+      const toDelete = videos.slice(MAX_SESSIONS_PER_COURSE);
+      for (const v of toDelete) {
+        if (v.source_type === 'r2' && v.r2_key) {
+          try {
+            await r2.send(new DeleteObjectCommand({ Bucket: R2_BUCKET, Key: v.r2_key }));
+          } catch (e) {
+            console.error('Video FIFO R2 delete warning:', e.message);
+          }
+        }
+        await supabase.from('videos').delete().eq('id', v.id);
+      }
+    }
+  } catch (err) {
+    console.error('Video FIFO enforcement error:', err);
   }
 }
 
