@@ -24,6 +24,7 @@ app.get('/health', (req, res) => {
 app.use('/api/youtube', require('./routes/youtube'));
 app.use('/api/videos', require('./routes/videos'));
 app.use('/api/admin/setup', require('./routes/admin-setup'));
+app.use('/api/crypto', require('./routes/crypto-payments'));
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
