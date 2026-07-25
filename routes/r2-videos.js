@@ -29,6 +29,33 @@ const R2_BUCKET = process.env.R2_BUCKET_NAME || 'paid-course-streams';
 const R2_PUBLIC_URL = process.env.R2_PUBLIC_URL || `https://${process.env.R2_BUCKET_NAME}.${process.env.R2_ACCOUNT_ID}.r2.dev`;
 const MAX_SESSIONS_PER_COURSE = 10;
 
+// OPTIONS /api/r2/cors-check
+// Verify R2 bucket is accessible (used by frontend to verify setup)
+router.options('/cors-check', (req, res) => {
+  res.sendStatus(204);
+});
+
+router.get('/cors-check', async (req, res) => {
+  try {
+    await r2.send(new PutObjectCommand({
+      Bucket: R2_BUCKET,
+      Key: '__cors_check.txt',
+      Body: 'ok',
+      ContentType: 'text/plain',
+    }));
+
+    await r2.send(new DeleteObjectCommand({
+      Bucket: R2_BUCKET,
+      Key: '__cors_check.txt',
+    }));
+
+    return res.status(200).json({ ok: true, bucket: R2_BUCKET });
+  } catch (err) {
+    console.error('R2 CORS check error:', err);
+    return res.status(500).json({ ok: false, error: err.message });
+  }
+});
+
 // POST /api/r2/presigned-upload
 // Generate presigned URL for direct browser-to-R2 upload
 router.post('/presigned-upload', async (req, res) => {
