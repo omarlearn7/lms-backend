@@ -14,6 +14,7 @@ const supabase = createClient(
 const BSC_RPC = 'https://bsc-dataseed1.binance.org/';
 const USDT_BSC_ADDRESS = '0x55d398326f99059fF775485246999027B3197955';
 const RECEIVER_WALLET = process.env.MY_PERSONAL_RECEIVING_WALLET;
+const BINANCE_USDT_FEE = parseFloat(process.env.BINANCE_USDT_FEE) || 0.30;
 
 // Minimal ERC-20 ABI for Transfer event scanning
 const ERC20_ABI = [
@@ -26,7 +27,8 @@ const ERC20_ABI = [
 // Creates a pending payment with a unique micro-decimal amount
 router.post('/create-invoice', async (req, res) => {
   try {
-    const { userId, productId } = req.body;
+    const { userId, productId, paymentSource } = req.body;
+    const source = paymentSource === 'binance' ? 'binance' : 'web3';
 
     if (!userId || !productId) {
       return res.status(400).json({ error: 'userId and productId are required' });
@@ -82,6 +84,7 @@ router.post('/create-invoice', async (req, res) => {
         product_id: productId,
         base_amount: basePrice,
         exact_crypto_amount: finalCryptoAmount,
+        payment_source: source,
         status: 'pending',
         expires_at: expiresAt
       }])
@@ -90,8 +93,15 @@ router.post('/create-invoice', async (req, res) => {
 
     if (iError) throw iError;
 
+    // Calculate display amount for user (adds Binance fee if applicable)
+    const displayAmount = source === 'binance'
+      ? parseFloat((finalCryptoAmount + BINANCE_USDT_FEE).toFixed(5))
+      : finalCryptoAmount;
+
     return res.status(200).json({
       ...invoice,
+      display_amount: displayAmount,
+      binance_fee: source === 'binance' ? BINANCE_USDT_FEE : 0,
       product_title: product.title,
       product_description: product.description,
       product_type: product.type,
