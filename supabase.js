@@ -11,7 +11,11 @@ try {
   console.error('Error parsing SUPABASE_URL, using default base URL:', err);
 }
 
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '***REMOVED***';
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+if (!supabaseKey) {
+  console.error('FATAL: Missing SUPABASE_SERVICE_ROLE_KEY environment variable');
+  process.exit(1);
+}
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 

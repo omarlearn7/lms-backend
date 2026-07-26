@@ -2,7 +2,11 @@ const express = require('express');
 const router = express.Router();
 const supabase = require('../supabase');
 
-const SETUP_KEY = process.env.ADMIN_SETUP_KEY || '***REMOVED***';
+const SETUP_KEY = process.env.ADMIN_SETUP_KEY;
+if (!SETUP_KEY) {
+  console.error('FATAL: Missing ADMIN_SETUP_KEY environment variable');
+  process.exit(1);
+}
 
 router.post('/', async (req, res) => {
   try {
