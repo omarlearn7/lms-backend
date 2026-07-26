@@ -7,6 +7,8 @@ const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 const os = require('os');
+const { body, param, query, validationResult } = require('express-validator');
+const { requireAuth, requireTeacherOrAdmin } = require('../middleware/supabase');
 
 const router = express.Router();
 
@@ -15,7 +17,6 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
-// R2 Client
 const r2 = new S3Client({
   region: 'auto',
   endpoint: `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
@@ -29,13 +30,19 @@ const R2_BUCKET = process.env.R2_BUCKET_NAME || 'paid-course-streams';
 const R2_PUBLIC_URL = process.env.R2_PUBLIC_URL || `https://${process.env.R2_BUCKET_NAME}.${process.env.R2_ACCOUNT_ID}.r2.dev`;
 const MAX_SESSIONS_PER_COURSE = 10;
 
+function handleValidation(req, res) {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ error: 'Invalid input', details: errors.array().map(e => e.msg) });
+  }
+}
+
 // OPTIONS /api/r2/cors-check
-// Verify R2 bucket is accessible (used by frontend to verify setup)
 router.options('/cors-check', (req, res) => {
   res.sendStatus(204);
 });
 
-router.get('/cors-check', async (req, res) => {
+router.get('/cors-check', requireAuth, requireTeacherOrAdmin, async (req, res) => {
   try {
     await r2.send(new PutObjectCommand({
       Bucket: R2_BUCKET,
@@ -49,22 +56,23 @@ router.get('/cors-check', async (req, res) => {
       Key: '__cors_check.txt',
     }));
 
-    return res.status(200).json({ ok: true, bucket: R2_BUCKET });
+    return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('R2 CORS check error:', err);
-    return res.status(500).json({ ok: false, error: err.message });
+    return res.status(500).json({ ok: false, error: 'R2 connectivity check failed' });
   }
 });
 
 // POST /api/r2/presigned-upload
-// Generate presigned URL for direct browser-to-R2 upload
-router.post('/presigned-upload', async (req, res) => {
+router.post('/presigned-upload', requireAuth, requireTeacherOrAdmin, [
+  body('fileName').isString().isLength({ min: 1, max: 255 }).withMessage('fileName required (max 255 chars)'),
+  body('contentType').isString().isLength({ min: 1, max: 100 }).withMessage('contentType required'),
+  body('courseId').optional({ nullable: true }).isUUID().withMessage('Invalid courseId'),
+  body('title').optional().isString().isLength({ max: 200 }).withMessage('Title max 200 chars'),
+], async (req, res) => {
   try {
+    if (!handleValidation(req, res)) return;
     const { fileName, contentType, courseId, title } = req.body;
-
-    if (!fileName || !contentType) {
-      return res.status(400).json({ error: 'fileName and contentType are required' });
-    }
 
     const timestamp = Date.now();
     const safeName = fileName.replace(/[^a-zA-Z0-9._-]/g, '_');
@@ -89,19 +97,22 @@ router.post('/presigned-upload', async (req, res) => {
     });
   } catch (err) {
     console.error('Presigned upload error:', err);
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
 
 // POST /api/r2/confirm-upload
-// After browser uploads to R2, confirm and save metadata to DB
-router.post('/confirm-upload', async (req, res) => {
+router.post('/confirm-upload', requireAuth, requireTeacherOrAdmin, [
+  body('r2Key').isString().isLength({ min: 1, max: 500 }).withMessage('r2Key required'),
+  body('title').optional().isString().isLength({ max: 200 }).withMessage('Title max 200 chars'),
+  body('description').optional().isString().isLength({ max: 2000 }).withMessage('Description max 2000 chars'),
+  body('durationSeconds').optional().isInt({ min: 0 }).withMessage('durationSeconds must be non-negative'),
+  body('fileSizeBytes').optional().isInt({ min: 0 }).withMessage('fileSizeBytes must be non-negative'),
+  body('isFree').optional().isBoolean().withMessage('isFree must be boolean'),
+], async (req, res) => {
   try {
+    if (!handleValidation(req, res)) return;
     const { r2Key, courseId, title, description, gradeLevel, durationSeconds, fileSizeBytes, isFree, uploadedBy } = req.body;
-
-    if (!r2Key) {
-      return res.status(400).json({ error: 'r2Key is required' });
-    }
 
     const { data: session, error } = await supabase
       .from('recorded_sessions')
@@ -109,7 +120,7 @@ router.post('/confirm-upload', async (req, res) => {
         title: title || 'جلسة مسجلة',
         description: description || null,
         course_id: courseId || null,
-        uploaded_by: uploadedBy || null,
+        uploaded_by: uploadedBy || req.user.id,
         grade_level: gradeLevel || null,
         r2_key: r2Key,
         r2_bucket: R2_BUCKET,
@@ -118,12 +129,11 @@ router.post('/confirm-upload', async (req, res) => {
         file_size_bytes: fileSizeBytes || 0,
         is_free: isFree || false,
       }])
-      .select()
+      .select('id, title, description, course_id, duration_seconds, file_size_bytes, is_free, created_at')
       .single();
 
     if (error) throw error;
 
-    // FIFO: Enforce max 10 recordings per course
     if (courseId) {
       await enforceFIFO(courseId);
     }
@@ -131,19 +141,22 @@ router.post('/confirm-upload', async (req, res) => {
     return res.status(201).json(session);
   } catch (err) {
     console.error('Confirm upload error:', err);
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
 
 // POST /api/r2/confirm-video-upload
-// After browser uploads to R2, confirm and save to the videos table (course lesson)
-router.post('/confirm-video-upload', async (req, res) => {
+router.post('/confirm-video-upload', requireAuth, requireTeacherOrAdmin, [
+  body('r2Key').isString().isLength({ min: 1, max: 500 }).withMessage('r2Key required'),
+  body('courseId').isUUID().withMessage('Invalid courseId'),
+  body('title').optional().isString().isLength({ max: 200 }).withMessage('Title max 200 chars'),
+  body('description').optional().isString().isLength({ max: 2000 }).withMessage('Description max 2000 chars'),
+  body('durationMinutes').optional().isInt({ min: 1, max: 600 }).withMessage('Duration must be 1-600 minutes'),
+  body('isFree').optional().isBoolean().withMessage('isFree must be boolean'),
+], async (req, res) => {
   try {
+    if (!handleValidation(req, res)) return;
     const { r2Key, courseId, title, description, durationMinutes, fileSizeBytes, isFree, uploadedBy } = req.body;
-
-    if (!r2Key || !courseId) {
-      return res.status(400).json({ error: 'r2Key and courseId are required' });
-    }
 
     const { data: video, error } = await supabase
       .from('videos')
@@ -159,12 +172,11 @@ router.post('/confirm-video-upload', async (req, res) => {
         duration_minutes: durationMinutes || 15,
         is_free: isFree || false,
       }])
-      .select()
+      .select('id, title, description, course_id, source_type, duration_minutes, is_free, created_at')
       .single();
 
     if (error) throw error;
 
-    // FIFO: Enforce max 10 videos per course
     if (courseId) {
       await enforceVideoFIFO(courseId);
     }
@@ -172,24 +184,22 @@ router.post('/confirm-video-upload', async (req, res) => {
     return res.status(201).json(video);
   } catch (err) {
     console.error('Confirm video upload error:', err);
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
 
 // POST /api/r2/presigned-stream
-// Generate presigned GET URL for secure video streaming
-router.post('/presigned-stream', async (req, res) => {
+router.post('/presigned-stream', requireAuth, [
+  body('r2Key').isString().isLength({ min: 1, max: 500 }).withMessage('r2Key required'),
+], async (req, res) => {
   try {
-    const { r2Key, userId } = req.body;
+    if (!handleValidation(req, res)) return;
+    const { r2Key } = req.body;
+    const userId = req.user.id;
 
-    if (!r2Key) {
-      return res.status(400).json({ error: 'r2Key is required' });
-    }
-
-    // Check access: find the recorded session and verify user has access
     const { data: session, error: sError } = await supabase
       .from('recorded_sessions')
-      .select('*')
+      .select('id, title, description, is_free, duration_seconds, file_size_bytes, view_count')
       .eq('r2_key', r2Key)
       .single();
 
@@ -197,8 +207,7 @@ router.post('/presigned-stream', async (req, res) => {
       return res.status(404).json({ error: 'Session not found' });
     }
 
-    // Free sessions are accessible to all
-    if (!session.is_free && userId) {
+    if (!session.is_free) {
       const { data: profile } = await supabase
         .from('profiles')
         .select('subscription_active, role')
@@ -210,13 +219,11 @@ router.post('/presigned-stream', async (req, res) => {
       }
     }
 
-    // Increment view count
     await supabase
       .from('recorded_sessions')
       .update({ view_count: (session.view_count || 0) + 1 })
       .eq('id', session.id);
 
-    // Generate presigned URL (valid for 4 hours)
     const command = new GetObjectCommand({
       Bucket: R2_BUCKET,
       Key: r2Key,
@@ -230,43 +237,50 @@ router.post('/presigned-stream', async (req, res) => {
     });
   } catch (err) {
     console.error('Presigned stream error:', err);
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
 
 // GET /api/r2/recordings
-// List recorded sessions with optional filters
-router.get('/recordings', async (req, res) => {
+router.get('/recordings', requireAuth, requireTeacherOrAdmin, [
+  query('courseId').optional().isUUID().withMessage('Invalid courseId'),
+  query('gradeLevel').optional().isString().isLength({ max: 50 }),
+  query('limit').optional().isInt({ min: 1, max: 100 }).withMessage('Limit must be 1-100'),
+  query('offset').optional().isInt({ min: 0 }).withMessage('Offset must be non-negative'),
+], async (req, res) => {
   try {
+    if (!handleValidation(req, res)) return;
     const { courseId, gradeLevel, limit = 50, offset = 0 } = req.query;
 
-    let query = supabase
+    let queryBuilder = supabase
       .from('recorded_sessions')
-      .select('*')
+      .select('id, title, description, course_id, grade_level, duration_seconds, file_size_bytes, is_free, view_count, created_at')
       .order('created_at', { ascending: false })
       .range(parseInt(offset), parseInt(offset) + parseInt(limit) - 1);
 
     if (courseId) {
-      query = query.eq('course_id', courseId);
+      queryBuilder = queryBuilder.eq('course_id', courseId);
     }
     if (gradeLevel) {
-      query = query.eq('grade_level', gradeLevel);
+      queryBuilder = queryBuilder.eq('grade_level', gradeLevel);
     }
 
-    const { data, error } = await query;
+    const { data, error } = await queryBuilder;
     if (error) throw error;
 
     return res.status(200).json(data || []);
   } catch (err) {
     console.error('List recordings error:', err);
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
 
 // DELETE /api/r2/recordings/:id
-// Delete a recorded session
-router.delete('/recordings/:id', async (req, res) => {
+router.delete('/recordings/:id', requireAuth, requireTeacherOrAdmin, [
+  param('id').isUUID().withMessage('Invalid recording ID'),
+], async (req, res) => {
   try {
+    if (!handleValidation(req, res)) return;
     const { id } = req.params;
 
     const { data: session, error: fError } = await supabase
@@ -279,7 +293,6 @@ router.delete('/recordings/:id', async (req, res) => {
       return res.status(404).json({ error: 'Recording not found' });
     }
 
-    // Delete from R2
     try {
       await r2.send(new DeleteObjectCommand({
         Bucket: R2_BUCKET,
@@ -289,7 +302,6 @@ router.delete('/recordings/:id', async (req, res) => {
       console.error('R2 delete warning:', r2Err.message);
     }
 
-    // Delete from DB
     const { error } = await supabase
       .from('recorded_sessions')
       .delete()
@@ -300,27 +312,24 @@ router.delete('/recordings/:id', async (req, res) => {
     return res.status(200).json({ message: 'Recording deleted' });
   } catch (err) {
     console.error('Delete recording error:', err);
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
 
 // POST /api/r2/transcode
-// Transcode uploaded MP4 to HLS (.m3u8 + .ts segments) using FFmpeg
-router.post('/transcode', async (req, res) => {
+router.post('/transcode', requireAuth, requireTeacherOrAdmin, [
+  body('r2Key').isString().isLength({ min: 1, max: 500 }).withMessage('r2Key required'),
+  body('recordingId').optional().isUUID().withMessage('Invalid recordingId'),
+], async (req, res) => {
   try {
+    if (!handleValidation(req, res)) return;
     const { r2Key, recordingId } = req.body;
 
-    if (!r2Key) {
-      return res.status(400).json({ error: 'r2Key is required' });
-    }
-
-    // Check if FFmpeg is available
     const ffmpegPath = await findFFmpeg();
     if (!ffmpegPath) {
-      return res.status(500).json({ error: 'FFmpeg not available on this server' });
+      return res.status(500).json({ error: 'Transcoding not available on this server' });
     }
 
-    // Download the video from R2 first
     const sourceUrl = await getSignedUrl(r2, new GetObjectCommand({
       Bucket: R2_BUCKET,
       Key: r2Key,
@@ -332,7 +341,6 @@ router.post('/transcode', async (req, res) => {
 
     const manifestKey = r2Key.replace(/\.[^.]+$/, '') + '/playlist.m3u8';
 
-    // Run FFmpeg to transcode to HLS
     await new Promise((resolve, reject) => {
       const ffmpeg = spawn(ffmpegPath, [
         '-i', sourceUrl,
@@ -350,12 +358,11 @@ router.post('/transcode', async (req, res) => {
       ffmpeg.stderr.on('data', (d) => { stderr += d.toString(); });
       ffmpeg.on('close', (code) => {
         if (code === 0) resolve();
-        else reject(new Error(`FFmpeg exited with code ${code}: ${stderr.slice(-500)}`));
+        else reject(new Error(`Transcoding failed with code ${code}`));
       });
       ffmpeg.on('error', reject);
     });
 
-    // Upload HLS segments to R2
     const files = fs.readdirSync(outputDir);
     for (const file of files) {
       const filePath = path.join(outputDir, file);
@@ -371,7 +378,6 @@ router.post('/transcode', async (req, res) => {
       }));
     }
 
-    // Update DB with HLS manifest key
     if (recordingId) {
       await supabase
         .from('recorded_sessions')
@@ -379,7 +385,6 @@ router.post('/transcode', async (req, res) => {
         .eq('id', recordingId);
     }
 
-    // Cleanup temp files
     fs.rmSync(tmpDir, { recursive: true, force: true });
 
     return res.status(200).json({
@@ -389,11 +394,10 @@ router.post('/transcode', async (req, res) => {
     });
   } catch (err) {
     console.error('Transcode error:', err);
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
 
-// Helper: Enforce FIFO (max 10 recordings per course, delete oldest)
 async function enforceFIFO(courseId) {
   try {
     const { data: sessions } = await supabase
@@ -418,7 +422,6 @@ async function enforceFIFO(courseId) {
   }
 }
 
-// Helper: Enforce FIFO for videos table (max 10 per course, delete oldest R2 videos)
 async function enforceVideoFIFO(courseId) {
   try {
     const { data: videos } = await supabase
@@ -445,7 +448,6 @@ async function enforceVideoFIFO(courseId) {
   }
 }
 
-// Helper: Find FFmpeg binary
 async function findFFmpeg() {
   const possiblePaths = ['/usr/bin/ffmpeg', '/usr/local/bin/ffmpeg', 'ffmpeg'];
   for (const p of possiblePaths) {

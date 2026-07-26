@@ -1,12 +1,39 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(express.json());
+const FRONTEND_URL = process.env.FRONTEND_URL || 'https://lms-frontend-4nk.pages.dev';
+
+app.use(helmet());
+app.use(cors({
+  origin: [FRONTEND_URL, 'http://localhost:5173'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+app.use(express.json({ limit: '100kb' }));
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please try again later.' },
+});
+app.use('/api/', apiLimiter);
+
+const strictLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests to this endpoint.' },
+});
 
 // Root route for Render health check / verification
 app.get('/', (req, res) => {
@@ -23,9 +50,9 @@ app.get('/health', (req, res) => {
 // API Routes
 app.use('/api/youtube', require('./routes/youtube'));
 app.use('/api/videos', require('./routes/videos'));
-app.use('/api/admin/setup', require('./routes/admin-setup'));
+app.use('/api/admin/setup', strictLimiter, require('./routes/admin-setup'));
 app.use('/api/crypto', require('./routes/crypto-payments'));
-app.use('/api/r2', require('./routes/r2-videos'));
+app.use('/api/r2', strictLimiter, require('./routes/r2-videos'));
 app.use('/api/telegram-groups', require('./routes/telegram-groups'));
 
 app.listen(PORT, () => {
