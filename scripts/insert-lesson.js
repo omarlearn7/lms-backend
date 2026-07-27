@@ -47,16 +47,21 @@ const R2_BUCKET = process.env.R2_BUCKET_NAME || 'paid-course-streams';
 const R2_PUBLIC_URL = process.env.R2_PUBLIC_URL || `https://${R2_BUCKET}.${process.env.R2_ACCOUNT_ID}.r2.dev`;
 
 function slugify(text) {
-  return text
+  let slug = text
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .trim()
     .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
+    .replace(/[^\p{L}\p{N}-]/gu, '')
     .replace(/--+/g, '-')
     .replace(/^-+/, '')
     .replace(/-+$/, '');
+
+  if (!slug || slug.length < 3) {
+    slug = `lesson-${Date.now()}`;
+  }
+  return slug;
 }
 
 async function uploadToR2(filePath, r2Key) {
