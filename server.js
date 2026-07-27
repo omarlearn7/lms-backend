@@ -9,9 +9,17 @@ const PORT = process.env.PORT || 3000;
 
 const FRONTEND_URL = process.env.FRONTEND_URL || 'https://lms-frontend-4nk.pages.dev';
 
+function isAllowedOrigin(origin) {
+  if (!origin) return false;
+  if (origin === 'http://localhost:5173' || origin === 'http://localhost:3000') return true;
+  if (origin === FRONTEND_URL) return true;
+  if (/^https:\/\/[a-f0-9]+\.lms-frontend-4nk\.pages\.dev$/.test(origin)) return true;
+  return false;
+}
+
 app.use(helmet());
 app.use(cors({
-  origin: [FRONTEND_URL, 'http://localhost:5173'],
+  origin: isAllowedOrigin,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
