@@ -44,6 +44,7 @@ BEGIN
   INSERT INTO auth.identities (
     id,
     user_id,
+    provider_id,
     identity_data,
     provider,
     created_at,
@@ -51,6 +52,7 @@ BEGIN
   ) VALUES (
     new_user_id,
     new_user_id,
+    user_email,
     jsonb_build_object(
       'sub', new_user_id::text,
       'email', user_email
