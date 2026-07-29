@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكاة حركة الأقمار الاصطناعية</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;direction:rtl;min-height:100vh;display:flex;justify-content:center;padding:20px}
+.container{max-width:960px;width:100%}
+h1{text-align:center;font-size:1.4rem;margin-bottom:16px;color:#f8fafc}
+.main-layout{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.canvas-col{display:flex;flex-direction:column;align-items:center;gap:10px}
+#orbitCanvas{background:#0f172a;border-radius:12px;border:1px solid #1e293b;display:block}
+.controls{background:#1e293b;border-radius:10px;padding:14px 16px;width:500px}
+.ctrl-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.ctrl-row:last-child{margin-bottom:0}
+.ctrl-row label{font-size:0.85rem;color:#94a3b8;white-space:nowrap}
+.slider-group{flex:1;min-width:140px}
+.slider-group label{display:block;font-size:0.8rem;margin-bottom:2px}
+.slider-group input[type=range]{width:100%;height:4px;-webkit-appearance:none;appearance:none;background:#334155;border-radius:2px;outline:none}
+.slider-group input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:#3b82f6;cursor:pointer;border:2px solid #1e293b}
+.slider-val{font-size:0.8rem;color:#e2e8f0;min-width:50px;text-align:left;direction:ltr}
+.chk-group{display:flex;align-items:center;gap:4px}
+.chk-group input[type=checkbox]{-webkit-appearance:none;appearance:none;width:16px;height:16px;border:1px solid #475569;border-radius:3px;background:#1e293b;cursor:pointer;position:relative;flex-shrink:0}
+.chk-group input[type=checkbox]:checked{background:#3b82f6;border-color:#3b82f6}
+.chk-group input[type=checkbox]:checked::after{content:'✓';position:absolute;color:#fff;font-size:12px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.chk-group label{font-size:0.8rem;cursor:pointer}
+.btn{background:#334155;color:#e2e8f0;border:none;padding:5px 14px;border-radius:6px;cursor:pointer;font-size:0.8rem;transition:background .15s}
+.btn:hover{background:#475569}
+.btn-primary{background:#3b82f6}
+.btn-primary:hover{background:#2563eb}
+.btn-success{background:#22c55e}
+.btn-success:hover{background:#16a34a}
+.btn-warning{background:#f59e0b}
+.btn-warning:hover{background:#d97706}
+.speed-group{display:flex;gap:4px}
+.speed-group .btn{min-width:32px;text-align:center;font-size:0.75rem;padding:4px 6px}
+.speed-group .btn.active{background:#3b82f6}
+.data-panel{background:#1e293b;border-radius:10px;padding:14px 16px;flex:1;min-width:240px}
+.data-panel h3{font-size:0.9rem;color:#94a3b8;margin-bottom:8px}
+.data-table{width:100%;border-collapse:collapse;font-size:0.78rem}
+.data-table td{padding:3px 5px;border-bottom:1px solid #1e293b}
+.data-table td:first-child{color:#94a3b8;width:55%}
+.data-table td:last-child{text-align:left;direction:ltr;font-family:'Courier New',monospace}
+.data-table tr.special td{color:#f59e0b;font-weight:bold}
+.data-table tr.special td:last-child{direction:rtl}
+.green{color:#22c55e}
+.red{color:#ef4444}
+.orange{color:#f59e0b}
+.graph-panel{background:#1e293b;border-radius:10px;padding:14px 16px;margin-top:16px}
+.graph-panel h3{font-size:0.9rem;color:#94a3b8;margin-bottom:8px}
+.graph-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+#keplerCanvas{background:#1e293b;border-radius:8px;display:block;margin:0 auto}
+.graph-info{font-size:0.75rem;color:#94a3b8;margin-top:6px;direction:ltr;text-align:left;font-family:'Courier New',monospace}
+.graph-info span{display:block}
+.badge{display:inline-block;background:#059669;color:#fff;padding:2px 10px;border-radius:4px;font-size:0.75rem;margin-top:4px}
+.footer{text-align:center;font-size:0.75rem;color:#475569;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>محاكاة تفاعلية: حركة الأقمار الاصطناعية</h1>
+<div class="main-layout">
+<div class="canvas-col">
+<canvas id="orbitCanvas" width="500" height="500"></canvas>
+<div class="controls">
+<div class="ctrl-row">
+<div class="slider-group">
+<label>الارتفاع عن سطح الأرض <span id="hVal" class="slider-val">400</span> كم</label>
+<input type="range" id="hSlider" min="200" max="36000" step="100" value="400">
+</div>
+<div class="slider-group">
+<label>كتلة القمر <span id="mVal" class="slider-val">500</span> كغ</label>
+<input type="range" id="mSlider" min="100" max="5000" step="100" value="500">
+</div>
+</div>
+<div class="ctrl-row">
+<div class="chk-group"><input type="checkbox" id="chkV" checked><label for="chkV">إظهار شعاع السرعة</label></div>
+<div class="chk-group"><input type="checkbox" id="chkF" checked><label for="chkF">إظهار شعاع القوة</label></div>
+<div class="chk-group"><input type="checkbox" id="chkGeo"><label for="chkGeo">إظهار القمر المستقر</label></div>
+<div class="chk-group"><input type="checkbox" id="chkTrail" checked><label for="chkTrail">إظهار الأثر</label></div>
+</div>
+<div class="ctrl-row">
+<button class="btn btn-primary" id="playBtn">▶ تشغيل</button>
+<button class="btn" id="resetBtn">↺ إعادة</button>
+<div class="speed-group">
+<button class="btn speed-btn active" data-speed="1">1×</button>
+<button class="btn speed-btn" data-speed="2">2×</button>
+<button class="btn speed-btn" data-speed="5">5×</button>
+<button class="btn speed-btn" data-speed="10">10×</button>
+</div>
+</div>
+</div>
+</div>
+<div class="data-panel">
+<h3>البيانات المدارية</h3>
+<table class="data-table" id="dataTable">
+<tr><td>نصف قطر المدار r (كم)</td><td id="d_rKm">—</td></tr>
+<tr><td>السرعة المدارية v (كم/ث)</td><td id="d_vKmS">—</td></tr>
+<tr><td>السرعة المدارية v (م/ث)</td><td id="d_vMs">—</td></tr>
+<tr><td>زمن الدوران T (ساعة)</td><td id="d_TH">—</td></tr>
+<tr><td>زمن الدوران T (دقيقة)</td><td id="d_TMin">—</td></tr>
+<tr><td>قوة الجذب F (نيوتن)</td><td id="d_F">—</td></tr>
+<tr><td>الجاذبية عند المدار g (م/ث²)</td><td id="d_g">—</td></tr>
+<tr><td>T²/r³ (ث²/م³)</td><td id="d_Kepler">—</td></tr>
+<tr><td>ثابت كبلر النظري (ث²/م³)</td><td id="d_KeplerConst">—</td></tr>
+<tr><td>دورة القمر المستقر T (ساعة)</td><td id="d_GeoT">24.0000</td></tr>
+<tr id="geoRow" style="display:none" class="special"><td colspan="2"><span class="badge">مدار مستقر ✓</span></td></tr>
+</table>
+</div>
+</div>
+<div class="graph-panel">
+<div class="graph-top">
+<h3>التحقق من قانون كبلر الثالث: T² مقابل r³</h3>
+<button class="btn btn-warning" id="clearGraphBtn">مسح الرسم</button>
+</div>
+<canvas id="keplerCanvas" width="600" height="220"></canvas>
+<div class="graph-info" id="graphInfo">
+<span>انتظر نقاط بيانات عند تغيير الارتفاع...</span>
+</div>
+</div>
+<div class="footer">محاكاة تعليمية — قانون كبلر الثالث لحركة الأقمار</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+const G = 6.67e-11;
+const M_T = 5.97e24;
+const R_T = 6371e3;
+const R_T_KM = 6371;
+const EARTH_RADIUS_PX = 60;
+const CANVAS_SIZE = 500;
+const MAX_VISIBLE_KM = 42000;
+const PI = Math.PI;
+const TWO_PI = 2 * PI;
+
+const canvas = document.getElementById('orbitCanvas');
+const ctx = canvas.getContext('2d');
+const kCanvas = document.getElementById('keplerCanvas');
+const kCtx = kCanvas.getContext('2d');
+const kWidth = kCanvas.width;
+const kHeight = kCanvas.height;
+
+const hSlider = document.getElementById('hSlider');
+const mSlider = document.getElementById('mSlider');
+const hVal = document.getElementById('hVal');
+const mVal = document.getElementById('mVal');
+const chkV = document.getElementById('chkV');
+const chkF = document.getElementById('chkF');
+const chkGeo = document.getElementById('chkGeo');
+const chkTrail = document.getElementById('chkTrail');
+const playBtn = document.getElementById('playBtn');
+const resetBtn = document.getElementById('resetBtn');
+const speedBtns = document.querySelectorAll('.speed-btn');
+const clearGraphBtn = document.getElementById('clearGraphBtn');
+
+let running = false;
+let speed = 1;
+let angle = 0;
+let trail = [];
+let keplerData = [];
+let lastTime = 0;
+
+const starSeed = 12345;
+let stars = [];
+
+function seededRandom(seed) {
+  let s = seed;
+  return function() {
+    s = (s * 9301 + 49297) % 233280;
+    return s / 233280;
+  };
+}
+
+function generateStars() {
+  const rng = seededRandom(starSeed);
+  stars = [];
+  for (let i = 0; i < 100; i++) {
+    stars.push({
+      x: rng() * CANVAS_SIZE,
+      y: rng() * CANVAS_SIZE,
+      r: 0.5 + rng() * 1.5,
+      a: 0.15 + rng() * 0.65
+    });
+  }
+}
+
+function kmToPx(km) {
+  return (km / MAX_VISIBLE_KM) * (CANVAS_SIZE / 2);
+}
+
+function getParams() {
+  const h = parseFloat(hSlider.value) * 1000;
+  const m = parseFloat(mSlider.value);
+  const r = R_T + h;
+  const v = Math.sqrt(G * M_T / r);
+  const T = TWO_PI * r / v;
+  const F = G * m * M_T / (r * r);
+  const g = G * M_T / (r * r);
+  return { h, m, r, v, T, F, g };
+}
+
+function drawOrbit() {
+  ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+  const cx = CANVAS_SIZE / 2;
+  const cy = CANVAS_SIZE / 2;
+
+  // stars
+  for (const s of stars) {
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, TWO_PI);
+    ctx.fillStyle = `rgba(255,255,255,${s.a})`;
+    ctx.fill();
+  }
+
+  // earth atmosphere glow
+  const glowGrad = ctx.createRadialGradient(cx, cy, EARTH_RADIUS_PX, cx, cy, EARTH_RADIUS_PX + 12);
+  glowGrad.addColorStop(0, 'rgba(59,130,246,0.3)');
+  glowGrad.addColorStop(1, 'rgba(59,130,246,0)');
+  ctx.beginPath();
+  ctx.arc(cx, cy, EARTH_RADIUS_PX + 12, 0, TWO_PI);
+  ctx.fillStyle = glowGrad;
+  ctx.fill();
+
+  // earth
+  const earthGrad = ctx.createRadialGradient(cx - 15, cy - 15, 5, cx, cy, EARTH_RADIUS_PX);
+  earthGrad.addColorStop(0, '#3b82f6');
+  earthGrad.addColorStop(0.7, '#2563eb');
+  earthGrad.addColorStop(1, '#1d4ed8');
+  ctx.beginPath();
+  ctx.arc(cx, cy, EARTH_RADIUS_PX, 0, TWO_PI);
+  ctx.fillStyle = earthGrad;
+  ctx.fill();
+
+  // equator line
+  ctx.beginPath();
+  ctx.moveTo(cx - EARTH_RADIUS_PX, cy);
+  ctx.lineTo(cx + EARTH_RADIUS_PX, cy);
+  ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+  ctx.lineWidth = 0.5;
+  ctx.stroke();
+
+  // north-south line
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - EARTH_RADIUS_PX);
+  ctx.lineTo(cx, cy + EARTH_RADIUS_PX);
+  ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+  ctx.lineWidth = 0.5;
+  ctx.stroke();
+
+  // north pole dot
+  ctx.beginPath();
+  ctx.arc(cx, cy - EARTH_RADIUS_PX + 4, 3, 0, TWO_PI);
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
+  ctx.fill();
+
+  const params = getParams();
+  const r_px = kmToPx(params.r / 1000);
+
+  if (r_px > EARTH_RADIUS_PX + 5) {
+    // orbit path
+    ctx.beginPath();
+    ctx.arc(cx, cy, r_px, 0, TWO_PI);
+    ctx.setLineDash([6, 4]);
+    ctx.strokeStyle = '#64748b';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // geostationary reference
+  if (chkGeo.checked) {
+    const geo_h = 35800;
+    const geo_r_km = R_T_KM + geo_h;
+    const geo_r_px = kmToPx(geo_r_km);
+    ctx.beginPath();
+    ctx.arc(cx, cy, geo_r_px, 0, TWO_PI);
+    ctx.setLineDash([4, 6]);
+    ctx.strokeStyle = '#f59e0b';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.setLineDash([]);
+    // gold satellite
+    const geoAngle = performance.now() / 8000;
+    const gx = cx + geo_r_px * Math.cos(geoAngle);
+    const gy = cy + geo_r_px * Math.sin(geoAngle);
+    ctx.beginPath();
+    ctx.arc(gx, gy, 4, 0, TWO_PI);
+    ctx.fillStyle = '#f59e0b';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(gx, gy, 7, 0, TWO_PI);
+    ctx.fillStyle = 'rgba(245,158,11,0.2)';
+    ctx.fill();
+  }
+
+  // satellite position
+  const sx = cx + r_px * Math.cos(angle);
+  const sy = cy + r_px * Math.sin(angle);
+
+  // trail
+  if (chkTrail.checked) {
+    for (let i = 0; i < trail.length; i++) {
+      const t = trail[i];
+      const alpha = (i / trail.length) * 0.6;
+      ctx.beginPath();
+      ctx.arc(t.x, t.y, 2, 0, TWO_PI);
+      ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+      ctx.fill();
+    }
+  }
+
+  // satellite glow
+  const satGlow = ctx.createRadialGradient(sx, sy, 0, sx, sy, 12);
+  satGlow.addColorStop(0, 'rgba(255,255,255,0.6)');
+  satGlow.addColorStop(0.4, 'rgba(255,255,255,0.2)');
+  satGlow.addColorStop(1, 'rgba(255,255,255,0)');
+  ctx.beginPath();
+  ctx.arc(sx, sy, 12, 0, TWO_PI);
+  ctx.fillStyle = satGlow;
+  ctx.fill();
+
+  // satellite body
+  ctx.beginPath();
+  ctx.arc(sx, sy, 5, 0, TWO_PI);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+
+  // velocity vector (tangent)
+  if (chkV.checked && params.h >= 0) {
+    const vLen = Math.min((params.v / 1000) * 5, 60);
+    const tx = -Math.sin(angle);
+    const ty = Math.cos(angle);
+    const vx = sx + tx * vLen;
+    const vy = sy + ty * vLen;
+    ctx.beginPath();
+    ctx.moveTo(sx, sy);
+    ctx.lineTo(vx, vy);
+    ctx.strokeStyle = '#22c55e';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    // arrowhead
+    const aSize = 6;
+    const aAngle = Math.atan2(vy - sy, vx - sx);
+    ctx.beginPath();
+    ctx.moveTo(vx, vy);
+    ctx.lineTo(vx - aSize * Math.cos(aAngle - 0.4), vy - aSize * Math.sin(aAngle - 0.4));
+    ctx.moveTo(vx, vy);
+    ctx.lineTo(vx - aSize * Math.cos(aAngle + 0.4), vy - aSize * Math.sin(aAngle + 0.4));
+    ctx.stroke();
+    // label
+    ctx.fillStyle = '#22c55e';
+    ctx.font = '11px sans-serif';
+    ctx.fillText('v = ' + (params.v / 1000).toFixed(2) + ' كم/ث', vx + 6, vy - 4);
+  }
+
+  // force vector (toward center)
+  if (chkF.checked && params.h >= 0) {
+    let fLen;
+    if (params.F < 1) fLen = 0;
+    else fLen = Math.log10(params.F) * 8;
+    fLen = Math.min(Math.max(fLen, 8), 50);
+    const fx = cx - sx;
+    const fy = cy - sy;
+    const fDist = Math.sqrt(fx * fx + fy * fy);
+    if (fDist > 0 && params.F >= 1) {
+      const fux = fx / fDist;
+      const fuy = fy / fDist;
+      const fEndX = sx + fux * fLen;
+      const fEndY = sy + fuy * fLen;
+      ctx.beginPath();
+      ctx.moveTo(sx, sy);
+      ctx.lineTo(fEndX, fEndY);
+      ctx.strokeStyle = '#ef4444';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      const aAngle = Math.atan2(fuy, fux);
+      const aSize = 6;
+      ctx.beginPath();
+      ctx.moveTo(fEndX, fEndY);
+      ctx.lineTo(fEndX - aSize * Math.cos(aAngle - 0.4), fEndY - aSize * Math.sin(aAngle - 0.4));
+      ctx.moveTo(fEndX, fEndY);
+      ctx.lineTo(fEndX - aSize * Math.cos(aAngle + 0.4), fEndY - aSize * Math.sin(aAngle + 0.4));
+      ctx.stroke();
+      ctx.fillStyle = '#ef4444';
+      ctx.font = '11px sans-serif';
+      let fDisplay;
+      if (params.F >= 1e6) fDisplay = (params.F / 1e6).toFixed(2) + '×10⁶';
+      else if (params.F >= 1000) fDisplay = (params.F / 1000).toFixed(2) + '×10³';
+      else fDisplay = params.F.toFixed(1);
+      ctx.fillText('Fg = ' + fDisplay + ' N', fEndX + 6, fEndY - 4);
+    }
+  }
+
+  // units label
+  ctx.fillStyle = '#475569';
+  ctx.font = '10px sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText('نطاق الرؤية: ' + MAX_VISIBLE_KM + ' كم', 10, CANVAS_SIZE - 10);
+}
+
+function updateDataPanel() {
+  const params = getParams();
+  const r_km = (params.r / 1000).toFixed(1);
+  const v_km_s = (params.v / 1000).toFixed(4);
+  const v_ms = params.v.toFixed(2);
+  const T_h = (params.T / 3600).toFixed(4);
+  const T_min = (params.T / 60).toFixed(2);
+  const F_display = params.F >= 1e6 ? (params.F / 1e6).toFixed(4) + '×10⁶' : params.F.toFixed(2);
+  const g_val = params.g.toFixed(4);
+  const keplerVal = (params.T * params.T) / (params.r * params.r * params.r);
+  const keplerConst = (4 * PI * PI) / (G * M_T);
+
+  document.getElementById('d_rKm').textContent = r_km;
+  document.getElementById('d_vKmS').textContent = v_km_s;
+  document.getElementById('d_vMs').textContent = v_ms;
+  document.getElementById('d_TH').textContent = T_h;
+  document.getElementById('d_TMin').textContent = T_min;
+  document.getElementById('d_F').textContent = F_display;
+  document.getElementById('d_g').textContent = g_val;
+  document.getElementById('d_Kepler').textContent = keplerVal.toExponential(4);
+  document.getElementById('d_KeplerConst').textContent = keplerConst.toExponential(4);
+
+  const geoRow = document.getElementById('geoRow');
+  const h_km = parseFloat(hSlider.value);
+  if (Math.abs(h_km - 35800) <= 200) {
+    geoRow.style.display = '';
+  } else {
+    geoRow.style.display = 'none';
+  }
+
+}
+
+function drawKeplerGraph() {
+  kCtx.clearRect(0, 0, kWidth, kHeight);
+  const pad = { top: 15, right: 15, bottom: 40, left: 65 };
+  const w = kWidth - pad.left - pad.right;
+  const h = kHeight - pad.top - pad.bottom;
+
+  if (keplerData.length === 0) {
+    kCtx.fillStyle = '#475569';
+    kCtx.font = '13px sans-serif';
+    kCtx.textAlign = 'center';
+    kCtx.fillText('غيّر الارتفاع لجمع نقاط البيانات', kWidth / 2, kHeight / 2);
+    return;
+  }
+
+  let maxX = 0, maxY = 0;
+  for (const d of keplerData) {
+    if (d.r3 > maxX) maxX = d.r3;
+    if (d.T2 > maxY) maxY = d.T2;
+  }
+  if (maxX === 0) maxX = 1;
+  if (maxY === 0) maxY = 1;
+  maxX *= 1.15;
+  maxY *= 1.15;
+
+  function toPixel(x, y) {
+    return {
+      px: pad.left + (x / maxX) * w,
+      py: pad.top + h - (y / maxY) * h
+    };
+  }
+
+  // grid
+  kCtx.strokeStyle = '#334155';
+  kCtx.lineWidth = 0.5;
+  for (let i = 0; i <= 4; i++) {
+    const x = (i / 4) * maxX;
+    const p = toPixel(x, 0);
+    kCtx.beginPath();
+    kCtx.moveTo(p.px, pad.top);
+    kCtx.lineTo(p.px, pad.top + h);
+    kCtx.stroke();
+    kCtx.fillStyle = '#64748b';
+    kCtx.font = '9px sans-serif';
+    kCtx.textAlign = 'center';
+    kCtx.fillText(x.toExponential(1), p.px, pad.top + h + 14);
+  }
+  for (let i = 0; i <= 4; i++) {
+    const y = (i / 4) * maxY;
+    const p = toPixel(0, y);
+    kCtx.beginPath();
+    kCtx.moveTo(pad.left, p.py);
+    kCtx.lineTo(pad.left + w, p.py);
+    kCtx.stroke();
+    kCtx.fillStyle = '#64748b';
+    kCtx.font = '9px sans-serif';
+    kCtx.textAlign = 'right';
+    kCtx.fillText(y.toExponential(1), pad.left - 4, p.py + 3);
+  }
+
+  // axes labels
+  kCtx.fillStyle = '#94a3b8';
+  kCtx.font = '10px sans-serif';
+  kCtx.textAlign = 'center';
+  kCtx.fillText('r³ (m³)', pad.left + w / 2, kHeight - 4);
+  kCtx.save();
+  kCtx.translate(12, pad.top + h / 2);
+  kCtx.rotate(-PI / 2);
+  kCtx.fillText('T² (s²)', 0, 0);
+  kCtx.restore();
+
+  // data points
+  for (const d of keplerData) {
+    const p = toPixel(d.r3, d.T2);
+    kCtx.beginPath();
+    kCtx.arc(p.px, p.py, 3, 0, TWO_PI);
+    kCtx.fillStyle = '#3b82f6';
+    kCtx.fill();
+  }
+
+  // best fit line
+  if (keplerData.length >= 2) {
+    let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+    for (const d of keplerData) {
+      sumX += d.r3;
+      sumY += d.T2;
+      sumXY += d.r3 * d.T2;
+      sumX2 += d.r3 * d.r3;
+    }
+    const n = keplerData.length;
+    const slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+    const intercept = (sumY - slope * sumX) / n;
+
+    const x1 = 0;
+    const y1 = intercept;
+    const x2 = maxX;
+    const y2 = slope * maxX + intercept;
+    const p1 = toPixel(x1, y1);
+    const p2 = toPixel(x2, y2);
+
+    kCtx.beginPath();
+    kCtx.moveTo(p1.px, Math.max(pad.top, Math.min(pad.top + h, p1.py)));
+    kCtx.lineTo(p2.px, Math.max(pad.top, Math.min(pad.top + h, p2.py)));
+    kCtx.strokeStyle = '#22c55e';
+    kCtx.lineWidth = 1.5;
+    kCtx.stroke();
+
+    const keplerConst = (4 * PI * PI) / (G * M_T);
+    const infoEl = document.getElementById('graphInfo');
+    infoEl.innerHTML =
+      '<span>الميل النظري = 4π²/(G·M_T) = ' + keplerConst.toExponential(4) + ' ث²/م³</span>' +
+      '<span>الميل المحسوب = ' + slope.toExponential(4) + ' ث²/م³  |  عدد النقاط: ' + n + '</span>';
+  } else {
+    document.getElementById('graphInfo').innerHTML =
+      '<span>يلزم نقطتان على الأقل لرسم خط الاتجاه</span>';
+  }
+}
+
+function addKeplerPoint() {
+  const params = getParams();
+  const r3 = params.r * params.r * params.r;
+  const T2 = params.T * params.T;
+  // avoid duplicates
+  for (const d of keplerData) {
+    if (Math.abs(d.r3 - r3) / r3 < 1e-6) return;
+  }
+  keplerData.push({ r3, T2 });
+  drawKeplerGraph();
+}
+
+function update() {
+  drawOrbit();
+  updateDataPanel();
+}
+
+function tick(timestamp) {
+  if (!lastTime) lastTime = timestamp;
+  let dt = timestamp - lastTime;
+  lastTime = timestamp;
+  dt = Math.min(dt, 50);
+
+  if (running) {
+    const params = getParams();
+    const omega = params.v / params.r;
+    const dAngle = omega * (dt / 1000) * speed * 300;
+    angle += dAngle;
+
+    const cx = CANVAS_SIZE / 2;
+    const cy = CANVAS_SIZE / 2;
+    const r_px = kmToPx(params.r / 1000);
+    const sx = cx + r_px * Math.cos(angle);
+    const sy = cy + r_px * Math.sin(angle);
+    trail.push({ x: sx, y: sy });
+    if (trail.length > 50) trail.shift();
+  }
+
+  update();
+  requestAnimationFrame(tick);
+}
+
+// event handlers
+hSlider.addEventListener('input', function() {
+  hVal.textContent = this.value;
+  addKeplerPoint();
+  if (!running) update();
+  else { update(); }
+});
+
+mSlider.addEventListener('input', function() {
+  mVal.textContent = this.value;
+  if (!running) update();
+  else { update(); }
+});
+
+playBtn.addEventListener('click', function() {
+  running = !running;
+  if (running) {
+    this.textContent = '⏸ إيقاف';
+    lastTime = 0;
+    addKeplerPoint();
+  } else {
+    this.textContent = '▶ تشغيل';
+  }
+});
+
+resetBtn.addEventListener('click', function() {
+  angle = 0;
+  trail = [];
+  running = false;
+  playBtn.textContent = '▶ تشغيل';
+  lastTime = 0;
+  update();
+});
+
+for (const btn of speedBtns) {
+  btn.addEventListener('click', function() {
+    for (const b of speedBtns) b.classList.remove('active');
+    this.classList.add('active');
+    speed = parseFloat(this.dataset.speed);
+  });
+}
+
+[chkV, chkF, chkGeo, chkTrail].forEach(chk => {
+  chk.addEventListener('change', update);
+});
+
+clearGraphBtn.addEventListener('click', function() {
+  keplerData = [];
+  drawKeplerGraph();
+  document.getElementById('graphInfo').innerHTML = '<span>مسحت البيانات</span>';
+});
+
+// add kepler point on slider change
+// also add on initial load
+generateStars();
+addKeplerPoint();
+update();
+requestAnimationFrame(tick);
+
+})();
+</script>
+</body>
+</html>

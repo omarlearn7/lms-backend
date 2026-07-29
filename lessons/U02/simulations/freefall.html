@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكاة السقوط الشاقولي</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:20px;min-height:100vh}
+.container{max-width:900px;width:100%}
+h1{text-align:center;font-size:20px;margin-bottom:10px;color:#fbbf24}
+.main-area{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+canvas#mainCanvas{background:#0f172a;border:1px solid #334155;border-radius:8px;display:block}
+.side-panel{flex:1;min-width:240px}
+.controls{background:#1e293b;border-radius:8px;padding:12px;margin-bottom:10px;border:1px solid #334155}
+.controls-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ctrl-group{display:flex;flex-direction:column;gap:2px}
+.ctrl-group label{font-size:11px;color:#94a3b8}
+.ctrl-group .val{font-size:11px;color:#fbbf24;margin-right:4px}
+input[type=checkbox]{accent-color:#f59e0b;width:16px;height:16px;margin-left:6px;vertical-align:middle}
+.checkbox-label{font-size:12px;cursor:pointer;display:flex;align-items:center}
+input[type=range]{-webkit-appearance:none;width:100%;height:4px;border-radius:2px;background:#334155;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer;border:none}
+select{background:#0f172a;color:#e2e8f0;border:1px solid #334155;border-radius:4px;padding:3px 6px;font-size:11px;outline:none;cursor:pointer}
+.btn-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.btn{background:#334155;color:#e2e8f0;border:none;border-radius:4px;padding:5px 12px;font-size:12px;cursor:pointer;transition:background .15s}
+.btn:hover{background:#475569}
+.btn-play{background:#22c55e;color:#0f172a}
+.btn-play:hover{background:#16a34a}
+.btn-reset{background:#ef4444;color:#fff}
+.btn-reset:hover{background:#dc2626}
+.btn-speed{background:#1e293b;border:1px solid #334155}
+.btn-speed.active{background:#f59e0b;color:#0f172a;border-color:#f59e0b}
+.data-panel{background:#1e293b;border-radius:8px;padding:10px;border:1px solid #334155;margin-bottom:10px}
+.data-table{width:100%;border-collapse:collapse;font-size:11px}
+.data-table th,.data-table td{padding:3px 6px;text-align:center;border-bottom:1px solid #334155}
+.data-table th{color:#94a3b8;font-weight:400}
+.data-table td{color:#e2e8f0}
+.data-table td.val{color:#fbbf24;font-weight:700;direction:ltr}
+.graphs-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:10px}
+.graph-wrap{background:#1e293b;border-radius:8px;padding:8px;border:1px solid #334155;text-align:center}
+.graph-wrap p{font-size:11px;color:#94a3b8;margin-bottom:4px}
+.graph-wrap canvas{background:#1e293b;border-radius:4px;display:block}
+.energy-panel{background:#1e293b;border-radius:8px;padding:10px;border:1px solid #334155;margin-bottom:10px}
+.energy-title{font-size:12px;color:#94a3b8;margin-bottom:6px;text-align:center}
+.energy-bar-wrap{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.energy-label{font-size:11px;width:80px;text-align:left;flex-shrink:0}
+.energy-track{flex:1;height:18px;background:#0f172a;border-radius:4px;overflow:hidden;position:relative}
+.energy-fill{height:100%;border-radius:4px;transition:width .05s linear;position:relative}
+.energy-fill span{position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:10px;color:#fff;text-shadow:0 0 3px rgba(0,0,0,.8);font-weight:700;direction:ltr}
+.legend-row{display:flex;gap:12px;justify-content:center;font-size:10px;color:#94a3b8;margin-top:4px}
+.legend-item{display:flex;align-items:center;gap:4px}
+.legend-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+@media(max-width:700px){.controls-grid{grid-template-columns:1fr}.main-area{flex-direction:column;align-items:center}.side-panel{width:100%}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>محاكاة تفاعلية: السقوط الشاقولي</h1>
+
+<div class="main-area">
+<canvas id="mainCanvas" width="400" height="400"></canvas>
+
+<div class="side-panel">
+<div class="controls">
+<div class="controls-grid">
+<div class="ctrl-group">
+<label class="checkbox-label"><input type="checkbox" id="airResistance" checked> مقاومة الهواء</label>
+</div>
+<div class="ctrl-group">
+<label>الكتلة <span class="val" id="massVal">100</span> g</label>
+<input type="range" id="massSlider" min="10" max="500" step="5" value="100">
+</div>
+<div class="ctrl-group">
+<label>الارتفاع <span class="val" id="heightVal">45</span> m</label>
+<input type="range" id="heightSlider" min="5" max="100" step="1" value="45">
+</div>
+<div class="ctrl-group">
+<label>نموذج الاحتكاك</label>
+<select id="frictionModel">
+<option value="kv">f = kv</option>
+<option value="kv2">f = kv²</option>
+</select>
+</div>
+<div class="ctrl-group">
+<label>معامل k <span class="val" id="kVal">0.50</span></label>
+<input type="range" id="kSlider" min="0.01" max="2.0" step="0.01" value="0.5">
+</div>
+<div class="ctrl-group">
+<label>كثافة المائع <span class="val" id="rhoVal">1.20</span> kg/m³</label>
+<input type="range" id="rhoSlider" min="0" max="1.3" step="0.01" value="1.2">
+</div>
+</div>
+<div class="btn-row">
+<button class="btn btn-play" id="playBtn">▶ تشغيل</button>
+<button class="btn btn-reset" id="resetBtn">↺ إعادة</button>
+<span style="font-size:11px;color:#94a3b8;margin-right:8px">السرعة:</span>
+<button class="btn btn-speed" data-speed="0.5">0.5×</button>
+<button class="btn btn-speed active" data-speed="1">1×</button>
+<button class="btn btn-speed" data-speed="2">2×</button>
+<button class="btn btn-speed" data-speed="5">5×</button>
+</div>
+</div>
+
+<div class="data-panel">
+<table class="data-table">
+<tr><th>الكمية</th><th>الوحدة</th><th>القيمة</th></tr>
+<tr><td>الزمن t</td><td>s</td><td class="val" id="dispTime">0.00</td></tr>
+<tr><td>السرعة v</td><td>m/s</td><td class="val" id="dispV">0.00</td></tr>
+<tr><td>التسارع a</td><td>m/s²</td><td class="val" id="dispA">9.81</td></tr>
+<tr><td>المسافة المقطوعة</td><td>m</td><td class="val" id="dispDist">0.00</td></tr>
+<tr id="vLRow"><td>السرعة الحدية vL</td><td>m/s</td><td class="val" id="dispVl">—</td></tr>
+<tr><td>ثابت الزمن τ</td><td>s</td><td class="val" id="dispτ">—</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="graphs-row">
+<div class="graph-wrap"><p>v(t) السرعة-الزمن</p><canvas id="graphV" width="220" height="160"></canvas></div>
+<div class="graph-wrap"><p>y(t) الموضع-الزمن</p><canvas id="graphY" width="220" height="160"></canvas></div>
+<div class="graph-wrap"><p>a(t) التسارع-الزمن</p><canvas id="graphA" width="220" height="160"></canvas></div>
+</div>
+
+<div class="energy-panel">
+<div class="energy-title">الطاقة</div>
+<div class="energy-bar-wrap">
+<span class="energy-label">الحركية Ec</span>
+<div class="energy-track"><div class="energy-fill" id="ecBar" style="width:0%;background:#22c55e"><span id="ecVal">0.0 J</span></div></div>
+</div>
+<div class="energy-bar-wrap">
+<span class="energy-label">الكامنة Ep</span>
+<div class="energy-track"><div class="energy-fill" id="epBar" style="width:100%;background:#3b82f6"><span id="epVal">0.0 J</span></div></div>
+</div>
+<div class="energy-bar-wrap">
+<span class="energy-label">الميكانيكية Em</span>
+<div class="energy-track"><div class="energy-fill" id="emBar" style="width:100%;background:#f59e0b"><span id="emVal">0.0 J</span></div></div>
+</div>
+<div class="legend-row">
+<span class="legend-item"><span class="legend-dot" style="background:#22c55e"></span> حركية</span>
+<span class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span> كامنة</span>
+<span class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span> ميكانيكية</span>
+</div>
+</div>
+</div>
+
+<script>
+const G = 9.81;
+const RHO_BALL = 7850;
+const PIXEL_SCALE = 10;
+const GROUND_Y = 370;
+const TOP_Y = 20;
+const BALL_RADIUS = 12;
+const TRAIL_LIMIT = 30;
+const CANVAS_W = 400;
+const CANVAS_H = 400;
+
+const mainC = document.getElementById('mainCanvas');
+const ctx = mainC.getContext('2d');
+const gvC = document.getElementById('graphV');
+const gvCtx = gvC.getContext('2d');
+const gyC = document.getElementById('graphY');
+const gyCtx = gyC.getContext('2d');
+const gaC = document.getElementById('graphA');
+const gaCtx = gaC.getContext('2d');
+
+const airResCB = document.getElementById('airResistance');
+const massSlider = document.getElementById('massSlider');
+const massVal = document.getElementById('massVal');
+const heightSlider = document.getElementById('heightSlider');
+const heightVal = document.getElementById('heightVal');
+const frictionModel = document.getElementById('frictionModel');
+const kSlider = document.getElementById('kSlider');
+const kVal = document.getElementById('kVal');
+const rhoSlider = document.getElementById('rhoSlider');
+const rhoVal = document.getElementById('rhoVal');
+const playBtn = document.getElementById('playBtn');
+const resetBtn = document.getElementById('resetBtn');
+const speedBtns = document.querySelectorAll('.btn-speed');
+
+const dispTime = document.getElementById('dispTime');
+const dispV = document.getElementById('dispV');
+const dispA = document.getElementById('dispA');
+const dispDist = document.getElementById('dispDist');
+const dispVl = document.getElementById('dispVl');
+const dispTau = document.getElementById('dispτ');
+const vLRow = document.getElementById('vLRow');
+
+const ecBar = document.getElementById('ecBar');
+const epBar = document.getElementById('epBar');
+const emBar = document.getElementById('emBar');
+const ecVal = document.getElementById('ecVal');
+const epVal = document.getElementById('epVal');
+const emVal = document.getElementById('emVal');
+
+let running = false;
+let paused = true;
+let speed = 1;
+let t = 0;
+let v = 0;
+let a = G;
+let y = 0;
+let maxY = 0;
+let trail = [];
+let historyV = [];
+let historyY = [];
+let historyA = [];
+let historyT = [];
+let lastFrame = 0;
+let crossed = false;
+let maxV = 0;
+let maxA = G;
+let maxT = 0;
+let vL = 0;
+let tau = 0;
+
+function getParams() {
+const m = parseFloat(massSlider.value) / 1000;
+const h = parseFloat(heightSlider.value);
+const model = frictionModel.value;
+const k = parseFloat(kSlider.value);
+const rho = parseFloat(rhoSlider.value);
+const air = airResCB.checked;
+return {m, h, model, k, rho, air};
+}
+
+function setVL() {
+const p = getParams();
+if (!p.air) { vL = 0; tau = 0; return; }
+const fa = p.rho * (p.m / RHO_BALL) * G;
+const w = p.m * G;
+const fNet = w - fa;
+if (fNet <= 0) { vL = 0; tau = p.m / p.k; return; }
+if (p.model === 'kv') {
+vL = fNet / p.k;
+tau = p.m / p.k;
+} else {
+vL = Math.sqrt(fNet / p.k);
+tau = p.m / p.k;
+}
+}
+
+let p = getParams();
+let fa = 0;
+let ff = 0;
+
+function resetSim() {
+const params = getParams();
+p = params;
+t = 0;
+v = 0;
+y = 0;
+crossed = false;
+trail = [];
+historyV = [];
+historyY = [];
+historyA = [];
+historyT = [];
+maxV = 0;
+maxA = G;
+maxT = 0;
+setVL();
+if (p.air) {
+fa = p.rho * (p.m / RHO_BALL) * G;
+} else {
+fa = 0;
+}
+computeAccel();
+paused = true;
+playBtn.textContent = '▶ تشغيل';
+running = false;
+updateDisplay();
+drawMain();
+drawAllGraphs();
+drawEnergy();
+}
+
+function computeAccel() {
+const params = getParams();
+p = params;
+const w = p.m * G;
+if (!p.air) {
+fa = 0;
+ff = 0;
+a = G;
+return;
+}
+fa = p.rho * (p.m / RHO_BALL) * G;
+const wNet = w - fa;
+if (p.model === 'kv') {
+ff = p.k * Math.abs(v);
+} else {
+ff = p.k * v * v;
+}
+if (v < 0) ff = -ff;
+const fNet = wNet - ff;
+a = fNet / p.m;
+}
+
+function stepPhysics(dt) {
+if (paused || !running) return;
+const s = speed;
+const step = dt * s;
+if (crossed) return;
+const oldV = v;
+computeAccel();
+v += a * step;
+if (v < 0) v = 0;
+const dy = v * step;
+y += dy;
+if (y >= p.h) {
+y = p.h;
+crossed = true;
+paused = true;
+playBtn.textContent = '▶ تشغيل';
+trail.push({y: p.h, t});
+const idx = Math.floor(t / 0.1);
+if (historyT.length === 0 || t - historyT[historyT.length - 1] > 0.01) {
+historyV.push(oldV);
+historyY.push(p.h);
+historyA.push(a);
+historyT.push(t);
+}
+updateDisplay();
+drawMain();
+drawAllGraphs();
+drawEnergy();
+return;
+}
+trail.push({y, t});
+if (trail.length > TRAIL_LIMIT) trail.shift();
+if (Math.abs(v) > maxV) maxV = Math.abs(v);
+if (Math.abs(a) > maxA) maxA = Math.abs(a);
+if (historyT.length === 0 || t - historyT[historyT.length - 1] > 0.01) {
+historyV.push(Math.abs(v));
+historyY.push(y);
+historyA.push(a);
+historyT.push(t);
+if (t > maxT) maxT = t;
+}
+t += step;
+updateDisplay();
+drawMain();
+drawAllGraphs();
+drawEnergy();
+}
+
+function updateDisplay() {
+dispTime.textContent = t.toFixed(2);
+dispV.textContent = Math.abs(v).toFixed(2);
+dispA.textContent = a.toFixed(2);
+dispDist.textContent = y.toFixed(2);
+const params = getParams();
+if (params.air && vL > 0) {
+vLRow.style.display = '';
+dispVl.textContent = vL.toFixed(2);
+dispTau.textContent = (p.m / params.k).toFixed(2);
+} else {
+vLRow.style.display = 'none';
+if (!params.air) {
+dispTau.textContent = '—';
+} else {
+dispTau.textContent = (p.m / params.k).toFixed(2);
+}
+}
+}
+
+function drawMain() {
+ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
+ctx.fillStyle = '#0f172a';
+ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+const params = getParams();
+const h = params.h;
+const pxPerM = (GROUND_Y - TOP_Y) / h;
+const yPx = TOP_Y + y * pxPerM;
+const cx = 200;
+ctx.setLineDash([6, 4]);
+ctx.strokeStyle = '#475569';
+ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(cx, TOP_Y);
+ctx.lineTo(cx, GROUND_Y);
+ctx.stroke();
+ctx.setLineDash([]);
+ctx.strokeStyle = '#334155';
+ctx.lineWidth = 3;
+ctx.beginPath();
+ctx.moveTo(0, GROUND_Y);
+ctx.lineTo(CANVAS_W, GROUND_Y);
+ctx.stroke();
+ctx.fillStyle = '#64748b';
+ctx.font = '10px sans-serif';
+ctx.textAlign = 'right';
+for (let hh = 0; hh <= h; hh += 10) {
+const yy = TOP_Y + hh * pxPerM;
+if (yy < GROUND_Y - 2) {
+ctx.strokeStyle = '#1e293b';
+ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(cx - 5, yy);
+ctx.lineTo(cx + 5, yy);
+ctx.stroke();
+ctx.fillStyle = '#64748b';
+ctx.fillText(hh + '', 185, yy + 3);
+}
+}
+ctx.textAlign = 'center';
+ctx.fillStyle = '#475569';
+ctx.font = '9px sans-serif';
+ctx.fillText('h (m)', 180, 14);
+
+for (const tr of trail) {
+const yy = TOP_Y + tr.y * pxPerM;
+const age = (t - tr.t) / (t || 1);
+const alpha = Math.max(0.15, 1 - age * 0.7);
+ctx.beginPath();
+ctx.arc(cx, yy, 4, 0, Math.PI * 2);
+ctx.fillStyle = `rgba(245,158,11,${alpha})`;
+ctx.fill();
+}
+
+const bx = cx;
+const by = Math.min(yPx, GROUND_Y - BALL_RADIUS);
+const grad = ctx.createRadialGradient(bx - 4, by - 4, 2, bx, by, BALL_RADIUS);
+grad.addColorStop(0, '#fcd34d');
+grad.addColorStop(1, '#f59e0b');
+ctx.beginPath();
+ctx.arc(bx, by, BALL_RADIUS, 0, Math.PI * 2);
+ctx.fillStyle = grad;
+ctx.fill();
+ctx.strokeStyle = '#d97706';
+ctx.lineWidth = 1.5;
+ctx.stroke();
+
+const forceScale = 1.5;
+const w = params.m * G;
+const wPx = w * forceScale;
+ctx.strokeStyle = '#8b5cf6';
+ctx.lineWidth = 2.5;
+ctx.beginPath();
+ctx.moveTo(bx, by);
+ctx.lineTo(bx, by + wPx);
+ctx.stroke();
+ctx.fillStyle = '#8b5cf6';
+ctx.font = 'bold 11px sans-serif';
+ctx.textAlign = 'center';
+ctx.fillText('P', bx, by + wPx + 14);
+ctx.beginPath();
+ctx.moveTo(bx, by + wPx + 2);
+ctx.lineTo(bx - 5, by + wPx + 8);
+ctx.lineTo(bx + 5, by + wPx + 8);
+ctx.closePath();
+ctx.fillStyle = '#8b5cf6';
+ctx.fill();
+
+if (params.air) {
+const faPx = fa * forceScale;
+if (faPx > 2) {
+ctx.strokeStyle = '#3b82f6';
+ctx.lineWidth = 2;
+ctx.beginPath();
+ctx.moveTo(bx, by);
+ctx.lineTo(bx, by - faPx);
+ctx.stroke();
+ctx.fillStyle = '#3b82f6';
+ctx.font = 'bold 11px sans-serif';
+ctx.textAlign = 'center';
+ctx.fillText('F_A', bx + 22, by - faPx);
+ctx.beginPath();
+ctx.moveTo(bx, by - faPx - 2);
+ctx.lineTo(bx - 5, by - faPx - 8);
+ctx.lineTo(bx + 5, by - faPx - 8);
+ctx.closePath();
+ctx.fillStyle = '#3b82f6';
+ctx.fill();
+}
+const ffPx = ff * forceScale;
+if (ffPx > 2) {
+ctx.strokeStyle = '#f97316';
+ctx.lineWidth = 2;
+ctx.beginPath();
+ctx.moveTo(bx + 15, by);
+ctx.lineTo(bx + 15, by - ffPx);
+ctx.stroke();
+ctx.fillStyle = '#f97316';
+ctx.font = 'bold 11px sans-serif';
+ctx.textAlign = 'center';
+ctx.fillText('f', bx + 15, by - ffPx - 8);
+ctx.beginPath();
+ctx.moveTo(bx + 15, by - ffPx - 2);
+ctx.lineTo(bx + 10, by - ffPx - 8);
+ctx.lineTo(bx + 20, by - ffPx - 8);
+ctx.closePath();
+ctx.fillStyle = '#f97316';
+ctx.fill();
+}
+}
+}
+
+function drawGraphBase(ctx, w, h) {
+ctx.fillStyle = '#1e293b';
+ctx.fillRect(0, 0, w, h);
+ctx.strokeStyle = '#334155';
+ctx.lineWidth = 1;
+ctx.strokeRect(0, 0, w, h);
+}
+
+function drawGrid(ctx, w, h) {
+ctx.strokeStyle = '#1e293b';
+ctx.lineWidth = 0.5;
+for (let x = 0; x <= w; x += 20) {
+ctx.beginPath();
+ctx.moveTo(x, 0);
+ctx.lineTo(x, h);
+ctx.stroke();
+}
+for (let y = 0; y <= h; y += 20) {
+ctx.beginPath();
+ctx.moveTo(0, y);
+ctx.lineTo(w, y);
+ctx.stroke();
+}
+}
+
+function drawAllGraphs() {
+drawGraphV();
+drawGraphY();
+drawGraphA();
+}
+
+function drawGraphV() {
+const w = 220, h = 160;
+const ctx = gvCtx;
+drawGraphBase(ctx, w, h);
+drawGrid(ctx, w, h);
+ctx.textAlign = 'center';
+ctx.fillStyle = '#64748b';
+ctx.font = '9px sans-serif';
+ctx.fillText('الزمن (s)', w / 2, h - 4);
+ctx.save();
+ctx.translate(10, h / 2);
+ctx.rotate(-Math.PI / 2);
+ctx.fillText('السرعة (m/s)', 0, 0);
+ctx.restore();
+
+const padL = 30, padR = 10, padT = 10, padB = 18;
+const pw = w - padL - padR;
+const ph = h - padT - padB;
+if (historyT.length < 2) return;
+const tMax = Math.max(maxT, 1);
+const vMax = maxV > 0 ? maxV * 1.15 : 10;
+const params = getParams();
+
+if (params.air && vL > 0) {
+const vlY = padT + ph * (1 - vL / vMax);
+ctx.setLineDash([4, 4]);
+ctx.strokeStyle = '#ef4444';
+ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(padL, vlY);
+ctx.lineTo(padL + pw, vlY);
+ctx.stroke();
+ctx.setLineDash([]);
+ctx.fillStyle = '#ef4444';
+ctx.font = '8px sans-serif';
+ctx.textAlign = 'left';
+ctx.fillText('v_L=' + vL.toFixed(1), padL + pw - 2, vlY - 2);
+}
+
+if (tau > 0) {
+const tx = padL + pw * (tau / tMax);
+if (tx <= padL + pw) {
+ctx.setLineDash([4, 4]);
+ctx.strokeStyle = '#a855f7';
+ctx.lineWidth = 1;
+ctx.beginPath();
+ctx.moveTo(tx, padT);
+ctx.lineTo(tx, padT + ph);
+ctx.stroke();
+ctx.setLineDash([]);
+ctx.fillStyle = '#a855f7';
+ctx.font = '8px sans-serif';
+ctx.textAlign = 'center';
+ctx.fillText('τ', tx, padT + 10);
+}
+}
+
+ctx.strokeStyle = '#f59e0b';
+ctx.lineWidth = 1.5;
+ctx.beginPath();
+for (let i = 0; i < historyT.length; i++) {
+const x = padL + pw * (historyT[i] / tMax);
+const vy = padT + ph * (1 - Math.min(historyV[i], vMax) / vMax);
+if (i === 0) ctx.moveTo(x, vy);
+else ctx.lineTo(x, vy);
+}
+ctx.stroke();
+}
+
+function drawGraphY() {
+const w = 220, h = 160;
+const ctx = gyCtx;
+drawGraphBase(ctx, w, h);
+drawGrid(ctx, w, h);
+ctx.textAlign = 'center';
+ctx.fillStyle = '#64748b';
+ctx.font = '9px sans-serif';
+ctx.fillText('الزمن (s)', w / 2, h - 4);
+ctx.save();
+ctx.translate(10, h / 2);
+ctx.rotate(-Math.PI / 2);
+ctx.fillText('الموضع (m)', 0, 0);
+ctx.restore();
+
+const padL = 30, padR = 10, padT = 10, padB = 18;
+const pw = w - padL - padR;
+const ph = h - padT - padB;
+if (historyT.length < 2) return;
+const tMax = Math.max(maxT, 1);
+const params = getParams();
+const yMax = params.h || 1;
+
+ctx.strokeStyle = '#3b82f6';
+ctx.lineWidth = 1.5;
+ctx.beginPath();
+for (let i = 0; i < historyT.length; i++) {
+const x = padL + pw * (historyT[i] / tMax);
+const yy = padT + ph * (1 - historyY[i] / yMax);
+if (i === 0) ctx.moveTo(x, yy);
+else ctx.lineTo(x, yy);
+}
+ctx.stroke();
+}
+
+function drawGraphA() {
+const w = 220, h = 160;
+const ctx = gaCtx;
+drawGraphBase(ctx, w, h);
+drawGrid(ctx, w, h);
+ctx.textAlign = 'center';
+ctx.fillStyle = '#64748b';
+ctx.font = '9px sans-serif';
+ctx.fillText('الزمن (s)', w / 2, h - 4);
+ctx.save();
+ctx.translate(10, h / 2);
+ctx.rotate(-Math.PI / 2);
+ctx.fillText('التسارع (m/s²)', 0, 0);
+ctx.restore();
+
+const padL = 30, padR = 10, padT = 10, padB = 18;
+const pw = w - padL - padR;
+const ph = h - padT - padB;
+if (historyT.length < 2) return;
+const tMax = Math.max(maxT, 1);
+const aMax = Math.max(maxA, G) * 1.15;
+
+ctx.setLineDash([4, 4]);
+ctx.strokeStyle = '#22c55e';
+ctx.lineWidth = 1;
+const gY = padT + ph * (1 - G / aMax);
+ctx.beginPath();
+ctx.moveTo(padL, gY);
+ctx.lineTo(padL + pw, gY);
+ctx.stroke();
+ctx.setLineDash([]);
+ctx.fillStyle = '#22c55e';
+ctx.font = '8px sans-serif';
+ctx.textAlign = 'left';
+ctx.fillText('g=' + G.toFixed(1), padL + pw - 2, gY - 2);
+
+ctx.strokeStyle = '#22c55e';
+ctx.lineWidth = 1.5;
+ctx.beginPath();
+for (let i = 0; i < historyT.length; i++) {
+const x = padL + pw * (historyT[i] / tMax);
+const ay = padT + ph * (1 - Math.min(historyA[i], aMax) / aMax);
+if (i === 0) ctx.moveTo(x, ay);
+else ctx.lineTo(x, ay);
+}
+ctx.stroke();
+}
+
+function drawEnergy() {
+const params = getParams();
+const m = params.m;
+const h = params.h;
+const currentH = Math.max(h - y, 0);
+const vv = Math.abs(v);
+const ec = 0.5 * m * vv * vv;
+const ep = m * G * currentH;
+const em = ec + ep;
+const maxE = m * G * h;
+const ecPct = maxE > 0 ? (ec / maxE) * 100 : 0;
+const epPct = maxE > 0 ? (ep / maxE) * 100 : 0;
+const emPct = maxE > 0 ? (em / maxE) * 100 : 0;
+ecBar.style.width = Math.min(ecPct, 100) + '%';
+epBar.style.width = Math.min(epPct, 100) + '%';
+emBar.style.width = Math.min(emPct, 100) + '%';
+ecVal.textContent = ec.toFixed(1) + ' J';
+epVal.textContent = ep.toFixed(1) + ' J';
+emVal.textContent = em.toFixed(1) + ' J';
+}
+
+function loop(time) {
+if (!lastFrame) lastFrame = time;
+const dt = Math.min((time - lastFrame) / 1000, 0.05);
+lastFrame = time;
+stepPhysics(dt);
+requestAnimationFrame(loop);
+}
+
+massSlider.addEventListener('input', () => {
+massVal.textContent = massSlider.value;
+if (paused) { resetSim(); drawMain(); drawAllGraphs(); drawEnergy(); }
+});
+heightSlider.addEventListener('input', () => {
+heightVal.textContent = heightSlider.value;
+if (paused) { resetSim(); drawMain(); drawAllGraphs(); drawEnergy(); }
+});
+kSlider.addEventListener('input', () => {
+kVal.textContent = parseFloat(kSlider.value).toFixed(2);
+if (paused) { setVL(); resetSim(); drawMain(); drawAllGraphs(); drawEnergy(); }
+});
+rhoSlider.addEventListener('input', () => {
+rhoVal.textContent = parseFloat(rhoSlider.value).toFixed(2);
+if (paused) { setVL(); resetSim(); drawMain(); drawAllGraphs(); drawEnergy(); }
+});
+frictionModel.addEventListener('change', () => {
+if (paused) { setVL(); resetSim(); drawMain(); drawAllGraphs(); drawEnergy(); }
+});
+airResCB.addEventListener('change', () => {
+if (paused) { setVL(); resetSim(); drawMain(); drawAllGraphs(); drawEnergy(); }
+});
+
+playBtn.addEventListener('click', () => {
+if (crossed) { resetSim(); }
+paused = !paused;
+running = true;
+playBtn.textContent = paused ? '▶ تشغيل' : '⏸ إيقاف';
+if (!paused) lastFrame = 0;
+});
+
+resetBtn.addEventListener('click', resetSim);
+
+speedBtns.forEach(btn => {
+btn.addEventListener('click', () => {
+speedBtns.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+speed = parseFloat(btn.dataset.speed);
+});
+});
+
+resetSim();
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

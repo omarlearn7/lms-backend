@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكاة تفاعلية: القوى والعمل والطاقة</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f172a; color: #e2e8f0; font-family: 'Segoe UI', Tahoma, sans-serif; display: flex; justify-content: center; padding: 20px; }
+.container { max-width: 750px; width: 100%; }
+h1 { text-align: center; font-size: 1.4rem; margin-bottom: 12px; color: #f8fafc; }
+canvas { display: block; width: 100%; max-width: 700px; height: auto; margin: 0 auto; border-radius: 8px; border: 1px solid #1e293b; background: #0f172a; }
+.controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; padding: 14px; background: #1e293b; border-radius: 8px; border: 1px solid #334155; }
+.control-group { display: flex; flex-direction: column; gap: 4px; }
+.control-group label { font-size: 0.8rem; color: #94a3b8; display: flex; justify-content: space-between; align-items: center; }
+.control-group label span { color: #e2e8f0; font-weight: bold; font-size: 0.85rem; direction: ltr; display: inline-block; }
+.control-group input[type="range"] { width: 100%; height: 6px; -webkit-appearance: none; appearance: none; background: #334155; border-radius: 3px; outline: none; cursor: pointer; }
+.control-group input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #3b82f6; cursor: pointer; border: 2px solid #1e293b; }
+.control-group input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: #3b82f6; cursor: pointer; border: 2px solid #1e293b; }
+.control-group input[type="range"]::-moz-range-track { background: #334155; border-radius: 3px; height: 6px; }
+.controls-actions { grid-column: 1 / -1; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+.btn { padding: 7px 16px; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; transition: opacity 0.15s; }
+.btn:hover { opacity: 0.85; }
+.btn-play { background: #22c55e; color: #fff; }
+.btn-pause { background: #eab308; color: #000; }
+.btn-reset { background: #64748b; color: #fff; }
+.speed-group { display: flex; align-items: center; gap: 8px; margin-right: auto; }
+.speed-group label { font-size: 0.8rem; color: #94a3b8; white-space: nowrap; }
+.speed-group input[type="range"] { width: 80px; }
+.speed-group .speed-val { font-size: 0.85rem; font-weight: bold; color: #e2e8f0; min-width: 30px; direction: ltr; }
+.data-panel { margin-top: 10px; padding: 12px 14px; background: #1e293b; border-radius: 8px; border: 1px solid #334155; }
+.data-panel h3 { font-size: 0.9rem; margin-bottom: 8px; color: #f8fafc; }
+.data-table { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px 16px; font-size: 0.82rem; }
+.data-row { display: flex; justify-content: space-between; padding: 3px 6px; border-radius: 4px; background: #0f172a; }
+.data-row .label { color: #94a3b8; }
+.data-row .value { color: #e2e8f0; font-weight: bold; direction: ltr; }
+.energy-chart { margin-top: 10px; padding: 12px 14px; background: #1e293b; border-radius: 8px; border: 1px solid #334155; }
+.energy-chart h3 { font-size: 0.9rem; margin-bottom: 8px; color: #f8fafc; }
+.energy-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.energy-label { font-size: 0.78rem; color: #94a3b8; min-width: 80px; text-align: left; }
+.energy-track { flex: 1; height: 22px; background: #0f172a; border-radius: 4px; overflow: hidden; position: relative; }
+.energy-fill { height: 100%; border-radius: 4px; transition: width 0.08s linear; display: flex; align-items: center; justify-content: flex-end; padding: 0 6px; font-size: 0.72rem; font-weight: bold; color: #fff; min-width: 0; direction: ltr; white-space: nowrap; }
+.energy-fill.blue { background: #3b82f6; }
+.energy-fill.green { background: #22c55e; }
+.energy-fill.orange { background: #f59e0b; }
+.energy-value { font-size: 0.78rem; font-weight: bold; color: #e2e8f0; min-width: 55px; direction: ltr; text-align: right; }
+@media (max-width: 600px) {
+  .controls { grid-template-columns: 1fr; }
+  .data-table { grid-template-columns: 1fr 1fr; }
+  .energy-label { min-width: 60px; font-size: 0.72rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>محاكاة تفاعلية: القوى والعمل والطاقة</h1>
+  <canvas id="sim-canvas" width="700" height="350"></canvas>
+
+  <div class="controls">
+    <div class="control-group">
+      <label>الكتلة <span id="mass-val">5.0</span> kg</label>
+      <input type="range" id="mass" min="0.5" max="20" step="0.5" value="5">
+    </div>
+    <div class="control-group">
+      <label>شدة القوة <span id="force-val">30</span> N</label>
+      <input type="range" id="force" min="1" max="100" step="1" value="30">
+    </div>
+    <div class="control-group">
+      <label>زاوية القوة <span id="angle-val">0</span>°</label>
+      <input type="range" id="angle" min="0" max="180" step="1" value="0">
+    </div>
+    <div class="control-group">
+      <label>معامل الاحتكاك <span id="mu-val">0.10</span></label>
+      <input type="range" id="mu" min="0" max="0.8" step="0.01" value="0.1">
+    </div>
+    <div class="controls-actions">
+      <button class="btn btn-play" id="play-btn">▶ تشغيل</button>
+      <button class="btn btn-reset" id="reset-btn">↺ إعادة</button>
+      <div class="speed-group">
+        <label>السرعة</label>
+        <input type="range" id="speed" min="0.5" max="5" step="0.1" value="1">
+        <span class="speed-val" id="speed-val">1.0</span><span style="font-size:0.75rem;color:#94a3b8;">x</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-panel">
+    <h3>البيانات الفيزيائية</h3>
+    <div class="data-table" id="data-table">
+      <div class="data-row"><span class="label">القوة المحصلة (N)</span><span class="value" id="d-fnet">0.00</span></div>
+      <div class="data-row"><span class="label">التسارع (m/s²)</span><span class="value" id="d-acc">0.00</span></div>
+      <div class="data-row"><span class="label">السرعة (m/s)</span><span class="value" id="d-vel">0.00</span></div>
+      <div class="data-row"><span class="label">الإزاحة (m)</span><span class="value" id="d-disp">0.00</span></div>
+      <div class="data-row"><span class="label">الشغل المبذول (J)</span><span class="value" id="d-work">0.00</span></div>
+      <div class="data-row"><span class="label">الطاقة الحركية (J)</span><span class="value" id="d-ke">0.00</span></div>
+    </div>
+  </div>
+
+  <div class="energy-chart">
+    <h3>مخطط الطاقة</h3>
+    <div class="energy-row">
+      <span class="energy-label">الشغل المبذول</span>
+      <div class="energy-track"><div class="energy-fill blue" id="bar-work" style="width:0%">0.0 J</div></div>
+      <span class="energy-value" id="val-work">0.0 J</span>
+    </div>
+    <div class="energy-row">
+      <span class="energy-label">الطاقة الحركية</span>
+      <div class="energy-track"><div class="energy-fill green" id="bar-ke" style="width:0%">0.0 J</div></div>
+      <span class="energy-value" id="val-ke">0.0 J</span>
+    </div>
+    <div class="energy-row">
+      <span class="energy-label">الطاقة الميكانيكية</span>
+      <div class="energy-track"><div class="energy-fill orange" id="bar-em" style="width:0%">0.0 J</div></div>
+      <span class="energy-value" id="val-em">0.0 J</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const canvas = document.getElementById('sim-canvas');
+  const ctx = canvas.getContext('2d');
+  const W = 700, H = 350;
+
+  const g = 9.8;
+  const GROUND_Y = 300;
+  const BOX_W = 80, BOX_H = 60;
+
+  let mass = 5, force = 30, angle = 0, mu = 0.1, speedMul = 1;
+  let playing = false;
+  let v = 0, d = 0, boxX = 50;
+  let lastTime = 0;
+
+  const $ = id => document.getElementById(id);
+  const massInp = $('mass'), forceInp = $('force'), angleInp = $('angle');
+  const muInp = $('mu'), speedInp = $('speed');
+  const massVal = $('mass-val'), forceVal = $('force-val'), angleVal = $('angle-val');
+  const muVal = $('mu-val'), speedVal = $('speed-val');
+  const playBtn = $('play-btn'), resetBtn = $('reset-btn');
+
+  const dFnet = $('d-fnet'), dAcc = $('d-acc'), dVel = $('d-vel');
+  const dDisp = $('d-disp'), dWork = $('d-work'), dKe = $('d-ke');
+  const barWork = $('bar-work'), barKe = $('bar-ke'), barEm = $('bar-em');
+  const valWork = $('val-work'), valKe = $('val-ke'), valEm = $('val-em');
+
+  function setupCanvas() {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.scale(dpr, dpr);
+  }
+  setupCanvas();
+
+  function readControls() {
+    mass = parseFloat(massInp.value);
+    force = parseFloat(forceInp.value);
+    angle = parseFloat(angleInp.value);
+    mu = parseFloat(muInp.value);
+    speedMul = parseFloat(speedInp.value);
+    massVal.textContent = mass.toFixed(1);
+    forceVal.textContent = force.toFixed(0);
+    angleVal.textContent = angle;
+    muVal.textContent = mu.toFixed(2);
+    speedVal.textContent = speedMul.toFixed(1);
+  }
+
+  function physics(dt) {
+    if (!playing) return;
+    const theta = angle * Math.PI / 180;
+    const Fx = force * Math.cos(theta);
+    const Fy = force * Math.sin(theta);
+    const mg = mass * g;
+    let N = mg - Fy;
+    if (N < 0) N = 0;
+    let f;
+    if (v > 0.001) {
+      f = mu * N;
+    } else {
+      f = Math.min(mu * N, Math.abs(Fx));
+    }
+    let Fnet = 0;
+    if (v > 0.001) {
+      Fnet = Fx - f;
+    } else {
+      if (Fx > f) Fnet = Fx - f;
+      else Fnet = 0;
+    }
+    const a = Fnet / mass;
+    v += a * dt * speedMul;
+    if (v < 0) v = 0;
+    if (v > 0) {
+      d += v * dt * speedMul;
+      boxX += v * dt * speedMul;
+    }
+    if (boxX > 600) {
+      boxX = 50;
+    }
+  }
+
+  function drawArrow(x1, y1, angleRad, length, color, lw) {
+    if (length < 0.5) return;
+    const x2 = x1 + Math.cos(angleRad) * length;
+    const y2 = y1 + Math.sin(angleRad) * length;
+    const headLen = 10, headAng = Math.PI / 6;
+    const ang = Math.atan2(y2 - y1, x2 - x1);
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lw || 2;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - headLen * Math.cos(ang - headAng), y2 - headLen * Math.sin(ang - headAng));
+    ctx.lineTo(x2 - headLen * Math.cos(ang + headAng), y2 - headLen * Math.sin(ang + headAng));
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+
+  function drawLabel(text, x, y, color, align) {
+    ctx.save();
+    ctx.font = 'bold 12px "Segoe UI", Tahoma, sans-serif';
+    ctx.textAlign = align || 'center';
+    ctx.textBaseline = 'middle';
+    ctx.strokeStyle = '#0f172a';
+    ctx.lineWidth = 3;
+    ctx.strokeText(text, x, y);
+    ctx.fillStyle = color || '#e2e8f0';
+    ctx.fillText(text, x, y);
+    ctx.restore();
+  }
+
+  function render() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(0, 0, W, H);
+
+    const theta = angle * Math.PI / 180;
+    const Fx = force * Math.cos(theta);
+    const Fy = force * Math.sin(theta);
+    const mg = mass * g;
+    let N = mg - Fy;
+    if (N < 0) N = 0;
+    let f, isMoving = v > 0.001;
+    if (isMoving) {
+      f = mu * N;
+    } else {
+      f = Math.min(mu * N, Math.abs(Fx));
+    }
+    let Fnet = 0;
+    if (isMoving) {
+      Fnet = Fx - f;
+    } else {
+      if (Fx > f) Fnet = Fx - f;
+    }
+    const a = Fnet / mass;
+    const Wk = Fx * d;
+    const Ek = 0.5 * mass * v * v;
+
+    const cx = boxX, cy = GROUND_Y - BOX_H / 2;
+
+    ctx.strokeStyle = '#64748b';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(0, GROUND_Y);
+    ctx.lineTo(W, GROUND_Y);
+    ctx.stroke();
+
+    ctx.fillStyle = '#475569';
+    ctx.strokeStyle = '#334155';
+    ctx.lineWidth = 1.5;
+    const bx = cx - BOX_W / 2, by = GROUND_Y - BOX_H;
+    ctx.beginPath();
+    ctx.roundRect(bx, by, BOX_W, BOX_H, 4);
+    ctx.fill();
+    ctx.stroke();
+
+    const forceScale = 1.8;
+    const forceLen = Math.min(force * forceScale, 140);
+    const forceAng = Math.atan2(-Math.sin(theta), Math.cos(theta));
+    drawArrow(cx, cy, forceAng, forceLen, '#ef4444', 2.5);
+    const flx = cx + Math.cos(forceAng) * forceLen * 0.5;
+    const fly = cy + Math.sin(forceAng) * forceLen * 0.5;
+    const fOffAng = forceAng + Math.PI / 2;
+    drawLabel('F = ' + force.toFixed(0) + ' N', flx + Math.cos(fOffAng) * 18, fly + Math.sin(fOffAng) * 18, '#ef4444');
+
+    const mgLen = Math.min(mg * 1.2, 100);
+    drawArrow(cx, cy, Math.PI / 2, mgLen, '#8b5cf6', 2);
+    drawLabel('mg = ' + mg.toFixed(1) + ' N', cx + 22, cy + mgLen * 0.5, '#8b5cf6', 'right');
+
+    const nLen = Math.min(N * 1.2, 100);
+    if (nLen > 1) {
+      drawArrow(cx, GROUND_Y, -Math.PI / 2, nLen, '#22c55e', 2);
+      drawLabel('N = ' + N.toFixed(1) + ' N', cx + 22, GROUND_Y - nLen * 0.5, '#22c55e', 'right');
+    }
+
+    const fricLen = Math.min(f * 1.8, 100);
+    if (fricLen > 1) {
+      drawArrow(cx, cy, Math.PI, fricLen, '#f59e0b', 2);
+      drawLabel('f = ' + f.toFixed(2) + ' N', cx - fricLen * 0.5, cy - 18, '#f59e0b');
+    }
+
+    if (v > 0.01) {
+      const vScale = 18;
+      const vLen = Math.min(v * vScale, 120);
+      const vy = GROUND_Y - BOX_H - 20;
+      drawArrow(cx, vy, 0, vLen, '#3b82f6', 2);
+      drawLabel('v = ' + v.toFixed(2) + ' m/s', cx + vLen * 0.5, vy - 16, '#3b82f6');
+    }
+
+    const dispY = GROUND_Y + 28;
+    const dispEnd = Math.min(boxX, 620);
+    if (dispEnd > 60) {
+      ctx.setLineDash([5, 4]);
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(60, dispY);
+      ctx.lineTo(dispEnd, dispY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(60, dispY - 4);
+      ctx.lineTo(60, dispY + 4);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(dispEnd, dispY - 4);
+      ctx.lineTo(dispEnd, dispY + 4);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(dispEnd, dispY);
+      ctx.lineTo(dispEnd - 7, dispY - 4);
+      ctx.lineTo(dispEnd - 7, dispY + 4);
+      ctx.closePath();
+      ctx.fillStyle = '#64748b';
+      ctx.fill();
+    }
+    drawLabel('d = ' + d.toFixed(2) + ' m', (60 + Math.max(dispEnd, 60)) / 2, dispY + 16, '#94a3b8');
+
+    dFnet.textContent = Fnet.toFixed(2);
+    dAcc.textContent = a.toFixed(2);
+    dVel.textContent = v.toFixed(2);
+    dDisp.textContent = d.toFixed(2);
+    dWork.textContent = Wk.toFixed(2);
+    dKe.textContent = Ek.toFixed(2);
+
+    const maxE = Math.max(Wk, Ek, 1);
+    const pW = Math.min((Wk / maxE) * 100, 100);
+    const pK = Math.min((Ek / maxE) * 100, 100);
+    const pM = Math.min((Ek / maxE) * 100, 100);
+    barWork.style.width = pW + '%';
+    barWork.textContent = Wk.toFixed(1) + ' J';
+    barKe.style.width = pK + '%';
+    barKe.textContent = Ek.toFixed(1) + ' J';
+    barEm.style.width = pM + '%';
+    barEm.textContent = Ek.toFixed(1) + ' J';
+    valWork.textContent = Wk.toFixed(1) + ' J';
+    valKe.textContent = Ek.toFixed(1) + ' J';
+    valEm.textContent = Ek.toFixed(1) + ' J';
+  }
+
+  function loop(ts) {
+    if (!lastTime) lastTime = ts;
+    let dt = (ts - lastTime) / 1000;
+    if (dt > 0.05) dt = 0.05;
+    lastTime = ts;
+    readControls();
+    physics(dt);
+    render();
+    requestAnimationFrame(loop);
+  }
+
+  massInp.addEventListener('input', () => { readControls(); resetSim(); });
+  forceInp.addEventListener('input', readControls);
+  angleInp.addEventListener('input', readControls);
+  muInp.addEventListener('input', readControls);
+  speedInp.addEventListener('input', () => {
+    speedMul = parseFloat(speedInp.value);
+    speedVal.textContent = speedMul.toFixed(1);
+  });
+
+  function resetSim() {
+    v = 0; d = 0; boxX = 50; lastTime = 0;
+  }
+
+  playBtn.addEventListener('click', () => {
+    playing = !playing;
+    if (playing) {
+      if (v < 0.001 && d < 0.001) { d = 0; boxX = 50; }
+      playBtn.textContent = '⏸ إيقاف';
+      playBtn.className = 'btn btn-pause';
+      lastTime = 0;
+    } else {
+      playBtn.textContent = '▶ تشغيل';
+      playBtn.className = 'btn btn-play';
+    }
+  });
+
+  resetBtn.addEventListener('click', () => {
+    playing = false;
+    playBtn.textContent = '▶ تشغيل';
+    playBtn.className = 'btn btn-play';
+    resetSim();
+  });
+
+  if (!CanvasRenderingContext2D.prototype.roundRect) {
+    CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
+      if (r > w / 2) r = w / 2;
+      if (r > h / 2) r = h / 2;
+      this.moveTo(x + r, y);
+      this.lineTo(x + w - r, y);
+      this.quadraticCurveTo(x + w, y, x + w, y + r);
+      this.lineTo(x + w, y + h - r);
+      this.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      this.lineTo(x + r, y + h);
+      this.quadraticCurveTo(x, y + h, x, y + h - r);
+    this.lineTo(x, y + r);
+    this.quadraticCurveTo(x, y, x + r, y);
+    this.closePath();
+  };
+}
+
+  readControls();
+  resetSim();
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

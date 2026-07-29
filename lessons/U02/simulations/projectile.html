@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكاة تفاعلية: حركة القذيفة</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:20px;min-height:100vh}
+.container{max-width:1100px;width:100%}
+h1{text-align:center;font-size:22px;margin-bottom:12px;color:#fbbf24}
+.main-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+canvas#mainCanvas{background:#0f172a;border:1px solid #334155;border-radius:8px;display:block}
+.sidebar{flex:1;min-width:280px;max-width:360px}
+.controls{background:#1e293b;border-radius:8px;padding:12px;margin-bottom:10px;border:1px solid #334155}
+.ctrl-grid{display:grid;gap:8px}
+.ctrl-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.ctrl-group{display:flex;flex-direction:column;gap:2px;flex:1;min-width:100px}
+.ctrl-group label{font-size:11px;color:#94a3b8}
+.ctrl-group .ctrl-val{font-size:11px;color:#fbbf24;margin-right:4px}
+.ctrl-group .ctrl-note{font-size:10px;color:#64748b}
+input[type=range]{-webkit-appearance:none;width:100%;height:4px;border-radius:2px;background:#334155;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer;border:none}
+input[type=checkbox]{accent-color:#f59e0b;width:16px;height:16px;margin-left:6px;vertical-align:middle}
+.checkbox-label{font-size:12px;cursor:pointer;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.btn-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.btn{background:#334155;color:#e2e8f0;border:none;border-radius:6px;padding:6px 14px;font-size:12px;cursor:pointer;transition:background .15s}
+.btn:hover{background:#475569}
+.btn-play{background:#3b82f6;color:#fff}
+.btn-play:hover{background:#2563eb}
+.btn-reset{background:#64748b;color:#fff}
+.btn-reset:hover{background:#475569}
+.btn-speed{background:#1e293b;border:1px solid #334155;border-radius:6px;padding:4px 10px;font-size:11px}
+.btn-speed.active{background:#f59e0b;color:#0f172a;border-color:#f59e0b}
+.data-panel{background:#1e293b;border-radius:8px;padding:10px;border:1px solid #334155;margin-bottom:10px}
+.data-table{width:100%;border-collapse:collapse;font-size:11px}
+.data-table td{padding:2px 6px;border-bottom:1px solid #0f172a}
+.data-table td.label{color:#94a3b8;white-space:nowrap}
+.data-table td.val{color:#e2e8f0;font-weight:700;direction:ltr;text-align:right;font-family:'Consolas','Courier New',monospace}
+.data-table tr.final td.label{color:#fbbf24}
+.graphs-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.graph-wrap{background:#1e293b;border-radius:8px;padding:8px;border:1px solid #334155;text-align:center}
+.graph-wrap p{font-size:11px;color:#94a3b8;margin-bottom:4px}
+.graph-wrap canvas{background:#1e293b;border-radius:4px;display:block}
+@media(max-width:800px){.sidebar{max-width:100%}.ctrl-group{min-width:80px}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>محاكاة تفاعلية: حركة القذيفة</h1>
+
+<div class="main-row">
+<canvas id="mainCanvas" width="700" height="400"></canvas>
+
+<div class="sidebar">
+<div class="controls">
+<div class="ctrl-grid">
+
+<div class="ctrl-row">
+<div class="ctrl-group">
+<label>زاوية القذف α <span class="ctrl-val" id="alphaVal">30</span>°</label>
+<input type="range" id="alphaSlider" min="1" max="89" step="1" value="30" dir="ltr">
+</div>
+<div class="ctrl-group">
+<label>السرعة الابتدائية v₀ <span class="ctrl-val" id="v0Val">20</span> m/s</label>
+<input type="range" id="v0Slider" min="5" max="50" step="1" value="20" dir="ltr">
+</div>
+<div class="ctrl-group">
+<label>ارتفاع القذف h₀ <span class="ctrl-val" id="h0Val">0.0</span> m</label>
+<input type="range" id="h0Slider" min="0" max="20" step="0.5" value="0" dir="ltr">
+</div>
+</div>
+
+<div class="ctrl-row">
+<div class="ctrl-group" style="flex:0.8">
+<label>شدة الجاذبية g <span class="ctrl-val" id="gVal">9.81</span> m/s²</label>
+<input type="range" id="gSlider" min="1" max="20" step="0.1" value="9.81" dir="ltr">
+</div>
+<label class="checkbox-label"><input type="checkbox" id="showVectors" checked> إظهار الأشعة</label>
+<label class="checkbox-label"><input type="checkbox" id="showTrail" checked> إظهار المسار</label>
+<label class="checkbox-label"><input type="checkbox" id="showCompare"> مقارنة بزاوية 45°</label>
+</div>
+
+<div class="btn-row">
+<button class="btn btn-play" id="playBtn">▶ تشغيل</button>
+<button class="btn btn-reset" id="resetBtn">↺ إعادة</button>
+<span style="font-size:11px;color:#94a3b8;margin-right:4px">السرعة:</span>
+<button class="btn btn-speed" data-speed="0.5">0.5×</button>
+<button class="btn btn-speed active" data-speed="1">1×</button>
+<button class="btn btn-speed" data-speed="2">2×</button>
+<button class="btn btn-speed" data-speed="5">5×</button>
+</div>
+</div>
+</div>
+
+<div class="data-panel">
+<table class="data-table">
+<tr><td class="label">الزمن t (s)</td><td class="val" id="dT">0.00</td></tr>
+<tr><td class="label">الموضع x (m)</td><td class="val" id="dX">0.00</td></tr>
+<tr><td class="label">الموضع y (m)</td><td class="val" id="dY">0.00</td></tr>
+<tr><td class="label">السرعة v (m/s)</td><td class="val" id="dV">0.00</td></tr>
+<tr><td class="label">vx (m/s)</td><td class="val" id="dVx">0.00</td></tr>
+<tr><td class="label">vy (m/s)</td><td class="val" id="dVy">0.00</td></tr>
+<tr class="final"><td class="label">زمن الصعود ts (s)</td><td class="val" id="dTs">0.00</td></tr>
+<tr class="final"><td class="label">أقصى ارتفاع H (m)</td><td class="val" id="dH">0.00</td></tr>
+<tr class="final"><td class="label">المدى D (m)</td><td class="val" id="dD">0.00</td></tr>
+<tr class="final"><td class="label">مدة الحركة T (s)</td><td class="val" id="dTtotal">0.00</td></tr>
+<tr><td class="label">الطاقة الحركية Ec (J)</td><td class="val" id="dEc">0.00</td></tr>
+<tr><td class="label">الطاقة الكامنة Ep (J)</td><td class="val" id="dEp">0.00</td></tr>
+<tr><td class="label">الطاقة الميكانيكية Em (J)</td><td class="val" id="dEm">0.00</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="graphs-row">
+<div class="graph-wrap"><p>y(x) مسار الحركة</p><canvas id="graphYx" width="330" height="180"></canvas></div>
+<div class="graph-wrap"><p>الطاقة-الزمن Energy</p><canvas id="graphEnergy" width="330" height="180"></canvas></div>
+</div>
+
+</div>
+
+<script>
+const MC_W = 700, MC_H = 400;
+const GW = 330, GH = 180;
+
+const mainC = document.getElementById('mainCanvas');
+const ctx = mainC.getContext('2d');
+const gyxC = document.getElementById('graphYx');
+const gyxCtx = gyxC.getContext('2d');
+const geC = document.getElementById('graphEnergy');
+const geCtx = geC.getContext('2d');
+
+const alphaSlider = document.getElementById('alphaSlider');
+const alphaVal = document.getElementById('alphaVal');
+const v0Slider = document.getElementById('v0Slider');
+const v0Val = document.getElementById('v0Val');
+const h0Slider = document.getElementById('h0Slider');
+const h0Val = document.getElementById('h0Val');
+const gSlider = document.getElementById('gSlider');
+const gVal = document.getElementById('gVal');
+const showVectorsCB = document.getElementById('showVectors');
+const showTrailCB = document.getElementById('showTrail');
+const showCompareCB = document.getElementById('showCompare');
+const playBtn = document.getElementById('playBtn');
+const resetBtn = document.getElementById('resetBtn');
+const speedBtns = document.querySelectorAll('.btn-speed');
+
+const dT = document.getElementById('dT');
+const dX = document.getElementById('dX');
+const dY = document.getElementById('dY');
+const dV = document.getElementById('dV');
+const dVx = document.getElementById('dVx');
+const dVy = document.getElementById('dVy');
+const dTs = document.getElementById('dTs');
+const dH = document.getElementById('dH');
+const dD = document.getElementById('dD');
+const dTtotal = document.getElementById('dTtotal');
+const dEc = document.getElementById('dEc');
+const dEp = document.getElementById('dEp');
+const dEm = document.getElementById('dEm');
+
+let paused = true;
+let finished = false;
+let speed = 1;
+let simTime = 0;
+let lastFrame = 0;
+let MASS = 1;
+
+let alpha = 30, v0 = 20, h0 = 0, g = 9.81;
+let alphaRad = 0;
+let v0x = 0, v0y = 0;
+let ts = 0, H = 0, T = 0, D = 0;
+let trajectory = [];
+let energyData = [];
+let compTrajectory = [];
+let compEnergy = [];
+
+let canvasScale = 1;
+let originX = 0, originY = 0;
+
+function degToRad(d) { return d * Math.PI / 180; }
+
+function getParams() {
+return {
+alpha: parseFloat(alphaSlider.value),
+v0: parseFloat(v0Slider.value),
+h0: parseFloat(h0Slider.value),
+g: parseFloat(gSlider.value)
+};
+}
+
+function computeTrajectory(alphaDeg, v0, h0, g) {
+const aRad = degToRad(alphaDeg);
+const vx = v0 * Math.cos(aRad);
+const vy = v0 * Math.sin(aRad);
+const tS = vy / g;
+const hMax = h0 + (vy * vy) / (2 * g);
+const tTotal = (vy + Math.sqrt(vy * vy + 2 * g * h0)) / g;
+const range = vx * tTotal;
+
+const dt = 0.02;
+const pts = [];
+const ener = [];
+for (let t = 0; t <= tTotal + dt; t += dt) {
+const tt = Math.min(t, tTotal);
+const x = vx * tt;
+const y = -0.5 * g * tt * tt + vy * tt + h0;
+const cy = Math.max(0, y);
+const cvx = vx;
+const cvy = -g * tt + vy;
+pts.push({ t: tt, x, y, cy, vx: cvx, vy: cvy });
+const ec = 0.5 * MASS * (cvx * cvx + cvy * cvy);
+const ep = MASS * g * cy;
+const em = ec + ep;
+ener.push({ t: tt, ec, ep, em });
+if (y <= 0 && tt > 0) break;
+}
+return { points: pts, energy: ener, ts: tS, H: hMax, T: tTotal, D: range, v0x: vx, v0y: vy, alphaRad: aRad };
+}
+
+function computeAll() {
+const p = getParams();
+alpha = p.alpha; v0 = p.v0; h0 = p.h0; g = p.g;
+const main = computeTrajectory(alpha, v0, h0, g);
+trajectory = main.points;
+energyData = main.energy;
+alphaRad = main.alphaRad;
+v0x = main.v0x; v0y = main.v0y;
+ts = main.ts; H = main.H; T = main.T; D = main.D;
+
+if (showCompareCB.checked) {
+const comp = computeTrajectory(45, v0, h0, g);
+compTrajectory = comp.points;
+compEnergy = comp.energy;
+} else {
+compTrajectory = [];
+compEnergy = [];
+}
+}
+
+function computeCanvasTransform() {
+let xMin = Infinity, xMax = -Infinity, yMin = Infinity, yMax = -Infinity;
+for (const p of trajectory) {
+if (p.x < xMin) xMin = p.x;
+if (p.x > xMax) xMax = p.x;
+if (p.cy < yMin) yMin = p.cy;
+if (p.cy > yMax) yMax = p.cy;
+}
+if (xMax === xMin) { xMax = 1; xMin = 0; }
+if (yMax === yMin) { yMax = 1; yMin = 0; }
+if (compTrajectory.length) {
+for (const p of compTrajectory) {
+if (p.x < xMin) xMin = p.x;
+if (p.x > xMax) xMax = p.x;
+if (p.cy < yMin) yMin = p.cy;
+if (p.cy > yMax) yMax = p.cy;
+}
+}
+const pad = 0.2;
+const xRng = xMax - xMin;
+const yRng = yMax - yMin;
+const xVisMin = xMin - pad * xRng;
+const xVisMax = xMax + pad * xRng;
+const yVisMin = Math.min(0, yMin - pad * yRng);
+const yVisMax = yMax + pad * yRng;
+const vw = xVisMax - xVisMin;
+const vh = yVisMax - yVisMin;
+const sX = MC_W / vw;
+const sY = MC_H / vh;
+canvasScale = Math.min(sX, sY);
+originX = -xVisMin * canvasScale + (MC_W - vw * canvasScale) / 2;
+originY = MC_H + yVisMin * canvasScale - (MC_H - vh * canvasScale) / 2;
+}
+
+function toCanvas(px, py) {
+return { x: originX + px * canvasScale, y: originY - py * canvasScale };
+}
+
+function drawGrid() {
+ctx.strokeStyle = '#1e293b';
+ctx.lineWidth = 0.5;
+for (let cx = 0; cx <= MC_W; cx += 50) {
+ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, MC_H); ctx.stroke();
+}
+for (let cy = 0; cy <= MC_H; cy += 50) {
+ctx.beginPath(); ctx.moveTo(0, cy); ctx.lineTo(MC_W, cy); ctx.stroke();
+}
+}
+
+function drawAxes() {
+const o = toCanvas(0, 0);
+ctx.strokeStyle = '#94a3b8';
+ctx.lineWidth = 1.5;
+ctx.beginPath();
+ctx.moveTo(40, o.y);
+ctx.lineTo(MC_W - 10, o.y);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(o.x, 10);
+ctx.lineTo(o.x, MC_H - 20);
+ctx.stroke();
+ctx.fillStyle = '#94a3b8';
+ctx.font = '11px sans-serif';
+ctx.textAlign = 'left';
+ctx.fillText('x (m)', MC_W - 10, o.y - 6);
+ctx.textAlign = 'center';
+ctx.fillText('y (m)', o.x - 6, 14);
+
+ctx.font = '9px sans-serif';
+ctx.fillStyle = '#64748b';
+ctx.textAlign = 'center';
+const nice = range => {const s=range/5;const m=Math.pow(10,Math.floor(Math.log10(s)));const r=s/m;const n=r<=1.5?1:r<=3.5?2:r<=7.5?5:10;return n*m};
+const p1 = toCanvas(0,0);
+const p2 = toCanvas(D,0);
+const xStep = nice(D);
+const xStart = Math.ceil(0/xStep)*xStep;
+for (let v = xStart; v <= D+0.01; v += xStep) {
+const p = toCanvas(v, 0);
+if (p.x > 20 && p.x < MC_W - 20 && Math.abs(p.y - p1.y) < 5) {
+ctx.fillText(v.toFixed(v<1?1:0), p.x, p1.y + 14);
+ctx.beginPath(); ctx.moveTo(p.x, p1.y-3); ctx.lineTo(p.x, p1.y+3); ctx.strokeStyle='#64748b'; ctx.lineWidth=1; ctx.stroke();
+}
+}
+const p3 = toCanvas(0,H);
+const yStep = nice(H);
+const yStart = Math.ceil(0/yStep)*yStep;
+for (let v = yStart; v <= H+0.01; v += yStep) {
+const p = toCanvas(0, v);
+if (p.y > 10 && p.y < MC_H - 20) {
+ctx.fillText(v.toFixed(v<1?1:0), p.x - 12, p.y + 3);
+ctx.beginPath(); ctx.moveTo(p.x-3, p.y); ctx.lineTo(p.x+3, p.y); ctx.strokeStyle='#64748b'; ctx.lineWidth=1; ctx.stroke();
+}
+}
+}
+
+function drawTrajectoryPath(points, color, lineWidth, dash, maxT) {
+if (!points.length) return;
+ctx.strokeStyle = color;
+ctx.lineWidth = lineWidth;
+if (dash) ctx.setLineDash(dash);
+else ctx.setLineDash([]);
+ctx.beginPath();
+for (let i = 0; i < points.length; i++) {
+const p = points[i];
+if (maxT !== undefined && p.t > maxT) break;
+const c = toCanvas(p.x, p.cy);
+if (i === 0) ctx.moveTo(c.x, c.y);
+else ctx.lineTo(c.x, c.y);
+}
+ctx.stroke();
+ctx.setLineDash([]);
+}
+
+function drawTrajectoryDots(points, color, maxT) {
+if (!points.length) return;
+for (let i = 0; i < points.length; i++) {
+const p = points[i];
+if (maxT !== undefined && p.t > maxT) break;
+if (i % 5 !== 0) continue;
+const c = toCanvas(p.x, p.cy);
+ctx.beginPath();
+ctx.arc(c.x, c.y, 2, 0, Math.PI * 2);
+ctx.fillStyle = color;
+ctx.fill();
+}
+}
+
+function getState(t) {
+if (t < 0) t = 0;
+if (t > T) t = T;
+const x = v0x * t;
+const y = -0.5 * g * t * t + v0y * t + h0;
+const cy = Math.max(0, y);
+const vvx = v0x;
+const vvy = -g * t + v0y;
+return { x, y: cy, vx: vvx, vy: vvy };
+}
+
+function drawArrow(from, dx, dy, color, label, labelOff) {
+if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
+const len = Math.sqrt(dx*dx + dy*dy);
+const angle = Math.atan2(dy, dx);
+const headLen = Math.min(8, len * 0.3);
+ctx.save();
+ctx.translate(from.x, from.y);
+ctx.rotate(angle);
+ctx.strokeStyle = color;
+ctx.lineWidth = 2;
+ctx.beginPath();
+ctx.moveTo(0, 0);
+ctx.lineTo(len - headLen * 0.5, 0);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(len, 0);
+ctx.lineTo(len - headLen, -headLen * 0.6);
+ctx.lineTo(len - headLen, headLen * 0.6);
+ctx.closePath();
+ctx.fillStyle = color;
+ctx.fill();
+if (label) {
+ctx.fillStyle = color;
+ctx.font = 'bold 11px sans-serif';
+ctx.textAlign = 'center';
+ctx.textBaseline = 'bottom';
+const lo = labelOff || 14;
+ctx.fillText(label, len / 2, -lo);
+}
+ctx.restore();
+}
+
+function drawVectors(t) {
+if (!showVectorsCB.checked) return;
+const s = getState(t);
+const c = toCanvas(s.x, s.y);
+if (c.y < 0 || c.y > MC_H + 20) return;
+const vecScale = Math.max(2, Math.min(6, canvasScale * 0.35));
+const dx = s.vx * vecScale;
+const dy = -s.vy * vecScale;
+const colV = '#3b82f6';
+const colVx = '#22c55e';
+const colVy = '#f59e0b';
+
+const tipVx = { x: c.x + dx, y: c.y };
+drawArrow(c, dx, 0, colVx, 'vx', 14);
+const fromVy = { x: c.x + dx, y: c.y };
+drawArrow(fromVy, 0, dy, colVy, 'vy', 14);
+drawArrow(c, dx, dy, colV, 'v', 16);
+}
+
+function drawAngleArc() {
+const o = toCanvas(0, h0);
+const radius = 35;
+ctx.strokeStyle = '#a78bfa';
+ctx.lineWidth = 1.5;
+ctx.beginPath();
+ctx.arc(o.x, o.y, radius, -alphaRad, 0, false);
+ctx.stroke();
+ctx.fillStyle = '#a78bfa';
+ctx.font = '12px sans-serif';
+ctx.textAlign = 'center';
+const midAngle = -alphaRad / 2;
+ctx.fillText('α', o.x + (radius + 18) * Math.cos(midAngle), o.y + (radius + 18) * Math.sin(midAngle) + 4);
+}
+
+function drawMarkers() {
+if (!trajectory.length) return;
+const peak = toCanvas(v0x * ts, H);
+const land = toCanvas(D, 0);
+ctx.setLineDash([5, 5]);
+ctx.strokeStyle = '#ef4444';
+ctx.lineWidth = 1.5;
+ctx.beginPath();
+ctx.moveTo(peak.x, peak.y);
+ctx.lineTo(peak.x, toCanvas(0,0).y);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(land.x, land.y);
+ctx.lineTo(land.x, toCanvas(0,0).y);
+ctx.stroke();
+ctx.setLineDash([]);
+ctx.fillStyle = '#ef4444';
+ctx.font = 'bold 11px sans-serif';
+ctx.textAlign = 'center';
+const pLabY = toCanvas(0,0).y;
+ctx.fillText('H_max = ' + H.toFixed(1) + ' m', peak.x, peak.y - 8);
+ctx.fillText('D = ' + D.toFixed(1) + ' m', land.x, pLabY + 18);
+ctx.fillStyle = '#fbbf24';
+ctx.font = '10px sans-serif';
+ctx.fillText('ذروة', peak.x, pLabY + 30);
+ctx.fillText('مدى', land.x, pLabY + 30);
+}
+
+function drawProjectile(t) {
+const s = getState(t);
+const c = toCanvas(s.x, s.y);
+if (c.y < -20 || c.y > MC_H + 20) return;
+ctx.beginPath();
+ctx.arc(c.x, c.y, 6, 0, Math.PI * 2);
+ctx.fillStyle = '#ef4444';
+ctx.fill();
+ctx.strokeStyle = '#dc2626';
+ctx.lineWidth = 1.5;
+ctx.stroke();
+}
+
+function drawCompareTrajectory() {
+if (!showCompareCB.checked || !compTrajectory.length) return;
+drawTrajectoryPath(compTrajectory, '#64748b', 1.5, [4, 4]);
+drawTrajectoryDots(compTrajectory, '#64748b');
+const compLand = toCanvas(v0 * Math.cos(degToRad(45)) * compTrajectory[compTrajectory.length-1].t, 0);
+ctx.fillStyle = '#64748b';
+ctx.font = '10px sans-serif';
+ctx.textAlign = 'center';
+ctx.fillText('α=45°', compLand.x, compLand.y + 30);
+}
+
+function renderMain() {
+ctx.clearRect(0, 0, MC_W, MC_H);
+ctx.fillStyle = '#0f172a';
+ctx.fillRect(0, 0, MC_W, MC_H);
+
+if (!trajectory.length) return;
+computeCanvasTransform();
+drawGrid();
+drawAxes();
+drawCompareTrajectory();
+
+const drawMax = finished ? undefined : simTime;
+if (showTrailCB.checked) {
+drawTrajectoryPath(trajectory, '#f59e0b', 2, null, drawMax);
+drawTrajectoryDots(trajectory, '#f59e0b', drawMax);
+}
+drawMarkers();
+drawAngleArc();
+drawVectors(simTime);
+drawProjectile(simTime);
+}
+
+function renderGraphYx() {
+const c = gyxCtx;
+const w = GW, h = GH;
+c.fillStyle = '#1e293b';
+c.fillRect(0, 0, w, h);
+
+const padL = 35, padR = 12, padT = 12, padB = 20;
+const pw = w - padL - padR;
+const ph = h - padT - padB;
+
+let pts = trajectory;
+let comp = showCompareCB.checked ? compTrajectory : null;
+if (!pts.length) return;
+
+let xMin=Infinity,xMax=-Infinity,yMin=Infinity,yMax=-Infinity;
+for (const p of pts) { if(p.x<xMin)xMin=p.x;if(p.x>xMax)xMax=p.x;if(p.cy<yMin)yMin=p.cy;if(p.cy>yMax)yMax=p.cy; }
+if (comp) { for (const p of comp) { if(p.x<xMin)xMin=p.x;if(p.x>xMax)xMax=p.x;if(p.cy<yMin)yMin=p.cy;if(p.cy>yMax)yMax=p.cy; } }
+const xR=xMax-xMin||1, yR=yMax-yMin||1;
+const pad2=0.1;
+const x0=xMin-pad2*xR, x1=xMax+pad2*xR;
+const y0=Math.min(0,yMin-pad2*yR), y1=yMax+pad2*yR;
+const sx=pw/(x1-x0), sy=ph/(y1-y0);
+const sc=Math.min(sx,sy);
+const ox=padL+(pw-(x1-x0)*sc)/2 - x0*sc;
+const oy=padT+(ph-(y1-y0)*sc)/2 + y1*sc;
+const tc = (px,py) => ({x: ox + px*sc, y: oy - py*sc});
+
+c.strokeStyle = '#334155';
+c.lineWidth = 0.5;
+for (let gx=0;gx<=w;gx+=25){c.beginPath();c.moveTo(gx,0);c.lineTo(gx,h);c.stroke()}
+for (let gy=0;gy<=h;gy+=25){c.beginPath();c.moveTo(0,gy);c.lineTo(w,gy);c.stroke()}
+
+const o=tc(0,0);
+c.strokeStyle='#64748b';c.lineWidth=1;
+c.beginPath();c.moveTo(padL,o.y);c.lineTo(w-padR,o.y);c.stroke();
+c.beginPath();c.moveTo(o.x,padT);c.lineTo(o.x,h-padB);c.stroke();
+c.fillStyle='#64748b';c.font='9px sans-serif';c.textAlign='left';c.fillText('x',w-padR,o.y-4);
+c.textAlign='center';c.fillText('y',o.x-6,padT+10);
+
+if (comp) {
+c.strokeStyle='#64748b';c.lineWidth=1;c.setLineDash([3,3]);
+c.beginPath();
+for(let i=0;i<comp.length;i++){const p=tc(comp[i].x,comp[i].cy);if(i===0)c.moveTo(p.x,p.y);else c.lineTo(p.x,p.y)}
+c.stroke();c.setLineDash([]);
+}
+
+c.strokeStyle='#f59e0b';c.lineWidth=1.5;
+c.beginPath();
+for(let i=0;i<pts.length;i++){const p=tc(pts[i].x,pts[i].cy);if(i===0)c.moveTo(p.x,p.y);else c.lineTo(p.x,p.y)}
+c.stroke();
+
+c.setLineDash([4,4]);c.strokeStyle='#ef4444';c.lineWidth=1;
+const pk=tc(v0x*ts,H);
+const ld=tc(D,0);
+c.beginPath();c.moveTo(pk.x,pk.y);c.lineTo(pk.x,o.y);c.stroke();
+c.beginPath();c.moveTo(ld.x,ld.y);c.lineTo(ld.x,o.y);c.stroke();
+c.setLineDash([]);
+c.fillStyle='#ef4444';c.font='8px sans-serif';c.textAlign='center';
+c.fillText('H='+H.toFixed(1),pk.x,pk.y-4);
+c.fillText('D='+D.toFixed(1),ld.x,o.y+12);
+}
+
+function renderGraphEnergy() {
+const c = geCtx;
+const w = GW, h = GH;
+c.fillStyle = '#1e293b';
+c.fillRect(0, 0, w, h);
+
+const padL = 35, padR = 8, padT = 12, padB = 18;
+const pw = w - padL - padR;
+const ph = h - padT - padB;
+
+const data = energyData;
+if (!data.length) return;
+
+const tMax = data[data.length-1].t || 1;
+let eMax = 0;
+for (const d of data) {
+eMax = Math.max(eMax, d.ec, d.ep, d.em);
+}
+eMax *= 1.15;
+if (eMax < 1) eMax = 1;
+
+c.strokeStyle = '#334155';
+c.lineWidth = 0.5;
+for (let gx=0;gx<=w;gx+=25){c.beginPath();c.moveTo(gx,0);c.lineTo(gx,h);c.stroke()}
+for (let gy=0;gy<=h;gy+=25){c.beginPath();c.moveTo(0,gy);c.lineTo(w,gy);c.stroke()}
+
+c.strokeStyle='#64748b';c.lineWidth=1;
+c.beginPath();c.moveTo(padL,padT);c.lineTo(padL,h-padB);c.stroke();
+c.beginPath();c.moveTo(padL,h-padB);c.lineTo(w-padR,h-padB);c.stroke();
+c.fillStyle='#64748b';c.font='9px sans-serif';c.textAlign='center';c.fillText('t (s)',padL+pw/2,h-2);
+c.save();c.translate(8,padT+ph/2);c.rotate(-Math.PI/2);c.fillText('E (J)',0,0);c.restore();
+
+function drawCurve(data, key, color, lineW) {
+c.strokeStyle = color; c.lineWidth = lineW || 1.5;
+c.beginPath();
+for (let i = 0; i < data.length; i++) {
+const x = padL + pw * (data[i].t / tMax);
+const y = padT + ph * (1 - data[i][key] / eMax);
+if (i === 0) c.moveTo(x, y);
+else c.lineTo(x, y);
+}
+c.stroke();
+}
+drawCurve(data, 'ec', '#22c55e', 1.5);
+drawCurve(data, 'ep', '#3b82f6', 1.5);
+drawCurve(data, 'em', '#f59e0b', 1.5);
+
+c.font = '8px sans-serif';
+c.fillStyle='#22c55e';c.fillText('Ec',padL+pw-16,padT+10);
+c.fillStyle='#3b82f6';c.fillText('Ep',padL+pw-16,padT+20);
+c.fillStyle='#f59e0b';c.fillText('Em',padL+pw-16,padT+30);
+}
+
+function updateData(t) {
+const s = getState(t);
+const vMag = Math.sqrt(s.vx*s.vx + s.vy*s.vy);
+dT.textContent = t.toFixed(2);
+dX.textContent = s.x.toFixed(2);
+dY.textContent = s.y.toFixed(2);
+dV.textContent = vMag.toFixed(2);
+dVx.textContent = s.vx.toFixed(2);
+dVy.textContent = s.vy.toFixed(2);
+dTs.textContent = ts.toFixed(2);
+dH.textContent = H.toFixed(2);
+dD.textContent = D.toFixed(2);
+dTtotal.textContent = T.toFixed(2);
+const ec = 0.5 * MASS * vMag * vMag;
+const ep = MASS * g * s.y;
+const em = ec + ep;
+dEc.textContent = ec.toFixed(2);
+dEp.textContent = ep.toFixed(2);
+dEm.textContent = em.toFixed(2);
+}
+
+function resetSim() {
+finished = false;
+simTime = 0;
+paused = true;
+playBtn.textContent = '▶ تشغيل';
+computeAll();
+renderMain();
+renderGraphYx();
+renderGraphEnergy();
+updateData(0);
+}
+
+function stepPhysics(dt) {
+if (paused) return;
+if (finished) return;
+const step = dt * speed;
+simTime += step;
+if (simTime >= T) {
+simTime = T;
+finished = true;
+paused = true;
+playBtn.textContent = '▶ تشغيل';
+}
+updateData(simTime);
+renderMain();
+}
+
+function loop(time) {
+if (!lastFrame) lastFrame = time;
+const dt = Math.min((time - lastFrame) / 1000, 0.05);
+lastFrame = time;
+stepPhysics(dt);
+requestAnimationFrame(loop);
+}
+
+function onParamChange() {
+resetSim();
+}
+
+alphaSlider.addEventListener('input', () => {
+alphaVal.textContent = alphaSlider.value;
+onParamChange();
+});
+v0Slider.addEventListener('input', () => {
+v0Val.textContent = v0Slider.value;
+onParamChange();
+});
+h0Slider.addEventListener('input', () => {
+h0Val.textContent = parseFloat(h0Slider.value).toFixed(1);
+onParamChange();
+});
+gSlider.addEventListener('input', () => {
+gVal.textContent = parseFloat(gSlider.value).toFixed(2);
+onParamChange();
+});
+showVectorsCB.addEventListener('change', () => { if (paused) renderMain(); });
+showTrailCB.addEventListener('change', () => { if (paused) renderMain(); });
+showCompareCB.addEventListener('change', onParamChange);
+
+playBtn.addEventListener('click', () => {
+if (finished) { resetSim(); }
+paused = !paused;
+playBtn.textContent = paused ? '▶ تشغيل' : '⏸ إيقاف';
+if (!paused) lastFrame = 0;
+});
+
+resetBtn.addEventListener('click', resetSim);
+
+speedBtns.forEach(btn => {
+btn.addEventListener('click', () => {
+speedBtns.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+speed = parseFloat(btn.dataset.speed);
+});
+});
+
+resetSim();
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
