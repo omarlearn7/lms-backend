@@ -22,14 +22,18 @@
         "number": 1,
         "text": "احسب الكتلة المولية الجزيئية M لحمض الخل.",
         "input_type": "numeric",
-        "placeholder": "M = ... g/mol"
+        "placeholder": "M = ... g/mol",
+        "answer": { "value": 60, "tolerance": 0.1 },
+        "solution": "M(CH₃COOH) = 2×M(C) + 4×M(H) + 2×M(O) = 2×12 + 4×1 + 2×16 = 24 + 4 + 32 = 60 g/mol"
       },
       {
         "type": "question",
         "number": 2,
         "text": "احسب كمية المادة n الموجودة في m = 200 g من حمض الخل.",
         "input_type": "numeric",
-        "placeholder": "n = ... mol"
+        "placeholder": "n = ... mol",
+        "answer": { "value": 3.33, "tolerance": 0.01 },
+        "solution": "n = m/M = 200/60 = 3.33 mol"
       }
     ]
   }

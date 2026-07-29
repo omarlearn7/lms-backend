@@ -37,34 +37,44 @@
         "type": "question",
         "number": 1,
         "text": "إذا علمت أن الصيغة الجزيئية للكافيين من الشكل: C₂ₙH₂ₙ₊₂N₄O₂ وكتلته المولية M = 194 g/mol، جد العدد n، ثم اكتب الصيغة الجزيئية المجملة للكافيين.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["C₈H₁₀N₄O₂"],
+        "solution": "M = 2n×12 + (2n+2)×1 + 4×14 + 2×16 = 24n + 2n + 2 + 56 + 32 = 26n + 90\n26n + 90 = 194 ⇒ 26n = 104 ⇒ n = 4\nالصيغة الجزيئية: C₈H₁₀N₄O₂"
       },
       {
         "type": "question",
         "number": 2,
         "text": "احسب الكتلة المولية الجزيئية M للسكروز C₁₂H₂₂O₁₁.",
         "input_type": "numeric",
-        "placeholder": "أدخل القيمة مع الوحدة..."
+        "placeholder": "أدخل القيمة مع الوحدة...",
+        "answer": { "value": 342, "tolerance": 0.1 },
+        "solution": "M(C₁₂H₂₂O₁₁) = 12×12 + 22×1 + 11×16 = 144 + 22 + 176 = 342 g/mol"
       },
       {
         "type": "question",
         "number": 3,
         "text": "احسب التركيز المولي c للسكروز في قارورة المشروب الغازي.",
         "input_type": "numeric",
-        "placeholder": "أدخل القيمة بوحدة mol/L..."
+        "placeholder": "أدخل القيمة بوحدة mol/L...",
+        "answer": { "value": 0.185, "tolerance": 0.01 },
+        "solution": "n(السكروز) = m/M = 126.5/342 = 0.37 mol\nc = n/V = 0.37/2 = 0.185 mol/L"
       },
       {
         "type": "question",
         "number": 4,
         "text": "احسب كتلة السكروز m الموجودة في كأس من المشروب الغازي سعته V' = 220 mL.",
         "input_type": "numeric",
-        "placeholder": "أدخل القيمة بوحدة g..."
+        "placeholder": "أدخل القيمة بوحدة g...",
+        "answer": { "value": 13.9, "tolerance": 0.5 },
+        "solution": "n(السكروز) = c × V' = 0.185 × 0.22 = 0.0407 mol\nm = n × M = 0.0407 × 342 = 13.9 g"
       },
       {
         "type": "question",
         "number": 5,
         "text": "إذا علمت أن المنظمة العالمية للصحة توصي بأن لا يتجاوز مقدار السكر المستهلك يومياً لشخص بالغ 25 g، كم كأساً من سعة 220 mL يمكن استهلاكه يومياً من المشروبات الغازية؟",
-        "input_type": "numeric"
+        "input_type": "numeric",
+        "answer": { "value": 1, "tolerance": 0 },
+        "solution": "عدد الأكواب = 25/13.9 = 1.8\nإذاً يمكن استهلاك كأس واحد فقط (سعة 220 mL) يومياً حتى لا يتجاوز الحد الموصى به."
       },
       {
         "type": "divider"

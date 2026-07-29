@@ -56,6 +56,20 @@ const exercises = [
   },
   {
     unit_id: 1,
+    title: 'تمرين 010 - متابعة تحول كيميائي بطريقة المعايرة',
+    order_index: 10,
+    source: '3AS U01 - Exercice 038-R',
+    content_json: require('../exercises/U01/010-exercice.json').content_json,
+  },
+  {
+    unit_id: 1,
+    title: 'تمرين 011 - العوامل الحركية وتأثيرها على سرعة التفاعل',
+    order_index: 11,
+    source: '3AS U01',
+    content_json: require('../exercises/U01/011-exercice.json').content_json,
+  },
+  {
+    unit_id: 1,
     title: 'تمرين 002 - تحضير محلول بالتخفيف',
     order_index: 2,
     source: '3AS U01 - Exercice 002',

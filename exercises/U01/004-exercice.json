@@ -22,20 +22,26 @@
         "number": "1-أ",
         "text": "احسب التركيز المولي C₀ للمحلول (S).",
         "input_type": "numeric",
-        "placeholder": "C₀ = ... mol/L"
+        "placeholder": "C₀ = ... mol/L",
+        "answer": { "value": 0.5, "tolerance": 0.01 },
+        "solution": "M(NaOH) = 23 + 16 + 1 = 40 g/mol\nn(NaOH) = m₀/M = 4/40 = 0.1 mol\nC₀ = n/V₀ = 0.1/0.2 = 0.5 mol/L"
       },
       {
         "type": "question",
         "number": "1-ب",
         "text": "احسب التركيز الكتلي Cm₀ للمحلول (S) بطريقتين مختلفتين.",
-        "input_type": "text"
+        "input_type": "text",
+        "answer": "الطريقة الأولى: Cm₀ = m₀/V₀ = 4/0.2 = 20 g/L\nالطريقة الثانية: Cm₀ = C₀ × M = 0.5 × 40 = 20 g/L",
+        "solution": "الطريقة الأولى (باستخدام الكتلة والحجم):\nCm₀ = m₀/V₀ = 4/0.2 = 20 g/L\nالطريقة الثانية (باستخدام التركيز المولي):\nCm₀ = C₀ × M(NaOH) = 0.5 × 40 = 20 g/L"
       },
       {
         "type": "question",
         "number": "1-ج",
         "text": "كم كمية مادة NaOH المنحلة في عينة من المحلول (S) حجمها V₁ = 50 mL؟",
         "input_type": "numeric",
-        "placeholder": "n = ... mol"
+        "placeholder": "n = ... mol",
+        "answer": { "value": 0.025, "tolerance": 0.001 },
+        "solution": "n = C₀ × V₁ = 0.5 × 0.05 = 0.025 mol"
       },
       {
         "type": "text",
@@ -46,20 +52,26 @@
         "number": "2-أ",
         "text": "أوجد حجم المحلول الجديد V₃.",
         "input_type": "numeric",
-        "placeholder": "V₃ = ... mL"
+        "placeholder": "V₃ = ... mL",
+        "answer": { "value": 100, "tolerance": 0.1 },
+        "solution": "V₃ = V₂ + Vₑ = 10 + 90 = 100 mL"
       },
       {
         "type": "question",
         "number": "2-ب",
         "text": "استنتج معامل التمديد F.",
         "input_type": "numeric",
-        "placeholder": "F = ..."
+        "placeholder": "F = ...",
+        "answer": { "value": 10, "tolerance": 0.1 },
+        "solution": "F = V₃/V₂ = 100/10 = 10"
       },
       {
         "type": "question",
         "number": "2-ج",
         "text": "أوجد بطريقتين مختلفتين التركيز المولي C₁ للمحلول الجديد.",
-        "input_type": "text"
+        "input_type": "text",
+        "answer": "الطريقة الأولى: C₁ = C₀/F = 0.5/10 = 0.05 mol/L\nالطريقة الثانية: n(NaOH) = C₀×V₂ = 0.5×0.01 = 0.005 mol, C₁ = n/V₃ = 0.005/0.1 = 0.05 mol/L",
+        "solution": "الطريقة الأولى (باستخدام معامل التمديد):\nC₁ = C₀/F = 0.5/10 = 0.05 mol/L\nالطريقة الثانية (باستخدام كمية المادة):\nn(NaOH) = C₀×V₂ = 0.5×0.01 = 0.005 mol\nC₁ = n/V₃ = 0.005/0.1 = 0.05 mol/L"
       }
     ]
   }

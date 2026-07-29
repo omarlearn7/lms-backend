@@ -25,27 +25,34 @@
         "type": "question",
         "number": 1,
         "text": "أنشئ جدول تقدم التفاعل.",
-        "input_type": "text"
+        "input_type": "text",
+        "solution": "المعادلة: Zn(s) + 2H₃O⁺(aq) → Zn²⁺(aq) + H₂(g) + 2H₂O(l)\nالكميات الابتدائية:\nn(H₃O⁺) = C×V = 0.2×0.2 = 0.04 mol\nn(Zn) = m/65 (غير معروفة)\nn(H₂)₀ = 0, n(Zn²⁺)₀ = 0\n\nجدول التقدم:\n            Zn   +   2H₃O⁺    →   Zn²⁺   +   H₂   +   2H₂O\ninitial    m/65      0.04         0         0       وفير\ninterim   m/65-x    0.04-2x       x         x       وفير\nfinal     m/65-xₘ   0.04-2xₘ      xₘ        xₘ      وفير"
       },
       {
         "type": "question",
         "number": 2,
         "text": "جد قيمة التقدم الأعظمي xₘₐₓ وحدد المتفاعل المحد.",
-        "input_type": "text"
+        "input_type": "text",
+        "answer": "xₘₐₓ = 0.01 mol, المتفاعل المحد هو H₃O⁺",
+        "solution": "n(H₂) = V(H₂)/Vm = 0.224/22.4 = 0.01 mol\nمن جدول التقدم: n(H₂) = x = 0.01 mol\nإذن xₘₐₓ = 0.01 mol\n\nللتحقق من المتفاعل المحد:\nZn: m/65 - xₘₐₓ = 0 ⇒ m/65 = 0.01 ⇒ m = 0.65 g (استُهلك كلياً)\nH₃O⁺: 0.04 - 2xₘₐₓ = 0.04 - 0.02 = 0.02 mol (باقي)\nإذن Zn هو المتفاعل المحد."
       },
       {
         "type": "question",
         "number": 3,
         "text": "احسب الكتلة الابتدائية m لقطعة الزنك.",
         "input_type": "numeric",
-        "placeholder": "m = ... g"
+        "placeholder": "m = ... g",
+        "answer": { "value": 0.65, "tolerance": 0.01 },
+        "solution": "بما أن Zn هو المتفاعل المحد: m/65 - xₘₐₓ = 0\nm/65 = 0.01 ⇒ m = 0.01 × 65 = 0.65 g"
       },
       {
         "type": "question",
         "number": 4,
         "text": "احسب التراكيز المولية للشوارد المتواجدة في المزيج التفاعلي عند نهاية التفاعل.",
         "input_type": "text",
-        "placeholder": "[Zn²⁺], [Cl⁻] = ... mol/L"
+        "placeholder": "[Zn²⁺], [Cl⁻] = ... mol/L",
+        "answer": "[Zn²⁺] = 0.05 mol/L, [Cl⁻] = 0.2 mol/L",
+        "solution": "[Zn²⁺] = xₘₐₓ/V = 0.01/0.2 = 0.05 mol/L\nCl⁻ هو شارد متفرج (لم يدخل في التفاعل):\nn(Cl⁻) = n(H₃O⁺)₀ = 0.04 mol\n[Cl⁻] = 0.04/0.2 = 0.2 mol/L"
       }
     ]
   }

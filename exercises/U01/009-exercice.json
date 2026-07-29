@@ -21,19 +21,25 @@
         "type": "question",
         "number": "1-أ",
         "text": "أكتب المعادلة النصفية لأكسدة Fe إلى Fe³⁺.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["Fe → Fe³⁺ + 3e⁻", "Fe ⟶ Fe³⁺ + 3e⁻", "Fe -> Fe³⁺ + 3e⁻"],
+        "solution": "Fe → Fe³⁺ + 3e⁻ (أكسدة: فقدان 3 إلكترونات)"
       },
       {
         "type": "question",
         "number": "1-ب",
         "text": "أكتب المعادلة النصفية لإرجاع Cl₂ إلى Cl⁻.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["Cl₂ + 2e⁻ → 2Cl⁻", "Cl₂ + 2e⁻ ⟶ 2Cl⁻", "Cl₂ + 2e⁻ -> 2Cl⁻"],
+        "solution": "Cl₂ + 2e⁻ → 2Cl⁻ (إرجاع: اكتساب إلكترونين)"
       },
       {
         "type": "question",
         "number": "1-ج",
         "text": "أكتب معادلة الأكسدة-الإرجاعية الإجمالية.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["2Fe + 3Cl₂ → 2Fe³⁺ + 6Cl⁻", "2Fe + 3Cl₂ ⟶ 2FeCl₃", "2Fe + 3Cl₂ → 2FeCl₃", "2Fe + 3Cl₂ -> 2FeCl₃"],
+        "solution": "2×(Fe → Fe³⁺ + 3e⁻)\n3×(Cl₂ + 2e⁻ → 2Cl⁻)\nالمعادلة الإجمالية: 2Fe + 3Cl₂ → 2Fe³⁺ + 6Cl⁻ (أو 2Fe + 3Cl₂ → 2FeCl₃)"
       },
       {
         "type": "text",
@@ -43,19 +49,25 @@
         "type": "question",
         "number": "2-أ",
         "text": "أكتب المعادلة النصفية لأكسدة I⁻ إلى I₂.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["2I⁻ → I₂ + 2e⁻", "2I⁻ ⟶ I₂ + 2e⁻", "2I⁻ -> I₂ + 2e⁻"],
+        "solution": "2I⁻ → I₂ + 2e⁻ (أكسدة: فقدان إلكترونين)"
       },
       {
         "type": "question",
         "number": "2-ب",
         "text": "أكتب المعادلة النصفية لإرجاع S₂O₈²⁻ إلى SO₄²⁻.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["S₂O₈²⁻ + 2e⁻ → 2SO₄²⁻", "S₂O₈²⁻ + 2e⁻ ⟶ 2SO₄²⁻", "S₂O₈²⁻ + 2e⁻ -> 2SO₄²⁻"],
+        "solution": "S₂O₈²⁻ + 2e⁻ → 2SO₄²⁻ (إرجاع: اكتساب إلكترونين)"
       },
       {
         "type": "question",
         "number": "2-ج",
         "text": "أكتب معادلة الأكسدة-الإرجاعية الإجمالية.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["2I⁻ + S₂O₈²⁻ → I₂ + 2SO₄²⁻", "2I⁻ + S₂O₈²⁻ ⟶ I₂ + 2SO₄²⁻", "2I⁻ + S₂O₈²⁻ -> I₂ + 2SO₄²⁻"],
+        "solution": "المعادلة الإجمالية: 2I⁻ + S₂O₈²⁻ → I₂ + 2SO₄²⁻"
       },
       {
         "type": "text",
@@ -65,19 +77,25 @@
         "type": "question",
         "number": "3-أ",
         "text": "أكتب المعادلة النصفية لأكسدة Fe²⁺ إلى Fe³⁺.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["Fe²⁺ → Fe³⁺ + e⁻", "Fe²⁺ ⟶ Fe³⁺ + e⁻", "Fe²⁺ -> Fe³⁺ + e⁻"],
+        "solution": "Fe²⁺ → Fe³⁺ + e⁻ (أكسدة: فقدان إلكترون)"
       },
       {
         "type": "question",
         "number": "3-ب",
         "text": "أكتب المعادلة النصفية لإرجاع Cr₂O₇²⁻ إلى Cr³⁺ في وسط حمضي.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O", "Cr₂O₇²⁻ + 14H⁺ + 6e⁻ ⟶ 2Cr³⁺ + 7H₂O"],
+        "solution": "Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O (إرجاع في وسط حمضي)"
       },
       {
         "type": "question",
         "number": "3-ج",
         "text": "أكتب معادلة الأكسدة-الإرجاعية الإجمالية.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["6Fe²⁺ + Cr₂O₇²⁻ + 14H⁺ → 6Fe³⁺ + 2Cr³⁺ + 7H₂O", "6Fe²⁺ + Cr₂O₇²⁻ + 14H⁺ ⟶ 6Fe³⁺ + 2Cr³⁺ + 7H₂O"],
+        "solution": "6×(Fe²⁺ → Fe³⁺ + e⁻)\n1×(Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O)\nالمعادلة الإجمالية: 6Fe²⁺ + Cr₂O₇²⁻ + 14H⁺ → 6Fe³⁺ + 2Cr³⁺ + 7H₂O"
       },
       {
         "type": "text",
@@ -87,19 +105,25 @@
         "type": "question",
         "number": "4-أ",
         "text": "أكتب المعادلة النصفية لأكسدة Al إلى Al³⁺.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["Al → Al³⁺ + 3e⁻", "Al ⟶ Al³⁺ + 3e⁻", "Al -> Al³⁺ + 3e⁻"],
+        "solution": "Al → Al³⁺ + 3e⁻ (أكسدة: فقدان 3 إلكترونات)"
       },
       {
         "type": "question",
         "number": "4-ب",
         "text": "أكتب المعادلة النصفية لإرجاع H₃O⁺ إلى H₂.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["2H₃O⁺ + 2e⁻ → H₂ + 2H₂O", "2H₃O⁺ + 2e⁻ ⟶ H₂ + 2H₂O", "2H₃O⁺ + 2e⁻ -> H₂ + 2H₂O"],
+        "solution": "2H₃O⁺ + 2e⁻ → H₂ + 2H₂O (إرجاع أيون الأوكسونيوم إلى غاز الهيدروجين)"
       },
       {
         "type": "question",
         "number": "4-ج",
         "text": "أكتب معادلة الأكسدة-الإرجاعية الإجمالية.",
-        "input_type": "equation"
+        "input_type": "equation",
+        "answer": ["2Al + 6H₃O⁺ → 2Al³⁺ + 3H₂ + 6H₂O", "2Al + 6H₃O⁺ ⟶ 2Al³⁺ + 3H₂ + 6H₂O"],
+        "solution": "2×(Al → Al³⁺ + 3e⁻)\n3×(2H₃O⁺ + 2e⁻ → H₂ + 2H₂O)\nالمعادلة الإجمالية: 2Al + 6H₃O⁺ → 2Al³⁺ + 3H₂ + 6H₂O"
       }
     ]
   }
