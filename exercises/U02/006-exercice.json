@@ -1,0 +1,84 @@
+{
+  "unit_id": 2,
+  "title": "تمرين 006 - القذف الأفقي والطاقة في حركة القذيفة",
+  "order_index": 6,
+  "source": "3AS U02 - Exercice 006",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 006"
+      },
+      {
+        "type": "text",
+        "content": "نقذف كرة صغيرة كتلتها $m = 200 g$ أفقياً من ارتفاع $h = 45 m$ فوق سطح الأرض، بسرعة ابتدائية $v_0 = 15 m/s$. نهمل تأثير الهواء ونعطي $g = 10 m/s^2$."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "اختر معلماً مناسباً (الأصل عند نقطة القذف، المحور $x$ أفقي، المحور $y$ شاقولي نحو الأسفل). اكتب الشروط الابتدائية (الموضع والسرعة عند $t = 0$).",
+        "input_type": "text",
+        "answer": { "type": "freeform" },
+        "solution": "المعلم: معلم ديكارتي $(Oxy)$ حيث $O$ نقطة القذف، محور $x$ أفقي، محور $y$ شاقولي موجه نحو الأسفل.<br>الشروط الابتدائية:<br>عند $t = 0$: $x_0 = 0$، $y_0 = 0$<br>$v_{0x} = v_0 = 15 m/s$، $v_{0y} = 0$"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "طبق القانون الثاني لنيوتن ثم استنتج عبارتي $v_x(t)$ و $v_y(t)$، ثم $x(t)$ و $y(t)$.",
+        "input_type": "text",
+        "answer": { "type": "freeform" },
+        "solution": "بتطبيق القانون الثاني لنيوتن: $\\sum \\vec{F} = m\\vec{a}$<br>القوة الوحيدة المؤثرة هي الثقل $\\vec{P} = m\\vec{g}$<br>بالإسقاط على المحورين:<br>المحور $x$: $a_x = 0$<br>المحور $y$: $a_y = g = 10 m/s^2$<br>بالمكاملة:<br>$v_x(t) = v_0 = 15 m/s$<br>$v_y(t) = gt = 10t$<br>$x(t) = v_0t = 15t$<br>$y(t) = \\frac{1}{2}gt^2 = 5t^2$"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أوجد معادلة المسار $y(x)$.",
+        "input_type": "equation",
+        "solution": "من $x(t) = v_0t$ نجد $t = \\frac{x}{v_0}$<br>نعوض في $y(t)$:<br>$y = \\frac{1}{2}g\\left(\\frac{x}{v_0}\\right)^2 = \\frac{g}{2v_0^2}x^2$<br>$y = \\frac{10}{2 \\times 225}x^2 = \\frac{x^2}{45}$<br>المسار قطع مكافئ (شلجم)."
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب زمن الوصول $t_f$ لحظة ارتطام الكرة بالأرض.",
+        "input_type": "numeric",
+        "placeholder": "t_f = ... s",
+        "answer": { "value": 3, "tolerance": 0.01 },
+        "solution": "لحظة الوصول إلى الأرض: $y = h = 45 m$<br>$45 = \\frac{1}{2}gt_f^2 = 5t_f^2$<br>$t_f^2 = \\frac{45}{5} = 9$<br>$t_f = 3 s$"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب المدى الأفقي $D$ (المسافة الأفقية من قاعدة البناء إلى نقطة سقوط الكرة).",
+        "input_type": "numeric",
+        "placeholder": "D = ... m",
+        "answer": { "value": 45, "tolerance": 0.1 },
+        "solution": "$D = v_0 \\times t_f = 15 \\times 3 = 45 m$"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "احسب قيمة سرعة الكرة قبل لحظة ارتطامها بالأرض.",
+        "input_type": "numeric",
+        "placeholder": "v = ... m/s",
+        "answer": { "value": 33.54, "tolerance": 0.1 },
+        "solution": "مركبتا السرعة عند $t_f = 3 s$:<br>$v_x = v_0 = 15 m/s$<br>$v_y = g \\times t_f = 10 \\times 3 = 30 m/s$<br>$v = \\sqrt{v_x^2 + v_y^2} = \\sqrt{225 + 900} = \\sqrt{1125} \\approx 33.54 m/s$"
+      },
+      {
+        "type": "question",
+        "number": 7,
+        "text": "احسب اتجاه سرعة الكرة قبل لحظة ارتطامها بالأرض (الزاوية بين السرعة والأفقي).",
+        "input_type": "text",
+        "answer": { "type": "freeform" },
+        "solution": "$\\theta = \\arctan\\left(\\frac{v_y}{v_x}\\right) = \\arctan\\left(\\frac{30}{15}\\right) = \\arctan(2)$<br>$\\theta \\approx 63.43°$ تحت الخط الأفقي."
+      },
+      {
+        "type": "question",
+        "number": 8,
+        "text": "باستعمال انحفاظ الطاقة الميكانيكية، تحقق من قيمة السرعة المحسوبة في السؤال 6. (نأخذ $E_p = 0$ عند سطح الأرض).",
+        "input_type": "text",
+        "answer": { "type": "freeform" },
+        "solution": "لحظة القذف:<br>$E_{c0} = \\frac{1}{2}mv_0^2 = 0.5 \\times 0.2 \\times 225 = 22.5 J$<br>$E_{p0} = mgh = 0.2 \\times 10 \\times 45 = 90 J$<br>$E_{m0} = 22.5 + 90 = 112.5 J$<br>لحظة الوصول إلى الأرض ($y = 0$):<br>$E_{pf} = 0$<br>بانحفاظ الطاقة: $E_{mf} = E_{cf} = E_{m0} = 112.5 J$<br>$E_{cf} = \\frac{1}{2}mv_f^2 = 112.5$<br>$v_f = \\sqrt{\\frac{2 \\times 112.5}{0.2}} = \\sqrt{1125} \\approx 33.54 m/s$ (نفس القيمة) ✓"
+      }
+    ]
+  }
+}

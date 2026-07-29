@@ -1,0 +1,79 @@
+{
+  "unit_id": 2,
+  "title": "تمرين 005 - السقوط الحقيقي في الهواء",
+  "order_index": 5,
+  "source": "3AS U02 - Exercice 005",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 005"
+      },
+      {
+        "type": "text",
+        "content": "<p>نترك كرية حديدية صغيرة كتلتها $m = 19 g$ وحجمها $V = 2.71 \\times 10^{-6} m^3$ تسقط من السكون في أنبوب شاقولي مملوء بسائل لزج. تخضع الكرية أثناء سقوطها للقوى التالية:</p><ul><li>الثقل $\\vec{P} = m\\vec{g}$</li><li>قوة دفع أرخميدس $\\vec{F}_A = -\\rho_{\\text{س}} V \\vec{g}$ حيث $\\rho_{\\text{س}} = 900 kg/m^3$ كثافة السائل</li><li>قوة الاحتكاك اللزج $\\vec{f} = -k\\vec{v}$ حيث $k = 0.12 N \\cdot s/m$ (التناسب طردي مع السرعة)</li></ul><p>نعطي $g = 10 m/s^2$.</p>"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحص القوى الخارجية المؤثرة على الكرية أثناء سقوطها، واكتب عبارة كل قوة.",
+        "input_type": "text",
+        "answer": { "type": "freeform" },
+        "solution": "القوى المؤثرة على الكرية:<br>1. الثقل $\\vec{P} = m\\vec{g}$: شاقولي نحو الأسفل، شدته $P = mg = 0.19 N$.<br>2. قوة دفع أرخميدس $\\vec{F}_A = -\\rho V \\vec{g}$: شاقولي نحو الأعلى، شدتها $F_A = \\rho V g = 900 \\times 2.71 \\times 10^{-6} \\times 10 = 0.02439 N$.<br>3. قوة الاحتكاك اللزج $\\vec{f} = -k\\vec{v}$: معاكسة لجهة السرعة، شدتها $f = k v$."
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "طبق القانون الثاني لنيوتن لكتابة المعادلة التفاضلية للسرعة $v(t)$. بين أنها تكتب على الشكل: $\\frac{dv}{dt} + A v = B$، ثم حدد $A$ و $B$ بدلالة معطيات المسألة.",
+        "input_type": "text",
+        "answer": { "type": "freeform" },
+        "solution": "بتطبيق القانون الثاني لنيوتن على الكرية في الاتجاه الشاقولي نحو الأسفل:<br>$\\sum F = m a = m \\frac{dv}{dt}$<br>$P - F_A - f = m \\frac{dv}{dt}$<br>$mg - \\rho V g - k v = m \\frac{dv}{dt}$<br>$m \\frac{dv}{dt} + k v = mg - \\rho V g$<br>$\\frac{dv}{dt} + \\frac{k}{m} v = g \\left(1 - \\frac{\\rho V}{m}\\right)$<br>إذن: $A = \\frac{k}{m} = \\frac{0.12}{0.019} = 6.316 s^{-1}$<br>و $B = g \\left(1 - \\frac{\\rho V}{m}\\right) = 10 \\times \\left(1 - \\frac{900 \\times 2.71 \\times 10^{-6}}{0.019}\\right) = 10 \\times \\left(1 - \\frac{0.002439}{0.019}\\right) = 10 \\times (1 - 0.1284) = 8.716 m/s^2$"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب السرعة الحدية $v_L$ (السرعة الثابتة التي تصل إليها الكرية عندما تنعدم القوة المحصلة).",
+        "input_type": "numeric",
+        "placeholder": "v_L = ... m/s",
+        "answer": { "value": 1.38, "tolerance": 0.01 },
+        "solution": "عند السرعة الحدية، يكون التسارع معدوماً ($a = 0$):<br>$P - F_A - f = 0$<br>$mg - \\rho V g - k v_L = 0$<br>$v_L = \\frac{mg - \\rho V g}{k}$<br>تطبيق عددي:<br>$mg = 0.019 \\times 10 = 0.19 N$<br>$\\rho V g = 900 \\times 2.71 \\times 10^{-6} \\times 10 = 0.02439 N$<br>$v_L = \\frac{0.19 - 0.02439}{0.12} = \\frac{0.16561}{0.12} = 1.38 m/s$"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "حل المعادلة التفاضلية هو: $v(t) = v_L (1 - e^{-t/\\tau})$. احسب ثابت الزمن $\\tau$.",
+        "input_type": "numeric",
+        "placeholder": "τ = ... s",
+        "answer": { "value": 0.158, "tolerance": 0.01 },
+        "solution": "ثابت الزمن $\\tau$ يعطى بالعلاقة: $\\tau = \\frac{m}{k}$<br>تطبيق عددي:<br>$\\tau = \\frac{0.019}{0.12} = 0.1583 s$"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب سرعة الكرية عند اللحظة $t = \\tau$. ما النسبة المئوية من $v_L$ التي بلغتها؟",
+        "input_type": "numeric",
+        "placeholder": "v(τ) = ... m/s",
+        "answer": { "value": 0.872, "tolerance": 0.01 },
+        "solution": "عند $t = \\tau$:<br>$v(\\tau) = v_L (1 - e^{-1}) = 1.38 \\times (1 - 0.368) = 1.38 \\times 0.632 = 0.872 m/s$<br>النسبة المئوية: $\\frac{v(\\tau)}{v_L} \\times 100 = 63.2\\%$<br>أي أن الكرية تبلغ $63.2\\%$ من سرعتها الحدية عند $t = \\tau$."
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "احسب سرعة الكرية عند اللحظة $t = 3\\tau$. ما النسبة المئوية من $v_L$ التي بلغتها؟",
+        "input_type": "numeric",
+        "placeholder": "v(3τ) = ... m/s",
+        "answer": { "value": 1.311, "tolerance": 0.01 },
+        "solution": "عند $t = 3\\tau$:<br>$v(3\\tau) = v_L (1 - e^{-3}) = 1.38 \\times (1 - 0.0498) = 1.38 \\times 0.9502 = 1.311 m/s$<br>النسبة المئوية: $\\frac{v(3\\tau)}{v_L} \\times 100 = 95.0\\%$<br>أي أن الكرية تبلغ $95.0\\%$ من سرعتها الحدية عند $t = 3\\tau$."
+      },
+      {
+        "type": "question",
+        "number": 7,
+        "text": "إذا أعدنا التجربة في الهواء (نهمل دفع أرخميدس) مع $k = 0.06 N \\cdot s/m$، فما هي السرعة الحدية الجديدة $v_{L,\\text{الهواء}}$؟",
+        "input_type": "numeric",
+        "placeholder": "v_L(air) = ... m/s",
+        "answer": { "value": 3.167, "tolerance": 0.01 },
+        "solution": "في الهواء نهمل قوة دفع أرخميدس ($F_A = 0$):<br>$mg - k v_{L,\\text{الهواء}} = 0$<br>$v_{L,\\text{الهواء}} = \\frac{mg}{k} = \\frac{0.19}{0.06} = 3.167 m/s$<br>ثابت الزمن الجديد: $\\tau_{\\text{الهواء}} = \\frac{m}{k} = \\frac{0.019}{0.06} = 0.317 s$"
+      }
+    ]
+  }
+}

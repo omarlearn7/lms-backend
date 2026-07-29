@@ -1,0 +1,93 @@
+{
+  "unit_id": 2,
+  "title": "تمرين 007 - قوانين كبلر، سرعة الإفلات، والتحقق من قانون كبلر الثالث",
+  "order_index": 7,
+  "source": "3AS U02 - Exercice 007",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "الجزء A"
+      },
+      {
+        "type": "text",
+        "content": "ندرس قمراً اصطناعياً كتلته m = 800 kg في مدار دائري حول الأرض على ارتفاع h = 600 km عن سطح الأرض. المعطيات:"
+      },
+      {
+        "type": "text",
+        "content": "$G = 6.67 \\times 10^{-11} N.m^2/kg^2$ — $M_T = 5.97 \\times 10^{24} kg$ — $R_T = 6371 km$"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب شدة قوة التجاذب F التي تطبقها الأرض على القمر الاصطناعي.",
+        "input_type": "numeric",
+        "placeholder": "F = ... N",
+        "answer": { "value": 6554, "tolerance": 100 },
+        "solution": "$r = (R_T + h) \\times 1000 = (6371 + 600) \\times 10^3 = 6.971 \\times 10^6 m$\n$F = G \\cdot \\frac{m \\cdot M_T}{r^2} = 6.67 \\times 10^{-11} \\times \\frac{800 \\times 5.97 \\times 10^{24}}{(6.971 \\times 10^6)^2}$\n$F = 6.67 \\times 10^{-11} \\times \\frac{4.776 \\times 10^{27}}{4.859 \\times 10^{13}} = 6.67 \\times 10^{-11} \\times 9.828 \\times 10^{13}$\n$F \\approx 6554 N$"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب السرعة المدارية v للقمر الاصطناعي.",
+        "input_type": "numeric",
+        "placeholder": "v = ... m/s",
+        "answer": { "value": 7556, "tolerance": 10 },
+        "solution": "تطبيق القانون الثاني لنيوتن: $F = m \\cdot a_N$ حيث $a_N = \\frac{v^2}{r}$\n$G \\cdot \\frac{m \\cdot M_T}{r^2} = m \\cdot \\frac{v^2}{r} \\Rightarrow v^2 = \\frac{G \\cdot M_T}{r}$\n$v = \\sqrt{\\frac{G \\cdot M_T}{r}} = \\sqrt{\\frac{6.67 \\times 10^{-11} \\times 5.97 \\times 10^{24}}{6.971 \\times 10^6}}$\n$v = \\sqrt{5.712 \\times 10^7} \\approx 7556 m/s \\approx 7.56 km/s$"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب الدور المداري T للقمر الاصطناعي بالدقائق.",
+        "input_type": "numeric",
+        "placeholder": "T = ... min",
+        "answer": { "value": 96.6, "tolerance": 1 },
+        "solution": "الدور $T$ هو الزمن اللازم لقطع محيط المدار:\n$T = \\frac{2\\pi r}{v} = \\frac{2\\pi \\times 6.971 \\times 10^6}{7556}$\n$T \\approx 5797 s$\nبالدقائق: $T = \\frac{5797}{60} \\approx 96.6 min$"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "بيّن أن $T^2/r^3 = ثابت$. احسب قيمة هذا الثابت باستخدام المعطيات السابقة.",
+        "input_type": "numeric",
+        "placeholder": "T²/r³ = ... s²/m³",
+        "answer": { "value": 9.9e-14, "tolerance": 1e-14 },
+        "solution": "من السؤال 3: $T = \\frac{2\\pi r}{v}$ ومن السؤال 2: $v = \\sqrt{\\frac{G \\cdot M_T}{r}}$\nبالتعويض: $T = 2\\pi r \\sqrt{\\frac{r}{G \\cdot M_T}} = 2\\pi \\sqrt{\\frac{r^3}{G \\cdot M_T}}$\nنربع الطرفين: $T^2 = 4\\pi^2 \\frac{r^3}{G \\cdot M_T}$\nإذن: $\\frac{T^2}{r^3} = \\frac{4\\pi^2}{G \\cdot M_T} = ثابت$\n\nحسابياً:\n$\\frac{T^2}{r^3} = \\frac{4\\pi^2}{6.67 \\times 10^{-11} \\times 5.97 \\times 10^{24}} = \\frac{39.48}{3.98 \\times 10^{14}}$\n$\\frac{T^2}{r^3} \\approx 9.9 \\times 10^{-14} s^2/m^3$\n\nوهذا يتوافق مع قانون كبلر الثالث: $T^2 \\propto r^3$."
+      },
+      {
+        "type": "heading",
+        "text": "الجزء B"
+      },
+      {
+        "type": "text",
+        "content": "سرعة الإفلات (أو سرعة الانفلات) هي السرعة اللازمة لجسم ما ليتمكن من الهروب من مجال جاذبية الأرض نهائياً دون عودة."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أكتب عبارة سرعة الإفلات $v_{lib}$ من سطح الأرض بدلالة $G$ و $M_T$ و $R_T$، ثم أحسب قيمتها العددية بـ km/s.",
+        "input_type": "numeric",
+        "placeholder": "v_lib = ... km/s",
+        "answer": { "value": 11.2, "tolerance": 0.1 },
+        "solution": "بانحفاظ الطاقة الميكانيكية: الطاقة الكلية عند الإطلاق = الطاقة الكلية عند اللانهاية (صفر)\n$\\frac{1}{2}mv_{lib}^2 - G \\cdot \\frac{m \\cdot M_T}{R_T} = 0$\n$\\frac{1}{2}v_{lib}^2 = \\frac{G \\cdot M_T}{R_T}$\n$v_{lib} = \\sqrt{\\frac{2G \\cdot M_T}{R_T}}$\n\nحسابياً:\n$v_{lib} = \\sqrt{\\frac{2 \\times 6.67 \\times 10^{-11} \\times 5.97 \\times 10^{24}}{6.371 \\times 10^6}}$\n$v_{lib} = \\sqrt{1.25 \\times 10^8} = 11183 m/s$\n$v_{lib} \\approx 11.2 km/s$"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "قارن بين السرعة المدارية (السؤال 2) وسرعة الإفلات (السؤال 5). ما هي النسبة بينهما؟",
+        "input_type": "numeric",
+        "placeholder": "v / v_lib = ...",
+        "answer": { "value": 0.675, "tolerance": 0.01 },
+        "solution": "$v_{orbital} = 7.56 km/s$\n$v_{escape} = 11.2 km/s$\nالنسبة: $\\frac{v_{orbital}}{v_{escape}} = \\frac{7.56}{11.2} \\approx 0.675$\nالسرعة المدارية تمثل حوالي $67.5\\%$ من سرعة الإفلات.\n\nعلماً أن: $v_{orbital} = \\sqrt{\\frac{G \\cdot M_T}{r}}$ و $v_{escape} = \\sqrt{\\frac{2G \\cdot M_T}{R_T}}$\nعند $r = R_T + h$: $\\frac{v_{orbital}}{v_{escape}} = \\sqrt{\\frac{R_T}{2r}} = \\sqrt{\\frac{6371}{2 \\times 6971}} \\approx 0.676$\nأي $v_{orbital} = \\frac{v_{escape}}{\\sqrt{2}}$ عندما $h = 0$."
+      },
+      {
+        "type": "question",
+        "number": 7,
+        "text": "احسب شدة مجال الجاذبية $g(h)$ على ارتفاع $h = 600 km$. قارنها مع $g_0 = 9.81 m/s^2$ على سطح الأرض.",
+        "input_type": "numeric",
+        "placeholder": "g(h) = ... m/s²",
+        "answer": { "value": 8.19, "tolerance": 0.1 },
+        "solution": "$g(h) = \\frac{G \\cdot M_T}{(R_T + h)^2} = \\frac{6.67 \\times 10^{-11} \\times 5.97 \\times 10^{24}}{(6.971 \\times 10^6)^2}$\n$g(h) = \\frac{3.98 \\times 10^{14}}{4.86 \\times 10^{13}} \\approx 8.19 m/s^2$\n\nالمقارنة: $\\frac{g(h)}{g_0} = \\frac{8.19}{9.81} \\approx 0.835$\nأي أن الجاذبية على ارتفاع 600 km تعادل حوالي $83.5\\%$ من الجاذبية على سطح الأرض.\n\nهذا يتوافق مع قانون التربيع العكسي:\n$\\frac{g(h)}{g_0} = \\frac{R_T^2}{(R_T + h)^2} = \\left(\\frac{6371}{6971}\\right)^2 = (0.914)^2 \\approx 0.835$ ✓"
+      }
+    ]
+  }
+}
