@@ -141,7 +141,7 @@
     {
       "type": "note",
       "variant": "tip",
-      "text": "<strong>ملاحظة:</strong> المدى الأفقي يكون أقصى ما يمكن عندما $\\alpha = 45°$ (لأن $\\sin 90° = 1$): $x_{max} = \\frac{v_0^2}{g}$."
+      "text": "<strong>ملاحظة:</strong> المدى الأفقي يكون أقصى ما يمكن عندما $\\alpha = 45^{\\circ}$ (لأن $\\sin 90^{\\circ} = 1$): $x_{max} = \\frac{v_0^2}{g}$."
     },
     {
       "type": "table",
@@ -164,7 +164,7 @@
         [
           "المدى الأفقي",
           "$x_{max} = \\frac{v_0^2 \\sin 2\\alpha}{g}$",
-          "أقصاه عند $\\alpha = 45°$"
+          "أقصاه عند $\\alpha = 45^{\\circ}$"
         ],
         [
           "مدة الحركة",
@@ -187,12 +187,12 @@
     },
     {
       "type": "text",
-      "content": "<p><strong>تأثير زاوية القذف $\\alpha$:</strong></p><ul><li>إذا $\\alpha = 0°$: قذف أفقي — $z_{max} = 0$, $x_{max} = \\frac{v_0}{g}$ (غير محدد)</li><li>إذا $\\alpha = 45°$: أقصى مدى ممكن $x_{max} = \\frac{v_0^2}{g}$</li><li>إذا $\\alpha = 90°$: قذف شاقولي — $x_{max} = 0$, $z_{max} = \\frac{v_0^2}{2g}$</li></ul>"
+      "content": "<p><strong>تأثير زاوية القذف $\\alpha$:</strong></p><ul><li>إذا $\\alpha = 0^{\\circ}$: قذف أفقي — $z_{max} = 0$, $x_{max} = \\frac{v_0}{g}$ (غير محدد)</li><li>إذا $\\alpha = 45^{\\circ}$: أقصى مدى ممكن $x_{max} = \\frac{v_0^2}{g}$</li><li>إذا $\\alpha = 90^{\\circ}$: قذف شاقولي — $x_{max} = 0$, $z_{max} = \\frac{v_0^2}{2g}$</li></ul>"
     },
     {
       "type": "note",
       "variant": "info",
-      "text": "<strong>ملاحظة:</strong> زاويتان متكاملتان ($\\alpha$ و $90° - \\alpha$) تعطيان نفس المدى الأفقي $x_{max}$."
+      "text": "<strong>ملاحظة:</strong> زاويتان متكاملتان ($\\alpha$ و $90^{\\circ} - \\alpha$) تعطيان نفس المدى الأفقي $x_{max}$."
     },
     {
       "type": "divider"

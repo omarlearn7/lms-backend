@@ -12,11 +12,11 @@
       },
       {
         "type": "text",
-        "content": "<p>نضع جسماً صلباً كتلته $m = 2 kg$ على مستوي مائل وخشن، يميل على الأفقي بزاوية $\\alpha = 30°$. يسحب الجسم بقوة $\\vec{F}$ موازية للمستوي وشاقولية نحو الأعلى شدتها $F = 25 N$. معامل الاحتكاك بين الجسم والمستوي $\\mu = 0.2$. طول المستوي $L = 5 m$. ينطلق الجسم من أسفل المستوي بسرعة معدومة.</p><p>نأخذ $g = 10 N/kg$.</p>"
+        "content": "نضع جسماً صلباً كتلته m = 2 kg على مستوي مائل وخشن، يميل على الأفقي بزاوية α = 30°. يسحب الجسم بقوة F موازية للمستوي وشاقولية نحو الأعلى شدتها F = 25 N. معامل الاحتكاك بين الجسم والمستوي μ = 0.2. طول المستوي L = 5 m. ينطلق الجسم من أسفل المستوي بسرعة معدومة.\nنأخذ g = 10 N/kg."
       },
       {
         "type": "diagram",
-        "html": "<svg viewBox='0 0 400 250' xmlns='http://www.w3.org/2000/svg'><rect width='400' height='250' fill='#0f172a'/><polygon points='30,210 370,210 370,50' fill='none' stroke='#475569' stroke-width='2'/><line x1='30' y1='210' x2='370' y2='50' stroke='#64748b' stroke-width='3'/><rect x='160' y='60' width='50' height='40' fill='#475569' rx='3' transform='rotate(30 185 80)'/><text x='185' y='46' fill='#ef4444' font-size='14' text-anchor='middle'>$\\vec{F}$</text><line x1='185' y1='80' x2='185' y2='36' stroke='#ef4444' stroke-width='2' marker-end='url(#arrowRed)'/><text x='100' y='100' fill='#8b5cf6' font-size='14' text-anchor='middle'>$\\vec{P}$</text><line x1='185' y1='80' x2='160' y2='100' stroke='#8b5cf6' stroke-width='2' marker-end='url(#arrowPurple)'/><text x='220' y='100' fill='#22c55e' font-size='14' text-anchor='middle'>$\\vec{N}$</text><line x1='185' y1='30' x2='185' y2='60' stroke='#22c55e' stroke-width='2' marker-end='url(#arrowGreen)'/><text x='70' y='160' fill='#f59e0b' font-size='14' text-anchor='middle'>$\\vec{f}$</text><line x1='185' y1='85' x2='155' y2='70' stroke='#f59e0b' stroke-width='2' marker-end='url(#arrowOrange)'/><defs><marker id='arrowRed' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#ef4444'/></marker><marker id='arrowPurple' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#8b5cf6'/></marker><marker id='arrowGreen' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#22c55e'/></marker><marker id='arrowOrange' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#f59e0b'/></marker></defs><text x='30' y='230' fill='#94a3b8' font-size='11'>$\\alpha = 30°$</text><path d='M 30 210 Q 70 140 370 50' fill='none' stroke='#94a3b8' stroke-width='1' stroke-dasharray='4'/><text x='200' y='230' fill='#94a3b8' font-size='11' text-anchor='middle'>$L = 5 m$</text></svg>",
+        "html": "<svg viewBox='0 0 400 250' xmlns='http://www.w3.org/2000/svg'><rect width='400' height='250' fill='#0f172a'/><polygon points='30,210 370,210 370,50' fill='none' stroke='#475569' stroke-width='2'/><line x1='30' y1='210' x2='370' y2='50' stroke='#64748b' stroke-width='3'/><rect x='160' y='60' width='50' height='40' fill='#475569' rx='3' transform='rotate(30 185 80)'/><text x='185' y='46' fill='#ef4444' font-size='14' text-anchor='middle'>F</text><line x1='185' y1='80' x2='185' y2='36' stroke='#ef4444' stroke-width='2' marker-end='url(#arrowRed)'/><text x='100' y='100' fill='#8b5cf6' font-size='14' text-anchor='middle'>P</text><line x1='185' y1='80' x2='160' y2='100' stroke='#8b5cf6' stroke-width='2' marker-end='url(#arrowPurple)'/><text x='220' y='100' fill='#22c55e' font-size='14' text-anchor='middle'>N</text><line x1='185' y1='30' x2='185' y2='60' stroke='#22c55e' stroke-width='2' marker-end='url(#arrowGreen)'/><text x='70' y='160' fill='#f59e0b' font-size='14' text-anchor='middle'>f</text><line x1='185' y1='85' x2='155' y2='70' stroke='#f59e0b' stroke-width='2' marker-end='url(#arrowOrange)'/><defs><marker id='arrowRed' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#ef4444'/></marker><marker id='arrowPurple' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#8b5cf6'/></marker><marker id='arrowGreen' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#22c55e'/></marker><marker id='arrowOrange' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#f59e0b'/></marker></defs><text x='30' y='230' fill='#94a3b8' font-size='11'>α = 30°</text><path d='M 30 210 Q 70 140 370 50' fill='none' stroke='#94a3b8' stroke-width='1' stroke-dasharray='4'/><text x='200' y='230' fill='#94a3b8' font-size='11' text-anchor='middle'>L = 5 m</text></svg>",
         "alt": "Force diagram on inclined plane"
       },
       {
@@ -25,16 +25,16 @@
         "text": "مثل القوى الخارجية المؤثرة على الجسم.",
         "input_type": "text",
         "answer": { "type": "freeform" },
-        "solution": "القوى المؤثرة: الثقل $\\vec{P}$ (شاقولي نحو الأسفل)، قوة السحب $\\vec{F}$ (موازية للمستوي نحو الأعلى)، قوة رد الفعل $\\vec{N}$ (عمودية على المستوي نحو الأعلى)، قوة الاحتكاك $\\vec{f}$ (موازية للمستوي نحو الأسفل، عكس جهة الحركة)."
+        "solution": "القوى المؤثرة: الثقل P (شاقولي نحو الأسفل)، قوة السحب F (موازية للمستوي نحو الأعلى)، قوة رد الفعل N (عمودية على المستوي نحو الأعلى)، قوة الاحتكاك f (موازية للمستوي نحو الأسفل، عكس جهة الحركة)."
       },
       {
         "type": "question",
         "number": 2,
-        "text": "أحسب عمل كل قوة من القوى المؤثرة على الجسم أثناء انتقاله من $A$ إلى $B$.",
+        "text": "أحسب عمل كل قوة من القوى المؤثرة على الجسم أثناء انتقاله من A إلى B.",
         "input_type": "numeric",
         "placeholder": "W(P) = ... J",
         "answer": { "value": -50, "tolerance": 0.5 },
-        "solution": "ثقل الجسم: $P = mg = 2 \\times 10 = 20 N$<br>الارتفاع: $h = L \\times \\sin\\alpha = 5 \\times 0.5 = 2.5 m$<br>$W_{AB}(\\vec{P}) = -P \\times h = -20 \\times 2.5 = -50 J$<br>رد الفعل: $W_{AB}(\\vec{N}) = 0$ (لأن $\\vec{N} \\perp \\vec{AB}$)<br>قوة السحب: $W_{AB}(\\vec{F}) = F \\times L = 25 \\times 5 = 125 J$<br>قوة الاحتكاك: $f = \\mu \\times N = \\mu \\times mg \\times \\cos\\alpha = 0.2 \\times 20 \\times 0.866 = 3.464 N$<br>$W_{AB}(\\vec{f}) = -f \\times L = -3.464 \\times 5 = -17.32 J$"
+        "solution": "ثقل الجسم: P = mg = 2 × 10 = 20 N\nالارتفاع: h = L × sinα = 5 × 0.5 = 2.5 m\nW_AB(P) = -P × h = -20 × 2.5 = -50 J\nرد الفعل: W_AB(N) = 0 (لأن N ⊥ AB)\nقوة السحب: W_AB(F) = F × L = 25 × 5 = 125 J\nقوة الاحتكاك: f = μ × N = μ × mg × cosα = 0.2 × 20 × 0.866 = 3.464 N\nW_AB(f) = -f × L = -3.464 × 5 = -17.32 J"
       },
       {
         "type": "question",
@@ -43,34 +43,34 @@
         "input_type": "numeric",
         "placeholder": "ΣW = ... J",
         "answer": { "value": 57.68, "tolerance": 0.5 },
-        "solution": "$\\sum W = W(\\vec{P}) + W(\\vec{N}) + W(\\vec{F}) + W(\\vec{f})$<br>$\\sum W = -50 + 0 + 125 + (-17.32) = 57.68 J$"
+        "solution": "Σ W = W(P) + W(N) + W(F) + W(f)\nΣ W = -50 + 0 + 125 + (-17.32) = 57.68 J"
       },
       {
         "type": "question",
         "number": 4,
-        "text": "باستعمال مبرهنة الطاقة الحركية، أحسب سرعة الجسم عند $B$ (قمة المستوي). السرعة الابتدائية $v_A = 0$.",
+        "text": "باستعمال مبرهنة الطاقة الحركية، أحسب سرعة الجسم عند B (قمة المستوي). السرعة الابتدائية v_A = 0.",
         "input_type": "numeric",
         "placeholder": "v_B = ... m/s",
         "answer": { "value": 7.59, "tolerance": 0.1 },
-        "solution": "مبرهنة الطاقة الحركية: $\\Delta E_c = \\frac{1}{2}mv_B^2 - \\frac{1}{2}mv_A^2 = \\sum W$<br>بما أن $v_A = 0$: $\\frac{1}{2}mv_B^2 = 57.68 J$<br>$v_B = \\sqrt{\\frac{2 \\times 57.68}{2}} = \\sqrt{57.68} \\approx 7.59 m/s$"
+        "solution": "مبرهنة الطاقة الحركية: ΔE_c = 1/2 mv_B^2 - 1/2 mv_A^2 = Σ W\nبما أن v_A = 0: 1/2 mv_B^2 = 57.68 J\nv_B = √((2 × 57.68)/2) = √(57.68) ≈ 7.59 m/s"
       },
       {
         "type": "question",
         "number": 5,
-        "text": "إذا كان السطح أملس ($\\mu = 0$)، ماهي سرعة الجسم عند $B$؟ ماذا تلاحظ؟",
+        "text": "إذا كان السطح أملس (μ = 0)، ماهي سرعة الجسم عند B؟ ماذا تلاحظ؟",
         "input_type": "numeric",
         "placeholder": "v_B = ... m/s",
         "answer": { "value": 8.66, "tolerance": 0.1 },
-        "solution": "إذا كان السطح أملس ($f = 0$):<br>$\\sum W = W(\\vec{P}) + W(\\vec{N}) + W(\\vec{F}) = -50 + 0 + 125 = 75 J$<br>$\\frac{1}{2}mv_B^2 = 75 J$<br>$v_B = \\sqrt{\\frac{2 \\times 75}{2}} = \\sqrt{75} \\approx 8.66 m/s$<br>نلاحظ أن السرعة أكبر في حالة السطح الأملس لأن الاحتكاك يبدد جزءاً من الطاقة."
+        "solution": "إذا كان السطح أملس (f = 0):\nΣ W = W(P) + W(N) + W(F) = -50 + 0 + 125 = 75 J\n1/2 mv_B^2 = 75 J\nv_B = √((2 × 75)/2) = √(75) ≈ 8.66 m/s\nنلاحظ أن السرعة أكبر في حالة السطح الأملس لأن الاحتكاك يبدد جزءاً من الطاقة."
       },
       {
         "type": "question",
         "number": 6,
-        "text": "جسم آخر كتلته $m = 1 kg$ يسقط سقوطاً حراً من ارتفاع $h = 10 m$ دون سرعة ابتدائية. باستعمال مبدأ انحفاظ الطاقة الميكانيكية، أحسب سرعته لحظة وصوله إلى الأرض ($g = 10 N/kg$).",
+        "text": "جسم آخر كتلته m = 1 kg يسقط سقوطاً حراً من ارتفاع h = 10 m دون سرعة ابتدائية. باستعمال مبدأ انحفاظ الطاقة الميكانيكية، أحسب سرعته لحظة وصوله إلى الأرض (g = 10 N/kg).",
         "input_type": "numeric",
         "placeholder": "v = ... m/s",
         "answer": { "value": 14.14, "tolerance": 0.1 },
-        "solution": "بانحفاظ الطاقة الميكانيكية: $\\Delta E_m = 0$<br>$E_{cA} + E_{pA} = E_{cB} + E_{pB}$<br>عند $A$ (ارتفاع $h$): $v_A = 0 \\to E_{cA} = 0$, $E_{pA} = mgh$<br>عند $B$ (الأرض): $E_{pB} = 0$, $E_{cB} = \\frac{1}{2}mv^2$<br>$mgh = \\frac{1}{2}mv^2$<br>$v = \\sqrt{2gh} = \\sqrt{2 \\times 10 \\times 10} = \\sqrt{200} \\approx 14.14 m/s$"
+        "solution": "بانحفاظ الطاقة الميكانيكية: ΔE_m = 0\nE_cA + E_pA = E_cB + E_pB\nعند A (ارتفاع h): v_A = 0 → E_cA = 0, E_pA = mgh\nعند B (الأرض): E_pB = 0, E_cB = 1/2 mv^2\nmgh = 1/2 mv^2\nv = √(2gh) = √(2 × 10 × 10) = √(200) ≈ 14.14 m/s"
       }
     ]
   }

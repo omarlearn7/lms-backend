@@ -15,7 +15,7 @@
       },
       {
         "type": "text",
-        "content": "$G = 6.67 \\times 10^{-11} N.m^2/kg^2$ — $M_T = 5.97 \\times 10^{24} kg$ — $R_T = 6371 km$"
+        "content": "G = 6.67 × 10⁻¹¹ N.m²/kg² — M_T = 5.97 × 10²⁴ kg — R_T = 6371 km"
       },
       {
         "type": "question",
@@ -24,7 +24,7 @@
         "input_type": "numeric",
         "placeholder": "F = ... N",
         "answer": { "value": 6554, "tolerance": 100 },
-        "solution": "$r = (R_T + h) \\times 1000 = (6371 + 600) \\times 10^3 = 6.971 \\times 10^6 m$\n$F = G \\cdot \\frac{m \\cdot M_T}{r^2} = 6.67 \\times 10^{-11} \\times \\frac{800 \\times 5.97 \\times 10^{24}}{(6.971 \\times 10^6)^2}$\n$F = 6.67 \\times 10^{-11} \\times \\frac{4.776 \\times 10^{27}}{4.859 \\times 10^{13}} = 6.67 \\times 10^{-11} \\times 9.828 \\times 10^{13}$\n$F \\approx 6554 N$"
+        "solution": "r = (R_T + h) × 1000 = (6371 + 600) × 10³ = 6.971 × 10⁶ m\nF = G · (m · M_T)/r² = 6.67 × 10⁻¹¹ × (800 × 5.97 × 10²⁴)/((6.971 × 10⁶)²)\nF = 6.67 × 10⁻¹¹ × (4.776 × 10²⁷)/(4.859 × 10¹³) = 6.67 × 10⁻¹¹ × 9.828 × 10¹³\nF ≈ 6554 N"
       },
       {
         "type": "question",
@@ -33,7 +33,7 @@
         "input_type": "numeric",
         "placeholder": "v = ... m/s",
         "answer": { "value": 7556, "tolerance": 10 },
-        "solution": "تطبيق القانون الثاني لنيوتن: $F = m \\cdot a_N$ حيث $a_N = \\frac{v^2}{r}$\n$G \\cdot \\frac{m \\cdot M_T}{r^2} = m \\cdot \\frac{v^2}{r} \\Rightarrow v^2 = \\frac{G \\cdot M_T}{r}$\n$v = \\sqrt{\\frac{G \\cdot M_T}{r}} = \\sqrt{\\frac{6.67 \\times 10^{-11} \\times 5.97 \\times 10^{24}}{6.971 \\times 10^6}}$\n$v = \\sqrt{5.712 \\times 10^7} \\approx 7556 m/s \\approx 7.56 km/s$"
+        "solution": "تطبيق القانون الثاني لنيوتن: F = m · a_N حيث a_N = v²/r\nG · (m · M_T)/r² = m · v²/r ⇒ v² = (G · M_T)/r\nv = √((G · M_T)/r) = √((6.67 × 10⁻¹¹ × 5.97 × 10²⁴)/(6.971 × 10⁶))\nv = √(5.712 × 10⁷) ≈ 7556 m/s ≈ 7.56 km/s"
       },
       {
         "type": "question",
@@ -42,16 +42,16 @@
         "input_type": "numeric",
         "placeholder": "T = ... min",
         "answer": { "value": 96.6, "tolerance": 1 },
-        "solution": "الدور $T$ هو الزمن اللازم لقطع محيط المدار:\n$T = \\frac{2\\pi r}{v} = \\frac{2\\pi \\times 6.971 \\times 10^6}{7556}$\n$T \\approx 5797 s$\nبالدقائق: $T = \\frac{5797}{60} \\approx 96.6 min$"
+        "solution": "الدور T هو الزمن اللازم لقطع محيط المدار:\nT = (2πr)/v = (2π × 6.971 × 10⁶)/7556\nT ≈ 5797 s\nبالدقائق: T = 5797/60 ≈ 96.6 min"
       },
       {
         "type": "question",
         "number": 4,
-        "text": "بيّن أن $T^2/r^3 = ثابت$. احسب قيمة هذا الثابت باستخدام المعطيات السابقة.",
+        "text": "بيّن أن T²/r³ = ثابت. احسب قيمة هذا الثابت باستخدام المعطيات السابقة.",
         "input_type": "numeric",
         "placeholder": "T²/r³ = ... s²/m³",
         "answer": { "value": 9.9e-14, "tolerance": 1e-14 },
-        "solution": "من السؤال 3: $T = \\frac{2\\pi r}{v}$ ومن السؤال 2: $v = \\sqrt{\\frac{G \\cdot M_T}{r}}$\nبالتعويض: $T = 2\\pi r \\sqrt{\\frac{r}{G \\cdot M_T}} = 2\\pi \\sqrt{\\frac{r^3}{G \\cdot M_T}}$\nنربع الطرفين: $T^2 = 4\\pi^2 \\frac{r^3}{G \\cdot M_T}$\nإذن: $\\frac{T^2}{r^3} = \\frac{4\\pi^2}{G \\cdot M_T} = ثابت$\n\nحسابياً:\n$\\frac{T^2}{r^3} = \\frac{4\\pi^2}{6.67 \\times 10^{-11} \\times 5.97 \\times 10^{24}} = \\frac{39.48}{3.98 \\times 10^{14}}$\n$\\frac{T^2}{r^3} \\approx 9.9 \\times 10^{-14} s^2/m^3$\n\nوهذا يتوافق مع قانون كبلر الثالث: $T^2 \\propto r^3$."
+        "solution": "من السؤال 3: T = (2πr)/v ومن السؤال 2: v = √((G · M_T)/r)\nبالتعويض: T = 2πr √(r/(G · M_T)) = 2π √(r³/(G · M_T))\nنربع الطرفين: T² = 4π² r³/(G · M_T)\nإذن: T²/r³ = (4π²)/(G · M_T) = ثابت\n\nحسابياً:\nT²/r³ = (4π²)/(6.67 × 10⁻¹¹ × 5.97 × 10²⁴) = 39.48/(3.98 × 10¹⁴)\nT²/r³ ≈ 9.9 × 10⁻¹⁴ s²/m³\n\nوهذا يتوافق مع قانون كبلر الثالث: T² ∝ r³."
       },
       {
         "type": "heading",
@@ -64,11 +64,11 @@
       {
         "type": "question",
         "number": 5,
-        "text": "أكتب عبارة سرعة الإفلات $v_{lib}$ من سطح الأرض بدلالة $G$ و $M_T$ و $R_T$، ثم أحسب قيمتها العددية بـ km/s.",
+        "text": "أكتب عبارة سرعة الإفلات v_lib من سطح الأرض بدلالة G و M_T و R_T، ثم أحسب قيمتها العددية بـ km/s.",
         "input_type": "numeric",
         "placeholder": "v_lib = ... km/s",
         "answer": { "value": 11.2, "tolerance": 0.1 },
-        "solution": "بانحفاظ الطاقة الميكانيكية: الطاقة الكلية عند الإطلاق = الطاقة الكلية عند اللانهاية (صفر)\n$\\frac{1}{2}mv_{lib}^2 - G \\cdot \\frac{m \\cdot M_T}{R_T} = 0$\n$\\frac{1}{2}v_{lib}^2 = \\frac{G \\cdot M_T}{R_T}$\n$v_{lib} = \\sqrt{\\frac{2G \\cdot M_T}{R_T}}$\n\nحسابياً:\n$v_{lib} = \\sqrt{\\frac{2 \\times 6.67 \\times 10^{-11} \\times 5.97 \\times 10^{24}}{6.371 \\times 10^6}}$\n$v_{lib} = \\sqrt{1.25 \\times 10^8} = 11183 m/s$\n$v_{lib} \\approx 11.2 km/s$"
+        "solution": "بانحفاظ الطاقة الميكانيكية: الطاقة الكلية عند الإطلاق = الطاقة الكلية عند اللانهاية (صفر)\n½mv_lib² - G · (m · M_T)/R_T = 0\n½v_lib² = (G · M_T)/R_T\nv_lib = √((2G · M_T)/R_T)\n\nحسابياً:\nv_lib = √((2 × 6.67 × 10⁻¹¹ × 5.97 × 10²⁴)/(6.371 × 10⁶))\nv_lib = √(1.25 × 10⁸) = 11183 m/s\nv_lib ≈ 11.2 km/s"
       },
       {
         "type": "question",
@@ -77,16 +77,16 @@
         "input_type": "numeric",
         "placeholder": "v / v_lib = ...",
         "answer": { "value": 0.675, "tolerance": 0.01 },
-        "solution": "$v_{orbital} = 7.56 km/s$\n$v_{escape} = 11.2 km/s$\nالنسبة: $\\frac{v_{orbital}}{v_{escape}} = \\frac{7.56}{11.2} \\approx 0.675$\nالسرعة المدارية تمثل حوالي $67.5\\%$ من سرعة الإفلات.\n\nعلماً أن: $v_{orbital} = \\sqrt{\\frac{G \\cdot M_T}{r}}$ و $v_{escape} = \\sqrt{\\frac{2G \\cdot M_T}{R_T}}$\nعند $r = R_T + h$: $\\frac{v_{orbital}}{v_{escape}} = \\sqrt{\\frac{R_T}{2r}} = \\sqrt{\\frac{6371}{2 \\times 6971}} \\approx 0.676$\nأي $v_{orbital} = \\frac{v_{escape}}{\\sqrt{2}}$ عندما $h = 0$."
+        "solution": "v_orbital = 7.56 km/s\nv_escape = 11.2 km/s\nالنسبة: v_orbital/v_escape = 7.56/11.2 ≈ 0.675\nالسرعة المدارية تمثل حوالي 67.5% من سرعة الإفلات.\n\nعلماً أن: v_orbital = √((G · M_T)/r) و v_escape = √((2G · M_T)/R_T)\nعند r = R_T + h: v_orbital/v_escape = √(R_T/(2r)) = √(6371/(2 × 6971)) ≈ 0.676\nأي v_orbital = v_escape/√2 عندما h = 0."
       },
       {
         "type": "question",
         "number": 7,
-        "text": "احسب شدة مجال الجاذبية $g(h)$ على ارتفاع $h = 600 km$. قارنها مع $g_0 = 9.81 m/s^2$ على سطح الأرض.",
+        "text": "احسب شدة مجال الجاذبية g(h) على ارتفاع h = 600 km. قارنها مع g₀ = 9.81 m/s² على سطح الأرض.",
         "input_type": "numeric",
         "placeholder": "g(h) = ... m/s²",
         "answer": { "value": 8.19, "tolerance": 0.1 },
-        "solution": "$g(h) = \\frac{G \\cdot M_T}{(R_T + h)^2} = \\frac{6.67 \\times 10^{-11} \\times 5.97 \\times 10^{24}}{(6.971 \\times 10^6)^2}$\n$g(h) = \\frac{3.98 \\times 10^{14}}{4.86 \\times 10^{13}} \\approx 8.19 m/s^2$\n\nالمقارنة: $\\frac{g(h)}{g_0} = \\frac{8.19}{9.81} \\approx 0.835$\nأي أن الجاذبية على ارتفاع 600 km تعادل حوالي $83.5\\%$ من الجاذبية على سطح الأرض.\n\nهذا يتوافق مع قانون التربيع العكسي:\n$\\frac{g(h)}{g_0} = \\frac{R_T^2}{(R_T + h)^2} = \\left(\\frac{6371}{6971}\\right)^2 = (0.914)^2 \\approx 0.835$ ✓"
+        "solution": "g(h) = (G · M_T)/((R_T + h)²) = (6.67 × 10⁻¹¹ × 5.97 × 10²⁴)/((6.971 × 10⁶)²)\ng(h) = (3.98 × 10¹⁴)/(4.86 × 10¹³) ≈ 8.19 m/s²\n\nالمقارنة: g(h)/g₀ = 8.19/9.81 ≈ 0.835\nأي أن الجاذبية على ارتفاع 600 km تعادل حوالي 83.5% من الجاذبية على سطح الأرض.\n\nهذا يتوافق مع قانون التربيع العكسي:\ng(h)/g₀ = R_T²/((R_T + h)²) = (6371/6971)² = (0.914)² ≈ 0.835 ✓"
       }
     ]
   }

@@ -91,7 +91,7 @@ canvas { display: block; width: 100%; max-width: 700px; height: auto; margin: 0 
       <div class="data-row"><span class="label">التسارع (m/s²)</span><span class="value" id="d-acc">0.00</span></div>
       <div class="data-row"><span class="label">السرعة (m/s)</span><span class="value" id="d-vel">0.00</span></div>
       <div class="data-row"><span class="label">الإزاحة (m)</span><span class="value" id="d-disp">0.00</span></div>
-      <div class="data-row"><span class="label">الشغل المبذول (J)</span><span class="value" id="d-work">0.00</span></div>
+      <div class="data-row"><span class="label">الشغل الكلي ΣW (J)</span><span class="value" id="d-work">0.00</span></div>
       <div class="data-row"><span class="label">الطاقة الحركية (J)</span><span class="value" id="d-ke">0.00</span></div>
     </div>
   </div>
@@ -99,7 +99,7 @@ canvas { display: block; width: 100%; max-width: 700px; height: auto; margin: 0 
   <div class="energy-chart">
     <h3>مخطط الطاقة</h3>
     <div class="energy-row">
-      <span class="energy-label">الشغل المبذول</span>
+      <span class="energy-label">الشغل الكلي ΣW</span>
       <div class="energy-track"><div class="energy-fill blue" id="bar-work" style="width:0%">0.0 J</div></div>
       <span class="energy-value" id="val-work">0.0 J</span>
     </div>
@@ -257,7 +257,7 @@ canvas { display: block; width: 100%; max-width: 700px; height: auto; margin: 0 
       if (Fx > f) Fnet = Fx - f;
     }
     const a = Fnet / mass;
-    const Wk = Fx * d;
+    const Wk = Fnet * d;
     const Ek = 0.5 * mass * v * v;
 
     const cx = boxX, cy = GROUND_Y - BOX_H / 2;
