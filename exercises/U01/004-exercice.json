@@ -1,0 +1,66 @@
+{
+  "unit_id": 1,
+  "title": "تمرين 004 - تحضير محلول هيدروكسيد الصوديوم",
+  "order_index": 4,
+  "source": "3AS U01 - Exercice 003-R",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 004"
+      },
+      {
+        "type": "text",
+        "content": "لتحضير محلول (S) لهيدروكسيد الصوديوم NaOH قمنا بحل m₀ = 4 g من هيدروكسيد الصوديوم النقي في حجم V₀ = 200 mL من الماء المقطر."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: M(Na) = 23 g/mol, M(O) = 16 g/mol, M(H) = 1 g/mol."
+      },
+      {
+        "type": "question",
+        "number": "1-أ",
+        "text": "احسب التركيز المولي C₀ للمحلول (S).",
+        "input_type": "numeric",
+        "placeholder": "C₀ = ... mol/L"
+      },
+      {
+        "type": "question",
+        "number": "1-ب",
+        "text": "احسب التركيز الكتلي Cm₀ للمحلول (S) بطريقتين مختلفتين.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": "1-ج",
+        "text": "كم كمية مادة NaOH المنحلة في عينة من المحلول (S) حجمها V₁ = 50 mL؟",
+        "input_type": "numeric",
+        "placeholder": "n = ... mol"
+      },
+      {
+        "type": "text",
+        "content": "بواسطة ماصة مدرجة نسحب حجماً V₂ = 10 mL من المحلول (S) ونضعها في كأس بيشر ثم نضيف لها حجم Vₑ = 90 mL من الماء المقطر."
+      },
+      {
+        "type": "question",
+        "number": "2-أ",
+        "text": "أوجد حجم المحلول الجديد V₃.",
+        "input_type": "numeric",
+        "placeholder": "V₃ = ... mL"
+      },
+      {
+        "type": "question",
+        "number": "2-ب",
+        "text": "استنتج معامل التمديد F.",
+        "input_type": "numeric",
+        "placeholder": "F = ..."
+      },
+      {
+        "type": "question",
+        "number": "2-ج",
+        "text": "أوجد بطريقتين مختلفتين التركيز المولي C₁ للمحلول الجديد.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

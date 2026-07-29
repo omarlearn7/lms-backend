@@ -1,0 +1,106 @@
+{
+  "unit_id": 1,
+  "title": "تمرين 009 - كتابة المعادلات النصفية للأكسدة والإرجاع",
+  "order_index": 9,
+  "source": "3AS U01 - Exercice 007-R",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 009"
+      },
+      {
+        "type": "text",
+        "content": "أكتب المعادلتين النصفيتين للأكسدة والإرجاع ثم معادلات الأكسدة-الإرجاعية في الحالات التالية:"
+      },
+      {
+        "type": "text",
+        "content": "الحالة (1): المتفاعلان Fe و Cl₂، الثنائيتان (Fe³⁺/Fe) و (Cl₂/Cl⁻)."
+      },
+      {
+        "type": "question",
+        "number": "1-أ",
+        "text": "أكتب المعادلة النصفية لأكسدة Fe إلى Fe³⁺.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": "1-ب",
+        "text": "أكتب المعادلة النصفية لإرجاع Cl₂ إلى Cl⁻.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": "1-ج",
+        "text": "أكتب معادلة الأكسدة-الإرجاعية الإجمالية.",
+        "input_type": "equation"
+      },
+      {
+        "type": "text",
+        "content": "الحالة (2): المتفاعلان I⁻ و S₂O₈²⁻، الثنائيتان (I₂/I⁻) و (S₂O₈²⁻/SO₄²⁻)."
+      },
+      {
+        "type": "question",
+        "number": "2-أ",
+        "text": "أكتب المعادلة النصفية لأكسدة I⁻ إلى I₂.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": "2-ب",
+        "text": "أكتب المعادلة النصفية لإرجاع S₂O₈²⁻ إلى SO₄²⁻.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": "2-ج",
+        "text": "أكتب معادلة الأكسدة-الإرجاعية الإجمالية.",
+        "input_type": "equation"
+      },
+      {
+        "type": "text",
+        "content": "الحالة (3): المتفاعلان Fe²⁺ و Cr₂O₇²⁻ في وسط حمضي، الثنائيتان (Fe³⁺/Fe²⁺) و (Cr₂O₇²⁻/Cr³⁺)."
+      },
+      {
+        "type": "question",
+        "number": "3-أ",
+        "text": "أكتب المعادلة النصفية لأكسدة Fe²⁺ إلى Fe³⁺.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": "3-ب",
+        "text": "أكتب المعادلة النصفية لإرجاع Cr₂O₇²⁻ إلى Cr³⁺ في وسط حمضي.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": "3-ج",
+        "text": "أكتب معادلة الأكسدة-الإرجاعية الإجمالية.",
+        "input_type": "equation"
+      },
+      {
+        "type": "text",
+        "content": "الحالة (4): المتفاعلان Al و H₃O⁺، الثنائيتان (Al³⁺/Al) و (H₃O⁺/H₂)."
+      },
+      {
+        "type": "question",
+        "number": "4-أ",
+        "text": "أكتب المعادلة النصفية لأكسدة Al إلى Al³⁺.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": "4-ب",
+        "text": "أكتب المعادلة النصفية لإرجاع H₃O⁺ إلى H₂.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": "4-ج",
+        "text": "أكتب معادلة الأكسدة-الإرجاعية الإجمالية.",
+        "input_type": "equation"
+      }
+    ]
+  }
+}

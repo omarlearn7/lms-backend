@@ -14,10 +14,45 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 const exercises = [
   {
     unit_id: 1,
-    title: 'تمرين 001 - حساب الكتلة المولية وكمية المادة',
-    order_index: 1,
-    source: '3AS U01 - Exercice 001',
-    content_json: require('../exercises/U01/001-exercice.json').content_json,
+    title: 'تمرين 004 - تحضير محلول هيدروكسيد الصوديوم',
+    order_index: 4,
+    source: '3AS U01 - Exercice 003-R',
+    content_json: require('../exercises/U01/004-exercice.json').content_json,
+  },
+  {
+    unit_id: 1,
+    title: 'تمرين 005 - الكافيين والسكروز في المشروبات الغازية',
+    order_index: 5,
+    source: '3AS U01 - Exercice 005',
+    content_json: require('../exercises/U01/005-exercice.json').content_json,
+  },
+  {
+    unit_id: 1,
+    title: 'تمرين 006 - حمض الخل',
+    order_index: 6,
+    source: '3AS U01 - Exercice 001-R2',
+    content_json: require('../exercises/U01/006-exercice.json').content_json,
+  },
+  {
+    unit_id: 1,
+    title: 'تمرين 007 - تفاعل الزنك مع حمض كلور الهيدروجين',
+    order_index: 7,
+    source: '3AS U01 - Exercice 010-R',
+    content_json: require('../exercises/U01/007-exercice.json').content_json,
+  },
+  {
+    unit_id: 1,
+    title: 'تمرين 008 - معايرة غاز SO₂ في الهواء',
+    order_index: 8,
+    source: '3AS U01 - Exercice 016-R',
+    content_json: require('../exercises/U01/008-exercice.json').content_json,
+  },
+  {
+    unit_id: 1,
+    title: 'تمرين 009 - كتابة المعادلات النصفية للأكسدة والإرجاع',
+    order_index: 9,
+    source: '3AS U01 - Exercice 007-R',
+    content_json: require('../exercises/U01/009-exercice.json').content_json,
   },
   {
     unit_id: 1,
@@ -141,7 +176,15 @@ const exercises = [
 ];
 
 (async () => {
+  // Fetch existing titles to avoid duplicates
+  const { data: existing } = await supabase.from('exercises').select('title');
+  const existingTitles = new Set(existing.map(e => e.title));
+
   for (const ex of exercises) {
+    if (existingTitles.has(ex.title)) {
+      console.log(`Skipped (already exists): "${ex.title}"`);
+      continue;
+    }
     const { data, error } = await supabase.from('exercises').insert(ex).select('id');
     if (error) {
       console.error(`Error inserting "${ex.title}": ${error.message}`);

@@ -1,0 +1,36 @@
+{
+  "unit_id": 1,
+  "title": "تمرين 006 - حمض الخل",
+  "order_index": 6,
+  "source": "3AS U01 - Exercice 001-R2",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 006"
+      },
+      {
+        "type": "text",
+        "content": "حمض الخل هو سائل صيغته الجزيئية المجملة CH₃COOH."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: M(C) = 12 g/mol, M(H) = 1 g/mol, M(O) = 16 g/mol."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب الكتلة المولية الجزيئية M لحمض الخل.",
+        "input_type": "numeric",
+        "placeholder": "M = ... g/mol"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب كمية المادة n الموجودة في m = 200 g من حمض الخل.",
+        "input_type": "numeric",
+        "placeholder": "n = ... mol"
+      }
+    ]
+  }
+}

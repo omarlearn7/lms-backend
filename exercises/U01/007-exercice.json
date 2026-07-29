@@ -1,0 +1,52 @@
+{
+  "unit_id": 1,
+  "title": "تمرين 007 - تفاعل الزنك مع حمض كلور الهيدروجين",
+  "order_index": 7,
+  "source": "3AS U01 - Exercice 010-R",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 007"
+      },
+      {
+        "type": "text",
+        "content": "لدينا محلول من حمض كلور الهيدروجين (H₃O⁺ + Cl⁻) حجمه V = 200 mL، تركيزه المولي C = 0.2 mol/L. أدخلنا فيه قطعة من الزنك Zn النقي كتلتها m. نلاحظ حدوث تحول كيميائي مرفق بانطلاق غاز الهيدروجين H₂. نقيس حجمه في الشرطين النظاميين فنجد V(H₂) = 0.224 L."
+      },
+      {
+        "type": "text",
+        "content": "التفاعل الحادث منمذج بالمعادلة: Zn(s) + 2 H₃O⁺(aq) → Zn²⁺(aq) + H₂(g) + 2 H₂O(l)."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: M(Zn) = 65 g/mol، الحجم المولي Vm = 22.4 L/mol في الشرطين النظاميين."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أنشئ جدول تقدم التفاعل.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "جد قيمة التقدم الأعظمي xₘₐₓ وحدد المتفاعل المحد.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب الكتلة الابتدائية m لقطعة الزنك.",
+        "input_type": "numeric",
+        "placeholder": "m = ... g"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب التراكيز المولية للشوارد المتواجدة في المزيج التفاعلي عند نهاية التفاعل.",
+        "input_type": "text",
+        "placeholder": "[Zn²⁺], [Cl⁻] = ... mol/L"
+      }
+    ]
+  }
+}
