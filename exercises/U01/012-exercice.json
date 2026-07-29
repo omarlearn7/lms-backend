@@ -21,8 +21,18 @@
         "type": "question",
         "number": 1,
         "text": "أنشئ جدول التقدم للتفاعل.",
-        "input_type": "text",
-        "answer": "جدول التقدم: Mg + 2H₃O⁺ → Mg²⁺ + H₂ + 2H₂O\nابتداءً: n₀(Mg) = 0.24/24.3 = 0.01 mol, n₀(H₃O⁺) = 0.1 × 0.2 = 0.02 mol\nأثناء التفاعل: Mg: 0.01 - x, H₃O⁺: 0.02 - 2x, Mg²⁺: x, H₂: x\nعند النهاية: المتفاعلان مضبوطان بنسب ستوكيومترية, xₘₐₓ = 0.01 mol",
+        "input_type": "progress_table",
+        "reaction": "Mg(s) + 2H₃O⁺(aq) → Mg²⁺(aq) + H₂(g) + 2H₂O(l)",
+        "species": ["Mg", "H₃O⁺", "Mg²⁺", "H₂"],
+        "initial": {"Mg": "m=0.24g/M", "H₃O⁺": "C₀×V"},
+        "answer": {
+          "cells": {
+            "Mg": {"initial": "0.01", "during": "0.01-x", "final": "0.01-xₘ"},
+            "H₃O⁺": {"initial": "0.02", "during": "0.02-2x", "final": "0.02-2xₘ"},
+            "Mg²⁺": {"initial": "0", "during": "x", "final": "xₘ"},
+            "H₂": {"initial": "0", "during": "x", "final": "xₘ"}
+          }
+        },
         "solution": "n(Mg)₀ = m/M = 0.24/24.3 ≈ 0.01 mol\nn(H₃O⁺)₀ = C₀ × V = 0.1 × 0.2 = 0.02 mol\n\nالمعادلة: Mg + 2H₃O⁺ → Mg²⁺ + H₂ + 2H₂O\n\nالابتدائية: 0.01 / 0.02 / 0 / 0 / وفرة\nالانتقالية: 0.01-x / 0.02-2x / x / x / وفرة\nالنهائية: 0.01-xₘₐₓ / 0.02-2xₘₐₓ / xₘₐₓ / xₘₐₓ / وفرة\n\nالمتفاعل المحد: n(Mg)₀/1 = 0.01, n(H₃O⁺)₀/2 = 0.01 ⇒ متساويان ⇒ xₘₐₓ = 0.01 mol"
       },
       {

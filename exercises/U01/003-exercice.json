@@ -24,7 +24,18 @@
         "type": "question",
         "number": 1,
         "text": "أنشئ جدول تقدم التفاعل.",
-        "input_type": "text",
+        "input_type": "progress_table",
+        "reaction": "2I⁻(aq) + S₂O₈²⁻(aq) → I₂(aq) + 2SO₄²⁻(aq)",
+        "species": ["I⁻", "S₂O₈²⁻", "I₂", "SO₄²⁻"],
+        "initial": {"I⁻": "C₁V₁/V", "S₂O₈²⁻": "C₂V₂/V"},
+        "answer": {
+          "cells": {
+            "I⁻": {"initial": "0.01", "during": "0.01-2x", "final": "0.01-2xₘ"},
+            "S₂O₈²⁻": {"initial": "0.005", "during": "0.005-x", "final": "0.005-xₘ"},
+            "I₂": {"initial": "0", "during": "x", "final": "xₘ"},
+            "SO₄²⁻": {"initial": "0", "during": "2x", "final": "2xₘ"}
+          }
+        },
         "solution": "المعادلة: 2I⁻ + S₂O₈²⁻ → I₂ + 2SO₄²⁻\nالكميات الابتدائية:\nn₁(I⁻) = C₁V₁ = 0.2×0.05 = 0.01 mol\nn₂(S₂O₈²⁻) = C₂V₂ = 0.1×0.05 = 0.005 mol\nV_total = 0.1 L\n\nجدول التقدم:\n          2I⁻     +    S₂O₈²⁻    →    I₂    +    2SO₄²⁻\ninitial   0.01         0.005          0           0\ninterim   0.01-2x      0.005-x        x          2x\nfinal     0.01-2xₘ     0.005-xₘ      xₘ         2xₘ\n\n[I₂] = x/V ⇒ x = [I₂] × V\nعند t=5: x = 1.2×10⁻³ mol\nعند t=30: x = 3.5×10⁻³ mol\nالمتفاعل المحد: xₘₐₓ = 0.005 mol (S₂O₈²⁻)"
       },
       {

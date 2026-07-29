@@ -25,7 +25,18 @@
         "type": "question",
         "number": 1,
         "text": "أنشئ جدول تقدم التفاعل.",
-        "input_type": "text",
+        "input_type": "progress_table",
+        "reaction": "Zn(s) + 2H₃O⁺(aq) → Zn²⁺(aq) + H₂(g) + 2H₂O(l)",
+        "species": ["Zn", "H₃O⁺", "Zn²⁺", "H₂"],
+        "initial": {"Zn": "m/M", "H₃O⁺": "C×V"},
+        "answer": {
+          "cells": {
+            "Zn": {"initial": "m/65", "during": "m/65-x", "final": "m/65-xₘ"},
+            "H₃O⁺": {"initial": "0.04", "during": "0.04-2x", "final": "0.04-2xₘ"},
+            "Zn²⁺": {"initial": "0", "during": "x", "final": "xₘ"},
+            "H₂": {"initial": "0", "during": "x", "final": "xₘ"}
+          }
+        },
         "solution": "المعادلة: Zn(s) + 2H₃O⁺(aq) → Zn²⁺(aq) + H₂(g) + 2H₂O(l)\nالكميات الابتدائية:\nn(H₃O⁺) = C×V = 0.2×0.2 = 0.04 mol\nn(Zn) = m/65 (غير معروفة)\nn(H₂)₀ = 0, n(Zn²⁺)₀ = 0\n\nجدول التقدم:\n            Zn   +   2H₃O⁺    →   Zn²⁺   +   H₂   +   2H₂O\ninitial    m/65      0.04         0         0       وفير\ninterim   m/65-x    0.04-2x       x         x       وفير\nfinal     m/65-xₘ   0.04-2xₘ      xₘ        xₘ      وفير"
       },
       {
