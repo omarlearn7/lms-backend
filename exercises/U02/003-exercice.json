@@ -26,7 +26,7 @@
       {
         "type": "question",
         "number": 2,
-        "text": "أوجد تعبير سرعة القمر v في مداره بدلالة G وM_T وr (حيث r = R(T) + h).",
+        "text": "أوجد تعبير سرعة القمر v في مداره بدلالة G وM(T) وr (حيث r = R(T) + h).",
         "input_type": "equation"
       },
       {
