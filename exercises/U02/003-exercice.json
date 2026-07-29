@@ -15,7 +15,7 @@
       },
       {
         "type": "text",
-        "content": "يعطى: M_T = 5.97 × 10²⁴ kg, R_T = 6400 km, G = 6.67 × 10⁻¹¹ N.m²/kg²."
+        "content": "يعطى: M(T) = 5.97 × 10²⁴ kg, R(T) = 6400 km, G = 6.67 × 10⁻¹¹ N.m²/kg²."
       },
       {
         "type": "question",
@@ -26,7 +26,7 @@
       {
         "type": "question",
         "number": 2,
-        "text": "أوجد تعبير سرعة القمر v في مداره بدلالة G وM_T وr (حيث r = R_T + h).",
+        "text": "أوجد تعبير سرعة القمر v في مداره بدلالة G وM_T وr (حيث r = R(T) + h).",
         "input_type": "equation"
       },
       {
