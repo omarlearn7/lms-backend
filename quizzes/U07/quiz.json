@@ -1,0 +1,51 @@
+{
+  "unit_id": 7,
+  "title": "اختبار الوحدة 7 - تطور جملة مهتزة",
+  "order_index": 1,
+  "source": "3AS U07 - Quiz",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "اختبار الوحدة السابعة"
+      },
+      {
+        "type": "text",
+        "content": "أجب عن الأسئلة التالية. مدة الاختبار: 30 دقيقة."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب المعادلة التفاضلية للمذبذب التوافقي (نابض + كتلة).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أعط عبارة الدور الخاص T₀ لنابض ثابته k وكتلته m.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "في دارة LC، أكتب عبارة الدور الخاص T₀.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "عرف الرنين في دارة RLC على التسلسل.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أذكر شرط حدوث الرنين في دارة RLC.",
+        "input_type": "equation"
+      }
+    ]
+  }
+}

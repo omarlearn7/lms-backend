@@ -1,0 +1,135 @@
+{
+  "title": "الأعمدة الكهربائية",
+  "description": "دراسة الأعمدة الكهربائية: تفاعلات الأكسدة-الإرجاع، القوة المحركة الكهربائية، أنواع الأعمدة، تطبيقاتها",
+  "category": "الكيمياء",
+  "category_id": 1,
+  "unit_id": 6,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "الأعمدة الكهربائية (Piles)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>العمود الكهربائي هو نظام يحول الطاقة الكيميائية إلى طاقة كهربائية بواسطة تفاعلات الأكسدة-الإرجاع (Oxydo-réduction).</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - مفاهيم أساسية: الأكسدة والإرجاع",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الأكسدة:</strong> فقدان إلكترونات ($\\to$ زيادة رقم الأكسدة).</p><p><strong>الإرجاع:</strong> اكتساب إلكترونات ($\\to$ نقصان رقم الأكسدة).</p><p><strong>الثنائيات Oxy/Réd:</strong> مثل $Zn^{2+}/Zn$, $Cu^{2+}/Cu$, $Fe^{3+}/Fe^{2+}$.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\text{Ox} + n e^- \\rightleftharpoons \\text{Réd}"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - تركيب عمود كهربائي",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>يتكون العمود الكهربائي من:</p><ul><li><strong>قطبين (Électrodes):</strong> مصعد (Anode — تحدث فيه الأكسدة) ومهبط (Cathode — يحدث فيه الإرجاع).</li><li><strong>محلولين شار ديين</strong> لكل قطب.</li><li><strong>جسر ملحي (Pont salin)</strong> يضمن استمرارية التيار ويحافظ على التعادل الكهربائي.</li></ul>"
+    },
+    {
+      "type": "heading",
+      "text": "مثال: عمود دانيال (Pile Daniell)",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>عمود $Zn/Cu^{2+}$: يتكون من قطب زنك في محلول $ZnSO_4$ وقطب نحاس في محلول $CuSO_4$، يربط بينهما جسر ملحي.</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["القطب", "التفاعل", "الدور"],
+      "rows": [
+        ["الزنك (Zn)", "$Zn \\to Zn^{2+} + 2e^-$ (أكسدة)", "المصعد (-)"],
+        ["النحاس (Cu)", "$Cu^{2+} + 2e^- \\to Cu$ (إرجاع)", "المهبط (+)"]
+      ],
+      "caption": "تفاعلات عمود دانيال"
+    },
+    {
+      "type": "formula",
+      "latex": "\\text{التفاعل الكلي: } Zn + Cu^{2+} \\longrightarrow Zn^{2+} + Cu"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - القوة المحركة الكهربائية (f.é.m)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>القوة المحركة الكهربائية</strong> $E$ للعمود (بوحدة الفولط $V$) تعطى بفرق كمون القطبين:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "E = E_{cathode} - E_{anode}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $E_{électrode}$ هو كمون القطب (J电位) الذي يحسب بمعادلة <strong>نيرنست</strong> (Nernst):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "E = E^0 + \\frac{0.06}{n} \\log\\frac{[Ox]}{[Réd]} \\quad \\text{(عند $25°C$)}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $E^0$ هو كمون القطب في الشروط المعيارية (تركيز 1 mol/L).</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - أنواع الأعمدة الكهربائية",
+      "level": 2
+    },
+    {
+      "type": "table",
+      "headers": ["النوع", "الخصائص", "مثال"],
+      "rows": [
+        ["عمود أولي (Primaire)", "غير قابل للشحن (استخدام لمرة واحدة)", "عمود دانيال، عمود ليكلانشيه"],
+        ["عمود ثانوي (Secondaire)", "قابل للشحن (بطارية)", "بطارية الرصاص، Ni-Cd, Li-ion"],
+        ["عمود وقود (Pile à combustible)", "يستهلك وقوداً مستمراً", "$H_2/O_2$"],
+        ["عمود شمسي", "يحول الضوء إلى كهرباء", "خلية ضوئية"]
+      ],
+      "caption": "أنواع الأعمدة الكهربائية"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "V - تطبيقات الأعمدة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<ul><li><strong>بطارية الرصاص (Accumulateur au plomb):</strong> تستخدم في السيارات، قابلة للشحن، $E \\approx 12V$ (6 خلايا).</li><li><strong>بطاريات Li-ion:</strong> خفيفة الوزن، كثافة طاقة عالية، تستخدم في الهواتف والحواسيب.</li><li><strong>أعمدة الوقود:</strong> تنتج الكهرباء من تفاعل $H_2$ و $O_2$، ناتجها الوحيد هو الماء.</li></ul>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "<strong>التنظير الكهربائي (Électrolyse):</strong> عكس عمل العمود — استخدام تيار كهربائي لإجبار تفاعل كيميائي غير تلقائي على الحدوث (مثل تحليل الماء إلى $H_2$ و $O_2$)."
+    }
+  ]
+}

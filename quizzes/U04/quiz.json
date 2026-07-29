@@ -1,0 +1,52 @@
+{
+  "unit_id": 4,
+  "title": "اختبار الوحدة 4 - تطور جملة كيميائية نحو حالة التوازن",
+  "order_index": 1,
+  "source": "3AS U04 - Quiz",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "اختبار الوحدة الرابعة"
+      },
+      {
+        "type": "text",
+        "content": "أجب عن الأسئلة التالية. مدة الاختبار: 30 دقيقة."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "عرف ثابت التوازن K لتفاعل كيميائي.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "إذا كان K > 1, ماذا يمكن أن تستنتج عن التفاعل؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أكتب معادلة تفكك حمض البنزويك C₆H₅COOH في الماء.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب pH محلول حمض قوي تركيزه C = 10⁻² mol/L.",
+        "input_type": "numeric",
+        "placeholder": "pH = ..."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ما هو تأثير رفع درجة الحرارة على ثابت التوازن K لتفاعل ناشر للحرارة؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "unit_id": 3,
+  "title": "تمرين 002 - ثنائي القطب RL",
+  "order_index": 2,
+  "source": "3AS U03 - Exercice 002",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 002"
+      },
+      {
+        "type": "text",
+        "content": "نركب على التسلسل مولد توتر E = 6 V, ناقل أومي مقاومته R = 200 Ω, وشيعة معامل تحريضها L ومقاومتها r = 10 Ω, وقاطع التيار K."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "نغلق قاطع التيار K في اللحظة t = 0, أكتب المعادلة التفاضلية للتغيرات في التيار i(t) بدلالة E, R_T = R + r, L.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "حل المعادلة التفاضلية هو: i(t) = E/R_T × (1 − e^(−t/τ)) حيث τ = L/R_T. إذا علمت أن τ = 5 ms، احسب قيمة معامل التحريض L.",
+        "input_type": "numeric",
+        "placeholder": "L = ... H"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب التيار في النظام الدائم I₀.",
+        "input_type": "numeric",
+        "placeholder": "I₀ = ... A"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب التوتر بين طرفي الوشيعة u_L(t) عند t = 0 وعند t → ∞.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب الطاقة المغناطيسية المخزنة في الوشيعة في النظام الدائم.",
+        "input_type": "numeric",
+        "placeholder": "E = ... J"
+      }
+    ]
+  }
+}

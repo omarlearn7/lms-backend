@@ -1,0 +1,54 @@
+{
+  "unit_id": 2,
+  "title": "تمرين 003 - حركة الأقمار الاصطناعية",
+  "order_index": 3,
+  "source": "3AS U02 - Exercice 003",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 003"
+      },
+      {
+        "type": "text",
+        "content": "قمر اصطناعي كتلته m = 500 kg يدور حول الأرض على ارتفاع h = 400 km عن سطح الأرض في مدار دائري."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: M_T = 5.97 × 10²⁴ kg, R_T = 6400 km, G = 6.67 × 10⁻¹¹ N.m²/kg²."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "حدد اتجاه قوة الجذب التي تطبقها الأرض على القمر الاصطناعي واكتب عبارتها العلمية.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أوجد تعبير سرعة القمر v في مداره بدلالة G وM_T وr (حيث r = R_T + h).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب سرعة القمر v.",
+        "input_type": "numeric",
+        "placeholder": "v = ... m/s"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "استنتج دور القمر T أي الزمن اللازم ليكمل دورة كاملة حول الأرض.",
+        "input_type": "numeric",
+        "placeholder": "T = ... s"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "إذا أراد القمر أن يصبح قمراً ساكناً (ثابتاً بالنسبة لموقع على الأرض)، ماذا يجب أن يكون ارتفاعه؟ (علماً أن دور الأرض حول نفسها هو 24 h).",
+        "input_type": "text"
+      }
+    ]
+  }
+}

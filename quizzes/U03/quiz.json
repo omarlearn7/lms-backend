@@ -1,0 +1,52 @@
+{
+  "unit_id": 3,
+  "title": "اختبار الوحدة 3 - دراسة ظواهر كهربائية",
+  "order_index": 1,
+  "source": "3AS U03 - Quiz",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "اختبار الوحدة الثالثة"
+      },
+      {
+        "type": "text",
+        "content": "أجب عن الأسئلة التالية. مدة الاختبار: 30 دقيقة."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب المعادلة التفاضلية لشحن مكثف في دارة RC على التسلسل.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "عرف الثابت الزمني τ في دارة RC واكتب عبارته.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "في دارة RL، أكتب المعادلة التفاضلية لتيار i(t).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا كان L = 0.5 H و R = 100 Ω، احسب τ في دارة RL.",
+        "input_type": "numeric",
+        "placeholder": "τ = ... s"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أذكر الفرق بين دارتي RC و RL من حيث تخزين الطاقة.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

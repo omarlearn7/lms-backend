@@ -1,0 +1,200 @@
+{
+  "title": "ظواهر الانتشار",
+  "description": "دراسة الأمواج الميكانيكية المتوالية: الموجات الطولية والعرضية، سرعة الانتشار، ظواهر الحيود والترابط",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 8,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 1,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "ظواهر الانتشار",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الموجة الميكانيكية المتوالية</strong> (Onde mécanique progressive) هي اضطراب ينتشر في وسط مادي (مرن) دون نقل المادة، بل ينقل الطاقة والحركة.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - أنواع الأمواج الميكانيكية",
+      "level": 2
+    },
+    {
+      "type": "table",
+      "headers": ["النوع", "التعريف", "مثال"],
+      "rows": [
+        ["موجة طولية (Longitudinale)", "الاضطراب يوازي جهة الانتشار", "موجة الصوت، نابض ممدود"],
+        ["موجة عرضية (Transversale)", "الاضطراب عمودي على جهة الانتشار", "موجة حبل، موجة مائية"]
+      ],
+      "caption": "أنواع الأمواج الميكانيكية"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - خصائص الموجة المتوالية",
+      "level": 2
+    },
+    {
+      "type": "heading",
+      "text": "1- سرعة الانتشار",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>السرعة $v$ التي تنتشر بها الموجة تعتمد على خصائص الوسط (وليس على سعة الموجة أو تواترها).</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "v = \\frac{d}{\\Delta t}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $d$ المسافة التي قطعتها مقدمة الموجة خلال الزمن $\\Delta t$.</p>"
+    },
+    {
+      "type": "heading",
+      "text": "2- طول الموجة",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>طول الموجة</strong> $\\lambda$ هو المسافة بين نقطتين متتاليتين في الطور نفسه (أصغر مسافة بين قمتين متتاليتين).</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\lambda = v \\cdot T = \\frac{v}{f}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $T$ الدور الزمني، $f$ التواتر.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "<strong>خاصية:</strong> $\\lambda$ و $f$ ترتبطان بالعلاقة $v = \\lambda \\cdot f$. هذه العلاقة صالحة لجميع الموجات."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - مبدأ التراكب (Principe de superposition)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>مبدأ التراكب:</strong> عندما تصل موجتان أو أكثر إلى نقطة في الوسط، تكون الإزاحة المحصلة هي <strong>المجموع الجبري</strong> للإزاحات الناتجة عن كل موجة على حدة.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>التراكب البنّاء (Constructive):</strong> عندما تصل قمتان (أو قاعان) معاً، يتضاعف السعة عند تلك النقطة.</p><p><strong>التراكب الهدّام (Destructive):</strong> عندما تصل قمة وقاع معاً، ينعدم السعة عند تلك النقطة.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - ظاهرة الحيود (Diffraction)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الحيود</strong> هو انحراف الموجة عن مسارها المستقيم عند مرورها بفتحة أو عائق. شرط ظهور الحيود:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "a \\approx \\lambda \\quad \\text{أو} \\quad a < \\lambda"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $a$ هو قطر الفتحة أو العائق. كلما كانت الفتحة أصغر مقارنة بـ $\\lambda$، كان الحيود أكثر وضوحاً.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>زاوية الحيود:</strong> $\\theta \\approx \\frac{\\lambda}{a}$ بالراديان. كلما زاد $\\lambda$ أو صغر $a$، زادت زاوية الحيود.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "V - ظاهرة الترابط (Interférences)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الترابط:</strong> تراكب موجتين منسجمتين (لهما نفس التواتر وفرق طور ثابت) ينتج عنه توزيع منتظم للطاقة يسمى <strong>أهداب الترابط</strong> (Franges d'interférence).</p>"
+    },
+    {
+      "type": "heading",
+      "text": "شرط حدوث الترابط البنّاء والهدّام",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>عند نقطة $M$ تبعد مسافة $d_1$ عن المصدر $S_1$ و $d_2$ عن المصدر $S_2$:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\delta = d_2 - d_1 \\quad \\text{(فرق المسير)}"
+    },
+    {
+      "type": "text",
+      "content": "<ul><li><strong>ترابط بنّاء:</strong> $\\delta = k \\cdot \\lambda$ (سعة معظمة)</li><li><strong>ترابط هدّام:</strong> $\\delta = (k + \\frac{1}{2}) \\lambda$ (سعة معدومة)</li></ul>"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $k$ عدد صحيح ($k \\in \\mathbb{Z}$).</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["الظاهرة", "الشرط", "النتيجة"],
+      "rows": [
+        ["ترابط بنّاء", "$\\delta = k\\lambda$", "سعة عظمى (هدب مضيء)"],
+        ["ترابط هدّام", "$\\delta = (k+1/2)\\lambda$", "سعة صغرى (هدب مظلم)"]
+      ],
+      "caption": "شروط الترابط"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "VI - الموجات الصوتية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الصوت</strong> هو موجة ميكانيكية طولية تنتشر في الأوساط المادية (صلبة، سائلة، غازية). سرعة الصوت تعتمد على الوسط:</p>"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "في الهواء ($20°C$): $v \\approx 340 m/s$",
+        "في الماء: $v \\approx 1500 m/s$",
+        "في الفولاذ: $v \\approx 5000 m/s$"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>شدة الصوت (Intensité sonore)</strong> $I$ تقدر بـ $W/m^2$، ومستوى الضوضاء بـ $dB$.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "L = 10 \\log\\frac{I}{I_0} \\quad \\text{(حيث $I_0 = 10^{-12} W/m^2$)}"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "<strong>تطبيقات:</strong> السونار (تحت الماء)، التصوير الطبي بالأمواج فوق الصوتية (Echographie)، التحكم غير التدميري (CND)."
+    }
+  ]
+}

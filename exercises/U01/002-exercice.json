@@ -1,0 +1,48 @@
+{
+  "unit_id": 1,
+  "title": "تمرين 002 - تحضير محلول بالتخفيف",
+  "order_index": 2,
+  "source": "3AS U01 - Exercice 002",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 002"
+      },
+      {
+        "type": "text",
+        "content": "يتوفر في المخبر محلول تجاري من حمض الكبريت H₂SO₄ كثافته النسبية d = 1.84 ونسبة نقاوته P = 98%. نريد تحضير V₁ = 500 mL من محلول مخفف بتركيز C₁ = 0.5 mol/L."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: M(H) = 1 g/mol, M(O) = 16 g/mol, M(S) = 32 g/mol."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب الكتلة المولية الجزيئية M لحمض الكبريت.",
+        "input_type": "numeric",
+        "placeholder": "M = ... g/mol"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب التركيز المولي C₀ للمحلول التجاري باستخدام العلاقة: C₀ = (10 × d × P) / M.",
+        "input_type": "numeric",
+        "placeholder": "C₀ = ... mol/L"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب حجم المحلول التجاري V₀ اللازم لتحضير المحلول المخفف (استعمل علاقة التخفيف C₀V₀ = C₁V₁).",
+        "input_type": "numeric",
+        "placeholder": "V₀ = ... mL"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "صف خطوات تحضير هذا المحلول مخبرياً."
+      }
+    ]
+  }
+}

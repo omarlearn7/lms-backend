@@ -1,0 +1,56 @@
+{
+  "unit_id": 2,
+  "title": "تمرين 002 - حركة القذيفة",
+  "order_index": 2,
+  "source": "3AS U02 - Exercice 002",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 002"
+      },
+      {
+        "type": "text",
+        "content": "يقذف رياضي كرة بسرعة ابتدائية v₀ = 20 m/s وبزاوية α = 30° مع الأفقي. نهمل تأثير الهواء ونعطي g = 10 m/s². الكرة تنطلق من نقطة الأصل O."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أوجد المعادلات الزمنية لمركبات شعاع السرعة vₓ(t) و vᵧ(t) بتطبيق القانون الثاني لنيوتن.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أوجد المعادلتين الزمنيتين x(t) و y(t).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "استنتج معادلة المسار y(x). ما شكل المسار؟",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب أقصى ارتفاع تبلغه الكرة H.",
+        "input_type": "numeric",
+        "placeholder": "H = ... m"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب المدى الأفقي للقذيفة D.",
+        "input_type": "numeric",
+        "placeholder": "D = ... m"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "لأي زاوية α يكون المدى أفقياً أكبر ما يمكن؟ علل.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

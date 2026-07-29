@@ -1,0 +1,52 @@
+{
+  "unit_id": 6,
+  "title": "اختبار الوحدة 6 - مراقبة تطور جملة كيميائية",
+  "order_index": 1,
+  "source": "3AS U06 - Quiz",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "اختبار الوحدة السادسة"
+      },
+      {
+        "type": "text",
+        "content": "أجب عن الأسئلة التالية. مدة الاختبار: 30 دقيقة."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "عرف المعايرة.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أكتب معادلة معايرة حمض قوي HCl بقاعدة قوية NaOH.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "ما هو pH عند نقطة التكافؤ لمعايرة حمض قوي بقاعدة قوية؟",
+        "input_type": "numeric",
+        "placeholder": "pH = ..."
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أكتب علاقة التكافؤ في المعايرة.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "في عمود دانيال، ما هو دور الجسر الملحي؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

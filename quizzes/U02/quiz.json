@@ -1,0 +1,52 @@
+{
+  "unit_id": 2,
+  "title": "اختبار الوحدة 2 - تطور جملة ميكانيكية",
+  "order_index": 1,
+  "source": "3AS U02 - Quiz",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "اختبار الوحدة الثانية"
+      },
+      {
+        "type": "text",
+        "content": "أجب عن الأسئلة التالية. مدة الاختبار: 30 دقيقة."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب القانون الثاني لنيوتن في حالة سقوط حر.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "ما هي معادلة مسار قذيفة في المستوى (xOy)؟",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب سرعة قمر اصطناعي يدور على ارتفاع h = 200 km عن سطح الأرض. (M_T = 6×10²⁴ kg, R_T = 6400 km, G = 6.67×10⁻¹¹)",
+        "input_type": "numeric",
+        "placeholder": "v = ... m/s"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "في القذيفة، بأي زاوية يكون المدى أفقياً أعظمياً؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أعط العلاقة بين دور القمر T ونصف قطر مداره r (قانون كبلر الثالث).",
+        "input_type": "equation"
+      }
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "title": "التفاعلات المرفقة بتفاعل حمض-أساس",
+  "description": "دراسة التفاعلات الحمضية-القاعدية، المعايرة، pH المحاليل، الثنائيات المترافقة",
+  "category": "الكيمياء",
+  "category_id": 1,
+  "unit_id": 4,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "مفهوم حمض-أساس حسب برونستد",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>حسب نظرية <strong>برونستد</strong> (Brønsted):</p><ul><li><strong>الحمض:</strong> مادة كيميائية قادرة على منح بروتون ($H^+$).</li><li><strong>الأساس:</strong> مادة كيميائية قادرة على اكتساب بروتون.</li></ul>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\text{HCl}_{(aq)} + H_2O \\longrightarrow Cl^-_{(aq)} + H_3O^+_{(aq)}"
+    },
+    {
+      "type": "text",
+      "content": "<p>كل حمض له <strong>أساس مترافق</strong> (Base conjuguée) وكل أساس له <strong>حمض مترافق</strong> (Acide conjugué). يشكلان معاً <strong>ثنائي مترافق</strong> (Couple acide-base): $HA/A^-$.</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["الثنائي المترافق", "الحمض", "الأساس"],
+      "rows": [
+        ["$H_3O^+/H_2O$", "$H_3O^+$", "$H_2O$"],
+        ["$H_2O/OH^-$", "$H_2O$", "$OH^-$"],
+        ["$CH_3COOH/CH_3COO^-$", "$CH_3COOH$", "$CH_3COO^-$"],
+        ["$NH_4^+/NH_3$", "$NH_4^+$", "$NH_3$"]
+      ],
+      "caption": "أمثلة على الثنائيات المترافقة"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - pH المحاليل المائية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>pH</strong> محلول مائي يعطى بالعلاقة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "pH = -\\log[H_3O^+]"
+    },
+    {
+      "type": "text",
+      "content": "<p>وبالتالي $[H_3O^+] = 10^{-pH}$.</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["نوع المحلول", "$pH$", "$[H_3O^+]$ (mol/L)"],
+      "rows": [
+        ["حمضي", "$pH < 7$", "$[H_3O^+] > 10^{-7}$"],
+        ["معتدل", "$pH = 7$", "$[H_3O^+] = 10^{-7}$"],
+        ["قاعدي", "$pH > 7$", "$[H_3O^+] < 10^{-7}$"]
+      ],
+      "caption": "تصنيف المحاليل حسب pH"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>منتوج الشاردي للماء:</strong> $K_e = [H_3O^+] \\cdot [OH^-] = 10^{-14}$ عند $25°C$.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - قوة الأحماض والقواعد",
+      "level": 2
+    },
+    {
+      "type": "heading",
+      "text": "حمض قوي / أساس قوي",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>حمض قوي:</strong> يتفكك كلياً في الماء. مثاله: $HCl$, $HNO_3$, $H_2SO_4$.</p><p>$pH = -\\log C_a$ (حيث $C_a$ تركيز الحمض).</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>أساس قوي:</strong> يتفكك كلياً في الماء. مثاله: $NaOH$, $KOH$.</p><p>$pH = 14 + \\log C_b$ (حيث $C_b$ تركيز الأساس).</p>"
+    },
+    {
+      "type": "heading",
+      "text": "حمض ضعيف / أساس ضعيف",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>حمض ضعيف:</strong> يتفكك جزئياً في الماء. مثاله: $CH_3COOH$, $NH_4^+$.</p><p>$pH = \\frac{1}{2}pK_a - \\frac{1}{2}\\log C_a$.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>أساس ضعيف:</strong> يتفكك جزئياً في الماء. مثاله: $NH_3$, $CH_3COO^-$.</p><p>$pH = 7 + \\frac{1}{2}pK_a + \\frac{1}{2}\\log C_b$.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - ثابت الحموضة K_a",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>للثنائي المترافق $HA/A^-$، يعرف <strong>ثابت الحموضة</strong> $K_a$ بالعلاقة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "K_a = \\frac{[A^-]_{eq} \\cdot [H_3O^+]_{eq}}{[HA]_{eq}}"
+    },
+    {
+      "type": "text",
+      "content": "<p>و $pK_a = -\\log K_a$.</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["قيمة $pK_a$", "قوة الحمض", "قوة الأساس المترافق"],
+      "rows": [
+        ["$pK_a < 0$", "حمض قوي جداً", "أساس ضعيف جداً"],
+        ["$0 < pK_a < 7$", "حمض ضعيف", "أساس ضعيف"],
+        ["$pK_a > 7$", "حمض ضعيف جداً", "أساس قوي"]
+      ],
+      "caption": "علاقة $pK_a$ بقوة الحمض والأساس المترافق"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - المعايرة حمض-أساس",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>المعايرة (Titrage/Dosage):</strong> تقنية تجريبية لتحديد تركيز محلول مجهول باستخدام محلول معلوم التركيز (المحلول المعاير).</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>عند نقطة التكافؤ (Équivalence):</strong> كمية الحمض المضاف تتفاعل تماماً مع كمية الأساس الموجودة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "C_a \\cdot V_a = C_b \\cdot V_b"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $C_a$ و $V_a$ تركيز وحجم الحمض، $C_b$ و $V_b$ تركيز وحجم الأساس عند التكافؤ.</p>"
+    },
+    {
+      "type": "heading",
+      "text": "طرق كشف نقطة التكافؤ",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<ul><li><strong>المعايرة الملونة:</strong> باستخدام كاشف ملون (مثل الفينولفتالين، البروموكريزول الأخضر)</li><li><strong>المعايرة pH-مترية:</strong> باستخدام pH-متر ورسم المنحنى $pH = f(V)$ حيث نقطة التكافؤ تقابل أكبر انحدار في المنحنى</li></ul>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "V - المحلول الممدد (Tampon)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>المحلول الممدد</strong> هو خليط من حمض ضعيف وأساسه المترافق (أو أساس ضعيف وحمضه المترافق). يتميز بأن $pH$ يتغير قليلاً جداً عند إضافة كمية صغيرة من حمض أو أساس قوي.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "pH = pK_a + \\log\\frac{[A^-]}{[HA]} \\quad \\text{(معادلة هندرسون-هاسلباخ)}"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "<strong>تطبيقات:</strong> تستخدم المحاليل الممددة في حفظ $pH$ ثابتاً في التفاعلات الحيوية (الدم، الأنظمة الحية)."
+    }
+  ]
+}

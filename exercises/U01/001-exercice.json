@@ -1,0 +1,57 @@
+{
+  "unit_id": 1,
+  "title": "تمرين 001 - حساب الكتلة المولية وكمية المادة",
+  "order_index": 1,
+  "source": "3AS U01 - Exercice 001",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 001"
+      },
+      {
+        "type": "text",
+        "content": "النشادر هو غاز صيغته الجزيئية المجملة NH₃. يعطى: M(N) = 14 g/mol, M(H) = 1 g/mol."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب الكتلة المولية الجزيئية للنشادر.",
+        "input_type": "numeric",
+        "placeholder": "M(NH₃) = ... g/mol"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب كمية المادة الموجودة في 0.68 g من النشادر.",
+        "input_type": "numeric",
+        "placeholder": "n = ... mol"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "ما هي كمية المادة الموجودة في 15.68 L من غاز النشادر في الشروط النظامية (Vm = 22.4 L/mol)؟",
+        "input_type": "numeric",
+        "placeholder": "n = ... mol"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب كتلة 8.96 L من غاز النشادر في الشروط النظامية.",
+        "input_type": "numeric",
+        "placeholder": "m = ... g"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب كتلة 0.05 mol من جزيئات النشادر.",
+        "input_type": "numeric",
+        "placeholder": "m = ... g"
+      },
+      {
+        "type": "info",
+        "text": "تذكر العلاقات: n = m/M, n = V/Vm, Vm = 22.4 L/mol في الشروط النظامية."
+      }
+    ]
+  }
+}

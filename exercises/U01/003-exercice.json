@@ -1,0 +1,50 @@
+{
+  "unit_id": 1,
+  "title": "تمرين 003 - المتابعة الزمنية لتحول كيميائي",
+  "order_index": 3,
+  "source": "3AS U01 - Exercice 003",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 003"
+      },
+      {
+        "type": "text",
+        "content": "ننجز التفاعل الكيميائي: I⁻¹(aq) + S₂O₈²⁻(aq) → I₂(aq) + 2 SO₄²⁻(aq) بمزج V₁ = 50 mL من يود البوتاسيوم (K⁺ + I⁻) بتركيز C₁ = 0.2 mol/L مع V₂ = 50 mL من ثنائي كبريتات الأمونيوم (2NH₄⁺ + S₂O₈²⁻) بتركيز C₂ = 0.1 mol/L"
+      },
+      {
+        "type": "table",
+        "headers": ["t (min)", "0", "5", "10", "15", "20", "25", "30"],
+        "rows": [
+          ["[I₂] (mmol/L)", "0", "12", "20", "26", "30", "33", "35"]
+        ]
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أنشئ جدول تقدم التفاعل.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب السرعة الحجمية للتفاعل عند t = 5 min وعند t = 25 min.",
+        "input_type": "text",
+        "placeholder": "v(t) = (1/V) × dx/dt"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "ماذا تلاحظ؟ علل."
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب زمن نصف التفاعل t₁/₂ بيانياً.",
+        "input_type": "text",
+        "placeholder": "استعمل المنحنى البياني"
+      }
+    ]
+  }
+}

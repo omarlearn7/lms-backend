@@ -1,0 +1,57 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 001 - الاهتزازات الحرة لجملة ميكانيكية",
+  "order_index": 1,
+  "source": "3AS U07 - Exercice 001",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 001"
+      },
+      {
+        "type": "text",
+        "content": "نوصل كتلة m = 200 g بنابض مرن ثابته k = 20 N/m. نزيح الكتلة عن موضع توازنها بمقدار X₀ = 5 cm ثم نحررها دون سرعة ابتدائية. نهمل الاحتكاكات."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب المعادلة التفاضلية لحركة الجملة (نابض + كتلة).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أوجد عبارة النبض الزاوي ω₀ بدلالة k و m ثم احسب قيمته.",
+        "input_type": "numeric",
+        "placeholder": "ω₀ = ... rad/s"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أوجد الدور الخاص T₀ والتردد f₀.",
+        "input_type": "text",
+        "placeholder": "T₀ = ... s, f₀ = ... Hz"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "اكتب المعادلة الزمنية x(t) للحركة.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب الطاقة الميكانيكية E_m للجملة وبين أنها محفوظة.",
+        "input_type": "numeric",
+        "placeholder": "E_m = ... J"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "ماذا تمثل E_m بالنسبة لطاقة الوضع المرونية القصوى؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

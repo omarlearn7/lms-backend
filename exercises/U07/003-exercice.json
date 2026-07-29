@@ -1,0 +1,50 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 003 - الاهتزازات القسرية",
+  "order_index": 3,
+  "source": "3AS U07 - Exercice 003",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 003"
+      },
+      {
+        "type": "text",
+        "content": "نربط على التسلسل ناقل أومي مقاومته R = 100 Ω ووشيعة معامل تحريضها L = 0.5 H ومكثف سعته C = 20 µF مع مولد توتر جيبي u(t) = U_max sin(2πft) حيث U_max = 12 V."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أوجد تعبير النبض الذاتي ω₀ للدارة RLC والتردد الذاتي f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "عند تطبيق توتر بتردد f = f₀، بين أن الدارة في حالة رنين. ماذا تساوي المعاوقة Z للدارة في هذه الحالة؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب شدة التيار الأعظمي I_max عند الرنين.",
+        "input_type": "numeric",
+        "placeholder": "I_max = ... A"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أوجد التوتر الأعظمي بين طرفي المكثف عند الرنين. ماذا تلاحظ؟",
+        "input_type": "numeric",
+        "placeholder": "U_Cmax = ... V"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "إذا تغير تردد المولد, كيف يتغير السلوك؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

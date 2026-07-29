@@ -1,0 +1,52 @@
+{
+  "unit_id": 2,
+  "title": "تمرين 001 - السقوط الشاقولي لجسم صلب",
+  "order_index": 1,
+  "source": "3AS U02 - Exercice 001",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 001"
+      },
+      {
+        "type": "text",
+        "content": "نسقط كرية حديدية كتلتها m = 100 g من سطح عمارة ارتفاعها h = 45 m عن سطح الأرض. نهمل تأثير الهواء ونعطي g = 10 m/s²."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "باعتبار الجملة (كرية + أرض) محافظية، أحسب الطاقة الكامنة الثقالية الابتدائية للكرية (نأخذ مرجع الطاقة الكامنة عند سطح الأرض).",
+        "input_type": "numeric",
+        "placeholder": "Epp = ... J"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "باستعمال مبدأ انحفاظ الطاقة، أحسب سرعة الكرية لحظة وصولها إلى سطح الأرض.",
+        "input_type": "numeric",
+        "placeholder": "v = ... m/s"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أوجد المعادلتين الزمنيتين للسرعة v(t) والموضع y(t) بتطبيق القانون الثاني لنيوتن.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أوجد مدة السقوط tₛ.",
+        "input_type": "numeric",
+        "placeholder": "tₛ = ... s"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ما هي السرعة عند منتصف المسافة؟",
+        "input_type": "numeric",
+        "placeholder": "v = ... m/s"
+      }
+    ]
+  }
+}

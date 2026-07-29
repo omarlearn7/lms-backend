@@ -1,0 +1,52 @@
+{
+  "unit_id": 5,
+  "title": "اختبار الوحدة 5 - دراسة تحولات نووية",
+  "order_index": 1,
+  "source": "3AS U05 - Quiz",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "اختبار الوحدة الخامسة"
+      },
+      {
+        "type": "text",
+        "content": "أجب عن الأسئلة التالية. مدة الاختبار: 30 دقيقة."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "عرف النشاط الإشعاعي.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أذكر أنواع التفكك الإشعاعي الثلاثة.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أكتب قانون التناقص الإشعاعي N(t).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا كان t₁/₂ = 10 سنوات، احسب λ.",
+        "input_type": "numeric",
+        "placeholder": "λ = ... année⁻¹"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ما هو الفرق بين الانشطار النووي والاندماج النووي؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

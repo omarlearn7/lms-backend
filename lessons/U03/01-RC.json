@@ -1,0 +1,218 @@
+{
+  "title": "ثنائي القطب RC",
+  "description": "دراسة المكثفة وشحنها وتفريغها في دارة RC، ثابت الزمن، المعادلات التفاضلية، الطاقة المخزنة",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 3,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 1,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "المكثفة (Condensateur)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>المكثفة عنصر كهربائي يخزن الطاقة الكهربائية في شكل شحنات كهربائية. تتكون من لبوسين (Armatures) معزولين بمادة عازلة (Diélectrique).</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>نرمز للمكثفة بالرمز $C$، ووحدتها <strong>الفاراد</strong> $F$. السعة الكهربائية $C$ تربط بين الشحنة $q$ والتوتر $u_C$:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "q = C \\times u_C"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $q$ شحنة المكثفة بالكولوم $C$، $u_C$ التوتر بين لبوسيها بالفولط $V$.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "<strong>العلاقة بين التيار والشحنة:</strong> $i = \\frac{dq}{dt}$، وبالتالي $i = C \\frac{du_C}{dt}$."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - شحن المكثفة في دارة RC على التسلسل",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>نعتبر دارة مكونة من مولد مثالي للتوتر قوته المحركة الكهربائية $E$، وناقل أومي مقاومته $R$، ومكثفة سعتها $C$، وقاطع التيار $K$.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>عند غلق القاطع (وضع $K$ في الموضع 1)، تطبق قانون إضافية التوترات (Loi des mailles):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "u_R + u_C = E"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $u_R = R \\cdot i$ (قانون أوم). وباعتبار $i = C \\frac{du_C}{dt}$، نحصل على:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "RC \\frac{du_C}{dt} + u_C = E"
+    },
+    {
+      "type": "text",
+      "content": "<p>هذه <strong>معادلة تفاضلية من الرتبة الأولى</strong> حلها:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "u_C(t) = E \\left(1 - e^{-\\frac{t}{RC}}\\right)"
+    },
+    {
+      "type": "text",
+      "content": "<p>وتكون شحنة المكثفة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "q(t) = C \\cdot u_C(t) = CE \\left(1 - e^{-\\frac{t}{RC}}\\right)"
+    },
+    {
+      "type": "heading",
+      "text": "ثابت الزمن τ",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>ثابت الزمن $\\tau = RC$ يميز سرعة شحن المكثفة:</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["الزمن $t$", "$\\tau$", "$2\\tau$", "$3\\tau$", "$5\\tau$"],
+      "rows": [
+        ["نسبة الشحن $u_C/E$", "$0.63$", "$0.86$", "$0.95$", "$0.99$"]
+      ],
+      "caption": "تطور التوتر $u_C$ بدلالة $\\tau$ أثناء الشحن"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "نعتبر المكثفة مشحونة بالكامل بعد مدة $5\\tau$ (أي $u_C \\approx E$)."
+    },
+    {
+      "type": "heading",
+      "text": "شدة التيار أثناء الشحن",
+      "level": 3
+    },
+    {
+      "type": "formula",
+      "latex": "i(t) = C \\frac{du_C}{dt} = \\frac{E}{R} e^{-\\frac{t}{RC}} = I_0 e^{-\\frac{t}{\\tau}}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $I_0 = \\frac{E}{R}$ هو التيار الابتدائي (عند $t = 0$). يضمحل التيار أسياً مع الزمن.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - تفريغ المكثفة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>عند وضع القاطع في الموضع 2 (ربط المكثفة مع الناقل الأومي فقط)، تطبق قانون إضافية التوترات:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "u_R + u_C = 0 \\implies RC \\frac{du_C}{dt} + u_C = 0"
+    },
+    {
+      "type": "text",
+      "content": "<p>حل هذه المعادلة التفاضلية (مع الشرط $u_C(0) = E$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "u_C(t) = E \\cdot e^{-\\frac{t}{RC}}"
+    },
+    {
+      "type": "text",
+      "content": "<p>وشدة التيار أثناء التفريغ:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "i(t) = -\\frac{E}{R} e^{-\\frac{t}{RC}} = -I_0 e^{-\\frac{t}{\\tau}}"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "الإشارة السالبة للتيار تعني أن اتجاه التيار أثناء التفريغ معاكس لاتجاهه أثناء الشحن."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - الطاقة المخزنة في المكثفة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>الطاقة الكهربائية المخزنة في المكثفة عند توتر $u_C$ تعطى بالعلاقة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "E_C = \\frac{1}{2} C u_C^2 = \\frac{1}{2} \\frac{q^2}{C}"
+    },
+    {
+      "type": "text",
+      "content": "<p>أثناء الشحن (حتى $u_C = E$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "E_{C,max} = \\frac{1}{2} C E^2"
+    },
+    {
+      "type": "text",
+      "content": "<p>الطاقة المقدمة من المولد: $E_{g\\,o\\,n} = C E^2$ (نصفها يخزن في المكثفة والنصف الآخر يبدد في الناقل الأومي).</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["الكمية", "أثناء الشحن", "أثناء التفريغ"],
+      "rows": [
+        ["$u_C(t)$", "$E(1 - e^{-t/\\tau})$", "$E e^{-t/\\tau}$"],
+        ["$i(t)$", "$I_0 e^{-t/\\tau}$", "$-I_0 e^{-t/\\tau}$"],
+        ["$q(t)$", "$CE(1 - e^{-t/\\tau})$", "$CE e^{-t/\\tau}$"],
+        ["$E_C(t)$", "$\\frac{1}{2}CE^2(1 - e^{-t/\\tau})^2$", "$\\frac{1}{2}CE^2 e^{-2t/\\tau}$"]
+      ],
+      "caption": "ملخص العلاقات في دارة RC"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - تأثير تغيير ثابت الزمن",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>زيادة $RC$:</strong> تزداد قيمة ثابت الزمن $\\tau = RC$، وبالتالي يزداد زمن اتمام الشحن ($5\\tau$ أكبر). المنحنى يصبح أقل انحداراً.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>نقصان $RC$:</strong> ينقص زمن اتمام الشحن ($5\\tau$ أصغر)، والمنحنى يصبح أكثر انحداراً.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>تطبيقات المكثفات: التخزين المؤقت للطاقة، تصفية التوترات، المؤقتات (Timer)، دارات RC في المكيفات.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "<strong>المكثفات فائقة السعة (Supercondensateurs):</strong> عناصر كهربائية مثالية للسيارات الكهربائية والهجينة، حيث تخزن طاقة كبيرة وتفرغها بسرعة."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "unit_id": 4,
+  "title": "تمرين 002 - التفاعلات المرفقة بتفاعل حمض-أساس",
+  "order_index": 2,
+  "source": "3AS U04 - Exercice 002",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 002"
+      },
+      {
+        "type": "text",
+        "content": "نحضر محلول (S₁) من حمض البنزويك C₆H₅COOH بتركيز C₁ = 10⁻² mol/L. نقيس pH هذا المحلول فنجده pH = 3.1."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "اكتب معادلة تفاعل حمض البنزويك مع الماء.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أنجز جدول تقدم التفاعل.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب التركيز المولي النهائي لأيونات الأكسونيوم H₃O⁺ ثم استنتج التقدم النهائي x_f.",
+        "input_type": "numeric",
+        "placeholder": "[H₃O⁺] = ... mol/L"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب نسبة التقدم النهائي τ = x_f / x_max. هل التحول كلي أم محدود؟ علل.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب ثابت الحموضة K_a لثنائية C₆H₅COOH/C₆H₅COO⁻.",
+        "input_type": "numeric",
+        "placeholder": "K_a = ..."
+      }
+    ]
+  }
+}

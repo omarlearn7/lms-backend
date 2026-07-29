@@ -1,0 +1,49 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 002 - الاهتزازات الحرة لجملة كهربائية (LC)",
+  "order_index": 2,
+  "source": "3AS U07 - Exercice 002",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 002"
+      },
+      {
+        "type": "text",
+        "content": "دارة LC تتكون من مكثف سعته C = 10 µF مشحون تحت توتر U₀ = 10 V ووشيعة معامل تحريضها L = 0.1 H ومقاومتها مهملة. نغلق الدارة في اللحظة t = 0."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب المعادلة التفاضلية لشحنة المكثف q(t).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أوجد عبارة النبض الذاتي ω₀ والدور الخاص T₀ للدارة.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أوجد المعادلة الزمنية للتوتر u_C(t) بين طرفي المكثف.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب الطاقة الكلية للدارة في أي لحظة. ماذا تستنتج؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب شدة التيار الأعظمي I_max في الدارة.",
+        "input_type": "numeric",
+        "placeholder": "I_max = ... A"
+      }
+    ]
+  }
+}

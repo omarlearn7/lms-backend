@@ -1,0 +1,198 @@
+{
+  "title": "حركة القذيفة",
+  "description": "دراسة حركة المقذوفات: مدى القذيفة، أقصى ارتفاع، معادلة المسار، تأثير السرعة الابتدائية والزاوية",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 2,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 3,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "مقدمة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>حركة القذيفة هي حركة جسم في مجال الثقالة المنتظم، حيث يقذف بسرعة ابتدائية $\\vec{v}_0$ تميل بزاوية $\\alpha$ مع الأفقي. تتكون الحركة من مركبتين: أفقية (منتظمة) وشاقولية (متسارعة بانتظام).</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - المعادلات التفاضلية للحركة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>نعتبر جسماً نقطياً $M$ كتلته $m$ يُقذف من نقطة $O$ بسرعة ابتدائية $\\vec{v}_0$ تصنع زاوية $\\alpha$ مع الأفقي. نهمل تأثير الهواء (الحركة في الفراغ). القوة الوحيدة المؤثرة هي الثقل $\\vec{P} = m\\vec{g}$.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>نختار معلماً متعامداً $(O, x, y, z)$ حيث $O$ نقطة الانطلاق، محور $(Ox)$ أفقي، محور $(Oz)$ شاقولي نحو الأعلى.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>بتطبيق قانون نيوتن الثاني $m\\vec{a} = m\\vec{g}$، نحصل على:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\vec{a} = \\vec{g} \\quad \\text{أي} \\quad \\begin{cases} a_x = 0 \\\\ a_z = -g \\end{cases}"
+    },
+    {
+      "type": "text",
+      "content": "<p>بالمكاملة وباستعمال الشروط الابتدائية $\\vec{v}(0) = \\vec{v}_0$ و $\\vec{OM}(0) = \\vec{0}$، نجد:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\vec{v}(t) : \\begin{cases} v_x(t) = v_0 \\cos\\alpha \\\\ v_z(t) = -g\\,t + v_0 \\sin\\alpha \\end{cases}"
+    },
+    {
+      "type": "formula",
+      "latex": "\\vec{OM}(t) : \\begin{cases} x(t) = (v_0 \\cos\\alpha)\\,t \\\\ z(t) = -\\frac{1}{2}g\\,t^2 + (v_0 \\sin\\alpha)\\,t \\end{cases}"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - معادلة المسار",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>بحذف الزمن $t$ من المعادلتين (باستخدام $t = \\frac{x}{v_0 \\cos\\alpha}$)، نحصل على معادلة المسار:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "z(x) = -\\frac{g}{2 v_0^2 \\cos^2\\alpha}\\,x^2 + \\tan\\alpha\\,x"
+    },
+    {
+      "type": "text",
+      "content": "<p>المسار هو <strong>قطع مكافئ</strong> (Parabole)، يتجه نحو الأسفل. يخضع المسار لقانون $z(x) = -\\frac{x^2}{2p} + \\dots$.</p>"
+    },
+    {
+      "type": "heading",
+      "text": "III - خصائص الحركة",
+      "level": 2
+    },
+    {
+      "type": "heading",
+      "text": "1- زمن الصعود (الوصول إلى أقصى ارتفاع)",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>عند أقصى ارتفاع، تنعدم المركبة الشاقولية للسرعة ($v_z(t_s) = 0$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "t_s = \\frac{v_0 \\sin\\alpha}{g}"
+    },
+    {
+      "type": "heading",
+      "text": "2- أقصى ارتفاع",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>نعوض $t_s$ في معادلة $z(t)$:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "z_{max} = \\frac{v_0^2 \\sin^2\\alpha}{2g}"
+    },
+    {
+      "type": "heading",
+      "text": "3- المدى الأفقي",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>المدى الأفقي $x_{max}$ هو قيمة $x$ عندما تعود القذيفة إلى ارتفاع الانطلاق ($z = 0$, $t = t_{tot}$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "t_{tot} = \\frac{2 v_0 \\sin\\alpha}{g}"
+    },
+    {
+      "type": "formula",
+      "latex": "x_{max} = \\frac{v_0^2 \\sin 2\\alpha}{g}"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "<strong>ملاحظة:</strong> المدى الأفقي يكون أقصى ما يمكن عندما $\\alpha = 45°$ (لأن $\\sin 90° = 1$): $x_{max} = \\frac{v_0^2}{g}$."
+    },
+    {
+      "type": "table",
+      "headers": ["الخاصية", "العبارة", "ملاحظة"],
+      "rows": [
+        ["زمن الصعود", "$t_s = \\frac{v_0 \\sin\\alpha}{g}$", "يساوي زمن النزول"],
+        ["أقصى ارتفاع", "$z_{max} = \\frac{v_0^2 \\sin^2\\alpha}{2g}$", "يتناسب مع $\\sin^2\\alpha$"],
+        ["المدى الأفقي", "$x_{max} = \\frac{v_0^2 \\sin 2\\alpha}{g}$", "أقصاه عند $\\alpha = 45°$"],
+        ["مدة الحركة", "$t_{tot} = \\frac{2 v_0 \\sin\\alpha}{g}$", "$= 2 t_s$"]
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - تأثير السرعة الابتدائية والزاوية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>تأثير السرعة الابتدائية $v_0$:</strong> المدى والأقصى ارتفاع يتناسبان مع $v_0^2$. مضاعفة السرعة الابتدائية تؤدي إلى مضاعفة المدى 4 مرات.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>تأثير زاوية القذف $\\alpha$:</strong></p><ul><li>إذا $\\alpha = 0°$: قذف أفقي — $z_{max} = 0$, $x_{max} = \\frac{v_0}{g}$ (غير محدد)</li><li>إذا $\\alpha = 45°$: أقصى مدى ممكن $x_{max} = \\frac{v_0^2}{g}$</li><li>إذا $\\alpha = 90°$: قذف شاقولي — $x_{max} = 0$, $z_{max} = \\frac{v_0^2}{2g}$</li></ul>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "<strong>ملاحظة:</strong> زاويتان متكاملتان ($\\alpha$ و $90° - \\alpha$) تعطيان نفس المدى الأفقي $x_{max}$."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "V - السرعة في أي لحظة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>مقدار السرعة عند أي لحظة $t$ يعطى بالعلاقة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "v(t) = \\sqrt{v_x^2 + v_z^2} = \\sqrt{(v_0 \\cos\\alpha)^2 + (-g\\,t + v_0 \\sin\\alpha)^2}"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>خاصية:</strong> السرعة عند نقطة الانطلاق ($t = 0$) تساوي السرعة عند العودة لنفس الارتفاع ($t = t_{tot}$) في المقدار: $v(0) = v(t_{tot}) = v_0$.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "VI - حالة وجود الاحتكاك مع الهواء",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>في وجود مقاومة الهواء:</p><ul><li>المسار ليس قطعاً مكافئاً تماماً</li><li>المدى الأفقي أقل من حالة إهمال الهواء</li><li>أقصى ارتفاع أقل</li><li>السرعة الأفقية ليست ثابتة (تتناقص بفعل الاحتكاك)</li></ul>"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "<strong>تنبيه:</strong> في معظم تمارين البكالوريا، يتم إهمال تأثير الهواء ما لم يُذكر صراحةً خلاف ذلك."
+    }
+  ]
+}

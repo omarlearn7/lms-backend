@@ -1,0 +1,53 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 002 - الأعمدة الكهربائية",
+  "order_index": 2,
+  "source": "3AS U06 - Exercice 002",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 002"
+      },
+      {
+        "type": "text",
+        "content": "نحقق عموداً كهربائياً من نصفي الخليتين التاليتين: قطب من الزنك Zn مغمور في محلول كبريتات الزنك ZnSO₄ بتركيز 0.1 mol/L وقطب من النحاس Cu مغمور في محلول كبريتات النحاس CuSO₄ بتركيز 0.1 mol/L. نصف الخليتين مربوطان بجسر ملحي."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: E°(Zn²⁺/Zn) = −0.76 V, E°(Cu²⁺/Cu) = +0.34 V, F = 96500 C/mol."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أي القطبين هو المهبط وأيهما هو المصعد؟ حدد التفاعل الحادث عند كل قطب.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أكتب المعادلة الإجمالية لتفاعل العمود.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب القوة المحركة الكهربائية للعمود (E = E°(Cu²⁺/Cu) − E°(Zn²⁺/Zn)).",
+        "input_type": "numeric",
+        "placeholder": "E = ... V"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا مر تيار شدته I = 0.5 A لمدة t = 30 دقيقة, احسب كمية الكهرباء المارة وكتلة النحاس المترسبة عند المهبط. (M(Cu) = 63.5 g/mol)",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ما هو دور الجسر الملحي في هذا العمود؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

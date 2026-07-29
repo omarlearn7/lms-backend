@@ -1,0 +1,162 @@
+{
+  "title": "النشاط الإشعاعي",
+  "description": "دراسة الظواهر النووية: النشاط الإشعاعي، أنواع الإشعاعات، قانون التناقص الإشعاعي، عمر النصف",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 5,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 1,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "النشاط الإشعاعي الطبيعي",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>النشاط الإشعاعي (Radioactivité) هو ظاهرة تحول تلقائي لنواة غير مستقرة إلى نواة أكثر استقراراً مع انبعاث جسيمات وإشعاعات. اكتشفها <strong>بيكريل</strong> عام 1896.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - أنواع الإشعاعات",
+      "level": 2
+    },
+    {
+      "type": "table",
+      "headers": ["النوع", "الطبيعة", "الرمز", "الكتلة", "الشحنة", "قدرة الاختراق"],
+      "rows": [
+        ["$\\alpha$", "نواة هيليوم", "$^4_2He$ أو $\\alpha$", "4 u", "$+2e$", "ضعيفة (ورقة)"],
+        ["$\\beta^-$", "إلكترون", "$^0_{-1}e$ أو $\\beta^-$", "~0", "$-e$", "متوسطة (ألمنيوم)"],
+        ["$\\beta^+$", "بوزيترون", "$^0_{+1}e$ أو $\\beta^+$", "~0", "$+e$", "متوسطة"],
+        ["$\\gamma$", "إشعاع كهرومغناطيسي", "$\\gamma$", "0", "0", "قوية جداً (رصاص)"]
+      ],
+      "caption": "خصائص الإشعاعات النووية"
+    },
+    {
+      "type": "heading",
+      "text": "التفاعلات النووية المصاحبة",
+      "level": 3
+    },
+    {
+      "type": "formula",
+      "latex": "^A_Z X \\longrightarrow ^{A-4}_{Z-2} Y + \\alpha \\quad \\text{(انحلال $\\alpha$)}"
+    },
+    {
+      "type": "formula",
+      "latex": "^A_Z X \\longrightarrow ^A_{Z+1} Y + \\beta^- + \\bar{\\nu}_e \\quad \\text{(انحلال $\\beta^-$)}"
+    },
+    {
+      "type": "formula",
+      "latex": "^A_Z X \\longrightarrow ^A_{Z-1} Y + \\beta^+ + \\nu_e \\quad \\text{(انحلال $\\beta^+$)}"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - قانون التناقص الإشعاعي",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>عدد النوى المشعة المتبقية $N(t)$ يتبع قانون التناقص الأسي:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "N(t) = N_0 \\cdot e^{-\\lambda t}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $N_0$ هو عدد النوى عند $t = 0$، و $\\lambda$ هو <strong>ثابت النشاط الإشعاعي</strong> (Constante radioactive) ويعبر عن احتمال انحلال نواة في وحدة الزمن. وحدته $s^{-1}$.</p>"
+    },
+    {
+      "type": "heading",
+      "text": "عمر النصف (Période / Demi-vie)",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>عمر النصف</strong> $t_{1/2}$ (أو $T$) هو المدة اللازمة لانحلال نصف عدد النوى الابتدائي:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "t_{1/2} = \\frac{\\ln 2}{\\lambda} = \\frac{0.693}{\\lambda}"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - النشاط الإشعاعي A(t)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>النشاط</strong> $A(t)$ هو عدد الانحلالات في الثانية (وحدته البيكريل $Bq$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "A(t) = -\\frac{dN}{dt} = \\lambda N(t) = \\lambda N_0 \\cdot e^{-\\lambda t} = A_0 \\cdot e^{-\\lambda t}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $A_0 = \\lambda N_0$ النشاط الابتدائي.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "<strong>1 Bq = 1 انحلال/ثانية.</strong> الوحدة القديمة: $1 Ci$ (كوري) $= 3.7 \\times 10^{10} Bq$."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - التواريخ الجيولوجية بالتأريخ الإشعاعي",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>يستخدم التأريخ الإشعاعي (Dotation radioactive) لحساب عمر العينات القديمة (صخور، أحافير) اعتماداً على قانون التناقص الإشعاعي:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "t = \\frac{1}{\\lambda} \\ln\\left(\\frac{N_0}{N}\\right)"
+    },
+    {
+      "type": "table",
+      "headers": ["النظير المشع", "عمر النصف", "التطبيق"],
+      "rows": [
+        ["$^{14}_6C$", "5730 سنة", "تأريخ العينات العضوية (حتى 50000 سنة)"],
+        ["$^{238}_{92}U$", "4.5 مليار سنة", "تأريخ الصخور القديمة"],
+        ["$^{40}_{19}K$", "1.25 مليار سنة", "تأريخ الصخور البركانية"]
+      ],
+      "caption": "بعض النظائر المشعة المستخدمة في التأريخ"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "V - عائلة النظائر المشعة (Filiation radioactive)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>في بعض الحالات، يكون الناتج $Y$ الناتج عن الانحلال مشعاً بدوره، مما يؤدي إلى <strong>سلسلة انحلالات</strong> متتالية حتى الوصول إلى نظير مستقر.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>مثال: سلسلة انحلال اليورانيوم 238: $^{238}U \\to ^{234}Th \\to ^{234}Pa \\to \\dots \\to ^{206}Pb$ (مستقر).</p>"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "<strong>الأمان الإشعاعي:</strong> يجب التعامل مع المواد المشعة بحذر شديد لأن الإشعاعات تؤدي إلى تأين الخلايا الحية وقد تسبب أضراراً صحية."
+    }
+  ]
+}

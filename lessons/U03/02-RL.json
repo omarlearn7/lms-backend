@@ -1,0 +1,196 @@
+{
+  "title": "ثنائي القطب RL",
+  "description": "دراسة الوشيعة (المحث) واستجابة دارة RL، ثابت الزمن، المعادلات التفاضلية، الطاقة المخزنة",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 3,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "الوشيعة (Bobine / Inductance)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>الوشيعة عنصر كهربائي يتكون من سلك معزول ملفوف حول قلب (هوائي أو حديدي). تخزن الطاقة في شكل مجال مغناطيسي. نرمز لها بالحرف $L$ (ذاتية الوشيعة) ووحدتها <strong>الهِنري</strong> $H$.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>خاصية:</strong> للوشيعة مقاومة $r$ (مقاومتها الداخلية) وذاتية $L$. التوتر بين طرفيها يعطى بالعلاقة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "u_{AB} = r\\,i + L\\frac{di}{dt}"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "عندما يجتاز الوشيعة تيار شدته ثابتة ($\\frac{di}{dt} = 0$)، تسلك الوشيعة سلوك ناقل أومي بسيط: $u_{AB} = r \\cdot i$."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - استجابة دارة RL لرتبة توتر صاعدة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>نعتبر دارة مكونة من مولد مثالي للتوتر $E$، وناقل أومي مقاومته $R$، ووشيعة ذاتيتها $L$ ومقاومتها $r$، وقاطع التيار $K$.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>عند غلق القاطع، تطبق قانون إضافية التوترات:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "E = u_R + u_L = R\\,i + r\\,i + L\\frac{di}{dt}"
+    },
+    {
+      "type": "formula",
+      "latex": "E = (R + r)i + L\\frac{di}{dt}"
+    },
+    {
+      "type": "text",
+      "content": "<p>نضع $R_{eq} = R + r$، فنحصل على المعادلة التفاضلية:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\frac{L}{R_{eq}} \\frac{di}{dt} + i = \\frac{E}{R_{eq}}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حل هذه المعادلة التفاضلية (مع الشرط $i(0) = 0$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "i(t) = \\frac{E}{R_{eq}} \\left(1 - e^{-\\frac{R_{eq}}{L}t}\\right)"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>ثابت الزمن:</strong> $\\tau = \\frac{L}{R_{eq}} = \\frac{L}{R + r}$ يميز سرعة استجابة الدارة.</p>"
+    },
+    {
+      "type": "heading",
+      "text": "التوتر بين طرفي الوشيعة",
+      "level": 3
+    },
+    {
+      "type": "formula",
+      "latex": "u_L(t) = r\\,i + L\\frac{di}{dt}"
+    },
+    {
+      "type": "text",
+      "content": "<p>بعد حساب $\\frac{di}{dt}$ والتعويض:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "u_L(t) = E \\cdot \\frac{R}{R_{eq}}\\,e^{-\\frac{t}{\\tau}} + \\frac{r}{R_{eq}}E\\left(1 - e^{-\\frac{t}{\\tau}}\\right)"
+    },
+    {
+      "type": "text",
+      "content": "<p>عند $t = 0$: $u_L(0) = E$ (إذا كانت $R \\gg r$). عند $t \\to \\infty$ (النظام الدائم): $u_L = \\frac{r}{R_{eq}}E$.</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["اللحظة", "$i(t)$", "$u_L(t)$"],
+      "rows": [
+        ["$t = 0$", "$i = 0$", "$u_L = E$"],
+        ["$t = \\tau$", "$i = I_0(1 - e^{-1}) \\approx 0.63 I_0$", "$u_L \\approx 0.37 E$"],
+        ["$t \\to \\infty$", "$i = I_0 = \\frac{E}{R_{eq}}$", "$u_L = \\frac{r}{R_{eq}}E$"]
+      ],
+      "caption": "تطور $i$ و $u_L$ بدلالة الزمن في دارة RL"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - قطع التيار في دارة RL",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>عند فصل المولد (دارة RL قصيرة)، تطبق المعادلة التفاضلية:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "0 = (R+r)i + L\\frac{di}{dt}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حلها (مع الشرط $i(0) = I_0 = \\frac{E}{R_{eq}}$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "i(t) = I_0 \\cdot e^{-\\frac{t}{\\tau}}"
+    },
+    {
+      "type": "text",
+      "content": "<p>والتوتر بين طرفي الوشيعة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "u_L(t) = r\\,i + L\\frac{di}{dt} = r I_0 e^{-t/\\tau} - R_{eq} I_0 e^{-t/\\tau}"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "<strong>تنبيه:</strong> عند فتح القاطع فجأة، $\\frac{di}{dt}$ يصبح كبيراً جداً، مما يولد توتراً عالياً ($u_L = L\\frac{di}{dt}$) قد يسبب شرارة خطيرة."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - الطاقة المخزنة في الوشيعة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>الطاقة المغناطيسية المخزنة في الوشيعة تعطى بالعلاقة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "E_L = \\frac{1}{2} L i^2"
+    },
+    {
+      "type": "text",
+      "content": "<p>في النظام الدائم ($i = I_0 = \\frac{E}{R_{eq}}$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "E_{L,max} = \\frac{1}{2} L \\left(\\frac{E}{R_{eq}}\\right)^2"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - مقارنة دارتي RC و RL",
+      "level": 2
+    },
+    {
+      "type": "table",
+      "headers": ["الخاصية", "دارة RC", "دارة RL"],
+      "rows": [
+        ["العنصر", "مكثفة $C$", "وشيعة $L$"],
+        ["الطاقة المخزنة", "$\\frac{1}{2}Cu_C^2$ (كهربائية)", "$\\frac{1}{2}Li^2$ (مغناطيسية)"],
+        ["ثابت الزمن", "$\\tau = RC$", "$\\tau = \\frac{L}{R}$"],
+        ["النظام الدائم", "$i = 0$ (تيار منعدم)", "$i = \\frac{E}{R}$ (تيار ثابت)"],
+        ["عند $t=0$", "$u_C = 0$ (شحن)", "$i = 0$ (استجابة)"],
+        ["التطبيق", "تخزين طاقة، مؤقتات", "مرشحات، محولات"]
+      ],
+      "caption": "مقارنة بين دارتي RC و RL"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "<strong>ملاحظة مهمة:</strong> المكثفة تعاكس تغير التوتر (تقاوم كل تغير في $u_C$)، بينما الوشيعة تعاكس تغير التيار (تقاوم كل تغير في $i$)."
+    }
+  ]
+}

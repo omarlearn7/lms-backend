@@ -1,0 +1,156 @@
+{
+  "title": "الاهتزازات الحرة لجملة ميكانيكية",
+  "description": "دراسة الاهتزازات الحرة: النواس المرن، النواس البسيط، الطاقة في الحركة الاهتزازية، التخميد",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 7,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 1,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "الاهتزازات الميكانيكية الحرة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>الاهتزازة الميكانيكية هي حركة ترددية (ذهاب وإياب) حول موضع التوازن. <strong>الاهتزازات الحرة</strong> هي اهتزازات تحدث دون تأثير قوى خارجية متغيرة (بعد تحريض ابتدائي).</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - النواس المرن (Oscillateur élastique)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>النواس المرن عبارة عن جسم صلب كتلته $m$ مربوط بنابض (Ressort) ثابت مرونته $k$ (وحدة: $N/m$). عند إزاحة الجسم عن موضع توازنه وإطلاقه، يهتز حركة توافقية بسيطة.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>القوة المعيدة (Force de rappel) للنابض: $\\vec{F} = -k x \\vec{i}$ (قانون هوك). بتطبيق قانون نيوتن الثاني:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "m\\frac{d^2x}{dt^2} = -k x"
+    },
+    {
+      "type": "formula",
+      "latex": "\\frac{d^2x}{dt^2} + \\frac{k}{m} x = 0"
+    },
+    {
+      "type": "text",
+      "content": "<p>هذه <strong>معادلة تفاضلية من الرتبة الثانية</strong> حلها:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "x(t) = X_m \\cos(\\omega_0 t + \\varphi)"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث:</p><ul><li>$X_m$: السعة (Amplitude) — أقصى إزاحة</li><li>$\\omega_0$: النبض الذاتي (Pulsation propre) — $\\omega_0 = \\sqrt{\\frac{k}{m}}$</li><li>$f = \\frac{\\omega_0}{2\\pi}$: التواتر الذاتي (Fréquence propre) — $f = \\frac{1}{T_0}$</li><li>$T_0 = \\frac{2\\pi}{\\omega_0} = 2\\pi \\sqrt{\\frac{m}{k}}$: الدور الذاتي (Période propre)</li></ul>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "<strong>ملاحظة:</strong> الدور $T_0$ يزداد بزيادة الكتلة $m$ وينقص بزيادة ثابت المرونة $k$."
+    },
+    {
+      "type": "heading",
+      "text": "الطاقة في النواس المرن",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الطاقة الحركية:</strong> $E_c = \\frac{1}{2} m v^2$</p><p><strong>الطاقة الكامنة المرنة:</strong> $E_{pe} = \\frac{1}{2} k x^2$</p><p><strong>الطاقة الميكانيكية:</strong> $E_m = E_c + E_{pe} = \\frac{1}{2} k X_m^2 = constante$</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "E_m = \\frac{1}{2} m v^2 + \\frac{1}{2} k x^2 = \\frac{1}{2} k X_m^2"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - النواس البسيط (Pendule simple)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>النواس البسيط عبارة عن كتلة صغيرة $m$ معلقة بخيط طوله $L$ (غير قابل للتمدد، كتلته مهملة). للزوايا الصغيرة ($\\theta \\ll 1 rad$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\frac{d^2\\theta}{dt^2} + \\frac{g}{L}\\theta = 0"
+    },
+    {
+      "type": "text",
+      "content": "<p>حلها: $\\theta(t) = \\theta_m \\cos(\\omega_0 t + \\varphi)$ مع $\\omega_0 = \\sqrt{\\frac{g}{L}}$.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "T_0 = 2\\pi \\sqrt{\\frac{L}{g}}"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "<strong>مهم:</strong> دور النواس البسيط لا يعتمد على الكتلة $m$ ولا على السعة $\\theta_m$ (للزوايا الصغيرة). يعتمد فقط على طول الخيط $L$ و $g$."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - التخميد (Amortissement)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>في الواقع، توجد دائماً قوى احتكاك (تخميد) تؤدي إلى تناقص سعة الاهتزازة مع الزمن حتى التوقف.</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["النظام", "الخصائص", "المنحنى"],
+      "rows": [
+        ["غير مخمد (Non amorti)", "$E_m = constante$, $X_m$ ثابت", "جيب تمام منتظم"],
+        ["مخمد (Amorti)", "$E_m$ يتناقص، $X_m$ يتناقص أسياً", "سعة متناقصة"],
+        ["مخمد جداً (Apériodique)", "لا تحدث اهتزازات (عودة مباشرة)", "لا تذبذب"]
+      ],
+      "caption": "أنظمة الاهتزاز حسب التخميد"
+    },
+    {
+      "type": "text",
+      "content": "<p>معادلة الحركة مع التخميد: $m\\frac{d^2x}{dt^2} + h\\frac{dx}{dt} + kx = 0$ حيث $h$ معامل التخميد.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - التشابه مع الاهتزازات الكهربائية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>النواس المرن ($m, k$) يشابه دارة $LC$ في الكهرباء:</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["الكمية الميكانيكية", "الكمية الكهربائية"],
+      "rows": [
+        ["الكتلة $m$", "الذاتية $L$"],
+        ["ثابت المرونة $k$", "مقلوب السعة $1/C$"],
+        ["الإزاحة $x$", "الشحنة $q$"],
+        ["السرعة $v = dx/dt$", "التيار $i = dq/dt$"],
+        ["معامل التخميد $h$", "المقاومة $R$"],
+        ["الطاقة الكامنة $\\frac{1}{2}kx^2$", "الطاقة الكهربائية $\\frac{1}{2}q^2/C$"],
+        ["الطاقة الحركية $\\frac{1}{2}mv^2$", "الطاقة المغناطيسية $\\frac{1}{2}Li^2$"]
+      ],
+      "caption": "التشابه بين الاهتزازات الميكانيكية والكهربائية"
+    }
+  ]
+}

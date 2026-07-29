@@ -1,0 +1,159 @@
+{
+  "title": "الاهتزازات القسرية",
+  "description": "دراسة الاهتزازات القسرية: الرنين في الأنظمة الميكانيكية والكهربائية، عرض الرنين، تطبيقات",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 7,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 3,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "الاهتزازات القسرية (Oscillations forcées)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>عندما يخضع نظام اهتزازي (مهتز) لقوة خارجية دورية (مثيرة)، فإن اهتزازاته تسمى <strong>اهتزازات قسرية</strong>. يميل النظام في النهاية إلى الاهتزاز بنفس تواتر القوة المثيرة $f$, بغض النظر عن تواتره الذاتي $f_0$.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - مفهوم الرنين (Résonance)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الرنين</strong> هو ظاهرة ازدياد سعة الاهتزازات بشكل كبير عندما يقترب تواتر القوة المثيرة $f$ من التواتر الذاتي $f_0$ للنظام.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "f \\approx f_0 \\implies X_m \\to X_{max}"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - الرنين في الأنظمة الميكانيكية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>نظام النواس المرن ($m, k$) يخضع لقوة مثيرة $F(t) = F_m \\cos(\\omega t)$، مع وجود تخميد $h$. المعادلة التفاضلية:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "m\\frac{d^2x}{dt^2} + h\\frac{dx}{dt} + kx = F_m \\cos(\\omega t)"
+    },
+    {
+      "type": "text",
+      "content": "<p>حل النظام الدائم: $x(t) = X_m \\cos(\\omega t + \\varphi)$ حيث السعة $X_m$ تعطى بالعلاقة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "X_m = \\frac{F_m}{\\sqrt{(k - m\\omega^2)^2 + (h\\omega)^2}}"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>عند الرنين ($\\omega \\approx \\omega_0 = \\sqrt{k/m}$):</strong> تبلغ السعة قيمتها القصوى. كلما كان التخميد $h$ صغيراً، كانت السعة عند الرنين كبيرة.</p>"
+    },
+    {
+      "type": "heading",
+      "text": "عرض الرنين (Bande passante)",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>عرض الرنين</strong> $\\Delta \\omega$ هو مجال التواترات الذي تكون فيه السعة $\\geq X_{max}/\\sqrt{2}$. كلما صغر التخميد، ضاق عرض الرنين.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - الرنين في الأنظمة الكهربائية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>دارة $RLC$ المتسلسلة موصولة بمولد توتر $u(t) = U_m \\cos(\\omega t)$. المعادلة التفاضلية:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "L\\frac{d^2q}{dt^2} + R\\frac{dq}{dt} + \\frac{q}{C} = U_m \\cos(\\omega t)"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الرنين في دارة RLC:</strong> يحدث عندما $\\omega = \\omega_0 = \\frac{1}{\\sqrt{LC}}$.</p><p>عند الرنين: $Z = R$ (الناقلية أعظمية)، $I_m = U_m / R$ (التيار أعظمي).</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "I_m = \\frac{U_m}{\\sqrt{R^2 + (L\\omega - \\frac{1}{C\\omega})^2}}"
+    },
+    {
+      "type": "heading",
+      "text": "عامل الجودة (Facteur de qualité Q)",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>عامل الجودة $Q$ يعبر عن انتقائية الدارة (كلما كبر $Q$، كان الرنين أكثر حدّة):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "Q = \\frac{1}{R} \\sqrt{\\frac{L}{C}} = \\frac{\\omega_0 L}{R} = \\frac{1}{R \\omega_0 C}"
+    },
+    {
+      "type": "table",
+      "headers": ["الخاصية", "ميكانيكي (نواس مرن)", "كهربائي (RLC)"],
+      "rows": [
+        ["النبض الذاتي", "$\\omega_0 = \\sqrt{k/m}$", "$\\omega_0 = 1/\\sqrt{LC}$"],
+        ["التخميد", "$h$", "$R$"],
+        ["عامل الجودة", "$Q = \\frac{\\sqrt{km}}{h}$", "$Q = \\frac{1}{R}\\sqrt{\\frac{L}{C}}$"],
+        ["عرض الرنين", "$\\Delta \\omega = \\frac{h}{m}$", "$\\Delta \\omega = \\frac{R}{L}$"]
+      ],
+      "caption": "مقارنة الرنين في الأنظمة الميكانيكية والكهربائية"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - تطبيقات الرنين",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<ul><li><strong>ميكانيكية:</strong> تعليق السيارات (ممتصات الصدمات)، المباني المقاومة للزلازل، أراجيح الأطفال.</li><li><strong>كهربائية:</strong> دارات الراديو والتلفزيون (ضبط التردد)، دارات التصفية (Filtres).</li><li><strong>تطبيقات ضارة:</strong> انهيار جسر تاكوما (1940) بسبب الرنين مع الرياح.</li></ul>"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "<strong>خطر الرنين:</strong> قد تؤدي ظاهرة الرنين إلى تدمير المنشآت إذا لم تؤخذ بعين الاعتبار في التصميم الهندسي."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "V - الرنين والممانعة (Impédance)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>في دارة $RLC$، الممانعة $Z$ تعطى بالعلاقة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "Z = \\sqrt{R^2 + (L\\omega - \\frac{1}{C\\omega})^2}"
+    },
+    {
+      "type": "text",
+      "content": "<p>عند الرنين: $L\\omega_0 = \\frac{1}{C\\omega_0}$، فتكون $Z = R$ (أدنى قيمة للممانعة). التيار يكون في الطور مع التوتر ($\\varphi = 0$).</p>"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "unit_id": 3,
+  "title": "تمرين 001 - ثنائي القطب RC",
+  "order_index": 1,
+  "source": "3AS U03 - Exercice 001",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 001"
+      },
+      {
+        "type": "text",
+        "content": "ننجز التركيب التجريبي المكون من مولد توتر E = 12 V, مكثف سعته C = 47 µF, ناقل أومي مقاومته R = 10 kΩ وقاطع التيار K."
+      },
+      {
+        "type": "table",
+        "headers": ["t (s)", "0", "0.1", "0.2", "0.4", "0.6", "0.8", "1.0", "1.5", "2.0"],
+        "rows": [
+          ["u_C (V)", "0", "3.8", "6.4", "9.6", "11.0", "11.6", "11.8", "12", "12"]
+        ]
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "نغلق قاطع التيار K في اللحظة t = 0، أكتب المعادلة التفاضلية لشحن المكثف بدلالة u_C(t).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "حل المعادلة التفاضلية هو u_C(t) = E(1 − e^(−t/τ)) حيث τ = RC. احسب الثابت الزمني τ.",
+        "input_type": "numeric",
+        "placeholder": "τ = ... s"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "عرف زمن شحن المكثف t_charg = 5τ، احسبه.",
+        "input_type": "numeric",
+        "placeholder": "t_charg = ... s"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب بيانياً (من الجدول) زمن نصف الشحن t₁/₂ (الزمن الذي يبلغ فيه التوتر u_C قيمته E/2). قارنه مع القيمة النظرية t₁/₂ = τ ln 2.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب الطاقة المخزنة في المكثف في نهاية الشحن.",
+        "input_type": "numeric",
+        "placeholder": "E = ... J"
+      }
+    ]
+  }
+}

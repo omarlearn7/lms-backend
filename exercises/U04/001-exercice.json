@@ -1,0 +1,55 @@
+{
+  "unit_id": 4,
+  "title": "تمرين 001 - التوازن الكيميائي",
+  "order_index": 1,
+  "source": "3AS U04 - Exercice 001",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 001"
+      },
+      {
+        "type": "text",
+        "content": "نضع في دورق حجمه V = 1 L, n₀ = 0.2 mol من حمض الإيثانويك CH₃COOH و n₀ = 0.2 mol من الإيثانول C₂H₅OH. يحدث التفاعل التالي: CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O."
+      },
+      {
+        "type": "text",
+        "content": "بعد بلوغ التوازن, نجد n₁ = 0.134 mol من حمض الإيثانويك المتبقي."
+      },
+      {
+        "type": "table",
+        "headers": ["", "CH₃COOH", "C₂H₅OH", "CH₃COOC₂H₅", "H₂O"],
+        "rows": [
+          ["الكمية الابتدائية (mol)", "0.2", "0.2", "0", "0"],
+          ["الكمية عند التوازن (mol)", "0.134", "0.134", "0.066", "0.066"]
+        ]
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب جدول تقدم التفاعل. ما هو التقدم النهائي x_eq؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب ثابت التوازن K.",
+        "input_type": "numeric",
+        "placeholder": "K = ..."
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "إذا أضفنا h₀ = 0.5 mol من الماء في البداية, كيف ستتأثر كميات المواد عند التوازن؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "ماذا يحدث لثابت التوازن K إذا رفعنا درجة الحرارة؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

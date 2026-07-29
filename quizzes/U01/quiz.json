@@ -1,0 +1,54 @@
+{
+  "unit_id": 1,
+  "title": "اختبار الوحدة 1 - المتابعة الزمنية لتحول كيميائي",
+  "order_index": 1,
+  "source": "3AS U01 - Quiz",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "اختبار الوحدة الأولى"
+      },
+      {
+        "type": "text",
+        "content": "أجب عن الأسئلة التالية. مدة الاختبار: 30 دقيقة."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "ما هي كمية المادة الموجودة في 11 g من غاز ثنائي أكسيد الكربون CO₂؟ (M(C)=12, M(O)=16 g/mol)",
+        "input_type": "numeric",
+        "placeholder": "n = ... mol"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب تركيز محلول حجمه 500 mL يحتوي على 0.1 mol من NaCl.",
+        "input_type": "numeric",
+        "placeholder": "C = ... mol/L"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "عرف زمن نصف التفاعل t₁/₂.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أذكر ثلاثة عوامل حركية تؤثر على سرعة التفاعل الكيميائي.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "في تفاعل من الدرجة الأولى، إذا كان ثابت السرعة k = 0.05 s⁻¹، احسب زمن نصف التفاعل t₁/₂.",
+        "input_type": "numeric",
+        "placeholder": "t₁/₂ = ... s"
+      }
+    ]
+  }
+}

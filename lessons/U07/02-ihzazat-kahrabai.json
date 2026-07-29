@@ -1,0 +1,157 @@
+{
+  "title": "الاهتزازات الحرة لجملة كهربائية",
+  "description": "دراسة دارة LC: التذبذبات الكهربائية الحرة، الطاقة في دارة LC، تخميد التذبذبات",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 7,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "التذبذبات الكهربائية الحرة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>دارة <strong>LC</strong> (دارة متسلسلة تحتوي على وشيعة ذاتيتها $L$ ومكثفة سعتها $C$) يمكنها إنتاج تذبذبات كهربائية حرة. عند شحن المكثفة ثم وصلها بالوشيعة، تنتقل الطاقة بين المكثفة (طاقة كهربائية) والوشيعة (طاقة مغناطيسية).</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - دارة LC المثالية (بدون مقاومة)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>بتطبيق قانون إضافية التوترات على دارة $LC$:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "u_L + u_C = 0 \\implies L\\frac{di}{dt} + u_C = 0"
+    },
+    {
+      "type": "text",
+      "content": "<p>وباعتبار $i = \\frac{dq}{dt}$ و $u_C = \\frac{q}{C}$:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "L\\frac{d^2q}{dt^2} + \\frac{q}{C} = 0"
+    },
+    {
+      "type": "formula",
+      "latex": "\\frac{d^2q}{dt^2} + \\frac{1}{LC} q = 0"
+    },
+    {
+      "type": "text",
+      "content": "<p>حل هذه المعادلة هو تذبذب جيبي (Sinusoïdal) على الشكل:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "q(t) = Q_m \\cos(\\omega_0 t + \\varphi)"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث:</p><ul><li><strong>النبض الذاتي:</strong> $\\omega_0 = \\frac{1}{\\sqrt{LC}}$</li><li><strong>الدور الذاتي:</strong> $T_0 = \\frac{2\\pi}{\\omega_0} = 2\\pi \\sqrt{LC}$ (صيغة طومسون)</li><li><strong>التواتر الذاتي:</strong> $f_0 = \\frac{1}{T_0} = \\frac{1}{2\\pi \\sqrt{LC}}$</li></ul>"
+    },
+    {
+      "type": "heading",
+      "text": "التوتر بين طرفي المكثفة",
+      "level": 3
+    },
+    {
+      "type": "formula",
+      "latex": "u_C(t) = \\frac{q(t)}{C} = \\frac{Q_m}{C} \\cos(\\omega_0 t + \\varphi)"
+    },
+    {
+      "type": "heading",
+      "text": "شدة التيار في الدارة",
+      "level": 3
+    },
+    {
+      "type": "formula",
+      "latex": "i(t) = \\frac{dq}{dt} = -Q_m \\omega_0 \\sin(\\omega_0 t + \\varphi) = I_m \\cos(\\omega_0 t + \\varphi + \\pi/2)"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "<strong>ملاحظة:</strong> التيار $i$ يسبق الشحنة $q$ بزاوية طور $\\pi/2$ ($90°$)، أي عندما $q$ أعظمي، $i$ منعدم، والعكس."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - الطاقة في دارة LC المثالية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الطاقة الكهربائية (في المكثفة):</strong> $E_C = \\frac{1}{2}C u_C^2 = \\frac{1}{2}\\frac{q^2}{C}$</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الطاقة المغناطيسية (في الوشيعة):</strong> $E_L = \\frac{1}{2} L i^2$</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الطاقة الكلية:</strong></p>"
+    },
+    {
+      "type": "formula",
+      "latex": "E_{tot} = E_C + E_L = \\frac{1}{2}C u_C^2 + \\frac{1}{2}L i^2 = \\frac{1}{2}\\frac{Q_m^2}{C} = constante"
+    },
+    {
+      "type": "text",
+      "content": "<p>في دارة $LC$ المثالية، تبقى الطاقة الكلية محفوظة (لا تبديد للطاقة)، حيث تتحول باستمرار من طاقة كهربائية إلى طاقة مغناطيسية وبالعكس.</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["اللحظة", "$q$", "$i$", "$E_C$", "$E_L$"],
+      "rows": [
+        ["$t = 0$ (مشحونة)", "$Q_m$", "$0$", "عظمى $\\frac{Q_m^2}{2C}$", "0"],
+        ["$t = T_0/4$", "$0$", "$I_m$", "0", "عظمى $\\frac{1}{2}LI_m^2$"],
+        ["$t = T_0/2$", "$-Q_m$", "$0$", "عظمى", "0"]
+      ],
+      "caption": "تبادل الطاقة في دارة LC"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - دارة RLC المتسلسلة (التخميد)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>في الواقع، توجد مقاومة $R$ في الدارة (مقاومة الوشيعة $r$ + ناقل أومي). المعادلة التفاضلية تصبح:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "L\\frac{d^2q}{dt^2} + R\\frac{dq}{dt} + \\frac{q}{C} = 0"
+    },
+    {
+      "type": "text",
+      "content": "<p>حسب قيمة $R$:</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["حالة التخميد", "الشرط", "السلوك"],
+      "rows": [
+        ["تخميد ضعيف (R faible)", "$R^2 < \\frac{4L}{C}$", "تذبذبات مخمدة (سعة متناقصة)"],
+        ["تخميد قوي (R élevé)", "$R^2 > \\frac{4L}{C}$", "لا تذبذبات (عودة مباشرة)"],
+        ["تخميد ناقد (R critique)", "$R^2 = \\frac{4L}{C}$", "أسرع عودة دون تذبذب"]
+      ],
+      "caption": "أنواع التخميد في دارة RLC"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "<strong>نظام التخميد الناقد:</strong> هو النظام الذي يعود فيه النظام إلى التوازن في أقصر وقت ممكن دون تذبذب. يستخدم في أنظمة التوجيه (مثل مكبرات الصوت)."
+    }
+  ]
+}

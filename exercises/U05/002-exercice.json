@@ -1,0 +1,43 @@
+{
+  "unit_id": 5,
+  "title": "تمرين 002 - التحولات النووية المستحدثة",
+  "order_index": 2,
+  "source": "3AS U05 - Exercice 002",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 002"
+      },
+      {
+        "type": "text",
+        "content": "نقذف جسيمات ألفا α على أنوية نتروجين ¹⁴₇N فتنطلق بروتونات ويتشكل نظير للأكسجين وفق التفاعل النووي التالي: ¹⁴₇N + ⁴₂He → ¹⁷₈O + ¹₁H"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "تحقق من صحة معادلة التفاعل النووي باستخدام قوانين الانحفاظ.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب الطاقة المحررة من هذا التفاعل النووي إذا علمت الكتل التالية: m(N) = 13.9992 u, m(He) = 4.0015 u, m(O) = 16.9947 u, m(H) = 1.0073 u. حيث 1 u = 931.5 MeV/c².",
+        "input_type": "numeric",
+        "placeholder": "E = ... MeV"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "صنف هذا التفاعل النووي (اندماج أم انشطار؟). علل.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أكتب معادلة تفاعل نووي مستحدث آخر من اختيارك وبين نوعه.",
+        "input_type": "equation"
+      }
+    ]
+  }
+}

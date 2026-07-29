@@ -1,0 +1,62 @@
+{
+  "unit_id": 5,
+  "title": "تمرين 001 - النشاط الإشعاعي",
+  "order_index": 1,
+  "source": "3AS U05 - Exercice 001",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 001"
+      },
+      {
+        "type": "text",
+        "content": "نظير الكوبالت ⁶⁰₂₇Co مشع β⁻ بعمر نصف t₁/₂ = 5.27 سنة. لدينا عينة من هذا النظير كتلتها m₀ = 1 g."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: M(Co) ≈ 60 g/mol, N_A = 6.02 × 10²³ mol⁻¹."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "اكتب معادلة التفكك الإشعاعي لهذا النظير.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب عدد الأنوية N₀ الموجودة في العينة الابتدائية.",
+        "input_type": "text",
+        "placeholder": "أدخل القيمة بالصيغة العلمية"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "عرف زمن نصف العمر t₁/₂ وأوجد العلاقة بين λ و t₁/₂.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب ثابت التفكك λ (بوحدة سنة⁻¹).",
+        "input_type": "numeric",
+        "placeholder": "λ = ... année⁻¹"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ما هي كتلة الكوبالت المتبقية بعد 10 سنوات؟",
+        "input_type": "numeric",
+        "placeholder": "m = ... g"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "احسب النشاط الإشعاعي A₀ للعينة الابتدائية.",
+        "input_type": "text",
+        "placeholder": "A₀ = λ × N₀"
+      }
+    ]
+  }
+}

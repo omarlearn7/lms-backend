@@ -1,0 +1,52 @@
+{
+  "unit_id": 8,
+  "title": "اختبار الوحدة 8 - ظواهر الانتشار",
+  "order_index": 1,
+  "source": "3AS U08 - Quiz",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "اختبار الوحدة الثامنة"
+      },
+      {
+        "type": "text",
+        "content": "أجب عن الأسئلة التالية. مدة الاختبار: 30 دقيقة."
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "عرف موجة ميكانيكية متوالية.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أذكر الفرق بين موجة طولية وموجة مستعرضة.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أكتب قانون فيك الأول.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "ما هي العوامل المؤثرة على سرعة انتشار الموجة في وسط مادي؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب سرعة انتشار موجة إذا علمت أن ترددها f = 50 Hz وطولها الموجي λ = 2 m.",
+        "input_type": "numeric",
+        "placeholder": "v = ... m/s"
+      }
+    ]
+  }
+}

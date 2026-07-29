@@ -1,0 +1,57 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 001 - مراقبة تطور جملة كيميائية بمعايرة حمض-أساس",
+  "order_index": 1,
+  "source": "3AS U06 - Exercice 001",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 001"
+      },
+      {
+        "type": "text",
+        "content": "نعاير V_A = 20 mL من محلول حمض كلور الماء HCl بتركيز C_A = 0.1 mol/L بمحلول هيدروكسيد الصوديوم (Na⁺ + OH⁻) بتركيز C_B = 0.1 mol/L. نتابع تطور pH بدلالة الحجم المضاف V_B."
+      },
+      {
+        "type": "table",
+        "headers": ["V_B (mL)", "0", "5", "10", "15", "18", "19", "19.5", "20", "20.5", "21", "22", "25"],
+        "rows": [
+          ["pH", "1.0", "1.5", "2.0", "2.5", "3.1", "3.5", "4.0", "7.0", "10.0", "10.5", "11.0", "11.5"]
+        ]
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "اكتب معادلة تفاعل المعايرة.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "عرف نقطة التكافؤ. من الجدول، حدد حجم الصوديوم المضاف V_BE عند التكافؤ.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أوجد تركيز محلول حمض كلور الماء C_A باستخدام علاقة التكافؤ.",
+        "input_type": "numeric",
+        "placeholder": "C_A = ... mol/L"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "هل يمكن استخدام كاشف ملون لون حمضه أصفر ولون قاعدته أزرق لتعيين نقطة التكافؤ؟ علل (pK_ind = 7).",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب pH المحلول عند إضافة V_B = 10 mL.",
+        "input_type": "numeric",
+        "placeholder": "pH = ..."
+      }
+    ]
+  }
+}
