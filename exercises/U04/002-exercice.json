@@ -41,7 +41,7 @@
       {
         "type": "question",
         "number": 5,
-        "text": "احسب ثابت الحموضة K_a لثنائية C₆H₅COOH/C₆H₅COO⁻.",
+        "text": "احسب ثابت الحموضة Kₐ لثنائية C₆H₅COOH/C₆H₅COO⁻.",
         "input_type": "numeric",
         "placeholder": "K_a = ..."
       }
