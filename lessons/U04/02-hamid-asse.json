@@ -68,7 +68,7 @@
     },
     {
       "type": "text",
-      "content": "<p><strong>منتوج الشاردي للماء:</strong> $K_e = [H_3O^+] \\cdot [OH^-] = 10^{-14}$ عند $25°C$.</p>"
+      "content": "<p><strong>منتوج الشاردي للماء:</strong> $K_e = [H_3O^+] \\cdot [OH^-] = 10^{-14}$ عند $25^{\\circ}C$.</p>"
     },
     {
       "type": "divider"

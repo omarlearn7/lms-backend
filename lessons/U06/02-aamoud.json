@@ -89,7 +89,7 @@
     },
     {
       "type": "formula",
-      "latex": "E = E^0 + \\frac{0.06}{n} \\log\\frac{[Ox]}{[Réd]} \\quad \\text{(عند $25°C$)}"
+      "latex": "E = E^0 + \\frac{0.06}{n} \\log\\frac{[Ox]}{[Réd]} \\quad \\text{(عند $25^{\\circ}C$)}"
     },
     {
       "type": "text",
