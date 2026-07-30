@@ -1,0 +1,61 @@
+{
+  "unit_id": 2,
+  "title": "تمرين 012 - حركة قذيفة نحو هدف (مسألة الزاويتين)",
+  "order_index": 12,
+  "source": "3AS U02 - Exercice 012",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 012"
+      },
+      {
+        "type": "text",
+        "content": "طائرة مروحية ثابتة على ارتفاع $H = 405\\,m$ من سطح الأرض. تنطلق قذيفة من مدفع مضاد موجود على سطح الأرض نحو المروحية بسرعة ابتدائية $v_0 = 200\\,m/s$ وتصنع حاملها زاوية $\\alpha$ مع الأفقي. المسافة الأفقية بين المدفع والمروحية $D = 1600\\,m$.\nنهمل تأثير الهواء ونعتبر المروحية نقطية. نعطي $g = 10\\,m/s^2$."
+      },
+      {
+        "type": "diagram",
+        "html": "<svg viewBox='0 0 400 220' xmlns='http://www.w3.org/2000/svg' style='background:#fafafa;border-radius:8px;font-family:sans-serif'><defs><marker id='arrowR' markerWidth='8' markerHeight='6' refX='8' refY='3' orient='auto'><path d='M0,0 L8,3 L0,6' fill='#e74c3c'/></marker></defs><line x1='30' y1='200' x2='380' y2='200' stroke='#2c3e50' stroke-width='2'/><text x='380' y='215' text-anchor='end' font-size='11' fill='#7f8c8d'>الأرض</text><rect x='40' y='190' width='30' height='15' fill='#7f8c8d' rx='2'/><text x='55' y='185' text-anchor='middle' font-size='10' fill='#2c3e50'>مدفع</text><line x1='55' y1='190' x2='90' y2='140' stroke='#e74c3c' stroke-width='2' marker-end='url(#arrowR)'/><text x='70' y='155' font-size='11' fill='#e74c3c'>$v_0$</text><text x='90' y='145' font-size='10' fill='#e74c3c'>$\\alpha$</text><line x1='300' y1='200' x2='300' y2='60' stroke='#95a5a6' stroke-width='1.5' stroke-dasharray='5,3'/><text x='305' y='130' font-size='11' fill='#7f8c8d'>$H$</text><rect x='280' y='50' width='40' height='20' fill='#3498db' rx='4'/><text x='300' y='63' text-anchor='middle' font-size='9' fill='white'>مروحية</text><line x1='55' y1='200' x2='300' y2='200' stroke='#95a5a6' stroke-width='1' stroke-dasharray='3,3'/><text x='175' y='215' text-anchor='middle' font-size='11' fill='#7f8c8d'>$D$</text><circle cx='300' cy='60' r='3' fill='#e74c3c'/></svg>",
+        "alt": "مخطط المدفع والمروحية"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "بتطبيق القانون الثاني لنيوتن، أوجد المعادلتين الزمنيتين $x(t)$ و $y(t)$ للقذيفة في معلم $(O,x,y)$ حيث $O$ موضع المدفع.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "استنتج معادلة المسار $y(x)$ بدلالة $v_0$ و $\\alpha$ و $g$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "لكي تصيب القذيفة المروحية، يجب أن تحقق الإحداثيات $(D, H)$. بين أن ذلك يؤدي إلى المعادلة: $\\tan^2\\alpha - \\dfrac{2v_0^2}{gD}\\,\\tan\\alpha + \\left(1 + \\dfrac{2v_0^2 H}{gD^2}\\right) = 0$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب قيمتي $\\tan\\alpha_1$ و $\\tan\\alpha_2$ ثم استنتج الزاويتين $\\alpha_1$ و $\\alpha_2$.",
+        "input_type": "text",
+        "placeholder": "α₁ = ...°, α₂ = ...°"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب زمني الوصول $t_1$ و $t_2$ الموافقين لكل زاوية. أي الزاويتين تسمح بإصابة أسرع؟",
+        "input_type": "numeric",
+        "placeholder": "t₁ = ... s, t₂ = ... s"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "أوجد عبارة السرعة عند الإصابة بدلالة $v_0$ و $g$ و $t$. هل تعتمد على الزاوية $\\alpha$؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

@@ -10,6 +10,11 @@ const exercises = [
   { file: '005-exercice.json', title: 'تمرين 005 - السقوط الحقيقي في الهواء', order: 5 },
   { file: '006-exercice.json', title: 'تمرين 006 - القذف الأفقي والطاقة في حركة القذيفة', order: 6 },
   { file: '007-exercice.json', title: 'تمرين 007 - حركة الأقمار الاصطناعية وقوانين كبلر', order: 7 },
+  { file: '008-exercice.json', title: 'تمرين 008 - حركة جسم على مستوي مائل', order: 8 },
+  { file: '009-exercice.json', title: 'تمرين 009 - حركة جسم على مستوي أفقي', order: 9 },
+  { file: '010-exercice.json', title: 'تمرين 010 - حركة على مستوي مائل مع الاحتكاك متبوعة بقفز في الهواء', order: 10 },
+  { file: '011-exercice.json', title: 'تمرين 011 - حركة جسم على مستوي أفقي مع احتكاك ثم مسار دائري شاقولي', order: 11 },
+  { file: '012-exercice.json', title: 'تمرين 012 - حركة قذيفة نحو هدف (مسألة الزاويتين)', order: 12 },
 ];
 
 (async () => {

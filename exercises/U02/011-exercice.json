@@ -1,0 +1,61 @@
+{
+  "unit_id": 2,
+  "title": "تمرين 011 - حركة جسم على مستوي أفقي مع احتكاك ثم مسار دائري شاقولي",
+  "order_index": 11,
+  "source": "3AS U02 - Exercice 011",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 011"
+      },
+      {
+        "type": "text",
+        "content": "نقذف جسماً صلباً $(S)$ كتلته $m = 100\\,g$ من النقطة $A$ بسرعة أفقية $v_A$ لينزلق على سطح أفقي $AB$ طوله $d = 1\\,m$، حيث تخضع حركته لقوة احتكاك ثابتة $f = 0,8\\,N$ معاكسة لجهة الحركة. بعد $AB$، يدخل $(S)$ المسار الدائري $BC$ الأملس نصف قطره $r = 1\\,m$ في النقطة $B$ بسرعة $v_B$. يغادر $(S)$ المسار الدائري عند النقطة $N$ حيث تصنع $ON$ زاوية $\\theta$ مع الشاقول.\nنعطي $g = 9,8\\,m/s^2$."
+      },
+      {
+        "type": "diagram",
+        "html": "<svg viewBox='0 0 400 240' xmlns='http://www.w3.org/2000/svg' style='background:#fafafa;border-radius:8px;font-family:sans-serif'><defs><marker id='arrowRight' markerWidth='8' markerHeight='6' refX='8' refY='3' orient='auto'><path d='M0,0 L8,3 L0,6' fill='#27ae60'/></marker></defs><line x1='50' y1='200' x2='150' y2='200' stroke='#2c3e50' stroke-width='2.5'/><text x='100' y='220' text-anchor='middle' font-size='12' fill='#2c3e50'>A</text><text x='150' y='220' text-anchor='middle' font-size='12' fill='#2c3e50'>B</text><line x1='120' y1='190' x2='150' y2='190' stroke='#27ae60' stroke-width='2' marker-end='url(#arrowRight)'/><text x='135' y='184' text-anchor='middle' font-size='10' fill='#27ae60'>$\\vec{v}_A$</text><text x='55' y='185' font-size='11' fill='#7f8c8d'>AB = d</text><path d='M 150 200 A 80 80 0 0 1 250 140' fill='none' stroke='#3498db' stroke-width='2.5'/><text x='250' y='135' text-anchor='middle' font-size='12' fill='#3498db'>C</text><line x1='230' y1='200' x2='230' y2='148' stroke='#95a5a6' stroke-width='1' stroke-dasharray='4,3'/><text x='215' y='175' font-size='10' fill='#7f8c8d'>r</text><circle cx='230' cy='200' r='2' fill='#e74c3c'/><text x='230' y='215' text-anchor='middle' font-size='11' fill='#e74c3c'>O</text><line x1='230' y1='200' x2='248' y2='180' stroke='#e67e22' stroke-width='1.5'/><text x='253' y='185' font-size='10' fill='#e67e22'>$\\theta$</text><text x='258' y='195' font-size='11' fill='#2c3e50'>N</text></svg>",
+        "alt": "مخطط المسار الأفقي AB والدائري BC"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "بتطبيق القانون الثاني لنيوتن على الجزء $AB$، بين أن الحركة مستقيمة متباطئة بانتظام. أوجد عبارة تسارعها $a_1$.",
+        "input_type": "equation",
+        "placeholder": "a_1 = ... m/s²"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أثبت أن: $v_A^2 = v_B^2 + \\dfrac{2 f d}{m}$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "باعتبار الجملة $(S + \\text{أرض})$، طبق مبدأ انحفاظ الطاقة بين $B$ و $N$ لإيجاد عبارة $v_N^2$ بدلالة $v_B^2$ و $g$ و $r$ و $\\theta$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "بتطبيق القانون الثاني لنيوتن على $(S)$ عند النقطة $N$ في معلم فريني، أوجد عبارة شدة رد الفعل $R$ بدلالة $m$ و $g$ و $\\theta$ و $v_N$ و $r$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "عند مغادرة $(S)$ للمسار الدائري تنعدم $R$. بين أن: $\\cos\\theta = \\dfrac{v_B^2}{3gr} - \\dfrac{2}{3}$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "إذا كان البيان $\\cos\\theta = f(v_B^2)$ مستقيماً معادلته $\\cos\\theta = 0,034\\,v_B^2 + 0,67$، استنتج قيمة $g$.",
+        "input_type": "numeric",
+        "placeholder": "g = ... m/s²"
+      }
+    ]
+  }
+}

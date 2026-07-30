@@ -9,12 +9,9 @@ const supabase = createClient(
 );
 
 const lessons = [
-  { file: '01-mefahim-asasiya.json', slug: 'مفاهيم-أساسية-في-الميكانيك-والطاقة' },
-  { file: '02-sokout-chakouli.json', slug: 'السقوط-الشاقولي' },
-  { file: '03-harakat-alqadifa.json', slug: 'حركة-القذيفة' },
-  { file: '04-aqmar-alkawakib.json', slug: 'حركة-الأقمار-الاصطناعية-والكواكب' },
-  { file: '05-harakat-jism-ala-mustawi.json', slug: 'حركة-جسم-على-مستوي' },
-  { file: '06-hodoud-mikanik-newton.json', slug: 'حدود-ميكانيك-نيوتن' }
+  { file: '01-المفاهيم-الاساسية-في-الكيمياء-من-المقدار.json', slug: 'المفاهيم-الاساسية-في-الكيمياء-من-المقدار-المولي-الى-جدول-تقدم-التفاعل' },
+  { file: '02-سرعة-التفاعل-وزمن-نصف-التفاعل.json', slug: 'سرعة-التفاعل-وزمن-نصف-التفاعل' },
+  { file: '03-العوامل-الحركية-وتاثيرها-على-سرعة-التفاع.json', slug: 'العوامل-الحركية-وتاثيرها-على-سرعة-التفاعل' }
 ];
 
 (async () => {

@@ -1,0 +1,369 @@
+{
+  "title": "المفاهيم الأساسية في الكيمياء: من المقدار المولي إلى جدول تقدم التفاعل",
+  "slug": "المفاهيم-الاساسية-في-الكيمياء-من-المقدار-المولي-الى-جدول-تقدم-التفاعل",
+  "description": "درس شامل يغطي المقدار المولي، تراكيز المحاليل، جدول تقدم التفاعل، والمحاليل الشاردية مع محاكاة تفاعلية.",
+  "category_id": 1,
+  "unit_id": 1,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 1,
+  "is_free": true,
+  "sections": [
+    {
+      "text": "المقدار المولي والثوابت الأساسية",
+      "type": "heading",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>المقدار المولي (n) هو كمية المادة التي تحتوي على عدد أفوجادرو من الجسيمات (ذرات، جزيئات، أو أيونات). يُعد هذا المفهوم حجر الأساس في الربط بين العالم المجهري والعالم العياني في الكيمياء.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "n = \\frac{N}{N_A} = \\frac{m}{M} = \\frac{V}{V_m} = C \\times V"
+    },
+    {
+      "rows": [
+        [
+          "المقدار المولي",
+          "n",
+          "mol",
+          "كمية المادة التي تحتوي على $6.02 \\times 10^{23}$ جسيم"
+        ],
+        [
+          "الكتلة المولية",
+          "M",
+          "g/mol",
+          "كتلة مول واحد من النوع الكيميائي"
+        ],
+        [
+          "الحجم المولي",
+          "V_m",
+          "L/mol",
+          "حجم مول واحد من الغاز في شروط معينة"
+        ],
+        [
+          "التركيز المولي",
+          "C",
+          "mol/L",
+          "عدد مولات المذاب في لتر واحد من المحلول"
+        ]
+      ],
+      "type": "table",
+      "headers": [
+        "المقدار",
+        "الرمز",
+        "الوحدة الدولية",
+        "التعريف"
+      ]
+    },
+    {
+      "text": "تذكر دائماً: لتحويل درجة الحرارة من مئوية إلى كلفن نستخدم العلاقة $T(K) = \\theta(^\\circ C) + 273$، والضغط $1 \\text{ bar} = 10^5 \\text{ Pa}$.",
+      "type": "note",
+      "variant": "tip"
+    },
+    {
+      "text": "تراكيز المحاليل المائية والتخفيف",
+      "type": "heading",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>يُعبر عن تركيز المحلول المائي بطريقتين رئيسيتين: <strong>التركيز المولي</strong> (C) الذي يمثل عدد مولات المذاب في لتر واحد من المحلول، و<strong>التركيز الكتلي</strong> ($C_m$) الذي يمثل كتلة المذاب بالجرام في لتر واحد من المحلول.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "C = \\frac{n}{V} \\quad \\text{و} \\quad C_m = \\frac{m}{V} = C \\times M"
+    },
+    {
+      "type": "text",
+      "content": "<p>عند تخفيف محلول، نضيف مذيباً (عادة ماء مقطر) لزيادة حجم المحلول وتقليل تركيزه، مع بقاء كمية المادة المذابة (عدد المولات) ثابتة قبل وبعد التخفيف.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "C_1 \\cdot V_1 = C_2 \\cdot V_2 \\quad \\text{و} \\quad f = \\frac{C_1}{C_2} = \\frac{V_2}{V_1}"
+    },
+    {
+      "text": "تحذير: عند تحضير المحاليل من مواد سائلة تجارية، يجب حساب الكتلة المطلوبة باستخدام العلاقة $C_0 = \\frac{P \\times d \\times 10}{M}$ حيث P هي نسبة النقاوة و d هي الكثافة النسبية.",
+      "type": "note",
+      "variant": "warning"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "text": "جدول تقدم التفاعل",
+      "type": "heading",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>جدول تقدم التفاعل هو أداة كمية تسمح بوصف تطور جملة كيميائية من حالة ابتدائية إلى حالة نهائية عبر حالة انتقالية. يُعبر عن تطور التفاعل بمتغير يسمى <strong>تقدم التفاعل</strong> (x) يُقاس بالمول (mol) أو عدد مرات حدوث التفاعل.</p>"
+    },
+    {
+      "rows": [
+        [
+          "تقدم التفاعل",
+          "x",
+          "عدد مرات حدوث التفاعل (mol)"
+        ],
+        [
+          "المتفاعل المحد",
+          "-",
+          "المتفاعل الذي يُستهلك كلياً ويسبب توقف التفاعل"
+        ],
+        [
+          "التقدم الأعظمي",
+          "$x_{max}$",
+          "القيمة العملية لتقدم التفاعل عند التوقف"
+        ],
+        [
+          "الوسط الاستوائي",
+          "-",
+          "حالة ابتدائية تكون فيها المتفاعلات بنسب ستوكيومترية"
+        ]
+      ],
+      "type": "table",
+      "headers": [
+        "المفهوم",
+        "الرمز",
+        "التعريف"
+      ]
+    },
+    {
+      "text": "بناء جدول تقدم التفاعل",
+      "type": "heading",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>لبناء جدول تقدم التفاعل، نتبع الخطوات التالية:</p><ol><li>كتابة معادلة التفاعل الموزونة.</li><li>حساب الكميات الابتدائية للمتفاعلات.</li><li>إنشاء الجدول بثلاث حالات: ابتدائية (x=0)، انتقالية (x)، ونهائية ($x_{max}$).</li><li>تحديد المتفاعل المحد بحساب $x_{max}$ لكل متفاعل.</li></ol>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\alpha A + \\beta B \\rightarrow \\delta C + \\lambda D"
+    },
+    {
+      "rows": [
+        [
+          "ابتدائية",
+          "0",
+          "$n_0(A)$",
+          "$n_0(B)$",
+          "0",
+          "0"
+        ],
+        [
+          "انتقالية",
+          "x",
+          "$n_0(A) - \\alpha x$",
+          "$n_0(B) - \\beta x$",
+          "$\\delta x$",
+          "$\\lambda x$"
+        ],
+        [
+          "نهائية",
+          "$x_{max}$",
+          "$n_0(A) - \\alpha x_{max}$",
+          "$n_0(B) - \\beta x_{max}$",
+          "$\\delta x_{max}$",
+          "$\\lambda x_{max}$"
+        ]
+      ],
+      "type": "table",
+      "headers": [
+        "الحالة",
+        "التقدم",
+        "A (mol)",
+        "B (mol)",
+        "C (mol)",
+        "D (mol)"
+      ]
+    },
+    {
+      "text": "تحديد المتفاعل المحد",
+      "type": "heading",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>المتفاعل المحد هو المتفاعل الذي يُستهلك كلياً عند نهاية التفاعل، وهو الذي يسبب توقف التفاعل. لتحديده، نفترض أن كل متفاعل يُستهلك كلياً ونحسب $x_{max}$ المقابل، ثم نختار <strong>أصغر قيمة</strong>.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "x_{max} = \\min\\left(\\frac{n_0(A)}{\\alpha}, \\frac{n_0(B)}{\\beta}\\right)"
+    },
+    {
+      "text": "إذا كان $\\frac{n_0(A)}{\\alpha} = \\frac{n_0(B)}{\\beta}$، فإن الوسط الابتدائي يكون وسطاً استوائياً، وتستهلك جميع المتفاعلات كلياً عند نهاية التفاعل.",
+      "type": "note",
+      "variant": "info"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "تفاعل مع المحاكاة: جرب تغيير المعايير المختلفة ولاحظ تأثيرها على النتائج."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: جدول تقدم التفاعل",
+        "width": 600,
+        "height": 450
+      },
+      "html": "<!DOCTYPE html><html lang='ar' dir='rtl'><head><meta charset='UTF-8'><style>body{margin:0;padding:15px;font-family:'Segoe UI',Tahoma,Arial;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);color:#eaeaea;min-height:100vh}h3{text-align:center;color:#4fc3f7;margin:0 0 15px 0}.container{max-width:580px;margin:0 auto}.equation{background:#0f3460;padding:12px;border-radius:8px;text-align:center;font-size:18px;margin-bottom:15px;border:1px solid #4fc3f7}.controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:15px}.control-group{background:#16213e;padding:10px;border-radius:8px}.control-group label{display:block;font-size:13px;margin-bottom:5px;color:#4fc3f7}.control-group input[type='range']{width:100%;accent-color:#4fc3f7}.value{font-weight:bold;color:#fff;font-size:16px}table{width:100%;border-collapse:collapse;background:#16213e;border-radius:8px;overflow:hidden}th{background:#0f3460;padding:10px;color:#4fc3f7;font-size:13px}td{padding:8px;text-align:center;border-top:1px solid #0f3460;font-size:13px}.limiting{background:#e94560 !important;color:#fff;font-weight:bold}.result{background:#0f3460;padding:12px;border-radius:8px;margin-top:15px;font-size:14px;line-height:1.8}.result strong{color:#4fc3f7}</style></head><body><div class='container'><h3>جدول تقدم التفاعل</h3><div class='equation'>2Fe(s) + 3Cl₂(g) → 2FeCl₃(s)</div><div class='controls'><div class='control-group'><label>كتلة الحديد m(Fe) = <span class='value' id='mFe'>11.2</span> g</label><input type='range' id='massFe' min='0' max='50' value='11.2' step='0.1'></div><div class='control-group'><label>حجم الكلور V(Cl₂) = <span class='value' id='vCl'>6.72</span> L</label><input type='range' id='volCl' min='0' max='30' value='6.72' step='0.1'></div></div><table><tr><th>الحالة</th><th>x (mol)</th><th>Fe</th><th>Cl₂</th><th>FeCl₃</th></tr><tr><td>ابتدائية</td><td>0</td><td id='nFe0'>-</td><td id='nCl0'>-</td><td>0</td></tr><tr><td>انتقالية</td><td>x</td><td>n₀-x</td><td>n₀-1.5x</td><td>x</td></tr><tr><td>نهائية</td><td id='xmaxCell'>-</td><td id='nFeF'>-</td><td id='nClF'>-</td><td id='nFeCl3'>-</td></tr></table><div class='result' id='result'></div></div><script>const MFe=56,Vm=22.4;const massFe=document.getElementById('massFe');const volCl=document.getElementById('volCl');function update(){const m=parseFloat(massFe.value);const v=parseFloat(volCl.value);document.getElementById('mFe').textContent=m.toFixed(1);document.getElementById('vCl').textContent=v.toFixed(1);const nFe0=m/MFe;const nCl0=v/Vm;document.getElementById('nFe0').textContent=nFe0.toFixed(3);document.getElementById('nCl0').textContent=nCl0.toFixed(3);const xmax1=nFe0;const xmax2=nCl0/1.5;const xmax=Math.min(xmax1,xmax2);document.getElementById('xmaxCell').textContent=xmax.toFixed(3);const nFeF=nFe0-xmax;const nClF=nCl0-1.5*xmax;const nFeCl3=xmax;document.getElementById('nFeF').textContent=nFeF.toFixed(3);document.getElementById('nFeCl').textContent=nFeCl3.toFixed(3);document.getElementById('nFeCl3').textContent=nFeCl3.toFixed(3);const rows=document.querySelectorAll('tr');rows.forEach(r=>r.querySelectorAll('td').forEach(c=>c.classList.remove('limiting')));const result=document.getElementById('result');let html='<strong>النتائج:</strong><br>';html+='• التقدم الأعظمي: x_max = '+xmax.toFixed(4)+' mol<br>';if(Math.abs(xmax1-xmax2)<0.001){html+='• <strong style=\"color:#4fc3f7\">الوسط استوائي</strong> - استهلكت جميع المتفاعلات كلياً';}else if(xmax===xmax1){html+='• <strong style=\"color:#e94560\">المتفاعل المحد: Fe</strong><br>';html+='• كمية Cl₂ المتبقية: '+nClF.toFixed(3)+' mol';}else{html+='• <strong style=\"color:#e94560\">المتفاعل المحد: Cl₂</strong><br>';html+='• كمية Fe المتبقية: '+nFeF.toFixed(3)+' mol';}html+='<br>• كتلة FeCl₃ الناتجة: '+(nFeCl3*162.5).toFixed(2)+' g';result.innerHTML=html;}massFe.oninput=update;volCl.oninput=update;update();</script></body></html>",
+      "css": "",
+      "js": ""
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "text": "المحاليل الشاردية والتوصيلية الكهربائية",
+      "type": "heading",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>المحلول الشاردي هو محلول مائي يحتوي على أيونات (شوارد)، وهو موصل للكهرباء بسبب حركة هذه الأيونات. كلما زادت تركيز الأيونات الموجودة في المحلول، زادت توصيليته الكهربائية.</p>"
+    },
+    {
+      "rows": [
+        [
+          "التوصيلية",
+          "G",
+          "S (سيمنز)",
+          "مقلوب المقاومة، تعتمد على أبعاد المحلول"
+        ],
+        [
+          "ثابت الخلية",
+          "K",
+          "m⁻¹",
+          "نسبة المسافة إلى مساحة الأقطاب"
+        ],
+        [
+          "التوصيلية النوعية",
+          "σ",
+          "S/m",
+          "خاصية للمحلول تعتمد على طبيعته وتركيزه"
+        ],
+        [
+          "التوصيلية المولية",
+          "λ",
+          "S·m²/mol",
+          "مساهمة كل مول من الأيونات في التوصيلية"
+        ]
+      ],
+      "type": "table",
+      "headers": [
+        "المقدار",
+        "الرمز",
+        "الوحدة",
+        "التعريف"
+      ]
+    },
+    {
+      "type": "formula",
+      "latex": "G = \\frac{I}{U} = \\sigma \\frac{S}{L} = \\frac{\\sigma}{K}"
+    },
+    {
+      "type": "formula",
+      "latex": "\\sigma = \\sum_i \\lambda_i \\cdot [X_i]"
+    },
+    {
+      "text": "قانون كولراوش: التوصيلية النوعية لمحلل إلكتروليتي تساوي مجموع مساهمات الأيونات المكونة له. التوصيلية المولية للأيون ثابتة لكل أيون عند تركيز منخفض.",
+      "type": "note",
+      "variant": "tip"
+    },
+    {
+      "text": "حساب التوصيلية من التركيز",
+      "type": "heading",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>لمحلول كلوريد الصوديوم (Na⁺ + Cl⁻) بتركيز C، تكون التوصيلية النوعية:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\sigma = \\lambda_{Na^+} \\cdot [Na^+] + \\lambda_{Cl^-} \\cdot [Cl^-] = (\\lambda_{Na^+} + \\lambda_{Cl^-}) \\cdot C"
+    },
+    {
+      "text": "التركيز المولي يُقاس بـ mol/m³ في النظام الدولي. للتحويل: $1 \\text{ mol/L} = 10^3 \\text{ mol/m}^3$.",
+      "type": "note",
+      "variant": "info"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "text": "تقييم تفاعلي",
+      "type": "heading",
+      "level": 2
+    },
+    {
+      "type": "quiz",
+      "questions": [
+        {
+          "q": "في تفاعل $2Fe + 3Cl_2 \\rightarrow 2FeCl_3$، إذا كان لدينا 0.4 mol من Fe و 0.9 mol من Cl₂، ما هو التقدم الأعظمي $x_{max}$؟",
+          "options": [
+            "0.4 mol",
+            "0.3 mol",
+            "0.2 mol",
+            "0.6 mol"
+          ],
+          "explanation": "نحسب: $x_1 = \\frac{0.4}{2} = 0.2$ mol (لو Fe هو المحد)، و $x_2 = \\frac{0.9}{3} = 0.3$ mol (لو Cl₂ هو المحد). إذن $x_{max} = \\min(0.2, 0.3) = 0.2$ mol، والمتفاعل المحد هو Fe.",
+          "correctIndex": 2
+        },
+        {
+          "q": "ما هي وحدة التوصيلية النوعية في النظام الدولي؟",
+          "options": [
+            "S",
+            "S/m",
+            "S·m²/mol",
+            "S·m"
+          ],
+          "explanation": "التوصيلية النوعية σ تُقاس بـ S/m (سيمنز لكل متر)، وهي خاصية للمحلول تعتمد على طبيعته وتركيزه.",
+          "correctIndex": 1
+        },
+        {
+          "q": "إذا كان لدينا محلول NaCl بتركيز 0.01 mol/L، و $\\lambda_{Na^+} = 5.01 \\times 10^{-3}$ S·m²/mol و $\\lambda_{Cl^-} = 7.59 \\times 10^{-3}$ S·m²/mol، فما هي التوصيلية النوعية؟",
+          "options": [
+            "1.26 × 10⁻⁴ S/m",
+            "1.26 × 10⁻² S/m",
+            "1.26 × 10⁻¹ S/m",
+            "1.26 × 10⁻³ S/m"
+          ],
+          "explanation": "نحول التركيز: $C = 0.01 \\text{ mol/L} = 10 \\text{ mol/m}^3$. ثم $\\sigma = (\\lambda_{Na^+} + \\lambda_{Cl^-}) \\times C = (5.01 + 7.59) \\times 10^{-3} \\times 10 = 1.26 \\times 10^{-1}$ S/m.",
+          "correctIndex": 2
+        },
+        {
+          "q": "متى يُسمى الوسط الابتدائي بالتفاعل 'وسطاً استوائياً'؟",
+          "options": [
+            "عندما يكون هناك متفاعل محدد واحد",
+            "عندما تكون المتفاعلات بنسب ستوكيومترية",
+            "عندما تكون كمية المتفاعلات متساوية",
+            "عندما يكون التفاعل تاماً"
+          ],
+          "explanation": "الوسط الابتدائي يكون استوائياً عندما تكون المتفاعلات بنسب ستوكيومترية، أي $\\frac{n_0(A)}{\\alpha} = \\frac{n_0(B)}{\\beta}$، فتُستهلك جميع المتفاعلات كلياً عند نهاية التفاعل.",
+          "correctIndex": 1
+        },
+        {
+          "q": "في قانون التخفيف $C_1 V_1 = C_2 V_2$، ماذا يمثل المقدار $f = \\frac{V_2}{V_1}$؟",
+          "options": [
+            "التركيز المولي",
+            "معامل التخفيف",
+            "التقدم الأعظمي",
+            "الكثافة النسبية"
+          ],
+          "explanation": "معامل التخفيف f يمثل النسبة بين حجم المحلول النهائي وحجم المحلول المأخوذ، ويساوي أيضاً نسبة التركيزين $\\frac{C_1}{C_2}$.",
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "text": "تهانينا! لقد أكملت درس المفاهيم الأساسية في الكيمياء. تغطي هذه المفاهيم أساسيات الحسابات الكيميائية، تطور التفاعلات، وخصائص المحاليل الشاردية - وهي مهارات أساسية لحل المسائل في الامتحانات.",
+      "type": "note",
+      "variant": "info"
+    }
+  ]
+}

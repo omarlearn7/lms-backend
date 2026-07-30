@@ -1,0 +1,61 @@
+{
+  "unit_id": 3,
+  "title": "تمرين 008 - قطع التيار في وشيعة (ظاهرة التحريض)",
+  "order_index": 8,
+  "source": "3AS U03 - Exercice 008",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 008"
+      },
+      {
+        "type": "text",
+        "content": "<p>دارة كهربائية تتكون من مولد توتر $E = 6\\,V$ مقاومته الداخلية مهملة، ناقل أومي مقاومته $R = 200\\,\\Omega$، وشيعة معامل تحريضها $L = 0,5\\,H$ ومقاومتها $r = 10\\,\\Omega$، قاطعتي تيار $K_1$ و $K_2$، وصمام ثنائي $D$ (الشكل).</p><p>نغلق $K_1$ في اللحظة $t = 0$ (يبقى $K_2$ مفتوحا) لاستقرار التيار في الوشيعة.</p>"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب المعادلة التفاضلية لشدة التيار $i(t)$ أثناء مرحلة الاستقرار. استنتج عبارتي $I_0$ و $\\tau_1$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب $I_0$ و $\\tau_1$.",
+        "input_type": "numeric",
+        "placeholder": "I₀ = ... A, τ₁ = ... s"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب الطاقة المغناطيسية المخزنة في الوشيعة عند نهاية مرحلة الاستقرار.",
+        "input_type": "numeric",
+        "placeholder": "E = ... J"
+      },
+      {
+        "type": "text",
+        "content": "<p>في اللحظة $t = t_1$ نفتح $K_1$ ونغلق $K_2$ (دارة التفريغ عبر الصمام الثنائي $D$ والناقل الأومي $R$).</p>"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أكتب المعادلة التفاضلية لتيار التفريغ $i(t)$ بدلالة $L$ و $R$ و $r$. استنتج $\\tau_2$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أوجد حل المعادلة التفاضلية $i(t)$ بدلالة $I_0$ و $t$ و $\\tau_2$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "احسب $i(t)$ عند $t = t_1 + \\tau_2$.",
+        "input_type": "numeric",
+        "placeholder": "i = ... A"
+      }
+    ]
+  }
+}

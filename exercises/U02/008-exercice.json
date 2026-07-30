@@ -1,0 +1,86 @@
+{
+  "unit_id": 2,
+  "title": "تمرين 008 - حركة جسم على مستوي مائل",
+  "order_index": 8,
+  "source": "3AS U02 - Exercice 008",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 008"
+      },
+      {
+        "type": "text",
+        "content": "على مستوي مائل AB يميل على الأفقي بزاوية α = 30°، نترك (بدون سرعة ابتدائية) عند اللحظة t = 0 جسماً صلباً (S) نعتبره نقطة مادية كتلته m = 1 kg من الموضع A الذي نعتبره مبدأ الفواصل إلى الموضع B حيث AB = 2 m.\nيخضع الجسم (S) أثناء حركته لقوى احتكاك تكافئ قوة f معاكسة لجهة الحركة وثابتة في الشدة.\nنعطي g = 10 m/s²."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "بتطبيق القانون الثاني لنيوتن، جد عبارة تسارع حركة مركز عطالة الجسم (S) أثناء حركته على المستوي المائل ثم استنتج طبيعة الحركة.",
+        "input_type": "text",
+        "answer": {
+          "type": "freeform"
+        },
+        "solution": "الجملة المدروسة: الجسم (S)\nالمرجع: سطحي أرضي نعتبره غاليلي مزود بمعلم مستوي (O, i, j)\nالقوى الخارجية المؤثرة: الثقل P، قوة رد الفعل R، قوة الاحتكاك f\nبتطبيق القانون الثاني لنيوتن: ∑F = m.a\nP + R + f = m.a\nبالإسقاط على المحورين:\nالمحور x'x: P sinα - f = ma  →  mg sinα - f = ma → a = (mg sinα - f)/m\nالمحور y'y: -P cosα + R = 0  →  R = mg cosα\nطبيعة الحركة: الجسم انطلق من السكون، حركته مستقيمة متسارعة بانتظام لأن a ثابت (f, α, g, m ثوابت)."
+      },
+      {
+        "type": "question",
+        "number": 21,
+        "text": "يصل الجسم (S) إلى الموضع B بسرعة v_B = 4 m/s. أحسب قيمة تسارع الحركة a.",
+        "input_type": "numeric",
+        "placeholder": "a = ... m/s²",
+        "answer": {
+          "value": 4,
+          "tolerance": 0.01
+        },
+        "solution": "باستعمال العلاقة: v_B² - v_A² = 2.a.AB\nبما أن v_A = 0: a = v_B²/(2 × AB) = 4²/(2 × 2) = 16/4 = 4 m/s²"
+      },
+      {
+        "type": "question",
+        "number": 22,
+        "text": "أحسب المدة الزمنية المستغرقة أثناء الانتقال من الموضع A إلى الموضع B.",
+        "input_type": "numeric",
+        "placeholder": "∆t = ... s",
+        "answer": {
+          "value": 1,
+          "tolerance": 0.01
+        },
+        "solution": "v_B - v_A = a × ∆t\n∆t = (v_B - v_A)/a = (4 - 0)/4 = 1 s"
+      },
+      {
+        "type": "question",
+        "number": 23,
+        "text": "أحسب شدة قوة الاحتكاك f.",
+        "input_type": "numeric",
+        "placeholder": "f = ... N",
+        "answer": {
+          "value": 1,
+          "tolerance": 0.01
+        },
+        "solution": "من العبارة: a = (mg sinα - f)/m → f = m(g sinα - a)\nf = 1 × (10 × sin30° - 4) = 1 × (10 × 0.5 - 4) = 1 × (5 - 4) = 1 N"
+      },
+      {
+        "type": "question",
+        "number": 24,
+        "text": "أحسب شدة قوة رد الفعل R.",
+        "input_type": "numeric",
+        "placeholder": "R = ... N",
+        "answer": {
+          "value": 8.66,
+          "tolerance": 0.1
+        },
+        "solution": "من إسقاط القوى على المحور y'y: -mg cosα + R = 0\nR = mg cosα = 1 × 10 × cos30° = 10 × 0.866 = 8.66 N"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أكتب المعادلتين الزمنيتين x(t) و v(t) المميزين لحركة مركز عطالة (S).",
+        "input_type": "text",
+        "answer": {
+          "type": "freeform"
+        },
+        "solution": "بما أن a = 4 m/s²، فإن:\ndv/dt = 4 → v(t) = 4t + v₀\nمن الشروط الابتدائية: عند t = 0, v₀ = 0 ← v(t) = 4t\ndx/dt = v(t) = 4t → x(t) = 2t² + x₀\nمن الشروط الابتدائية: عند t = 0, x₀ = 0 ← x(t) = 2t²"
+      }
+    ]
+  }
+}

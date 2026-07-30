@@ -1,0 +1,179 @@
+{
+  "title": "سرعة التفاعل وزمن نصف التفاعل",
+  "slug": "سرعة-التفاعل-وزمن-نصف-التفاعل",
+  "description": "فهم مفاهيم سرعة التفاعل الكيميائي، طرق المتابعة الزمنية، حساب سرعة التشكل والاختفاء، وتحديد زمن نصف التفاعل وأهميته الحركية.",
+  "category_id": 1,
+  "unit_id": 1,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "text": "أنواع التحولات الكيميائية",
+      "type": "heading",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>تُصنف التحولات الكيميائية حسب المدة الزمنية اللازمة لبلوغ حالتها النهائية إلى ثلاثة أنواع:</p><ul><li><strong>التحول السريع:</strong> يصل إلى حالته النهائية فوراً (أقل من ثانية)، مثل تفاعل الترسيب الفوري.</li><li><strong>التحول البطيء:</strong> يستغرق ثوانٍ، دقائق، أو ساعات، ويمكن ملاحظة تطور النظام بالعين المجردة أو بأجهزة قياس بسيطة.</li><li><strong>التحول البطيء جداً:</strong> يستغرق أياماً، أسابيع، أو سنوات، مثل صدأ الحديد أو تحلل المواد العضوية.</li></ul>"
+    },
+    {
+      "text": "المتابعة الزمنية للتحول الكيميائي",
+      "type": "heading",
+      "level": 2
+    },
+    {
+      "rows": [
+        [
+          "المعايرة اللونية",
+          "تتبع تغير لون الوسط التفاعلي أو اختفائه للوصول إلى نقطة التكافؤ.",
+          "تفاعلات تتضمن أنواعاً كيميائية ملونة (مثل MnO₄⁻ أو Cr₂O₇²⁻)."
+        ],
+        [
+          "قياس الناقلية",
+          "تتبع تغير الناقلية النوعية للمحلول نتيجة تغير تراكيز الأيونات.",
+          "تفاعلات في وسط مائي تتضمن تغيراً في عدد أو نوع الأيونات."
+        ],
+        [
+          "قياس حجم الغاز",
+          "جمع الغاز الناتج في مدرج مقلوب فوق الماء وقياس حجمه عند ضغط ودرجة حرارة ثابتين.",
+          "تفاعلات ينتج عنها غاز (مثل H₂ أو CO₂)."
+        ],
+        [
+          "قياس ضغط الغاز",
+          "قياس تغير ضغط الغاز في وعاء مغلق وحجم ثابت نتيجة تكون أو استهلاك غاز.",
+          "تفاعلات في طور غازي أو تنتج غازاً في وعاء مغلق."
+        ]
+      ],
+      "type": "table",
+      "headers": [
+        "طريقة المتابعة",
+        "المبدأ العلمي",
+        "نوع التفاعل المناسب"
+      ]
+    },
+    {
+      "text": "سرعة التفاعل",
+      "type": "heading",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>تُعرف <strong>سرعة التفاعل الحجمية</strong> (v) بأنها مشتقة تقدم التفاعل (x) بالنسبة للزمن، مقسومة على حجم الوسط التفاعلي (V). وهي تعبر عن مدى سرعة استهلاك المتفاعلات أو تشكل النواتج في وحدة الحجم.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "v = \\frac{1}{V} \\cdot \\frac{dx}{dt}"
+    },
+    {
+      "type": "text",
+      "content": "<p>يمكن ربط سرعة التفاعل بسرعة تشكل أو اختفاء نوع كيميائي معين (Y) من خلال معاملات التفاعل الستوكيومترية:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "v = \\frac{1}{\\nu_Y} \\cdot \\frac{d[Y]}{dt} \\quad \\text{أو} \\quad v(Y) = \\nu_Y \\cdot v"
+    },
+    {
+      "text": "تذكر: السرعة اللحظية عند لحظة t تساوي ميل المماس لمنحنى تقدم التفاعل x = f(t) عند تلك اللحظة، مقسوماً على الحجم V.",
+      "type": "note",
+      "variant": "tip"
+    },
+    {
+      "text": "زمن نصف التفاعل (t₁/₂) وأهميته",
+      "type": "heading",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>هو الزمن اللازم لبلوغ تقدم التفاعل نصف قيمته العظمى. يُعد مؤشراً حركياً مهماً جداً لوصف سرعة تطور النظام الكيميائي.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "x(t_{1/2}) = \\frac{x_{max}}{2}"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "تفاعل مع المحاكاة: جرب تغيير المعايير المختلفة ولاحظ تأثيرها على النتائج."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: تحديد زمن نصف التفاعل",
+        "width": 600,
+        "height": 450
+      },
+      "html": "<!DOCTYPE html><html lang='ar' dir='rtl'><head><meta charset='UTF-8'><style>body{margin:0;padding:15px;font-family:'Segoe UI',Tahoma,Arial;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);color:#eaeaea;min-height:100vh}h3{text-align:center;color:#4fc3f7;margin:0 0 15px 0}.container{max-width:580px;margin:0 auto}.controls{background:#0f3460;padding:15px;border-radius:8px;margin-bottom:15px;display:flex;flex-direction:column;gap:10px}.control-group{display:flex;justify-content:space-between;align-items:center}label{color:#4fc3f7;font-size:14px}input[type='range']{width:60%;accent-color:#e94560}.value{font-weight:bold;color:#fff;font-size:16px}canvas{background:#16213e;border-radius:8px;border:1px solid #4fc3f7;width:100%;height:300px}.info{background:#0f3460;padding:12px;border-radius:8px;margin-top:15px;font-size:14px;line-height:1.8}.info strong{color:#e94560}</style></head><body><div class='container'><h3>تحديد زمن نصف التفاعل</h3><div class='controls'><div class='control-group'><label>سرعة التفاعل (عامل تحجيم):</label><input type='range' id='speed' min='1' max='10' value='5'><span class='value' id='speedVal'>5</span></div><div class='control-group'><label>التقدم الأعظمي xₘₐₓ (mmol):</label><input type='range' id='xmax' min='10' max='100' value='50'><span class='value' id='xmaxVal'>50</span></div></div><canvas id='graph'></canvas><div class='info' id='result'></div></div><script>const canvas=document.getElementById('graph'),ctx=canvas.getContext('2d');const speedInput=document.getElementById('speed'),xmaxInput=document.getElementById('xmax');const speedVal=document.getElementById('speedVal'),xmaxVal=document.getElementById('xmaxVal');let speed=5,xmax=50;function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;draw()}function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);const w=canvas.width,h=canvas.height;const pad=40;ctx.strokeStyle='#4fc3f7';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(pad,10);ctx.lineTo(pad,h-pad);ctx.lineTo(w-10,h-pad);ctx.stroke();ctx.fillStyle='#eaeaea';ctx.font='12px Arial';ctx.fillText('x (mmol)',10,20);ctx.fillText('t (min)',w-40,h-10);const xMaxPx=h-pad-10;const tMaxPx=w-pad-10;ctx.strokeStyle='#e94560';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(pad,h-pad);for(let t=0;t<=100;t+=1){const x=xmax*(1-Math.exp(-speed*t/100));const px=pad+(t/100)*tMaxPx;const py=(h-pad)-(x/xmax)*xMaxPx;if(t===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}ctx.stroke();const halfX=xmax/2;const halfT=-Math.log(0.5)*100/speed;const pxHalf=pad+(halfT/100)*tMaxPx;const pyHalf=(h-pad)-(halfX/xmax)*xMaxPx;ctx.setLineDash([5,5]);ctx.strokeStyle='#fff';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pad,pyHalf);ctx.lineTo(pxHalf,pyHalf);ctx.lineTo(pxHalf,h-pad);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#fff';ctx.font='bold 12px Arial';ctx.fillText(`x_max/2 = ${halfX}`,5,pyHalf+4);ctx.fillText(`t_1/2 = ${halfT.toFixed(1)} min`,pxHalf+5,h-pad-5);const res=document.getElementById('result');res.innerHTML=`<strong>النتائج:</strong><br>• التقدم الأعظمي: ${xmax} mmol<br>• عند t₁/₂، يكون التقدم: ${halfX} mmol<br>• <strong>زمن نصف التفاعل المستخرج من المنحنى: ${halfT.toFixed(1)} دقيقة</strong><br>• ملاحظة: كلما زادت سرعة التفاعل، قل زمن نصف التفاعل.`}speedInput.oninput=e=>{speed=+e.target.value;speedVal.textContent=speed;draw()};xmaxInput.oninput=e=>{xmax=+e.target.value;xmaxVal.textContent=xmax;draw()};window.onresize=resize;resize();</script></body></html>",
+      "css": "",
+      "js": ""
+    },
+    {
+      "text": "أهمية t₁/₂: 1) تقدير المدة الزمنية اللازمة لتوقف التفاعل (تُقدر تقريباً بـ 7 × t₁/₂). 2) مقارنة سرع التفاعلات: كلما كان t₁/₂ أصغر، كان التفاعل أسرع.",
+      "type": "note",
+      "variant": "info"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "text": "تقييم تفاعلي",
+      "type": "heading",
+      "level": 2
+    },
+    {
+      "type": "quiz",
+      "questions": [
+        {
+          "q": "ما هي وحدة سرعة التفاعل الحجمية في النظام الدولي؟",
+          "options": [
+            "mol/L",
+            "mol/s",
+            "mol/(L·s)",
+            "L/(mol·s)"
+          ],
+          "explanation": "سرعة التفاعل الحجمية هي مشتقة التقدم بالنسبة للزمن مقسومة على الحجم، لذا وحدتها هي mol/(L·s) أو mol·L⁻¹·s⁻¹.",
+          "correctIndex": 2
+        },
+        {
+          "q": "إذا كان التقدم الأعظمي لتفاعل ما هو xₘₐₓ = 0.04 mol، فما هي قيمة التقدم عند زمن نصف التفاعل t₁/₂؟",
+          "options": [
+            "0.04 mol",
+            "0.02 mol",
+            "0.01 mol",
+            "0.08 mol"
+          ],
+          "explanation": "بحسب التعريف، عند t₁/₂ يكون التقدم قد بلغ نصف قيمته العظمى، أي x(t₁/₂) = xₘₐₓ / 2 = 0.04 / 2 = 0.02 mol.",
+          "correctIndex": 1
+        },
+        {
+          "q": "أي طرق المتابعة الزمنية التالية هي الأنسب لتفاعل ينتج غاز ثاني أكسيد الكربون في وسط مائي؟",
+          "options": [
+            "المعايرة اللونية فقط",
+            "قياس الناقلية فقط",
+            "قياس حجم الغاز أو ضغطه",
+            "مراقبة تغير الكتلة فقط"
+          ],
+          "explanation": "بما أن التفاعل ينتج غازاً، فإن قياس حجم الغاز المتجمع أو تغير الضغط في وعاء مغلق هما الطريقتان الأكثر مباشرة وملاءمة.",
+          "correctIndex": 2
+        },
+        {
+          "q": "كيف تتغير سرعة التفاعل الحجمية مع مرور الزمن في تفاعل غير صفري الرتبة؟",
+          "options": [
+            "تبقى ثابتة",
+            "تزداد تدريجياً",
+            "تتناقص تدريجياً",
+            "تصبح سالبة"
+          ],
+          "explanation": "تتناقص سرعة التفاعل تدريجياً مع مرور الزمن لأن تراكيز المتفاعلات تقل، مما يقلل من عدد التصادمات الفعالة بين الجسيمات.",
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "text": "تهانينا! لقد أتممت درس سرعة التفاعل وزمن نصف التفاعل. تدرب على رسم المماسات لاستخراج السرعات اللحظية، واستخدم تعريف t₁/₂ لحل المسائل الحركية بكفاءة.",
+      "type": "note",
+      "variant": "tip"
+    }
+  ]
+}

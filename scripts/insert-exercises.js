@@ -1,5 +1,6 @@
 const { createClient } = require('@supabase/supabase-js');
-require('dotenv').config({ path: '../.env' });
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -146,6 +147,90 @@ const exercises = [
     content_json: require('../exercises/U03/002-exercice.json').content_json,
   },
   {
+    unit_id: 3,
+    title: 'تمرين 003 - شحن مكثفة مع تحديد τ بيانيا (بكالوريا 2008)',
+    order_index: 3,
+    source: '3AS U03 - Exercice 003',
+    content_json: require('../exercises/U03/003-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 004 - شحن وتفريغ مكثفة مع تبديل (بكالوريا 2015 علوم تجريبية)',
+    order_index: 4,
+    source: '3AS U03 - Exercice 004',
+    content_json: require('../exercises/U03/004-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 005 - تغيير R أو C وتأثيرها على τ (بكالوريا 2010 رياضيات)',
+    order_index: 5,
+    source: '3AS U03 - Exercice 005',
+    content_json: require('../exercises/U03/005-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 006 - شحن مكثفة مع مقاومتين (بكالوريا 2016 رياضيات)',
+    order_index: 6,
+    source: '3AS U03 - Exercice 006',
+    content_json: require('../exercises/U03/006-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 007 - استقرار التيار في وشيعة (ثنائي القطب RL)',
+    order_index: 7,
+    source: '3AS U03 - Exercice 007',
+    content_json: require('../exercises/U03/007-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 008 - قطع التيار في وشيعة (ظاهرة التحريض)',
+    order_index: 8,
+    source: '3AS U03 - Exercice 008',
+    content_json: require('../exercises/U03/008-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 009 - دارة RL مع مقاومتين (وضعيات مختلفة)',
+    order_index: 9,
+    source: '3AS U03 - Exercice 009',
+    content_json: require('../exercises/U03/009-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 010 - مكثفة مع مقاومتين + طاقة (بكالوريا 2016 علوم تجريبية)',
+    order_index: 10,
+    source: '3AS U03 - Exercice 010',
+    content_json: require('../exercises/U03/010-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 011 - وشيعة مع مقاومتين + تحريض (بكالوريا)',
+    order_index: 11,
+    source: '3AS U03 - Exercice 011',
+    content_json: require('../exercises/U03/011-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 012 - الطاقة في المكثفة وجمع المكثفات',
+    order_index: 12,
+    source: '3AS U03 - Exercice 012',
+    content_json: require('../exercises/U03/012-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 013 - القدرة والطاقة في دارة RC',
+    order_index: 13,
+    source: '3AS U03 - Exercice 013',
+    content_json: require('../exercises/U03/013-exercice.json').content_json,
+  },
+  {
+    unit_id: 3,
+    title: 'تمرين 014 - قراءة راسم الإشارة في دارة RC',
+    order_index: 14,
+    source: '3AS U03 - Exercice 014',
+    content_json: require('../exercises/U03/014-exercice.json').content_json,
+  },
+  {
     unit_id: 4,
     title: 'تمرين 001 - التوازن الكيميائي',
     order_index: 1,
@@ -215,6 +300,13 @@ const exercises = [
     source: '3AS U08 - Exercice 001',
     content_json: require('../exercises/U08/001-exercice.json').content_json,
   },
+  {
+    unit_id: 8,
+    title: 'تمرين 002 - انتشار موجة ميكانيكية على وتر',
+    order_index: 2,
+    source: '3AS U08 - Exercice 002',
+    content_json: require('../exercises/U08/002-exercice.json').content_json,
+  },
 ];
 
 (async () => {
@@ -224,14 +316,19 @@ const exercises = [
 
   for (const ex of exercises) {
     if (existingTitles.has(ex.title)) {
-      console.log(`Skipped (already exists): "${ex.title}"`);
-      continue;
-    }
-    const { data, error } = await supabase.from('exercises').insert(ex).select('id');
-    if (error) {
-      console.error(`Error inserting "${ex.title}": ${error.message}`);
+      const { data, error } = await supabase.from('exercises').update(ex).eq('title', ex.title).select('id');
+      if (error) {
+        console.error(`Error updating "${ex.title}": ${error.message}`);
+      } else {
+        console.log(`Updated: "${ex.title}" (id: ${data[0].id})`);
+      }
     } else {
-      console.log(`Inserted: "${ex.title}" (id: ${data[0].id})`);
+      const { data, error } = await supabase.from('exercises').insert(ex).select('id');
+      if (error) {
+        console.error(`Error inserting "${ex.title}": ${error.message}`);
+      } else {
+        console.log(`Inserted: "${ex.title}" (id: ${data[0].id})`);
+      }
     }
   }
 })();

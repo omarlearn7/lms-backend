@@ -1,0 +1,62 @@
+{
+  "unit_id": 3,
+  "title": "تمرين 012 - الطاقة في المكثفة وجمع المكثفات",
+  "order_index": 12,
+  "source": "3AS U03 - Exercice 012",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 012"
+      },
+      {
+        "type": "text",
+        "content": "<p>مكثفة سعتها $C = 47\\,\\mu F$ تم شحنها تحت توتر $E = 10\\,V$ باستعمال مولد توتر ثابت مقاومته الداخلية مهملة وناقل أومي مقاومته $R = 5\\,k\\Omega$.</p>"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب شحنة المكثفة $Q_0$ بعد الشحن الكامل.",
+        "input_type": "numeric",
+        "placeholder": "Q₀ = ... C"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب الطاقة الكهربائية $E_0$ المخزنة في المكثفة.",
+        "input_type": "numeric",
+        "placeholder": "E₀ = ... J"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "نفرغ المكثفة في ناقل أومي مقاومته $R' = 2\\,k\\Omega$. أكتب المعادلة التفاضلية لـ $u_C(t)$ أثناء التفريغ، وعين $\\tau'$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "بعد كم من الزمن $t_{1/2}$ تصبح شحنة المكثفة $Q_0/2$؟",
+        "input_type": "numeric",
+        "placeholder": "t₁/₂ = ... s"
+      },
+      {
+        "type": "text",
+        "content": "<p>نأخذ الآن مكثفتين متماثلتين $(C_1 = C_2 = 47\\,\\mu F)$.</p>"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "كيف نربط هاتين المكثفتين للحصول على سعة مكافئة $C_{eq} = 94\\,\\mu F$؟ وما هي السعة المكافئة إذا ربطنا $C_1$ و $C_2$ على التسلسل؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "نشحن المكثفتين المربوطتين على التفرع تحت توتر $E = 10\\,V$. احسب الطاقة الكلية المخزنة فيهما. قارنها مع الطاقة المخزنة في مكثفة واحدة $C_1$. ماذا تستنتج؟",
+        "input_type": "text",
+        "placeholder": "E_total = ... J"
+      }
+    ]
+  }
+}

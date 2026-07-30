@@ -46,6 +46,31 @@
         "number": 5,
         "text": "أذكر الفرق بين دارتي RC و RL من حيث تخزين الطاقة.",
         "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "كيف تحدد ثابت الزمن τ بيانيا من منحنى u_C(t) أثناء شحن مكثفة؟ اذكر طريقتين.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 7,
+        "text": "مكثفة سعتها C = 10 µF شحنت تحت توتر E = 12 V. احسب الطاقة المخزنة فيها.",
+        "input_type": "numeric",
+        "placeholder": "E_C = ... J"
+      },
+      {
+        "type": "question",
+        "number": 8,
+        "text": "أكتب عبارة السعة المكافئة C_eq لمكثفتين C₁ و C₂ مربوطتين على التوازي.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 9,
+        "text": "ما دور الصمام الثنائي (Diode) في دارة RL عند قطع التيار؟",
+        "input_type": "text"
       }
     ]
   }

@@ -1,0 +1,57 @@
+{
+  "unit_id": 3,
+  "title": "تمرين 007 - استقرار التيار في وشيعة (ثنائي القطب RL)",
+  "order_index": 7,
+  "source": "3AS U03 - Exercice 007",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 007"
+      },
+      {
+        "type": "text",
+        "content": "<p>نركب على التسلسل مولد توتر $E = 12\\,V$، ناقل أومي مقاومته $R = 100\\,\\Omega$، وشيعة معامل تحريضها $L$ ومقاومتها $r = 5\\,\\Omega$، وقاطع التيار $K$.</p>"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "نغلق قاطع التيار $K$ في اللحظة $t = 0$. اكتب المعادلة التفاضلية لتطور التيار $i(t)$ بدلالة $E$ و $L$ و $R_T = R + r$.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "حل المعادلة التفاضلية هو $i(t) = I_0(1 - e^{-t/\\tau})$ حيث $I_0 = E/R_T$ و $\\tau = L/R_T$. إذا علمت أن $\\tau = 15\\,ms$، احسب قيمة معامل التحريض $L$.",
+        "input_type": "numeric",
+        "placeholder": "L = ... H"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب التيار في النظام الدائم $I_0$.",
+        "input_type": "numeric",
+        "placeholder": "I₀ = ... A"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب التوتر بين طرفي الوشيعة $u_L(t)$ عند $t = 0$ وعند $t \\to \\infty$.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب الطاقة المغناطيسية المخزنة في الوشيعة في النظام الدائم.",
+        "input_type": "numeric",
+        "placeholder": "E = ... J"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "أوجد النسبة $i(\\tau)/I_0$. ماذا تستنتج؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "title": "حركة جسم على مستوي",
+  "description": "دراسة حركة جسم على مستوي مائل ومستوي أفقي: تطبيق قانون نيوتن الثاني، المعادلات الزمنية، قوة الاحتكاك، مبرهنة الطاقة الحركية",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 2,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 5,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "مقدمة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>في هذا الدرس، ندرس حركة الأجسام على مستوي مائل ومستوي أفقي. تشمل هذه الحركات تطبيقاً مباشراً لقوانين نيوتن، حيث نخضع القوى المؤثرة (الثقل، رد الفعل، الاحتكاك) إلى التحليل الشعاعي والإسقاط على محاور مناسبة.</p><p>نلاحظ هذه الحركات في حياتنا اليومية: انزلاق صندوق على منحدر، تزحلق على الثلج، دفع عربة على أرض أفقية، وغيرها.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - حركة جسم على مستوي مائل",
+      "level": 2
+    },
+    {
+      "type": "heading",
+      "text": "1- جرد القوى الخارجية",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>نعتبر جسماً صلباً $(S)$ كتلته $m$ موضوعاً على مستوي مائل يميل على الأفقي بزاوية $\\alpha$. يؤثر على الجسم ثلاث قوى أساسية:</p><ul><li><strong>الثقل</strong> $\\vec{P} = m\\vec{g}$: شاقولي نحو الأسفل، شدته $P = mg$</li><li><strong>قوة رد الفعل</strong> $\\vec{R}$: عمودية على المستوي المائل، شدتها $R$</li><li><strong>قوة الاحتكاك</strong> $\\vec{f}$: مماسة للمستوي المائل ومعاكسة لجهة الحركة، شدتها $f$</li></ul>"
+    },
+    {
+      "type": "text",
+      "content": "<p>لدراسة الحركة، نختار معلماً مرتبطاً بالمرجع الغاليلي، حيث محور $(x'x)$ مواز للمستوي المائل (موجب في جهة الحركة)، ومحور $(y'y)$ عامودي على المستوي المائل. نقوم بإسقاط القوى على هذين المحورين.</p>"
+    },
+    {
+      "type": "diagram",
+      "html": "<svg viewBox='0 0 500 300' xmlns='http://www.w3.org/2000/svg'><rect width='500' height='300' fill='#0f172a'/><polygon points='40,260 460,260 460,80' fill='none' stroke='#475569' stroke-width='2'/><line x1='40' y1='260' x2='460' y2='80' stroke='#64748b' stroke-width='4'/><rect x='220' y='100' width='60' height='45' fill='#475569' rx='4' transform='rotate(25 250 122)'/><!-- P vector (vertical down) --><line x1='250' y1='122' x2='212' y2='168' stroke='#8b5cf6' stroke-width='2.5' marker-end='url(#arrowPurple)'/><text x='180' y='168' fill='#c084fc' font-size='15' text-anchor='middle'>P</text><!-- P_parallel --><line x1='250' y1='122' x2='246' y2='178' stroke='#f97316' stroke-width='2' marker-end='url(#arrowOrange)' transform='rotate(25 250 122)'/><text x='240' y='200' fill='#fb923c' font-size='13' text-anchor='end'>P_∥</text><!-- P_perp --><line x1='250' y1='122' x2='290' y2='140' stroke='#22c55e' stroke-width='2' marker-end='url(#arrowGreen)' transform='rotate(25 250 122)'/><text x='300' y='135' fill='#4ade80' font-size='13'>P_⊥</text><!-- Normal --><line x1='250' y1='122' x2='290' y2='140' stroke='#22c55e' stroke-width='2.5' marker-end='url(#arrowGreen)'/><text x='305' y='115' fill='#4ade80' font-size='15'>N</text><!-- Friction --><line x1='250' y1='122' x2='232' y2='182' stroke='#fbbf24' stroke-width='2.5' marker-end='url(#arrowOrange)'/><text x='210' y='200' fill='#fbbf24' font-size='15'>f</text><!-- alpha arc --><path d='M 40 260 Q 80 220 100 240' fill='none' stroke='#94a3b8' stroke-width='1.5'/><text x='70' y='250' fill='#94a3b8' font-size='13'>α</text><defs><marker id='arrowPurple' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#8b5cf6'/></marker><marker id='arrowGreen' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#22c55e'/></marker><marker id='arrowOrange' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#f97316'/></marker></defs></svg>",
+      "alt": "تحليل القوى على مستوي مائل"
+    },
+    {
+      "type": "heading",
+      "text": "تحليل الثقل على المستوي المائل",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>نحلل الثقل $\\vec{P}$ إلى مركبتين:</p><ul><li><strong>المركبة الموازية للمستوي:</strong> $P_{\\parallel} = P\\sin\\alpha = mg\\sin\\alpha$ — هذه المركبة تسبب حركة الجسم إلى أسفل المستوي</li><li><strong>المركبة العمودية على المستوي:</strong> $P_{\\perp} = P\\cos\\alpha = mg\\cos\\alpha$ — هذه المركبة تتعادل مع قوة رد الفعل (على المحور $y'y$)</li></ul>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\begin{cases} P_{\\parallel} = mg\\sin\\alpha \\\\ P_{\\perp} = mg\\cos\\alpha \\end{cases}"
+    },
+    {
+      "type": "heading",
+      "text": "2- تطبيق القانون الثاني لنيوتن",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>نطبق القانون الثاني لنيوتن $\\sum F_{ext} = m\\vec{a}$ على الجسم $S$ في المعلم المختار:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\sum \\vec{F}_{ext} = \\vec{P} + \\vec{R} + \\vec{f} = m\\vec{a}"
+    },
+    {
+      "type": "text",
+      "content": "<p>بالإسقاط على المحورين:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\begin{cases} \\text{محور } x'x: & mg\\sin\\alpha - f = ma \\\\ \\text{محور } y'y: & -mg\\cos\\alpha + R = 0 \\end{cases}"
+    },
+    {
+      "type": "text",
+      "content": "<p>من المعادلة الأولى نستنتج عبارة التسارع:</p>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "عبارة التسارع على المستوي المائل (الحركة إلى أسفل):\n$a = \\dfrac{mg\\sin\\alpha - f}{m}$\nإذا كان الاحتكاك معدوماً ($f = 0$): $a = g\\sin\\alpha$"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "الحالة",
+        "عبارة التسارع",
+        "طبيعة الحركة"
+      ],
+      "rows": [
+        [
+          "نزول (مع احتكاك $f$)",
+          "$a = \\dfrac{mg\\sin\\alpha - f}{m}$",
+          "مستقيمة متسارعة بانتظام إذا $mg\\sin\\alpha > f$، أو سكون إذا $mg\\sin\\alpha \\leq f$"
+        ],
+        [
+          "نزول (بدون احتكاك)",
+          "$a = g\\sin\\alpha$",
+          "مستقيمة متسارعة بانتظام"
+        ],
+        [
+          "صعود (مع احتكاك $f$)",
+          "$a = \\dfrac{-mg\\sin\\alpha - f}{m}$",
+          "مستقيمة متباطئة بانتظام"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "3- المعادلات الزمنية للحركة",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>بما أن التسارع $a$ ثابت (عندما تكون القوى ثابتة)، فإن الحركة تكون <strong>مستقيمة متسارعة أو متباطئة بانتظام</strong>. نكتب المعادلات الزمنية كما يلي:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "v(t) = a\\,t + v_0"
+    },
+    {
+      "type": "formula",
+      "latex": "x(t) = \\frac{1}{2}a\\,t^2 + v_0\\,t + x_0"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "تفاعل مع المحاكاة: جرب تغيير المعايير المختلفة وشاهد تأثيرها على الحركة في الوقت الفعلي. استخدم أزرار التشغيل والإيقاف للتحكم في المحاكاة."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: حركة جسم على مستوي مائل",
+        "width": 700,
+        "height": 640
+      },
+      "html": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"ar\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>محاكاة تفاعلية: المستوي المائل</title>\n<style>\n*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}\nbody{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:20px}\n.container{max-width:800px;width:100%}\nh1{text-align:center;font-size:1.3rem;margin-bottom:10px;color:#fbbf24}\ncanvas{display:block;width:100%;max-width:760px;height:auto;margin:0 auto;border-radius:8px;border:1px solid #1e293b;background:#0f172a}\n.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;padding:12px;background:#1e293b;border-radius:8px;border:1px solid #334155}\n.ctrl-group{display:flex;flex-direction:column;gap:3px}\n.ctrl-group label{font-size:0.78rem;color:#94a3b8;display:flex;justify-content:space-between}\n.ctrl-group label span{color:#fbbf24;font-weight:bold;direction:ltr}\n.ctrl-group input[type=range]{width:100%;height:5px;-webkit-appearance:none;appearance:none;background:#334155;border-radius:3px;outline:none;cursor:pointer}\n.ctrl-group input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer;border:2px solid #1e293b}\n.ctrl-group input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer;border:2px solid #1e293b}\n.actions{grid-column:1/-1;display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:4px}\n.btn{padding:6px 14px;border:none;border-radius:5px;cursor:pointer;font-size:0.85rem;transition:opacity .15s}\n.btn:hover{opacity:.85}\n.btn-play{background:#22c55e;color:#fff}\n.btn-pause{background:#eab308;color:#000}\n.btn-reset{background:#64748b;color:#fff}\n.spd{display:flex;align-items:center;gap:6px;margin-right:auto}\n.spd label{font-size:0.78rem;color:#94a3b8}\n.spd input[type=range]{width:70px}\n.spd .sv{font-size:.8rem;font-weight:bold;color:#e2e8f0;direction:ltr}\n.data-panel{margin-top:8px;padding:10px 12px;background:#1e293b;border-radius:8px;border:1px solid #334155}\n.data-panel h3{font-size:.85rem;margin-bottom:6px;color:#f8fafc}\n.dt{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px 12px;font-size:.78rem}\n.dr{display:flex;justify-content:space-between;padding:2px 5px;border-radius:3px;background:#0f172a}\n.dr .lb{color:#94a3b8}\n.dr .vl{color:#e2e8f0;font-weight:bold;direction:ltr}\n@media(max-width:600px){.controls{grid-template-columns:1fr}.dt{grid-template-columns:1fr 1fr}}\n</style>\n</head>\n<body>\n<div class=\"container\">\n<h1>محاكاة تفاعلية: حركة جسم على مستوي مائل</h1>\n<canvas id=\"c\" width=\"760\" height=\"400\"></canvas>\n<div class=\"controls\">\n<div class=\"ctrl-group\">\n<label>زاوية الميل α <span id=\"av\">30</span>°</label>\n<input type=\"range\" id=\"angle\" min=\"5\" max=\"80\" step=\"1\" value=\"30\">\n</div>\n<div class=\"ctrl-group\">\n<label>الكتلة m <span id=\"mv\">2.0</span> kg</label>\n<input type=\"range\" id=\"mass\" min=\"0.5\" max=\"10\" step=\"0.1\" value=\"2\">\n</div>\n<div class=\"ctrl-group\">\n<label>معامل الاحتكاك μ <span id=\"muv\">0.10</span></label>\n<input type=\"range\" id=\"mu\" min=\"0\" max=\"0.6\" step=\"0.01\" value=\"0.1\">\n</div>\n<div class=\"ctrl-group\">\n<label>سرعة المحاكاة <span id=\"spv\">1.0</span>x</label>\n<input type=\"range\" id=\"speed\" min=\"0.2\" max=\"3\" step=\"0.1\" value=\"1\">\n</div>\n<div class=\"actions\">\n<button class=\"btn btn-play\" id=\"playBtn\">▶ تشغيل</button>\n<button class=\"btn btn-reset\" id=\"resetBtn\">↺ إعادة</button>\n</div>\n</div>\n<div class=\"data-panel\">\n<h3>البيانات الفيزيائية</h3>\n<div class=\"dt\">\n<div class=\"dr\"><span class=\"lb\">التسارع a (m/s²)</span><span class=\"vl\" id=\"dA\">0.00</span></div>\n<div class=\"dr\"><span class=\"lb\">السرعة v (m/s)</span><span class=\"vl\" id=\"dV\">0.00</span></div>\n<div class=\"dr\"><span class=\"lb\">المسافة x (m)</span><span class=\"vl\" id=\"dX\">0.00</span></div>\n<div class=\"dr\"><span class=\"lb\">الزمن t (s)</span><span class=\"vl\" id=\"dT\">0.00</span></div>\n<div class=\"dr\"><span class=\"lb\">P∥ = mg.sinα (N)</span><span class=\"vl\" id=\"dPp\">0.00</span></div>\n<div class=\"dr\"><span class=\"lb\">قوة الاحتكاك f (N)</span><span class=\"vl\" id=\"dF\">0.00</span></div>\n<div class=\"dr\"><span class=\"lb\">رد الفعل R (N)</span><span class=\"vl\" id=\"dR\">0.00</span></div>\n<div class=\"dr\"><span class=\"lb\">الطاقة الحركية Ec (J)</span><span class=\"vl\" id=\"dEc\">0.00</span></div>\n<div class=\"dr\"><span class=\"lb\">الشغل W(P∥) (J)</span><span class=\"vl\" id=\"dW\">0.00</span></div>\n</div>\n</div>\n</div>\n<script>\n(function(){\nconst c=document.getElementById('c'),ctx=c.getContext('2d');\nconst W=760,H=400,g=9.8;\nconst clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));\nlet angle=30,mass=2,mu=0.1,spd=1;\nlet playing=false,t=0,v=0,x=0,lastT=0;\n\nconst $=id=>document.getElementById(id);\nconst angleI=$('angle'),massI=$('mass'),muI=$('mu'),spdI=$('speed');\nconst av=$('av'),mv=$('mv'),muv=$('muv'),spv=$('spv');\nconst dA=$('dA'),dV=$('dV'),dX=$('dX'),dT=$('dT');\nconst dPp=$('dPp'),dF=$('dF'),dR=$('dR'),dEc=$('dEc'),dW=$('dW');\nconst playBtn=$('playBtn'),resetBtn=$('resetBtn');\n\nfunction readCtrls(){\nangle=parseFloat(angleI.value);mass=parseFloat(massI.value);\nmu=parseFloat(muI.value);spd=parseFloat(spdI.value);\nav.textContent=angle;mv.textContent=mass.toFixed(1);\nmuv.textContent=mu.toFixed(2);spv.textContent=spd.toFixed(1);\n}\n\nfunction resetSim(){\nplaying=false;simDone=false;t=0;v=0;x=0;lastT=0;\nplayBtn.textContent='▶ تشغيل';playBtn.className='btn btn-play';\ndraw();updateData();\n}\n\nfunction physics(dt){\nif(!playing)return;\nconst aRad=angle*Math.PI/180;\nconst Pp=mass*g*Math.sin(aRad);\nconst N=mass*g*Math.cos(aRad);\nconst f=mu*N;\nconst Fnet=Pp-f;\nif(Fnet>0){\nconst a=Fnet/mass;\nv+=a*dt*spd;\nx+=v*dt*spd;\nt+=dt*spd;\n}\nif(v<0)v=0;\nif(x>4){playing=false;simDone=true;playBtn.textContent='▶ تشغيل';playBtn.className='btn btn-play';draw();updateData();}\n}\n\nfunction updateData(){\nconst aRad=angle*Math.PI/180;\nconst Pp=mass*g*Math.sin(aRad);\nconst N=mass*g*Math.cos(aRad);\nconst f=mu*N;\nconst Fnet=Pp-f>0?Pp-f:0;\nconst a=Fnet/mass;\nconst Ec=0.5*mass*v*v;\nconst W=Pp*x;\ndA.textContent=a.toFixed(2);\ndV.textContent=v.toFixed(2);\ndX.textContent=x.toFixed(2);\ndT.textContent=t.toFixed(2);\ndPp.textContent=Pp.toFixed(2);\ndF.textContent=f.toFixed(2);\ndR.textContent=N.toFixed(2);\ndEc.textContent=Ec.toFixed(2);\ndW.textContent=W.toFixed(2);\n}\n\nfunction draw(){\nctx.clearRect(0,0,W,H);\nconst baseX=80,baseY=340,slopeLen=280;\nconst aRad=angle*Math.PI/180;\nconst tipX=baseX+slopeLen*Math.cos(aRad);\nconst tipY=baseY-slopeLen*Math.sin(aRad);\nconst boxSize=40;\nconst frac=Math.min(x/4,1);\nconst bx=baseX+frac*(tipX-baseX);\nconst by=baseY+frac*(tipY-baseY);\n\n// ground\nctx.strokeStyle='#334155';ctx.lineWidth=2;\nctx.beginPath();ctx.moveTo(0,baseY);ctx.lineTo(W,baseY);ctx.stroke();\n\n// incline\nctx.strokeStyle='#475569';ctx.lineWidth=3;\nctx.beginPath();ctx.moveTo(baseX,baseY);ctx.lineTo(tipX,tipY);ctx.stroke();\n// right triangle hint\nctx.strokeStyle='#334155';ctx.lineWidth=1;\nctx.beginPath();ctx.moveTo(tipX,tipY);ctx.lineTo(tipX,baseY);ctx.stroke();\nctx.beginPath();ctx.moveTo(tipX,baseY);ctx.lineTo(baseX,baseY);ctx.stroke();\n// angle arc\nctx.strokeStyle='#94a3b8';ctx.lineWidth=1;\nctx.beginPath();ctx.arc(baseX,baseY,30,-Math.PI/2,-Math.PI/2+aRad);\nctx.stroke();\nctx.fillStyle='#94a3b8';ctx.font='12px sans-serif';\nctx.fillText('α',baseX+38,baseY-5);\n\n// block\nconst bx1=bx-boxSize/2*Math.cos(aRad);\nconst by1=by-boxSize/2*Math.sin(aRad);\nctx.save();\nctx.translate(bx1-boxSize/2*Math.sin(aRad),by1+boxSize/2*Math.cos(aRad));\nctx.rotate(-aRad);\nctx.fillStyle='#3b82f6';ctx.strokeStyle='#60a5fa';ctx.lineWidth=2;\nctx.fillRect(-boxSize/2,-boxSize/2,boxSize,boxSize);\nctx.strokeRect(-boxSize/2,-boxSize/2,boxSize,boxSize);\nctx.restore();\n\n// force: weight P (vertical down from center)\nconst fScale=1.2;\nconst cx=bx1,cy=by1-boxSize/2;\nconst pEndX=cx, pEndY=clamp(cy+mass*g*fScale, 0, H);\nctx.strokeStyle='#ef4444';ctx.lineWidth=2;ctx.fillStyle='#ef4444';\nctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(pEndX,pEndY);ctx.stroke();\nctx.fillText('P',cx+8,clamp(cy+mass*g*fScale/2,20,H-10));\n\n// force: P∥ (parallel down)\nconst ppx=clamp(cx+Pp*fScale*Math.cos(Math.PI/2-aRad),0,W);\nconst ppy=clamp(cy+Pp*fScale*Math.sin(Math.PI/2-aRad),0,H);\nctx.strokeStyle='#f59e0b';ctx.lineWidth=2;\nctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(ppx,ppy);ctx.stroke();\nctx.fillStyle='#f59e0b';ctx.fillText('P∥',clamp(ppx+8,0,W-20),clamp(ppy-2,15,H-5));\n\n// force: N (perpendicular up from incline)\nctx.strokeStyle='#22c55e';ctx.lineWidth=2;ctx.fillStyle='#22c55e';\nconst nx=clamp(bx1+N*fScale*Math.sin(aRad),0,W);\nconst ny=clamp(by1-boxSize/2-N*fScale*Math.cos(aRad),0,H);\nctx.beginPath();ctx.moveTo(bx1,by1-boxSize/2);\nctx.lineTo(nx,ny);ctx.stroke();\nctx.fillText('N',clamp(nx+6,0,W-16),clamp(ny-4,15,H-5));\n\n// force: f (parallel up, opposite to motion if v>0)\nif(mu>0){\nctx.strokeStyle='#a855f7';ctx.lineWidth=2;ctx.fillStyle='#a855f7';\nconst ff=mu*mass*g*Math.cos(aRad)*fScale;\nconst fx=clamp(cx-ff*Math.cos(Math.PI/2-aRad),0,W);\nconst fy=clamp(cy-ff*Math.sin(Math.PI/2-aRad),0,H);\nctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(fx,fy);ctx.stroke();\nctx.fillText('f',clamp(fx-18,0,W-14),clamp(fy-2,15,H-5));\n}\n\n// title\nctx.fillStyle='#64748b';ctx.font='11px sans-serif';\nctx.fillText('P = m.g',10,20);\nctx.fillStyle='#ef4444';ctx.fillRect(10,30,12,3);\nctx.fillStyle='#f59e0b';ctx.fillRect(10,42,12,3);\nctx.fillText('P∥ = mg.sinα',10,55);\nctx.fillStyle='#22c55e';ctx.fillRect(10,67,12,3);\nctx.fillText('N = mg.cosα',10,80);\nctx.fillStyle='#a855f7';ctx.fillRect(10,92,12,3);\nctx.fillText('f = μ.N',10,105);\n\n// show slide direction\nif(Pp>mu*mass*g*Math.cos(aRad)){\nctx.fillStyle='#22c55e';ctx.font='11px sans-serif';\nctx.fillText('⬇ يتسارع إلى أسفل',tipX-120,baseY+18);\n}else{\nctx.fillStyle='#f87171';ctx.font='11px sans-serif';\nctx.fillText('■ لا يتحرك (الاحتكاك يمنع الحركة)',tipX-170,baseY+18);\n}\n}\n\n// animation loop\nlet simDone=false;\nfunction loop(ts){\nif(simDone)return;\nif(!lastT)lastT=ts;\nlet dt=(ts-lastT)/1000;\nif(dt>0.05)dt=0.05;\nif(playing){\nphysics(dt);\ndraw();\nupdateData();\n}\nlastT=ts;\nrequestAnimationFrame(loop);\n}\n\nplayBtn.addEventListener('click',()=>{\nreadCtrls();\nif(!playing && simDone){resetSim();}\nplaying=!playing;\nif(playing){\nplayBtn.textContent='⏸ إيقاف';playBtn.className='btn btn-pause';\nlastT=0;\nrequestAnimationFrame(loop);\n}else{\nplayBtn.textContent='▶ متابعة';playBtn.className='btn btn-play';\n}\n});\n\nresetBtn.addEventListener('click',()=>{readCtrls();resetSim();});\nangleI.addEventListener('input',()=>{readCtrls();resetSim();});\nmassI.addEventListener('input',()=>{readCtrls();resetSim();});\nmuI.addEventListener('input',()=>{readCtrls();resetSim();});\nspdI.addEventListener('input',()=>{readCtrls();});\n\nreadCtrls();resetSim();draw();\nrequestAnimationFrame(loop);\n})();\n</script>\n</body>\n</html>\n",
+      "css": "",
+      "js": ""
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $v_0$ و $x_0$ هما السرعة والموضع الابتدائيان على الترتيب.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "ملاحظة مهمة: في حالة النزول، يكون $a > 0$ (متسارعة). في حالة الصعود، يكون $a < 0$ (متباطئة). عندما تتوقف السرعة ($v = 0$) في حالة الصعود، يتوقف الجسم ويعود للنزول إذا كانت مركبة الثقل $mg\\sin\\alpha$ أكبر من قوة الاحتكاك الحركي $f = \\mu_k N$."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - حركة جسم على مستوي أفقي",
+      "level": 2
+    },
+    {
+      "type": "heading",
+      "text": "1- جرد القوى الخارجية",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>على المستوي الأفقي، تؤثر على الجسم القوى التالية:</p><ul><li><strong>الثقل</strong> $\\vec{P} = m\\vec{g}$: شاقولي نحو الأسفل، شدته $P = mg$</li><li><strong>قوة رد الفعل</strong> $\\vec{R}$: شاقولي نحو الأعلى، شدتها $R = mg$ (تتعادل مع الثقل)</li><li><strong>قوة الاحتكاك</strong> $\\vec{f}$: أفقية معاكسة لجهة الحركة (إذا كان الجسم متحركاً)</li><li>قوة دفع أو سحب $\\vec{F}$ (إن وجدت): حسب اتجاه التأثير</li></ul>"
+    },
+    {
+      "type": "heading",
+      "text": "2- تطبيق القانون الثاني لنيوتن",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>نختار معلماً ديكارتياً حيث محور $(Ox)$ أفقي في جهة الحركة، ومحور $(Oy)$ شاقولي نحو الأعلى.</p><p>بالإسقاط على المحورين:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\begin{cases} \\text{محور } Ox: & -f = ma \\quad (\\text{إذا كانت } f \\text{ هي القوة الوحيدة في الأفقي}) \\\\ \\text{محور } Oy: & R - mg = 0 \\end{cases}"
+    },
+    {
+      "type": "text",
+      "content": "<p>إذن التسارع يعطى بالعلاقة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "a = -\\frac{f}{m}"
+    },
+    {
+      "type": "text",
+      "content": "<p>الإشارة السالبة تعني أن الحركة متباطئة بانتظام (تتناقص السرعة مع الزمن).</p>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "حالة وجود قوة دفع أفقية $F$:\nإذا دفعنا الجسم بقوة $F$ أفقية في جهة الحركة، يصبح مجموع القوى الأفقية: $F - f = ma$\nوبالتالي $a = \\dfrac{F - f}{m}$ (قد تكون متسارعة أو متباطئة حسب مقارنة $F$ مع $f$)."
+    },
+    {
+      "type": "heading",
+      "text": "3- المعادلات الزمنية للحركة",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>بما أن التسارع $a$ ثابت، نكتب:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "v(t) = a\\,t + v_0"
+    },
+    {
+      "type": "formula",
+      "latex": "x(t) = \\frac{1}{2}a\\,t^2 + v_0\\,t + x_0"
+    },
+    {
+      "type": "heading",
+      "text": "4- حالة ترك الجسم لحاله (نبذ القوة)",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>إذا كان الجسم يتحرك على مستوي أفقي ثم تُرِك لحاله (توقفت القوة الدافعة)، فإن القوة الوحيدة في الأفقي هي قوة الاحتكاك $f$. في هذه الحالة:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "a = -\\frac{f}{m}"
+    },
+    {
+      "type": "text",
+      "content": "<p>بما أن $f = \\mu N$ (قانون الاحتكاك الحركي) و $N = mg$ (اتزان على المحور الشاقولي)، نجد:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "a = -\\frac{\\mu mg}{m} = -\\mu g"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $\\mu$ هو معامل الاحتكاك الحركي. يتحرك الجسم بحركة مستقيمة متباطئة بانتظام حتى يتوقف تماماً.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - العلاقة بين قانون نيوتن الثاني ومبرهنة الطاقة الحركية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>يمكن دراسة حركة جسم على مستوي (مائل أو أفقي) بطريقتين متكاملتين:</p><p><strong>1. طريقة القانون الثاني لنيوتن:</strong> نحسب التسارع $a$ من القوى، ثم نستخدم المعادلات الزمنية لإيجاد السرعة والموضع.</p><p><strong>2. طريقة الطاقة:</strong> نطبق مبرهنة الطاقة الحركية:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\Delta E_c = \\frac{1}{2}mv_B^2 - \\frac{1}{2}mv_A^2 = \\sum W_{AB}(\\vec{F}_{ext})"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $\\sum W_{AB}$ هو مجموع أعمال القوى الخارجية بين الموضعين $A$ و $B$.</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "القوة",
+        "العمل $W_{AB}$ على مستوي مائل",
+        "العمل $W_{AB}$ على مستوي أفقي"
+      ],
+      "rows": [
+        [
+          "$\\vec{P}$ (الثقل)",
+          "$W(P) = \\pm mgh = \\pm mg\\times AB\\times\\sin\\alpha$ (نزول: $+mgh$، صعود: $-mgh$)",
+          "$W(P) = 0$ (لأن $\\vec{P} \\perp \\vec{AB}$)"
+        ],
+        [
+          "$\\vec{R}$ (رد الفعل)",
+          "$W(R) = 0$ (لأن $\\vec{R} \\perp \\vec{AB}$)",
+          "$W(R) = 0$"
+        ],
+        [
+          "$\\vec{f}$ (الاحتكاك)",
+          "$W(f) = -f\\times AB$ (مقاوم دائماً)",
+          "$W(f) = -f\\times AB$"
+        ],
+        [
+          "$\\vec{F}$ (قوة خارجية)",
+          "$W(F) = F\\times AB$ إن وافقت جهة الحركة",
+          "$W(F) = F\\times AB$ إن وافقت جهة الحركة"
+        ]
+      ],
+      "caption": "أعمال القوى على مستوي مائل وأفقي"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "ملاحظة: الطريقتان متكاملتان. طريقة نيوتن تعطينا تفاصيل الحركة في كل لحظة (السرعة والموضع كدالة في الزمن)، بينما طريقة الطاقة تربط بين السرعة في نقطتين فقط دون الحاجة إلى معرفة الزمن."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - خلاصة: جدول تلخيصي",
+      "level": 2
+    },
+    {
+      "type": "table",
+      "headers": [
+        "نوع الحركة",
+        "القوى الأفقية/الموازية",
+        "التسارع $a$",
+        "طبيعة الحركة"
+      ],
+      "rows": [
+        [
+          "نزول على مستوي مائل (باحتكاك)",
+          "$mg\\sin\\alpha - f$",
+          "$a = \\dfrac{mg\\sin\\alpha - f}{m}$",
+          "متسارعة بانتظام"
+        ],
+        [
+          "نزول على مستوي مائل (بدون احتكاك)",
+          "$mg\\sin\\alpha$",
+          "$a = g\\sin\\alpha$",
+          "متسارعة بانتظام"
+        ],
+        [
+          "صعود على مستوي مائل (باحتكاك)",
+          "$-mg\\sin\\alpha - f$",
+          "$a = \\dfrac{-mg\\sin\\alpha - f}{m}$",
+          "متباطئة بانتظام"
+        ],
+        [
+          "حركة على أفقي (بدون قوة دفع)",
+          "$-f$",
+          "$a = -\\dfrac{f}{m} = -\\mu g$",
+          "متباطئة بانتظام"
+        ],
+        [
+          "حركة على أفقي (بقوة دفع $F$)",
+          "$F - f$",
+          "$a = \\dfrac{F - f}{m}$",
+          "حسب مقارنة $F$ مع $f$"
+        ]
+      ]
+    }
+  ]
+}

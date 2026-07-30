@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكاة راسم الإشارة</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:12px;min-height:100vh}
+.container{max-width:960px;width:100%}
+h1{text-align:center;font-size:17px;margin-bottom:6px;color:#fbbf24}
+.main-area{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+canvas#scopeCanvas{background:#0a1a0a;border:2px solid #1a3a1a;border-radius:6px;display:block;cursor:crosshair}
+.side-panel{flex:1;min-width:200px}
+.controls{background:#1e293b;border-radius:6px;padding:8px;margin-bottom:6px;border:1px solid #334155}
+.ctrl-group{display:flex;flex-direction:column;gap:1px;margin-bottom:5px}
+.ctrl-group label{font-size:10px;color:#94a3b8}
+.ctrl-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.ctrl-row label{font-size:10px;color:#94a3b8}
+.ctrl-row .val{font-size:10px;color:#fbbf24;margin-inline-start:2px}
+select{background:#0f172a;color:#e2e8f0;border:1px solid #475569;border-radius:3px;padding:2px 4px;font-size:10px;outline:none;cursor:pointer}
+select:focus{border-color:#f59e0b}
+.sec-title{font-size:11px;color:#94a3b8;margin-bottom:3px;margin-top:4px;border-bottom:1px solid #334155;padding-bottom:2px}
+input[type=range]{-webkit-appearance:none;width:100%;height:3px;border-radius:2px;background:#334155;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:#f59e0b;cursor:pointer}
+input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:#f59e0b;cursor:pointer;border:none}
+.btn-row{display:flex;gap:4px;align-items:center;flex-wrap:wrap;margin-top:4px}
+.btn{background:#334155;color:#e2e8f0;border:none;border-radius:3px;padding:3px 8px;font-size:11px;cursor:pointer;transition:background .15s}
+.btn:hover{background:#475569}
+.btn-play{background:#22c55e;color:#0f172a}
+.btn-play:hover{background:#16a34a}
+.btn-reset{background:#ef4444;color:#fff}
+.btn-reset:hover{background:#dc2626}
+.btn-single{background:#f59e0b;color:#0f172a}
+.btn-single:hover{background:#d97706}
+.mode-group{display:flex;gap:4px}
+.mode-btn{flex:1;background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:3px;padding:2px 4px;font-size:10px;cursor:pointer;transition:all .15s;text-align:center}
+.mode-btn.active{background:#f59e0b;color:#0f172a;border-color:#f59e0b;font-weight:700}
+.mode-btn:hover{background:#475569}
+.mode-btn.active:hover{background:#d97706}
+.data-panel{background:#1e293b;border-radius:6px;padding:6px 8px;border:1px solid #334155;margin-top:4px}
+.data-table{width:100%;border-collapse:collapse;font-size:10px}
+.data-table th,.data-table td{padding:1px 3px;text-align:center;border-bottom:1px solid #334155}
+.data-table th{color:#94a3b8;font-weight:400}
+.data-table td{color:#e2e8f0}
+.data-table td.val{color:#fbbf24;font-weight:700;direction:ltr}
+.legend{display:flex;gap:8px;justify-content:center;font-size:10px;color:#94a3b8;margin-top:2px}
+.legend-item{display:flex;align-items:center;gap:3px}
+.legend-dot{width:7px;height:7px;border-radius:50%;display:inline-block}
+.guide-step-num{font-size:10px;color:#fbbf24;margin-bottom:4px}
+.guide-text{font-size:11px;color:#e2e8f0;line-height:1.7;min-height:60px;margin-bottom:6px;padding:6px 8px;background:#0f172a;border-radius:4px;border-right:2px solid #f59e0b}
+.guide-nav{display:flex;gap:4px}
+.guide-btn{flex:1}
+.active-btn{background:#22c55e;color:#0f172a;font-weight:700;border:none;border-radius:3px;padding:3px 8px;font-size:11px;cursor:pointer;transition:background .15s}
+.active-btn:hover{background:#16a34a}
+.toggle-on{background:#f59e0b !important;color:#0f172a !important;border-color:#f59e0b !important;font-weight:700}
+@media(max-width:700px){.main-area{flex-direction:column;align-items:center}.side-panel{width:100%}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>محاكاة تفاعلية: راسم الإشارة (Oscilloscope)</h1>
+
+<div class="main-area">
+<canvas id="scopeCanvas" width="600" height="420"></canvas>
+
+<div class="side-panel">
+<div class="controls">
+<div class="sec-title">⏱ ضبط راسم الإشارة</div>
+<div class="ctrl-row">
+<label>Time/Div</label>
+<select id="timeDiv">
+<option value="0.001">1 ms</option>
+<option value="0.002">2 ms</option>
+<option value="0.005">5 ms</option>
+<option value="0.01">10 ms</option>
+<option value="0.02">20 ms</option>
+<option value="0.05">50 ms</option>
+<option value="0.1">100 ms</option>
+<option value="0.2">200 ms</option>
+</select>
+<label>V/Div CH1</label>
+<select id="vDiv1">
+<option value="0.5">0.5 V</option>
+<option value="1" selected>1 V</option>
+<option value="2">2 V</option>
+<option value="5">5 V</option>
+</select>
+<label>V/Div CH2</label>
+<select id="vDiv2">
+<option value="0.5">0.5 V</option>
+<option value="1">1 V</option>
+<option value="2">2 V</option>
+<option value="5">5 V</option>
+</select>
+</div>
+<div class="ctrl-row">
+<div class="mode-group">
+<button class="mode-btn active" data-mode="ch1">CH1</button>
+<button class="mode-btn" data-mode="dual">DUAL</button>
+<button class="mode-btn" data-mode="ch2">CH2</button>
+</div>
+<label>مسح</label>
+<select id="triggerMode">
+<option value="auto">Auto</option>
+<option value="normal">Normal</option>
+</select>
+<div class="btn-row">
+<button class="btn btn-play" id="runBtn">⏸</button>
+<button class="btn btn-single" id="singleBtn">Single</button>
+<button class="btn btn-reset" id="resetBtn">↺</button>
+</div>
+</div>
+</div>
+
+<div class="controls">
+<div class="sec-title">🔌 الدارة الكهربائية</div>
+<div class="ctrl-row">
+<div class="mode-group">
+<button class="mode-btn active" data-ckt="rc">RC</button>
+<button class="mode-btn" data-ckt="rl">RL</button>
+</div>
+</div>
+<div class="ctrl-row">
+<label>R <span class="val" id="rVal">10</span> kΩ</label>
+<input type="range" id="rSlider" min="1" max="100" step="1" value="10">
+</div>
+<div class="ctrl-row" id="cRow">
+<label>C <span class="val" id="cVal">100</span> µF</label>
+<input type="range" id="cSlider" min="1" max="1000" step="1" value="100">
+</div>
+<div class="ctrl-row" id="lRow" style="display:none">
+<label>L <span class="val" id="lVal">500</span> mH</label>
+<input type="range" id="lSlider" min="10" max="2000" step="10" value="500">
+</div>
+<div class="ctrl-row">
+<label>E <span class="val" id="eVal">12</span> V</label>
+<input type="range" id="eSlider" min="1" max="24" step="0.5" value="12">
+</div>
+<div class="ctrl-row" id="rIRow">
+<label>r <span class="val" id="riVal">5</span> Ω</label>
+<input type="range" id="riSlider" min="0" max="50" step="1" value="5">
+</div>
+<div class="ctrl-row">
+<button class="mode-btn active" data-mode="charge" id="chargeBtn">شحن</button>
+<button class="mode-btn" data-mode="discharge" id="dischargeBtn">تفريغ</button>
+</div>
+</div>
+
+<div class="controls">
+<div class="sec-title">📋 دليل الخطوات</div>
+<div id="guideContent" style="display:none">
+<div class="guide-step-num" id="guideStepNum">الخطوة 1 من 5</div>
+<div class="guide-text" id="guideText"></div>
+<div class="guide-nav">
+<button class="btn guide-btn" id="guidePrevBtn" disabled>◀ السابق</button>
+<button class="btn guide-btn" id="guideNextBtn">التالي ▶</button>
+</div>
+</div>
+<div class="btn-row" style="justify-content:center;margin-top:2px">
+<button class="active-btn" id="guideToggleBtn">▶ بدء الدليل</button>
+</div>
+</div>
+<div class="controls">
+<div class="sec-title">🎯 أدوات العرض</div>
+<div class="btn-row">
+<button class="btn toggle-on" id="theoryToggle">📐 المنحني النظري</button>
+<button class="btn toggle-on" id="annotToggle">📏 القياسات</button>
+</div>
+</div>
+<div class="data-panel">
+<table class="data-table">
+<tr><th>القياس</th><th>CH1</th><th>CH2</th></tr>
+<tr><td>V<sub>max</sub></td><td class="val" id="ch1Vmax">—</td><td class="val" id="ch2Vmax">—</td></tr>
+<tr><td>V<sub>min</sub></td><td class="val" id="ch1Vmin">—</td><td class="val" id="ch2Vmin">—</td></tr>
+<tr><td>V<sub>pp</sub></td><td class="val" id="ch1Vpp">—</td><td class="val" id="ch2Vpp">—</td></tr>
+</table>
+<div class="legend">
+<span class="legend-item"><span class="legend-dot" style="background:#ffff00"></span> CH1</span>
+<span class="legend-item"><span class="legend-dot" style="background:#00ccff"></span> CH2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+const GX = 60, GY = 30, GW = 500, GH = 360;
+const H_DIVS = 10, V_DIVS = 8;
+const DIV_W = GW / H_DIVS, DIV_H = GH / V_DIVS;
+const SAMPLE_RATE = 2000;
+
+const canvas = document.getElementById('scopeCanvas');
+const ctx = canvas.getContext('2d');
+
+const timeDiv = document.getElementById('timeDiv');
+const vDiv1 = document.getElementById('vDiv1');
+const vDiv2 = document.getElementById('vDiv2');
+const triggerMode = document.getElementById('triggerMode');
+const runBtn = document.getElementById('runBtn');
+const singleBtn = document.getElementById('singleBtn');
+const resetBtn = document.getElementById('resetBtn');
+const rSlider = document.getElementById('rSlider');
+const rVal = document.getElementById('rVal');
+const cSlider = document.getElementById('cSlider');
+const cVal = document.getElementById('cVal');
+const lSlider = document.getElementById('lSlider');
+const lVal = document.getElementById('lVal');
+const eSlider = document.getElementById('eSlider');
+const eVal = document.getElementById('eVal');
+const riSlider = document.getElementById('riSlider');
+const riVal = document.getElementById('riVal');
+const chargeBtn = document.getElementById('chargeBtn');
+const dischargeBtn = document.getElementById('dischargeBtn');
+const ch1Vmax = document.getElementById('ch1Vmax');
+const ch2Vmax = document.getElementById('ch2Vmax');
+const ch1Vmin = document.getElementById('ch1Vmin');
+const ch2Vmin = document.getElementById('ch2Vmin');
+const ch1Vpp = document.getElementById('ch1Vpp');
+const ch2Vpp = document.getElementById('ch2Vpp');
+
+const modeBtns = document.querySelectorAll('[data-mode]');
+const cktBtns = document.querySelectorAll('[data-ckt]');
+
+let displayMode = 'ch1';
+let cktType = 'rc';
+let opMode = 'charge';
+let running = true;
+let single = false;
+let circuitTime = 0;
+let ch1History = [];
+let ch2History = [];
+let timeHistory = [];
+let sweepPos = 0; // 0 to 1
+let v1max = 0, v1min = 0, v2max = 0, v2min = 0;
+
+function getParams() {
+  const R = parseFloat(rSlider.value) * 1000;
+  const C = parseFloat(cSlider.value) * 1e-6;
+  const L = parseFloat(lSlider.value) / 1000;
+  const E = parseFloat(eSlider.value);
+  const r = parseFloat(riSlider.value);
+  return {R, C, L, E, r};
+}
+
+function fmtTau(t) {
+  if (t >= 1) return t.toFixed(2) + 's';
+  if (t >= 0.001) return (t * 1000).toFixed(1) + 'ms';
+  return (t * 1e6).toFixed(0) + 'µs';
+}
+
+function getSweepTime() { return parseFloat(timeDiv.value) * H_DIVS; }
+
+function compute(p, t) {
+  const Req = p.R + p.r;
+  const tau = cktType === 'rc' ? p.R * p.C : p.L / Req;
+  const I0 = cktType === 'rl' ? p.E / Req : p.E / p.R;
+  let ch1, ch2;
+  if (cktType === 'rc') {
+    if (opMode === 'charge') {
+      ch1 = p.E * (1 - Math.exp(-t / tau));
+      ch2 = p.E * Math.exp(-t / tau);
+    } else {
+      ch1 = p.E * Math.exp(-t / tau);
+      ch2 = -p.E * Math.exp(-t / tau);
+    }
+  } else {
+    if (opMode === 'charge') {
+      ch1 = p.E * Math.exp(-t / tau) + (p.r / Req) * p.E * (1 - Math.exp(-t / tau));
+      ch2 = I0 * (1 - Math.exp(-t / tau));
+    } else {
+      ch1 = (p.r - Req) * I0 * Math.exp(-t / tau);
+      ch2 = I0 * Math.exp(-t / tau);
+    }
+  }
+  return {ch1, ch2, tau};
+}
+
+function resetSim() {
+  circuitTime = 0;
+  ch1History = []; ch2History = []; timeHistory = [];
+  sweepPos = 0;
+  v1max = v1min = v2max = v2min = 0;
+  if (!running) { running = true; runBtn.textContent = '⏸'; }
+  single = false;
+}
+
+function stepPhysics(dt) {
+  if (!running) return;
+  const p = getParams();
+  const sweepT = getSweepTime();
+  const steps = Math.min(Math.ceil(dt * SAMPLE_RATE), 100);
+
+  for (let i = 0; i < steps; i++) {
+    const t = circuitTime;
+    const v = compute(p, t);
+    timeHistory.push(t);
+    ch1History.push(v.ch1);
+    ch2History.push(v.ch2);
+    circuitTime += 1 / SAMPLE_RATE;
+  }
+
+  // Trim history to ~2x sweep window
+  const maxSamples = Math.ceil(sweepT * SAMPLE_RATE * 2) + 100;
+  while (timeHistory.length > maxSamples) {
+    timeHistory.shift();
+    ch1History.shift();
+    ch2History.shift();
+  }
+
+  // Advance sweep
+  sweepPos += dt / sweepT;
+  if (sweepPos >= 1) {
+    if (single) { running = false; runBtn.textContent = '▶'; single = false; }
+    sweepPos -= Math.floor(sweepPos);
+  }
+}
+
+function toScopeX(t, sweepT, currentT) {
+  const winStart = currentT - sweepT;
+  return GX + ((t - winStart) / sweepT) * GW;
+}
+function toScopeY(v, vDiv) {
+  const mid = GY + GH / 2;
+  return mid - (v / (vDiv * V_DIVS / 2)) * (GH / 2);
+}
+
+function drawGrid() {
+  // Phosphor persistence: transparent overlay instead of solid fill
+  ctx.fillStyle = 'rgba(10,26,10,0.06)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Subtle CRT glow
+  ctx.fillStyle = 'rgba(0,30,0,0.3)';
+  ctx.fillRect(GX, GY, GW, GH);
+
+  ctx.strokeStyle = '#0d2f0d';
+  ctx.lineWidth = 0.5;
+  for (let i = 0; i <= H_DIVS; i++) {
+    const x = GX + i * DIV_W;
+    ctx.beginPath();
+    ctx.moveTo(x, GY);
+    ctx.lineTo(x, GY + GH);
+    ctx.stroke();
+  }
+  for (let i = 0; i <= V_DIVS; i++) {
+    const y = GY + i * DIV_H;
+    ctx.beginPath();
+    ctx.moveTo(GX, y);
+    ctx.lineTo(GX + GW, y);
+    ctx.stroke();
+  }
+
+  // Center lines brighter
+  ctx.strokeStyle = '#0f3f0f';
+  ctx.lineWidth = 0.5;
+  ctx.beginPath();
+  ctx.moveTo(GX, GY + GH / 2);
+  ctx.lineTo(GX + GW, GY + GH / 2);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(GX + GW / 2, GY);
+  ctx.lineTo(GX + GW / 2, GY + GH);
+  ctx.stroke();
+
+  // Labels
+  ctx.fillStyle = '#1a5a1a';
+  ctx.font = '9px monospace';
+  ctx.textAlign = 'center';
+  for (let i = 0; i <= H_DIVS; i += 2) {
+    ctx.fillText(i + '', GX + i * DIV_W, GY + GH + 12);
+  }
+  ctx.fillStyle = '#1a5a1a';
+  ctx.textAlign = 'right';
+  for (let i = 0; i <= V_DIVS; i += 2) {
+    ctx.fillText(i - V_DIVS / 2 + '', GX - 6, GY + i * DIV_H + 3);
+  }
+
+  // Bottom info
+  ctx.fillStyle = '#2a6a2a';
+  ctx.font = '9px monospace';
+  ctx.textAlign = 'left';
+  const td = parseFloat(timeDiv.value);
+  ctx.fillText(fmtTau(td) + '/div', GX + 4, GY + GH + 12);
+  ctx.textAlign = 'right';
+  ctx.fillText('CH1: ' + vDiv1.value + 'V/div  CH2: ' + vDiv2.value + 'V/div', GX + GW - 4, GY + GH + 12);
+
+  // Cursor crosshair at center
+  ctx.strokeStyle = 'rgba(0,255,0,0.08)';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([4, 8]);
+  ctx.beginPath();
+  ctx.moveTo(GX + GW / 2, GY);
+  ctx.lineTo(GX + GW / 2, GY + GH);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(GX, GY + GH / 2);
+  ctx.lineTo(GX + GW, GY + GH / 2);
+  ctx.stroke();
+  ctx.setLineDash([]);
+}
+
+function drawTrace(data, color, vDiv, offset) {
+  const sweepT = getSweepTime();
+  const currentT = circuitTime;
+  const winStart = currentT - sweepT;
+  const winEnd = currentT;
+
+  // Find data range
+  let firstIdx = timeHistory.length - 1;
+  while (firstIdx > 0 && timeHistory[firstIdx] > winStart) firstIdx--;
+  if (firstIdx > 0) firstIdx--;
+
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 1.5;
+  ctx.shadowColor = color;
+  ctx.shadowBlur = 4;
+  ctx.beginPath();
+  let started = false;
+  for (let i = firstIdx; i < timeHistory.length; i++) {
+    const t = timeHistory[i];
+    if (t < winStart) continue;
+    if (t > winEnd) break;
+    const x = toScopeX(t, sweepT, currentT);
+    if (x < GX) continue;
+    const val = offset !== undefined ? data[i] + offset : data[i];
+    const y = toScopeY(val, vDiv);
+    if (x > GX + GW) break;
+    if (!started) { ctx.moveTo(x, y); started = true; }
+    else ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+  ctx.shadowBlur = 0;
+
+  // Compute measurements for visible portion
+  let vmax = -Infinity, vmin = Infinity;
+  for (let i = firstIdx; i < timeHistory.length; i++) {
+    const t = timeHistory[i];
+    if (t < winStart || t > winEnd) continue;
+    const val = offset !== undefined ? data[i] + offset : data[i];
+    if (val > vmax) vmax = val;
+    if (val < vmin) vmin = val;
+  }
+  return {vmax: vmax === -Infinity ? 0 : vmax, vmin: vmin === Infinity ? 0 : vmin};
+}
+
+function drawSweepLine() {
+  const x = GX + sweepPos * GW;
+  ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(x, GY);
+  ctx.lineTo(x, GY + GH);
+  ctx.stroke();
+
+  // Trigger marker
+  ctx.fillStyle = 'rgba(0,255,0,0.5)';
+  ctx.font = '8px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('▸', GX, GY + GH + 22);
+}
+
+function drawScope() {
+  drawGrid();
+
+  const p = getParams();
+  const vd1 = parseFloat(vDiv1.value);
+  const vd2 = parseFloat(vDiv2.value);
+  const isDual = displayMode === 'dual';
+
+  let m1 = {}, m2 = {};
+
+  if (displayMode === 'ch1') {
+    m1 = drawTrace(ch1History, '#ffff00', vd1);
+  } else if (displayMode === 'ch2') {
+    m2 = drawTrace(ch2History, '#00ccff', vd2);
+  } else {
+    m1 = drawTrace(ch1History, '#ffff00', vd1);
+    m2 = drawTrace(ch2History, '#00ccff', vd2);
+  }
+
+  if (showTheory && running) drawTheoryOverlay(p);
+  if (showAnnotations && running) drawAnnotations(p);
+
+  drawSweepLine();
+
+  // Update measurements
+  v1max = m1.vmax !== undefined ? m1.vmax : 0;
+  v1min = m1.vmin !== undefined ? m1.vmin : 0;
+  v2max = m2.vmax !== undefined ? m2.vmax : 0;
+  v2min = m2.vmin !== undefined ? m2.vmin : 0;
+
+  ch1Vmax.textContent = v1max.toFixed(2) + 'V';
+  ch1Vmin.textContent = v1min.toFixed(2) + 'V';
+  ch1Vpp.textContent = (v1max - v1min).toFixed(2) + 'V';
+  ch2Vmax.textContent = v2max.toFixed(2) + 'V';
+  ch2Vmin.textContent = v2min.toFixed(2) + 'V';
+  ch2Vpp.textContent = (v2max - v2min).toFixed(2) + 'V';
+}
+
+function loop(time) {
+  if (!lastFrame) lastFrame = time;
+  const dt = Math.min((time - lastFrame) / 1000, 0.05);
+  lastFrame = time;
+  stepPhysics(dt);
+  drawScope();
+  requestAnimationFrame(loop);
+}
+
+let lastFrame = 0;
+
+// Event listeners
+timeDiv.addEventListener('change', resetSim);
+vDiv1.addEventListener('change', resetSim);
+vDiv2.addEventListener('change', resetSim);
+triggerMode.addEventListener('change', resetSim);
+
+runBtn.addEventListener('click', () => {
+  running = !running;
+  runBtn.textContent = running ? '⏸' : '▶';
+  if (running) single = false;
+});
+
+singleBtn.addEventListener('click', () => {
+  if (!running) { running = true; runBtn.textContent = '⏸'; }
+  single = true;
+  sweepPos = 0;
+});
+
+resetBtn.addEventListener('click', resetSim);
+
+rSlider.addEventListener('input', () => {
+  rVal.textContent = rSlider.value;
+  if (!running) resetSim();
+  else { circuitTime = 0; ch1History.length = 0; ch2History.length = 0; timeHistory.length = 0; }
+});
+cSlider.addEventListener('input', () => {
+  cVal.textContent = cSlider.value;
+  if (!running) resetSim();
+  else { circuitTime = 0; ch1History.length = 0; ch2History.length = 0; timeHistory.length = 0; }
+});
+lSlider.addEventListener('input', () => {
+  lVal.textContent = lSlider.value;
+  if (!running) resetSim();
+  else { circuitTime = 0; ch1History.length = 0; ch2History.length = 0; timeHistory.length = 0; }
+});
+eSlider.addEventListener('input', () => {
+  eVal.textContent = parseFloat(eSlider.value).toFixed(1);
+  if (!running) resetSim();
+  else { circuitTime = 0; ch1History.length = 0; ch2History.length = 0; timeHistory.length = 0; }
+});
+riSlider.addEventListener('input', () => {
+  riVal.textContent = riSlider.value;
+  if (!running) resetSim();
+  else { circuitTime = 0; ch1History.length = 0; ch2History.length = 0; timeHistory.length = 0; }
+});
+
+modeBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.mode === 'charge' || btn.dataset.mode === 'discharge') return;
+    modeBtns.forEach(b => { if (b.dataset.mode !== 'charge' && b.dataset.mode !== 'discharge') b.classList.remove('active'); });
+    btn.classList.add('active');
+    displayMode = btn.dataset.mode;
+  });
+});
+
+chargeBtn.addEventListener('click', () => {
+  chargeBtn.classList.add('active');
+  dischargeBtn.classList.remove('active');
+  opMode = 'charge';
+  resetSim();
+});
+
+dischargeBtn.addEventListener('click', () => {
+  dischargeBtn.classList.add('active');
+  chargeBtn.classList.remove('active');
+  opMode = 'discharge';
+  resetSim();
+});
+
+cktBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    cktBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    cktType = btn.dataset.ckt;
+    document.getElementById('cRow').style.display = cktType === 'rc' ? '' : 'none';
+    document.getElementById('lRow').style.display = cktType === 'rl' ? '' : 'none';
+    chargeBtn.textContent = cktType === 'rl' ? 'استقرار' : 'شحن';
+    dischargeBtn.textContent = cktType === 'rl' ? 'قطع' : 'تفريغ';
+    resetSim();
+  });
+});
+
+// ===== Guide Mode =====
+const guideSteps = {
+  rc: [
+    {title:'إعداد دارة RC',text:'اختر دارة RC واضبط المعايير: R = 10 kΩ, C = 100 µF, E = 12V.',setup:()=>{rSlider.value='10';cSlider.value='100';eSlider.value='12';riSlider.value='5';rVal.textContent='10';cVal.textContent='100';eVal.textContent='12.0';riVal.textContent='5';document.querySelector('[data-ckt="rc"]').click();chargeBtn.click();resetSim();},lock:['timeDiv','vDiv1','vDiv2','rSlider','cSlider','lSlider','eSlider','riSlider']},
+    {title:'مراقبة منحني الشحن',text:'لاحظ المنحني الأصفر u_C(t) يرتفع تدريجياً من 0V إلى E = 12V. المنحني الأزرق i(t) يتناقص من قيمته العظمى إلى 0. كلا المنحنيين أسيان.',setup:()=>{resetSim();},lock:['timeDiv','vDiv1','vDiv2']},
+    {title:'قياس ثابت الزمن τ',text:'ثابت الزمن τ = R×C = 10×10³ × 100×10⁻⁶ = 1.0s. عند t = τ يصل u_C إلى 63% من E ≈ 7.6V. عند t = 5τ يصل u_C إلى 99% من E.',setup:()=>{resetSim();showAnnotations=true;document.getElementById('annotToggle').classList.add('toggle-on');},lock:['timeDiv','vDiv1','vDiv2','rSlider','cSlider','lSlider','eSlider','riSlider']},
+    {title:'تغيير ثابت الزمن',text:'ضاعف المقاومة: R = 20 kΩ. لاحظ كيف تضاعف τ = 2.0s والمنحني أصبح أكثر انبساطاً. كلما كبر τ كانت عملية الشحن أبطأ.',setup:()=>{rSlider.value='20';rVal.textContent='20';resetSim();showAnnotations=true;document.getElementById('annotToggle').classList.add('toggle-on');},lock:['timeDiv','vDiv1','vDiv2','cSlider','lSlider','eSlider','riSlider']},
+    {title:'مراقبة التفريغ',text:'اضغط "تفريغ". لاحظ u_C(t) يتناقص أسياً من E إلى 0. عند t = τ يصل u_C إلى 37% من E ≈ 4.4V.',setup:()=>{dischargeBtn.click();resetSim();showAnnotations=true;document.getElementById('annotToggle').classList.add('toggle-on');},lock:['timeDiv','vDiv1','vDiv2','rSlider','cSlider','lSlider','eSlider','riSlider']}
+  ],
+  rl: [
+    {title:'إعداد دارة RL',text:'اختر دارة RL واضبط المعايير: R = 10 kΩ, L = 500 mH, E = 12V.',setup:()=>{rSlider.value='10';lSlider.value='500';eSlider.value='12';riSlider.value='5';rVal.textContent='10';lVal.textContent='500';eVal.textContent='12.0';riVal.textContent='5';document.querySelector('[data-ckt="rl"]').click();chargeBtn.click();resetSim();},lock:['timeDiv','vDiv1','vDiv2','rSlider','cSlider','lSlider','eSlider','riSlider']},
+    {title:'مراقبة استقرار التيار',text:'لاحظ المنحني الأصفر u_R(t) والمنحني الأزرق i(t). يرتفع التيار تدريجياً من 0 إلى I₀ = E/R. المنحنيان أسيان.',setup:()=>{resetSim();},lock:['timeDiv','vDiv1','vDiv2']},
+    {title:'قياس ثابت الزمن τ',text:'ثابت الزمن τ = L/R = 0.5/10000 = 0.05s = 50ms. عند t = τ يصل التيار إلى 63% من I₀. عند t = 5τ يصل إلى 99%.',setup:()=>{resetSim();showAnnotations=true;document.getElementById('annotToggle').classList.add('toggle-on');},lock:['timeDiv','vDiv1','vDiv2','rSlider','cSlider','lSlider','eSlider','riSlider']},
+    {title:'تغيير ثابت الزمن',text:'ضاعف المحاثة: L = 1000 mH. لاحظ كيف تضاعف τ والمنحني أصبح أكثر انبساطاً. كلما كبرت L كانت عملية الاستقرار أبطأ.',setup:()=>{lSlider.value='1000';lVal.textContent='1000';resetSim();showAnnotations=true;document.getElementById('annotToggle').classList.add('toggle-on');},lock:['timeDiv','vDiv1','vDiv2','rSlider','cSlider','eSlider','riSlider']},
+    {title:'مراقبة قطع التيار',text:'اضغط "قطع". لاحظ i(t) يتناقص أسياً من I₀ إلى 0. عند t = τ يصل i إلى 37% من I₀.',setup:()=>{dischargeBtn.click();resetSim();showAnnotations=true;document.getElementById('annotToggle').classList.add('toggle-on');},lock:['timeDiv','vDiv1','vDiv2','rSlider','cSlider','lSlider','eSlider','riSlider']}
+  ]
+};
+
+let guideActive = false;
+let guideCurrentStep = 0;
+let showTheory = true;
+let showAnnotations = true;
+
+function startGuide() {
+  guideActive = true;
+  guideCurrentStep = 0;
+  const mode = cktType;
+  document.getElementById('guideContent').style.display = 'block';
+  document.getElementById('guideToggleBtn').textContent = '✕ إنهاء الدليل';
+  goGuideStep(0);
+}
+
+function stopGuide() {
+  guideActive = false;
+  document.getElementById('guideContent').style.display = 'none';
+  document.getElementById('guideToggleBtn').textContent = '▶ بدء الدليل';
+  document.querySelectorAll('select, input').forEach(el => el.disabled = false);
+}
+
+function goGuideStep(n) {
+  const steps = guideSteps[cktType];
+  if (n < 0 || n >= steps.length) return;
+  guideCurrentStep = n;
+  const step = steps[n];
+  document.getElementById('guideStepNum').textContent = 'الخطوة ' + (n+1) + ' من ' + steps.length;
+  document.getElementById('guideText').textContent = step.text;
+  document.getElementById('guidePrevBtn').disabled = n === 0;
+  document.getElementById('guideNextBtn').textContent = n === steps.length - 1 ? '✕ إنهاء' : 'التالي ▶';
+  step.setup();
+  document.querySelectorAll('select, input').forEach(el => el.disabled = false);
+  if (step.lock) step.lock.forEach(id => { const el = document.getElementById(id); if (el) el.disabled = true; });
+}
+
+document.getElementById('guideToggleBtn').addEventListener('click', () => { guideActive ? stopGuide() : startGuide(); });
+document.getElementById('guideNextBtn').addEventListener('click', () => {
+  const steps = guideSteps[cktType];
+  guideCurrentStep < steps.length - 1 ? goGuideStep(guideCurrentStep + 1) : stopGuide();
+});
+document.getElementById('guidePrevBtn').addEventListener('click', () => { if (guideCurrentStep > 0) goGuideStep(guideCurrentStep - 1); });
+
+document.getElementById('theoryToggle').addEventListener('click', function() {
+  showTheory = !showTheory;
+  this.classList.toggle('toggle-on');
+});
+document.getElementById('annotToggle').addEventListener('click', function() {
+  showAnnotations = !showAnnotations;
+  this.classList.toggle('toggle-on');
+});
+
+// ===== Theoretical Overlay =====
+function drawTheoryOverlay(p) {
+  const sweepT = getSweepTime();
+  const currentT = circuitTime;
+  const tau = cktType === 'rc' ? p.R * p.C : p.L / (p.R + p.r);
+  const I0 = cktType === 'rl' ? p.E / (p.R + p.r) : p.E / p.R;
+  const asym = opMode === 'charge' ? (cktType === 'rc' ? p.E : I0) : 0;
+  const vd1 = parseFloat(vDiv1.value);
+  const yAsym = toScopeY(asym, vd1);
+
+  // Asymptote
+  ctx.strokeStyle = 'rgba(255,165,0,0.35)'; ctx.lineWidth = 1; ctx.setLineDash([4,4]);
+  ctx.beginPath(); ctx.moveTo(GX, yAsym); ctx.lineTo(GX + GW, yAsym); ctx.stroke();
+  ctx.fillStyle = 'rgba(255,165,0,0.55)'; ctx.font = '9px sans-serif'; ctx.textAlign = 'left';
+  ctx.fillText('قيمة مقاربة: ' + asym.toFixed(2) + (cktType==='rl'&&opMode==='charge'?'A':'V'), GX + 4, yAsym - 3);
+
+  // 63% level
+  if (opMode === 'charge' && asym > 0) {
+    const y63 = toScopeY(asym * 0.63, vd1);
+    ctx.strokeStyle = 'rgba(255,255,0,0.2)'; ctx.setLineDash([2,4]);
+    ctx.beginPath(); ctx.moveTo(GX, y63); ctx.lineTo(GX + GW, y63); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,0,0.35)'; ctx.fillText('63% = ' + (asym*0.63).toFixed(2) + (cktType==='rl'&&opMode==='charge'?'A':'V'), GX + 4, y63 - 3);
+  }
+  ctx.setLineDash([]);
+
+  // Formula
+  let formula;
+  const td = fmtTau(tau);
+  if (cktType === 'rc') {
+    formula = opMode === 'charge' ? 'u_C(t) = ' + p.E.toFixed(1) + '(1 − e^{−t/' + td + '})' : 'u_C(t) = ' + p.E.toFixed(1) + '·e^{−t/' + td + '}';
+  } else {
+    formula = opMode === 'charge' ? 'i(t) = ' + I0.toFixed(3) + '(1 − e^{−t/' + td + '})' : 'i(t) = ' + I0.toFixed(3) + '·e^{−t/' + td + '}';
+  }
+  ctx.fillStyle = 'rgba(255,255,255,0.5)'; ctx.font = '10px sans-serif'; ctx.textAlign = 'right';
+  ctx.fillText(formula + '    τ = ' + td, GX + GW - 4, GY + 14);
+}
+
+// ===== Annotations =====
+function drawAnnotations(p) {
+  const sweepT = getSweepTime();
+  const currentT = circuitTime;
+  const tau = cktType === 'rc' ? p.R * p.C : p.L / (p.R + p.r);
+  const I0 = cktType === 'rl' ? p.E / (p.R + p.r) : p.E / p.R;
+  const asym = opMode === 'charge' ? (cktType === 'rc' ? p.E : I0) : 0;
+  const vd1 = parseFloat(vDiv1.value);
+
+  // τ label
+  ctx.fillStyle = 'rgba(255,255,255,0.6)'; ctx.font = 'bold 10px sans-serif'; ctx.textAlign = 'left';
+  ctx.fillText('τ = ' + fmtTau(tau), GX + 4, GY + GH - 6);
+
+  // Vertical τ markers
+  for (let n = 1; n <= 5; n++) {
+    const t = n * tau;
+    const x = toScopeX(t, sweepT, currentT);
+    if (x < GX || x > GX + GW) continue;
+    ctx.strokeStyle = n === 1 ? 'rgba(255,255,0,0.4)' : 'rgba(255,255,255,0.12)';
+    ctx.lineWidth = n === 1 ? 1 : 0.5; ctx.setLineDash([3,4]);
+    ctx.beginPath(); ctx.moveTo(x, GY); ctx.lineTo(x, GY + GH); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = n === 1 ? 'rgba(255,255,0,0.5)' : 'rgba(255,255,255,0.2)';
+    ctx.font = n === 1 ? 'bold 9px sans-serif' : '8px sans-serif';
+    ctx.textAlign = 'center'; ctx.fillText(n + 'τ', x, GY - 4);
+
+    if (n === 1) {
+      let val = opMode === 'charge' ? asym * (1 - Math.exp(-1)) : asym * Math.exp(-1);
+      const yVal = toScopeY(val, vd1);
+      if (yVal >= GY && yVal <= GY + GH) {
+        ctx.fillStyle = 'rgba(255,255,0,0.45)'; ctx.font = '9px sans-serif'; ctx.textAlign = 'right';
+        ctx.fillText(val.toFixed(2) + 'V', x - 4, yVal - 4);
+      }
+    }
+  }
+
+  // Initial tangent for charging
+  if (opMode === 'charge' && tau > 0 && asym > 0) {
+    const slope = asym / tau;
+    const x0 = toScopeX(currentT - sweepT, sweepT, currentT);
+    const y0 = toScopeY(0, vd1);
+    const x1 = toScopeX(currentT - sweepT + tau, sweepT, currentT);
+    const y1 = toScopeY(slope * tau, vd1);
+    if (x1 >= GX && x1 <= GX + GW) {
+      ctx.strokeStyle = 'rgba(255,100,100,0.3)'; ctx.lineWidth = 1; ctx.setLineDash([3,3]);
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = 'rgba(255,100,100,0.45)'; ctx.font = '8px sans-serif'; ctx.textAlign = 'center';
+      ctx.fillText('المماس عند t=0', (x0+x1)/2, y1 - 6);
+    }
+  }
+}
+
+resetSim();
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكاة تفاعلية: المستوي المائل</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:20px}
+.container{max-width:800px;width:100%}
+h1{text-align:center;font-size:1.3rem;margin-bottom:10px;color:#fbbf24}
+canvas{display:block;width:100%;max-width:760px;height:auto;margin:0 auto;border-radius:8px;border:1px solid #1e293b;background:#0f172a}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;padding:12px;background:#1e293b;border-radius:8px;border:1px solid #334155}
+.ctrl-group{display:flex;flex-direction:column;gap:3px}
+.ctrl-group label{font-size:0.78rem;color:#94a3b8;display:flex;justify-content:space-between}
+.ctrl-group label span{color:#fbbf24;font-weight:bold;direction:ltr}
+.ctrl-group input[type=range]{width:100%;height:5px;-webkit-appearance:none;appearance:none;background:#334155;border-radius:3px;outline:none;cursor:pointer}
+.ctrl-group input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer;border:2px solid #1e293b}
+.ctrl-group input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer;border:2px solid #1e293b}
+.actions{grid-column:1/-1;display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:4px}
+.btn{padding:6px 14px;border:none;border-radius:5px;cursor:pointer;font-size:0.85rem;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn-play{background:#22c55e;color:#fff}
+.btn-pause{background:#eab308;color:#000}
+.btn-reset{background:#64748b;color:#fff}
+.spd{display:flex;align-items:center;gap:6px;margin-right:auto}
+.spd label{font-size:0.78rem;color:#94a3b8}
+.spd input[type=range]{width:70px}
+.spd .sv{font-size:.8rem;font-weight:bold;color:#e2e8f0;direction:ltr}
+.data-panel{margin-top:8px;padding:10px 12px;background:#1e293b;border-radius:8px;border:1px solid #334155}
+.data-panel h3{font-size:.85rem;margin-bottom:6px;color:#f8fafc}
+.dt{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px 12px;font-size:.78rem}
+.dr{display:flex;justify-content:space-between;padding:2px 5px;border-radius:3px;background:#0f172a}
+.dr .lb{color:#94a3b8}
+.dr .vl{color:#e2e8f0;font-weight:bold;direction:ltr}
+@media(max-width:600px){.controls{grid-template-columns:1fr}.dt{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>محاكاة تفاعلية: حركة جسم على مستوي مائل</h1>
+<canvas id="c" width="760" height="400"></canvas>
+<div class="controls">
+<div class="ctrl-group">
+<label>زاوية الميل α <span id="av">30</span>°</label>
+<input type="range" id="angle" min="5" max="80" step="1" value="30">
+</div>
+<div class="ctrl-group">
+<label>الكتلة m <span id="mv">2.0</span> kg</label>
+<input type="range" id="mass" min="0.5" max="10" step="0.1" value="2">
+</div>
+<div class="ctrl-group">
+<label>معامل الاحتكاك μ <span id="muv">0.10</span></label>
+<input type="range" id="mu" min="0" max="0.6" step="0.01" value="0.1">
+</div>
+<div class="ctrl-group">
+<label>سرعة المحاكاة <span id="spv">1.0</span>x</label>
+<input type="range" id="speed" min="0.2" max="3" step="0.1" value="1">
+</div>
+<div class="actions">
+<button class="btn btn-play" id="playBtn">▶ تشغيل</button>
+<button class="btn btn-reset" id="resetBtn">↺ إعادة</button>
+</div>
+</div>
+<div class="data-panel">
+<h3>البيانات الفيزيائية</h3>
+<div class="dt">
+<div class="dr"><span class="lb">التسارع a (m/s²)</span><span class="vl" id="dA">0.00</span></div>
+<div class="dr"><span class="lb">السرعة v (m/s)</span><span class="vl" id="dV">0.00</span></div>
+<div class="dr"><span class="lb">المسافة x (m)</span><span class="vl" id="dX">0.00</span></div>
+<div class="dr"><span class="lb">الزمن t (s)</span><span class="vl" id="dT">0.00</span></div>
+<div class="dr"><span class="lb">P∥ = mg.sinα (N)</span><span class="vl" id="dPp">0.00</span></div>
+<div class="dr"><span class="lb">قوة الاحتكاك f (N)</span><span class="vl" id="dF">0.00</span></div>
+<div class="dr"><span class="lb">رد الفعل R (N)</span><span class="vl" id="dR">0.00</span></div>
+<div class="dr"><span class="lb">الطاقة الحركية Ec (J)</span><span class="vl" id="dEc">0.00</span></div>
+<div class="dr"><span class="lb">الشغل W(P∥) (J)</span><span class="vl" id="dW">0.00</span></div>
+</div>
+</div>
+</div>
+<script>
+(function(){
+const c=document.getElementById('c'),ctx=c.getContext('2d');
+const W=760,H=400,g=9.8;
+const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+let angle=30,mass=2,mu=0.1,spd=1;
+let playing=false,t=0,v=0,x=0,lastT=0;
+
+const $=id=>document.getElementById(id);
+const angleI=$('angle'),massI=$('mass'),muI=$('mu'),spdI=$('speed');
+const av=$('av'),mv=$('mv'),muv=$('muv'),spv=$('spv');
+const dA=$('dA'),dV=$('dV'),dX=$('dX'),dT=$('dT');
+const dPp=$('dPp'),dF=$('dF'),dR=$('dR'),dEc=$('dEc'),dW=$('dW');
+const playBtn=$('playBtn'),resetBtn=$('resetBtn');
+
+function readCtrls(){
+angle=parseFloat(angleI.value);mass=parseFloat(massI.value);
+mu=parseFloat(muI.value);spd=parseFloat(spdI.value);
+av.textContent=angle;mv.textContent=mass.toFixed(1);
+muv.textContent=mu.toFixed(2);spv.textContent=spd.toFixed(1);
+}
+
+function resetSim(){
+playing=false;simDone=false;t=0;v=0;x=0;lastT=0;
+playBtn.textContent='▶ تشغيل';playBtn.className='btn btn-play';
+draw();updateData();
+}
+
+function physics(dt){
+if(!playing)return;
+const aRad=angle*Math.PI/180;
+const Pp=mass*g*Math.sin(aRad);
+const N=mass*g*Math.cos(aRad);
+const f=mu*N;
+const Fnet=Pp-f;
+if(Fnet>0){
+const a=Fnet/mass;
+v+=a*dt*spd;
+x+=v*dt*spd;
+t+=dt*spd;
+}
+if(v<0)v=0;
+if(x>4){playing=false;simDone=true;playBtn.textContent='▶ تشغيل';playBtn.className='btn btn-play';draw();updateData();}
+}
+
+function updateData(){
+const aRad=angle*Math.PI/180;
+const Pp=mass*g*Math.sin(aRad);
+const N=mass*g*Math.cos(aRad);
+const f=mu*N;
+const Fnet=Pp-f>0?Pp-f:0;
+const a=Fnet/mass;
+const Ec=0.5*mass*v*v;
+const W=Pp*x;
+dA.textContent=a.toFixed(2);
+dV.textContent=v.toFixed(2);
+dX.textContent=x.toFixed(2);
+dT.textContent=t.toFixed(2);
+dPp.textContent=Pp.toFixed(2);
+dF.textContent=f.toFixed(2);
+dR.textContent=N.toFixed(2);
+dEc.textContent=Ec.toFixed(2);
+dW.textContent=W.toFixed(2);
+}
+
+function draw(){
+ctx.clearRect(0,0,W,H);
+const baseX=80,baseY=340,slopeLen=280;
+const aRad=angle*Math.PI/180;
+const tipX=baseX+slopeLen*Math.cos(aRad);
+const tipY=baseY-slopeLen*Math.sin(aRad);
+const boxSize=40;
+const frac=Math.min(x/4,1);
+const bx=baseX+frac*(tipX-baseX);
+const by=baseY+frac*(tipY-baseY);
+
+// ground
+ctx.strokeStyle='#334155';ctx.lineWidth=2;
+ctx.beginPath();ctx.moveTo(0,baseY);ctx.lineTo(W,baseY);ctx.stroke();
+
+// incline
+ctx.strokeStyle='#475569';ctx.lineWidth=3;
+ctx.beginPath();ctx.moveTo(baseX,baseY);ctx.lineTo(tipX,tipY);ctx.stroke();
+// right triangle hint
+ctx.strokeStyle='#334155';ctx.lineWidth=1;
+ctx.beginPath();ctx.moveTo(tipX,tipY);ctx.lineTo(tipX,baseY);ctx.stroke();
+ctx.beginPath();ctx.moveTo(tipX,baseY);ctx.lineTo(baseX,baseY);ctx.stroke();
+// angle arc
+ctx.strokeStyle='#94a3b8';ctx.lineWidth=1;
+ctx.beginPath();ctx.arc(baseX,baseY,30,-Math.PI/2,-Math.PI/2+aRad);
+ctx.stroke();
+ctx.fillStyle='#94a3b8';ctx.font='12px sans-serif';
+ctx.fillText('α',baseX+38,baseY-5);
+
+// block
+const bx1=bx-boxSize/2*Math.cos(aRad);
+const by1=by-boxSize/2*Math.sin(aRad);
+ctx.save();
+ctx.translate(bx1-boxSize/2*Math.sin(aRad),by1+boxSize/2*Math.cos(aRad));
+ctx.rotate(-aRad);
+ctx.fillStyle='#3b82f6';ctx.strokeStyle='#60a5fa';ctx.lineWidth=2;
+ctx.fillRect(-boxSize/2,-boxSize/2,boxSize,boxSize);
+ctx.strokeRect(-boxSize/2,-boxSize/2,boxSize,boxSize);
+ctx.restore();
+
+// force: weight P (vertical down from center)
+const fScale=1.2;
+const cx=bx1,cy=by1-boxSize/2;
+const pEndX=cx, pEndY=clamp(cy+mass*g*fScale, 0, H);
+ctx.strokeStyle='#ef4444';ctx.lineWidth=2;ctx.fillStyle='#ef4444';
+ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(pEndX,pEndY);ctx.stroke();
+ctx.fillText('P',cx+8,clamp(cy+mass*g*fScale/2,20,H-10));
+
+// force: P∥ (parallel down)
+const ppx=clamp(cx+Pp*fScale*Math.cos(Math.PI/2-aRad),0,W);
+const ppy=clamp(cy+Pp*fScale*Math.sin(Math.PI/2-aRad),0,H);
+ctx.strokeStyle='#f59e0b';ctx.lineWidth=2;
+ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(ppx,ppy);ctx.stroke();
+ctx.fillStyle='#f59e0b';ctx.fillText('P∥',clamp(ppx+8,0,W-20),clamp(ppy-2,15,H-5));
+
+// force: N (perpendicular up from incline)
+ctx.strokeStyle='#22c55e';ctx.lineWidth=2;ctx.fillStyle='#22c55e';
+const nx=clamp(bx1+N*fScale*Math.sin(aRad),0,W);
+const ny=clamp(by1-boxSize/2-N*fScale*Math.cos(aRad),0,H);
+ctx.beginPath();ctx.moveTo(bx1,by1-boxSize/2);
+ctx.lineTo(nx,ny);ctx.stroke();
+ctx.fillText('N',clamp(nx+6,0,W-16),clamp(ny-4,15,H-5));
+
+// force: f (parallel up, opposite to motion if v>0)
+if(mu>0){
+ctx.strokeStyle='#a855f7';ctx.lineWidth=2;ctx.fillStyle='#a855f7';
+const ff=mu*mass*g*Math.cos(aRad)*fScale;
+const fx=clamp(cx-ff*Math.cos(Math.PI/2-aRad),0,W);
+const fy=clamp(cy-ff*Math.sin(Math.PI/2-aRad),0,H);
+ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(fx,fy);ctx.stroke();
+ctx.fillText('f',clamp(fx-18,0,W-14),clamp(fy-2,15,H-5));
+}
+
+// title
+ctx.fillStyle='#64748b';ctx.font='11px sans-serif';
+ctx.fillText('P = m.g',10,20);
+ctx.fillStyle='#ef4444';ctx.fillRect(10,30,12,3);
+ctx.fillStyle='#f59e0b';ctx.fillRect(10,42,12,3);
+ctx.fillText('P∥ = mg.sinα',10,55);
+ctx.fillStyle='#22c55e';ctx.fillRect(10,67,12,3);
+ctx.fillText('N = mg.cosα',10,80);
+ctx.fillStyle='#a855f7';ctx.fillRect(10,92,12,3);
+ctx.fillText('f = μ.N',10,105);
+
+// show slide direction
+if(Pp>mu*mass*g*Math.cos(aRad)){
+ctx.fillStyle='#22c55e';ctx.font='11px sans-serif';
+ctx.fillText('⬇ يتسارع إلى أسفل',tipX-120,baseY+18);
+}else{
+ctx.fillStyle='#f87171';ctx.font='11px sans-serif';
+ctx.fillText('■ لا يتحرك (الاحتكاك يمنع الحركة)',tipX-170,baseY+18);
+}
+}
+
+// animation loop
+let simDone=false;
+function loop(ts){
+if(simDone)return;
+if(!lastT)lastT=ts;
+let dt=(ts-lastT)/1000;
+if(dt>0.05)dt=0.05;
+if(playing){
+physics(dt);
+draw();
+updateData();
+}
+lastT=ts;
+requestAnimationFrame(loop);
+}
+
+playBtn.addEventListener('click',()=>{
+readCtrls();
+if(!playing && simDone){resetSim();}
+playing=!playing;
+if(playing){
+playBtn.textContent='⏸ إيقاف';playBtn.className='btn btn-pause';
+lastT=0;
+requestAnimationFrame(loop);
+}else{
+playBtn.textContent='▶ متابعة';playBtn.className='btn btn-play';
+}
+});
+
+resetBtn.addEventListener('click',()=>{readCtrls();resetSim();});
+angleI.addEventListener('input',()=>{readCtrls();resetSim();});
+massI.addEventListener('input',()=>{readCtrls();resetSim();});
+muI.addEventListener('input',()=>{readCtrls();resetSim();});
+spdI.addEventListener('input',()=>{readCtrls();});
+
+readCtrls();resetSim();draw();
+requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

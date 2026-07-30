@@ -9,12 +9,8 @@ const supabase = createClient(
 );
 
 const lessons = [
-  { file: '01-mefahim-asasiya.json', slug: 'مفاهيم-أساسية-في-الميكانيك-والطاقة' },
-  { file: '02-sokout-chakouli.json', slug: 'السقوط-الشاقولي' },
-  { file: '03-harakat-alqadifa.json', slug: 'حركة-القذيفة' },
-  { file: '04-aqmar-alkawakib.json', slug: 'حركة-الأقمار-الاصطناعية-والكواكب' },
-  { file: '05-harakat-jism-ala-mustawi.json', slug: 'حركة-جسم-على-مستوي' },
-  { file: '06-hodoud-mikanik-newton.json', slug: 'حدود-ميكانيك-نيوتن' }
+  { file: '01-RC.json', slug: 'ثنائي-القطب-RC' },
+  { file: '02-RL.json', slug: 'ثنائي-القطب-RL' }
 ];
 
 (async () => {

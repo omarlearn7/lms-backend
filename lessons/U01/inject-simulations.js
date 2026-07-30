@@ -6,39 +6,28 @@ const lessonsDir = __dirname;
 
 const configs = [
   {
-    lesson: '01-mefahim-asasiya.json',
-    sim: 'forces-energy.html',
-    title: 'محاكاة تفاعلية: القوى والعمل والطاقة',
-    height: 580,
-    insertIdx: 46
-  },
-  {
-    lesson: '02-sokout-chakouli.json',
-    sim: 'freefall.html',
-    title: 'محاكاة تفاعلية: السقوط الشاقولي',
-    height: 820,
-    insertIdx: 30
-  },
-  {
-    lesson: '03-harakat-alqadifa.json',
-    sim: 'projectile.html',
-    title: 'محاكاة تفاعلية: حركة القذيفة',
-    height: 840,
-    insertIdx: 20
-  },
-  {
-    lesson: '04-aqmar-alkawakib.json',
-    sim: 'orbit.html',
-    title: 'محاكاة تفاعلية: حركة الأقمار الاصطناعية',
-    height: 840,
-    insertIdx: 27
-  },
-  {
-    lesson: '05-harakat-jism-ala-mustawi.json',
-    sim: 'incline.html',
-    title: 'محاكاة تفاعلية: حركة جسم على مستوي مائل',
-    height: 640,
+    lesson: '01-المفاهيم-الاساسية-في-الكيمياء-من-المقدار.json',
+    sim: 'محاكاة-تفاعلية-جدول-تقدم-التفا.html',
+    title: 'محاكاة تفاعلية: جدول تقدم التفاعل',
+    width: 600,
+    height: 450,
     insertIdx: 23
+  },
+  {
+    lesson: '02-سرعة-التفاعل-وزمن-نصف-التفاعل.json',
+    sim: 'محاكاة-تفاعلية-تحديد-زمن-نصف-ا.html',
+    title: 'محاكاة تفاعلية: تحديد زمن نصف التفاعل',
+    width: 600,
+    height: 450,
+    insertIdx: 13
+  },
+  {
+    lesson: '03-العوامل-الحركية-وتاثيرها-على-سرعة-التفاع.json',
+    sim: 'محاكاة-تفاعلية-تأثير-العوامل-ا.html',
+    title: 'محاكاة تفاعلية: تأثير العوامل الحركية على التصادمات',
+    width: 580,
+    height: 400,
+    insertIdx: 10
   }
 ];
 
@@ -54,7 +43,7 @@ for (const cfg of configs) {
     kind: 'custom',
     config: {
       title: cfg.title,
-      width: 700,
+      width: cfg.width,
       height: cfg.height
     },
     html: simHtml,
@@ -69,7 +58,6 @@ for (const cfg of configs) {
   for (let i = sections.length - 1; i >= 0; i--) {
     const s = sections[i];
     if (s.type === 'simulation' && s.config?.title === cfg.title) {
-      // Remove the note before it too
       if (i > 0 && sections[i - 1].type === 'note' && sections[i - 1].text?.includes('محاكاة')) {
         sections.splice(i - 1, 2);
         removeCount += 2;
@@ -81,15 +69,13 @@ for (const cfg of configs) {
   }
   if (removeCount > 0) console.log(`  Removed ${removeCount} old block(s) for "${cfg.title}"`);
 
-  // Ensure insertIdx is within bounds
   const idx = Math.min(cfg.insertIdx, sections.length);
   sections.splice(idx, 0, simBlock);
 
-  // Add a note block before the simulation
   const noteBlock = {
     type: 'note',
     variant: 'tip',
-    text: `تفاعل مع المحاكاة: جرب تغيير المعايير المختلفة وشاهد تأثيرها على الحركة في الوقت الفعلي. استخدم أزرار التشغيل والإيقاف للتحكم في المحاكاة.`
+    text: 'تفاعل مع المحاكاة: جرب تغيير المعايير المختلفة ولاحظ تأثيرها على النتائج.'
   };
   sections.splice(idx, 0, noteBlock);
 
