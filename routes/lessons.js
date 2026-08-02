@@ -11,6 +11,14 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
+// lessons.grade_level stores Arabic display labels while profiles/units use codes
+const GRADE_LABELS = {
+  grade_1: 'سنة أولى ثانوي',
+  grade_2: 'سنة ثانية ثانوي',
+  grade_3: 'سنة ثالثة ثانوي',
+  grade_4: 'سنة رابعة متوسط',
+};
+
 function handleValidation(req, res) {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -58,8 +66,9 @@ router.get('/', requireAuth, [
       dataQuery = dataQuery.eq('grade_level', category);
     }
     if (grade) {
-      countQuery = countQuery.eq('grade_level', grade);
-      dataQuery = dataQuery.eq('grade_level', grade);
+      const gradeLabel = GRADE_LABELS[grade] || grade;
+      countQuery = countQuery.eq('grade_level', gradeLabel);
+      dataQuery = dataQuery.eq('grade_level', gradeLabel);
     }
     if (search) {
       countQuery = countQuery.ilike('title', `%${search}%`);
