@@ -4,6 +4,7 @@ const { createClient } = require('@supabase/supabase-js');
 const { ethers } = require('ethers');
 const { body, query, param, validationResult } = require('express-validator');
 const { requireAuth, requireTeacherOrAdmin } = require('../middleware/supabase');
+const { sendReceipt } = require('../lib/mail');
 
 const router = express.Router();
 
@@ -129,7 +130,7 @@ router.post('/verify-payment', requireAuth, [
 
     const { data: order, error: oError } = await supabase
       .from('payments')
-      .select('id, status, expires_at, user_id, product_id, exact_crypto_amount, products(type, duration_days)')
+      .select('id, status, expires_at, user_id, product_id, exact_crypto_amount, payment_source, products(title, type, duration_days)')
       .eq('id', orderId)
       .single();
 
@@ -208,6 +209,19 @@ router.post('/verify-payment', requireAuth, [
         .from('profiles')
         .update({ subscription_active: true })
         .eq('id', order.user_id);
+
+      const product = Array.isArray(order.products) ? order.products[0] : order.products;
+      if (req.user.email) {
+        sendReceipt({
+          to: req.user.email,
+          amount: order.exact_crypto_amount,
+          currency: 'USDT',
+          txId: txHash,
+          productTitle: product && product.title,
+          date: new Date().toLocaleString('fr-FR'),
+          paymentSource: order.payment_source,
+        });
+      }
 
       return res.status(200).json({
         success: true,
