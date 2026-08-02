@@ -63,6 +63,8 @@ app.use('/api/crypto', require('./routes/crypto-payments'));
 app.use('/api/r2', strictLimiter, require('./routes/r2-videos'));
 app.use('/api/telegram-groups', require('./routes/telegram-groups'));
 app.use('/api/lessons', require('./routes/lessons'));
+app.use('/api/mail', strictLimiter, require('./routes/mail'));
+app.use('/api/admin', require('./routes/admin'));
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

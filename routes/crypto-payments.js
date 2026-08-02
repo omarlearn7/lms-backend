@@ -3,10 +3,29 @@ const express = require('express');
 const { createClient } = require('@supabase/supabase-js');
 const { ethers } = require('ethers');
 const { body, query, param, validationResult } = require('express-validator');
-const { requireAuth, requireTeacherOrAdmin } = require('../middleware/supabase');
+const { requireAuth, requireAdmin } = require('../middleware/supabase');
 const { sendReceipt } = require('../lib/mail');
+const rateLimit = require('express-rate-limit');
 
 const router = express.Router();
+
+const cryptoWriteLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests to this endpoint.' },
+});
+
+const adminOpsLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 60,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many admin operations.' },
+});
+
+const GRACE_PERIOD_MS = 60 * 24 * 60 * 60 * 1000; // 60 days after trial ends
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -32,7 +51,7 @@ function handleValidation(req, res) {
 }
 
 // POST /api/crypto/create-invoice
-router.post('/create-invoice', requireAuth, [
+router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
   body('productId').isUUID().withMessage('Invalid productId'),
   body('paymentSource').optional().isIn(['binance', 'web3']).withMessage('Invalid paymentSource'),
 ], async (req, res) => {
@@ -121,7 +140,7 @@ router.post('/create-invoice', requireAuth, [
 });
 
 // POST /api/crypto/verify-payment
-router.post('/verify-payment', requireAuth, [
+router.post('/verify-payment', requireAuth, cryptoWriteLimiter, [
   body('orderId').isUUID().withMessage('Invalid orderId'),
 ], async (req, res) => {
   try {
@@ -248,23 +267,78 @@ router.post('/check-access', requireAuth, async (req, res) => {
   try {
     const userId = req.user.id;
 
-    const { data: access, error } = await supabase
-      .from('user_access')
-      .select('id, product_id, expires_at, is_active, products(title, type)')
-      .eq('user_id', userId)
-      .eq('is_active', true);
+    const [profileRes, accessRes] = await Promise.all([
+      supabase
+        .from('profiles')
+        .select('id, role, trial_ends_at, created_at, subscription_active')
+        .eq('id', userId)
+        .single(),
+      supabase
+        .from('user_access')
+        .select('id, product_id, expires_at, is_active, products(title, type)')
+        .eq('user_id', userId)
+        .eq('is_active', true),
+    ]);
 
-    if (error) throw error;
+    if (profileRes.error) throw profileRes.error;
+    if (accessRes.error) throw accessRes.error;
 
+    const profile = profileRes.data;
     const now = new Date();
-    const activeAccess = (access || []).filter(a => {
+
+    const activeAccess = (accessRes.data || []).filter(a => {
       if (!a.expires_at) return true;
       return new Date(a.expires_at) > now;
     });
 
+    const role = profile && profile.role;
+    const isStaff = role === 'admin' || role === 'teacher';
+    const hasPaidAccess = activeAccess.length > 0;
+
+    let trialActive = false;
+    let trialEnds = null;
+    if (profile && profile.trial_ends_at) {
+      trialEnds = profile.trial_ends_at;
+      trialActive = new Date(trialEnds) > now;
+    }
+
+    let status;
+    if (isStaff) status = 'staff';
+    else if (hasPaidAccess) status = 'paid';
+    else if (trialActive) status = 'trial';
+    else status = 'locked';
+
+    // Lazy cleanup: unpaid account whose trial ended more than 60 days ago -> delete
+    if (!isStaff && !hasPaidAccess && profile) {
+      const base = trialEnds ? new Date(trialEnds) : new Date(profile.created_at);
+      if (now.getTime() > base.getTime() + GRACE_PERIOD_MS) {
+        try {
+          await supabase.auth.admin.deleteUser(userId);
+          return res.status(200).json({
+            status: 'locked',
+            deleted: true,
+            message: 'هذا الحساب منتهٍ ولم يتم تجديده، تم حذفه.',
+          });
+        } catch (delErr) {
+          console.error('Lazy cleanup delete error:', delErr);
+        }
+      }
+    }
+
+    const trialDaysLeft = trialActive && trialEnds
+      ? Math.max(0, Math.ceil((new Date(trialEnds) - now) / (24 * 60 * 60 * 1000)))
+      : 0;
+
     return res.status(200).json({
-      hasAccess: activeAccess.length > 0,
-      access: activeAccess
+      status,
+      hasAccess: status === 'staff' || status === 'paid' || status === 'trial',
+      staff: isStaff,
+      trial: {
+        active: trialActive,
+        ends_at: trialEnds,
+        days_left: trialDaysLeft,
+      },
+      access: activeAccess,
     });
 
   } catch (err) {
@@ -291,7 +365,7 @@ router.get('/products', async (req, res) => {
 });
 
 // GET /api/crypto/products/all (admin)
-router.get('/products/all', requireAuth, requireTeacherOrAdmin, async (req, res) => {
+router.get('/products/all', requireAuth, adminOpsLimiter, requireAdmin, async (req, res) => {
   try {
     const { data: products, error } = await supabase
       .from('products')
@@ -307,7 +381,7 @@ router.get('/products/all', requireAuth, requireTeacherOrAdmin, async (req, res)
 });
 
 // POST /api/crypto/products (admin)
-router.post('/products', requireAuth, requireTeacherOrAdmin, [
+router.post('/products', requireAuth, adminOpsLimiter, requireAdmin, [
   body('title').isString().isLength({ min: 1, max: 200 }).withMessage('Title required (max 200 chars)'),
   body('type').isIn(['subscription', 'course', 'bundle']).withMessage('Invalid product type'),
   body('base_price').isFloat({ min: 0 }).withMessage('base_price must be a positive number'),
@@ -345,7 +419,7 @@ router.post('/products', requireAuth, requireTeacherOrAdmin, [
 });
 
 // DELETE /api/crypto/products/:id (admin)
-router.delete('/products/:id', requireAuth, requireTeacherOrAdmin, [
+router.delete('/products/:id', requireAuth, adminOpsLimiter, requireAdmin, [
   param('id').isUUID().withMessage('Invalid product ID'),
 ], async (req, res) => {
   try {
@@ -364,7 +438,7 @@ router.delete('/products/:id', requireAuth, requireTeacherOrAdmin, [
 });
 
 // GET /api/crypto/payments (admin)
-router.get('/payments', requireAuth, requireTeacherOrAdmin, [
+router.get('/payments', requireAuth, adminOpsLimiter, requireAdmin, [
   query('userId').optional().isUUID().withMessage('Invalid userId'),
   query('status').optional().isIn(['pending', 'completed', 'expired']).withMessage('Invalid status'),
 ], async (req, res) => {

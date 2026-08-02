@@ -9,6 +9,7 @@ const fs = require('fs');
 const os = require('os');
 const { body, param, query, validationResult } = require('express-validator');
 const { requireAuth, requireTeacherOrAdmin } = require('../middleware/supabase');
+const { getUserAccess } = require('../lib/access');
 
 const router = express.Router();
 
@@ -207,16 +208,9 @@ router.post('/presigned-stream', requireAuth, [
       return res.status(404).json({ error: 'Session not found' });
     }
 
-    if (!session.is_free) {
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('subscription_active, role')
-        .eq('id', userId)
-        .single();
-
-      if (profile && !profile.subscription_active && !['admin', 'teacher'].includes(profile.role)) {
-        return res.status(403).json({ error: 'Subscription required' });
-      }
+    const access = await getUserAccess(userId);
+    if (!access.hasAccess) {
+      return res.status(403).json({ error: 'Subscription required' });
     }
 
     await supabase
@@ -241,8 +235,8 @@ router.post('/presigned-stream', requireAuth, [
   }
 });
 
-// GET /api/r2/recordings
-router.get('/recordings', requireAuth, requireTeacherOrAdmin, [
+// GET /api/r2/recordings (any authenticated user with active access; staff see all)
+router.get('/recordings', requireAuth, [
   query('courseId').optional().isUUID().withMessage('Invalid courseId'),
   query('gradeLevel').optional().isString().isLength({ max: 50 }),
   query('limit').optional().isInt({ min: 1, max: 100 }).withMessage('Limit must be 1-100'),
@@ -251,6 +245,11 @@ router.get('/recordings', requireAuth, requireTeacherOrAdmin, [
   try {
     if (!handleValidation(req, res)) return;
     const { courseId, gradeLevel, limit = 50, offset = 0 } = req.query;
+
+    const access = await getUserAccess(req.user.id);
+    if (!access.hasAccess) {
+      return res.status(403).json({ error: 'Subscription required' });
+    }
 
     let queryBuilder = supabase
       .from('recorded_sessions')
