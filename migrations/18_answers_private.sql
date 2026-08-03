@@ -92,7 +92,7 @@ BEGIN
     res := '[]'::jsonb;
     FOR elem IN SELECT * FROM jsonb_array_elements(v)
     LOOP
-      res := res || public.strip_answers(elem);
+      res := res || jsonb_build_array(public.strip_answers(elem));
     END LOOP;
     RETURN res;
   ELSE

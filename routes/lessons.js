@@ -3,7 +3,7 @@ const express = require('express');
 const { createClient } = require('@supabase/supabase-js');
 const { body, param, query, validationResult } = require('express-validator');
 const { requireAuth, requireTeacherOrAdmin } = require('../middleware/supabase');
-const { sanitizeContentJson } = require('../lib/sanitize');
+const { sanitizeContentJson, stripAnswers } = require('../lib/sanitize');
 
 const router = express.Router();
 
@@ -132,13 +132,19 @@ router.get('/:slug', requireAuth, [
       return res.status(404).json({ error: 'Lesson not found' });
     }
 
-    if (!lesson.is_free) {
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('subscription_active, role')
-        .eq('id', req.user.id)
-        .single();
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('subscription_active, role')
+      .eq('id', req.user.id)
+      .single();
 
+    // Strip answer/solution from question blocks for non-staff so lesson
+    // content served through the API does not leak answers to students.
+    if (profile && !['admin', 'teacher'].includes(profile.role) && lesson.content_json) {
+      lesson.content_json = stripAnswers(lesson.content_json);
+    }
+
+    if (!lesson.is_free) {
       if (profile && !profile.subscription_active && !['admin', 'teacher'].includes(profile.role)) {
         return res.status(403).json({ error: 'Subscription required' });
       }
