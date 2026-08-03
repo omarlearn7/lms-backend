@@ -1,0 +1,72 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 003 - المعايرة بالناقلية (حمض + أساس)",
+  "order_index": 3,
+  "source": "3AS U06 - Exercice 003",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 003"
+      },
+      {
+        "type": "text",
+        "content": "نعاير V_A = 20 mL من محلول HCl بتركيز C_A مجهول بمحلول NaOH بتركيز C_B = 0.1 mol/L. نسجل الناقلية النوعية σ للمحلول بدلالة الحجم المضاف V_B:"
+      },
+      {
+        "type": "table",
+        "headers": ["V_B (mL)", "0", "2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22"],
+        "rows": [
+          ["σ (mS/cm)", "42.0", "33.6", "25.2", "16.8", "8.4", "3.0", "8.5", "14.0", "19.5", "25.0", "30.5", "36.0"]
+        ]
+      },
+      {
+        "type": "diagram",
+        "diagram_type": "interactive_graph",
+        "props": {
+          "data": [[0,42.0],[2,33.6],[4,25.2],[6,16.8],[8,8.4],[10,3.0],[12,8.5],[14,14.0],[16,19.5],[18,25.0],[20,30.5],[22,36.0]],
+          "xLabel": "V_B (mL)",
+          "yLabel": "σ (mS/cm)",
+          "title": "منحنى المعايرة بالناقلية σ = f(V_B)",
+          "showTangent": false
+        }
+      },
+      {
+        "type": "text",
+        "content": "التفاعل: H₃O⁺ + Cl⁻ + Na⁺ + OH⁻ → 2 H₂O + Na⁺ + Cl⁻. الناقليات النوعية المولية (S·cm²/mol): λ(H₃O⁺) = 350, λ(OH⁻) = 200, λ(Na⁺) = 50, λ(Cl⁻) = 76."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "لماذا تنخفض σ قبل نقطة التكافؤ ثم ترتفع بعدها؟ علل باستبدال H₃O⁺ (سريع) بـ Na⁺ (بطيء).",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "حدد حجم التكافؤ V_BE بيانياً (أقل قيمة لـ σ).",
+        "input_type": "numeric",
+        "placeholder": "V_BE = ... mL"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب C_A باستخدام علاقة التكافؤ: C_A × V_A = C_B × V_BE.",
+        "input_type": "numeric",
+        "placeholder": "C_A = ... mol/L"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب σ عند V_B = 0 mL باستخدام قانون σ = Σ λ_i · [X_i] وقارن مع القيمة المعطاة.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "هل يمكن استخدام كاشف ملون في هذه المعايرة؟ ما ميزة المعايرة بالناقلية هنا؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

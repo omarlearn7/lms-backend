@@ -1,0 +1,51 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 026 - معامل القدرة (cos φ) في RLC",
+  "order_index": 26,
+  "source": "3AS U07 - Exercice 026",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 026"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC: R = 60 Ω, L = 0.25 H, C = 8 µF. مولد u(t) = 40 cos(400t) V."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب الممانعة Z للدارة.",
+        "input_type": "numeric",
+        "placeholder": "Z = ... Ω"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب I_m و I_eff.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب معامل القدرة cos φ = R/Z.",
+        "input_type": "numeric",
+        "placeholder": "cos φ = ..."
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب الاستطاعة الحقيقية P = U_eff·I_eff·cos φ.",
+        "input_type": "numeric",
+        "placeholder": "P = ... W"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "قارن P مع R·I_eff². ماذا تستنتج؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

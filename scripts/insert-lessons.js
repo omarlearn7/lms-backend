@@ -1,5 +1,6 @@
 const { createClient } = require('@supabase/supabase-js');
-require('dotenv').config({ path: '../.env' });
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -178,29 +179,67 @@ const lessons = [
     content_json: require('../lessons/U07/03-ihzazat-qasria.json'),
   },
   {
-    title: 'ظواهر الانتشار',
-    slug: 'ظواهر-الانتشار',
-    description: 'دراسة الأمواج الميكانيكية المتوالية: الموجات الطولية والعرضية، سرعة الانتشار، ظواهر الحيود والترابط',
+    title: 'الاضطراب والموجة الميكانيكية المتوالية',
+    slug: 'الاضطراب-والموجة-الميكانيكية-المتوالية',
+    description: 'مفهوم الاضطراب وأنواعه، سرعة الانتشار في الوسط المرن، تعريف الموجة الميكانيكية، التأخر الزمني مع أمثلة تطبيقية',
     category_id: 2,
     unit_id: 8,
     grade_level: 'سنة ثالثة ثانوي',
     order_index: 1,
     is_free: true,
-    content_json: require('../lessons/U08/01-intichar.json'),
+    content_json: require('../lessons/U08/01-idihtarab-elmawja.json'),
+  },
+  {
+    title: 'الموجة المتوالية الدورية وتراكب الأمواج',
+    slug: 'الموجة-المتوالية-الدورية-وتراكب-الأمواج',
+    description: 'الموجة المتوالية الدورية: الدور والتواتر وطول الموجة، مبدأ التراكب الخطي، التداخل البنّاء والهدّام مع أمثلة تطبيقية',
+    category_id: 2,
+    unit_id: 8,
+    grade_level: 'سنة ثالثة ثانوي',
+    order_index: 2,
+    is_free: true,
+    content_json: require('../lessons/U08/02-elmawja-ladoria-tarakob.json'),
+  },
+  {
+    title: 'ظواهر الانتشار: الانعكاس والانعراج والموجات الصوتية',
+    slug: 'الانعكاس-والانعراج-والموجات-الصوتية',
+    description: 'انعكاس الأمواج عند نهاية مقيدة أو حرة، انعراج الأمواج وزاوية الانعراج، الموجات الصوتية وشدّتها مع أمثلة تطبيقية',
+    category_id: 2,
+    unit_id: 8,
+    grade_level: 'سنة ثالثة ثانوي',
+    order_index: 3,
+    is_free: true,
+    content_json: require('../lessons/U08/03-zawahir-intichar.json'),
   },
 ];
 
 async function main() {
   for (const lesson of lessons) {
-    const { data, error } = await supabase
+    const { data: existing } = await supabase
       .from('lessons')
-      .insert(lesson)
-      .select();
+      .select('id')
+      .eq('title', lesson.title)
+      .single();
 
-    if (error) {
-      console.error(`Error inserting "${lesson.title}":`, error.message);
+    let result;
+    if (existing) {
+      result = await supabase
+        .from('lessons')
+        .update(lesson)
+        .eq('title', lesson.title)
+        .select();
     } else {
-      console.log(`Inserted: "${lesson.title}" (id: ${data[0].id})`);
+      result = await supabase
+        .from('lessons')
+        .insert(lesson)
+        .select();
+    }
+
+    if (result.error) {
+      console.error(`Error syncing "${lesson.title}":`, result.error.message);
+    } else {
+      const action = existing ? 'Updated' : 'Inserted';
+      console.log(`${action}: "${lesson.title}" (id: ${result.data[0].id})`);
     }
   }
 }

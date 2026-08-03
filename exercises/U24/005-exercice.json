@@ -1,0 +1,16 @@
+{
+  "unit_id": 24,
+  "title": "تمرين 005 - تعيين تركيز محلول نترات المغنزيوم",
+  "order_index": 5,
+  "source": "2AS U24 - Exercice 005",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 005", "level": 3 },
+      { "type": "text", "content": "لتعيين التركيز المولي c لمحلول مائي من نترات المغنزيوم (Mg²⁺ + 2NO₃⁻) قمنا بمعايرة خلية قياس الناقلية بوساطة عدة محاليل مختلفة التراكيز من نترات المغنزيوم فحصلنا على البيان σ = f(c) وهو مستقيم يمر من المبدأ معامل توجيهه a = 0.02 S.m³/mol. قياس ناقلية المحلول السابق بخلية ثابتتها K = 0.1 m أعطى القيمة G = 0.025 S. يعطى λ(NO₃⁻) = 7.14 × 10⁻³ S.m²/mol." },
+      { "type": "question", "number": 1, "text": "الناقلية النوعية σ لمحلول نترات المغنزيوم (بوحدة S/m):", "input_type": "numeric", "answer": { "value": 0.25, "tolerance": 0.001 }, "solution": "σ = G/K = 0.025/0.1 = 0.25 S/m." },
+      { "type": "question", "number": 2, "text": "التركيز المولي c للمحلول المستنتج من البيان (بوحدة mol/m³):", "input_type": "numeric", "answer": { "value": 12.5, "tolerance": 0.1 }, "solution": "c = σ/a = 0.25/0.02 = 12.5 mol/m³ أي 1.25 × 10⁻² mol/L." },
+      { "type": "question", "number": 3, "text": "اعتمادًا على العلاقة النظرية، العبارة الصحيحة لمعامل التوجيه a هي:", "input_type": "mcq", "options": ["a = λ(Mg²⁺) + 2λ(NO₃⁻)", "a = λ(Mg²⁺) + λ(NO₃⁻)", "a = 2λ(Mg²⁺) + λ(NO₃⁻)"], "answer": { "value": "a = λ(Mg²⁺) + 2λ(NO₃⁻)" }, "solution": "[Mg²⁺] = c و [NO₃⁻] = 2c، إذن σ = λ(Mg²⁺).c + λ(NO₃⁻).2c = (λ(Mg²⁺) + 2λ(NO₃⁻)).c." },
+      { "type": "question", "number": 4, "text": "الناقلية النوعية المولارية الشاردية λ(Mg²⁺) (بوحدة S.m²/mol):", "input_type": "numeric", "answer": { "value": 0.00572, "tolerance": 0.0001 }, "solution": "λ(Mg²⁺) = a − 2λ(NO₃⁻) = 0.02 − 2 × 7.14 × 10⁻³ = 0.02 − 0.01428 = 5.72 × 10⁻³ S.m²/mol." }
+    ]
+  }
+}

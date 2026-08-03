@@ -27,14 +27,39 @@
     },
     {
       "type": "table",
-      "headers": ["الثنائي المترافق", "الحمض", "الأساس"],
+      "headers": [
+        "الثنائي المترافق",
+        "الحمض",
+        "الأساس"
+      ],
       "rows": [
-        ["$H_3O^+/H_2O$", "$H_3O^+$", "$H_2O$"],
-        ["$H_2O/OH^-$", "$H_2O$", "$OH^-$"],
-        ["$CH_3COOH/CH_3COO^-$", "$CH_3COOH$", "$CH_3COO^-$"],
-        ["$NH_4^+/NH_3$", "$NH_4^+$", "$NH_3$"]
+        [
+          "$H_3O^+/H_2O$",
+          "$H_3O^+$",
+          "$H_2O$"
+        ],
+        [
+          "$H_2O/OH^-$",
+          "$H_2O$",
+          "$OH^-$"
+        ],
+        [
+          "$CH_3COOH/CH_3COO^-$",
+          "$CH_3COOH$",
+          "$CH_3COO^-$"
+        ],
+        [
+          "$NH_4^+/NH_3$",
+          "$NH_4^+$",
+          "$NH_3$"
+        ]
       ],
       "caption": "أمثلة على الثنائيات المترافقة"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "مذبذب (Amphotère / Ampholyte): مادة يمكنها أن تسلك سلوك حمض أو أساس حسب الوسط. مثال: الماء $H_2O$ (ثنائي $H_3O^+/H_2O$ كحمض و $H_2O/OH^-$ كأساس)، و $HCO_3^-$ (ثنائي $H_2CO_3/HCO_3^-$ كحمض و $HCO_3^-/CO_3^{2-}$ كأساس)."
     },
     {
       "type": "divider"
@@ -58,17 +83,71 @@
     },
     {
       "type": "table",
-      "headers": ["نوع المحلول", "$pH$", "$[H_3O^+]$ (mol/L)"],
+      "headers": [
+        "نوع المحلول",
+        "$pH$",
+        "$[H_3O^+]$ (mol/L)"
+      ],
       "rows": [
-        ["حمضي", "$pH < 7$", "$[H_3O^+] > 10^{-7}$"],
-        ["معتدل", "$pH = 7$", "$[H_3O^+] = 10^{-7}$"],
-        ["قاعدي", "$pH > 7$", "$[H_3O^+] < 10^{-7}$"]
+        [
+          "حمضي",
+          "$pH < 7$",
+          "$[H_3O^+] > 10^{-7}$"
+        ],
+        [
+          "معتدل",
+          "$pH = 7$",
+          "$[H_3O^+] = 10^{-7}$"
+        ],
+        [
+          "قاعدي",
+          "$pH > 7$",
+          "$[H_3O^+] < 10^{-7}$"
+        ]
       ],
       "caption": "تصنيف المحاليل حسب pH"
     },
     {
       "type": "text",
-      "content": "<p><strong>منتوج الشاردي للماء:</strong> $K_e = [H_3O^+] \\cdot [OH^-] = 10^{-14}$ عند $25^{\\circ}C$.</p>"
+      "content": "<p><strong>منتوج الشاردي للماء:</strong> $K_e = [H_3O^+] \\cdot [OH^-]$ و $pK_e = -\\log K_e$.</p><p>$K_e$ يتغير بتغير درجة الحرارة كما هو مبين في الجدول:</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "درجة الحرارة",
+        "$0^\\circ C$",
+        "$25^\\circ C$",
+        "$40^\\circ C$",
+        "$60^\\circ C$",
+        "$80^\\circ C$",
+        "$100^\\circ C$"
+      ],
+      "rows": [
+        [
+          "$K_e$",
+          "$1.1 \\times 10^{-15}$",
+          "$1.0 \\times 10^{-14}$",
+          "$3.0 \\times 10^{-14}$",
+          "$1.0 \\times 10^{-13}$",
+          "$2.5 \\times 10^{-13}$",
+          "$5.5 \\times 10^{-13}$"
+        ],
+        [
+          "$pK_e$",
+          "15.0",
+          "14.0",
+          "13.5",
+          "13.0",
+          "12.6",
+          "12.3"
+        ]
+      ],
+      "caption": "تغير الجداء الشاردي للماء K_e مع درجة الحرارة"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "ملاحظة: عند $25^\\circ C$, $K_e = 10^{-14}$ و $pK_e = 14$. لذلك $pH$ المحايد = 7 عند هذه الدرجة. عند $60^\\circ C$, $K_e = 10^{-13}$ و $pK_e = 13$, إذن $pH$ المحايد = 6.5."
     },
     {
       "type": "divider"
@@ -126,16 +205,198 @@
     },
     {
       "type": "table",
-      "headers": ["قيمة $pK_a$", "قوة الحمض", "قوة الأساس المترافق"],
+      "headers": [
+        "قيمة $pK_a$",
+        "قوة الحمض",
+        "قوة الأساس المترافق"
+      ],
       "rows": [
-        ["$pK_a < 0$", "حمض قوي جداً", "أساس ضعيف جداً"],
-        ["$0 < pK_a < 7$", "حمض ضعيف", "أساس ضعيف"],
-        ["$pK_a > 7$", "حمض ضعيف جداً", "أساس قوي"]
+        [
+          "$pK_a < 0$",
+          "حمض قوي جداً",
+          "أساس ضعيف جداً"
+        ],
+        [
+          "$0 < pK_a < 7$",
+          "حمض ضعيف",
+          "أساس ضعيف"
+        ],
+        [
+          "$pK_a > 7$",
+          "حمض ضعيف جداً",
+          "أساس قوي"
+        ]
       ],
       "caption": "علاقة $pK_a$ بقوة الحمض والأساس المترافق"
     },
     {
       "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "مقارنة قوة حمضين ضعيفين",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>لمقارنة قوة حمضين ضعيفين $HA_1$ و $HA_2$، نستخدم $pK_a$: <strong>كلما صغر $pK_a$ زادت قوة الحمض</strong> (وزاد $K_a$).</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "الحمض",
+        "$pK_a$",
+        "$K_a$",
+        "الاستنتاج"
+      ],
+      "rows": [
+        [
+          "حمض الإيثانويك $CH_3COOH$",
+          "$4.76$",
+          "$K_a = 10^{-4.76} = 1.74 \\times 10^{-5}$",
+          "أضعف"
+        ],
+        [
+          "حمض الميثانويك $HCOOH$",
+          "$3.75$",
+          "$K_a = 10^{-3.75} = 1.78 \\times 10^{-4}$",
+          "أقوى (≈10×)"
+        ]
+      ],
+      "caption": "مقارنة قوة حمض الإيثانويك وحمض الميثانويك — كلما صغر pKa زادت قوة الحمض"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "ملاحظة: $pK_a$ وقوة الحمض مرتبطان عكسياً. $pK_a$ صغير ← حمض أقوى (يتفكك بنسبة أكبر في الماء). $pK_a$ كبير ← حمض أضعف (يتفكك بنسبة أقل)."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III-bis - مجالات الصفة الغالبة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>بالنسبة لثنائي $HA/A^-$، يمكن تحديد <strong>الصفة الغالبة</strong> (espèce prédominante) في المحلول بمقارنة $pH$ مع $pK_a$:</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "الشرط",
+        "الصفة الغالبة"
+      ],
+      "rows": [
+        [
+          "$pH < pK_a$",
+          "الحمض $HA$ هو الصفة الغالبة (HA% > A⁻%)"
+        ],
+        [
+          "$pH = pK_a$",
+          "$[HA] = [A^-]$ (لا توجد صفة غالبة)"
+        ],
+        [
+          "$pH > pK_a$",
+          "الأساس $A^-$ هو الصفة الغالبة (A⁻% > HA%)"
+        ]
+      ],
+      "caption": "تحديد الصفة الغالبة بدلالة pH و pKa"
+    },
+    {
+      "type": "formula",
+      "latex": "\\frac{[A^-]}{[HA]} = 10^{pH - pK_a} \\quad \\text{و} \\quad \\%HA = \\frac{100}{1 + 10^{pH - pK_a}}"
+    },
+    {
+      "type": "text",
+      "content": "<figure style=\"text-align:center;margin:12px 0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 300\" style=\"max-width:100%;height:auto;background:#0f172a;border-radius:8px;border:1px solid #334155;direction:ltr\"><style>text{font-family:'Segoe UI',Tahoma,sans-serif;fill:#94a3b8;font-size:11px}.label{fill:#e2e8f0;font-size:12px;font-weight:bold}.title{fill:#fbbf24;font-size:13px;font-weight:bold}.axis{stroke:#475569;stroke-width:1}.grid-line{stroke:#1e293b;stroke-width:1;stroke-dasharray:3,3}.curve-ha{stroke:#38bdf8;stroke-width:2.5;fill:none}.curve-a{stroke:#f59e0b;stroke-width:2.5;fill:none}.dashed{stroke:#64748b;stroke-width:1;stroke-dasharray:4,3}</style><text x=\"320\" y=\"20\" text-anchor=\"middle\" class=\"title\">مخطط توزيع الصفة الغالبة</text><line x1=\"60\" y1=\"30\" x2=\"60\" y2=\"270\" class=\"axis\"/><line x1=\"60\" y1=\"270\" x2=\"580\" y2=\"270\" class=\"axis\"/><line x1=\"60\" y1=\"150\" x2=\"580\" y2=\"150\" class=\"grid-line\"/><text x=\"55\" y=\"274\" text-anchor=\"end\" fill=\"#94a3b8\" font-size=\"11px\">0%</text><text x=\"55\" y=\"154\" text-anchor=\"end\" fill=\"#94a3b8\" font-size=\"11px\">50%</text><text x=\"55\" y=\"34\" text-anchor=\"end\" fill=\"#94a3b8\" font-size=\"11px\">100%</text><text x=\"20\" y=\"150\" text-anchor=\"middle\" transform=\"rotate(-90,20,150)\" class=\"label\">%</text><text x=\"60\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">0</text><text x=\"184.6\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">4</text><text x=\"309.2\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">8</text><text x=\"433.8\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">12</text><text x=\"580\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">14</text><text x=\"320\" y=\"295\" text-anchor=\"middle\" class=\"label\">pH</text><line x1=\"236.8\" y1=\"30\" x2=\"236.8\" y2=\"270\" class=\"dashed\"/><text x=\"236.8\" y=\"25\" text-anchor=\"middle\" fill=\"#64748b\" font-size=\"10px\">pKₐ</text><polyline points=\"60,30 97,30 134,31 171,34 190,43 208,66 220,92 237,150 246,182 260,216 274,248 283,257 320,269 357,270 431,270 580,270\" class=\"curve-ha\"/><polyline points=\"60,270 97,270 134,269 171,266 190,257 208,234 220,208 237,150 246,118 260,84 274,52 283,43 320,31 357,30 431,30 580,30\" class=\"curve-a\"/><rect x=\"440\" y=\"40\" width=\"120\" height=\"50\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/><line x1=\"448\" y1=\"56\" x2=\"480\" y2=\"56\" stroke=\"#38bdf8\" stroke-width=\"2.5\"/><text x=\"490\" y=\"59\" fill=\"#e2e8f0\" font-size=\"10px\">HA (الحمض)</text><line x1=\"448\" y1=\"78\" x2=\"480\" y2=\"78\" stroke=\"#f59e0b\" stroke-width=\"2.5\"/><text x=\"490\" y=\"81\" fill=\"#e2e8f0\" font-size=\"10px\">A⁻ (الأساس)</text><circle cx=\"236.8\" cy=\"150\" r=\"3\" fill=\"#fbbf24\"/><text x=\"236.8\" y=\"140\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"9px\">[HA]=[A⁻]</text></svg><figcaption style=\"color:#94a3b8;font-size:11px;margin-top:4px\">الشكل: توزيع HA و A⁻ بدلالة pH — عند pH = pKₐ يتساوى التركيزان</figcaption></figure>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "لاحظ من المخطط: عندما pH &lt; pK_a، تسود الصفة الحمضية HA، وعندما pH &gt; pK_a، تسود الصفة الأساسية A⁻."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: المعايرة حمض-أساس",
+        "width": 700,
+        "height": 600
+      },
+      "html": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"ar\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>محاكاة المعايرة حمض-أساس</title>\n<style>\n*{margin:0;padding:0;box-sizing:border-box}\nbody{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:12px;min-height:100vh}\n.container{max-width:720px;width:100%}\nh1{text-align:center;font-size:16px;color:#fbbf24;margin-bottom:6px}\n.canvas-wrap{background:#0f172a;border:1px solid #334155;border-radius:8px;padding:4px;margin-bottom:8px}\ncanvas#mainCanvas{display:block;margin:0 auto;width:100%;max-width:700px;height:380px}\n.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#1e293b;border-radius:8px;padding:10px;border:1px solid #334155}\n.ctrl-group{display:flex;flex-direction:column;gap:2px}\n.ctrl-group label{font-size:11px;color:#94a3b8}\n.ctrl-group .val{color:#fbbf24;font-size:12px;font-weight:700}\n.ctrl-group .hint{font-size:9px;color:#475569}\ninput[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}\ninput[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer}\n.full{grid-column:1/-1}\n.mode-group{display:flex;gap:6px}\n.mode-btn{flex:1;background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:5px;font-size:11px;cursor:pointer;text-align:center;transition:all .15s}\n.mode-btn.active{background:#3b82f6;color:#fff;border-color:#3b82f6;font-weight:700}\n.info-row{display:flex;gap:10px;justify-content:center;margin-top:6px;font-size:12px;color:#94a3b8;flex-wrap:wrap}\n.info-row span{background:#1e293b;padding:4px 10px;border-radius:4px;border:1px solid #334155}\n.info-row .ph-val{color:#22c55e;font-weight:700;font-size:14px}\n.info-row .eq-val{color:#f59e0b;font-weight:700}\n.info-row .state{font-weight:700}\n.state-acid{color:#ef4444}\n.state-base{color:#3b82f6}\n.state-neutral{color:#22c55e}\n.badge{display:inline-block;background:#1e293b;color:#fbbf24;border:1px solid #334155;border-radius:4px;padding:2px 8px;font-size:11px;text-align:center;direction:ltr}\n@media(max-width:500px){.controls{grid-template-columns:1fr}}\n</style>\n</head>\n<body>\n<div class=\"container\">\n<h1>محاكاة تفاعلية: المعايرة حمض-أساس</h1>\n\n<div class=\"canvas-wrap\">\n  <canvas id=\"mainCanvas\" width=\"700\" height=\"380\"></canvas>\n</div>\n\n<div class=\"controls\">\n  <div class=\"ctrl-group\">\n    <label>الحجم المضاف من الأساس: <span class=\"val\" id=\"volVal\">0.0</span> mL</label>\n    <input type=\"range\" id=\"volSlider\" min=\"0\" max=\"50\" step=\"0.1\" value=\"0\">\n    <div style=\"display:flex;justify-content:space-between;font-size:9px;color:#475569\"><span>0 mL</span><span>50 mL</span></div>\n  </div>\n  <div class=\"ctrl-group\">\n    <label>تركيز الحمض (C<sub>a</sub>): <span class=\"val\" id=\"caVal\">0.10</span> mol/L</label>\n    <input type=\"range\" id=\"caSlider\" min=\"0.01\" max=\"0.50\" step=\"0.01\" value=\"0.10\">\n  </div>\n  <div class=\"ctrl-group\">\n    <label>تركيز الأساس (C<sub>b</sub>): <span class=\"val\" id=\"cbVal\">0.10</span> mol/L</label>\n    <input type=\"range\" id=\"cbSlider\" min=\"0.01\" max=\"0.50\" step=\"0.01\" value=\"0.10\">\n  </div>\n  <div class=\"ctrl-group\">\n    <label>حجم الحمض (V<sub>a</sub>): <span class=\"val\" id=\"vaVal\">20.0</span> mL</label>\n    <input type=\"range\" id=\"vaSlider\" min=\"5\" max=\"50\" step=\"0.5\" value=\"20\">\n  </div>\n  <div class=\"ctrl-group full\">\n    <label>نوع المعايرة:</label>\n    <div class=\"mode-group\">\n      <button class=\"mode-btn active\" data-mode=\"ss\" id=\"modeSS\">حمض قوي / أساس قوي</button>\n      <button class=\"mode-btn\" data-mode=\"sw\" id=\"modeSW\">حمض قوي / أساس ضعيف</button>\n      <button class=\"mode-btn\" data-mode=\"ws\" id=\"modeWS\">حمض ضعيف / أساس قوي</button>\n    </div>\n  </div>\n  </div>\n  <div class=\"ctrl-group full\">\n    <label>سرعة التشغيل:</label>\n    <div class=\"mode-group\" id=\"speedGroup\">\n      <button class=\"mode-btn\" data-speed=\"0.5\">0.5×</button>\n      <button class=\"mode-btn active\" data-speed=\"1\">1×</button>\n      <button class=\"mode-btn\" data-speed=\"2\">2×</button>\n      <button class=\"mode-btn\" data-speed=\"5\">5×</button>\n    </div>\n  </div>\n  <div class=\"ctrl-group full\">\n    <button id=\"playBtn\" style=\"width:100%;background:#3b82f6;color:#fff;border:none;border-radius:6px;padding:6px;font-size:13px;cursor:pointer;transition:all .15s\">▶ تشغيل تلقائي</button>\n  </div>\n</div>\n\n<div class=\"info-row\">\n  <span>pH = <span class=\"ph-val\" id=\"phDisplay\">1.00</span></span>\n  <span>نقطة التكافؤ: <span class=\"eq-val\" id=\"eqDisplay\">20.0</span> mL</span>\n  <span>الحالة: <span class=\"state\" id=\"stateDisplay\">حمضي</span></span>\n  <span class=\"badge\" id=\"volAddedBadge\">المضاف: 0.0 mL</span>\n</div>\n</div>\n\n<script>\nconst canvas = document.getElementById('mainCanvas');\nconst ctx = canvas.getContext('2d');\n\nconst volSlider = document.getElementById('volSlider');\nconst caSlider = document.getElementById('caSlider');\nconst cbSlider = document.getElementById('cbSlider');\nconst vaSlider = document.getElementById('vaSlider');\nconst modeBtns = document.querySelectorAll('.mode-btn');\nconst volVal = document.getElementById('volVal');\nconst caVal = document.getElementById('caVal');\nconst cbVal = document.getElementById('cbVal');\nconst vaVal = document.getElementById('vaVal');\nconst phDisplay = document.getElementById('phDisplay');\nconst eqDisplay = document.getElementById('eqDisplay');\nconst stateDisplay = document.getElementById('stateDisplay');\nconst volAddedBadge = document.getElementById('volAddedBadge');\n\nlet mode = 'ss'; // ss=strong/strong, sw=strong/weak, ws=weak/strong\n// Weak acid pKa for CH3COOH\nconst pKa = 4.76;\nconst pKb = 4.75; // for NH3\n\nfunction computePH(Vb, Va, Ca, Cb, mode) {\n  Vb = parseFloat(Vb);\n  Va = parseFloat(Va);\n  Ca = parseFloat(Ca);\n  Cb = parseFloat(Cb);\n  const Vtotal = (Va + Vb) / 1000; // in L\n  const n_a = Ca * Va / 1000; // moles of acid\n  const n_b = Cb * Vb / 1000; // moles of base added\n  const Veq = Ca * Va / Cb; // equivalence volume\n\n  if (Vb <= 0) {\n    if (mode === 'ss' || mode === 'sw') {\n      return { pH: -Math.log10(Ca), Veq, state: 'حمضي' };\n    } else {\n      // weak acid\n      const H = Math.sqrt(Ca * Math.pow(10, -pKa));\n      return { pH: -Math.log10(H), Veq, state: 'حمضي' };\n    }\n  }\n\n  if (Math.abs(Vb - Veq) < 0.001) {\n    if (mode === 'ss') return { pH: 7.00, Veq, state: 'متعادل' };\n    if (mode === 'sw') {\n      // strong acid / weak base -> salt of weak base, acidic\n      const C_salt = n_a / Vtotal;\n      const H = Math.sqrt(Math.pow(10, -14) / Math.pow(10, -pKb) * C_salt);\n      return { pH: -Math.log10(H), Veq, state: 'حمضي' };\n    }\n    if (mode === 'ws') {\n      // weak acid / strong base -> salt of weak acid, basic\n      const C_salt = n_a / Vtotal;\n      const OH = Math.sqrt(Math.pow(10, -14) / Math.pow(10, -pKa) * C_salt);\n      return { pH: 14 + Math.log10(OH), Veq, state: 'قاعدي' };\n    }\n  }\n\n  if (Vb < Veq) {\n    // Before equivalence: excess acid\n    const n_excess = n_a - n_b;\n    if (mode === 'ss' || mode === 'sw') {\n      const H = n_excess / Vtotal;\n      return { pH: -Math.log10(H), Veq, state: 'حمضي' };\n    } else if (mode === 'ws') {\n      // Buffer region: HA + OH- -> A- + H2O\n      const n_A = n_b;\n      const n_HA = n_a - n_b;\n      const pH = pKa + Math.log10(n_A / n_HA);\n      return { pH, Veq, state: 'حمضي' };\n    }\n  } else {\n    // After equivalence: excess base\n    const n_excess = n_b - n_a;\n    if (mode === 'ss' || mode === 'ws') {\n      const OH = n_excess / Vtotal;\n      return { pH: 14 + Math.log10(OH), Veq, state: 'قاعدي' };\n    } else if (mode === 'sw') {\n      // Weak base excess (e.g. NH3)\n      const Cb_excess = n_excess / Vtotal;\n      const Kb = Math.pow(10, -pKb);\n      const OH = Math.sqrt(Kb * Cb_excess);\n      return { pH: 14 + Math.log10(OH), Veq, state: 'قاعدي' };\n    }\n  }\n  return { pH: 7, Veq, state: 'متعادل' };\n}\n\nfunction getIndicatorColor(pH) {\n  if (pH < 3.1) return '#ef4444';\n  if (pH < 4.4) return '#f97316';\n  if (pH < 7.0) return '#eab308';\n  if (pH < 8.2) return '#22c55e';\n  if (pH < 10.0) return '#3b82f6';\n  return '#8b5cf6';\n}\n\nfunction getWaterColor(pH) {\n  // Gradual color based on pH\n  if (pH < 2) return 'rgba(239,68,68,0.25)';\n  if (pH < 4) return 'rgba(239,68,68,0.12)';\n  if (pH < 6) return 'rgba(234,179,8,0.08)';\n  if (pH < 8) return 'rgba(34,197,94,0.04)';\n  if (pH < 10) return 'rgba(59,130,246,0.10)';\n  if (pH < 12) return 'rgba(59,130,246,0.20)';\n  return 'rgba(139,92,246,0.25)';\n}\n\nfunction update() {\n  const Vb = parseFloat(volSlider.value);\n  const Va = parseFloat(vaSlider.value);\n  const Ca = parseFloat(caSlider.value);\n  const Cb = parseFloat(cbSlider.value);\n\n  const result = computePH(Vb, Va, Ca, Cb, mode);\n  const pH = Math.max(0, Math.min(14, result.pH));\n  const Veq = result.Veq;\n\n  volVal.textContent = Vb.toFixed(1);\n  caVal.textContent = Ca.toFixed(2);\n  cbVal.textContent = Cb.toFixed(2);\n  vaVal.textContent = Va.toFixed(1);\n  phDisplay.textContent = pH.toFixed(2);\n  eqDisplay.textContent = Veq.toFixed(1);\n  stateDisplay.textContent = result.state;\n  stateDisplay.className = 'state ' + (result.state === 'حمضي' ? 'state-acid' : result.state === 'قاعدي' ? 'state-base' : 'state-neutral');\n  volAddedBadge.textContent = 'المضاف: ' + Vb.toFixed(1) + ' mL';\n\n  draw(pH, Vb, Veq);\n}\n\nfunction draw(pH, Vb, Veq) {\n  const w = 700, h = 380;\n  ctx.clearRect(0, 0, w, h);\n\n  // Layout: left side (0-250) burette + beaker, right side (250-690) curve\n  const curveL = 260, curveR = 690, curveT = 15, curveB = 270;\n  const curveW = curveR - curveL;\n  const curveH = curveB - curveT;\n\n  // Background\n  ctx.fillStyle = '#0f172a';\n  ctx.fillRect(0, 0, w, h);\n  ctx.fillStyle = '#1e293b';\n  ctx.fillRect(curveL, curveT, curveW, curveH);\n\n  // ---- LEFT: Burette + Beaker ----\n  drawBurette(pH, Vb, Veq);\n\n  // ---- RIGHT: pH Curve ----\n  drawPHCurve(curveL, curveT, curveW, curveH, pH, Vb, Veq);\n\n  // ---- Bottom info bar ----\n  drawInfoBar(h, pH, Vb, Veq);\n}\n\nfunction drawBurette(pH, Vb, Veq) {\n  // Burette (left side, top)\n  const bx = 70, by = 25, bw = 36, bh = 140;\n  ctx.fillStyle = '#1e293b';\n  ctx.beginPath();\n  ctx.roundRect(bx, by, bw, bh, 4);\n  ctx.fill();\n  ctx.strokeStyle = '#475569';\n  ctx.lineWidth = 1.5;\n  ctx.stroke();\n\n  // Burette liquid level\n  const maxV = 50;\n  const fillH = (Vb / maxV) * (bh - 12);\n  const ligY = by + bh - 6 - fillH;\n  ctx.fillStyle = '#93c5fd66';\n  ctx.beginPath();\n  ctx.roundRect(bx + 3, ligY, bw - 6, fillH, [0, 0, 2, 2]);\n  ctx.fill();\n\n  // Burette tip\n  ctx.fillStyle = '#475569';\n  ctx.fillRect(bx + bw / 2 - 4, by + bh, 8, 16);\n  ctx.fillRect(bx + bw / 2 - 3, by + bh + 14, 6, 8);\n  ctx.fillStyle = '#334155';\n  ctx.fillRect(bx + bw / 2 - 1, by + bh + 20, 2, 8);\n\n  // Burette label\n  ctx.fillStyle = '#94a3b8';\n  ctx.font = '9px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText('الأساس', bx + bw / 2, by - 6);\n\n  // Burette volume marks\n  ctx.fillStyle = '#475569';\n  ctx.font = '7px sans-serif';\n  for (let i = 0; i <= 5; i++) {\n    const y = by + 8 + (bh - 16) * (i / 5);\n    ctx.fillRect(bx + bw, y, 5, 0.5);\n    ctx.fillText((maxV * (1 - i / 5)).toFixed(0), bx + bw + 8, y + 3);\n  }\n\n  // Beaker (below burette)\n  const bex = bx - 15, bey = by + bh + 40, bew = bw + 30, beh = 68;\n  const waterTop = bey + 14;\n\n  // Beaker outline\n  ctx.strokeStyle = '#475569';\n  ctx.lineWidth = 1.5;\n  ctx.beginPath();\n  ctx.moveTo(bex, bey);\n  ctx.lineTo(bex, bey + beh);\n  ctx.lineTo(bex + bew, bey + beh);\n  ctx.lineTo(bex + bew, bey);\n  ctx.stroke();\n\n  // Water in beaker\n  const watCol = getWaterColor(pH);\n  ctx.fillStyle = watCol;\n  ctx.beginPath();\n  ctx.moveTo(bex + 2, waterTop);\n  ctx.lineTo(bex + 2, bey + beh - 2);\n  ctx.lineTo(bex + bew - 2, bey + beh - 2);\n  ctx.lineTo(bex + bew - 2, waterTop);\n  ctx.closePath();\n  ctx.fill();\n\n  // Water surface\n  ctx.strokeStyle = watCol.replace('0.25', '0.5').replace('0.20', '0.4').replace('0.12', '0.3').replace('0.10', '0.3').replace('0.08', '0.2').replace('0.04', '0.15');\n  ctx.lineWidth = 1;\n  ctx.beginPath();\n  const waveAmp = 2;\n  for (let x = bex + 2; x <= bex + bew - 2; x++) {\n    const wy = waterTop + Math.sin((x + Vb * 20) * 0.15) * waveAmp;\n    x === bex + 2 ? ctx.moveTo(x, wy) : ctx.lineTo(x, wy);\n  }\n  ctx.stroke();\n\n  // pH meter display\n  ctx.fillStyle = '#0f172a';\n  ctx.beginPath();\n  ctx.roundRect(bex + 8, bey + beh + 6, bew - 16, 22, 4);\n  ctx.fill();\n  ctx.strokeStyle = '#334155';\n  ctx.lineWidth = 1;\n  ctx.stroke();\n  ctx.fillStyle = '#22c55e';\n  ctx.font = 'bold 13px monospace';\n  ctx.textAlign = 'center';\n  ctx.fillText('pH ' + pH.toFixed(2), bex + bew / 2, bey + beh + 22);\n\n  // Beaker label\n  ctx.fillStyle = '#94a3b8';\n  ctx.font = '9px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText('الحمض + كاشف', bex + bew / 2, bey - 6);\n\n  // Drop animation (if adding)\n  if (Vb > 0) {\n    const dropY = by + bh + 20 + Math.sin(Vb * 5) * 6;\n    ctx.fillStyle = '#93c5fd';\n    ctx.beginPath();\n    ctx.arc(bx + bw / 2, dropY, 2.5, 0, Math.PI * 2);\n    ctx.fill();\n  }\n}\n\nfunction drawPHCurve(lx, ly, cw, ch, pH, Vb, Veq) {\n  // Axis\n  ctx.strokeStyle = '#475569';\n  ctx.lineWidth = 0.5;\n  ctx.beginPath();\n  ctx.moveTo(lx + 30, ly + 6);\n  ctx.lineTo(lx + 30, ly + ch - 4);\n  ctx.lineTo(lx + cw, ly + ch - 4);\n  ctx.stroke();\n\n  // Y-axis labels (pH)\n  ctx.fillStyle = '#64748b';\n  ctx.font = '8px sans-serif';\n  ctx.textAlign = 'right';\n  for (let i = 0; i <= 14; i += 2) {\n    const y = ly + ch - 8 - (i / 14) * (ch - 16);\n    if (y >= ly + 6 && y <= ly + ch - 4) {\n      ctx.fillText(i, lx + 26, y + 3);\n      ctx.beginPath();\n      ctx.moveTo(lx + 30, y);\n      ctx.lineTo(lx + cw, y);\n      ctx.strokeStyle = '#1e293b';\n      ctx.stroke();\n      ctx.strokeStyle = '#475569';\n    }\n  }\n\n  // X-axis labels (volume)\n  ctx.textAlign = 'center';\n  for (let i = 0; i <= 50; i += 10) {\n    const x = lx + 30 + (i / 50) * (cw - 30);\n    if (x >= lx + 30 && x <= lx + cw) {\n      ctx.fillText(i, x, ly + ch + 10);\n      ctx.beginPath();\n      ctx.moveTo(x, ly + ch - 4);\n      ctx.lineTo(x, ly + 6);\n      ctx.strokeStyle = '#1e293b';\n      ctx.stroke();\n      ctx.strokeStyle = '#475569';\n    }\n  }\n\n  // Axis labels\n  ctx.fillStyle = '#64748b';\n  ctx.font = '8px sans-serif';\n  ctx.textAlign = 'right';\n  ctx.fillText('pH', lx + cw - 2, ly + 10);\n  ctx.textAlign = 'center';\n  ctx.fillText('V (mL)', lx + 30 + (cw - 30) / 2, ly + ch + 22);\n\n  // Draw curve\n  const Va = parseFloat(vaSlider.value);\n  const Ca = parseFloat(caSlider.value);\n  const Cb = parseFloat(cbSlider.value);\n\n  ctx.strokeStyle = '#22c55e';\n  ctx.lineWidth = 2;\n  ctx.beginPath();\n  let first = true;\n\n  // Draw curve at high resolution; don't exceed many samples\n  for (let v = 0; v <= 50; v += 0.2) {\n    const res = computePH(v, Va, Ca, Cb, mode);\n    const ph = Math.max(0, Math.min(14, res.pH));\n    const x = lx + 30 + (v / 50) * (cw - 30);\n    const y = ly + ch - 8 - (ph / 14) * (ch - 16);\n    if (x >= lx + 30 && x <= lx + cw && y >= ly + 4 && y <= ly + ch) {\n      if (first) { ctx.moveTo(x, y); first = false; }\n      else ctx.lineTo(x, y);\n    }\n  }\n  ctx.stroke();\n\n  // Current point marker\n  const curRes = computePH(Vb, Va, Ca, Cb, mode);\n  const curPH = Math.max(0, Math.min(14, curRes.pH));\n  const cx = lx + 30 + (Vb / 50) * (cw - 30);\n  const cy = ly + ch - 8 - (curPH / 14) * (ch - 16);\n  if (cx >= lx + 30 && cx <= lx + cw && cy >= ly + 4 && cy <= ly + ch) {\n    ctx.fillStyle = '#f59e0b';\n    ctx.beginPath();\n    ctx.arc(cx, cy, 5, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.fillStyle = '#000';\n    ctx.beginPath();\n    ctx.arc(cx, cy, 2.5, 0, Math.PI * 2);\n    ctx.fill();\n  }\n\n  // Equivalence point marker\n  const ex = lx + 30 + (Veq / 50) * (cw - 30);\n  if (ex >= lx + 30 && ex <= lx + cw) {\n    ctx.strokeStyle = '#f59e0b';\n    ctx.lineWidth = 1;\n    ctx.setLineDash([4, 3]);\n    ctx.beginPath();\n    ctx.moveTo(ex, ly + 6);\n    ctx.lineTo(ex, ly + ch - 4);\n    ctx.stroke();\n    ctx.setLineDash([]);\n    ctx.fillStyle = '#f59e0b';\n    ctx.font = '8px sans-serif';\n    ctx.textAlign = 'center';\n    ctx.fillText('V_eq=' + Veq.toFixed(1) + ' mL', ex, ly + ch + 2);\n  }\n}\n\nfunction drawInfoBar(h, pH, Vb, Veq) {\n  // Progress bar showing titration progress\n  const px = 10, py = h - 20, pw = 230, ph = 12;\n  ctx.fillStyle = '#1e293b';\n  ctx.beginPath();\n  ctx.roundRect(px, py, pw, ph, 6);\n  ctx.fill();\n  const prog = Math.min(Vb / (Veq * 2), 1);\n  ctx.fillStyle = prog < 0.5 ? '#3b82f6' : '#22c55e';\n  ctx.beginPath();\n  ctx.roundRect(px + 2, py + 2, (pw - 4) * Math.min(Vb / (Veq * 2), 1), ph - 4, 4);\n  ctx.fill();\n  ctx.fillStyle = '#94a3b8';\n  ctx.font = '8px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText('التقدم', px + pw / 2, py + 10);\n\n  // Color legend\n  const lx = 260, ly = h - 20;\n  ctx.fillStyle = '#ef4444';\n  ctx.beginPath();\n  ctx.arc(lx, ly + 5, 5, 0, Math.PI * 2);\n  ctx.fill();\n  ctx.fillStyle = '#94a3b8';\n  ctx.font = '8px sans-serif';\n  ctx.textAlign = 'right';\n  ctx.fillText('حمضي', lx - 8, ly + 9);\n\n  ctx.fillStyle = '#22c55e';\n  ctx.beginPath();\n  ctx.arc(lx + 50, ly + 5, 5, 0, Math.PI * 2);\n  ctx.fill();\n  ctx.fillStyle = '#94a3b8';\n  ctx.fillText('متعادل', lx + 42, ly + 9);\n\n  ctx.fillStyle = '#3b82f6';\n  ctx.beginPath();\n  ctx.arc(lx + 100, ly + 5, 5, 0, Math.PI * 2);\n  ctx.fill();\n  ctx.fillStyle = '#94a3b8';\n  ctx.fillText('قاعدي', lx + 92, ly + 9);\n}\n\nfunction updateMode(m) {\n  mode = m;\n  modeBtns.forEach(b => {\n    b.classList.toggle('active', b.dataset.mode === m);\n  });\n  update();\n}\n\n// ---- Auto-play controls ----\nlet isPlaying = false;\nlet speed = 1;\nlet animId = null;\n\nconst playBtn = document.getElementById('playBtn');\nconst speedBtns = document.querySelectorAll('#speedGroup .mode-btn');\n\nfunction togglePlay() {\n  isPlaying = !isPlaying;\n  playBtn.textContent = isPlaying ? '⏸ إيقاف' : '▶ تشغيل تلقائي';\n  playBtn.style.background = isPlaying ? '#ef4444' : '#3b82f6';\n  if (isPlaying) {\n    if (parseFloat(volSlider.value) >= 50) volSlider.value = '0';\n    animate();\n  } else {\n    if (animId) { cancelAnimationFrame(animId); animId = null; }\n  }\n}\n\nfunction animate() {\n  if (!isPlaying) return;\n  let v = parseFloat(volSlider.value) + 0.05 * speed;\n  if (v > 50) { v = 50; togglePlay(); }\n  volSlider.value = v;\n  update();\n  animId = requestAnimationFrame(animate);\n}\n\nspeedBtns.forEach(btn => {\n  btn.addEventListener('click', () => {\n    speedBtns.forEach(b => b.classList.remove('active'));\n    btn.classList.add('active');\n    speed = parseFloat(btn.dataset.speed);\n  });\n});\n\nplayBtn.addEventListener('click', togglePlay);\n\nvolSlider.addEventListener('input', () => { if (isPlaying) togglePlay(); update(); });\ncaSlider.addEventListener('input', () => { if (isPlaying) togglePlay(); update(); });\ncbSlider.addEventListener('input', () => { if (isPlaying) togglePlay(); update(); });\nvaSlider.addEventListener('input', () => { if (isPlaying) togglePlay(); update(); });\nmodeBtns.forEach(btn => {\n  btn.addEventListener('click', () => { if (isPlaying) togglePlay(); updateMode(btn.dataset.mode); });\n});\n\n// Polyfill roundRect\nif (!CanvasRenderingContext2D.prototype.roundRect) {\n  CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, radii) {\n    const r = Array.isArray(radii) ? radii : [radii, radii, radii, radii];\n    const [tl, tr, br, bl] = r.map(v => Math.min(v || 0, Math.min(w, h) / 2));\n    this.moveTo(x + tl, y);\n    this.lineTo(x + w - tr, y);\n    this.quadraticCurveTo(x + w, y, x + w, y + tr);\n    this.lineTo(x + w, y + h - br);\n    this.quadraticCurveTo(x + w, y + h, x + w - br, y + h);\n    this.lineTo(x + bl, y + h);\n    this.quadraticCurveTo(x, y + h, x, y + h - bl);\n    this.lineTo(x, y + tl);\n    this.quadraticCurveTo(x, y, x + tl, y);\n    this.closePath();\n  };\n}\n\nupdate();\n</script>\n</body>\n</html>\n",
+      "css": "",
+      "js": ""
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "مثال: لثنائي $CH_3COOH/CH_3COO^-$ حيث $pK_a = 4.76$، عند $pH = 3$ نجد $[A^-]/[HA] = 10^{-1.76} \\approx 0.017$ أي أن $HA$ هي الصفة الغالبة بنسبة 98%."
+    },
+    {
+      "type": "heading",
+      "text": "III-ter - الكواشف الملونة (Indicateurs colorés)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الكاشف الملون</strong> هو حمض ضعيف $HIn$ له لون مختلف عن لون أساسه المترافق $In^-$:</p>$$HIn_{(aq)} + H_2O \\rightleftharpoons In^-_{(aq)} + H_3O^+$$<p>ثابت تأينه $K_i$ يعطى بالعلاقة $K_i = \\frac{[In^-][H_3O^+]}{[HIn]}$ و $pK_i = -\\log K_i$.</p><p>يتغير لون الكاشف في مجال $pH = pK_i \\pm 1$. عند $pH < pK_i - 1$ نرى لون الحمض $HIn$، وعند $pH > pK_i + 1$ نرى لون الأساس $In^-$.</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "الكاشف الملون",
+        "$pK_i$",
+        "مجال التغير",
+        "لون حمضي",
+        "لون قاعدي"
+      ],
+      "rows": [
+        [
+          "أحمر الميثيل (Méthylorange)",
+          "3.7",
+          "3.1 – 4.4",
+          "أحمر",
+          "أصفر"
+        ],
+        [
+          "أزرق البروموتيمول (BBT)",
+          "6.8",
+          "6.0 – 7.6",
+          "أصفر",
+          "أزرق"
+        ],
+        [
+          "الفينولفتالين (Phénolphtaléine)",
+          "9.1",
+          "8.2 – 10.0",
+          "عديم اللون",
+          "وردي"
+        ]
+      ],
+      "caption": "أهم الكواشف الملونة ومجالات تغير لونها"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>اختيار الكاشف المناسب:</strong> يجب أن يكون مجال تغير لون الكاشف داخل <strong>قفزة pH</strong> عند نقطة التكافؤ. مثلاً، لمعايرة حمض قوي بأساس قوي (قفزة pH من 4 إلى 10)، يمكن استخدام أزرق البروموتيمول أو الفينولفتالين.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "تفاعل مع المحاكاة: حرك مؤشر pH ولاحظ تغير الصفة الغالبة ولون الكاشف الملون في الوقت الفعلي."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: الصفة الغالبة والكاشف الملون",
+        "width": 700,
+        "height": 540
+      },
+      "html": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"ar\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>محاكاة الصفة الغالبة والكاشف الملون</title>\n<style>\n*{margin:0;padding:0;box-sizing:border-box}\nbody{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:12px;min-height:100vh}\n.container{max-width:720px;width:100%}\nh1{text-align:center;font-size:15px;color:#fbbf24;margin-bottom:4px}\n.canvas-wrap{background:#0f172a;border:1px solid #334155;border-radius:8px;padding:4px;margin-bottom:6px}\ncanvas#mainCanvas{display:block;margin:0 auto;width:100%;max-width:700px;height:350px}\n.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#1e293b;border-radius:8px;padding:10px;border:1px solid #334155}\n.ctrl-group{display:flex;flex-direction:column;gap:2px}\n.ctrl-group label{font-size:11px;color:#94a3b8}\n.ctrl-group .val{color:#fbbf24;font-size:12px;font-weight:700}\ninput[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}\ninput[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer}\nselect{background:#334155;color:#e2e8f0;border:1px solid #475569;border-radius:4px;padding:4px;font-size:11px;width:100%;cursor:pointer}\nselect:focus{outline:none;border-color:#f59e0b}\n.info-row{display:flex;gap:10px;justify-content:center;margin-top:6px;font-size:12px;color:#94a3b8;flex-wrap:wrap}\n.info-row span{background:#1e293b;padding:4px 10px;border-radius:4px;border:1px solid #334155}\n.info-row .no-wrap{white-space:nowrap}\n.color-swatch{display:inline-block;width:18px;height:18px;border-radius:50%;border:2px solid #1e293b;vertical-align:middle;margin-left:4px}\n.bar-label{font-size:10px;color:#94a3b8}\n.eq-box{font-family:'Courier New',monospace;direction:ltr;text-align:center;font-size:13px;color:#22c55e;background:#0f172a;padding:4px 8px;border-radius:4px}\n@media(max-width:500px){.controls{grid-template-columns:1fr}}\n</style>\n</head>\n<body>\n<div class=\"container\">\n<h1>محاكاة تفاعلية: الصفة الغالبة والكاشف الملون</h1>\n\n<div class=\"canvas-wrap\">\n  <canvas id=\"mainCanvas\" width=\"700\" height=\"350\"></canvas>\n</div>\n\n<div class=\"controls\">\n  <div class=\"ctrl-group\">\n    <label>pH: <span class=\"val\" id=\"phVal\">4.76</span></label>\n    <input type=\"range\" id=\"phSlider\" min=\"0\" max=\"14\" step=\"0.01\" value=\"4.76\">\n  </div>\n  <div class=\"ctrl-group\">\n    <label>الثنائية (أساس/حمض):</label>\n    <select id=\"pairSelect\">\n      <option value=\"4.76|CH₃COOH|CH₃COO⁻\">CH₃COOH / CH₃COO⁻ (pKa=4.76)</option>\n      <option value=\"9.25|NH₄⁺|NH₃\">NH₄⁺ / NH₃ (pKa=9.25)</option>\n      <option value=\"3.75|HCOOH|HCOO⁻\">HCOOH / HCOO⁻ (pKa=3.75)</option>\n      <option value=\"2.00|H₃PO₄|H₂PO₄⁻\">H₃PO₄ / H₂PO₄⁻ (pKa=2.00)</option>\n      <option value=\"7.20|H₂PO₄⁻|HPO₄²⁻\">H₂PO₄⁻ / HPO₄²⁻ (pKa=7.20)</option>\n      <option value=\"14.00|H₂O|HO⁻\">H₂O / HO⁻ (pKa=14.0)</option>\n    </select>\n  </div>\n  <div class=\"ctrl-group\">\n    <label>الكاشف الملون:</label>\n    <select id=\"indicatorSelect\">\n      <option value=\"3.1,4.4|#ef4444,#f97316,#eab308|أحمر الميثيل\">أحمر الميثيل (3.1–4.4)</option>\n      <option value=\"6.0,7.6|#eab308,#22c55e,#3b82f6|أزرق البروموتيمول\" selected>أزرق البروموتيمول (6.0–7.6)</option>\n      <option value=\"8.2,10.0|#e2e8f0,#f0abfc,#ec4899|الفينولفتالين\">الفينولفتالين (8.2–10.0)</option>\n    </select>\n  </div>\n  <div class=\"ctrl-group\">\n    <label>اللون الحالي:</label>\n    <div id=\"colorDisplay\" style=\"padding:4px 8px;border-radius:4px;text-align:center;font-size:12px;background:#334155;border:1px solid #475569\">\n      <span class=\"color-swatch\" id=\"colorSwatch\" style=\"background:#22c55e\"></span>\n      <span id=\"colorName\">أخضر</span>\n    </div>\n  </div>\n</div>\n\n<div class=\"info-row\">\n  <span>[HA]: <span class=\"val\" id=\"haPct\">50.0</span>%</span>\n  <span>[A⁻]: <span class=\"val\" id=\"aPct\">50.0</span>%</span>\n  <span>ص＝ <span class=\"val\" id=\"ratioVal\">1.00</span></span>\n  <span>pK<sub>a</sub> = <span class=\"val\" id=\"pkaVal\">4.76</span></span>\n  <span class=\"no-wrap\">الصفة الغالبة: <span id=\"predominanceText\">HA و A⁻ متساويان</span></span>\n</div>\n\n<script>\nconst canvas = document.getElementById('mainCanvas');\nconst ctx = canvas.getContext('2d');\n\nconst phSlider = document.getElementById('phSlider');\nconst phVal = document.getElementById('phVal');\nconst pairSelect = document.getElementById('pairSelect');\nconst indicatorSelect = document.getElementById('indicatorSelect');\nconst haPct = document.getElementById('haPct');\nconst aPct = document.getElementById('aPct');\nconst ratioVal = document.getElementById('ratioVal');\nconst pkaVal = document.getElementById('pkaVal');\nconst predominanceText = document.getElementById('predominanceText');\nconst colorSwatch = document.getElementById('colorSwatch');\nconst colorName = document.getElementById('colorName');\n\n// Indicator data\nconst indicatorData = {\n  'أحمر الميثيل': { lo: 3.1, hi: 4.4, colors: ['#ef4444','#f97316','#eab308'], nameAcid: 'أحمر', nameBase: 'أصفر', nameTrans: 'برتقالي' },\n  'أزرق البروموتيمول': { lo: 6.0, hi: 7.6, colors: ['#eab308','#22c55e','#3b82f6'], nameAcid: 'أصفر', nameBase: 'أزرق', nameTrans: 'أخضر' },\n  'الفينولفتالين': { lo: 8.2, hi: 10.0, colors: ['#e2e8f0','#f0abfc','#ec4899'], nameAcid: 'عديم اللون', nameBase: 'وردي', nameTrans: 'وردي فاتح' }\n};\n\nfunction hexToRgb(hex) {\n  const v = parseInt(hex.slice(1), 16);\n  return [(v >> 16) & 255, (v >> 8) & 255, v & 255];\n}\nfunction rgbToHex(r, g, b) {\n  return '#' + [r, g, b].map(c => Math.round(c).toString(16).padStart(2, '0')).join('');\n}\nfunction lerpColor(c1, c2, t) {\n  return c1.map((a, i) => a + (c2[i] - a) * t);\n}\n\nfunction getIndicatorColor(pH, indicatorName) {\n  const ind = indicatorData[indicatorName];\n  if (!ind) return '#94a3b8';\n  if (pH < ind.lo) return ind.colors[0];\n  if (pH > ind.hi) return ind.colors[2];\n  const t = (pH - ind.lo) / (ind.hi - ind.lo);\n  const c1 = hexToRgb(ind.colors[0]);\n  const c2 = hexToRgb(ind.colors[2]);\n  return rgbToHex(...lerpColor(c1, c2, t));\n}\n\nfunction getIndicatorName(pH, indicatorName) {\n  const ind = indicatorData[indicatorName];\n  if (!ind) return '—';\n  if (pH < ind.lo) return ind.nameAcid;\n  if (pH > ind.hi) return ind.nameBase;\n  return ind.nameTrans;\n}\n\n\n\nfunction update() {\n  const pH = parseFloat(phSlider.value);\n  const [pkaStr, acidName, baseName] = pairSelect.value.split('|');\n  const pKa = parseFloat(pkaStr);\n  \n  phVal.textContent = pH.toFixed(2);\n  pkaVal.textContent = pKa.toFixed(2);\n  \n  // Compute distribution\n  const ratio = Math.pow(10, pH - pKa);\n  const aPctVal = 100 / (1 + 1 / ratio);\n  const haPctVal = 100 - aPctVal;\n  \n  haPct.textContent = haPctVal.toFixed(1);\n  aPct.textContent = aPctVal.toFixed(1);\n  ratioVal.textContent = ratio.toFixed(2);\n  \n  // Predominant species\n  let predom;\n  if (Math.abs(haPctVal - aPctVal) < 1) {\n    predom = `${acidName} و ${baseName} متساويان تقريباً`;\n  } else if (haPctVal > aPctVal) {\n    predom = `${acidName} غالبة (${haPctVal.toFixed(0)}%)`;\n  } else {\n    predom = `${baseName} غالبة (${aPctVal.toFixed(0)}%)`;\n  }\n  predominanceText.textContent = predom;\n  \n  // Indicator\n  const indicatorName = indicatorSelect.options[indicatorSelect.selectedIndex].text.split(' (')[0];\n  const indColor = getIndicatorColor(pH, indicatorName);\n  const indName = getIndicatorName(pH, indicatorName);\n  colorSwatch.style.background = indColor;\n  colorName.textContent = indName;\n  \n  draw(pH, pKa, acidName, baseName, haPctVal, aPctVal, ratio, indicatorName);\n}\n\nfunction draw(pH, pKa, acidName, baseName, haPct, aPct, ratio, indicatorName) {\n  const w = 700, h = 350;\n  ctx.clearRect(0, 0, w, h);\n  ctx.fillStyle = '#0f172a';\n  ctx.fillRect(0, 0, w, h);\n  \n  const left = 30, right = 670, top = 20;\n  const axisY = top + 30;\n  const axisW = right - left;\n  const barTop = axisY + 28;\n  const barH = 50;\n  const pctBarTop = barTop + barH + 10;\n  const pHScaleH = 18;\n  const indicatorY = pctBarTop + pHScaleH + 22;\n  const indicatorH = 28;\n  const pkaMarkerY = axisY - 10;\n  \n  // Helper\n  function phToX(ph) {\n    return left + (ph / 14) * axisW;\n  }\n  \n  // Title: acid > base\n  ctx.fillStyle = '#64748b';\n  ctx.font = '9px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText(acidName + ' (HA)', left, axisY - 8);\n  ctx.fillText(baseName + ' (A⁻)', right, axisY - 8);\n  \n  // pH scale axis line\n  ctx.strokeStyle = '#475569';\n  ctx.lineWidth = 1;\n  ctx.beginPath();\n  ctx.moveTo(left, axisY);\n  ctx.lineTo(right, axisY);\n  ctx.stroke();\n  \n  // pH tick marks\n  ctx.fillStyle = '#64748b';\n  ctx.font = '7px sans-serif';\n  ctx.textAlign = 'center';\n  for (let i = 0; i <= 14; i += 1) {\n    const x = phToX(i);\n    ctx.fillStyle = i % 2 === 0 ? '#64748b' : '#334155';\n    ctx.beginPath();\n    ctx.moveTo(x, axisY - 4);\n    ctx.lineTo(x, axisY + 4);\n    ctx.stroke();\n    if (i % 2 === 0) {\n      ctx.fillStyle = '#64748b';\n      ctx.fillText(i, x, axisY + 12);\n    }\n  }\n  ctx.fillStyle = '#475569';\n  ctx.font = '7px sans-serif';\n  ctx.fillText('pH', right + 6, axisY + 4);\n  \n  // Colored acid/base zones on axis\n  const pKaX = phToX(pKa);\n  \n  // Zone coloring (subtle)\n  ctx.globalAlpha = 0.06;\n  ctx.fillStyle = '#ef4444';\n  ctx.fillRect(left, axisY - 8, pKaX - left, 16);\n  ctx.fillStyle = '#3b82f6';\n  ctx.fillRect(pKaX, axisY - 8, right - pKaX, 16);\n  ctx.globalAlpha = 1;\n  \n  // pKa marker line (dashed, full height)\n  ctx.strokeStyle = '#f59e0b';\n  ctx.lineWidth = 1.5;\n  ctx.setLineDash([4, 3]);\n  ctx.beginPath();\n  ctx.moveTo(pKaX, pkaMarkerY);\n  ctx.lineTo(pKaX, indicatorY + indicatorH + 10);\n  ctx.stroke();\n  ctx.setLineDash([]);\n  \n  // pKa label\n  ctx.fillStyle = '#f59e0b';\n  ctx.font = 'bold 9px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText('pKa = ' + pKa.toFixed(2), pKaX, pkaMarkerY + 10);\n  \n  // Current pH arrow (triangle)\n  const curX = phToX(pH);\n  ctx.fillStyle = '#fbbf24';\n  ctx.beginPath();\n  ctx.moveTo(curX, axisY + 8);\n  ctx.lineTo(curX - 5, axisY + 2);\n  ctx.lineTo(curX + 5, axisY + 2);\n  ctx.closePath();\n  ctx.fill();\n  \n  // pH value label\n  ctx.fillStyle = '#fbbf24';\n  ctx.font = 'bold 11px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText('pH = ' + pH.toFixed(2), curX, axisY + 26);\n  \n  // --- Distribution Horizontal Bars ---\n  const barLeft = left + 10;\n  const barWidth = right - left - 20;\n  \n  // HA bar (red)\n  const haW = (haPct / 100) * barWidth;\n  ctx.fillStyle = '#ef4444';\n  ctx.beginPath();\n  ctx.roundRect(barLeft, barTop, haW, 18, [0, 3, 3, 0]);\n  ctx.fill();\n  \n  // A- bar (blue)\n  const aW = (aPct / 100) * barWidth;\n  const aBarLeft = barLeft + barWidth - aW;\n  ctx.fillStyle = '#3b82f6';\n  ctx.beginPath();\n  ctx.roundRect(aBarLeft, barTop + 20, aW, 18, [3, 0, 0, 3]);\n  ctx.fill();\n  \n  // Bar labels\n  ctx.fillStyle = '#fbbf24';\n  ctx.font = 'bold 10px sans-serif';\n  ctx.textAlign = 'left';\n  ctx.fillText(acidName + ' (' + haPct.toFixed(1) + '%)', barLeft + 4, barTop + 13);\n  ctx.textAlign = 'right';\n  ctx.fillText(baseName + ' (' + aPct.toFixed(1) + '%)', barLeft + barWidth - 4, barTop + 33);\n  \n  // Henderson-Hasselbalch equation display\n  ctx.fillStyle = '#22c55e';\n  ctx.font = '11px sans-serif';\n  ctx.textAlign = 'center';\n  const eqText = `pH = pKa + log([A⁻]/[HA])  →  ${pH.toFixed(2)} = ${pKa.toFixed(2)} + log(${ratio.toFixed(2)})`;\n  ctx.fillText(eqText, (left + right) / 2, pctBarTop + 12);\n  \n  // --- Indicator Section ---\n  const ind = indicatorData[indicatorName];\n  if (!ind) return;\n  \n  ctx.fillStyle = '#94a3b8';\n  ctx.font = '9px sans-serif';\n  ctx.textAlign = 'right';\n  ctx.fillText(indicatorName, right, indicatorY - 4);\n  \n  // Indicator strip\n  const loX = phToX(ind.lo);\n  const hiX = phToX(ind.hi);\n  const indY = indicatorY;\n  \n  // Background strip\n  ctx.fillStyle = '#1e293b';\n  ctx.beginPath();\n  ctx.roundRect(left, indY, barWidth, indicatorH, 4);\n  ctx.fill();\n  \n  // Acid color zone (left)\n  ctx.fillStyle = ind.colors[0];\n  ctx.fillRect(left + 2, indY + 2, loX - left - 2, indicatorH - 4);\n  \n  // Base color zone (right)\n  ctx.fillStyle = ind.colors[2];\n  ctx.fillRect(hiX, indY + 2, right - hiX - 2, indicatorH - 4);\n  \n  // Transition zone gradient\n  const grad = ctx.createLinearGradient(loX, indY, hiX, indY);\n  grad.addColorStop(0, ind.colors[0]);\n  grad.addColorStop(0.3, ind.colors[1]);\n  grad.addColorStop(0.7, ind.colors[1]);\n  grad.addColorStop(1, ind.colors[2]);\n  ctx.fillStyle = grad;\n  ctx.fillRect(loX, indY + 2, hiX - loX, indicatorH - 4);\n  \n  // Current pH marker on indicator\n  const markerX = Math.max(left + 2, Math.min(right - 2, curX));\n  ctx.fillStyle = '#0f172a';\n  ctx.beginPath();\n  ctx.arc(markerX, indY + indicatorH / 2, 5, 0, Math.PI * 2);\n  ctx.fill();\n  ctx.fillStyle = '#fbbf24';\n  ctx.beginPath();\n  ctx.arc(markerX, indY + indicatorH / 2, 3, 0, Math.PI * 2);\n  ctx.fill();\n  \n  // Indicator interval labels\n  ctx.fillStyle = '#64748b';\n  ctx.font = '7px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText(ind.lo.toFixed(1), loX, indY + indicatorH + 10);\n  ctx.fillText(ind.hi.toFixed(1), hiX, indY + indicatorH + 10);\n  \n  // Region labels\n  ctx.fillStyle = ind.colors[0];\n  ctx.textAlign = 'center';\n  ctx.fillText(ind.nameAcid, (left + loX) / 2, indY + indicatorH / 2 + 4);\n  ctx.fillStyle = ind.colors[2];\n  ctx.fillText(ind.nameBase, (hiX + right) / 2, indY + indicatorH / 2 + 4);\n  ctx.fillStyle = '#e2e8f0';\n  ctx.fillText(ind.nameTrans, (loX + hiX) / 2, indY + indicatorH / 2 + 4);\n  \n  // Footer legend\n  ctx.fillStyle = '#64748b';\n  ctx.font = '7px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText('حرك المؤشر لتغيير pH — لاحظ تغير الصفة الغالبة ولون الكاشف', (left + right) / 2, h - 8);\n}\n\n// Polyfill\nif (!CanvasRenderingContext2D.prototype.roundRect) {\n  CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, radii) {\n    const r = Array.isArray(radii) ? radii : [radii, radii, radii, radii];\n    const [tl, tr, br, bl] = r.map(v => Math.min(v || 0, Math.min(w, h) / 2));\n    this.moveTo(x + tl, y);\n    this.lineTo(x + w - tr, y);\n    this.quadraticCurveTo(x + w, y, x + w, y + tr);\n    this.lineTo(x + w, y + h - br);\n    this.quadraticCurveTo(x + w, y + h, x + w - br, y + h);\n    this.lineTo(x + bl, y + h);\n    this.quadraticCurveTo(x, y + h, x, y + h - bl);\n    this.lineTo(x, y + tl);\n    this.quadraticCurveTo(x, y, x, y + tl);\n    this.closePath();\n  };\n}\n\nphSlider.addEventListener('input', update);\npairSelect.addEventListener('change', update);\nindicatorSelect.addEventListener('change', update);\n\nupdate();\n</script>\n</body>\n</html>\n",
+      "css": "",
+      "js": ""
     },
     {
       "type": "heading",
@@ -145,6 +406,11 @@
     {
       "type": "text",
       "content": "<p><strong>المعايرة (Titrage/Dosage):</strong> تقنية تجريبية لتحديد تركيز محلول مجهول باستخدام محلول معلوم التركيز (المحلول المعاير).</p>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "البروتوكول التجريبي للمعايرة pH-مترية: 1. نملأ السحاحة بالمحلول المعاير ونضبط المستوى عند الصفر. 2. نسحب بواسطة ماصة عيارية حجماً معروفاً من المحلول المعاير ونضعه في البيشر. 3. نعاير pH-متر بمحلولين وسيطين مختلفين. 4. نغسل مسبر pH-متر جيداً بالماء المقطر ونجففه، ثم نغمره بحذر في البيشر. 5. نشغل المخلاة المغناطيسية ونبدأ في إضافة أحجام مختلفة من المحلول المعاير، ونسجل pH في كل إضافة."
     },
     {
       "type": "text",
@@ -160,12 +426,81 @@
     },
     {
       "type": "heading",
+      "text": "حالات المعايرة (4 حالات)",
+      "level": 3
+    },
+    {
+      "type": "table",
+      "headers": [
+        "الحالة",
+        "المثال",
+        "$pH$ عند التكافؤ",
+        "الكاشف المناسب"
+      ],
+      "rows": [
+        [
+          "حمض قوي + أساس قوي",
+          "$HCl + NaOH$",
+          "$pH = 7$",
+          "أزرق البروموتيمول أو الفينولفتالين"
+        ],
+        [
+          "أساس قوي + حمض قوي",
+          "$NaOH + HCl$",
+          "$pH = 7$",
+          "أزرق البروموتيمول أو الفينولفتالين"
+        ],
+        [
+          "حمض ضعيف + أساس قوي",
+          "$CH_3COOH + NaOH$",
+          "$pH > 7$ (قاعدي)",
+          "الفينولفتالين"
+        ],
+        [
+          "أساس ضعيف + حمض قوي",
+          "$NH_3 + HCl$",
+          "$pH < 7$ (حمضي)",
+          "أحمر الميثيل"
+        ]
+      ],
+      "caption": "الحالات الأربع للمعايرة حمض-أساس وخصائص كل منها"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "تفاعل مع المحاكاة أعلاه: جرب الحالات الأربع المختلفة (SS، SW، WS) ولاحظ تغير شكل المنحنى و pH عند التكافؤ."
+    },
+    {
+      "type": "heading",
       "text": "طرق كشف نقطة التكافؤ",
       "level": 3
     },
     {
       "type": "text",
-      "content": "<ul><li><strong>المعايرة الملونة:</strong> باستخدام كاشف ملون (مثل الفينولفتالين، البروموكريزول الأخضر)</li><li><strong>المعايرة pH-مترية:</strong> باستخدام pH-متر ورسم المنحنى $pH = f(V)$ حيث نقطة التكافؤ تقابل أكبر انحدار في المنحنى</li></ul>"
+      "content": "<ul><li><strong>المعايرة الملونة:</strong> باستخدام كاشف ملون مناسب (الفينولفتالين لقاعدة قوية، أحمر الميثيل لحمض قوي).</li><li><strong>المعايرة pH-مترية:</strong> باستخدام pH-متر ورسم المنحنى $pH = f(V)$ ثم تحديد نقطة التكافؤ بطريقة المماسين أو الاشتقاق.</li></ul>"
+    },
+    {
+      "type": "heading",
+      "text": "نقطة نصف التكافؤ (Demi-équivalence)",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>نقطة نصف التكافؤ:</strong> عندما نضيف نصف حجم الأساس اللازم للوصول إلى التكافؤ ($V_b = V_{eq}/2$). عند هذه النقطة:</p><ul><li>نصف كمية الحمض $HA$ قد تفاعلت لتتحول إلى $A^-$</li><li>إذن $[HA] = [A^-]$</li><li>وبالتالي $pH = pK_a$</li></ul><p><strong>تطبيق:</strong> يمكن تحديد $pK_a$ لحمض ضعيف بيانياً من منحنى المعايرة $pH = f(V_b)$ بإيجاد $pH$ عند $V_b = V_{eq}/2$.</p>"
+    },
+    {
+      "type": "heading",
+      "text": "طرق تحديد نقطة التكافؤ",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>1. طريقة المماسين (Méthode des tangentes):</strong> نرسم مماسين للمنحنى $pH = f(V_b)$ قبل وبعد نقطة التكافؤ، ثم نرسم خطاً موازياً لهما في منتصف المسافة. يقطع هذا الخط المنحنى في نقطة التكافؤ.</p><p><strong>2. طريقة الاشتقاق (Dérivée):</strong> نرسم المنحنى $dpH/dV_b = f(V_b)$. يمثل رأس هذا المنحنى نقطة التكافؤ (أعلى قيمة للاشتقاق).</p><p><strong>3. المعايرة الملونة:</strong> بإضافة كاشف ملون مناسب يتغير لونه عند نقطة التكافؤ.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "ملاحظة: قيمة $pK_a$ للثنائي المدروس تساوي $pH$ عند نقطة نصف التكافؤ. هذه الطريقة تسمح بتحديد $pK_a$ للحمض الضعيف تجريبياً."
     },
     {
       "type": "divider"
@@ -186,7 +521,7 @@
     {
       "type": "note",
       "variant": "info",
-      "text": "<strong>تطبيقات:</strong> تستخدم المحاليل الممددة في حفظ $pH$ ثابتاً في التفاعلات الحيوية (الدم، الأنظمة الحية)."
+      "text": "تطبيقات: تستخدم المحاليل الممددة في حفظ $pH$ ثابتاً في التفاعلات الحيوية (الدم، الأنظمة الحية)."
     }
   ]
 }

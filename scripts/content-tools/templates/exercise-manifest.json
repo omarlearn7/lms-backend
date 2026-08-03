@@ -1,0 +1,9 @@
+{
+  "prefix": "3AS-M",
+  "unit": "U09",
+  "items": [
+    { "file": "exercises/U09/001-exercice.json", "kind": "exercise" },
+    { "file": "exercises/U09/002-exercice.json", "kind": "exercise" },
+    { "file": "quizzes/U09/quiz.json", "kind": "quiz" }
+  ]
+}

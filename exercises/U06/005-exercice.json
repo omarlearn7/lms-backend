@@ -1,0 +1,69 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 005 - حساب السرعة الحجمية من ξ(t)",
+  "order_index": 5,
+  "source": "3AS U06 - Exercice 005",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 005"
+      },
+      {
+        "type": "text",
+        "content": "تفاعل تحلل H₂O₂ في وجود عامل شاد: 2 H₂O₂ → 2 H₂O + O₂(g). يتابع حجم O₂ المنطلق بدلالة الزمن عند T = 25°C (V_m = 24 L/mol). حجم المحلول V = 50 mL."
+      },
+      {
+        "type": "table",
+        "headers": ["t (min)", "0", "5", "10", "15", "20", "25", "30", "40", "50", "60"],
+        "rows": [
+          ["V(O₂) (mL)", "0", "18", "32", "43", "52", "59", "64", "72", "77", "80"]
+        ]
+      },
+      {
+        "type": "diagram",
+        "diagram_type": "interactive_graph",
+        "props": {
+          "data": [[0,0],[5,18],[10,32],[15,43],[20,52],[25,59],[30,64],[40,72],[50,77],[60,80]],
+          "xLabel": "t (min)",
+          "yLabel": "V(O₂) (mL)",
+          "title": "V(O₂) = f(t)",
+          "showTangent": true
+        }
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب التقدم ξ(t) = V(O₂) / V_m (بوحدة mmol) عند كل لحظة.",
+        "input_type": "text",
+        "placeholder": "ξ(t) = ... mmol"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "ارسم ξ(t) بدلالة t (صفياً أو ذهنياً). أحسب السرعة الحجمية v(t) = (1/V)·(dξ/dt) عند t = 10 min و t = 40 min باستخدام المماس.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "قارن قيم v(10) و v(40). لماذا تتناقص السرعة مع الزمن؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب التركيز [H₂O₂] عند t = 0 (الابتدائي) علماً أن n₀(H₂O₂) = 2 × ξ_f.",
+        "input_type": "numeric",
+        "placeholder": "[H₂O₂]₀ = ... mol/L"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "حدد زمن نصف التفاعل t₁/₂ بيانياً.",
+        "input_type": "numeric",
+        "placeholder": "t₁/₂ ≈ ... min"
+      }
+    ]
+  }
+}

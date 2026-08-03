@@ -1,0 +1,16 @@
+{
+  "unit_id": 25,
+  "title": "تمرين 001 - تسخين قطعة ألمنيوم والتوازن الحراري",
+  "order_index": 1,
+  "source": "2AS U25 - Exercice 001",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 001", "level": 3 },
+      { "type": "text", "content": "سخنا بموقد بنزن لمدة 10 دقائق قطعة ألمنيوم كتلتها mAl = 100 g ودرجة حرارتها θi = 10°C. يعطى cAl = 890 J/(kg.°C) و ce = 4180 J/(kg.°C)." },
+      { "type": "question", "number": 1, "text": "التحويل الطاقوي Q اللازم لرفع درجة حرارة قطعة الألمنيوم إلى θf = 80°C (بوحدة J):", "input_type": "numeric", "answer": { "value": 6230, "tolerance": 1 }, "solution": "Q = mAl.cAl.(θf − θi) = 0.1 × 890 × 70 = 6230 J." },
+      { "type": "question", "number": 2, "text": "استطاعة التحويل P (بوحدة W):", "input_type": "numeric", "answer": { "value": 10.38, "tolerance": 0.05 }, "solution": "P = Q/Δt = 6230/(10 × 60) = 10.38 W." },
+      { "type": "question", "number": 3, "text": "نضع قطعة الألمنيوم السابقة ذات درجة الحرارة θi1 = 80°C داخل إناء معزول حراريًا ويحتوي كتلة me = 500 g من الماء درجة حرارته θi2 = 15°C. بإهمال السعة الحرارية لمواد الإناء، درجة حرارة الجملة (ألمنيوم + ماء) عند التوازن الحراري (بوحدة °C):", "input_type": "numeric", "answer": { "value": 17.65, "tolerance": 0.05 }, "solution": "Q1 + Q2 = 0 أي mAl.cAl.(θf − 80) + me.ce.(θf − 15) = 0. منه 89θf − 7120 + 2090θf − 31350 = 0 إذن θf = 38470/2179 ≈ 17.65°C." },
+      { "type": "question", "number": 4, "text": "التحويل الحراري Q2 الذي يكتسبه الماء عند التوازن (بوحدة J):", "input_type": "numeric", "answer": { "value": 5538.5, "tolerance": 5 }, "solution": "Q2 = me.ce.(θf − θi2) = 0.5 × 4180 × (17.65 − 15) = 2090 × 2.65 ≈ 5538.5 J." }
+    ]
+  }
+}

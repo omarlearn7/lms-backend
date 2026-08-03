@@ -22,6 +22,32 @@
     },
     {
       "type": "heading",
+      "text": "تمهيد: تركيب النواة وترميزها",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>تتكون النواة من <strong>نيوكليونات</strong> (Nucléons): <strong>بروتونات</strong> (Protons) و <strong>نوترونات</strong> (Neutrons). يرمز للنواة بالشكل $^A_Z X$ حيث:</p><ul><li>$Z$: <strong>العدد الذري</strong> (عدد البروتونات)</li><li>$A$: <strong>العدد الكتلي</strong> (عدد النيوكليونات = البروتونات + النوترونات)</li><li>$N = A - Z$: <strong>عدد النوترونات</strong></li></ul>"
+    },
+    {
+      "type": "table",
+      "headers": ["الجسيم", "الرمز", "الكتلة (kg)", "الكتلة (u)", "الشحنة"],
+      "rows": [
+        ["بروتون", "$^1_1p$ أو $^1_1H$", "$1.6726 \\times 10^{-27}$", "$1.00728$", "$+e = +1.6 \\times 10^{-19} C$"],
+        ["نوترون", "$^1_0n$", "$1.6749 \\times 10^{-27}$", "$1.00866$", "$0$"],
+        ["إلكترون", "$^0_{-1}e$", "$9.1094 \\times 10^{-31}$", "$0.00055$", "$-e$"]
+      ],
+      "caption": "خصائص الجسيمات المكونة للنواة"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>النظائر (Isotopes):</strong> ذرات لنفس العنصر الكيميائي (نفس $Z$) تختلف في عدد النوترونات $N$ (وبالتالي في $A$). مثال: $^{12}_6C$، $^{13}_6C$، $^{14}_6C$.</p><p><strong>الكتلة المولية التقريبية:</strong> $M(^A_Z X) \\approx A \\; g/mol$.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
       "text": "I - أنواع الإشعاعات",
       "level": 2
     },
@@ -52,6 +78,66 @@
     {
       "type": "formula",
       "latex": "^A_Z X \\longrightarrow ^A_{Z-1} Y + \\beta^+ + \\nu_e \\quad \\text{(انحلال $\\beta^+$)}"
+    },
+    {
+      "type": "formula",
+      "latex": "^A_Z X^* \\longrightarrow ^A_Z X + \\gamma \\quad \\text{(إشعاع $\\gamma$ - إزالة الإثارة)}"
+    },
+    {
+      "type": "text",
+      "content": "<p>بعد التفكك $\\alpha$ أو $\\beta$، قد تكون النواة الابن في <strong>حالة مثارة</strong> (يرمز لها بـ $^*$). تعود النواة إلى حالتها الأساسية بإصدار إشعاع $\\gamma$ (فوتون عالي الطاقة).</p><p>مثال: $^{60}_{27}Co \\to ^{60}_{28}Ni^* + \\beta^-$، ثم $^{60}_{28}Ni^* \\to ^{60}_{28}Ni + \\gamma$.</p>"
+    },
+    {
+      "type": "heading",
+      "text": "قانوني الانحفاظ (صودي - Soddy)",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p>في كل تفاعل نووي يتحقق <strong>قانونا الانحفاظ</strong> التاليان (قانونا صودي):</p><ul><li><strong>انحفاظ العدد الكتلي $A$</strong>: مجموع $A$ للمتفاعلات = مجموع $A$ للنواتج.</li><li><strong>انحفاظ العدد الشحني $Z$</strong>: مجموع $Z$ للمتفاعلات = مجموع $Z$ للنواتج.</li></ul>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>تحقق القوانين:</strong></p><ul><li>انحلال $\\alpha$: $A \\to (A-4) + 4$ ✓، $Z \\to (Z-2) + 2$ ✓</li><li>انحلال $\\beta^-$: $A \\to A + 0$ ✓، $Z \\to (Z+1) + (-1)$ ✓</li><li>انحلال $\\beta^+$: $A \\to A + 0$ ✓، $Z \\to (Z-1) + (+1)$ ✓</li><li>إشعاع $\\gamma$: $A \\to A + 0$ ✓، $Z \\to Z + 0$ ✓ (لا تغيير في النواة)</li></ul>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I-bis - استقرار النواة ومخطط N-Z",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>استقرار النواة يعتمد على نسبة $N/Z$ (<strong>عدد النوترونات إلى عدد البروتونات</strong>). النوى المستقرة تقع ضمن <strong>حزام الاستقرار</strong> (Vallée de stabilité):</p>"
+    },
+    {
+      "type": "table",
+      "headers": ["النطاق", "نسبة N/Z", "الاستقرار"],
+      "rows": [
+        ["$Z < 20$ (نوى خفيفة)", "$N/Z \\approx 1$ (N = Z)", "مستقرة"],
+        ["$20 < Z < 80$", "$N/Z > 1$ (يزداد تدريجياً)", "مستقرة"],
+        ["$Z > 80$", "$N/Z >> 1$ (فائض نوترونات)", "غير مستقرة (نشاط إشعاعي)"]
+      ],
+      "caption": "علاقة N/Z باستقرار النواة"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "النوى التي تكون خارج حزام الاستقرار تنحل تلقائياً للوصول إلى الاستقرار: النوى الفائضة في النوترونات (N كبير) تنحل β⁻، والنوى الفائضة في البروتونات (Z كبير) تنحل β⁺ أو تلتقط إلكتروناً."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: مخطط N-Z",
+        "width": 680,
+        "height": 520
+      },
+      "html": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"ar\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>مخطط N-Z</title>\n<style>\n*{margin:0;padding:0;box-sizing:border-box}\nbody{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:8px}\n.container{max-width:680px;width:100%}\nh1{text-align:center;font-size:14px;color:#fbbf24;margin-bottom:4px}\ncanvas{background:#0f172a;border:1px solid #334155;border-radius:8px;display:block;margin:0 auto;width:100%;max-width:660px;height:400px}\n.info{background:#1e293b;border:1px solid #334155;border-radius:6px;padding:6px 10px;margin-top:4px;min-height:36px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}\n.info .label{color:#94a3b8;font-size:11px}\n.info .val{color:#fbbf24;font-size:13px;font-weight:700}\n.info .mode{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}\n.mode-stable{background:#166534;color:#86efac}\n.mode-bm{background:#1e3a5f;color:#93c5fd}\n.mode-bp{background:#5b2e0e;color:#fcd34d}\n.mode-alpha{background:#5f1a1a;color:#fca5a5}\n.legend{display:flex;gap:12px;justify-content:center;margin-top:4px;flex-wrap:wrap}\n.legend-item{display:flex;align-items:center;gap:4px;font-size:10px;color:#94a3b8}\n.legend-dot{width:10px;height:10px;border-radius:2px}\n</style>\n</head>\n<body>\n<div class=\"container\">\n<h1>مخطط N-Z — استقرار الأنوية</h1>\n<canvas id=\"c\" width=\"660\" height=\"400\"></canvas>\n<div class=\"info\" id=\"info\">\n<span class=\"label\">انقر على أي نواة: </span>\n<span class=\"val\" id=\"nucName\">⁴He</span>\n<span class=\"mode mode-stable\" id=\"nucMode\">مستقر</span>\n<span style=\"color:#94a3b8\" id=\"nucDetail\">N=2, Z=2, N/Z=1.00</span>\n</div>\n<div class=\"legend\">\n<span class=\"legend-item\"><span class=\"legend-dot\" style=\"background:#22c55e\"></span>مستقر</span>\n<span class=\"legend-item\"><span class=\"legend-dot\" style=\"background:#3b82f6\"></span>β⁻</span>\n<span class=\"legend-item\"><span class=\"legend-dot\" style=\"background:#eab308\"></span>β⁺</span>\n<span class=\"legend-item\"><span class=\"legend-dot\" style=\"background:#ef4444\"></span>α</span>\n</div>\n</div>\n<script>\nconst c=document.getElementById('c'),ctx=c.getContext('2d');\nconst W=660,H=400,ml=55,mr=20,mt=35,mb=35;\nconst pw=W-ml-mr,ph=H-mt-mb;\nconst Nmax=150,Zmax=100;\nfunction nx(n){return ml+(n/Nmax)*pw}\nfunction zy(z){return mt+((Zmax-z)/Zmax)*ph}\nconst isotopes=[\n{name:'⁴He',Z:2,N:2,type:'stable'},\n{name:'¹²C',Z:6,N:6,type:'stable'},\n{name:'¹⁶O',Z:8,N:8,type:'stable'},\n{name:'²⁰Ne',Z:10,N:10,type:'stable'},\n{name:'⁴⁰Ca',Z:20,N:20,type:'stable'},\n{name:'⁵⁶Fe',Z:26,N:30,type:'stable'},\n{name:'⁶³Cu',Z:29,N:34,type:'stable'},\n{name:'¹⁰⁸Ag',Z:47,N:61,type:'stable'},\n{name:'¹⁹⁷Au',Z:79,N:118,type:'stable'},\n{name:'²⁰⁸Pb',Z:82,N:126,type:'stable'},\n{name:'³H',Z:1,N:2,type:'bm',eq:'³H → ³He + β⁻ + ν̅ₑ'},\n{name:'¹⁴C',Z:6,N:8,type:'bm',eq:'¹⁴C → ¹⁴N + β⁻ + ν̅ₑ'},\n{name:'⁶⁰Co',Z:27,N:33,type:'bm',eq:'⁶⁰Co → ⁶⁰Ni + β⁻ + ν̅ₑ + γ'},\n{name:'⁹⁰Sr',Z:38,N:52,type:'bm',eq:'⁹⁰Sr → ⁹⁰Y + β⁻ + ν̅ₑ'},\n{name:'¹³¹I',Z:53,N:78,type:'bm',eq:'¹³¹I → ¹³¹Xe + β⁻ + ν̅ₑ'},\n{name:'¹³⁷Cs',Z:55,N:82,type:'bm',eq:'¹³⁷Cs → ¹³⁷Ba + β⁻ + ν̅ₑ'},\n{name:'¹¹C',Z:6,N:5,type:'bp',eq:'¹¹C → ¹¹B + β⁺ + νₑ'},\n{name:'¹³N',Z:7,N:6,type:'bp',eq:'¹³N → ¹³C + β⁺ + νₑ'},\n{name:'¹⁵O',Z:8,N:7,type:'bp',eq:'¹⁵O → ¹⁵N + β⁺ + νₑ'},\n{name:'¹⁸F',Z:9,N:9,type:'bp',eq:'¹⁸F → ¹⁸O + β⁺ + νₑ'},\n{name:'²¹⁰Po',Z:84,N:126,type:'alpha',eq:'²¹⁰Po → ²⁰⁶Pb + α'},\n{name:'²²⁶Ra',Z:88,N:138,type:'alpha',eq:'²²⁶Ra → ²²²Rn + α'},\n{name:'²³⁸U',Z:92,N:146,type:'alpha',eq:'²³⁸U → ²³⁴Th + α'},\n{name:'²⁴¹Am',Z:95,N:146,type:'alpha',eq:'²⁴¹Am → ²³⁷Np + α'}\n];\nfunction valleyZ(z){if(z<=20)return z;return z+(z-20)*0.45}\nlet hover=null;\nfunction draw(){\nctx.clearRect(0,0,W,H);\nctx.save();\nctx.fillStyle='#1e293b';ctx.fillRect(ml,mt,pw,ph);\nctx.strokeStyle='#334155';ctx.lineWidth=0.5;\nfor(let i=0;i<=Nmax;i+=10){ctx.beginPath();ctx.moveTo(nx(i),mt);ctx.lineTo(nx(i),mt+ph);ctx.stroke()}\nfor(let i=0;i<=Zmax;i+=10){ctx.beginPath();ctx.moveTo(ml,zy(i));ctx.lineTo(ml+pw,zy(i));ctx.stroke()}\nctx.beginPath();\nfor(let z=0;z<=Zmax;z++){const n=valleyZ(z);if(z===0)ctx.moveTo(nx(n),zy(z));else ctx.lineTo(nx(n),zy(z))}\nctx.strokeStyle='#fbbf24';ctx.lineWidth=2;ctx.stroke();\nctx.fillStyle='rgba(59,130,246,0.12)';ctx.beginPath();\nfor(let z=0;z<=Zmax;z++){const n=Math.min(Nmax,valleyZ(z)+8);ctx.lineTo(nx(n),zy(z))}\nfor(let z=Zmax;z>=0;z--){const n=Math.min(Nmax,valleyZ(z)+2);if(z===Zmax)ctx.moveTo(nx(n),zy(z));else ctx.lineTo(nx(n),zy(z))}\nctx.closePath();ctx.fill();\nctx.fillStyle='rgba(234,179,8,0.12)';ctx.beginPath();\nfor(let z=0;z<=80;z++){const n=Math.max(0,valleyZ(z)-2);ctx.lineTo(nx(n),zy(z))}\nfor(let z=80;z>=0;z--){const n=Math.max(0,valleyZ(z)-8);if(z===80)ctx.moveTo(nx(n),zy(z));else ctx.lineTo(nx(n),zy(z))}\nctx.closePath();ctx.fill();\nctx.fillStyle='rgba(239,68,68,0.15)';ctx.fillRect(nx(120),0,pw-nx(120),zy(80));\nctx.strokeStyle='#475569';ctx.lineWidth=1;\nctx.beginPath();ctx.moveTo(nx(0),mt+ph);ctx.lineTo(nx(0),mt);ctx.lineTo(nx(0),mt);ctx.stroke();\nctx.beginPath();ctx.moveTo(ml,zy(0));ctx.lineTo(ml+pw,zy(0));ctx.stroke();\nctx.fillStyle='#94a3b8';ctx.font='10px sans-serif';ctx.textAlign='center';\nfor(let i=0;i<=Nmax;i+=30){ctx.fillText(i,nx(i),mt+ph+14)}\nctx.textAlign='right';ctx.fillText('N (عدد النوترونات)',nx(Nmax/2),mt+ph+26);\nfor(let i=0;i<=Zmax;i+=20){ctx.textAlign='right';ctx.fillText(i,ml-6,zy(i)+4)}\nctx.save();ctx.translate(14,mt+ph/2);ctx.rotate(-Math.PI/2);ctx.textAlign='center';ctx.fillText('Z (عدد البروتونات)',0,0);ctx.restore();\nctx.font='9px sans-serif';\nfor(const iso of isotopes){\nconst x=nx(iso.N),y=zy(iso.Z);\nconst isHover=hover&&hover.N===iso.N&&hover.Z===iso.Z;\nctx.beginPath();ctx.arc(x,y,isHover?8:5,0,Math.PI*2);\nconst colors={stable:'#22c55e',bm:'#3b82f6',bp:'#eab308',alpha:'#ef4444'};\nctx.fillStyle=colors[iso.type];ctx.fill();\nif(isHover){ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke()}\nctx.fillStyle=iso.N<25&&iso.N>5?'#fff':'transparent';ctx.font='7px sans-serif';ctx.textAlign='center';ctx.fillText(iso.name,x,y+2.5)\n}\nctx.restore()\n}\nfunction hitTest(mx,my){\nlet best=null,bestD=15;\nfor(const iso of isotopes){\nconst x=nx(iso.N),y=zy(iso.Z);\nconst d=Math.sqrt((mx-x)**2+(my-y)**2);\nif(d<bestD){bestD=d;best=iso}\n}\nreturn best}\nc.addEventListener('mousemove',e=>{\nconst r=c.getBoundingClientRect();\nconst mx=(e.clientX-r.left)*(c.width/r.width),my=(e.clientY-r.top)*(c.height/r.height);\nhover=hitTest(mx,my);\ndraw();updateInfo(hover)});\nc.addEventListener('click',e=>{\nconst r=c.getBoundingClientRect();\nconst mx=(e.clientX-r.left)*(c.width/r.width),my=(e.clientY-r.top)*(c.height/r.height);\nconst h=hitTest(mx,my);if(h){hover=h;draw();updateInfo(h)}});\nconst typeNames={stable:'مستقر',bm:'مشع β⁻',bp:'مشع β⁺',alpha:'مشع α'};\nconst typeModes={stable:'mode-stable',bm:'mode-bm',bp:'mode-bp',alpha:'mode-alpha'};\nfunction updateInfo(iso){\nconst ni=document.getElementById('nucName'),nm=document.getElementById('nucMode'),nd=document.getElementById('nucDetail');\nif(!iso){ni.textContent='—';nm.textContent='';nm.className='mode';nd.textContent='حرك المؤشر فوق نواة أو انقر'}\nelse{\nni.textContent=iso.name;\nnm.textContent=typeNames[iso.type];\nnm.className='mode '+typeModes[iso.type];\nnd.textContent='N='+iso.N+', Z='+iso.Z+', N/Z='+(iso.N/iso.Z).toFixed(2)+(iso.eq?' | '+iso.eq:'')\n}}\ndraw();updateInfo(isotopes[0])\n</script>\n</body>\n</html>",
+      "css": "",
+      "js": ""
     },
     {
       "type": "divider"
@@ -109,7 +195,7 @@
     {
       "type": "note",
       "variant": "info",
-      "text": "<strong>1 Bq = 1 انحلال/ثانية.</strong> الوحدة القديمة: $1 Ci$ (كوري) $= 3.7 \\times 10^{10} Bq$."
+      "text": "1 Bq = 1 انحلال/ثانية. الوحدة القديمة: $1 Ci$ (كوري) $= 3.7 \\times 10^{10} Bq$."
     },
     {
       "type": "divider"
@@ -138,6 +224,23 @@
       "caption": "بعض النظائر المشعة المستخدمة في التأريخ"
     },
     {
+      "type": "note",
+      "variant": "tip",
+      "text": "تفاعل مع المحاكاة: غير قيمة λ ولاحظ تغير منحنى N(t) وعمر النصف t₁/₂ في الوقت الفعلي."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: التناقص الإشعاعي",
+        "width": 680,
+        "height": 560
+      },
+      "html": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"ar\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>محاكاة التناقص الإشعاعي</title>\n<style>\n*{margin:0;padding:0;box-sizing:border-box}\nbody{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:12px;min-height:100vh}\n.container{max-width:700px;width:100%}\nh1{text-align:center;font-size:15px;color:#fbbf24;margin-bottom:4px}\ncanvas#mainCanvas{background:#0f172a;border:1px solid #334155;border-radius:8px;display:block;margin:0 auto;width:100%;max-width:680px;height:340px}\n.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;background:#1e293b;border-radius:8px;padding:10px;border:1px solid #334155}\n.ctrl-group{display:flex;flex-direction:column;gap:2px}\n.ctrl-group label{font-size:11px;color:#94a3b8}\n.ctrl-group .val{color:#fbbf24;font-size:12px;font-weight:700}\ninput[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}\ninput[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer}\n.btn-group{display:flex;gap:6px}\n.btn{flex:1;background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:5px;font-size:11px;cursor:pointer;text-align:center;transition:all .15s}\n.btn.active{background:#3b82f6;color:#fff;border-color:#3b82f6;font-weight:700}\n.btn:hover{background:#475569;color:#e2e8f0}\n.info-row{display:flex;gap:10px;justify-content:center;margin-top:6px;font-size:12px;color:#94a3b8;flex-wrap:wrap}\n.info-row span{background:#1e293b;padding:4px 10px;border-radius:4px;border:1px solid #334155}\n.info-row .big{font-size:14px;font-weight:700}\n.info-row .n-val{color:#38bdf8}\n.info-row .a-val{color:#f59e0b}\n.info-row .t-val{color:#22c55e}\n</style>\n</head>\n<body>\n<div class=\"container\">\n  <h1>محاكاة التناقص الإشعاعي: N(t) = N₀ · e⁻λᵗ</h1>\n  <canvas id=\"mainCanvas\" width=\"680\" height=\"340\"></canvas>\n  <div class=\"controls\">\n    <div class=\"ctrl-group full\">\n      <label>ثابت النشاط الإشعاعي λ: <span class=\"val\" id=\"lambdaDisplay\">0.10 s⁻¹</span></label>\n      <input type=\"range\" id=\"lambdaSlider\" min=\"0.01\" max=\"0.50\" step=\"0.01\" value=\"0.10\">\n    </div>\n    <div class=\"ctrl-group full\">\n      <label>عمر النصف t₁/₂: <span class=\"val\" id=\"halfLifeDisplay\">6.93 s</span></label>\n    </div>\n    <div class=\"btn-group full\">\n      <div class=\"btn active\" id=\"playBtn\">تشغيل ▶</div>\n      <div class=\"btn\" id=\"resetBtn\">إعادة تعيين ↺</div>\n    </div>\n  </div>\n  <div class=\"info-row\">\n    <span>الزمن: <span class=\"t-val big\" id=\"timeDisplay\">0.0</span> s</span>\n    <span>N(t): <span class=\"n-val big\" id=\"nDisplay\">1000</span></span>\n    <span>A(t): <span class=\"a-val big\" id=\"aDisplay\">100.0</span> Bq</span>\n    <span>N(t)/N₀: <span class=\"big\" id=\"ratioDisplay\">100</span>%</span>\n  </div>\n</div>\n<script>\nconst canvas = document.getElementById('mainCanvas');\nconst ctx = canvas.getContext('2d');\nconst W = canvas.width, H = canvas.height;\n\nconst N0 = 1000;\nlet lambda = 0.10;\nlet t = 0;\nlet playing = true;\nlet animId = null;\n\nconst plotLeft = 70, plotRight = 640, plotTop = 30, plotBottom = 310;\nconst plotW = plotRight - plotLeft, plotH = plotBottom - plotTop;\n\nconst T_MAX = 30;\n\nfunction n(t) { return N0 * Math.exp(-lambda * t); }\nfunction a(t) { return lambda * n(t); }\n\nfunction draw() {\n  ctx.clearRect(0, 0, W, H);\n  ctx.strokeStyle = '#1e293b';\n  ctx.lineWidth = 1;\n  ctx.setLineDash([3, 3]);\n  for (let i = 0; i <= 4; i++) {\n    const y = plotTop + (i / 4) * plotH;\n    ctx.beginPath(); ctx.moveTo(plotLeft, y); ctx.lineTo(plotRight, y);\n    ctx.stroke();\n  }\n  for (let i = 0; i <= 6; i++) {\n    const x = plotLeft + (i / 6) * plotW;\n    ctx.beginPath(); ctx.moveTo(x, plotTop); ctx.lineTo(x, plotBottom);\n    ctx.stroke();\n  }\n  ctx.setLineDash([]);\n  ctx.strokeStyle = '#475569';\n  ctx.lineWidth = 1.5;\n  ctx.beginPath(); ctx.moveTo(plotLeft, plotTop); ctx.lineTo(plotLeft, plotBottom); ctx.lineTo(plotRight, plotBottom);\n  ctx.stroke();\n  ctx.fillStyle = '#94a3b8';\n  ctx.font = '11px sans-serif';\n  ctx.textAlign = 'center'; ctx.textBaseline = 'top';\n  for (let i = 0; i <= 6; i++) {\n    const val = (i / 6) * T_MAX;\n    const x = plotLeft + (i / 6) * plotW;\n    ctx.fillText(val.toFixed(0), x, plotBottom + 4);\n  }\n  ctx.fillText('t (s)', plotRight, plotBottom + 4);\n  ctx.textAlign = 'right'; ctx.textBaseline = 'middle';\n  for (let i = 0; i <= 4; i++) {\n    const val = 100 - (i / 4) * 100;\n    const y = plotTop + (i / 4) * plotH;\n    ctx.fillText(val.toFixed(0) + '%', plotLeft - 6, y);\n  }\n  ctx.textAlign = 'center';\n  ctx.save(); ctx.translate(15, (plotTop + plotBottom) / 2); ctx.rotate(-Math.PI / 2);\n  ctx.fillText('N(t) / N₀', 0, 0);\n  ctx.restore();\n  ctx.strokeStyle = '#38bdf8';\n  ctx.lineWidth = 2.5;\n  ctx.beginPath();\n  for (let px = 0; px <= plotW; px++) {\n    const tv = (px / plotW) * T_MAX;\n    const nv = n(tv);\n    const nx = plotLeft + px;\n    const ny = plotBottom - (nv / N0) * plotH;\n    px === 0 ? ctx.moveTo(nx, ny) : ctx.lineTo(nx, ny);\n  }\n  ctx.stroke();\n  ctx.strokeStyle = '#f59e0b';\n  ctx.lineWidth = 1.5;\n  ctx.setLineDash([4, 3]);\n  const A0 = a(0);\n  ctx.beginPath();\n  for (let px = 0; px <= plotW; px++) {\n    const tv = (px / plotW) * T_MAX;\n    const av = a(tv);\n    const nx = plotLeft + px;\n    const ny = plotBottom - (av / A0) * plotH;\n    px === 0 ? ctx.moveTo(nx, ny) : ctx.lineTo(nx, ny);\n  }\n  ctx.stroke();\n  ctx.setLineDash([]);\n  const curN = n(t);\n  const curA = a(t);\n  const nx = plotLeft + (t / T_MAX) * plotW;\n  const ny = plotBottom - (curN / N0) * plotH;\n  const ny2 = plotBottom - (curA / A0) * plotH;\n  ctx.fillStyle = '#38bdf8';\n  ctx.beginPath(); ctx.arc(nx, ny, 5, 0, 2 * Math.PI); ctx.fill();\n  ctx.strokeStyle = '#e2e8f0';\n  ctx.lineWidth = 1;\n  ctx.stroke();\n  ctx.fillStyle = '#f59e0b';\n  ctx.beginPath(); ctx.arc(nx, ny2, 4, 0, 2 * Math.PI); ctx.fill();\n  ctx.strokeStyle = '#64748b';\n  ctx.lineWidth = 1;\n  ctx.setLineDash([3, 3]);\n  ctx.beginPath(); ctx.moveTo(nx, plotTop); ctx.lineTo(nx, plotBottom); ctx.stroke();\n  ctx.setLineDash([]);\n  const hl = Math.log(2) / lambda;\n  ctx.fillStyle = '#22c55e';\n  ctx.font = '10px sans-serif';\n  for (let k = 1; k <= 4; k++) {\n    const tx = k * hl;\n    if (tx > T_MAX) break;\n    const hx = plotLeft + (tx / T_MAX) * plotW;\n    const hn = n(tx);\n    const hy = plotBottom - (hn / N0) * plotH;\n    ctx.strokeStyle = '#22c55e';\n    ctx.lineWidth = 1;\n    ctx.setLineDash([2, 4]);\n    ctx.beginPath(); ctx.moveTo(hx, hy); ctx.lineTo(hx, plotBottom); ctx.stroke();\n    ctx.setLineDash([]);\n    ctx.fillText(k + 't\\u2081\\u2082', hx - 12, plotBottom + 4);\n  }\n  ctx.fillStyle = '#1e293b';\n  ctx.fillRect(470, 36, 155, 48);\n  ctx.strokeStyle = '#334155';\n  ctx.lineWidth = 1;\n  ctx.strokeRect(470, 36, 155, 48);\n  ctx.strokeStyle = '#38bdf8';\n  ctx.lineWidth = 2.5;\n  ctx.beginPath(); ctx.moveTo(478, 50); ctx.lineTo(508, 50); ctx.stroke();\n  ctx.fillStyle = '#e2e8f0';\n  ctx.font = '10px sans-serif';\n  ctx.textAlign = 'left'; ctx.textBaseline = 'middle';\n  ctx.fillText('N(t) / N\\u2080', 515, 50);\n  ctx.strokeStyle = '#f59e0b';\n  ctx.lineWidth = 1.5;\n  ctx.setLineDash([4, 3]);\n  ctx.beginPath(); ctx.moveTo(478, 72); ctx.lineTo(508, 72); ctx.stroke();\n  ctx.setLineDash([]);\n  ctx.fillStyle = '#e2e8f0';\n  ctx.fillText('A(t) / A\\u2080', 515, 72);\n}\n\nfunction update() {\n  document.getElementById('lambdaDisplay').textContent = lambda.toFixed(2) + ' s\\u207b\\u00b9';\n  const hl = Math.log(2) / lambda;\n  document.getElementById('halfLifeDisplay').textContent = hl.toFixed(2) + ' s';\n  document.getElementById('timeDisplay').textContent = t.toFixed(1);\n  document.getElementById('nDisplay').textContent = Math.round(n(t));\n  document.getElementById('aDisplay').textContent = a(t).toFixed(1);\n  document.getElementById('ratioDisplay').textContent = ((n(t) / N0) * 100).toFixed(1);\n}\n\nfunction step(dt) {\n  if (!playing) return;\n  t += dt;\n  if (t > T_MAX) { t = 0; }\n  draw();\n  update();\n}\n\nfunction animate(ts) {\n  step(0.1);\n  animId = requestAnimationFrame(animate);\n}\n\ndocument.getElementById('lambdaSlider').addEventListener('input', function() {\n  lambda = parseFloat(this.value);\n  t = Math.min(t, T_MAX);\n  draw();\n  update();\n});\n\ndocument.getElementById('playBtn').addEventListener('click', function() {\n  playing = !playing;\n  this.textContent = playing ? '\\u0625\\u064a\\u0642\\u0627\\u0641 \\u0645\\u0624\\u0642\\u062a \\u23f8' : '\\u062a\\u0634\\u063a\\u064a\\u0644 \\u25b6';\n  this.classList.toggle('active', playing);\n});\n\ndocument.getElementById('resetBtn').addEventListener('click', function() {\n  t = 0;\n  draw();\n  update();\n});\n\ndraw();\nupdate();\nrequestAnimationFrame(animate);\n</script>\n</body>\n</html>",
+      "css": "",
+      "js": ""
+    },
+    {
       "type": "divider"
     },
     {
@@ -156,7 +259,7 @@
     {
       "type": "note",
       "variant": "warning",
-      "text": "<strong>الأمان الإشعاعي:</strong> يجب التعامل مع المواد المشعة بحذر شديد لأن الإشعاعات تؤدي إلى تأين الخلايا الحية وقد تسبب أضراراً صحية."
+      "text": "الأمان الإشعاعي: يجب التعامل مع المواد المشعة بحذر شديد لأن الإشعاعات تؤدي إلى تأين الخلايا الحية وقد تسبب أضراراً صحية."
     }
   ]
 }

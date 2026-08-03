@@ -1,0 +1,19 @@
+{
+  "unit_id": 22,
+  "title": "تمرين 005 - توازن قضيب خاضع لقوى",
+  "order_index": 5,
+  "source": "2AS U22 - Exercice 004",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 005", "level": 3 },
+      { "type": "text", "content": "قضيب قابل للدوران من دون احتكاك حول محور Δ عمودي عليه ومار من منتصفه، يخضع في أربع نقاط منه إلى قوى F1 و F2 و F3 و F4 على الترتيب، ويكون عندئذ غير متوازن. يعطى: F1 = 10 N و F2 = 7 N و F3 = 8 N و F4 = 4 N و OA = 20 cm و OB = 50 cm و OC = 30 cm و OD = 50 cm." },
+      { "type": "question", "number": 1, "text": "عزم القوة F1 يساوي:", "input_type": "numeric", "answer": { "value": 2, "tolerance": 0.01 }, "solution": "M(F1) = F1.OA = 10 × 0.2 = 2 N.m." },
+      { "type": "question", "number": 2, "text": "مجموع عزوم القوى في الاتجاه 1 يساوي:", "input_type": "numeric", "answer": { "value": 5.5, "tolerance": 0.01 }, "solution": "M1 = M(F1) + M(F2) = 2 + F2.OB = 2 + 7 × 0.5 = 2 + 3.5 = 5.5 N.m." },
+      { "type": "question", "number": 3, "text": "مجموع عزوم القوى في الاتجاه 2 يساوي:", "input_type": "numeric", "answer": { "value": 4.4, "tolerance": 0.01 }, "solution": "M2 = M(F3) + M(F4) = F3.OC + F4.OD = 8 × 0.3 + 4 × 0.5 = 2.4 + 2 = 4.4 N.m." },
+      { "type": "question", "number": 4, "text": "بمقارنة مجموعي العزوم، في أي اتجاه يدور القضيب؟", "input_type": "mcq", "options": ["الاتجاه 1 لأن M1 > M2", "الاتجاه 2 لأن M2 > M1", "لا يدور لأن M1 = M2"], "answer": { "value": "الاتجاه 1 لأن M1 > M2" }, "solution": "نلاحظ أن M1 = 5.5 N.m > M2 = 4.4 N.m، إذن القضيب يدور في الاتجاه 1." },
+      { "type": "text", "content": "نطبق قوة خامسة F5 شدتها 11 N على القضيب في نقطة E منه حتى يصبح في حالة توازن." },
+      { "type": "question", "number": 5, "text": "شرط توازن القضيب هو:", "input_type": "mcq", "options": ["المجموع الجبري لعزوم القوى الخارجية معدوم", "مجموع شدة القوى معدوم", "عزم كل قوة معدوم"], "answer": { "value": "المجموع الجبري لعزوم القوى الخارجية معدوم" }, "solution": "يتوازن جسم صلب قابل للدوران حول محور ثابت عندما يكون المجموع الجبري لعزوم القوى الخارجية معدومًا: Σ M/Δ(Fext) = 0." },
+      { "type": "question", "number": 6, "text": "احسب بعد نقطة تطبيق القوة F5 عن محور الدوران. (بوحدة m)", "input_type": "numeric", "answer": { "value": 0.1, "tolerance": 0.01 }, "solution": "OE = (F1.OA + F2.OB − F3.OC − F4.OD)/F5 = (2 + 3.5 − 2.4 − 2)/11 = 1.1/11 = 0.1 m = 10 cm." }
+    ]
+  }
+}

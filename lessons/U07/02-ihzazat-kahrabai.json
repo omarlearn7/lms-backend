@@ -27,6 +27,18 @@
     },
     {
       "type": "text",
+      "content": "<p>في دارة حقيقية $(R, L, C)$، توجد دائماً مقاومة $R$ (مقاومة الوشيعة $r$ + ناقل أومي) فتصبح المعادلة التفاضلية:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "L\\frac{d^2q}{dt^2} + R\\frac{dq}{dt} + \\frac{q}{C} = 0"
+    },
+    {
+      "type": "text",
+      "content": "<p>ولتسهيل الدراسة، نبدأ بالنموذج <strong>المثالي (LC)</strong> الذي نهمل فيه كل مقاومة ($R = 0$): إذن $u_L + u_C = 0$. هذا الفرض مقبول لقصير الأمد لأن الدور الذاتي أصغر بكثير من زمن تبديد الطاقة. بعد ذلك (في الجزء III) نعيد إدخال $R$ لدراسة التخميد.</p>"
+    },
+    {
+      "type": "text",
       "content": "<p>بتطبيق قانون إضافية التوترات على دارة $LC$:</p>"
     },
     {
@@ -58,6 +70,32 @@
       "content": "<p>حيث:</p><ul><li><strong>النبض الذاتي:</strong> $\\omega_0 = \\frac{1}{\\sqrt{LC}}$</li><li><strong>الدور الذاتي:</strong> $T_0 = \\frac{2\\pi}{\\omega_0} = 2\\pi \\sqrt{LC}$ (صيغة طومسون)</li><li><strong>التواتر الذاتي:</strong> $f_0 = \\frac{1}{T_0} = \\frac{1}{2\\pi \\sqrt{LC}}$</li></ul>"
     },
     {
+      "type": "note",
+      "variant": "info",
+      "text": "تشابه مع الميكانيك (انظر جدول التشابه في الدرس 1): دارة LC تشابه النواس المرن: $L \\leftrightarrow m$، $\\frac{1}{C} \\leftrightarrow k$، $q \\leftrightarrow x$، $i \\leftrightarrow v$، $R \\leftrightarrow h$. الدور الذاتي $T_0 = 2\\pi\\sqrt{LC}$ يناظر $T_0 = 2\\pi\\sqrt{\\frac{m}{k}}$، والطاقة الكلية $E = \\frac{1}{2}\\frac{q^2}{C} + \\frac{1}{2}Li^2$ تناظر $E = \\frac{1}{2}kx^2 + \\frac{1}{2}mv^2$."
+    },
+    {
+      "type": "diagram",
+      "diagram_type": "circuit_rc",
+      "props": {
+        "rValue": "R=0",
+        "cValue": "C",
+        "eValue": "LC"
+      }
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: دارة LC — التذبذبات الكهربائية",
+        "width": 680,
+        "height": 520
+      },
+      "html": "<div class=\"cont\"><h1>محاكاة تفاعلية: دارة LC — التذبذبات الكهربائية الحرة</h1><canvas id=\"lcc\" width=\"660\" height=\"360\"></canvas><div class=\"ctrls\"><div class=\"row\"><div class=\"grp\"><label>L: <span id=\"lVal\">1.0</span> H</label><input type=\"range\" id=\"lSld\" min=\"0.1\" max=\"5\" value=\"1\" step=\"0.1\"></div><div class=\"grp\"><label>C: <span id=\"cVal\">10</span> µF</label><input type=\"range\" id=\"cSld\" min=\"1\" max=\"100\" value=\"10\" step=\"1\"></div><div class=\"grp\"><label>Q₀: <span id=\"qVal\">10</span> µC</label><input type=\"range\" id=\"qSld\" min=\"1\" max=\"20\" value=\"10\" step=\"0.5\"></div><div class=\"grp\"><label>R: <span id=\"rVal\">0</span> Ω</label><input type=\"range\" id=\"rSld\" min=\"0\" max=\"100\" value=\"0\" step=\"1\"></div></div><div class=\"row\"><div class=\"grp wide\"><label>t: <span id=\"tValL\" class=\"vl\">0.00</span> ms</label><input type=\"range\" id=\"tSldL\" min=\"0\" max=\"300\" value=\"0\" step=\"0.5\"></div><div class=\"grp\"><div class=\"btn\" id=\"playLC\">▶</div></div><div class=\"grp\"><div class=\"btn\" id=\"rstLC\">↺</div></div></div><div class=\"row\"><div class=\"grp speed-group\"><div class=\"btn speed-btn active\" data-speed=\"0.5\">0.5×</div><div class=\"btn speed-btn\" data-speed=\"1\">1×</div><div class=\"btn speed-btn\" data-speed=\"2\">2×</div><div class=\"btn speed-btn\" data-speed=\"5\">5×</div></div></div><div class=\"row stats\"><span>T₀ = <b id=\"periodValL\">—</b> ms</span><span>ω₀ = <b id=\"omegaValL\">—</b> krad/s</span><span>E<sub>C</sub> = <b id=\"ecVal\" style=\"color:#fbbf24\">—</b> µJ</span><span>E<sub>L</sub> = <b id=\"elVal\" style=\"color:#22c55e\">—</b> µJ</span><span>E<sub>T</sub> = <b id=\"etVal\" style=\"color:#38bdf8\">—</b> µJ</span></div></div></div>",
+      "css": "*{margin:0;padding:0;box-sizing:border-box}body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;padding:6px}.cont{max-width:680px;width:100%;margin:0 auto}h1{text-align:center;font-size:12px;color:#fbbf24;margin-bottom:3px}canvas{background:#0f172a;border:1px solid #334155;border-radius:6px;display:block;margin:0 auto;width:100%;max-width:660px;height:360px}.ctrls{display:flex;flex-direction:column;gap:2px;margin-top:3px;background:#1e293b;border-radius:6px;padding:5px;border:1px solid #334155}.row{display:flex;gap:3px;align-items:center;flex-wrap:wrap}.grp{flex:1;min-width:70px;display:flex;flex-direction:column;gap:1px}.grp label{font-size:9px;color:#94a3b8;white-space:nowrap}.vl{color:#fbbf24;font-size:12px;font-weight:700}.grp.wide{flex:2}.btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:10px;cursor:pointer;text-align:center;min-width:40px}.btn:hover{background:#475569;color:#e2e8f0}.btn.active{background:#166534;color:#86efac;border-color:#22c55e}.speed-group{display:flex;gap:2px;margin-top:0;min-width:100%}.speed-btn{flex:1;padding:1px 2px;font-size:8px;min-width:0;text-align:center}.speed-btn.active{background:#3b82f6;color:#fff;border-color:#3b82f6;font-weight:700}.stats{flex-wrap:wrap;justify-content:center;gap:8px;font-size:10px;color:#94a3b8;margin-top:1px}.stats b{font-size:11px}input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#f59e0b;cursor:pointer}",
+      "js": "var c=document.getElementById('lcc'),ctx=c.getContext('2d');var W=660,H=360,pL=225,pR=12,pT=22,pB=32,gW=W-pL-pR,gH=H-pT-pB;var L=1,C=10e-6,Q0=10e-6,R=0;var simTime=0,playing=false,speed=1,timer=null,tStep=2e-5,maxT=5e-3;function omega0(){return 1/Math.sqrt(L*C)}function gamma(){return R/(2*L)}function period(){return 2*Math.PI/omega0()}function dampW(){var w=omega0(),g=gamma();return Math.sqrt(Math.max(0,w*w-g*g))}function q(t){var w=omega0(),g=gamma();if(g<0.001)return Q0*Math.cos(w*t);var wd=dampW();return Q0*Math.exp(-g*t)*Math.cos(wd*t)}function iq(t){var dt=1e-7;return(q(t+dt)-q(t-dt))/(2*dt)}function uC(t){return q(t)/C}function eC(t){var qq=q(t);return 0.5*qq*qq/C}function eL(t){var ii=iq(t);return 0.5*L*ii*ii}function eT(t){return eC(t)+eL(t)}function toGx(t){return pL+(t/maxT)*gW}function toGy(v,maxV){return pT+gH/2-(v/(maxV*1.3))*(gH/2)}var maxQ=Q0;function draw(){ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);ctx.strokeStyle='#475569';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pL,pT);ctx.lineTo(pL,pT+gH);ctx.lineTo(pL+gW,pT+gH);ctx.stroke();maxQ=Q0;for(var i=-2;i<=2;i++){var y=pT+gH/2+i*(gH/6);ctx.strokeStyle='rgba(71,85,105,0.3)';ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(pL+gW,y);ctx.stroke();ctx.fillStyle='#64748b';ctx.font='8px sans-serif';ctx.textAlign='right';var lab=(Q0*1.3*i/3);ctx.fillText((lab*1e6).toFixed(1),pL-3,y+3)}for(var i=0;i<=5;i++){var tt=(i/5)*maxT;var xv=toGx(tt);ctx.strokeStyle='rgba(71,85,105,0.3)';ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(xv,pT);ctx.lineTo(xv,pT+gH);ctx.stroke();ctx.fillStyle='#64748b';ctx.font='8px sans-serif';ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText((tt*1e3).toFixed(1),xv,pT+gH+3)}ctx.fillStyle='#94a3b8';ctx.font='9px sans-serif';ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText('t (ms)',pL+gW/2,H-8);ctx.save();ctx.translate(10,pT+gH/2);ctx.rotate(-Math.PI/2);ctx.fillText('q (µC)',0,0);ctx.restore();ctx.strokeStyle='#38bdf8';ctx.lineWidth=2;ctx.beginPath();for(var t=0;t<=maxT;t+=maxT/200){var qv=q(t);ctx.lineTo(toGx(t),toGy(qv,Q0))}ctx.stroke();var curX=toGx(simTime);var curY=toGy(q(simTime),Q0);ctx.strokeStyle='#f59e0b';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(curX,pT);ctx.lineTo(curX,pT+gH);ctx.stroke();ctx.fillStyle='#f59e0b';ctx.beginPath();ctx.arc(curX,curY,4,0,Math.PI*2);ctx.fill();drawCircuit()}\nfunction drawCircuit(){var cx=105,cy=100;var qq=q(simTime),ii=iq(simTime);ctx.strokeStyle='#94a3b8';ctx.lineWidth=2;ctx.beginPath();ctx.rect(cx-5,cy-20,10,40);ctx.stroke();ctx.fillStyle='#64748b';ctx.font='8px sans-serif';ctx.textAlign='center';ctx.fillText('C',cx,cy-28);ctx.fillStyle='rgba(251,191,36,'+(0.15+0.85*Math.abs(qq)/Q0)+')';ctx.fillRect(cx-3,cy-18,6,36);ctx.strokeStyle='#94a3b8';ctx.lineWidth=2;ctx.beginPath();for(var i=0;i<8;i++){var lx=cx+25+i*9;var ly=cy-25+((i%2===0)?8:-8);ctx.lineTo(lx,ly)}ctx.stroke();ctx.fillStyle='#64748b';ctx.font='8px sans-serif';ctx.textAlign='center';ctx.fillText('L',cx+60,cy-28);ctx.strokeStyle='#94a3b8';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(cx-5,cy-20);ctx.lineTo(cx-5,cy-65);ctx.lineTo(cx+80,cy-65);ctx.lineTo(cx+80,cy-20);ctx.stroke();ctx.beginPath();ctx.moveTo(cx-5,cy+20);ctx.lineTo(cx-5,cy+65);ctx.lineTo(cx+80,cy+65);ctx.lineTo(cx+80,cy+20);ctx.stroke();ctx.fillStyle='#64748b';ctx.font='8px sans-serif';ctx.textAlign='center';if(ii>0.01){ctx.fillStyle='rgba(34,197,94,0.7)';ctx.fillText('i →',cx+37,cy-74)}else if(ii<-0.01){ctx.fillStyle='rgba(34,197,94,0.7)';ctx.fillText('← i',cx+37,cy+74)}if(Math.abs(qq)>Q0*0.05){ctx.fillStyle='#fbbf24';ctx.font='7px sans-serif';var pCnt=Math.min(Math.floor(Math.abs(qq)/Q0*15),12);for(var p=0;p<pCnt;p++){ctx.fillText('+',cx-10+(p%3)*7-7,cy+12+Math.floor(p/3)*10);ctx.fillText('−',cx-10+(p%3)*7-7,cy-15-Math.floor(p/3)*10)}}drawEnLC()}function drawEnLC(){var bx=10,by=pT+gH+4,bw=gW-10,bh=16;var ec=eC(simTime),el=eL(simTime),et=eT(simTime);var maxE=Math.max(0.5*Q0*Q0/C,0.001);ctx.fillStyle='#1e293b';ctx.fillRect(bx,by,bw,bh);ctx.strokeStyle='#475569';ctx.lineWidth=1;ctx.strokeRect(bx,by,bw,bh);if(ec>0){ctx.fillStyle='rgba(251,191,36,0.7)';ctx.fillRect(bx,by,Math.min(bw*ec/maxE,bw),bh)}if(el>0){ctx.fillStyle='#22c55e';ctx.fillRect(bx,by,Math.min(bw*el/maxE,bw),bh)}var etW=Math.min(bw*et/maxE,bw);ctx.strokeStyle='#38bdf8';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(bx+etW,by);ctx.lineTo(bx+etW,by+bh);ctx.stroke();ctx.fillStyle='#94a3b8';ctx.font='6px sans-serif';ctx.textAlign='left';ctx.textBaseline='bottom';ctx.fillText('E_C',bx+2,by+5);ctx.fillText('E_L',bx+Math.min(bw*ec/maxE,bw)+4,by+bh-2);ctx.fillStyle='#38bdf8';ctx.fillText('E_T',bx+etW+4,by+4)}\nfunction update(){var w=omega0(),T=period();var ec=eC(simTime),el=eL(simTime),et=eT(simTime);document.getElementById('lVal').textContent=L.toFixed(1);document.getElementById('cVal').textContent=(C*1e6).toFixed(0);document.getElementById('qVal').textContent=(Q0*1e6).toFixed(1);document.getElementById('rVal').textContent=R.toFixed(0);document.getElementById('tValL').textContent=(simTime*1e3).toFixed(2);document.getElementById('periodValL').textContent=(T*1e3).toFixed(3);document.getElementById('omegaValL').textContent=(w/1e3).toFixed(2);document.getElementById('ecVal').textContent=(ec*1e6).toFixed(2);document.getElementById('elVal').textContent=(el*1e6).toFixed(2);document.getElementById('etVal').textContent=(et*1e6).toFixed(2)}\nfunction stopPlayL(){cancelAnimationFrame(timer);playing=false;document.getElementById('playLC').textContent='▶';document.getElementById('playLC').className='btn'}\nvar lastT=null;\nfunction rAFloop(){\n  if(!playing){stopPlayL();return}\n  var now=performance.now();\n  if(lastT===null)lastT=now;\n  var dt=now-lastT;lastT=now;\n  simTime+=tStep*speed*speed*dt/30;\n  if(simTime>maxT)simTime=0;\n  document.getElementById('tSldL').value=simTime/tStep;\n  draw();update();\n  timer=requestAnimationFrame(rAFloop);\n}\nfunction startLoop(){if(!playing)return;lastT=null;timer=requestAnimationFrame(rAFloop);}\n\nfunction togglePlayLC(){if(playing){stopPlayL()}else{playing=true;document.getElementById('playLC').textContent='⏸';document.getElementById('playLC').className='btn active';startLoop()}}\nfunction setSpeedLC(s){speed=s;document.querySelectorAll('.speed-btn').forEach(function(x){x.className='btn speed-btn'});document.querySelector('.speed-btn[data-speed=\"'+s+'\"]').className='btn speed-btn active'}\ndocument.getElementById('playLC').onclick=togglePlayLC;document.querySelectorAll('.speed-btn').forEach(function(b){b.onclick=function(){setSpeedLC(+this.dataset.speed)}});document.getElementById('rstLC').onclick=function(){stopPlayL();simTime=0;document.getElementById('tSldL').value=0;draw();update()};document.getElementById('lSld').oninput=function(){stopPlayL();L=+this.value;draw();update()};document.getElementById('cSld').oninput=function(){stopPlayL();C=+this.value*1e-6;draw();update()};document.getElementById('qSld').oninput=function(){stopPlayL();Q0=+this.value*1e-6;maxQ=Q0;draw();update()};document.getElementById('rSld').oninput=function(){stopPlayL();R=+this.value;draw();update()};document.getElementById('tSldL').oninput=function(){stopPlayL();simTime=+this.value*tStep;draw();update()};draw();update();(function(){if(window.__fitInstalled__)return;window.__fitInstalled__=true;var _bw=c.width,_bh=c.height;function fit(){var dpr=window.devicePixelRatio||1;var nw=_bw*dpr,nh=_bh*dpr;if(c.width!==nw||c.height!==nh){c.width=nw;c.height=nh}ctx.setTransform(dpr,0,0,dpr,0,0);draw();update()}window.addEventListener(\"resize\",fit);fit()})();"
+    },
+    {
       "type": "heading",
       "text": "التوتر بين طرفي المكثفة",
       "level": 3
@@ -78,7 +116,33 @@
     {
       "type": "note",
       "variant": "tip",
-      "text": "<strong>ملاحظة:</strong> التيار $i$ يسبق الشحنة $q$ بزاوية طور $\\pi/2$ ($90^{\\circ}$)، أي عندما $q$ أعظمي، $i$ منعدم، والعكس."
+      "text": "ملاحظة: التيار $i$ يسبق الشحنة $q$ بزاوية طور $\\pi/2$ ($90^{\\circ}$)، أي عندما $q$ أعظمي، $i$ منعدم، والعكس."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "مثال تطبيقي 1: دارة LC"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "المعطيات: مكثف سعته C = 10 µF = 10⁻⁵ F، مشحون تحت توتر U₀ = 10 V. وشيعة معامل تحريضها L = 0.1 H (مقاومتها مهملة). نغلق الدارة عند t = 0."
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>1. حساب ω₀ و T₀:</strong></p><p>$\\omega_0 = \\frac{1}{\\sqrt{LC}} = \\frac{1}{\\sqrt{0.1 \\times 10^{-5}}} = \\frac{1}{\\sqrt{10^{-6}}} = 10^3$ rad/s</p><p>$f_0 = \\frac{\\omega_0}{2\\pi} = \\frac{1000}{2\\pi} = 159.15$ Hz</p><p>$T_0 = \\frac{1}{f_0} = 6.28$ ms</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>2. الشحنة الابتدائية:</strong></p><p>$Q_0 = C \\cdot U_0 = 10^{-5} \\times 10 = 10^{-4}$ C = 100 µC</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>3. المعادلات الزمنية:</strong></p><p>$q(t) = Q_0 \\cos(\\omega_0 t) = 10^{-4} \\cos(1000 t)$ C</p><p>$u_C(t) = \\frac{q(t)}{C} = \\frac{10^{-4}}{10^{-5}} \\cos(1000 t) = 10 \\cos(1000 t)$ V</p><p>$i(t) = \\frac{dq}{dt} = -Q_0 \\omega_0 \\sin(\\omega_0 t) = -0.1 \\sin(1000 t)$ A</p><p>$I_{max} = Q_0 \\omega_0 = 10^{-4} \\times 1000 = 0.1$ A</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>4. الطاقة الكلية:</strong></p><p>$E_C(max) = \\frac{1}{2} C U_0^2 = \\frac{1}{2} \\times 10^{-5} \\times 10^2 = 5 \\times 10^{-4}$ J</p><p>$E_L(max) = \\frac{1}{2} L I_{max}^2 = \\frac{1}{2} \\times 0.1 \\times (0.1)^2 = 5 \\times 10^{-4}$ J</p><p>$E_{tot} = E_C + E_L = 5 \\times 10^{-4}$ J = 0.5 mJ — محفوظة (لا تبديد).</p>"
     },
     {
       "type": "divider"
@@ -110,16 +174,92 @@
     },
     {
       "type": "table",
-      "headers": ["اللحظة", "$q$", "$i$", "$E_C$", "$E_L$"],
+      "headers": [
+        "اللحظة",
+        "$q$",
+        "$i$",
+        "$E_C$",
+        "$E_L$"
+      ],
       "rows": [
-        ["$t = 0$ (مشحونة)", "$Q_m$", "$0$", "عظمى $\\frac{Q_m^2}{2C}$", "0"],
-        ["$t = T_0/4$", "$0$", "$I_m$", "0", "عظمى $\\frac{1}{2}LI_m^2$"],
-        ["$t = T_0/2$", "$-Q_m$", "$0$", "عظمى", "0"]
+        [
+          "$t = 0$ (مشحونة)",
+          "$Q_m$",
+          "$0$",
+          "عظمى $\\frac{Q_m^2}{2C}$",
+          "0"
+        ],
+        [
+          "$t = T_0/4$",
+          "$0$",
+          "$I_m$",
+          "0",
+          "عظمى $\\frac{1}{2}LI_m^2$"
+        ],
+        [
+          "$t = T_0/2$",
+          "$-Q_m$",
+          "$0$",
+          "عظمى",
+          "0"
+        ]
       ],
       "caption": "تبادل الطاقة في دارة LC"
     },
     {
+      "type": "heading",
+      "level": 3,
+      "text": "شبه الدور (Pseudo-période) في التخميد الضعيف"
+    },
+    {
+      "type": "text",
+      "content": "<p>عندما يكون التخميد ضعيفاً ($R^2 < \\frac{4L}{C}$)، تكون التذبذبات مخمدة لكنها تبقى دورية تقريباً. نسمي <strong>شبه الدور T</strong> (Pseudo-période) الزمن الفاصل بين قمتين متتاليتين:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "T = \\frac{2\\pi}{\\omega_d} \\quad ; \\quad \\omega_d = \\sqrt{\\omega_0^2 - \\gamma^2} \\quad ; \\quad \\gamma = \\frac{R}{2L}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $ω_d$ هو <strong>النبض المخمد</strong>. شبه الدور T أكبر قليلاً من الدور الذاتي T₀ (لأن $ω_d < ω_0$). كلما زادت R، زاد T واقتربت التذبذبات من الاختفاء التام.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "ملاحظة: عندما $R \\to 0$، يكون $ω_d \\approx ω_0$ و $T \\approx T_0$. عندما $R^2 \\to \\frac{4L}{C}$ (اقتراب من التخميد الناقد)، يكون $ω_d \\to 0$ و $T \\to \\infty$ (تختفي التذبذبات)."
+    },
+    {
       "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "مثال تطبيقي 2: تحديد نظام التخميد"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "المعطيات: دارة RLC متسلسلة: L = 0.5 H, C = 100 µF = 10⁻⁴ F. نوصل مقاومة متغيرة R ونحدد نظام التخميد."
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>1. حساب ω₀ و T₀:</strong></p><p>$\\omega_0 = \\frac{1}{\\sqrt{LC}} = \\frac{1}{\\sqrt{0.5 \\times 10^{-4}}} = \\frac{1}{\\sqrt{5 \\times 10^{-5}}} = 141.42$ rad/s</p><p>$T_0 = \\frac{2\\pi}{\\omega_0} = 0.0444$ s = 44.4 ms</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>2. مقاومة التخميد الناقد R_c:</strong></p><p>$R_c^2 = \\frac{4L}{C} = \\frac{4 \\times 0.5}{10^{-4}} = \\frac{2}{10^{-4}} = 20000 \\implies R_c = \\sqrt{20000} = 141.42$ Ω</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>3. مع R₁ = 50 Ω:</strong></p><p>$R_1^2 = 2500 < R_c^2 = 20000$ → <strong>تخميد ضعيف</strong> (Régime pseudo-périodique)</p><p>نحصل على تذبذبات مخمدة: سعة متناقصة أسياً، شبه دور $T = 2\\pi/\\omega_d$.</p><p>$γ = \\frac{R_1}{2L} = \\frac{50}{1} = 50$ s⁻¹</p><p>$\\omega_d = \\sqrt{141.42^2 - 50^2} = \\sqrt{20000 - 2500} = \\sqrt{17500} = 132.29$ rad/s</p><p>$T = \\frac{2\\pi}{132.29} = 0.0475$ s = 47.5 ms (أكبر قليلاً من T₀ = 44.4 ms)</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>4. مع R₂ = 250 Ω:</strong></p><p>$R_2^2 = 62500 > R_c^2 = 20000$ → <strong>تخميد قوي</strong> (Régime apériodique)</p><p>لا توجد تذبذبات: يعود النظام إلى التوازن ببطء دون تجاوز.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>5. مع R = R_c = 141.42 Ω:</strong></p><p>→ <strong>تخميد ناقد</strong> (Régime critique)</p><p>أسرع عودة إلى التوازن دون تذبذب. يستخدم في أنظمة التوجيه (مكبرات الصوت).</p>"
     },
     {
       "type": "heading",
@@ -140,18 +280,67 @@
     },
     {
       "type": "table",
-      "headers": ["حالة التخميد", "الشرط", "السلوك"],
+      "headers": [
+        "حالة التخميد",
+        "الشرط",
+        "السلوك"
+      ],
       "rows": [
-        ["تخميد ضعيف (R faible)", "$R^2 < \\frac{4L}{C}$", "تذبذبات مخمدة (سعة متناقصة)"],
-        ["تخميد قوي (R élevé)", "$R^2 > \\frac{4L}{C}$", "لا تذبذبات (عودة مباشرة)"],
-        ["تخميد ناقد (R critique)", "$R^2 = \\frac{4L}{C}$", "أسرع عودة دون تذبذب"]
+        [
+          "تخميد ضعيف (R faible)",
+          "$R^2 < \\frac{4L}{C}$",
+          "تذبذبات مخمدة (سعة متناقصة)"
+        ],
+        [
+          "تخميد قوي (R élevé)",
+          "$R^2 > \\frac{4L}{C}$",
+          "لا تذبذبات (عودة مباشرة)"
+        ],
+        [
+          "تخميد ناقد (R critique)",
+          "$R^2 = \\frac{4L}{C}$",
+          "أسرع عودة دون تذبذب"
+        ]
       ],
       "caption": "أنواع التخميد في دارة RLC"
     },
     {
       "type": "note",
       "variant": "warning",
-      "text": "<strong>نظام التخميد الناقد:</strong> هو النظام الذي يعود فيه النظام إلى التوازن في أقصر وقت ممكن دون تذبذب. يستخدم في أنظمة التوجيه (مثل مكبرات الصوت)."
+      "text": "نظام التخميد الناقد: هو النظام الذي يعود فيه النظام إلى التوازن في أقصر وقت ممكن دون تذبذب. يستخدم في أنظمة التوجيه (مثل مكبرات الصوت)."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "III bis - تغذية الاهتزازات الكهربائية (Sustaining electrical oscillations)"
+    },
+    {
+      "type": "text",
+      "content": "<p>في دارة $RLC$ الحقيقية، تتبدد الطاقة تحت تأثير جول في المقاومة $R$، مما يؤدي إلى تخميد التذبذبات. للحصول على تذبذبات غير مخمدة (مستدامة)، يجب تعويض الطاقة المفقودة باستمرار.</p><p>نضيف إلى الدارة <strong>ثنائي قطب نشط (D)</strong> يسمى <strong>دارة المقاومة السلبية (Résistance négative / Negative resistance)</strong> يعمل على تعويض الطاقة الضائعة في كل لحظة. تكافئ هذه الدارة مقاومة $R_n < 0$ تجعل المقاومة الكلية $R_t = R + R_n$ معدومة أو سالبة.</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "L\\frac{d^2q}{dt^2} + (R + R_n)\\frac{dq}{dt} + \\frac{q}{C} = 0 \\quad ; \\quad R_n < 0"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "مقارنة بين أنواع التذبذبات الكهربائية: • حرّة غير مخمدة (LC مثالية): سعة ثابتة، طاقة كلية محفوظة ($R=0$) • حرّة مخمدة (RLC حقيقية): سعة متناقصة، طاقة متبددة بفعل جول ($R>0$) • مغذاة (RLC + D): سعة ثابتة، طاقة معوّضة باستمرار ($R_n$ يعوّض $R$) • قسرية (RLC + GBF): سعة مرتبطة بتواتر المثير، رنين عند $\\omega = \\omega_0$"
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: تغذية الاهتزازات الكهربائية (Sustained RLC Oscillations)",
+        "width": 700,
+        "height": 700
+      },
+      "html": "<div class=\"cont\"><h1>محاكاة تغذية الاهتزازات الكهربائية — RLC + مقاومة سالبة</h1><canvas id=\"sec\" width=\"680\" height=\"360\"></canvas><div class=\"ctrls\"><div class=\"row\"><div class=\"grp\"><label>L: <span id=\"lS\">1.0</span> H</label><input type=\"range\" id=\"lSld\" min=\"0.1\" max=\"5\" value=\"1\" step=\"0.1\"></div><div class=\"grp\"><label>C: <span id=\"cS\">10</span> µF</label><input type=\"range\" id=\"cSld\" min=\"1\" max=\"100\" value=\"10\" step=\"1\"></div><div class=\"grp\"><label>R: <span id=\"rS\">10</span> Ω</label><input type=\"range\" id=\"rSld\" min=\"0\" max=\"50\" value=\"10\" step=\"1\"></div></div><div class=\"row\" style=\"margin-top:2px\"><div class=\"grp\"><label>Q₀: <span id=\"q0S\">10</span> µC</label><input type=\"range\" id=\"q0Sld\" min=\"1\" max=\"20\" value=\"10\" step=\"0.5\"></div><div class=\"grp\" style=\"flex:2;\"><div class=\"btn\" id=\"modeBtn\" style=\"background:#1e293b;border:1px solid #f59e0b;color:#f59e0b;font-size:10px;padding:4px 8px\">🔁 <span id=\"modeLabel\">مخمّد</span></div></div></div><div class=\"row\" style=\"margin-top:2px\"><div class=\"grp wide\"><label>t: <span id=\"tV\" class=\"vl\">0.00</span> ms</label><input type=\"range\" id=\"tSld\" min=\"0\" max=\"300\" value=\"0\" step=\"0.5\"></div><div class=\"grp\"><div class=\"btn\" id=\"playBtn\">▶</div></div><div class=\"grp\"><div class=\"btn\" id=\"rstBtn\">↺</div></div></div><div class=\"row\"><div class=\"grp speed-group\"><div class=\"btn speed-btn active\" data-speed=\"0.5\">0.5×</div><div class=\"btn speed-btn\" data-speed=\"1\">1×</div><div class=\"btn speed-btn\" data-speed=\"2\">2×</div><div class=\"btn speed-btn\" data-speed=\"5\">5×</div></div></div><div class=\"row stats\"><span>T₀ = <b id=\"perV\">—</b> ms</span><span>ω₀ = <b id=\"omV\">—</b> krad/s</span><span>E<sub>C</sub> = <b id=\"ecV\" style=\"color:#fbbf24\">—</b> µJ</span><span>E<sub>L</sub> = <b id=\"elV\" style=\"color:#22c55e\">—</b> µJ</span><span>E<sub>T</sub> = <b id=\"etV\" style=\"color:#38bdf8\">—</b> µJ</span></div><div class=\"row stats\"><span>طاقة معوّضة: <b id=\"injV\" style=\"color:#f59e0b\">0</b> µJ</span><span>الحالة: <b id=\"stV\">مخمّد</b></span></div></div></div>",
+      "css": "*{margin:0;padding:0;box-sizing:border-box}body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;padding:6px}.cont{max-width:700px;width:100%;margin:0 auto}h1{text-align:center;font-size:11px;color:#fbbf24;margin-bottom:3px}canvas{background:#0f172a;border:1px solid #334155;border-radius:6px;display:block;margin:0 auto;width:100%;max-width:680px;height:360px}.ctrls{display:flex;flex-direction:column;gap:2px;margin-top:3px;background:#1e293b;border-radius:6px;padding:5px;border:1px solid #334155}.row{display:flex;gap:3px;align-items:center;flex-wrap:wrap}.grp{flex:1;min-width:70px;display:flex;flex-direction:column;gap:1px}.grp label{font-size:9px;color:#94a3b8;white-space:nowrap}.vl{color:#fbbf24;font-size:12px;font-weight:700}.grp.wide{flex:2}.btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:10px;cursor:pointer;text-align:center;min-width:40px}.btn:hover{background:#475569;color:#e2e8f0}.btn.active{background:#166534;color:#86efac;border-color:#22c55e}.speed-group{display:flex;gap:2px;min-width:100%}.speed-btn{flex:1;padding:1px 2px;font-size:8px;min-width:0;text-align:center}.speed-btn.active{background:#3b82f6;color:#fff;border-color:#3b82f6;font-weight:700}.stats{flex-wrap:wrap;justify-content:center;gap:8px;font-size:10px;color:#94a3b8;margin-top:1px}.stats b{font-size:11px}input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#f59e0b;cursor:pointer}",
+      "js": "var c=document.getElementById('sec'),ctx=c.getContext('2d');var W=680,H=360,pL=225,pR=12,pT=22,pB=32,gW=W-pL-pR,gH=H-pT-pB;var L=1,C=10e-6,R=10,Q0=10e-6;var Q=Q0,I=0,simTime=0,playing=false,speed=1,timer=null,tStep=2e-5,maxT=5e-3;var sustained=false,injAmt=0;function omega0(){return 1/Math.sqrt(L*C)}function gamma(){return R/(2*L)}function period(){return 2*Math.PI/omega0()}function dampW(){var w=omega0(),g=gamma();return Math.sqrt(Math.max(0,w*w-g*g))}function toGx(t){return pL+(t/maxT)*gW}function toGy(v,mV){return pT+gH/2-(v/(mV*1.3))*(gH/2)}function draw(){ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);ctx.strokeStyle='#475569';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pL,pT);ctx.lineTo(pL,pT+gH);ctx.lineTo(pL+gW,pT+gH);ctx.stroke();var mQ=Q0*1.2;for(var i=-2;i<=2;i++){var y=pT+gH/2+i*(gH/6);ctx.strokeStyle='rgba(71,85,105,0.3)';ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(pL+gW,y);ctx.stroke();ctx.fillStyle='#64748b';ctx.font='8px sans-serif';ctx.textAlign='right';ctx.fillText((mQ*i/3*1e6).toFixed(1),pL-3,y+3)}for(var i=0;i<=5;i++){var tt=(i/5)*maxT;var xv=toGx(tt);ctx.strokeStyle='rgba(71,85,105,0.3)';ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(xv,pT);ctx.lineTo(xv,pT+gH);ctx.stroke();ctx.fillStyle='#64748b';ctx.font='8px sans-serif';ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText((tt*1e3).toFixed(1),xv,pT+gH+3)}ctx.fillStyle='#94a3b8';ctx.font='9px sans-serif';ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText('t (ms)',pL+gW/2,H-8);ctx.save();ctx.translate(10,pT+gH/2);ctx.rotate(-Math.PI/2);ctx.fillText('q (\\u00B5C)',0,0);ctx.restore();ctx.strokeStyle='#38bdf8';ctx.lineWidth=1.5;ctx.beginPath();var steps=300;var first=true;for(var k=0;k<=steps;k++){var t=(k/steps)*maxT;var qq=Q;var ii=I;if(!playing||k<steps){var w=omega0(),g=gamma();if(!sustained){if(g<0.001){qq=Q0*Math.cos(w*t)}else{var wd=dampW();qq=Q0*Math.exp(-g*t)*Math.cos(wd*t)}}else{qq=Q0*Math.cos(w*t)}}var xv=toGx(t);var yv=toGy(qq,mQ);if(first){ctx.moveTo(xv,yv);first=false}else{ctx.lineTo(xv,yv)}}ctx.stroke();var cx=toGx(simTime);ctx.strokeStyle='#f59e0b';ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(cx,pT);ctx.lineTo(cx,pT+gH);ctx.stroke();ctx.setLineDash([]);drawCircuit()}function drawCircuit(){ctx.fillStyle='#1e293b';ctx.fillRect(10,280,140,70);ctx.strokeStyle='#64748b';ctx.lineWidth=1.5;ctx.strokeRect(10,280,140,70);ctx.font='7px sans-serif';ctx.fillStyle='#94a3b8';ctx.fillText('C:',15,295);var qq=Q||Q0;ctx.fillStyle='#fbbf24';ctx.fillText(qq>0?'+':'\\u2212',35,295);ctx.fillText('L:',80,295);ctx.fillStyle='#22c55e';ctx.fillText('\\u21BB',95,295);ctx.fillStyle='#94a3b8';ctx.fillText('R:',15,315);ctx.fillText(R+'Ω',35,315);if(sustained){ctx.fillStyle='#f59e0b';ctx.fillText('D (R_n=\\u2212'+R+'Ω)',15,335)}ctx.fillStyle='#94a3b8';ctx.font='7px sans-serif';ctx.fillText('Q='+(qq*1e6).toFixed(1)+' \\u00B5C',15,352)}function update(){document.getElementById('tV').textContent=(simTime*1e3).toFixed(2);document.getElementById('perV').textContent=(period()*1e3).toFixed(2);document.getElementById('omV').textContent=(omega0()/1e3).toFixed(2);var qq=Q||Q0,ii=I||0;var ec=0.5*qq*qq/C,el=0.5*L*ii*ii,et=ec+el;document.getElementById('ecV').textContent=(ec*1e6).toFixed(2);document.getElementById('elV').textContent=(el*1e6).toFixed(2);document.getElementById('etV').textContent=(et*1e6).toFixed(2);document.getElementById('injV').textContent=injAmt.toFixed(2);document.getElementById('stV').textContent=sustained?'\\u0645\\u063A\\u0630\\u0651\\u0649':'\\u0645\\u062E\\u0645\\u0651\\u062F'}function togglePlay(){playing=!playing;document.getElementById('playBtn').textContent=playing?'\\u23F8':'\\u25B6';document.getElementById('playBtn').classList.toggle('active',playing);if(playing){tick()}else if(timer){cancelAnimationFrame(timer);timer=null}}var lastT=null;\nfunction tick(){if(!playing)return;lastT=null;rAFloop();}\nfunction rAFloop(){\n  if(!playing)return;\n  var now=performance.now();\n  if(lastT===null)lastT=now;\n  var dt=now-lastT;lastT=now;\n  var n=Math.max(1,Math.round(dt*speed*speed*2/50));\n  for(var i=0;i<n;i++){stepRK();if(simTime>maxT){simTime=0;Q=Q0;I=0;injAmt=0}}\n  document.getElementById('tSld').value=(simTime/maxT*300).toFixed(1);\n  draw();update();\n  timer=requestAnimationFrame(rAFloop);\n}function resetSim(){playing=false;simTime=0;Q=Q0;I=0;injAmt=0;sustained=false;document.getElementById('playBtn').textContent='\\u25B6';document.getElementById('playBtn').classList.remove('active');document.getElementById('tSld').value=0;document.getElementById('modeLabel').textContent='\\u0645\\u062E\\u0645\\u0651\\u062F';if(timer){cancelAnimationFrame(timer);timer=null}draw();update()}function setSpeed(s){speed=s;document.querySelectorAll('.speed-btn').forEach(function(b){b.classList.toggle('active',+b.dataset.speed===s)});if(playing){if(timer){cancelAnimationFrame(timer)}tick()}}function toggleMode(){sustained=!sustained;document.getElementById('modeLabel').textContent=sustained?'\\u0645\\u063A\\u0630\\u0651\\u0649':'\\u0645\\u062E\\u0645\\u0651\\u062F';resetSim()}function stepRK(){var q=Q,i=I;var dt=tStep;var dq1=i,di1=(-R*i-q/C)/L;var dq2=i+dt/2*di1,di2=(-R*(i+dt/2*di1)-(q+dt/2*dq1)/C)/L;var dq3=i+dt/2*di2,di3=(-R*(i+dt/2*di2)-(q+dt/2*dq2)/C)/L;var dq4=i+dt*di3,di4=(-R*(i+dt*di3)-(q+dt*dq3)/C)/L;Q+=dt/6*(dq1+2*dq2+2*dq3+dq4);I+=dt/6*(di1+2*di2+2*di3+di4);simTime+=dt;if(sustained){var em=0.5*Q*Q/C+0.5*L*I*I;var em0=0.5*Q0*Q0/C;if(em<0.95*em0&&Math.abs(I)<0.05){var need=em0-em;Q+=Math.sign(Q||1)*Math.sqrt(2*C*need)*0.1;injAmt+=need*0.1}}}document.getElementById('playBtn').onclick=togglePlay;document.getElementById('rstBtn').onclick=resetSim;document.getElementById('modeBtn').onclick=toggleMode;document.getElementById('tSld').oninput=function(){var p=+this.value/300;simTime=p*maxT;var w=omega0(),g=gamma();if(!sustained){if(g<0.001){Q=Q0*Math.cos(w*simTime);I=-Q0*w*Math.sin(w*simTime)}else{var wd=dampW();var e=Math.exp(-g*simTime);Q=Q0*e*Math.cos(wd*simTime);I=-Q0*e*(g*Math.cos(wd*simTime)+wd*Math.sin(wd*simTime))}}else{Q=Q0*Math.cos(w*simTime);I=-Q0*w*Math.sin(w*simTime)}if(playing){playing=false;document.getElementById('playBtn').textContent='\\u25B6';document.getElementById('playBtn').classList.remove('active');if(timer){cancelAnimationFrame(timer);timer=null}}draw();update()};document.querySelectorAll('.speed-btn').forEach(function(b){b.onclick=function(){setSpeed(+this.dataset.speed)}});draw();update();var sliders=['lSld','cSld','rSld','q0Sld'];sliders.forEach(function(id){var el=document.getElementById(id);el.oninput=function(){L=+document.getElementById('lSld').value;C=+document.getElementById('cSld').value*1e-6;R=+document.getElementById('rSld').value;Q0=+document.getElementById('q0Sld').value*1e-6;document.getElementById('lS').textContent=L.toFixed(1);document.getElementById('cS').textContent=(C*1e6).toFixed(0);document.getElementById('rS').textContent=R;document.getElementById('q0S').textContent=(Q0*1e6).toFixed(1);resetSim()}});(function(){if(window.__fitInstalled__)return;window.__fitInstalled__=true;var _bw=c.width,_bh=c.height;function fit(){var dpr=window.devicePixelRatio||1;var nw=_bw*dpr,nh=_bh*dpr;if(c.width!==nw||c.height!==nh){c.width=nw;c.height=nh}ctx.setTransform(dpr,0,0,dpr,0,0);draw()}window.addEventListener(\"resize\",fit);fit()})();"
     }
   ]
 }

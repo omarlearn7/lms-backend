@@ -1,0 +1,48 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 027 - تحليل طيفي لدارة RLC",
+  "order_index": 27,
+  "source": "3AS U07 - Exercice 027",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 027"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC متسلسلة: R = 25 Ω, L = 0.3 H, C = 5 µF. مولد u(t) = 20 cos(ωt) V مع ω متغير."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب ω₀ و f₀ و Q.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب ترددات القطع f₁ و f₂ حيث I = I_max/√2.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "ارسم كيفياً منحنيي I(f) و Z(f).",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "ما قيمة φ (زاوية الطور) عند f₁ و f₂؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "إذا تضاعف R، كيف يتغير Q وعرض الحزمة؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

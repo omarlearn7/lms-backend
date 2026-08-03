@@ -44,7 +44,27 @@
     },
     {
       "type": "text",
-      "content": "<ul><li><strong>المفاعلات النووية:</strong> تتحكم في التفاعل المتسلسل (باستخدام قضبان التحكم) لإنتاج الطاقة الكهربائية.</li><li><strong>القنبلة الذرية:</strong> تفاعل متسلسل غير متحكم به يحرر طاقة هائلة فجأة.</li></ul>"
+      "content": "<h4>المفاعلات النووية</h4><p>المفاعل النووي جهاز يتحكم في التفاعل المتسلسل لإنتاج الطاقة الكهربائية. مكوناته الرئيسية:</p><ul><li><strong>الوقود النووي:</strong> $^{235}U$ أو $^{239}Pu$ (بنسبة تخصيب 3-5%).</li><li><strong>المهدئ (Moderator):</strong> يبطئ النيوترونات السريعة (ماء، جرافيت، ماء ثقيل) لزيادة احتمال التفاعل مع $^{235}U$.</li><li><strong>قضبان التحكم (Control rods):</strong> تمتص النيوترونات (كادميوم، بور) للتحكم في سير التفاعل المتسلسل.</li><li><strong>نظام التبريد:</strong> ينقل الحرارة من القلب إلى مبادل حراري لتوليد البخار وتشغيل التوربينات.</li><li><strong>الاحتواء:</strong> هيكل خرساني مسلح يمنع تسرب الإشعاعات.</li></ul>"
+    },
+    {
+      "type": "text",
+      "content": "<h4>الكتلة الحرجة وعامل التضاعف $k$</h4><p><strong>الكتلة الحرجة (Critical mass):</strong> أقل كتلة من الوقود النووي تكفي لاستمرار التفاعل المتسلسل ذاتياً. إذا كانت الكتلة أقل من الحرجة، يتوقف التفاعل.</p><p><strong>عامل التضاعف $k$:</strong> هو معدل عدد النيوترونات الناتجة عن انشطار نواة واحدة والتي تسبب انشطاراً آخر:</p><ul><li>$k > 1$: فوق حرج (Supercritique) — التفاعل يتسارع (القنبلة الذرية).</li><li>$k = 1$: حرج (Critique) — التفاعل مستقر ومنتظم (المفاعل النووي).</li><li>$k < 1$: تحت حرج (Sous-critique) — التفاعل يخمد.</li></ul>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>القنبلة الذرية:</strong> تفاعل متسلسل غير متحكم به ($k >> 1$) يحرر طاقة هائلة فجأة. تستخدم كتلة فوق حرجة من $^{235}U$ أو $^{239}Pu$.</p>"
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: التفاعل المتسلسل",
+        "width": 680,
+        "height": 540
+      },
+      "html": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"ar\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>التفاعل المتسلسل</title>\n<style>\n*{margin:0;padding:0;box-sizing:border-box}\nbody{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:8px}\n.container{max-width:680px;width:100%}\nh1{text-align:center;font-size:14px;color:#fbbf24;margin-bottom:4px}\ncanvas{background:#0f172a;border:1px solid #334155;border-radius:8px;display:block;margin:0 auto;width:100%;max-width:660px;height:400px}\n.controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:6px;background:#1e293b;border-radius:6px;padding:8px;border:1px solid #334155}\n.ctrl-group{display:flex;flex-direction:column;gap:2px}\n.ctrl-group label{font-size:10px;color:#94a3b8}\n.ctrl-group .val{color:#fbbf24;font-size:12px;font-weight:700}\ninput[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}\ninput[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer}\n.btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:11px;cursor:pointer;text-align:center;transition:all .15s}\n.btn:hover{background:#475569;color:#e2e8f0}\n.btn.active{background:#3b82f6;color:#fff;border-color:#3b82f6}\n.btn.danger{background:#5f1a1a;color:#fca5a5;border-color:#7f1d1d}\n.stats{display:flex;gap:10px;justify-content:center;margin-top:4px;font-size:11px;color:#94a3b8;flex-wrap:wrap}\n.stats span{background:#1e293b;padding:3px 8px;border-radius:4px;border:1px solid #334155}\n.stats .big{font-size:13px;font-weight:700}\n.stats .n-val{color:#38bdf8}\n.stats .e-val{color:#f59e0b}\n.stats .f-val{color:#22c55e}\n.stats .k-val{color:#fbbf24}\n</style>\n</head>\n<body>\n<div class=\"container\">\n<h1>محاكاة التفاعل المتسلسل — الانشطار النووي</h1>\n<canvas id=\"c\" width=\"660\" height=\"400\"></canvas>\n<div class=\"stats\">\n<span>النيوترونات: <span class=\"big n-val\" id=\"nCount\">0</span></span>\n<span>انشطارات: <span class=\"big f-val\" id=\"fCount\">0</span></span>\n<span>الطاقة: <span class=\"big e-val\" id=\"eCount\">0</span> MeV</span>\n<span><span id=\"kLabel\">k</span> = <span class=\"big k-val\" id=\"kDisplay\">1.00</span></span>\n</div>\n<div class=\"controls\">\n<div class=\"ctrl-group\">\n<label>عامل التضاعف <span class=\"val\" id=\"kVal\">1.00</span></label>\n<input type=\"range\" id=\"kSlider\" min=\"0.5\" max=\"2.5\" step=\"0.05\" value=\"1.0\">\n<div style=\"display:flex;justify-content:space-between;font-size:8px;color:#64748b\"><span>تحت حرج</span><span>حرج</span><span>فوق حرج</span></div>\n</div>\n<div class=\"ctrl-group\" style=\"grid-column:2\">\n<label>التحكم</label>\n<div style=\"display:flex;gap:4px\">\n<button class=\"btn\" id=\"fireBtn\">▶ إطلاق نيوترون</button>\n<button class=\"btn\" id=\"autoBtn\">تلقائي</button>\n<button class=\"btn danger\" id=\"resetBtn\">إعادة</button>\n</div>\n</div>\n<div class=\"ctrl-group\" style=\"grid-column:3\">\n<label>سرعة المحاكاة</label>\n<input type=\"range\" id=\"speedSlider\" min=\"1\" max=\"10\" step=\"1\" value=\"3\">\n<div style=\"display:flex;justify-content:space-between;font-size:8px;color:#64748b\"><span>بطيء</span><span>سريع</span></div>\n</div>\n</div>\n</div>\n<script>\nconst c=document.getElementById('c'),ctx=c.getContext('2d');\nconst W=660,H=400;\nconst nuclei=[],neutrons=[];\nconst NUC_R=16,NEUT_R=4;\nlet fissionCount=0,energy=0;\nlet k=1.0,speed=3,autoMode=false,animId=null;\nfunction init(){\nnuclei.length=0;neutrons.length=0;fissionCount=0;energy=0;\nfor(let i=0;i<40;i++){\nlet x,y,ok;\nfor(let t=0;t<50;t++){\nx=40+Math.random()*(W-80);\ny=40+Math.random()*(H-80);\nok=true;\nfor(const n of nuclei){if(Math.sqrt((x-n.x)**2+(y-n.y)**2)<NUC_R*2.5){ok=false;break}}\nif(ok)break}\nnuclei.push({x,y,fissioned:false,flash:0})}\n}\nfunction fireNeutron(x,y){\nif(!x&&!y){x=20+Math.random()*40;y=20+Math.random()*(H-40)}\nconst angle=Math.random()*Math.PI*2;\nconst spd=1.5+Math.random();\nneutrons.push({x,y,vx:Math.cos(angle)*spd,vy:Math.sin(angle)*spd})}\nfunction update(){\nconst remaining=nuclei.filter(n=>!n.fissioned);\nfor(let i=neutrons.length-1;i>=0;i--){\nconst n=neutrons[i];\nn.x+=n.vx*speed;n.y+=n.vy*speed;\nif(n.x<-20||n.x>W+20||n.y<-20||n.y>H+20){neutrons.splice(i,1);continue}\nlet hit=false;\nfor(const r of remaining){\nconst dx=n.x-r.x,dy=n.y-r.y;\nif(dx*dx+dy*dy<NUC_R*NUC_R){\nr.fissioned=true;r.flash=30;\nfissionCount++;energy+=179.9;\nconst extra=Math.max(1,Math.round(k*2+Math.random()-0.5));\nfor(let j=0;j<extra;j++){\nconst a=Math.random()*Math.PI*2;\nneutrons.push({x:r.x+Math.cos(a)*20,y:r.y+Math.sin(a)*20,vx:Math.cos(a)*(1+Math.random()),vy:Math.sin(a)*(1+Math.random())})}\nhit=true;break}}\nif(hit)neutrons.splice(i,1)}\nfor(const n of nuclei)if(n.flash>0)n.flash--;\nif(autoMode&&fissionCount<500&&Math.random()<0.02*speed)fireNeutron()\n}\nfunction draw(){\nctx.clearRect(0,0,W,H);\nctx.fillStyle='#1e293b';ctx.fillRect(0,0,W,H);\nfor(const n of nuclei){\nif(n.fissioned){\nif(n.flash>0){\nconst g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,40);\ng.addColorStop(0,'rgba(251,191,36,0.8)');\ng.addColorStop(0.5,'rgba(251,191,36,0.3)');\ng.addColorStop(1,'rgba(251,191,36,0)');\nctx.fillStyle=g;ctx.beginPath();ctx.arc(n.x,n.y,40,0,Math.PI*2);ctx.fill()}\nctx.fillStyle='#475569';ctx.beginPath();ctx.arc(n.x-4,n.y-3,6,0,Math.PI*2);ctx.fill();\nctx.beginPath();ctx.arc(n.x+4,n.y+3,5,0,Math.PI*2);ctx.fill()\n}else{\nctx.fillStyle='#3b82f6';ctx.beginPath();ctx.arc(n.x,n.y,NUC_R,0,Math.PI*2);ctx.fill();\nctx.strokeStyle='#60a5fa';ctx.lineWidth=1.5;ctx.stroke();\nctx.fillStyle='#fff';ctx.font='9px sans-serif';ctx.textAlign='center';\nctx.fillText('²³⁵U',n.x,n.y+3)}}\nctx.fillStyle='#fbbf24';\nfor(const n of neutrons){\nctx.beginPath();ctx.arc(n.x,n.y,NEUT_R,0,Math.PI*2);ctx.fill()}\ndocument.getElementById('nCount').textContent=neutrons.length;\ndocument.getElementById('fCount').textContent=fissionCount;\ndocument.getElementById('eCount').textContent=Math.round(energy);\ndocument.getElementById('kDisplay').textContent=k.toFixed(2);\n}\nfunction loop(){update();draw();animId=requestAnimationFrame(loop)}\ndocument.getElementById('kSlider').addEventListener('input',function(){\nk=parseFloat(this.value);\ndocument.getElementById('kVal').textContent=k.toFixed(2);\n});\ndocument.getElementById('fireBtn').addEventListener('click',()=>fireNeutron());\ndocument.getElementById('autoBtn').addEventListener('click',function(){\nautoMode=!autoMode;this.textContent=autoMode?'إيقاف':'تلقائي';\nthis.classList.toggle('active',autoMode)});\ndocument.getElementById('resetBtn').addEventListener('click',()=>{init();neutrons.length=0;fissionCount=0;energy=0});\ndocument.getElementById('speedSlider').addEventListener('input',function(){speed=parseInt(this.value)});\ninit();loop()\n</script>\n</body>\n</html>",
+      "css": "",
+      "js": ""
     },
     {
       "type": "divider"
@@ -81,7 +101,7 @@
     {
       "type": "note",
       "variant": "info",
-      "text": "<strong>مفاعل ITER:</strong> مشروع دولي لتطوير الاندماج النووي كمصدر طاقة نظيف وآمن."
+      "text": "مفاعل ITER: مشروع دولي لتطوير الاندماج النووي كمصدر طاقة نظيف وآمن."
     },
     {
       "type": "divider"
@@ -118,7 +138,48 @@
     },
     {
       "type": "text",
-      "content": "<p>كلما كانت $E_l$ أكبر (لكل نوكليون)، كانت النواة أكثر استقراراً. الحديد ($^{56}Fe$) له أعلى طاقة ربط لكل نوكليون.</p>"
+      "content": "<p>كلما كانت $E_l$ أكبر (لكل نوكليون)، كانت النواة أكثر استقراراً. الحديد ($^{56}Fe$) له أعلى طاقة ربط لكل نوكليون (حوالي $8.8 MeV$).</p>"
+    },
+    {
+      "type": "heading",
+      "text": "منحنى طاقة الربط لكل نوكليون",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<figure style=\"text-align:center;margin:12px 0\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 310\" style=\"max-width:100%;height:auto;background:#0f172a;border-radius:8px;border:1px solid #334155;direction:ltr\"><style>text{font-family:'Segoe UI',Tahoma,sans-serif;fill:#94a3b8;font-size:11px}.label{fill:#e2e8f0;font-size:12px;font-weight:bold}.title{fill:#fbbf24;font-size:13px;font-weight:bold}.axis{stroke:#475569;stroke-width:1}.grid{stroke:#1e293b;stroke-width:1;stroke-dasharray:3,3}.curve{stroke:#38bdf8;stroke-width:2.5;fill:none}.dashed{stroke:#64748b;stroke-width:1;stroke-dasharray:4,3}.dot{fill:#fbbf24;r:3}.region{fill:rgba(251,191,36,0.1)}</style><text x=\"320\" y=\"20\" text-anchor=\"middle\" class=\"title\">منحنى طاقة الربط لكل نوكليون بدلالة العدد الكتلي A</text><line x1=\"60\" y1=\"30\" x2=\"60\" y2=\"270\" class=\"axis\"/><line x1=\"60\" y1=\"270\" x2=\"580\" y2=\"270\" class=\"axis\"/><line x1=\"60\" y1=\"150\" x2=\"580\" y2=\"150\" class=\"grid\"/><text x=\"55\" y=\"274\" text-anchor=\"end\" fill=\"#94a3b8\" font-size=\"11px\">0</text><text x=\"55\" y=\"154\" text-anchor=\"end\" fill=\"#94a3b8\" font-size=\"11px\">5</text><text x=\"55\" y=\"34\" text-anchor=\"end\" fill=\"#94a3b8\" font-size=\"11px\">10</text><text x=\"20\" y=\"150\" text-anchor=\"middle\" transform=\"rotate(-90,20,150)\" class=\"label\">Eₗ/A (MeV)</text><text x=\"60\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">0</text><text x=\"146.7\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">40</text><text x=\"233.3\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">80</text><text x=\"320\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">120</text><text x=\"406.7\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">160</text><text x=\"493.3\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">200</text><text x=\"580\" y=\"285\" text-anchor=\"middle\" fill=\"#94a3b8\" font-size=\"11px\">240</text><text x=\"320\" y=\"298\" text-anchor=\"middle\" class=\"label\">A (عدد النيوكليونات)</text><polyline points=\"64.3,244 68.7,100 86,85 94.7,78 103.3,78 146.7,64 181.3,59 233.3,61 276.7,66 320,66 363.3,71 406.7,73 450,78 493.3,80 536.7,83 575.7,88\" class=\"curve\"/><line x1=\"181.3\" y1=\"59\" x2=\"181.3\" y2=\"270\" class=\"dashed\"/><text x=\"181.3\" y=\"55\" text-anchor=\"middle\" fill=\"#fbbf24\" font-size=\"10px\">⁵⁶Fe (ذروة)</text><circle cx=\"181.3\" cy=\"59\" class=\"dot\"/><rect x=\"440\" y=\"40\" width=\"140\" height=\"60\" rx=\"6\" fill=\"#1e293b\" stroke=\"#334155\"/><text x=\"450\" y=\"55\" fill=\"#e2e8f0\" font-size=\"10px\">الاندماج: A صغير → كبير</text><text x=\"450\" y=\"70\" fill=\"#e2e8f0\" font-size=\"10px\">(طاقة ربط تزيد)</text><text x=\"450\" y=\"85\" fill=\"#e2e8f0\" font-size=\"10px\">الانشطار: A كبير → متوسط</text><text x=\"450\" y=\"95\" fill=\"#e2e8f0\" font-size=\"10px\">(طاقة ربط تزيد)</text></svg><figcaption style=\"color:#94a3b8;font-size:11px;margin-top:4px\">الشكل: منحنى أستون (Courbe d'Aston) — طاقة الربط لكل نوكليون بدلالة A</figcaption></figure>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "يفسر هذا المنحنى مصدر الطاقة النووية: في الاندماج، تندمج نوى خفيفة (يسار الذروة) لتشكل نواة أثقل ذات طاقة ربط أعلى — فيتحرر فرق الطاقة. في الانشطار، تنشطر نواة ثقيلة (يمين الذروة) إلى نوى متوسطة ذات طاقة ربط أعلى — فيتحرر الفرق أيضاً."
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>قراءة المنحنى واستخدامه:</strong></p><ul><li>ذروة الاستقرار: الحديد $^{56}Fe$ له أعلى طاقة ربط لكل نكليون $E_l/A \\approx 8.8 MeV$ — وهو أكثر النوى استقراراً في الكون.</li><li>منطقة الاندماج ($A < 60$): كلما اتجهنا يميناً (نحو $A$ أكبر) ترتفع $E_l/A$ — تندمج نوى خفيفة لتشكل نواة أثقل ذات طاقة ربط أعلى، فيتحرر فرق الطاقة.</li><li>منطقة الانشطار ($A > 60$): كلما اتجهنا يساراً (نحو $A$ أصغر) ترتفع $E_l/A$ — تنشطر نواة ثقيلة إلى نوى متوسطة ذات طاقة ربط أعلى، فيتحرر فرق الطاقة.</li></ul>"
+    },
+    {
+      "type": "heading",
+      "text": "حساب الطاقة المحررة في تفاعل نووي",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>مثال: انشطار اليورانيوم</strong></p><p>$^{235}_{92}U + ^1_0n \\longrightarrow ^{94}_{38}Sr + ^{139}_{54}Xe + 3^1_0n$</p><p>الكتل: $m(^{235}U) = 234.9935 u$، $m(^{94}Sr) = 93.8948 u$، $m(^{139}Xe) = 138.8882 u$، $m(n) = 1.0087 u$.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>$\\Delta m = [m(^{235}U) + m(n)] - [m(^{94}Sr) + m(^{139}Xe) + 3m(n)]$</p><p>$\\Delta m = (234.9935 + 1.0087) - (93.8948 + 138.8882 + 3 \\times 1.0087)$</p><p>$\\Delta m = 0.1931 u$</p><p>$E = \\Delta m \\times 931.5 = 179.9 MeV$</p>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "هذه الطاقة (179.9 MeV) ناتجة عن انشطار نواة واحدة. في 1 g من اليورانيوم 235 يوجد حوالي 2.56 × 10²¹ نواة، مما يعادل طاقة هائلة جداً — هذا يفسر كثافة الطاقة النووية."
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "مصطلح: يُرمز للطاقة المحررة في تفاعل نووي (أو انحلال) بـ Q-value. ففي هذا المثال Q = 179.9 MeV. Q > 0 يعني تفاعل ناشر للطاقة (exoénergétique)، Q < 0 يعني تفاعل ماص للطاقة (endoénergétique)."
     },
     {
       "type": "divider"
@@ -133,9 +194,13 @@
       "content": "<ul><li><strong>التصوير الطبي:</strong> استخدام النظائر المشعة في التصوير المقطعي (PET Scan) بواسطة $\\beta^+$.</li><li><strong>العلاج الإشعاعي:</strong> استخدام $\\gamma$ لعلاج الأورام السرطانية.</li><li><strong>التعقيم:</strong> تعقيم المواد الطبية بالإشعاع $\\gamma$.</li></ul>"
     },
     {
+      "type": "text",
+      "content": "<p><strong>وحدات الجرعة الإشعاعية:</strong></p><ul><li><strong>الجرعة الممتصة (Gray - Gy):</strong> الطاقة الممتصة لكل كيلوغرام من المادة. $1 Gy = 1 J/kg$.</li><li><strong>الجرعة المكافئة (Sievert - Sv):</strong> تأخذ بعين الاعتبار نوع الإشعاع وتأثيره البيولوجي. $1 Sv \\approx 1 Gy$ لأشعة $\\gamma$ و $\\beta$، أما $\\alpha$ فلها معامل خطورة أعلى.</li><li>الجرعات اليومية: التعرض الطبيعي ≈ 0.01 mSv/يوم، صورة أشعة صدر ≈ 0.1 mSv، حد العاملين في المجال النووي ≈ 20 mSv/سنة.</li></ul>"
+    },
+    {
       "type": "note",
       "variant": "warning",
-      "text": "<strong>الأمان:</strong> يجب التخلص من النفايات النووية في مستودعات آمنة لاحتواء الإشعاعات ومنع تسربها للبيئة."
+      "text": "الأمان: يجب التخلص من النفايات النووية في مستودعات آمنة لاحتواء الإشعاعات ومنع تسربها للبيئة."
     }
   ]
 }

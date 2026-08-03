@@ -1,0 +1,17 @@
+{
+  "unit_id": 23,
+  "title": "تمرين 003 - عربة تصطدم بنابض مرن",
+  "order_index": 3,
+  "source": "2AS U23 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 003", "level": 3 },
+      { "type": "text", "content": "ندفع بسرعة ابتدائية vA = 2 m/s عربة صغيرة كتلتها m = 1 kg من موضع A أعلى مستوى مائل أملس يصنع زاوية α = 30° مع المستوي الأفقي. بعد قطعها المسافة AB = 50 cm على هذا المستوي تواصل حركتها على مستوى أفقي أملس BCD، وعند بلوغها الموضع C تصطدم بنابض مرن حلقاته غير متلاصقة ثابتة مرونته K = 100 N/m فتضغطه بمقدار x0 عندها تتوقف في الموضع D. يعطى g = 10 m/s²." },
+      { "type": "question", "number": 1, "text": "باختيار الجملة (عربة + أرض)، أحسب سرعة العربة عند B. (بوحدة m/s)", "input_type": "numeric", "answer": { "value": 3, "tolerance": 0.01 }, "solution": "hA = AB.sinα = 0.5 × sin30 = 0.25 m. بتطبيق مبدأ انحفاظ الطاقة: ½ m.vA² + m.g.hA = ½ m.vB² أي 2 + 2.5 = ½ vB² ومنه vB = 3 m/s." },
+      { "type": "question", "number": 2, "text": "استنتج سرعة العربة عند ملامستها النابض عند الموضع C. (بوحدة m/s)", "input_type": "numeric", "answer": { "value": 3, "tolerance": 0.01 }, "solution": "المستوي الأفقي BCD أملس، فالسرعة منتظمة، إذن vC = vB = 3 m/s." },
+      { "type": "question", "number": 3, "text": "باختيار الجملة (عربة + نابض) بين الموضعين C و D، جد قيمة أقصى انضغاط x0 للنابض. (بوحدة m)", "input_type": "numeric", "answer": { "value": 0.3, "tolerance": 0.01 }, "solution": "بتطبيق مبدأ انحفاظ الطاقة: ½ m.vC² = ½ K.x0² أي ½ × 1 × 9 = ½ × 100 × x0² ومنه x0² = 0.09 إذن x0 = 0.3 m." },
+      { "type": "question", "number": 4, "text": "أوجد شدة القوة المرونية التي يطبقها النابض على العربة عند الموضع D. (بوحدة N)", "input_type": "numeric", "answer": { "value": 30, "tolerance": 0.01 }, "solution": "F = K.x0 = 100 × 0.3 = 30 N." },
+      { "type": "question", "number": 5, "text": "بعد بلوغ العربة الموضع D تعود باتجاه المستوي المائل AB فتتوقف في موضع E. بتطبيق مبدأ انحفاظ الطاقة على الجملة (عربة + نابض + أرض) بين D و E، جد المسافة BE. (بوحدة m)", "input_type": "numeric", "answer": { "value": 0.9, "tolerance": 0.01 }, "solution": "½ K.x0² = m.g.hE أي 4.5 = 10 × hE ومنه hE = 0.45 m. بما أن hE = BE.sinα فإن BE = 0.45/sin30 = 0.9 m." }
+    ]
+  }
+}

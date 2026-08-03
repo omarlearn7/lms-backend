@@ -1,0 +1,17 @@
+{
+  "unit_id": 26,
+  "title": "تمرين 005 - معايرة حمض كلور الهيدروجين",
+  "order_index": 5,
+  "source": "2AS U26 - Exercice 005",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 005", "level": 3 },
+      { "type": "text", "content": "لتحديد التركيز المولي لمحلول حمض كلور الهيدروجين (H₃O⁺ + Cl⁻) مجهول التركيز عن طريق المعايرة بوساطة محلول أساسي لهيدروكسيد الصوديوم (Na⁺ + HO⁻) تركيزه cb = 5 × 10⁻³ mol/L مع إضافة بضع قطرات من كاشف أزرق البروموتيمول BBT. أجرينا المعايرة لحجم Va = 10 mL من المحلول الحمضي فلاحظنا تغير لون المزيج عند إضافة VbE = 20 mL من محلول هيدروكسيد الصوديوم. التفاعل منمذج بالمعادلة: H₃O⁺(aq) + HO⁻(aq) = 2H₂O(ℓ)." },
+      { "type": "question", "number": 1, "text": "العنصر الذي يوضع فيه المحلول المعاير (هيدروكسيد الصوديوم) هو:", "input_type": "mcq", "options": ["السحاحة", "البيشر", "الماصة العيارية"], "answer": { "value": "السحاحة" }, "solution": "المحلول المعاير المعلوم التركيز يملأ به السحاحة." },
+      { "type": "question", "number": 2, "text": "اللون الذي يشير إلى بلوغ نقطة التكافؤ مع BBT هو:", "input_type": "mcq", "options": ["الأخضر", "الأصفر", "الأزرق"], "answer": { "value": "الأخضر" }, "solution": "عند نقطة التكافؤ يكون اللون أخضر (بين الأصفر والأزرق)." },
+      { "type": "question", "number": 3, "text": "كمية مادة شوارد الهيدروكسيد المضافة عند التكافؤ (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.0001, "tolerance": 1e-07 }, "solution": "n(HO⁻) = cb.VbE = 5 × 10⁻³ × 0.02 = 10⁻⁴ mol." },
+      { "type": "question", "number": 4, "text": "التركيز المولي ca لمحلول حمض كلور الهيدروجين (بوحدة mol/L):", "input_type": "numeric", "answer": { "value": 0.01, "tolerance": 0.0001 }, "solution": "عند التكافؤ n(H₃O⁺) = n(HO⁻) أي ca.Va = cb.VbE، منه ca = 5 × 10⁻³ × 20/10 = 10⁻² mol/L." },
+      { "type": "question", "number": 5, "text": "علاقة التكافؤ الصحيحة لهذه المعايرة هي:", "input_type": "mcq", "options": ["ca.Va = cb.VbE", "ca.VbE = cb.Va", "ca = cb"], "answer": { "value": "ca.Va = cb.VbE" }, "solution": "لأن التفاعل من النوع H₃O⁺ + HO⁻ = منتجات بنسب 1:1، تكون علاقة التكافؤ ca.Va = cb.VbE." }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "unit_id": 4,
+  "title": "تمرين 004 - معايرة حمض قوي بأساس قوي",
+  "order_index": 4,
+  "source": "3AS U04 - Exercice 004",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 004"
+      },
+      {
+        "type": "text",
+        "content": "نعاير V_a = 20.0 mL من محلول حمض كلور الهيدروجين HCl بتركيز C_a = 0.10 mol/L بمحلول هيدروكسيد الصوديوم NaOH بتركيز C_b = 0.10 mol/L. نتابع المعايرة بقياس pH."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "اكتب معادلة تفاعل المعايرة.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب حجم الأساس اللازم للوصول إلى نقطة التكافؤ V_eq.",
+        "input_type": "numeric",
+        "placeholder": "V_eq = ... mL"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب pH المحلول عند إضافة V_b = 10.0 mL من NaOH.",
+        "input_type": "numeric",
+        "placeholder": "pH = ... (بـ 0.01)"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب pH المحلول عند نقطة التكافؤ.",
+        "input_type": "numeric",
+        "placeholder": "pH = ..."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب pH المحلول عند إضافة V_b = 25.0 mL من NaOH.",
+        "input_type": "numeric",
+        "placeholder": "pH = ... (بـ 0.01)"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "ما هو الكاشف الملون المناسب لهذه المعايرة؟ (اختر: الفينولفتالين، أزرق البروموتيمول، هليانتين)",
+        "input_type": "text"
+      }
+    ]
+  }
+}

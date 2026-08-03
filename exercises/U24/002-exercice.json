@@ -1,0 +1,16 @@
+{
+  "unit_id": 24,
+  "title": "تمرين 002 - قياس ناقلية محلول كلور الصوديوم",
+  "order_index": 2,
+  "source": "2AS U24 - Exercice 002",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 002", "level": 3 },
+      { "type": "text", "content": "نحقق التركيبة المبينة التي تسمح بقياس الناقلية G لمحلول كلور الصوديوم (Na⁺ + Cl⁻) تركيزه المولي c = 10⁻³ mol/L. يشير كل من مقياس الأمبير ومقياس الفولط إلى القيمتين I = 0.126 mA و U = 1 V. مساحة لبوسي خلية قياس الناقلية S = 1 cm² والمسافة بينهما L = 1 cm. يعطى λ(Na⁺) = 5.01 mS.m²/mol و λ(Cl⁻) = 7.59 mS.m²/mol." },
+      { "type": "question", "number": 1, "text": "ناقلية المحلول G (بوحدة S):", "input_type": "numeric", "answer": { "value": 0.000126, "tolerance": 1e-07 }, "solution": "G = I/U = 0.126 × 10⁻³/1 = 1.26 × 10⁻⁴ S." },
+      { "type": "question", "number": 2, "text": "ثابت الخلية المستعملة K (بوحدة m):", "input_type": "numeric", "answer": { "value": 0.01, "tolerance": 0.0001 }, "solution": "K = S/L = 10⁻⁴/10⁻² = 10⁻² m." },
+      { "type": "question", "number": 3, "text": "الناقلية النوعية للمحلول σ (بوحدة S/m):", "input_type": "numeric", "answer": { "value": 0.0126, "tolerance": 0.0001 }, "solution": "σ = G/K = 1.26 × 10⁻⁴/10⁻² = 1.26 × 10⁻² S/m." },
+      { "type": "question", "number": 4, "text": "التركيز المولي c لمحلول كلور الصوديوم المحسوب بتطبيق قانون كولروش (بوحدة mol/m³):", "input_type": "numeric", "answer": { "value": 1, "tolerance": 0.01 }, "solution": "σ = (λ(Na⁺) + λ(Cl⁻)).c إذن c = 1.26 × 10⁻²/((5.01 + 7.59) × 10⁻³) = 1 mol/m³ أي 10⁻³ mol/L مطابقة للتركيز المعلوم." }
+    ]
+  }
+}

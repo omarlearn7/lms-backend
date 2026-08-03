@@ -1,0 +1,18 @@
+{
+  "unit_id": 26,
+  "title": "تمرين 002 - تفاعل الزنك مع حمض كلور الهيدروجين",
+  "order_index": 2,
+  "source": "2AS U26 - Exercice 002",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 002", "level": 3 },
+      { "type": "text", "content": "لدينا محلول من حمض كلور الهيدروجين (H₃O⁺ + Cl⁻) حجمه 200 mL وتركيزه المولي c0 = 0.2 mol/L. أدخلنا فيه قطعة من الزنك Zn النقي كتلتها m0. نلاحظ حدوث تحول كيميائي مصحوب بانطلاق غاز الهيدروجين نقيس حجمه في الشرطين النظاميين فنجد V(H₂) = 0.224 L. التفاعل منمذج بالمعادلة: Zn(s) + 2H₃O⁺(aq) = Zn²⁺(aq) + H₂(g) + 2H₂O(ℓ). يعطى M(Zn) = 65 g/mol و VM = 22.4 L/mol." },
+      { "type": "question", "number": 1, "text": "كمية مادة غاز الهيدروجين المتشكل (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.01, "tolerance": 0.0001 }, "solution": "n(H₂) = V/VM = 0.224/22.4 = 0.01 mol." },
+      { "type": "question", "number": 2, "text": "التقدم الأعظمي xmax (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.01, "tolerance": 0.0001 }, "solution": "n(H₂) = x إذن xmax = 0.01 mol." },
+      { "type": "question", "number": 3, "text": "الكتلة الابتدائية m0 لقطعة الزنك (بوحدة g):", "input_type": "numeric", "answer": { "value": 0.65, "tolerance": 0.01 }, "solution": "n(Zn) الابتدائية = xmax = 0.01 mol إذن m0 = 0.01 × 65 = 0.65 g." },
+      { "type": "question", "number": 4, "text": "كمية مادة شوارد الهيدرونيوم H₃O⁺ المتبقية في نهاية التفاعل (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.02, "tolerance": 0.001 }, "solution": "الابتدائية n(H₃O⁺) = c0.V = 0.2 × 0.2 = 0.04 mol، المتفاعلة = 2 × 0.01 = 0.02 mol، المتبقية = 0.04 − 0.02 = 0.02 mol." },
+      { "type": "question", "number": 5, "text": "تركيز شوارد الهيدرونيوم H₃O⁺ في نهاية التفاعل (بوحدة mol/L):", "input_type": "numeric", "answer": { "value": 0.1, "tolerance": 0.01 }, "solution": "[H₃O⁺] = 0.02/0.2 = 0.1 mol/L." },
+      { "type": "question", "number": 6, "text": "تركيز شوارد الزنك Zn²⁺ في نهاية التفاعل (بوحدة mol/L):", "input_type": "numeric", "answer": { "value": 0.05, "tolerance": 0.01 }, "solution": "n(Zn²⁺) = xmax = 0.01 mol إذن [Zn²⁺] = 0.01/0.2 = 0.05 mol/L." }
+    ]
+  }
+}

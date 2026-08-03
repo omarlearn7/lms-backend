@@ -1,0 +1,162 @@
+{
+  "title": "اختبار الوحدة 3 - العمل والطاقة الحركية الدورانية",
+  "slug": "اختبار-الوحدة-3-العمل-والطاقة-الحركية-الدورانية",
+  "description": "اختبار تقييمي: العمل والطاقة الحركية الدورانية",
+  "category_id": 2,
+  "unit_id": 22,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 10,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "اختبار الوحدة الثالثة: العمل والطاقة الحركية الدورانية",
+      "level": 3
+    },
+    {
+      "type": "text",
+      "content": "أجب عن الأسئلة التالية."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "المسافة الخطية S التي يقطعها جسم على مسار دائري نصف قطره R بمسح زاوية θ هي:",
+      "input_type": "mcq",
+      "options": [
+        "S = R.θ",
+        "S = R/θ",
+        "S = θ/R"
+      ],
+      "answer": {
+        "value": "S = R.θ"
+      },
+      "solution": "المسافة الخطية تساوي جداء نصف القطر في الزاوية الممسوحة: S = R.θ."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "العلاقة بين السرعة الخطية v والسرعة الزاوية ω هي:",
+      "input_type": "mcq",
+      "options": [
+        "v = R.ω",
+        "v = ω/R",
+        "v = R/ω"
+      ],
+      "answer": {
+        "value": "v = R.ω"
+      },
+      "solution": "السرعة الخطية تساوي جداء نصف القطر في السرعة الزاوية: v = R.ω."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "وحدة عزم القوة هي:",
+      "input_type": "mcq",
+      "options": [
+        "النيوتن في المتر N.m",
+        "الجول J",
+        "الواط W"
+      ],
+      "answer": {
+        "value": "النيوتن في المتر N.m"
+      },
+      "solution": "عزم القوة يقاس بالنيوتن في المتر (N.m)."
+    },
+    {
+      "type": "question",
+      "number": 4,
+      "text": "عزم قوة شدتها 20 N وذراعها 0.4 m يساوي:",
+      "input_type": "numeric",
+      "answer": {
+        "value": 8,
+        "tolerance": 0.01
+      },
+      "solution": "M = F.d = 20 × 0.4 = 8 N.m."
+    },
+    {
+      "type": "question",
+      "number": 5,
+      "text": "عزم المزدوجة لا يتعلق بـ:",
+      "input_type": "mcq",
+      "options": [
+        "محور الدوران",
+        "البعد بين حاملي القوتين",
+        "شدة القوتين"
+      ],
+      "answer": {
+        "value": "محور الدوران"
+      },
+      "solution": "عزم المزدوجة لا يتعلق بمحور الدوران إنما بالبعد بين حاملي القوتين وشدة القوتين."
+    },
+    {
+      "type": "question",
+      "number": 6,
+      "text": "عزم عطالة حلقة كتلتها M ونصف قطرها R بالنسبة لمحورها هو:",
+      "input_type": "mcq",
+      "options": [
+        "J = M.R²",
+        "J = ½ M.R²",
+        "J = 1/12 M.L²"
+      ],
+      "answer": {
+        "value": "J = M.R²"
+      },
+      "solution": "عزم عطالة الحلقة بالنسبة لمحورها المار من مركزها هو J = M.R²."
+    },
+    {
+      "type": "question",
+      "number": 7,
+      "text": "جسم نقطي كتلته 1 kg يبعد 0.5 m عن محور الدوران، عزم عطالته يساوي:",
+      "input_type": "numeric",
+      "answer": {
+        "value": 0.25,
+        "tolerance": 0.01
+      },
+      "solution": "J = m.d² = 1 × (0.5)² = 0.25 kg.m²."
+    },
+    {
+      "type": "question",
+      "number": 8,
+      "text": "تنص نظرية هيوغنس على أن عزم العطالة بالنسبة لمحور لا يمر من المركز هو:",
+      "input_type": "mcq",
+      "options": [
+        "J/Δ = J/Δ0 + m.d²",
+        "J/Δ = J/Δ0 − m.d²",
+        "J/Δ = m.d²"
+      ],
+      "answer": {
+        "value": "J/Δ = J/Δ0 + m.d²"
+      },
+      "solution": "نظرية هيوغنس: J/Δ = J/Δ0 + m.d²."
+    },
+    {
+      "type": "question",
+      "number": 9,
+      "text": "عمل عزم ثابت على مسار دائري يعطى بالعلاقة:",
+      "input_type": "mcq",
+      "options": [
+        "W = M.θ",
+        "W = F.AB.cosα",
+        "W = ½ m.v²"
+      ],
+      "answer": {
+        "value": "W = M.θ"
+      },
+      "solution": "عمل عزم ثابت على مسار دائري: W = M.θ."
+    },
+    {
+      "type": "question",
+      "number": 10,
+      "text": "عزم قوة قدره 3 N.m ومسح الجسم زاوية 90°، العمل المنجز يساوي:",
+      "input_type": "numeric",
+      "answer": {
+        "value": 4.71,
+        "tolerance": 0.01
+      },
+      "solution": "θ = 90° = π/2 rad، إذن W = M.θ = 3 × π/2 = 4.71 J."
+    }
+  ]
+}

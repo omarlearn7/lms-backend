@@ -1,0 +1,18 @@
+{
+  "unit_id": 26,
+  "title": "تمرين 003 - تفاعل الألمنيوم مع شوارد الحديد الثنائي",
+  "order_index": 3,
+  "source": "2AS U26 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 003", "level": 3 },
+      { "type": "text", "content": "لدينا محلول من كبريتات الحديد الثنائي (Fe²⁺ + SO₄²⁻) حجمه 200 mL وتركيزه المولي c0، أدخلنا فيه صفيحة من الألمنيوم Al كتلتها m0. نلاحظ حدوث تحول كيميائي مصحوب باختفاء كلي للون الأخضر، واختفاء كلي لصفيحة الألمنيوم، وتشكل راسب نزنته بعد ترشيح المحلول الناتج فنجد m = 6.72 g. التفاعل منمذج بالمعادلة: 2Al(s) + 3Fe²⁺(aq) = 2Al³⁺(aq) + 3Fe(s). يعطى M(Al) = 27 g/mol و M(Fe) = 56 g/mol." },
+      { "type": "question", "number": 1, "text": "كمية مادة الحديد Fe المتشكل (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.12, "tolerance": 0.001 }, "solution": "n(Fe) = m/M = 6.72/56 = 0.12 mol." },
+      { "type": "question", "number": 2, "text": "التقدم الأعظمي xmax (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.04, "tolerance": 0.001 }, "solution": "n(Fe) = 3x إذن xmax = 0.12/3 = 0.04 mol." },
+      { "type": "question", "number": 3, "text": "المزيج الابتدائي في نسب ستوكيومترية لأن:", "input_type": "mcq", "options": ["اختفى كل من Al و Fe²⁺ في نهاية التفاعل", "بقي الألمنيوم فائضًا", "بقي الحديد الثنائي فائضًا"], "answer": { "value": "اختفى كل من Al و Fe²⁺ في نهاية التفاعل" }, "solution": "بما أن صفيحة الألمنيوم اختفت واللون الأخضر اختفى كليًا، فإن المزيج الابتدائي ستوكيومتري." },
+      { "type": "question", "number": 4, "text": "الكتلة الابتدائية m0 لصفيحة الألمنيوم (بوحدة g):", "input_type": "numeric", "answer": { "value": 2.16, "tolerance": 0.01 }, "solution": "n(Al) الابتدائية = 2.xmax = 0.08 mol إذن m0 = 0.08 × 27 = 2.16 g." },
+      { "type": "question", "number": 5, "text": "كمية مادة شوارد Fe²⁺ الابتدائية (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.12, "tolerance": 0.001 }, "solution": "n(Fe²⁺) = 3.xmax = 3 × 0.04 = 0.12 mol." },
+      { "type": "question", "number": 6, "text": "التركيز المولي الابتدائي c0 للمحلول (بوحدة mol/L):", "input_type": "numeric", "answer": { "value": 0.6, "tolerance": 0.01 }, "solution": "c0 = n/V = 0.12/0.2 = 0.6 mol/L." }
+    ]
+  }
+}

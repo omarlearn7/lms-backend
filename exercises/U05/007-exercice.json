@@ -1,0 +1,61 @@
+{
+  "unit_id": 5,
+  "title": "تمرين 007 - النشاط الإشعاعي والجرعة",
+  "order_index": 7,
+  "source": "3AS U05 - Exercice 007",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 007"
+      },
+      {
+        "type": "text",
+        "content": "اليود 131 (¹³¹₅₃I) هو نظير مشع β⁻ و γ يستخدم في العلاج الإشعاعي للغدة الدرقية. عمر نصفه t₁/₂ = 8.02 يوم. كتلته المولية M = 131 g/mol."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب معادلة تفكك اليود 131.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب ثابت النشاط الإشعاعي λ لليود 131 بوحدة jour⁻¹.",
+        "input_type": "numeric",
+        "placeholder": "λ = ... jour⁻¹"
+      },
+      {
+        "type": "text",
+        "content": "حقن مريض بجرعة من اليود 131 مقدارها m₀ = 50 μg."
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب عدد الأنوية N₀ المحقونة.",
+        "input_type": "text",
+        "placeholder": "N₀ = ... (بالصيغة العلمية)"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب النشاط الإشعاعي الابتدائي A₀ للجرعة بوحدة Bq.",
+        "input_type": "text",
+        "placeholder": "A₀ = ... Bq"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "بعد كم يوم يصبح النشاط الإشعاعي أقل من 1% من قيمته الابتدائية؟",
+        "input_type": "numeric",
+        "placeholder": "t = ... jour"
+      },
+      {
+        "type": "note",
+        "variant": "info",
+        "text": "N_A = 6.02 × 10²³ mol⁻¹, 1 jour = 86400 s."
+      }
+    ]
+  }
+}

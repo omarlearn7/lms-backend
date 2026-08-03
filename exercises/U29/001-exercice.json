@@ -1,0 +1,16 @@
+{
+  "unit_id": 29,
+  "title": "تمرين 001 - التدفق المغناطيسي عبر وشيعة",
+  "order_index": 1,
+  "source": "2AS U29 - Exercice 001",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 001", "level": 3 },
+      { "type": "text", "content": "وشيعة طويلة مساحة سطحها S = 15 cm² عدد حلقاتها N = 70 توضع في حقل مغناطيسي منتظم شدته B = 0.05 T حيث تصنع خطوط الحقل زاوية α = 30° مع الناظم على سطح الوشيعة." },
+      { "type": "question", "number": 1, "text": "احسب التدفق المغناطيسي الابتدائي Φ1 عبر الوشيعة. (بوحدة Wb)", "input_type": "numeric", "answer": { "value": 0.00455, "tolerance": 0.0001 }, "solution": "Φ1 = N.B.S.cos30° = 70 × 0.05 × 15 × 10⁻⁴ × 0.866 = 4.55 × 10⁻³ Wb." },
+      { "type": "question", "number": 2, "text": "ندير الوشيعة بحيث تصبح زاوية خطوط الحقل مع الناظم α2 = 70°. احسب التدفق النهائي Φ2. (بوحدة Wb)", "input_type": "numeric", "answer": { "value": 0.0018, "tolerance": 0.0001 }, "solution": "Φ2 = N.B.S.cos70° = 70 × 0.05 × 15 × 10⁻⁴ × 0.342 = 1.80 × 10⁻³ Wb." },
+      { "type": "question", "number": 3, "text": "الدوران تم خلال Δt = 0.04 s. احسب القوة المحركة الكهربائية التحريضية المتوسطة. (بوحدة V)", "input_type": "numeric", "answer": { "value": 0.0688, "tolerance": 0.0001 }, "solution": "ΔΦ = Φ2 − Φ1 = −2.75 × 10⁻³ Wb إذن em = |ΔΦ|/Δt = 2.75 × 10⁻³/0.04 = 6.88 × 10⁻² V." },
+      { "type": "question", "number": 4, "text": "نوصل الوشيعة بدارة مقاومتها R = 20 Ω. احسب شدة التيار المتحرض. (بوحدة A)", "input_type": "numeric", "answer": { "value": 0.00344, "tolerance": 0.0001 }, "solution": "I = e/R = 6.88 × 10⁻²/20 = 3.44 × 10⁻³ A." }
+    ]
+  }
+}

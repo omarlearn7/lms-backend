@@ -1,0 +1,49 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 018 - بكالوريا 2009: النواس المرن",
+  "order_index": 18,
+  "source": "3AS U07 - Bac 2009",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 018 (بكالوريا 2009)"
+      },
+      {
+        "type": "text",
+        "content": "نواس مرن أفقي: m = 250 g, k = 40 N/m. نزيح الكتلة بـ X₀ = 5 cm ثم نحررها."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب T₀ و ω₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "اكتب x(t) مع اعتبار الطور الابتدائي معدوماً.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب v(t) و a(t). ثم أحسب سرعة الكتلة عند x = 3 cm.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب الطاقة الميكانيكية وبيّن أنها محفوظة.",
+        "input_type": "numeric",
+        "placeholder": "E_m = ... J"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "مثل بيانياً E_c(t) و E_p(t) و E_m(t).",
+        "input_type": "text"
+      }
+    ]
+  }
+}

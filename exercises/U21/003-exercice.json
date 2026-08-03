@@ -1,0 +1,19 @@
+{
+  "unit_id": 21,
+  "title": "تمرين 003 - سيارة تجر سيارة بالحبل",
+  "order_index": 3,
+  "source": "2AS U21 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 003", "level": 3 },
+      { "type": "text", "content": "سيارة (A) تجر سيارة (B) بواسطة حبل يصنع زاوية β = 60° مع المستوي الأفقي، وتطبق عليها قوة شدتها F1 = 1400 N، كما تشترك مجموعة من الرجال في دفع السيارة (B) بقوة أفقية شدتها F2 = 500 N، وأثناء حركة السيارة (B) تخضع أيضًا إلى تأثير قوة احتكاك شدتها f = 200 N." },
+      { "type": "text", "content": "إذا كانت كتلة السيارة (B) تساوي 1000 kg وانطلقت من السكون من الموضع A إلى موضع C حيث AB = 4.5 m." },
+      { "type": "question", "number": 1, "text": "عبارة عمل قوة شد الحبل F1 على المسار AB هي:", "input_type": "mcq", "options": ["F1.AB.cosβ", "F1.AB", "−F1.AB.cosβ"], "answer": { "value": "F1.AB.cosβ" }, "solution": "WAB(F1) = F1.AB.cosβ لأن الحبل يصنع زاوية β مع المسار." },
+      { "type": "question", "number": 2, "text": "بتطبيق مبدأ انحفاظ الطاقة على الجملة (سيارة B) بين A و C، معادلة انحفاظ الطاقة هي:", "input_type": "equation", "answer": ["ECA + WAC(F1) + WAC(F2) − WAC(f) = ECC", "ECA + WAC(F1) + WAC(F2) - WAC(f) = ECC"], "solution": "الطاقة المكتسبة من عمل F1 و F2 والطاقة المقدمة من عمل الاحتكاك: ECA + WAC(F1) + WAC(F2) − WAC(f) = ECC." },
+      { "type": "question", "number": 3, "text": "احسب سرعة السيارة (B) عند الموضع C. (بوحدة m/s)", "input_type": "numeric", "answer": { "value": 3, "tolerance": 0.01 }, "solution": "ECA = 0 لأن السيارة انطلقت من السكون. vC = √(2AB(F1.cosβ + F2 − f)/m) = √(2 × 4.5 × (1400×0.5 + 500 − 200)/1000) = √(9 × 1000/1000) = 3 m/s." },
+      { "type": "text", "content": "بعد ذلك تصعد السيارة (A) مع السيارة (B) مستويًا مائلًا فتصبح حركة كل منهما مستقيمة منتظمة، والاستطاعة المحولة من طرف الحبل إلى الجملة (سيارة B) هي P = 14 kW." },
+      { "type": "question", "number": 4, "text": "عبارة الاستطاعة المحولة من طرف الحبل هي:", "input_type": "mcq", "options": ["P = F1.v.cosβ", "P = F1.v", "P = F1.v/Δt"], "answer": { "value": "P = F1.v.cosβ" }, "solution": "P = WAC(F1)/Δt = F1.AC.cosβ/Δt = F1.v.cosβ حيث v = AC/Δt سرعة السيارة." },
+      { "type": "question", "number": 5, "text": "احسب قيمة السرعة v التي تتحرك بها السيارة (B) على المستوي المائل. (بوحدة m/s)", "input_type": "numeric", "answer": { "value": 20, "tolerance": 0.01 }, "solution": "v = P/(F1.cosβ) = 14000/(1400 × cos60°) = 14000/700 = 20 m/s." }
+    ]
+  }
+}

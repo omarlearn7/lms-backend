@@ -1,0 +1,56 @@
+{
+  "unit_id": 5,
+  "title": "تمرين 012 - تشغيل مفاعل نووي",
+  "order_index": 12,
+  "source": "3AS U05 - Exercice 012",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 012"
+      },
+      {
+        "type": "text",
+        "content": "مفاعل نووي يستخدم 1 kg من اليورانيوم ²³⁵₉₂U كوقود. الطاقة المحررة من انشطار نواة واحدة حوالي 200 MeV. قدرة المفاعل P = 100 MW."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: M(²³⁵U) ≈ 235 g/mol, N_A = 6.02 × 10²³ mol⁻¹, 1 MeV = 1.602 × 10⁻¹³ J."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب عدد الأنوية N في 1 kg من اليورانيوم 235.",
+        "input_type": "text",
+        "placeholder": "N = ..."
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب الطاقة الكلية E_tot (J) الناتجة عن انشطار كامل الـ 1 kg.",
+        "input_type": "text",
+        "placeholder": "E_tot = ... J"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "إذا كان المفاعل يعمل بقدرة ثابتة P = 100 MW (1 W = 1 J/s)، لمدة كم يوماً يمكنه العمل قبل نفاد الوقود؟ (افترض كفاءة 100%).",
+        "input_type": "numeric",
+        "placeholder": "t = ... jours"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "في الواقع، كفاءة التحويل الحراري إلى كهربائي حوالي 33%. كم يصبح زمن التشغيل الفعلي؟",
+        "input_type": "numeric",
+        "placeholder": "t_réel = ... jours"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "لماذا يستخدم وسيط (Moderator) في المفاعل النووي؟ وما دور قضبان التحكم (Control rods)؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

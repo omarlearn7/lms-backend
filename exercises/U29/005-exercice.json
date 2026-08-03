@@ -1,0 +1,16 @@
+{
+  "unit_id": 29,
+  "title": "تمرين 005 - وشيعة تتحرك في حقل مغناطيسي",
+  "order_index": 5,
+  "source": "2AS U29 - Exercice 005",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 005", "level": 3 },
+      { "type": "text", "content": "وشيعة عدد حلقاتها N = 50 مساحة سطحها S = 10 cm² تخرج من حقل مغناطيسي منتظم شدته B = 0.4 T إلى منطقة خالية من الحقل خلال مدة Δt = 0.2 s. نعتبر الحقل عموديًا على مستوي الوشيعة أثناء الخروج." },
+      { "type": "question", "number": 1, "text": "احسب التدفق الابتدائي Φ1 عبر الوشيعة. (بوحدة Wb)", "input_type": "numeric", "answer": { "value": 0.02, "tolerance": 0.001 }, "solution": "Φ1 = N.B.S = 50 × 0.4 × 10 × 10⁻⁴ = 2 × 10⁻² Wb." },
+      { "type": "question", "number": 2, "text": "ما هي قيمة التدفق النهائي Φ2 بعد خروج الوشيعة كليًا من الحقل؟", "input_type": "numeric", "answer": { "value": 0, "tolerance": 1e-06 }, "solution": "بعد الخروج من الحقل ينعدم التدفق: Φ2 = 0." },
+      { "type": "question", "number": 3, "text": "احسب القوة المحركة الكهربائية التحريضية المتوسطة. (بوحدة V)", "input_type": "numeric", "answer": { "value": 0.1, "tolerance": 0.005 }, "solution": "em = |ΔΦ|/Δt = 2 × 10⁻²/0.2 = 0.1 V." },
+      { "type": "question", "number": 4, "text": "نوصل الوشيعة بدارة مقاومتها R = 5 Ω، احسب شدة التيار المتحرض. (بوحدة A)", "input_type": "numeric", "answer": { "value": 0.02, "tolerance": 0.001 }, "solution": "I = e/R = 0.1/5 = 0.02 A." }
+    ]
+  }
+}

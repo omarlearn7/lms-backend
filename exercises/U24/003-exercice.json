@@ -1,0 +1,17 @@
+{
+  "unit_id": 24,
+  "title": "تمرين 003 - دراسة محلول هيدروكسيد الكالسيوم",
+  "order_index": 3,
+  "source": "2AS U24 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 003", "level": 3 },
+      { "type": "text", "content": "لدينا خلية قياس ناقلية البعد بين لبوسيها L = 1 cm ومساحة سطح أحد لبوسيها المتماثلين S = 1 cm². بوساطة هذه الخلية قمنا بقياس الناقلية في محلول شاردي تركيزه المولي c فوجدنا G = 1.034 mS. يعطى: λ(Ca²⁺) = 11.9 × 10⁻³ S.m²/mol و λ(HO⁻) = 19.9 × 10⁻³ S.m²/mol." },
+      { "type": "question", "number": 1, "text": "ثابت الخلية K (بوحدة m):", "input_type": "numeric", "answer": { "value": 0.01, "tolerance": 0.0001 }, "solution": "K = S/L = 10⁻⁴/10⁻² = 10⁻² m." },
+      { "type": "question", "number": 2, "text": "القيمة التي يشير إليها مقياس الأمبير إذا كان مقياس الفولط يشير إلى القيمة U = 5 V (بوحدة A):", "input_type": "numeric", "answer": { "value": 0.00517, "tolerance": 0.0001 }, "solution": "G = I/U إذن I = G.U = 1.034 × 10⁻³ × 5 = 5.17 × 10⁻³ A." },
+      { "type": "question", "number": 3, "text": "مقاومة المحلول R (بوحدة Ω):", "input_type": "numeric", "answer": { "value": 967.12, "tolerance": 0.5 }, "solution": "R = U/I = 5/(5.17 × 10⁻³) ≈ 967.12 Ω." },
+      { "type": "question", "number": 4, "text": "الناقلية النوعية للمحلول σ (بوحدة S/m):", "input_type": "numeric", "answer": { "value": 0.1034, "tolerance": 0.0001 }, "solution": "σ = G/K = 1.034 × 10⁻³/10⁻² = 0.1034 S/m." },
+      { "type": "question", "number": 5, "text": "المحلول هو هيدروكسيد الكالسيوم (Ca²⁺ + 2HO⁻). التركيز المولي c للمحلول (بوحدة mol/m³):", "input_type": "numeric", "answer": { "value": 2, "tolerance": 0.01 }, "solution": "[Ca²⁺] = c و [HO⁻] = 2c، إذن σ = λ(Ca²⁺).c + λ(HO⁻).2c = (λ(Ca²⁺) + 2λ(HO⁻)).c، منه c = 0.1034/(11.9 × 10⁻³ + 2 × 19.9 × 10⁻³) = 0.1034/(51.7 × 10⁻³) = 2 mol/m³ أي 2 × 10⁻³ mol/L." }
+    ]
+  }
+}

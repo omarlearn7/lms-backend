@@ -1,0 +1,53 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 023 - قياس g بالنواس البسيط (تجربة)",
+  "order_index": 23,
+  "source": "3AS U07 - Exercice 023",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 023"
+      },
+      {
+        "type": "text",
+        "content": "أجريت تجربة لقياس تسارع الجاذبية g باستخدام نواس بسيط طوله L. سجلت الأزمنة التالية لـ 10 دورات كاملة:"
+      },
+      {
+        "type": "text",
+        "content": "L (m): 0.50, 0.75, 1.00, 1.25, 1.50 | 10T (s): 14.2, 17.4, 20.1, 22.4, 24.6"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب T₀ لكل طول.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "ارسم بيان T₀² = f(L) واستنتج g من الميل.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "قارن g المستنتجة مع القيمة النظرية (9.81 m/s²).",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا كان الخطأ في قياس L هو ±1 cm، احسب الخطأ النسبي في g.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ما طول النواس البسيط الذي يعطيك T₀ = 2 s؟",
+        "input_type": "numeric",
+        "placeholder": "L = ... m"
+      }
+    ]
+  }
+}

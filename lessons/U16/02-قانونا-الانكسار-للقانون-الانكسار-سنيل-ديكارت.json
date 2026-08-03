@@ -1,0 +1,89 @@
+{
+  "title": "قانونا الانكسار",
+  "slug": "قانونا-الانكسار",
+  "description": "ظاهرة انكسار الضوء وقانونا سنيل-ديكارت مع محاكاة تفاعلية",
+  "category_id": 2,
+  "unit_id": 16,
+  "grade_level": "سنة أولى ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "1) ظاهرة انكسار الضوء",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "في تجربة قارورة الماء نحصل على قارورة زجاجية على شكل موشور تعبأ جزئياً بالماء، فيسقط عليها شعاع ضوئي. نلاحظ أن للشعاع الوارد اتجاهين: شعاع منعكس على الوجه الأول، وشعاع منكسر يدخل الزجاج ويخرج منه منكسراً مرة ثانية في الهواء. إن ظاهرة تغير اتجاه انتشار الشعاع الضوئي عند تجاوزه سطحاً فاصلاً بين وسطين شفافين تسمى انكسار الضوء."
+    },
+    {
+      "type": "text",
+      "content": "السطح الفاصل بين الوسطين هو مستوى الاتصال، والناظم هو المستقيم العمودي على مستوى الاتصال في نقطة الورود I. الشعاع الوارد هو الشعاع الضوئي الذي يصل من الوسط الأول إلى النقطة I، والشعاع المنكسر هو الشعاع الضوئي الذي يغادر النقطة I نحو الوسط الثاني."
+    },
+    {
+      "type": "heading",
+      "text": "2) المصطلحات الأساسية",
+      "level": 2
+    },
+    {
+      "type": "table",
+      "headers": [
+        "المصطلح",
+        "التعريف"
+      ],
+      "rows": [
+        [
+          "زاوية الورود i",
+          "الزاوية بين الشعاع الوارد والناظم"
+        ],
+        [
+          "زاوية الانكسار r",
+          "الزاوية بين الشعاع المنكسر والناظم"
+        ],
+        [
+          "الوسط الأكثر كسارة",
+          "الوسط الذي ينجم عنه انكسار الشعاع أكثر نحو الناظم"
+        ],
+        [
+          "معامل الانكسار n",
+          "العدد المميز لوسط، ويساوي n = c/v حيث c سرعة الضوء في الخلاء و v سرعته في الوسط"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "content": "معامل الانكسار المطلق لوسط شفاف يساوي ثابتاً بالنسبة لوسط آخر يساوي نسبة سرعة الضوء في الخلاء إلى سرعته في هذا الوسط. لكل وسط شفاف معامل انكسار مميز، ويُرمز له بـ n، وهو عدد بلا وحدة."
+    },
+    {
+      "type": "heading",
+      "text": "3) قانونا الانكسار (سنيل – ديكارت)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "عندما يمر شعاع ضوئي من وسط شفاف متجانس (1) معامل انكساره n1 إلى وسط شفاف متجانس آخر (2) معامل انكساره n2، فإنه ينكسر حسب القانونين التاليين."
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "القانون الأول: الشعاع الضوئي الوارد والشعاع الضوئي المنكسر والناظم على مستوى الاتصال في نقطة الورود، يقعان في مستوي واحد. القانون الثاني: إذا كانت i زاوية الورود و r زاوية الانكسار فإن n1 sin i = n2 sin r."
+    },
+    {
+      "type": "text",
+      "content": "نتيجة: إذا كان الوسط (2) أكثر كسارة من الوسط (1) أي n2 > n1، فإن الشعاع المنكسر يقترب من الناظم فتكون زاوية الانكسار r أصغر من زاوية الورود i. أما إذا كان الوسط (2) أقل كسارة أي n2 < n1، فإن الشعاع المنكسر يبتعد عن الناظم فتكون r أكبر من i."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة انكسار الضوء - قانون سنيل-ديكارت",
+        "width": 720,
+        "height": 420
+      },
+      "html": "<div id=\"snellWrap\">\n  <canvas id=\"snellCanvas\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"snellControls\">\n    <div class=\"sc-row\"><label>زاوية الورود i</label><input type=\"range\" id=\"angleSlider\" min=\"0\" max=\"90\" value=\"40\" step=\"0.5\"><span id=\"angleVal\">40°</span></div>\n    <div class=\"sc-row\"><label>معامل انكسار الوسط 1 (n1)</label><input type=\"range\" id=\"n1Slider\" min=\"1\" max=\"2.4\" value=\"1\" step=\"0.01\"><span id=\"n1Val\">1.00</span></div>\n    <div class=\"sc-row\"><label>معامل انكسار الوسط 2 (n2)</label><input type=\"range\" id=\"n2Slider\" min=\"1\" max=\"2.4\" value=\"1.5\" step=\"0.01\"><span id=\"n2Val\">1.50</span></div>\n    <div id=\"snellOut\">i = 40° | r = 25.4° | sin i / sin r = 1.500</div>\n    <button id=\"playBtn\">تشغيل النبض</button>\n  </div>\n</div>\n",
+      "css": "#snellWrap{font-family:inherit;direction:rtl;text-align:center}\n#snellCanvas{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc}\n#snellControls{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.sc-row{display:flex;align-items:center;gap:10px;font-size:14px}\n.sc-row label{width:190px;text-align:left}\n.sc-row span{width:48px;text-align:center;font-weight:bold;color:#0f766e}\ninput[type=range]{width:220px}\n#snellOut{padding:6px 12px;background:#ccfbf1;border:1px solid #99f6e4;border-radius:6px;font-weight:bold;color:#134e4a;margin-top:4px}\n#playBtn{margin-top:4px;padding:5px 16px;border:1px solid #0f766e;background:#0f766e;color:#fff;border-radius:6px;cursor:pointer;font-size:13px}",
+      "js": "(function(){\n  if (window.__snellInstalled__) return;\n  window.__snellInstalled__ = true;\n  var canvas = document.getElementById('snellCanvas');\n  var ctx = canvas.getContext('2d');\n  var angleSlider = document.getElementById('angleSlider');\n  var angleVal = document.getElementById('angleVal');\n  var n1Slider = document.getElementById('n1Slider');\n  var n1Val = document.getElementById('n1Val');\n  var n2Slider = document.getElementById('n2Slider');\n  var n2Val = document.getElementById('n2Val');\n  var out = document.getElementById('snellOut');\n  var playBtn = document.getElementById('playBtn');\n  var CX = canvas.width / 2, CY = canvas.height / 2;\n  var D2R = Math.PI / 180;\n  var running = false, pulse = 0;\n  window.simState = { i: 40, n1: 1, n2: 1.5, r: 0, critical: 41.8, tir: false, time: 0, running: false };\n  function compute(){\n    var i = parseFloat(angleSlider.value), n1 = parseFloat(n1Slider.value), n2 = parseFloat(n2Slider.value);\n    var sinI = Math.sin(i * D2R);\n    var sinR = sinI * n1 / n2;\n    var r = 0, tir = false;\n    if (sinR > 1) { tir = true; } else { r = Math.asin(sinR) / D2R; }\n    var crit = n1 > n2 ? Math.asin(n2 / n1) / D2R : 90;\n    window.simState.i = i; window.simState.n1 = n1; window.simState.n2 = n2;\n    window.simState.r = r; window.simState.critical = crit; window.simState.tir = tir;\n    return { i: i, n1: n1, n2: n2, sinI: sinI, r: r, tir: tir, crit: crit };\n  }\n  function draw(){\n    var p = compute();\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    ctx.fillStyle = '#e0f2fe'; ctx.fillRect(0, 0, canvas.width, CY);\n    ctx.fillStyle = '#fef3c7'; ctx.fillRect(0, CY, canvas.width, canvas.height - CY);\n    ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.moveTo(0, CY); ctx.lineTo(canvas.width, CY); ctx.stroke();\n    ctx.setLineDash([4, 4]); ctx.strokeStyle = '#64748b';\n    ctx.beginPath(); ctx.moveTo(CX, 0); ctx.lineTo(CX, canvas.height); ctx.stroke();\n    ctx.setLineDash([]);\n    ctx.fillStyle = '#0f172a'; ctx.font = '12px sans-serif';\n    ctx.fillText('الوسط 1 (n1 = ' + p.n1.toFixed(2) + ')', CX + 10, 20);\n    ctx.fillText('الوسط 2 (n2 = ' + p.n2.toFixed(2) + ')', CX + 10, canvas.height - 10);\n    var L = 170;\n    var ix = CX + L * Math.sin(p.i * D2R);\n    var iy = CY - L * Math.cos(p.i * D2R);\n    ctx.strokeStyle = '#dc2626'; ctx.lineWidth = 3;\n    ctx.beginPath(); ctx.moveTo(ix, iy); ctx.lineTo(CX, CY); ctx.stroke();\n    var rxk = Math.sin(p.r * D2R), ryk = Math.cos(p.r * D2R);\n    ctx.strokeStyle = '#2563eb'; ctx.lineWidth = 3;\n    if (!p.tir) {\n      ctx.beginPath(); ctx.moveTo(CX, CY); ctx.lineTo(CX + L * rxk, CY + L * ryk); ctx.stroke();\n    } else {\n      ctx.beginPath(); ctx.moveTo(CX, CY); ctx.lineTo(CX + L * Math.sin(p.i * D2R), CY - L * Math.cos(p.i * D2R)); ctx.stroke();\n    }\n    if (p.tir) {\n      ctx.fillStyle = '#dc2626'; ctx.font = 'bold 15px sans-serif';\n      ctx.fillText('انعكاس كلي (i > ℓ)', CX - 90, CY + 40);\n    }\n    if (running) {\n      pulse += 0.04;\n      var t = (pulse % 1.4) / 1.4;\n      var px, py;\n      if (!p.tir) {\n        var rx = CX + L * rxk, ry = CY + L * ryk;\n        var total = L + L;\n        var d = t * total;\n        if (d < L) { px = ix + (CX - ix) * d / L; py = iy + (CY - iy) * d / L; }\n        else { var d2 = d - L; px = CX + (rx - CX) * d2 / L; py = CY + (ry - CY) * d2 / L; }\n      } else {\n        var tx = CX + L * Math.sin(p.i * D2R), ty = CY - L * Math.cos(p.i * D2R);\n        var total2 = L + L;\n        var d3 = t * total2;\n        if (d3 < L) { px = ix + (CX - ix) * d3 / L; py = iy + (CY - iy) * d3 / L; }\n        else { var d4 = d3 - L; px = CX + (tx - CX) * d4 / L; py = CY + (ty - CY) * d4 / L; }\n      }\n      ctx.fillStyle = '#f59e0b'; ctx.beginPath(); ctx.arc(px, py, 5, 0, Math.PI * 2); ctx.fill();\n    }\n    angleVal.textContent = p.i + '°';\n    n1Val.textContent = p.n1.toFixed(2);\n    n2Val.textContent = p.n2.toFixed(2);\n    var ratio = p.tir ? '—' : (p.sinI / Math.sin(p.r * D2R)).toFixed(3);\n    out.textContent = 'i = ' + p.i.toFixed(1) + '° | r = ' + (p.tir ? '—' : p.r.toFixed(1)) + '° | sin i / sin r = ' + ratio;\n    window.simState.time += 0.05;\n  }\n  playBtn.addEventListener('click', function(){ running = !running; window.simState.running = running; playBtn.textContent = running ? 'إيقاف النبض' : 'تشغيل النبض'; });\n  angleSlider.addEventListener('input', function(){});\n  n1Slider.addEventListener('input', function(){});\n  n2Slider.addEventListener('input', function(){});\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  function loop(){ draw(); requestAnimationFrame(loop); }\n  loop();\n})();"
+    }
+  ]
+}

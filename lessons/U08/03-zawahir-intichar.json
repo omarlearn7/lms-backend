@@ -1,0 +1,257 @@
+{
+  "title": "ظواهر الانتشار: الانعكاس والانعراج والموجات الصوتية",
+  "description": "انعكاس الأمواج عند نهاية مقيدة أو حرة، انعراج الأمواج وزاوية الانعراج، الموجات الصوتية وشدّتها مع أمثلة تطبيقية",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 8,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 3,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "ظواهر الانتشار: الانعكاس والانعراج والموجات الصوتية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>عندما تصل موجة إلى حدود الوسط (نهاية حبل، فتحة، حاجز) تظهر ظواهر مميزة للأمواج لا تحدث للأجسام الصلبة، وهي: <strong>الانعكاس</strong> (Réflexion)، <strong>الانعراج</strong> (Diffraction). ندرس في هذا الدرس هذه الظواهر إضافة إلى <strong>الموجات الصوتية</strong> وشدتها الصوتية.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - انعكاس الأمواج (Réflexion des ondes)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الانعكاس</strong> هو ظاهرة ارتداد الاضطراب عند وصوله نقطة ما (حاجز أو حدود الوسط) وانتشاره مرة ثانية في <strong>الاتجاه المعاكس</strong>.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>سلوك الموجة المنعكسة يعتمد على طبيعة النهاية:</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "طبيعة النهاية",
+        "جبهة الموجة المنعكسة",
+        "وجهة الانتشار"
+      ],
+      "rows": [
+        [
+          "نهاية مقيدة (Fixe)",
+          "معاكسة لجبهة الموجة الواردة (انقلاب الشكل)",
+          "معاكسة لوجهة انتشار الموجة الواردة"
+        ],
+        [
+          "نهاية حرة طليقة (Libre)",
+          "موافقة لجبهة الموجة الواردة (نفس الشكل)",
+          "معاكسة لوجهة انتشار الموجة الواردة"
+        ]
+      ],
+      "caption": "انعكاس الموجة حسب طبيعة النهاية"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "قاعدة مهمة: في الحالتين تكون وجهة الانتشار معاكسة دائماً (لأن الموجة ترتد). الفرق الوحيد هو في جبهة الموجة: عند النهاية المقيدة تنعكس الجبهة (تنقلب) لتصبح معاكسة، وعند النهاية الحرة تبقى الجبهة موافقة."
+    },
+    {
+      "type": "text",
+      "content": "<p>تفسير ذلك: عند النهاية المقيدة تكون نقطة التثبيت ثابتة فلا يمكنها الحركة، فتتدخل الموجة الواردة مع المنعكسة بحيث تبقى العقدة في موضعها (انقلاب). أما عند النهاية الحرة فترتد دون انقلاب لأن النهاية حرة الحركة.</p>"
+    },
+    {
+      "type": "simulation",
+      "config": {
+        "title": "محاكاة تفاعلية: انعكاس أمواج مستوية (i = r)",
+        "height": 320
+      },
+      "html": " <div class=\"cont\"> <h1>محاكاة: انعكاس أمواج مستوية على حاجز مستقيم (زاوية الورود = زاوية الانعكاس)</h1> <canvas id=\"refl\" width=\"680\" height=\"300\"></canvas> <div class=\"ctrls\"> <div class=\"row\"> <div class=\"grp wide\"><label>t: <span id=\"tVal\" class=\"vl\">0.00</span> s</label><input type=\"range\" id=\"tSld\" min=\"0\" max=\"300\" value=\"0\" step=\"1\"></div> <div class=\"grp\"><div class=\"btn\" id=\"playBtn\">▶</div></div> <div class=\"grp\"><div class=\"btn\" id=\"rstBtn\">↺</div></div> </div> <div class=\"row\"> <div class=\"grp\"><label>زاوية الورود i: <span id=\"thVal\" class=\"vl\">25</span>°</label><input type=\"range\" id=\"thSld\" min=\"0\" max=\"70\" value=\"25\" step=\"1\"></div> <div class=\"grp\"><label>طول الموجة λ: <span id=\"lamVal\" class=\"vl\">1.40</span> m</label><input type=\"range\" id=\"lamSld\" min=\"0.5\" max=\"2.5\" value=\"1.4\" step=\"0.1\"></div> </div> <div class=\"row stats\"> <span>زاوية الورود: <b id=\"iVal\" style=\"color:#38bdf8\">25°</b></span> <span>زاوية الانعكاس: <b id=\"rVal\" style=\"color:#22c55e\">25°</b></span> <span>i = r ✓</span> </div> </div> </div>",
+      "css": "*{margin:0;padding:0;box-sizing:border-box}body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;padding:6px}.cont{max-width:700px;width:100%;margin:0 auto}h1{text-align:center;font-size:12px;color:#fbbf24;margin-bottom:3px}canvas{background:#0f172a;border:1px solid #334155;border-radius:6px;display:block;margin:0 auto;width:100%;max-width:680px}.ctrls{display:flex;flex-direction:column;gap:2px;margin-top:3px;background:#1e293b;border-radius:6px;padding:5px;border:1px solid #334155}.row{display:flex;gap:3px;align-items:center;flex-wrap:wrap}.grp{flex:1;min-width:70px;display:flex;flex-direction:column;gap:1px}.grp label{font-size:9px;color:#94a3b8;white-space:nowrap}.vl{color:#fbbf24;font-size:12px;font-weight:700}.grp.wide{flex:2}.btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:10px;cursor:pointer;text-align:center;min-width:40px}.btn:hover{background:#475569;color:#e2e8f0}.btn.active{background:#166534;color:#86efac;border-color:#22c55e}.stats{flex-wrap:wrap;justify-content:center;gap:10px;font-size:10px;color:#94a3b8;margin-top:1px}.stats b{font-size:11px}.cond{text-align:center;font-size:10px;color:#e2e8f0;background:#0f172a;border:1px solid #334155;border-radius:4px;padding:3px;margin-top:3px}.cond b{color:#38bdf8}input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#f59e0b;cursor:pointer}",
+      "js": " var c=document.getElementById('refl'),ctx=c.getContext('2d'); var W=680,H=300,pL=30,pR=30,pT=30,pB=20; var xW=540,yWall=160,v=1.5,th=25,lam=1.4,simT=0,playing=false,timer=null; var Xspan=8,scl=(W-pL-pR)/Xspan; function clip(ax,ay,bx,by){ var t0=0,t1=1,dx=bx-ax,dy=by-ay; var p=[-dx,dx,-dy,dy]; var q=[ax, W-ax, ay, H-ay]; for(var i=0;i<4;i++){ if(p[i]===0){if(q[i]<0)return null;} else{ var r=q[i]/p[i]; if(p[i]<0){if(r>t1)return null;if(r>t0)t0=r;} else{if(r<t0)return null;if(r<t1)t1=r;} } } if(t1>t0)return [ax+t0*dx,ay+t0*dy,ax+t1*dx,ay+t1*dy]; return null; } function draw(){ ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H); ctx.strokeStyle='rgba(71,85,105,0.22)';ctx.lineWidth=.5; for(var i=0;i<=6;i++){var xx=pL+i*((W-pL-pR)/6);ctx.beginPath();ctx.moveTo(xx,pT);ctx.lineTo(xx,H-pB);ctx.stroke();} for(var i=0;i<=4;i++){var yy=pT+i*((H-pT-pB)/4);ctx.beginPath();ctx.moveTo(pL,yy);ctx.lineTo(W-pR,yy);ctx.stroke();} var thRad=th*Math.PI/180; var nx=Math.cos(thRad),ny=Math.sin(thRad); var maxD=7; var K=Math.ceil(maxD/lam)+2; for(var kk=0;kk<K;kk++){ var D=Math.abs(kk*lam-v*simT); if(D>maxD)continue; var isInc=(kk*lam-v*simT)>=0; var nxx=isInc?nx:-nx; var nyy=ny; var px0=xW+nxx*D*scl; var py0=yWall+nyy*D*scl; var txx=-nyy,tyy=nxx; var seg=clip(px0-2000*txx,py0-2000*tyy,px0+2000*txx,py0+2000*tyy); if(seg){ ctx.strokeStyle=isInc?'#38bdf8':'#22c55e'; ctx.lineWidth=2; ctx.beginPath();ctx.moveTo(seg[0],seg[1]);ctx.lineTo(seg[2],seg[3]);ctx.stroke(); } } ctx.strokeStyle='#ef4444';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(xW,pT-4);ctx.lineTo(xW,H-pB+4);ctx.stroke(); ctx.fillStyle='#f87171';ctx.font='9px sans-serif';ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText('حاجز (جدار)',xW,pT+2); ctx.strokeStyle='rgba(148,163,184,0.5)';ctx.lineWidth=1;ctx.setLineDash([4,3]); ctx.beginPath();ctx.moveTo(pL,yWall);ctx.lineTo(xW,yWall);ctx.stroke();ctx.setLineDash([]); var r0=44; ctx.strokeStyle='#fbbf24';ctx.lineWidth=1.5; ctx.beginPath();ctx.arc(xW,yWall,r0,Math.PI+thRad,Math.PI);ctx.stroke(); ctx.beginPath();ctx.arc(xW,yWall,r0,Math.PI,Math.PI-thRad);ctx.stroke(); ctx.fillStyle='#fbbf24';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle'; ctx.fillText('i',xW-r0*Math.cos(thRad/2)-6,yWall-r0*Math.sin(thRad/2)-4); ctx.fillText('r',xW-r0*Math.cos(thRad/2)-6,yWall+r0*Math.sin(thRad/2)+4); ctx.fillStyle='#94a3b8';ctx.font='9px sans-serif';ctx.textAlign='left';ctx.textBaseline='top';ctx.fillText('الموجات الواردة (سماوي)',pL+8,pT+6); ctx.fillStyle='#94a3b8';ctx.textAlign='right';ctx.fillText('الموجات المنعكسة (أخضر)',W-pR-8,pT+6); var ix=xW-210,iy=yWall-75; ctx.strokeStyle='#38bdf8';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ix,iy);ctx.lineTo(ix+nx*40,iy+ny*40);ctx.stroke(); ctx.beginPath();ctx.moveTo(ix+nx*40,iy+ny*40);ctx.lineTo(ix+nx*40-nx*8-ny*5,iy+ny*40-ny*8+nx*5);ctx.lineTo(ix+nx*40-nx*8+ny*5,iy+ny*40-ny*8-nx*5);ctx.closePath();ctx.fillStyle='#38bdf8';ctx.fill(); var jx=xW-210,jy=yWall+75; ctx.strokeStyle='#22c55e';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(jx,jy);ctx.lineTo(jx-nx*40,jy+ny*40);ctx.stroke(); ctx.beginPath();ctx.moveTo(jx-nx*40,jy+ny*40);ctx.lineTo(jx-nx*40+nx*8-ny*5,jy+ny*40-ny*8-nx*5);ctx.lineTo(jx-nx*40+nx*8+ny*5,jy+ny*40-ny*8+nx*5);ctx.closePath();ctx.fillStyle='#22c55e';ctx.fill(); } function upd(){ document.getElementById('tVal').textContent=simT.toFixed(2); document.getElementById('tSld').value=Math.round(simT*20); document.getElementById('thVal').textContent=th; document.getElementById('iVal').textContent=th+'°'; document.getElementById('rVal').textContent=th+'°'; document.getElementById('lamVal').textContent=lam.toFixed(2); } var lastT=null;\nfunction rAFloop(){\n  if(!playing)return;\n  var now=performance.now();\n  if(lastT===null)lastT=now;\n  var dt=now-lastT;lastT=now;\n  simT+=dt*0.0004;\n  if(simT>20)simT=0;\n  draw();upd();;\n  timer=requestAnimationFrame(rAFloop);\n} function start(){if(playing)return;playing=true;lastT=null;timer=requestAnimationFrame(rAFloop);document.getElementById('playBtn').textContent='⏸';} function stop(){playing=false;if(timer)cancelAnimationFrame(timer);timer=null;document.getElementById('playBtn').textContent='▶';} document.getElementById('playBtn').onclick=function(){playing?stop():start();}; document.getElementById('rstBtn').onclick=function(){stop();simT=0;draw();upd();}; document.getElementById('tSld').oninput=function(){simT=parseFloat(this.value)/20;draw();upd();}; document.getElementById('thSld').oninput=function(){th=parseInt(this.value);draw();upd();}; document.getElementById('lamSld').oninput=function(){lam=parseFloat(this.value);draw();upd();}; draw();upd();;(function(){if(window.__fitInstalled__)return;window.__fitInstalled__=true;var _bw=c.width,_bh=c.height;function fit(){var dpr=window.devicePixelRatio||1;var nw=_bw*dpr,nh=_bh*dpr;if(c.width!==nw||c.height!==nh){c.width=nw;c.height=nh}ctx.setTransform(dpr,0,0,dpr,0,0);draw();upd()}window.addEventListener(\"resize\",fit);fit()})();"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - انعراج الأمواج (Diffraction des ondes)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الانعراج</strong> هو ظاهرة تميز انتشار الأمواج، وتحدث عندما تلقى موجة <strong>فتحة أو حاجزاً</strong> أبعادها من نفس رتبة طول الموجة $\\lambda$. يسلك كل من الفتحة والحاجز سلوك <strong>منبع ثانوي</strong> يؤدي إلى الانتشار في <strong>كل الاتجاهات</strong> وبنفس تواتر وسرعة المنبع الأصلي.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>كلما كانت أبعاد الفتحة أو الحاجز <strong>أصغر</strong> مقارنة بطول الموجة، كان الانعراج <strong>أحَدّ وأوضح</strong>. زاوية الانعراج تعطى بالتقريب:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\theta \\approx \\frac{\\lambda}{a}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $\\theta$ زاوية الانعراج (بالراديان)، $\\lambda$ طول الموجة، $a$ بُعد الفتحة أو الحاجز.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "شرط الانعراج الملحوظ: $a$ من رتبة $\\lambda$ ($a \\approx \\lambda$ أو $a < \\lambda$). إذا كان $a \\gg \\lambda$ لا يحدث انعراج ملحوظ — لهذا لا يُرى الانعراج للضوء في الأبواب العادية ($\\lambda$ الضوئية صغيرة جداً) بينما يُرى بوضوح مع الأمواج المائية."
+    },
+    {
+      "type": "simulation",
+      "config": {
+        "title": "محاكاة تفاعلية: انعراج أمواج مستوية عبر فتحة (a/λ)",
+        "height": 380
+      },
+      "html": " <div class=\"cont\"> <h1>محاكاة: انعراج أمواج مستوية عبر فتحة (Huygens — θ ≈ λ/a)</h1> <canvas id=\"diff\" width=\"680\" height=\"360\"></canvas> <div class=\"ctrls\"> <div class=\"row\"> <div class=\"grp wide\"><label>t: <span id=\"tVal\" class=\"vl\">0.00</span> s</label><input type=\"range\" id=\"tSld\" min=\"0\" max=\"300\" value=\"0\" step=\"1\"></div> <div class=\"grp\"><div class=\"btn\" id=\"playBtn\">▶</div></div> <div class=\"grp\"><div class=\"btn\" id=\"rstBtn\">↺</div></div> </div> <div class=\"row\"> <div class=\"grp\"><label>بُعد الفتحة a: <span id=\"aVal\" class=\"vl\">2.50</span> m</label><input type=\"range\" id=\"aSld\" min=\"0.3\" max=\"6\" value=\"2.5\" step=\"0.1\"></div> <div class=\"grp\"><label>طول الموجة λ: <span id=\"lamVal\" class=\"vl\">0.90</span> m</label><input type=\"range\" id=\"lamSld\" min=\"0.3\" max=\"2.5\" value=\"0.9\" step=\"0.05\"></div> </div> <div class=\"row stats\"> <span>a/λ: <b id=\"rVal\" style=\"color:#38bdf8\">2.78</b></span> <span id=\"condVal\" class=\"cond\">الفتحة كبيرة مقارنة بـ λ</span> </div> </div> </div>",
+      "css": "*{margin:0;padding:0;box-sizing:border-box}body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;padding:6px}.cont{max-width:700px;width:100%;margin:0 auto}h1{text-align:center;font-size:12px;color:#fbbf24;margin-bottom:3px}canvas{background:#0f172a;border:1px solid #334155;border-radius:6px;display:block;margin:0 auto;width:100%;max-width:680px}.ctrls{display:flex;flex-direction:column;gap:2px;margin-top:3px;background:#1e293b;border-radius:6px;padding:5px;border:1px solid #334155}.row{display:flex;gap:3px;align-items:center;flex-wrap:wrap}.grp{flex:1;min-width:70px;display:flex;flex-direction:column;gap:1px}.grp label{font-size:9px;color:#94a3b8;white-space:nowrap}.vl{color:#fbbf24;font-size:12px;font-weight:700}.grp.wide{flex:2}.btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:10px;cursor:pointer;text-align:center;min-width:40px}.btn:hover{background:#475569;color:#e2e8f0}.btn.active{background:#166534;color:#86efac;border-color:#22c55e}.stats{flex-wrap:wrap;justify-content:center;gap:10px;font-size:10px;color:#94a3b8;margin-top:1px}.stats b{font-size:11px}.cond{text-align:center;font-size:10px;color:#e2e8f0;background:#0f172a;border:1px solid #334155;border-radius:4px;padding:3px;margin-top:3px}.cond b{color:#38bdf8}input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#f59e0b;cursor:pointer}",
+      "js": " var c=document.getElementById('diff'),ctx=c.getContext('2d'); var W=680,H=360,pL=30,pR=30,pT=35,pB=15,centerX=W/2; var Xspan=8,barY=185,wallH=9; var ap=2.5,lam=0.9,v=1,simT=0,playing=false,timer=null; var scl=(W-pL-pR)/Xspan; var k=2*Math.PI/lam,omega=2*Math.PI*v/lam; function sources(){ var nS=Math.max(2,Math.min(61,Math.floor(ap/(lam/5))+1)); var dx=ap/(nS-1); var out=[]; for(var j=0;j<nS;j++){out.push(centerX+(j-(nS-1)/2)*dx*scl);} return out; } function draw(){ ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H); ctx.fillStyle='#94a3b8';ctx.font='9px sans-serif';ctx.textAlign='left';ctx.textBaseline='top';ctx.fillText('اتجاه انتشار الموجة ↓',pL+8,pT+6); ctx.strokeStyle='rgba(56,189,248,0.7)';ctx.lineWidth=1.5; var off=(v*simT*scl)%(lam*scl); for(var m=0;m<30;m++){var y=barY-8-off-m*(lam*scl);if(y<pT+16)break;ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(W-pR,y);ctx.stroke();} var ah=ap*scl/2; ctx.fillStyle='#64748b'; ctx.fillRect(pL,barY-wallH/2,(centerX-ah)-pL,wallH); ctx.fillRect(centerX+ah,barY-wallH/2,(W-pR)-(centerX+ah),wallH); ctx.fillStyle='#94a3b8';ctx.font='9px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('حاجز',centerX-ah-40,barY);ctx.fillText('حاجز',centerX+ah+40,barY); ctx.strokeStyle='#fbbf24';ctx.lineWidth=1.5; ctx.beginPath();ctx.moveTo(centerX-ah,barY+12);ctx.lineTo(centerX-ah,barY+20);ctx.stroke(); ctx.beginPath();ctx.moveTo(centerX+ah,barY+12);ctx.lineTo(centerX+ah,barY+20);ctx.stroke(); ctx.beginPath();ctx.moveTo(centerX-ah,barY+16);ctx.lineTo(centerX+ah,barY+16);ctx.stroke(); ctx.fillStyle='#fbbf24';ctx.font='bold 11px sans-serif';ctx.textBaseline='top';ctx.fillText('a',centerX,barY+22); var srcs=sources(); var maxU=0,step=5; var rows=[]; for(var gy=barY+wallH/2+4;gy<H-pB-2;gy+=step){ var row=[];var gx=pL; for(gx=pL;gx<W-pR;gx+=step){ var u=0; for(var j=0;j<srcs.length;j++){ var dxm=(gx-srcs[j])/scl; var dym=(gy-barY)/scl; var r=Math.sqrt(dxm*dxm+dym*dym); if(r<0.12)r=0.12; u+=Math.cos(k*r-omega*simT)/Math.sqrt(r); } row.push(u); if(Math.abs(u)>maxU)maxU=Math.abs(u); } rows.push({y:gy,vals:row}); } if(maxU<1e-6)maxU=1; for(var ri=0;ri<rows.length;ri++){ var gy=rows[ri].y,vals=rows[ri].vals,gx=pL; for(var ci=0;ci<vals.length;ci++){ var shade=0.5+0.5*(vals[ci]/maxU); if(shade<0)shade=0;if(shade>1)shade=1; ctx.fillStyle='rgba(56,189,248,'+(0.05+shade*0.55).toFixed(3)+')'; ctx.fillRect(gx,gy,step,step); gx+=step; } } } function upd(){ document.getElementById('tVal').textContent=simT.toFixed(2); document.getElementById('tSld').value=Math.round(simT*20); document.getElementById('aVal').textContent=ap.toFixed(2); document.getElementById('lamVal').textContent=lam.toFixed(2); var ratio=ap/lam; document.getElementById('rVal').textContent=ratio.toFixed(2); var msg=(ratio<=1.5)?'a من رتبة λ أو أصغر → انعراج واضح (موجات دائرية خلف الفتحة)':'a أكبر بكثير من λ → انعراج ضعيف (مرور شبه مستقيم)'; document.getElementById('condVal').innerHTML=msg; k=2*Math.PI/lam;omega=2*Math.PI*v/lam; } var lastT=null;\nfunction rAFloop(){\n  if(!playing)return;\n  var now=performance.now();\n  if(lastT===null)lastT=now;\n  var dt=now-lastT;lastT=now;\n  simT+=dt*0.0005;\n  if(simT>20)simT=0;\n  draw();upd();;\n  timer=requestAnimationFrame(rAFloop);\n} function start(){if(playing)return;playing=true;lastT=null;timer=requestAnimationFrame(rAFloop);document.getElementById('playBtn').textContent='⏸';} function stop(){playing=false;if(timer)cancelAnimationFrame(timer);timer=null;document.getElementById('playBtn').textContent='▶';} document.getElementById('playBtn').onclick=function(){playing?stop():start();}; document.getElementById('rstBtn').onclick=function(){stop();simT=0;draw();upd();}; document.getElementById('tSld').oninput=function(){simT=parseFloat(this.value)/20;draw();upd();}; document.getElementById('aSld').oninput=function(){ap=parseFloat(this.value);draw();upd();}; document.getElementById('lamSld').oninput=function(){lam=parseFloat(this.value);draw();upd();}; draw();upd();;(function(){if(window.__fitInstalled__)return;window.__fitInstalled__=true;var _bw=c.width,_bh=c.height;function fit(){var dpr=window.devicePixelRatio||1;var nw=_bw*dpr,nh=_bh*dpr;if(c.width!==nw||c.height!==nh){c.width=nw;c.height=nh}ctx.setTransform(dpr,0,0,dpr,0,0);draw();upd()}window.addEventListener(\"resize\",fit);fit()})();"
+    },
+    {
+      "type": "text",
+      "content": "<p>تطبيقات الانعراج: <strong>صوت الصوتيات</strong> — الصوت (طول موجته من رتبة المتر) ينعرج حول الأبواب فيسمع خلف الحواجز، بينما الضوء (طول موجته نانومترات) لا ينعرج فتُرى الظلال واضحة.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - الموجات الصوتية (Ondes sonores)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الصوت</strong> هو موجة ميكانيكية <strong>طولية</strong> تنتشر في الأوساط المادية (صلبة، سائلة، غازية) بانتشار ضغط وتمدد، ولا تنتشر في الفراغ. سرعة الصوت تعتمد على الوسط:</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "الوسط",
+        "سرعة الصوت التقريبية"
+      ],
+      "rows": [
+        [
+          "الهواء ($20^{\\circ}C$)",
+          "$\\approx 340\\, m/s$"
+        ],
+        [
+          "الماء",
+          "$\\approx 1500\\, m/s$"
+        ],
+        [
+          "الفولاذ",
+          "$\\approx 5000\\, m/s$"
+        ]
+      ],
+      "caption": "سرعة الصوت في بعض الأوساط"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>شدة الصوت</strong> (Intensité sonore) $I$ تقدر بـ $W/m^2$ وهي الطاقة الصوتية التي تعبر وحدة المساحات في الثانية الواحدة. <strong>مستوى الشدة الصوتية</strong> $L$ يقدَّر بـ <strong>الديسيبل</strong> (dB):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "L = 10\\, \\log \\frac{I}{I_0}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $I_0 = 10^{-12}\\, W/m^2$ هي شدة الصوت المرجعية (عتبة السمع عند $f = 1000\\, Hz$).</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p>مستويات مرجعية: عتبة السمع $L = 0\\, dB$ ($I = I_0$)، محادثة عادية $\\approx 60\\, dB$، عتبة الألم $\\approx 120\\, dB$ ($I = 1\\, W/m^2$).</p>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "قاعدة سريعة: كل زيادة بـ $10\\, dB$ تعني أن الشدة $I$ تُضرب في $10$ (لأن اللوغاريتم عشري). مثلاً $70\\, dB$ مقابل $60\\, dB$ تعني شدة أعظم بـ $10$ مرات."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "مثال تطبيقي 1: انعراج أمواج مائية",
+      "level": 3
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "المعطيات: اضطراب مستوٍ ينتشر في حوض مائي. يمكن إثبات أن سرعة انتشاره من رتبة $\\sqrt{g h}$ حيث $h$ ارتفاع الماء في الحوض. نضع أمامه فتحة صغيرة. يعطى: $h = 1\\, cm$ و $g = 9{,}8\\, m/s^2$."
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>1. الظاهرة الحادثة في هذه التجربة:</strong> <strong>انعراج الأمواج</strong> عبر فتحة صغيرة الأبعاد (أصغر من طول الموجة).</p><p><strong>2. الخاصية المميزة:</strong> عندما تكون الفتحة صغيرة الأبعاد يكون الانعراج <strong>أحَدّ وأكثر وضوحاً</strong> منه في حالة الفتحة الكبيرة — الأمواج تنتشر خلف الفتحة في كل الاتجاهات وكأن الفتحة منبع ثانوي.</p><p><strong>3. حساب سرعة انتشار الموجة:</strong></p><p>$v = \\sqrt{g h} = \\sqrt{9{,}8 \\times 10^{-2}} \\approx 0{,}31\\, m/s$</p><p>(بتقريب $g \\approx 10\\, m/s^2$ نجد $v \\approx 0{,}32\\, m/s$).</p>"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "مهم: لاحظ تحويل $h$ إلى المتر ($1\\, cm = 10^{-2}\\, m$) قبل التعويض في الجذر."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "مثال تطبيقي 2: مستوى الشدة الصوتية",
+      "level": 3
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "المعطيات: مصدر صوتي يبعث شدة صوتية $I = 10^{-6}\\, W/m^2$، والمرجع $I_0 = 10^{-12}\\, W/m^2$. سنسأل عن مستوى الشدة ثم عن الشدة المقابلة لمستوى $100\\, dB$."
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>1. حساب مستوى الشدة الصوتية:</strong></p><p>$L = 10\\, \\log \\frac{I}{I_0} = 10\\, \\log \\frac{10^{-6}}{10^{-12}} = 10\\, \\log (10^{6}) = 10 \\times 6 = 60\\, dB$</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>2. الشدة المقابلة لمستوى $100\\, dB$:</strong></p><p>$L = 10\\, \\log \\frac{I}{I_0} \\Rightarrow \\log \\frac{I}{I_0} = \\frac{L}{10} = 10 \\Rightarrow \\frac{I}{I_0} = 10^{10}$</p><p>$I = I_0 \\times 10^{10} = 10^{-12} \\times 10^{10} = 10^{-2}\\, W/m^2$</p>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "تطبيقات: السونار (استكشاف تحت الماء)، التصوير الطبي بالأمواج فوق الصوتية (Echographie)، التحكم غير التدميري (CND)."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة الدرس",
+      "level": 2
+    },
+    {
+      "type": "table",
+      "headers": [
+        "الظاهرة",
+        "التعريف / القاعدة"
+      ],
+      "rows": [
+        [
+          "الانعكاس",
+          "ارتداد الاضطراب عند حدود الوسط — الجبهة تنقلب عند نهاية مقيدة وتبقى عند حرة"
+        ],
+        [
+          "الانعراج",
+          "انحراف الموجة عند فتحة/حاجز من رتبة $\\lambda$ — $\\theta \\approx \\frac{\\lambda}{a}$"
+        ],
+        [
+          "الموجة الصوتية",
+          "موجة ميكانيكية طولية لا تنتشر في الفراغ"
+        ],
+        [
+          "مستوى الشدة الصوتية",
+          "$L = 10\\, \\log \\frac{I}{I_0}$ (dB) مع $I_0 = 10^{-12}\\, W/m^2$"
+        ]
+      ],
+      "caption": "ملخص المفاهيم الأساسية"
+    }
+  ]
+}

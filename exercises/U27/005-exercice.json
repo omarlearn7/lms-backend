@@ -1,0 +1,14 @@
+{
+  "unit_id": 27,
+  "title": "تمرين 005 - تراكب ثلاثة حقول مغناطيسية",
+  "order_index": 5,
+  "source": "2AS U27 - Exercice 005",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 005", "level": 3 },
+      { "type": "text", "content": "ثلاثة قضبان مغناطيسية تولد عند النقطة O حقولًا شدتها B1 = B2 = B3 = 0.5 × 10⁻³ T، حيث B1 و B2 في نفس الاتجاه وB3 عمودي عليهما." },
+      { "type": "question", "number": 1, "text": "احسب شدة الحقل B الناتج عن تراكب الحقول الثلاثة عند النقطة O. (بوحدة T)", "input_type": "numeric", "answer": { "value": 0.00112, "tolerance": 1e-06 }, "solution": "B4 = B1 + B2 = 10⁻³ T ثم B = √(B3² + B4²) = √(0.25 + 1) × 10⁻³ = 1.12 × 10⁻³ T." },
+      { "type": "question", "number": 2, "text": "احسب قيمة B إذا أدرنا القضيب (1) بزاوية 180°. (بوحدة T)", "input_type": "numeric", "answer": { "value": 0.0005, "tolerance": 1e-08 }, "solution": "بعد الدوران يصبح B1 وB2 متعاكسين، وبما أن B1 = B2 فإن B4 = 0، ومنه B = B3 = 0.5 × 10⁻³ T." }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "unit_id": 9,
+  "title": "اختبار الوحدة 9 - <عنوان الوحدة>",
+  "order_index": 10,
+  "source": "3AS-M U09 - Quiz",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "اختبار الوحدة التاسعة" },
+      { "type": "text", "content": "أجب عن الأسئلة التالية." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "السؤال الأول؟", "input_type": "mcq", "options": ["الخيار أ", "الخيار ب", "الخيار ج"], "answer": { "value": "الخيار أ" }, "solution": "الشرح." },
+      { "type": "question", "number": 2, "text": "احسب القيمة العددية؟", "input_type": "numeric", "answer": { "value": 12.5, "tolerance": 0.01 }, "solution": "الشرح." },
+      { "type": "question", "number": 3, "text": "اكتب المعادلة؟", "input_type": "equation", "answer": "v = u + at", "solution": "الشرح." }
+    ]
+  }
+}

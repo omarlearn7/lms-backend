@@ -1,0 +1,140 @@
+{
+  "title": "قانون كولوم",
+  "slug": "قانون-كولوم",
+  "description": "قانون كولوم للتأثير المتبادل بين الشحنات الكهربائية",
+  "category_id": 2,
+  "unit_id": 15,
+  "grade_level": "سنة أولى ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "نص قانون كولوم",
+      "level": 2
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "شدة قوة التأثير المتبادل بين شحنتين qA و qB تفصلهما مسافة d تتناسب مباشرة مع جداء الشحنتين وعكسياً مع مربع المسافة التي تفصلهما."
+    },
+    {
+      "type": "text",
+      "content": "نعبر عن هذا القانون بالعلاقة التالية: FB/A = FA/B = K × qA × qB / d² حيث K = 9 × 10⁹ SI هو ثابت يدعى ثابت كولوم."
+    },
+    {
+      "type": "heading",
+      "text": "التجاذب والتنافر",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "إذا كانت الشحنتان متعاكستين في الإشارة (+ و −) كانت القوة تجاذبية (تتجاذب الشحنتان)، وإذا كانت الشحنتان متشابهتين (++ أو −−) كانت القوة تنافرية (تتنافر الشحنتان)."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "حالة الشحنتين",
+        "طبيعة القوة"
+      ],
+      "rows": [
+        [
+          "شحنتان متعاكستان (+ و −)",
+          "تجاذب"
+        ],
+        [
+          "شحنتان متشابهتان (+ و +)",
+          "تنافر"
+        ],
+        [
+          "شحنتان متشابهتان (− و −)",
+          "تنافر"
+        ]
+      ]
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "قوة التأثير المتبادل بين شحنتين تتناسب:",
+      "input_type": "mcq",
+      "options": [
+        "مباشرة مع جداء الشحنتين وعكسياً مع مربع المسافة",
+        "مباشرة مع المسافة",
+        "عكسياً مع جداء الشحنتين"
+      ],
+      "answer": {
+        "value": "مباشرة مع جداء الشحنتين وعكسياً مع مربع المسافة"
+      },
+      "solution": "قوة كولوم تتناسب مباشرة مع جداء الشحنتين وعكسياً مع مربع المسافة."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "ثابت كولوم K يساوي:",
+      "input_type": "mcq",
+      "options": [
+        "9 × 10⁹ SI",
+        "6.67 × 10⁻¹¹ SI",
+        "8.31 SI"
+      ],
+      "answer": {
+        "value": "9 × 10⁹ SI"
+      },
+      "solution": "ثابت كولوم K = 9 × 10⁹ SI."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "شحنتان موجبتان متجاورتان:",
+      "input_type": "mcq",
+      "options": [
+        "تتنافران",
+        "تتجاذبان",
+        "لا تؤثران على بعضهما"
+      ],
+      "answer": {
+        "value": "تتنافران"
+      },
+      "solution": "شحنتان متشابهتان في الإشارة تتجاذبان؟ لا، بل تتنافران، والشحنات المتشابهة تتنافر."
+    },
+    {
+      "type": "question",
+      "number": 4,
+      "text": "شحنة موجبة وشحنة سالبة متجاورتان:",
+      "input_type": "mcq",
+      "options": [
+        "تتجاذبان",
+        "تتنافران",
+        "لا تؤثران على بعضهما"
+      ],
+      "answer": {
+        "value": "تتجاذبان"
+      },
+      "solution": "الشحنات المتعاكسة في الإشارة تتجاذب."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "قانون كولوم F = K×qA×qB/d² يصف التأثير المتبادل بين الشحنات الكهربائية، ويتجاذب الشحنان المتعاكسان ويتنافران الشحنان المتشابهان."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة قانون كولوم - القوة بين شحنتين",
+        "width": 720,
+        "height": 430
+      },
+      "html": " <div id=\"coulWrap\">\n  <canvas id=\"coulCanvas\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"coulControls\">\n    <div class=\"cc-row\"><label>الشحنة q₁ (µC)</label><input type=\"range\" id=\"q1Slider\" min=\"-6\" max=\"6\" value=\"3\" step=\"0.5\"><span id=\"q1Val\">+3.0</span></div>\n    <div class=\"cc-row\"><label>الشحنة q₂ (µC)</label><input type=\"range\" id=\"q2Slider\" min=\"-6\" max=\"6\" value=\"-2\" step=\"0.5\"><span id=\"q2Val\">-2.0</span></div>\n    <div class=\"cc-row\"><label>المسافة r (cm)</label><input type=\"range\" id=\"rSlider\" min=\"1\" max=\"10\" value=\"4\" step=\"0.5\"><span id=\"rVal\">4.0</span></div>\n    <div id=\"coulOut\">F = 3375 N | قوة تجاذب</div>\n    <button id=\"playBtn\">تشغيل الحركة</button>\n  </div>\n</div>\n",
+      "css": "#coulWrap{font-family:inherit;direction:rtl;text-align:center}\n#coulCanvas{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc}\n#coulControls{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.cc-row{display:flex;align-items:center;gap:10px;font-size:14px}\n.cc-row label{width:190px;text-align:left}\n.cc-row span{width:52px;text-align:center;font-weight:bold;color:#0f766e}\ninput[type=range]{width:220px}\n#coulOut{padding:6px 12px;background:#ccfbf1;border:1px solid #5eead4;border-radius:8px;font-size:13px;color:#115e59;direction:rtl}\nbutton{padding:6px 16px;border:none;border-radius:8px;background:#0d9488;color:#fff;font-size:14px;cursor:pointer}\n",
+      "js": "(function(){\n  if (window.__coulInstalled__) return;\n  window.__coulInstalled__ = true;\n  var canvas = document.getElementById('coulCanvas');\n  var ctx = canvas.getContext('2d');\n  var q1Slider = document.getElementById('q1Slider');\n  var q1Val = document.getElementById('q1Val');\n  var q2Slider = document.getElementById('q2Slider');\n  var q2Val = document.getElementById('q2Val');\n  var rSlider = document.getElementById('rSlider');\n  var rVal = document.getElementById('rVal');\n  var out = document.getElementById('coulOut');\n  var playBtn = document.getElementById('playBtn');\n  var K = 9e9;\n  var running = false, phase = 0;\n  window.simState = { q1: 3, q2: -2, r: 4, F: 0, attract: true, running: false, phase: 0 };\n  function compute(){\n    var q1 = parseFloat(q1Slider.value), q2 = parseFloat(q2Slider.value), r = parseFloat(rSlider.value);\n    var F = K * Math.abs(q1 * q2) * 1e-12 / Math.pow(r / 100, 2);\n    var attract = (q1 * q2) < 0;\n    window.simState.q1 = q1; window.simState.q2 = q2; window.simState.r = r;\n    window.simState.F = F; window.simState.attract = attract;\n    return { q1: q1, q2: q2, r: r, F: F, attract: attract };\n  }\n  function drawCharge(x, y, q, color){\n    var rad = 16 + Math.min(Math.abs(q) * 3, 14);\n    ctx.fillStyle = color;\n    ctx.beginPath(); ctx.arc(x, y, rad, 0, Math.PI * 2); ctx.fill();\n    ctx.strokeStyle = '#0f172a'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.arc(x, y, rad, 0, Math.PI * 2); ctx.stroke();\n    ctx.fillStyle = '#fff'; ctx.font = 'bold 16px sans-serif';\n    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';\n    ctx.fillText(q >= 0 ? '+' : '−', x, y + 1);\n  }\n  function arrow(x1, y1, x2, y2, color){\n    var dx = x2 - x1, dy = y2 - y1;\n    var len = Math.sqrt(dx * dx + dy * dy);\n    if (len < 2) return;\n    var ux = dx / len, uy = dy / len;\n    var hlen = Math.max(10, Math.min(len - 4, 34));\n    var hx = x1 + ux * hlen, hy = y1 + uy * hlen;\n    ctx.strokeStyle = color; ctx.lineWidth = 3;\n    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(hx, hy); ctx.stroke();\n    var ah = 8;\n    ctx.fillStyle = color;\n    ctx.beginPath();\n    ctx.moveTo(hx + ux * ah, hy + uy * ah);\n    ctx.lineTo(hx - uy * ah + ux * 2, hy + ux * ah + uy * 2);\n    ctx.lineTo(hx + uy * ah + ux * 2, hy - ux * ah + uy * 2);\n    ctx.closePath(); ctx.fill();\n    return { x: hx, y: hy, ux: ux, uy: uy };\n  }\n  function draw(){\n    var p = compute();\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    var CX = canvas.width / 2, CY = canvas.height / 2;\n    var half = (p.r / 10) * (canvas.width * 0.38);\n    var x1 = CX - half, x2 = CX + half;\n    ctx.strokeStyle = '#e2e8f0'; ctx.lineWidth = 1;\n    ctx.setLineDash([5, 5]);\n    ctx.beginPath(); ctx.moveTo(x1, CY); ctx.lineTo(x2, CY); ctx.stroke();\n    ctx.setLineDash([]);\n    ctx.fillStyle = '#64748b'; ctx.font = '12px sans-serif';\n    ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';\n    ctx.fillText('r = ' + p.r.toFixed(1) + ' cm', CX, CY + 24);\n    var c1 = p.q1 >= 0 ? '#dc2626' : '#2563eb';\n    var c2 = p.q2 >= 0 ? '#dc2626' : '#2563eb';\n    drawCharge(x1, CY, p.q1, c1);\n    drawCharge(x2, CY, p.q2, c2);\n    var flen = Math.min(160, 14 + Math.log10(1 + p.F) * 26);\n    var dir = p.attract ? 1 : -1;\n    arrow(x1 + dir * 18, CY, x1 + dir * (18 + flen), CY, '#dc2626');\n    arrow(x2 - dir * 18, CY, x2 - dir * (18 + flen), CY, '#dc2626');\n    if (running) {\n      phase += 0.03;\n      var t = (phase % 2) / 2;\n      var px, py;\n      if (t < 0.5) { px = x1 + (x2 - x1) * (t * 2); py = CY; }\n      else { px = x2 - (x2 - x1) * ((t - 0.5) * 2); py = CY; }\n      ctx.fillStyle = '#f59e0b';\n      ctx.beginPath(); ctx.arc(px, py, 5, 0, Math.PI * 2); ctx.fill();\n    }\n    q1Val.textContent = (p.q1 > 0 ? '+' : '') + p.q1.toFixed(1);\n    q2Val.textContent = (p.q2 > 0 ? '+' : '') + p.q2.toFixed(1);\n    rVal.textContent = p.r.toFixed(1);\n    out.textContent = 'F = ' + (p.F >= 10000 ? p.F.toFixed(0) : p.F.toFixed(1)) + ' N | قوة ' + (p.attract ? 'تجاذب' : 'تنافر');\n    window.simState.phase = phase;\n  }\n  playBtn.addEventListener('click', function(){\n    running = !running;\n    window.simState.running = running;\n    playBtn.textContent = running ? 'إيقاف' : 'تشغيل الحركة';\n  });\n  q1Slider.addEventListener('input', function(){});\n  q2Slider.addEventListener('input', function(){});\n  rSlider.addEventListener('input', function(){});\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  function loop(){ draw(); requestAnimationFrame(loop); }\n  loop();\n})();\n"
+    }
+  ]
+}

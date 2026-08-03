@@ -1,0 +1,68 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 007 - المتابعة بالامتصاصية (Spectrophotométrie)",
+  "order_index": 7,
+  "source": "3AS U06 - Exercice 007",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 007"
+      },
+      {
+        "type": "text",
+        "content": "نتابع تفاعل تكوّن معقد ملون عند طول موجي λ = 520 nm. يمتص المعقد الضوء بقانون Beer-Lambert: A = ε·l·[complexe]. طول الوعاء l = 1 cm، ε = 500 L·mol⁻¹·cm⁻¹."
+      },
+      {
+        "type": "table",
+        "headers": ["t (min)", "0", "2", "4", "6", "8", "10", "15", "20", "30", "40"],
+        "rows": [
+          ["A", "0.00", "0.25", "0.45", "0.60", "0.72", "0.80", "0.95", "1.00", "1.05", "1.05"]
+        ]
+      },
+      {
+        "type": "diagram",
+        "diagram_type": "interactive_graph",
+        "props": {
+          "data": [[0,0.00],[2,0.25],[4,0.45],[6,0.60],[8,0.72],[10,0.80],[15,0.95],[20,1.00],[30,1.05],[40,1.05]],
+          "xLabel": "t (min)",
+          "yLabel": "A",
+          "title": "A = f(t) — منحنى الامتصاصية",
+          "showTangent": true
+        }
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب تركيز المعقد [C] عند كل لحظة باستخدام A = ε·l·[C].",
+        "input_type": "text",
+        "placeholder": "[C](t) = A(t) / (ε·l) = ... mol/L"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "ارسم [C](t) بدلالة t. حدد التركيز النهائي [C]_f والزمن اللازم للوصول إليه.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب السرعة الابتدائية v₀ = (d[C]/dt)₀ باستخدام المماس عند t = 0.",
+        "input_type": "numeric",
+        "placeholder": "v₀ = ... mol/L/min"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "ماذا يحدث للسرعة مع مرور الزمن؟ لماذا؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "إذا تضاعف التركيز الابتدائي للمتفاعلات، كيف يتغير A_f (الامتصاصية النهائية)؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

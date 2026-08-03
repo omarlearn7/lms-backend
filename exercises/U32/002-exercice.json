@@ -1,0 +1,15 @@
+{
+  "unit_id": 32,
+  "title": "تمرين 002 - حساب البعد المحرقي",
+  "order_index": 2,
+  "source": "2AS U32 - Exercice 002",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 002", "level": 3 },
+      { "type": "text", "content": "جسم حقيقي AB موجود على بعد P من عدسة رقيقة مقربة، خيال هذا الجسم أكبر 4 مرات من طول الجسم AB ويبعد عن العدسة بمقدار P' = 2.40 m." },
+      { "type": "question", "number": 1, "text": "أحسب بعد الجسم P عن العدسة.", "input_type": "numeric", "answer": { "value": "0.6", "unit": "m", "tolerance": 0.02 }, "solution": "γ = −P'/P = −4، إذن P = P'/4 = 2.40/4 = 0.60 m." },
+      { "type": "question", "number": 2, "text": "أحسب البعد المحرقي f للعدسة.", "input_type": "numeric", "answer": { "value": "0.48", "unit": "m", "tolerance": 0.02 }, "solution": "1/f = 1/P + 1/P' = 1/0.60 + 1/2.40 = 5/2.40، ومنه f = 0.48 m." },
+      { "type": "question", "number": 3, "text": "التكبير γ لهذه العدسة يساوي:", "input_type": "mcq", "options": ["−4", "4", "0.25"], "answer": { "value": "−4" }, "solution": "الخيال أكبر 4 مرات ومقلوب، إذن γ = −4." }
+    ]
+  }
+}

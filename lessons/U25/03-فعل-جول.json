@@ -1,0 +1,28 @@
+{
+  "title": "فعل جول",
+  "slug": "فعل-جول",
+  "description": "التحويل الحراري المصاحب لمرور تيار كهربائي في ناقل أومي",
+  "category_id": 2,
+  "unit_id": 25,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 3,
+  "is_free": true,
+  "sections": [
+    { "type": "heading", "text": "1) مفهوم فعل جول", "level": 2 },
+    { "type": "text", "content": "فعل جول هو التحويل الحراري الذي يرافق مرور تيار كهربائي في ناقل أومي. يتحول جزء من الطاقة الكهربائية إلى طاقة حرارية بفعل مقاومة الناقل." },
+    { "type": "heading", "text": "2) العلاقات الكهربائية", "level": 2 },
+    { "type": "formula", "latex": "U = R \\cdot I" },
+    { "type": "formula", "latex": "P = U \\cdot I = R \\cdot I^{2}" },
+    { "type": "formula", "latex": "E = P \\cdot \\Delta t = U \\cdot I \\cdot \\Delta t = R \\cdot I^{2} \\cdot \\Delta t" },
+    { "type": "text", "content": "حيث U التوتر بين طرفي الناقل الأومي بالفولط (V) و I شدة التيار بالأمبير (A) و R مقاومة الناقل الأومي بالأوم (Ω) و Δt المدة بالثانية و P الاستطاعة بالواط (W) و E الطاقة المحولة بالجول (J)." },
+    { "type": "heading", "text": "3) التحويل الحراري المكتسب", "level": 2 },
+    { "type": "text", "content": "عند غمر ناقل أومي في مسعر حراري يحتوي على ماء، تتحول الطاقة الكهربائية بفعل جول كاملة إلى طاقة حرارية يكتسبها الماء والمسعر، فترتفع درجة حرارتهما. يمكن كتابة: E = R.I².Δt = C.(θf − θi) حيث C السعة الحرارية للجملة (ماء + مسعر)." },
+    { "type": "question", "number": 1, "text": "فعل جول هو التحويل الحراري المصاحب لمرور تيار كهربائي في:", "input_type": "mcq", "options": ["ناقل أومي", "مكثفة", "وشيعة"], "answer": { "value": "ناقل أومي" }, "solution": "فعل جول يرافق مرور تيار كهربائي في ناقل أومي." },
+    { "type": "question", "number": 2, "text": "العلاقة بين التوتر U وشدة التيار I والمقاومة R هي:", "input_type": "mcq", "options": ["U = R.I", "U = R/I", "U = I/R"], "answer": { "value": "U = R.I" }, "solution": "قانون أوم: U = R.I." },
+    { "type": "question", "number": 3, "text": "ناقل أومي مقاومته R = 20 Ω يجتازه تيار شدته I = 0.6 A. الاستطاعة المحولة بفعل جول (بوحدة W):", "input_type": "numeric", "answer": { "value": 7.2, "tolerance": 0.01 }, "solution": "P = R.I² = 20 × 0.6² = 7.2 W." },
+    { "type": "question", "number": 4, "text": "الطاقة المحولة بفعل جول خلال نصف ساعة بواسطة ناقل أومي استطاعته P = 7.2 W (بوحدة J):", "input_type": "numeric", "answer": { "value": 12960, "tolerance": 1 }, "solution": "E = P.Δt = 7.2 × 1800 = 12960 J." },
+    { "type": "divider" },
+    { "type": "heading", "text": "خلاصة", "level": 2 },
+    { "type": "text", "content": "فعل جول هو التحويل الحراري عند مرور تيار في ناقل أومي: P = U.I = R.I² و E = P.Δt = U.I.Δt = R.I².Δt." }
+  ]
+}

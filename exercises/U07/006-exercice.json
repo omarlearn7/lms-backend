@@ -1,0 +1,49 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 006 - التخميد في النواس المرن",
+  "order_index": 6,
+  "source": "3AS U07 - Exercice 006",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 006"
+      },
+      {
+        "type": "text",
+        "content": "نظام نابض-كتلة (k = 50 N/m, m = 0.5 kg) يخضع لقوة احتكاك F_f = −h·v حيث h = 2 N·s/m. الإزاحة الابتدائية X₀ = 6 cm."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "اكتب المعادلة التفاضلية للحركة مع التخميد.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب ثابت التخميد h_c (التخميد الناقد). قارن مع h المعطى وحدد نظام التخميد.",
+        "input_type": "numeric",
+        "placeholder": "h_c = ... N·s/m"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب النبض ω₀ والنبض المخمد ω_d.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "اكتب الحل التقريبي x(t) للتخميد الضعيف.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "بعد كم دورة تصبح السعة أقل من 1 cm؟ (استخدم العلاقة Xₙ = X₀ e^(−n·hT₀/(2m)))",
+        "input_type": "text"
+      }
+    ]
+  }
+}

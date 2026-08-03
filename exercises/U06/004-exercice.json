@@ -1,0 +1,73 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 004 - متابعة التفاعل بحجم الغاز المنطلق",
+  "order_index": 4,
+  "source": "3AS U06 - Exercice 004",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 004"
+      },
+      {
+        "type": "text",
+        "content": "نضع m₀ = 2 g من كربونات الكالسيوم CaCO₃ (M = 100 g/mol) في V = 100 mL من محلول HCl بتركيز C = 2 mol/L. نتابع حجم غاز CO₂ المنطلق (V_gaz) بدلالة الزمن عند الشرطين STP (V_m = 24 L/mol):"
+      },
+      {
+        "type": "table",
+        "headers": ["t (s)", "0", "30", "60", "90", "120", "180", "240", "300", "420"],
+        "rows": [
+          ["V_gaz (mL)", "0", "65", "110", "145", "170", "205", "225", "235", "240"]
+        ]
+      },
+      {
+        "type": "diagram",
+        "diagram_type": "interactive_graph",
+        "props": {
+          "data": [[0,0],[30,65],[60,110],[90,145],[120,170],[180,205],[240,225],[300,235],[420,240]],
+          "xLabel": "t (s)",
+          "yLabel": "V_gaz (mL)",
+          "title": "V(CO₂) = f(t)",
+          "showTangent": true
+        }
+      },
+      {
+        "type": "text",
+        "content": "التفاعل: CaCO₃(s) + 2 H₃O⁺ → Ca²⁺ + CO₂(g) + 3 H₂O."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أنشئ جدول التقدم للتفاعل. أوجد المتفاعل المحد.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب التقدم ξ(t) من V_gaz(t) عند كل لحظة (ξ = V_gaz / V_m).",
+        "input_type": "text",
+        "placeholder": "ξ(t) = V_gaz(t) / 24 (mmol)"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب السرعة الحجمية v(t) عند t = 60 s (ارسم المماس لمنحنى ξ = f(t)).",
+        "input_type": "numeric",
+        "placeholder": "v(60) = ... mmol/L/s"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "حدد زمن نصف التفاعل t₁/₂ (الزمن اللازم لبلوغ ξ = ξ_f / 2).",
+        "input_type": "numeric",
+        "placeholder": "t₁/₂ = ... s"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "هل يتغير t₁/₂ إذا استخدمنا CaCO₃ مسحوقاً بدل الحبيبات؟ علل.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

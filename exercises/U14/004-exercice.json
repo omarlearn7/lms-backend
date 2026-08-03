@@ -1,0 +1,18 @@
+{
+  "unit_id": 14,
+  "title": "تمرين 004 - دراسة حمض الخل",
+  "order_index": 4,
+  "source": "1AS U14 - Exercice 004",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 004: دراسة حمض الخل" },
+      { "type": "text", "content": "حمض الخل هو سائل صيغته الجزيئية المجملة C2H4O2. احسب: الكتلة المولية الجزيئية لحمض الخل، كمية المادة في 200 mL من حمض الخل، وعدد الجزيئات في 1 mL من حمض الخل." },
+      { "type": "text", "content": "المعطيات: ρ(C2H4O2) = 1050 g/L، M(H) = 1 g/mol، M(C) = 12 g/mol، M(O) = 16 g/mol، NA = 6.02 × 10²³ mol⁻¹." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "الكتلة المولية الجزيئية لحمض الخل M(C2H4O2) تساوي:", "input_type": "numeric", "answer": { "value": 60, "tolerance": 0.01 }, "solution": "M(C2H4O2) = 2×12 + 4×1 + 2×16 = 24 + 4 + 32 = 60 g/mol." },
+      { "type": "question", "number": 2, "text": "كتلة 200 mL من حمض الخل تساوي (g):", "input_type": "numeric", "answer": { "value": 210, "tolerance": 0.01 }, "solution": "m = ρ × V = 1050 × 0.2 = 210 g." },
+      { "type": "question", "number": 3, "text": "كمية المادة في 200 mL من حمض الخل تساوي (mol):", "input_type": "numeric", "answer": { "value": 3.5, "tolerance": 0.01 }, "solution": "n = ρV/M = 1050 × 0.2 / 60 = 3.5 mol." },
+      { "type": "question", "number": 4, "text": "عدد الجزيئات في 1 mL من حمض الخل يساوي تقريباً:", "input_type": "mcq", "options": ["1.05 × 10²²", "6.02 × 10²³", "3.5 × 10²²"], "answer": { "value": "1.05 × 10²²" }, "solution": "N = NA × ρ × V / M = 6.02 × 10²³ × 1050 × 10⁻³ / 60 = 1.05 × 10²² جزيء." }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "اختبار الوحدة 12 - مدخل إلى كيمياء الكربون",
+  "slug": "اختبار-الوحدة-12-مدخل-إلى-كيمياء-الكربون",
+  "description": "اختبار شامل للوحدة الثانية عشرة: كيمياء الكربون",
+  "category_id": 2,
+  "unit_id": 31,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 10,
+  "is_free": true,
+  "sections": [
+    { "type": "question", "number": 1, "text": "السلسلة العددية لـ 4 ذرات كربون هي:", "input_type": "mcq", "options": ["بوتـ", "بروبـ", "هكسـ"], "answer": { "value": "بوتـ" }, "solution": "4 ذرات كربون = بوت (but)." },
+    { "type": "question", "number": 2, "text": "الصيغة العامة للألكانات:", "input_type": "mcq", "options": ["CnH2n+2", "CnH2n", "CnH2n−2"], "answer": { "value": "CnH2n+2" }, "solution": "الألكانات: CnH2n+2." },
+    { "type": "question", "number": 3, "text": "الصيغة العامة للألكينات:", "input_type": "mcq", "options": ["CnH2n", "CnH2n+2", "CnH2n−2"], "answer": { "value": "CnH2n" }, "solution": "الألكينات: CnH2n." },
+    { "type": "question", "number": 4, "text": "الفحوم الهيدروجينية تحتوي على:", "input_type": "mcq", "options": ["الكربون والهيدروجين", "الكربون والأكسجين", "الكربون والآزوت"], "answer": { "value": "الكربون والهيدروجين" }, "solution": "الفحوم الهيدروجينية: C و H فقط." },
+    { "type": "question", "number": 5, "text": "المجموعة الوظيفية للكحولات:", "input_type": "mcq", "options": ["OH", "CHO", "COOH"], "answer": { "value": "OH" }, "solution": "المجموعة الوظيفية للكحولات OH." },
+    { "type": "question", "number": 6, "text": "اسم المركب CH3−CHO هو:", "input_type": "mcq", "options": ["إيثانال", "إيثانول", "حمض الإيثانويك"], "answer": { "value": "إيثانال" }, "solution": "CH3−CHO = إيثانال." },
+    { "type": "question", "number": 7, "text": "اسم المركب CH3−COOH هو:", "input_type": "mcq", "options": ["حمض الإيثانويك", "إيثانول", "بروبانون"], "answer": { "value": "حمض الإيثانويك" }, "solution": "CH3−COOH = حمض الإيثانويك." },
+    { "type": "question", "number": 8, "text": "إماهة الإيثيلين بوجود حمض الكبريت تنتج:", "input_type": "mcq", "options": ["الإيثانول", "حمض الإيثانويك", "ثنائي ميثيل إيثر"], "answer": { "value": "الإيثانول" }, "solution": "CH2=CH2 + H2O = CH3−CH2OH." },
+    { "type": "question", "number": 9, "text": "نزع الماء من جزيئي ميثانول ينتج:", "input_type": "mcq", "options": ["ثنائي ميثيل إيثرأوكسيد", "إيثن", "إيثان"], "answer": { "value": "ثنائي ميثيل إيثرأوكسيد" }, "solution": "2CH3OH = CH3−O−CH3 + H2O." },
+    { "type": "question", "number": 10, "text": "أكسدة الكحول الثانوي أكسدة مقتصدة تنتج:", "input_type": "mcq", "options": ["كيتون", "ألدهيد", "حمض"], "answer": { "value": "كيتون" }, "solution": "يتأكسد الكحول الثانوي فينتج كيتون." }
+  ]
+}

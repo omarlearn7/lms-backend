@@ -1,0 +1,19 @@
+{
+  "unit_id": 25,
+  "title": "تمرين 004 - تحول قطعة جليد إلى بخار ماء",
+  "order_index": 4,
+  "source": "2AS U25 - Exercice 004",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 004", "level": 3 },
+      { "type": "text", "content": "قطعة جليد كتلتها m = 200 g درجة حرارتها −50°C نقوم بتسخينها متحولة إلى ماء سائل ثم بخار ماء درجة حرارته 150°C. يعطى: ce = 4180 J/(kg.°C) السعة الحرارية الكتلية للماء و cg = 2100 J/(kg.°C) للجليد و cv = 2100 J/(kg.°C) لبخار الماء و Lf = 335 kJ/kg كتلة انصهار الجليد و Lv = 1960 kJ/kg كتلة تبخر الماء." },
+      { "type": "question", "number": 1, "text": "التحويل الحراري Q1 لرفع درجة حرارة الجليد من −50°C إلى 0°C (بوحدة J):", "input_type": "numeric", "answer": { "value": 21000, "tolerance": 1 }, "solution": "Q1 = m.cg.(0 − (−50)) = 0.2 × 2100 × 50 = 21000 J." },
+      { "type": "question", "number": 2, "text": "التحويل الحراري Q2 عند انصهار الجليد وتحوله إلى ماء (بوحدة J):", "input_type": "numeric", "answer": { "value": 67000, "tolerance": 1 }, "solution": "Q2 = m.Lf = 0.2 × 335000 = 67000 J." },
+      { "type": "question", "number": 3, "text": "التحويل الحراري Q3 لرفع درجة حرارة الماء من 0°C إلى 100°C (بوحدة J):", "input_type": "numeric", "answer": { "value": 83600, "tolerance": 1 }, "solution": "Q3 = m.ce.(100 − 0) = 0.2 × 4180 × 100 = 83600 J." },
+      { "type": "question", "number": 4, "text": "التحويل الحراري Q4 عند تبخر الماء (بوحدة J):", "input_type": "numeric", "answer": { "value": 392000, "tolerance": 100 }, "solution": "Q4 = m.Lv = 0.2 × 1960 × 10³ = 392000 J." },
+      { "type": "question", "number": 5, "text": "التحويل الحراري Q5 لرفع درجة حرارة بخار الماء من 100°C إلى 150°C (بوحدة J):", "input_type": "numeric", "answer": { "value": 21000, "tolerance": 1 }, "solution": "Q5 = m.cv.(150 − 100) = 0.2 × 2100 × 50 = 21000 J." },
+      { "type": "question", "number": 6, "text": "التحويل الطاقوي الكلي اللازم لتحول قطعة الجليد من −50°C إلى بخار ماء 150°C (بوحدة J):", "input_type": "numeric", "answer": { "value": 584600, "tolerance": 100 }, "solution": "Q = Q1 + Q2 + Q3 + Q4 + Q5 = 21000 + 67000 + 83600 + 392000 + 21000 = 584600 J." },
+      { "type": "question", "number": 7, "text": "خلال تغير الحالة (الانصهار أو التبخر) درجة حرارة الجملة:", "input_type": "mcq", "options": ["تبقى ثابتة", "ترتفع", "تنخفض"], "answer": { "value": "تبقى ثابتة" }, "solution": "التحويلات الحرارية أثناء تغير الحالة منسوبة للحالة الفيزيائية-الكيميائية وتحدث دون تغير في درجة الحرارة." }
+    ]
+  }
+}

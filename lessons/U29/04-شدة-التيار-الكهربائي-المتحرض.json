@@ -1,0 +1,28 @@
+{
+  "title": "شدة التيار الكهربائي المتحرض",
+  "slug": "شدة-التيار-الكهربائي-المتحرض",
+  "description": "حساب شدة التيار المتحرض في دارة مغلقة ذاتية الوشيعة",
+  "category_id": 2,
+  "unit_id": 29,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 4,
+  "is_free": true,
+  "sections": [
+    { "type": "heading", "text": "1) شدة التيار المتحرض", "level": 2 },
+    { "type": "text", "content": "إذا كانت الدارة المتحرضة مغلقة يمر فيها تيار كهربائي متحرض، فإن شدة هذا التيار يعبر عنها بالعلاقة:" },
+    { "type": "formula", "latex": "I = \\frac{e}{R}" },
+    { "type": "text", "content": "حيث e القوة المحركة الكهربائية التحريضية بالفولط (V)، وR المقاومة المكافئة في الدارة المتحرضة المغلقة بالأوم (Ω)." },
+    { "type": "heading", "text": "2) ذاتية الوشيعة والطاقة المخزنة", "level": 2 },
+    { "type": "text", "content": "في الوشيعة الحلزونية يمر تيار شدته i فينشأ تدفق مغناطيسي عبر سطح الوشيعة قيمته Φ، وتسمى ذاتية الوشيعة بالعلاقة:" },
+    { "type": "formula", "latex": "L = \\frac{\\Phi}{i}" },
+    { "type": "text", "content": "ذاتية الوشيعة L وحدتها الهنري (H)، وتخزن الوشيعة طاقة مغناطيسية تعطى بالعلاقة:" },
+    { "type": "formula", "latex": "E_L = \\frac{1}{2} L \\cdot i^{2}" },
+    { "type": "question", "number": 1, "text": "شدة التيار المتحرض في دارة مغلقة تعطى بالعلاقة:", "input_type": "mcq", "options": ["I = e/R", "I = e.R", "I = R/e"], "answer": { "value": "I = e/R" }, "solution": "شدة التيار المتحرض: I = e/R." },
+    { "type": "question", "number": 2, "text": "ذاتية الوشيعة تعطى بالعلاقة:", "input_type": "mcq", "options": ["L = Φ/i", "L = Φ.i", "L = i/Φ"], "answer": { "value": "L = Φ/i" }, "solution": "ذاتية الوشيعة: L = Φ/i بوحدة الهنري." },
+    { "type": "question", "number": 3, "text": "وشيعة تمر فيها قوة محركة تحريضية e = 6.88 × 10⁻² V ومقاومتها R = 20 Ω. شدة التيار المتحرض (بوحدة A):", "input_type": "numeric", "answer": { "value": 0.00344, "tolerance": 1e-05 }, "solution": "I = e/R = 6.88 × 10⁻²/20 = 3.44 × 10⁻³ A." },
+    { "type": "question", "number": 4, "text": "وشيعة ذاتية L = 0.14 H يجتازها تيار i = 2.5 A. الطاقة المغناطيسية المخزنة (بوحدة J):", "input_type": "numeric", "answer": { "value": 0.44, "tolerance": 0.01 }, "solution": "EL = ½.L.i² = 0.5 × 0.14 × 6.25 = 0.44 J." },
+    { "type": "divider" },
+    { "type": "heading", "text": "خلاصة", "level": 2 },
+    { "type": "text", "content": "شدة التيار المتحرض: I = e/R. ذاتية الوشيعة: L = Φ/i، والطاقة المغناطيسية المخزنة: EL = ½.L.i²." }
+  ]
+}

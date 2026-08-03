@@ -1,0 +1,104 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 054 - دارة LC مثالية: اهتزازات غير متخامدة",
+  "order_index": 54,
+  "source": "3AS U07 - Exercice 054",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 054"
+      },
+      {
+        "type": "text",
+        "content": "تتكون الدارة المبينة في الشكل التالي على التسلسل من وشيعة ذاتيتها L = 1.0 H ومقاومتها الداخلية مهملة، ومكثفة سعتها C = 22 mF شحنت كلياً تحت توتر ثابت (E = 3.0 V). نغلق القاطعة عند اللحظة t = 0 فتتفـرغ المكثفة في الوشيعة بشكل دوري."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "ما هي الظاهرة التي تحدث في الدارة؟",
+        "input_type": "mcq",
+        "options": ["اهتزازات كهربائية حرة غير متخامدة", "اهتزازات كهربائية حرة متخامدة", "اهتزازات قسرية", "اهتزازات مستدامة"],
+        "answer": { "value": "اهتزازات كهربائية حرة غير متخامدة" },
+        "solution": "لا يوجد ناقل أومي في الدارة كما أن المقاومة الداخلية للوشيعة مهملة، لذلك لا يوجد ضياع في الطاقة، إذن الظاهرة الملاحظة هي اهتزازات كهربائية حرة غير متخامدة."
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أكتب المعادلة التفاضلية بدلالة شحنة المكثفة q(t).",
+        "input_type": "equation",
+        "answer": [
+          "d²q/dt² + (1/LC)q = 0",
+          "d2q/dt2 + (1/LC)q = 0",
+          "L d²q/dt² + q/C = 0",
+          "L C d²q/dt² + q = 0",
+          "L q'' + q/C = 0"
+        ],
+        "solution": "بتطبيق قانون جمع التوترات: uL + uC = 0، أي L·di/dt + q/C = 0 مع i = dq/dt، ومنه L·d²q/dt² + q/C = 0 أي d²q/dt² + (1/LC)·q = 0."
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "حل هذه المعادلة التفاضلية هو من الشكل q(t) = A·cos(Bt) حيث A و B يطلب التعبير عنهما. أحسب قيمة A.",
+        "input_type": "numeric",
+        "placeholder": "A = ... C",
+        "answer": { "value": 0.066, "tolerance": 0.002 },
+        "solution": "من الشروط الابتدائية: عند t = 0 يكون q = Q₀ = C·E، ومنه A = Q₀ = CE = 3×22×10⁻³ = 6.6×10⁻² C = 66 mC."
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب قيمة B (النبض الذاتي ω₀).",
+        "input_type": "numeric",
+        "placeholder": "B = ... rad/s",
+        "answer": { "value": 6.74, "tolerance": 0.2 },
+        "solution": "بالتعويض في المعادلة التفاضلية نجد B² = 1/(LC)، ومنه B = 1/√(LC) = 1/√(1.0×22×10⁻³) = 1/√0.022 = 6.74 rad/s."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أكتب العبارة الحرفية للدور الذاتي T₀ بدلالة L و C.",
+        "input_type": "equation",
+        "answer": [
+          "T₀ = 2π√(LC)",
+          "T0 = 2π√(LC)",
+          "T₀ = 2π sqrt(LC)",
+          "T₀ = 2π/√(1/LC)"
+        ],
+        "solution": "من ω₀ = 1/√(LC) و T₀ = 2π/ω₀ نستنتج T₀ = 2π√(LC)."
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "أحسب قيمة الدور الذاتي T₀.",
+        "input_type": "numeric",
+        "placeholder": "T₀ = ... s",
+        "answer": { "value": 0.93, "tolerance": 0.03 },
+        "solution": "T₀ = 2π√(LC) = 2π√(1×22×10⁻³) = 2π×0.148 = 0.93 s."
+      },
+      {
+        "type": "question",
+        "number": 7,
+        "text": "أكتب العبارة اللحظية لشدة التيار الكهربائي i(t) المار بالدارة.",
+        "input_type": "equation",
+        "answer": [
+          "i(t) = -I₀ sin(ω₀t)",
+          "i(t) = -I0 sin(ω0t)",
+          "i(t) = -I₀sin(ω₀t)",
+          "i(t) = -ω₀Q₀ sin(ω₀t)",
+          "i(t) = -(2πQ₀/T₀) sin(2πt/T₀)"
+        ],
+        "solution": "i(t) = dq/dt = −ω₀Q₀·sin(ω₀t) = −I₀·sin(ω₀t)، حيث I₀ = ω₀Q₀."
+      },
+      {
+        "type": "question",
+        "number": 8,
+        "text": "أحسب قيمة شدة التيار الكهربائي الأعظمى I₀.",
+        "input_type": "numeric",
+        "placeholder": "I₀ = ... A",
+        "answer": { "value": 0.45, "tolerance": 0.02 },
+        "solution": "I₀ = ω₀Q₀ = (2π/T₀)·CE = (2π×3×22×10⁻³)/0.93 = 0.414/0.93 = 0.45 A."
+      }
+    ]
+  }
+}

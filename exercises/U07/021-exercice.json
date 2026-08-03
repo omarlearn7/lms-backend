@@ -1,0 +1,48 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 021 - بكالوريا 2019: المقارنة بين الميكانيك والكهرباء",
+  "order_index": 21,
+  "source": "3AS U07 - Bac 2019",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 021 (بكالوريا 2019)"
+      },
+      {
+        "type": "text",
+        "content": "نظامان مهتزان: (ميكانيكي) نابض-كتلة m = 0.1 kg, k = 10 N/m و (كهربائي) دارة LC: L = 0.2 H, C = 5 µF."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب T₀ للنظامين.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أكتب المعادلتين التفاضليتين للنظامين وبيّن التشابه.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "ما المقابل الكهربائي للكتلة m ولمرونة النابض k؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا كانت طاقة كل نظام E₀ = 20 mJ، فاحسب X₀ و Q₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أذكر وجه التشابه والاختلاف بين التخميد في النظامين.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

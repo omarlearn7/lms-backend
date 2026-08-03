@@ -1,0 +1,19 @@
+{
+  "unit_id": 18,
+  "title": "تمرين 004 - فعل حمض كلور الماء على كربونات الكالسيوم",
+  "order_index": 4,
+  "source": "1AS U18 - Exercice 004",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 004: فعل حمض كلور الماء على كربونات الكالسيوم" },
+      { "type": "text", "content": "نضع كتلة m = 2 g من كربونات الكالسيوم CaCO₃ في حوجلة تحتوي V = 100 mL من محلول حمض كلور الماء تركيزه c = 0.5 mol/L، فينطلق غاز CO₂ وفق: CaCO₃(s) + 2H₃O⁺(aq) = Ca²⁺(aq) + CO₂(g) + 3H₂O(ℓ). نعطي M(CaCO₃) = 100 g/mol." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "كمية مادة كربونات الكالسيوم الابتدائية n₀(CaCO₃) هي:", "input_type": "numeric", "answer": { "value": 0.02 }, "solution": "n₀(CaCO₃) = m/M = 2/100 = 0.02 mol." },
+      { "type": "question", "number": 2, "text": "كمية مادة شوارد الهيدرونيوم الابتدائية n₀(H₃O⁺) هي:", "input_type": "numeric", "answer": { "value": 0.05 }, "solution": "n₀(H₃O⁺) = c × V = 0.5 × 0.1 = 0.05 mol." },
+      { "type": "question", "number": 3, "text": "التقدم الأعظمي والمتفاعل المحد هما:", "input_type": "mcq", "options": ["xmax = 0.02 mol والمحد هو CaCO₃", "xmax = 0.025 mol والمحد هو H₃O⁺", "xmax = 0.05 mol"], "answer": { "value": "xmax = 0.02 mol والمحد هو CaCO₃" }, "solution": "بفرض CaCO₃ محداً: 0.02 − xmax = 0 ⇒ xmax = 0.02. وبفرض H₃O⁺ محداً: 0.05 − 2xmax = 0 ⇒ xmax = 0.025. الأصغر 0.02 mol والمحد CaCO₃." },
+      { "type": "question", "number": 4, "text": "حجم غاز CO₂ الناتج في الشروط النظامية هو:", "input_type": "numeric", "answer": { "value": 0.448 }, "solution": "nf(CO₂) = xmax = 0.02 mol، و V = 0.02 × 22.4 = 0.448 L." },
+      { "type": "question", "number": 5, "text": "تركيز شوارد Ca²⁺ في نهاية التفاعل هو:", "input_type": "numeric", "answer": { "value": 0.2 }, "solution": "[Ca²⁺] = nf/V = 0.02/0.1 = 0.2 mol/L." },
+      { "type": "question", "number": 6, "text": "تركيز شوارد H₃O⁺ المتبقية في نهاية التفاعل هو:", "input_type": "numeric", "answer": { "value": 0.1 }, "solution": "nf(H₃O⁺) = 0.05 − 2 × 0.02 = 0.01 mol، و [H₃O⁺] = 0.01/0.1 = 0.1 mol/L." }
+    ]
+  }
+}

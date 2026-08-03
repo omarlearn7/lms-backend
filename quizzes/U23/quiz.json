@@ -1,0 +1,22 @@
+{
+  "title": "اختبار الوحدة 4 - الطاقة الكامنة",
+  "slug": "اختبار-الوحدة-4-الطاقة-الكامنة",
+  "description": "اختبار تقييمي في الوحدة الرابعة: الطاقة الكامنة الثقالية والمرونية ومبدأ انحفاظ الطاقة",
+  "category_id": 2,
+  "unit_id": 23,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 10,
+  "is_free": true,
+  "sections": [
+    { "type": "question", "number": 1, "text": "الجملة (جسم + أرض) عندما يكون الجسم على ارتفاع z من المستوي المرجعي تمتلك طاقة كامنة ثقالية:", "input_type": "mcq", "options": ["Epp = m.g.z", "Epp = ½ K.x²", "Epp = m.g.h", "Epp = ½ m.v²"], "answer": { "value": "Epp = m.g.z" }, "solution": "الطاقة الكامنة الثقالية: Epp = m.g.z." },
+    { "type": "question", "number": 2, "text": "وحدة قياس الطاقة الكامنة هي:", "input_type": "mcq", "options": ["الجول", "النيوتن", "الواط", "النيوتن على المتر"], "answer": { "value": "الجول" }, "solution": "الطاقة الكامنة تقاس بالجول (J) في النظام الدولي." },
+    { "type": "question", "number": 3, "text": "جسم كتلته 500 g على ارتفاع 2 m من سطح الأرض. g = 10 N/kg. طاقته الكامنة الثقالية بالنسبة لسطح الأرض:", "input_type": "numeric", "answer": { "value": 10, "tolerance": 0.01 }, "solution": "m = 0.5 kg إذن Epp = m.g.z = 0.5 × 10 × 2 = 10 J." },
+    { "type": "question", "number": 4, "text": "عند المستوي المرجعي تكون الطاقة الكامنة الثقالية للجملة:", "input_type": "mcq", "options": ["معدومة", "أعظمية", "سالبة", "غير قابلة للقياس"], "answer": { "value": "معدومة" }, "solution": "عند المستوي المرجعي z = 0 فتصبح Epp = 0." },
+    { "type": "question", "number": 5, "text": "القوة المرونية الناتجة عن تشوه نابض ثابتة مرونته K عند استطالة x تعطى بالعلاقة:", "input_type": "mcq", "options": ["F = K.x", "F = K/x", "F = ½ K.x²", "F = m.g"], "answer": { "value": "F = K.x" }, "solution": "حسب قانون هوك: F = K.x." },
+    { "type": "question", "number": 6, "text": "نابض ثابتة مرونته K = 100 N/m استطال بمقدار x = 4 cm. شدة القوة المرونية:", "input_type": "numeric", "answer": { "value": 4, "tolerance": 0.01 }, "solution": "x = 0.04 m إذن F = K.x = 100 × 0.04 = 4 N." },
+    { "type": "question", "number": 7, "text": "الطاقة الكامنة المرونية لجملة (نابض + جسم) عند استطالة x تعطى بالعلاقة:", "input_type": "mcq", "options": ["Epe = ½ K.x²", "Epe = K.x", "Epe = m.g.z", "Epe = ½ m.v²"], "answer": { "value": "Epe = ½ K.x²" }, "solution": "الطاقة الكامنة المرونية: Epe = ½ K.x²." },
+    { "type": "question", "number": 8, "text": "نابض ثابتة مرونته K = 200 N/m استطال بمقدار x = 0.1 m. الطاقة الكامنة المرونية المخزنة:", "input_type": "numeric", "answer": { "value": 1, "tolerance": 0.01 }, "solution": "Epe = ½ K.x² = ½ × 200 × 0.1² = 1 J." },
+    { "type": "question", "number": 9, "text": "الطاقة الميكانيكية لجملة تعطى بالعلاقة:", "input_type": "mcq", "options": ["Em = Ec + Ep", "Em = Ec − Ep", "Em = Ep − Ec", "Em = Ec × Ep"], "answer": { "value": "Em = Ec + Ep" }, "solution": "الطاقة الميكانيكية هي مجموع الطاقة الحركية والطاقة الكامنة." },
+    { "type": "question", "number": 10, "text": "جسم يسقط سقوطًا حرًا من ارتفاع h = 20 m. g = 10 m/s². سرعة وصوله لسطح الأرض:", "input_type": "numeric", "answer": { "value": 20, "tolerance": 0.01 }, "solution": "v = √(2.g.h) = √(2 × 10 × 20) = √400 = 20 m/s." }
+  ]
+}

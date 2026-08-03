@@ -1,0 +1,19 @@
+{
+  "unit_id": 14,
+  "title": "تمرين 005 - تحضير محلول هيدروكسيد الصوديوم",
+  "order_index": 5,
+  "source": "1AS U14 - Exercice 005",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 005: تحضير محلول هيدروكسيد الصوديوم" },
+      { "type": "text", "content": "لتحضير محلول (S) لهيدروكسيد الصوديوم NaOH قمنا بحل m0 = 4 g من هيدروكسيد الصوديوم النقي في حجم V = 200 mL من الماء المقطر." },
+      { "type": "text", "content": "يعطى: M(Na) = 23 g/mol، M(O) = 16 g/mol، M(H) = 1 g/mol." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "الكتلة المولية لهيدروكسيد الصوديوم M(NaOH) تساوي:", "input_type": "numeric", "answer": { "value": 40, "tolerance": 0.01 }, "solution": "M(NaOH) = 23 + 16 + 1 = 40 g/mol." },
+      { "type": "question", "number": 2, "text": "كمية مادة هيدروكسيد الصوديوم المذابة تساوي (mol):", "input_type": "numeric", "answer": { "value": 0.1, "tolerance": 0.01 }, "solution": "n = m0/M = 4/40 = 0.1 mol." },
+      { "type": "question", "number": 3, "text": "التركيز المولي للمحلول المحضر يساوي (mol/L):", "input_type": "numeric", "answer": { "value": 0.5, "tolerance": 0.01 }, "solution": "c = n/V = 0.1/0.2 = 0.5 mol/L." },
+      { "type": "question", "number": 4, "text": "التركيز الكتلي للمحلول المحضر يساوي (g/L):", "input_type": "numeric", "answer": { "value": 20, "tolerance": 0.01 }, "solution": "cm = m0/V = 4/0.2 = 20 g/L، أو cm = c × M = 0.5 × 40 = 20 g/L." },
+      { "type": "question", "number": 5, "text": "نمدد المحلول إلى حجم نهائي V2 = 1 L، يكون تركيزه المولي الجديد:", "input_type": "numeric", "answer": { "value": 0.1, "tolerance": 0.01 }, "solution": "بقانون التمديد c1V1 = c2V2 أي 0.5 × 0.2 = c2 × 1، ومنه c2 = 0.1 mol/L." }
+    ]
+  }
+}

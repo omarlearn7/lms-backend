@@ -1,0 +1,57 @@
+{
+  "unit_id": 4,
+  "title": "تمرين 009 - معايرة أساس ضعيف (NH₃) بحمض قوي",
+  "order_index": 9,
+  "source": "3AS U04 - Exercice 009",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 009"
+      },
+      {
+        "type": "text",
+        "content": "نعاير Vb = 20.0 mL من محلول الأمونياك NH₃ (أساس ضعيف) تركيزه Cb = 1.0×10⁻² mol/L بواسطة حمض كلور الهيدروجين HCl (حمض قوي) تركيزه Ca = 1.0×10⁻² mol/L. pKa لثنائية NH₄⁺/NH₃ يساوي 9.25."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "اكتب معادلة تفاعل المعايرة.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب الحجم المكافئ Veq اللازم للوصول إلى نقطة التكافؤ.",
+        "input_type": "numeric",
+        "placeholder": "Veq = ... mL"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب pH المحلول الابتدائي قبل إضافة الحمض. (علماً أن pH = 7 + ½ pKa + ½ log Cb).",
+        "input_type": "numeric",
+        "placeholder": "pH = ... (بـ 0.01)"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب pH عند نقطة نصف التكافؤ (V = Veq/2).",
+        "input_type": "numeric",
+        "placeholder": "pH = ... (بـ 0.01)"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "عند نقطة التكافؤ، يكون المحلول حمضياً (pH < 7). فسر ذلك، ثم أحسب pH عند التكافؤ. (علماً أن [H₃O⁺] = √(Ka × Ca') حيث Ca' هو تركيز الملح NH₄Cl المتشكل).",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "أذكر كاشفاً ملوناً مناسباً لهذه المعايرة.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

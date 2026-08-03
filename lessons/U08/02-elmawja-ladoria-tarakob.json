@@ -1,0 +1,210 @@
+{
+  "title": "الموجة المتوالية الدورية وتراكب الأمواج",
+  "description": "الموجة المتوالية الدورية: الدور والتواتر وطول الموجة، مبدأ التراكب الخطي، التداخل البنّاء والهدّام مع أمثلة تطبيقية",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 8,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "الموجة المتوالية الدورية وتراكب الأمواج",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>عندما يهتزّ المنبع بحركة دورية (ذهاب وإياب منتظم)، يتولد على طول الوسط <strong>اضطراب متوالٍ دوري</strong> يتكرر بشكل منتظم. ندرس هنا خصائص الموجة المتوالية الدورية (الدور، التواتر، طول الموجة) ثم <strong>تراكب الأمواج</strong> وما ينتج عنه من تداخل بنّاء أو هدّام.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - الموجة المتوالية الدورية (Onde progressive périodique)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الموجة المتوالية الدورية</strong> هي موجة تنشأ عندما يهتزّ المنبع بحركة دورية، فتنتشر في الوسط اضطرابات متتالية منتظمة. كل نقطة من الوسط تكرر حركة المنبع <strong>بتأخر زمني</strong> $\\tau = \\frac{d}{v}$.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الدور الزمني</strong> $T$ (Période): أقل مدة زمنية يستغرقها المنبع ليعيد نفس حالته الحركية (بـ $s$). <strong>التواتر</strong> $f$ (Fréquence): عدد الاهتزازات في الثانية الواحدة (بـ $Hz$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "f = \\frac{1}{T}"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>طول الموجة</strong> $\\lambda$ (Longueur d'onde): المسافة بين <strong>نقطتين متتاليتين في الطور نفسه</strong> (أصغر مسافة بين قمتين متتاليتين أو قاعين متتاليين). بالعلاقة بين السرعة والدور:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\lambda = v \\cdot T = \\frac{v}{f}"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "مهم: طول الموجة $\\lambda$ يقطع في زمن يساوي الدور $T$. نقطتان تفصلهما مسافة $k \\lambda$ ($k$ عدد صحيح) تتحركان في الطور نفسه؛ نقطتان تفصلهما مسافة $(2k+1)\\frac{\\lambda}{2}$ تتحركان في طور متعاكس."
+    },
+    {
+      "type": "text",
+      "content": "<p>الموجة المتوالية الدورية تمتاز بثبات السعة وثبات التواتر: <strong>لا تتغير $T$ ولا $f$ ولا $\\lambda$ أثناء الانتشار</strong> في وسط متجانس — فقط السرعة تعتمد على الوسط.</p>"
+    },
+    {
+      "type": "simulation",
+      "config": {
+        "title": "محاكاة تفاعلية: موجة متوالية دورية — العلاقة v = λ·f",
+        "height": 320
+      },
+      "html": " <div class=\"cont\"> <h1>محاكاة: موجة متوالية دورية — العلاقة v = λ·f</h1> <canvas id=\"pw\" width=\"680\" height=\"300\"></canvas> <div class=\"ctrls\"> <div class=\"row\"> <div class=\"grp wide\"><label>t: <span id=\"tVal\" class=\"vl\">0.00</span> s</label><input type=\"range\" id=\"tSld\" min=\"0\" max=\"300\" value=\"0\" step=\"1\"></div> <div class=\"grp\"><div class=\"btn\" id=\"playBtn\">▶</div></div> <div class=\"grp\"><div class=\"btn\" id=\"rstBtn\">↺</div></div> </div> <div class=\"row\"> <div class=\"grp\"><label>التردد f: <span id=\"fVal2\" class=\"vl\">1.20</span> Hz</label><input type=\"range\" id=\"fSld\" min=\"0.5\" max=\"4\" value=\"1.2\" step=\"0.1\"></div> <div class=\"grp\"><label>طول الموجة λ: <span id=\"lamVal\" class=\"vl\">2.00</span> m</label><input type=\"range\" id=\"lamSld\" min=\"0.5\" max=\"5\" value=\"2\" step=\"0.1\"></div> </div> <div class=\"row stats\"> <span>v = λ·f: <b id=\"vVal\" style=\"color:#38bdf8\">2.40</b> m/s</span> <span>الدور T = 1/f: <b id=\"TVal\" style=\"color:#fbbf24\">0.833</b> s</span> <span>اللون الأصفر: طول الموجة λ</span> </div> </div> </div>",
+      "css": "*{margin:0;padding:0;box-sizing:border-box}body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;padding:6px}.cont{max-width:700px;width:100%;margin:0 auto}h1{text-align:center;font-size:12px;color:#fbbf24;margin-bottom:3px}canvas{background:#0f172a;border:1px solid #334155;border-radius:6px;display:block;margin:0 auto;width:100%;max-width:680px}.ctrls{display:flex;flex-direction:column;gap:2px;margin-top:3px;background:#1e293b;border-radius:6px;padding:5px;border:1px solid #334155}.row{display:flex;gap:3px;align-items:center;flex-wrap:wrap}.grp{flex:1;min-width:70px;display:flex;flex-direction:column;gap:1px}.grp label{font-size:9px;color:#94a3b8;white-space:nowrap}.vl{color:#fbbf24;font-size:12px;font-weight:700}.grp.wide{flex:2}.btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:10px;cursor:pointer;text-align:center;min-width:40px}.btn:hover{background:#475569;color:#e2e8f0}.btn.active{background:#166534;color:#86efac;border-color:#22c55e}.stats{flex-wrap:wrap;justify-content:center;gap:10px;font-size:10px;color:#94a3b8;margin-top:1px}.stats b{font-size:11px}.cond{text-align:center;font-size:10px;color:#e2e8f0;background:#0f172a;border:1px solid #334155;border-radius:4px;padding:3px;margin-top:3px}.cond b{color:#38bdf8}input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#f59e0b;cursor:pointer}",
+      "js": " var c=document.getElementById('pw'),ctx=c.getContext('2d'); var W=680,H=300,pL=45,pR=15,pT=25,pB=35,gW=W-pL-pR,gH=H-pT-pB,mid=pT+gH/2; var Xspan=12,freq=1.2,lam=2,simT=0,playing=false,timer=null; var scale=gW/Xspan,ampPx=gH*0.36; function toX(x){return pL+x*scale;} function yAt(x,t){return Math.sin(2*Math.PI*x/lam-2*Math.PI*freq*t);} function draw(){ ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H); ctx.strokeStyle='#475569';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pL,mid);ctx.lineTo(pL+gW,mid);ctx.stroke(); ctx.strokeStyle='rgba(71,85,105,0.25)';ctx.lineWidth=.5; for(var i=0;i<=6;i++){var xx=pL+i*(gW/6);ctx.beginPath();ctx.moveTo(xx,pT);ctx.lineTo(xx,pT+gH);ctx.stroke();ctx.fillStyle='#64748b';ctx.font='9px sans-serif';ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText((i*2).toFixed(0),xx,pT+gH+3);} ctx.fillStyle='#94a3b8';ctx.font='9px sans-serif';ctx.textAlign='right';ctx.textBaseline='middle';ctx.fillText('x (m)',pL-4,mid); ctx.strokeStyle='#38bdf8';ctx.lineWidth=2.5;ctx.beginPath(); for(var px=0;px<=gW;px+=2){var xm=px/scale;var y=mid-yAt(xm,simT)*ampPx;if(px===0)ctx.moveTo(pL+px,y);else ctx.lineTo(pL+px,y);} ctx.stroke(); var n=Math.round(6-freq*simT-0.25); var x1=lam*(freq*simT+n+0.25); var guard=0; while(x1<0.8){n++;x1=lam*(freq*simT+n+0.25);if(guard++>500)break;} guard=0; while(x1+lam>Xspan-0.5){n--;x1=lam*(freq*simT+n+0.25);if(guard++>500)break;} var x2=x1+lam; var y1=mid-ampPx; ctx.strokeStyle='#fbbf24';ctx.lineWidth=1.5; ctx.setLineDash([3,3]); ctx.beginPath();ctx.moveTo(toX(x1),y1-12);ctx.lineTo(toX(x1),y1-30);ctx.stroke(); ctx.beginPath();ctx.moveTo(toX(x2),y1-12);ctx.lineTo(toX(x2),y1-30);ctx.stroke(); ctx.setLineDash([]); ctx.beginPath();ctx.moveTo(toX(x1),y1-21);ctx.lineTo(toX(x2),y1-21);ctx.stroke(); ctx.fillStyle='#fbbf24';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('λ',(toX(x1)+toX(x2))/2,y1-30); ctx.fillStyle='#22c55e';ctx.beginPath();ctx.arc(toX(x1),y1,4,0,2*Math.PI);ctx.fill();ctx.beginPath();ctx.arc(toX(x2),y1,4,0,2*Math.PI);ctx.fill(); } function upd(){ document.getElementById('tVal').textContent=simT.toFixed(2); document.getElementById('tSld').value=Math.round(simT*20); document.getElementById('vVal').textContent=(lam*freq).toFixed(2); document.getElementById('TVal').textContent=(1/freq).toFixed(3); document.getElementById('fVal2').textContent=freq.toFixed(2); document.getElementById('lamVal').textContent=lam.toFixed(2); } var lastT=null;\nfunction rAFloop(){\n  if(!playing)return;\n  var now=performance.now();\n  if(lastT===null)lastT=now;\n  var dt=now-lastT;lastT=now;\n  simT+=dt*0.0004;\n  if(simT>20)simT=0;\n  draw();upd();;\n  timer=requestAnimationFrame(rAFloop);\n} function start(){if(playing)return;playing=true;lastT=null;timer=requestAnimationFrame(rAFloop);document.getElementById('playBtn').textContent='⏸';} function stop(){playing=false;if(timer)cancelAnimationFrame(timer);timer=null;document.getElementById('playBtn').textContent='▶';} document.getElementById('playBtn').onclick=function(){playing?stop():start();}; document.getElementById('rstBtn').onclick=function(){stop();simT=0;draw();upd();}; document.getElementById('tSld').oninput=function(){simT=parseFloat(this.value)/20;draw();upd();}; document.getElementById('fSld').oninput=function(){freq=parseFloat(this.value);draw();upd();}; document.getElementById('lamSld').oninput=function(){lam=parseFloat(this.value);draw();upd();}; draw();upd();;(function(){if(window.__fitInstalled__)return;window.__fitInstalled__=true;var _bw=c.width,_bh=c.height;function fit(){var dpr=window.devicePixelRatio||1;var nw=_bw*dpr,nh=_bh*dpr;if(c.width!==nw||c.height!==nh){c.width=nw;c.height=nh}ctx.setTransform(dpr,0,0,dpr,0,0);draw();upd()}window.addEventListener(\"resize\",fit);fit()})();"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - مبدأ التراكب الخطي (Principe de superposition)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>عندما تلتقي موجتان أو أكثر على نفس المنحى في منطقة معينة من الوسط المرن، تحدث ظاهرة <strong>التداخل (التراكب)</strong> (Interférence). الموجة الناتجة عن هذا التراكب <strong>تختلف عن الموجتين المتراكبتين</strong>.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>مبدأ التراكب الخطي:</strong> خصائص الموجة المحصلة لموجتين متراكبتين نحصل عليها باعتبار أن <strong>الموجة الكلية هي المجموع الجبري</strong> للموجتين المنفردتين:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "y(t) = y_1(t) + y_2(t)"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>حالات التراكب:</strong></p><ul><li>إذا كانت دالتا الموجتين <strong>لهما نفس الإشارة</strong> (نفس الطور أو نفس الصفحة) يكون التداخل <strong>بنّاءً</strong> (Constructive): تضيف إحداهما إلى الأخرى وتتضاعف السعة.</li><li>إذا كانت دالتا الموجتين <strong>متعاكستين في الإشارة</strong> (متعاكستين في الطور) يكون التداخل <strong>هدّاماً</strong> (Destructive): تضعف إحداهما الأخرى وقد تنعدم السعة.</li></ul>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "خاصية أساسية: تحافظ الأمواج على خصائصها (السرعة، الشكل، التواتر...) قبل وبعد التراكب. لا يتغير شكل موجة بعد مرورها بأخرى — هذا ما يميّز الموجات عن حركة الأجسام الصلبة."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "نوع التداخل",
+        "الشرط",
+        "النتيجة"
+      ],
+      "rows": [
+        [
+          "بنّاء (Constructif)",
+          "نفس الطور — فرق المسير $\\delta = k\\lambda$",
+          "سعة معظمة (تضاعف السعة)"
+        ],
+        [
+          "هدّام (Destructif)",
+          "طور متعاكس — فرق المسير $\\delta = (2k+1)\\frac{\\lambda}{2}$",
+          "سعة مصغّرة (قد تنعدم)"
+        ]
+      ],
+      "caption": "شروط التداخل"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "محاكاة تفاعلية: تراكب موجتين (بنّاء / هدّام)",
+      "level": 2
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: تراكب موجتين جيبيتين",
+        "width": 700,
+        "height": 520
+      },
+      "html": "<div class=\"cont\"><h1>محاكاة: تراكب موجتين جيبيتين — الموجة المحصلة = y₁ + y₂</h1><canvas id=\"spc\" width=\"680\" height=\"340\"></canvas><div class=\"ctrls\"><div class=\"row\"><div class=\"grp\"><label>A₁: <span id=\"a1Val\">1.0</span></label><input type=\"range\" id=\"a1Sld\" min=\"0\" max=\"2\" value=\"1\" step=\"0.1\"></div><div class=\"grp\"><label>A₂: <span id=\"a2Val\">1.0</span></label><input type=\"range\" id=\"a2Sld\" min=\"0\" max=\"2\" value=\"1\" step=\"0.1\"></div><div class=\"grp\"><label>φ₂ − φ₁: <span id=\"phVal\">0</span> π</label><input type=\"range\" id=\"phSld\" min=\"0\" max=\"20\" value=\"0\" step=\"1\"></div></div><div class=\"row\"><div class=\"grp wide\"><label>t: <span id=\"tVal\" class=\"vl\">0.00</span></label><input type=\"range\" id=\"tSld\" min=\"0\" max=\"300\" value=\"0\" step=\"1\"></div><div class=\"grp\"><div class=\"btn\" id=\"playBtn\">▶</div></div><div class=\"grp\"><div class=\"btn\" id=\"rstBtn\">↺</div></div></div><div class=\"row stats\"><span style=\"color:#22c55e\">موجة 1</span><span style=\"color:#fbbf24\">موجة 2</span><span style=\"color:#38bdf8\">المحصلة</span><span>سعة المحصلة: <b id=\"ampVal\" style=\"color:#38bdf8\">—</b></span></div></div></div>",
+      "css": "*{margin:0;padding:0;box-sizing:border-box}body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;padding:6px}.cont{max-width:700px;width:100%;margin:0 auto}h1{text-align:center;font-size:12px;color:#fbbf24;margin-bottom:3px}canvas{background:#0f172a;border:1px solid #334155;border-radius:6px;display:block;margin:0 auto;width:100%;max-width:680px;height:340px}.ctrls{display:flex;flex-direction:column;gap:2px;margin-top:3px;background:#1e293b;border-radius:6px;padding:5px;border:1px solid #334155}.row{display:flex;gap:3px;align-items:center;flex-wrap:wrap}.grp{flex:1;min-width:70px;display:flex;flex-direction:column;gap:1px}.grp label{font-size:9px;color:#94a3b8;white-space:nowrap}.vl{color:#fbbf24;font-size:12px;font-weight:700}.grp.wide{flex:2}.btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:10px;cursor:pointer;text-align:center;min-width:40px}.btn:hover{background:#475569;color:#e2e8f0}.btn.active{background:#166534;color:#86efac;border-color:#22c55e}.stats{flex-wrap:wrap;justify-content:center;gap:10px;font-size:10px;color:#94a3b8;margin-top:1px}.stats b{font-size:11px}input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#f59e0b;cursor:pointer}",
+      "js": "var c=document.getElementById('spc'),ctx=c.getContext('2d');var W=680,H=340,pL=55,pR=20,pT=20,pB=30,gW=W-pL-pR,gH=H-pT-pB,mid=pT+gH/2;var A1=1,A2=1,phi=0;var simT=0,playing=false,timer=null;var k=2*Math.PI/4;function y1(x){return A1*Math.sin(k*x-simT*2)}function y2(x){return A2*Math.sin(k*x-simT*2+phi*Math.PI)}function draw(){ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);ctx.strokeStyle='#475569';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pL,mid);ctx.lineTo(pL+gW,mid);ctx.stroke();for(var i=-3;i<=3;i++){var y=mid+i*(gH/8);ctx.strokeStyle='rgba(71,85,105,0.25)';ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(pL+gW,y);ctx.stroke()}ctx.font='9px sans-serif';function wave(fn,color){ctx.strokeStyle=color;ctx.lineWidth=1.5;ctx.beginPath();for(var px=0;px<=gW;px+=2){var xm=(px/gW)*6-3;var y=mid-fn(xm)*(gH/8);if(px===0)ctx.moveTo(pL+px,y);else ctx.lineTo(pL+px,y)}ctx.stroke()}wave(y1,'#22c55e');wave(y2,'#fbbf24');ctx.strokeStyle='#38bdf8';ctx.lineWidth=2.5;ctx.beginPath();for(var px=0;px<=gW;px+=2){var xm=(px/gW)*6-3;var y=mid-(y1(xm)+y2(xm))*(gH/8);if(px===0)ctx.moveTo(pL+px,y);else ctx.lineTo(pL+px,y)}ctx.stroke();var maxA=0;for(var i=0;i<200;i++){var xx=(i/200)*6-3;var vv=y1(xx)+y2(xx);if(Math.abs(vv)>maxA)maxA=Math.abs(vv)}document.getElementById('ampVal').textContent=maxA.toFixed(2)}var lastT=null;\nfunction rAFloop(){\n  if(!playing)return;\n  var now=performance.now();\n  if(lastT===null)lastT=now;\n  var dt=now-lastT;lastT=now;\n  simT+=dt*0.001;\n  if(simT>20)simT=0;\n  draw();document.getElementById('tVal').textContent=simT.toFixed(2);document.getElementById('tSld').value=Math.round(simT*10);\n  timer=requestAnimationFrame(rAFloop);\n}function start(){if(playing)return;playing=true;lastT=null;timer=requestAnimationFrame(rAFloop);document.getElementById('playBtn').textContent='⏸'}function stop(){playing=false;if(timer)cancelAnimationFrame(timer);timer=null;document.getElementById('playBtn').textContent='▶'}document.getElementById('playBtn').onclick=function(){playing?stop():start()};document.getElementById('rstBtn').onclick=function(){stop();simT=0;document.getElementById('tVal').textContent='0.00';document.getElementById('tSld').value=0;draw()};document.getElementById('tSld').oninput=function(){simT=parseFloat(this.value)/10;document.getElementById('tVal').textContent=simT.toFixed(2);draw()};document.getElementById('a1Sld').oninput=function(){A1=parseFloat(this.value);document.getElementById('a1Val').textContent=A1.toFixed(1);draw()};document.getElementById('a2Sld').oninput=function(){A2=parseFloat(this.value);document.getElementById('a2Val').textContent=A2.toFixed(1);draw()};document.getElementById('phSld').oninput=function(){phi=parseInt(this.value)/10;document.getElementById('phVal').textContent=phi.toFixed(1);draw()};draw();;(function(){if(window.__fitInstalled__)return;window.__fitInstalled__=true;var _bw=c.width,_bh=c.height;function fit(){var dpr=window.devicePixelRatio||1;var nw=_bw*dpr,nh=_bh*dpr;if(c.width!==nw||c.height!==nh){c.width=nw;c.height=nh}ctx.setTransform(dpr,0,0,dpr,0,0);draw()}window.addEventListener(\"resize\",fit);fit()})();"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "مثال تطبيقي: تلاقي اضطرابين على حبل",
+      "level": 3
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "المعطيات: ينتشر على حبل مرن مشدود طوله $S_1S_2 = 4\\, m$ اضطرابان عرضيان بسرعة $v = 7{,}5\\, m/s$. تغادر جبهة الاضطراب الأول النهاية $S_1$ عند $t_1 = 0$ وتغادر مؤخرته النهاية $S_1$ عند $t_2 = 0{,}12\\, s$. ثم تنطلق جبهة الاضطراب الثاني من النهاية $S_2$ عند $t_3 = 0{,}15\\, s$ وتغادر مؤخرته النهاية $S_2$ عند $t_4 = 0{,}25\\, s$."
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>1. حساب طول كل من الاضطرابين:</strong></p><p>مؤخرة الاضطراب الأول غادرت $S_1$ بعد جبهته بمدة $t_2 = 0{,}12\\, s$، أي أن الاضطراب الأول غادر المنبع بكامله خلال هذه المدة:</p><p>$\\lambda_1 = v \\cdot t_2 = 7{,}5 \\times 0{,}12 = 0{,}90\\, m = 90\\, cm$</p><p>الاضطراب الثاني غادر المنبع $S_2$ خلال المدة $(t_4 - t_3)$:</p><p>$\\lambda_2 = v \\cdot (t_4 - t_3) = 7{,}5 \\times (0{,}25 - 0{,}15) = 0{,}75\\, m = 75\\, cm$</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>2. لحظة تلاقي مقدمتي الاضطرابين:</strong></p><p>نكتب المعادلة الزمنية لحركة جبهة كل اضطراب (أصل الفواصل عند $S_1$):</p><p>الأول: $x_1(t) = 7{,}5\\, t$ (ينتشر في الاتجاه الموجب)</p><p>الثاني: ينتشر في الاتجاه السالب، وعند $t = 0{,}15\\, s$ كان عند $x = 4\\, m$:</p><p>$x_2(t) = -7{,}5\\, t + x_0$ مع $4 = -7{,}5 \\times 0{,}15 + x_0 \\Rightarrow x_0 = 5{,}125\\, m$</p><p>عند التلاقي $x_1 = x_2$:</p><p>$7{,}5\\, t = -7{,}5\\, t + 5{,}125 \\Rightarrow t = \\frac{5{,}125}{15} = 0{,}342\\, s$</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>3. الظاهرة الفيزيائية عند التلاقي:</strong> <strong>تداخل (تراكب) اضطرابين ميكانيكيين</strong>.</p><p><strong>4. هل يحافظ الاضطرابان على شكلَيهما بعد الالتقاء؟</strong> <strong>نعم</strong> — يحافظ كل اضطراب على شكله الأصلي بعد الالتقاء، تطبيقاً لمبدأ التراكب الخطي.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "تنبيه: عندما يسأل التمرين عن \"لحظة تلاقي\" المقدمات، نستعمل المعادلات الزمنية $x(t)$ ونحل $x_1 = x_2$. لاحظ كيف أن الاضطراب الثاني له سرعة سالبة لأنه ينتشر بعكس الاتجاه."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة الدرس",
+      "level": 2
+    },
+    {
+      "type": "table",
+      "headers": [
+        "المفهوم",
+        "العلاقة / الحالة"
+      ],
+      "rows": [
+        [
+          "الدور الزمني والتواتر",
+          "$f = \\frac{1}{T}$"
+        ],
+        [
+          "طول الموجة",
+          "$\\lambda = v \\cdot T = \\frac{v}{f}$"
+        ],
+        [
+          "مبدأ التراكب",
+          "$y = y_1 + y_2$ (المجموع الجبري)"
+        ],
+        [
+          "تداخل بنّاء",
+          "نفس الطور — سعة معظمة"
+        ],
+        [
+          "تداخل هدّام",
+          "طور متعاكس — سعة مصغّرة"
+        ],
+        [
+          "بعد التراكب",
+          "تحافظ الأمواج على خصائصها كاملة"
+        ]
+      ],
+      "caption": "ملخص المفاهيم الأساسية"
+    }
+  ]
+}

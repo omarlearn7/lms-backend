@@ -1,0 +1,49 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 011 - تغذية الاهتزازات الكهربائية (المقاومة السالبة)",
+  "order_index": 11,
+  "source": "3AS U07 - Exercice 011",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 011"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC متسلسلة: L = 100 mH, C = 20 µF, R = 15 Ω. نوصل على التسلسل ثنائي قطب D مقاومته السالبة R_n = −15 Ω."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب المقاومة الكلية R_t = R + R_n. ماذا تستنتج؟",
+        "input_type": "numeric",
+        "placeholder": "R_t = ... Ω"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب الدور الخاص T₀ والتردد الذاتي f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "اكتب المعادلة التفاضلية للدارة. ماذا تلاحظ؟",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا كانت Q₀ = 20 µC، اكتب q(t) و i(t).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "قارن هذه الدارة بدارة LC المثالية.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

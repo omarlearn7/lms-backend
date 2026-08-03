@@ -1,0 +1,134 @@
+{
+  "title": "مبدأ الفعلين المتبادلين",
+  "slug": "مبدأ-الفعلين-المتبادلين",
+  "description": "نص مبدأ الفعلين المتبادلين (قانون نيوتن الثالث)",
+  "category_id": 2,
+  "unit_id": 13,
+  "grade_level": "سنة أولى ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "نص مبدأ الفعلين المتبادلين",
+      "level": 2
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "إذا أثرت الجملة (A) على الجملة (B) بقوة FA/B، فإن الجملة (B) تؤثر أيضاً وبصفة آنية على الجملة (A) بقوة FB/A تساوي القوة FA/B في الشدة وتعاكسها في الاتجاه، أي FA/B = −FB/A."
+    },
+    {
+      "type": "text",
+      "content": "ينطبق هذا المبدأ على أي جملتين تتفاعلان فيما بينهما، فإذا كانت إحداهما تؤثر على الأخرى بقوة فإن الأخرى تؤثر عليها بقوة مساوية في الشدة ومعاكسة في الاتجاه."
+    },
+    {
+      "type": "heading",
+      "text": "أين يقع مبدأ الفعلين المتبادلين؟",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "مبدأ الفعلين المتبادلين هو القانون الثالث من بين القوانين الثلاثة التي صاغها العالم نيوتن، مع التذكير بأن القانون الأول هو مبدأ العطالة الذي تطرقنا إليه سابقاً."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "قانون نيوتن",
+        "المحتوى"
+      ],
+      "rows": [
+        [
+          "القانون الأول",
+          "مبدأ العطالة"
+        ],
+        [
+          "القانون الثاني",
+          "العلاقة بين القوة والحركة"
+        ],
+        [
+          "القانون الثالث",
+          "مبدأ الفعلين المتبادلين"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "خصائص القوتين المتبادلتين",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "القوتان FA/B و FB/A المتبادلتان بين جملتين لهما نفس خط التأثير، نفس الشدة، واتجاهان متعاكسان، وتطبقان على جملتين مختلفتين."
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "مبدأ الفعلين المتبادلين هو القانون:",
+      "input_type": "mcq",
+      "options": [
+        "الثالث من قوانين نيوتن",
+        "الأول من قوانين نيوتن",
+        "الثاني من قوانين نيوتن"
+      ],
+      "answer": {
+        "value": "الثالث من قوانين نيوتن"
+      },
+      "solution": "مبدأ الفعلين المتبادلين هو القانون الثالث من القوانين الثلاثة التي صاغها نيوتن."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "إذا أثرت الجملة (A) على الجملة (B) بقوة FA/B فإن الجملة (B) تؤثر على الجملة (A) بقوة FB/A:",
+      "input_type": "mcq",
+      "options": [
+        "مساوية في الشدة ومعاكسة في الاتجاه",
+        "مضاعفة في الشدة",
+        "مساوية في الشدة وبنفس الاتجاه"
+      ],
+      "answer": {
+        "value": "مساوية في الشدة ومعاكسة في الاتجاه"
+      },
+      "solution": "بحسب مبدأ الفعلين المتبادلين FB/A = −FA/B أي مساوية في الشدة ومعاكسة في الاتجاه."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "القوتان المتبادلتان بين جملتين تطبقان:",
+      "input_type": "mcq",
+      "options": [
+        "على جملتين مختلفتين",
+        "على نفس الجملة",
+        "على الوسط الخارجي فقط"
+      ],
+      "answer": {
+        "value": "على جملتين مختلفتين"
+      },
+      "solution": "القوة FA/B تطبق على الجملة B والقوة FB/A تطبق على الجملة A، أي على جملتين مختلفتين."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "مبدأ الفعلين المتبادلين هو القانون الثالث لنيوتن: لكل فعل رد فعل مساوٍ له في الشدة ومعاكس له في الاتجاه، ويطبق كل منهما على جملة مختلفة."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة مبدأ الفعلين المتبادلين - عربتان",
+        "width": 720,
+        "height": 430
+      },
+      "html": " <div id=\"cartWrap\">\n  <canvas id=\"cartCanvas\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"cartControls\">\n    <div class=\"k-row\"><label>كتلة العربة 1 m₁ (kg)</label><input type=\"range\" id=\"m1Slider\" min=\"1\" max=\"20\" value=\"5\" step=\"1\"><span id=\"m1Val\">5</span></div>\n    <div class=\"k-row\"><label>كتلة العربة 2 m₂ (kg)</label><input type=\"range\" id=\"m2Slider\" min=\"1\" max=\"20\" value=\"8\" step=\"1\"><span id=\"m2Val\">8</span></div>\n    <div id=\"cartOut\">تشغيل: القوتان متساويتان في المقدار متعاكستان في الاتجاه</div>\n    <button id=\"playBtn\">تشغيل التفاعل</button>\n  </div>\n</div>\n",
+      "css": "#cartWrap{font-family:inherit;direction:rtl;text-align:center}\n#cartCanvas{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc}\n#cartControls{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.k-row{display:flex;align-items:center;gap:10px;font-size:14px}\n.k-row label{width:200px;text-align:left}\n.k-row span{width:40px;text-align:center;font-weight:bold;color:#0f766e}\ninput[type=range]{width:220px}\n#cartOut{padding:6px 12px;background:#ccfbf1;border:1px solid #5eead4;border-radius:8px;font-size:13px;color:#115e59;direction:rtl}\nbutton{padding:6px 16px;border:none;border-radius:8px;background:#0d9488;color:#fff;font-size:14px;cursor:pointer}\n",
+      "js": "(function(){\n  if (window.__cartInstalled__) return;\n  window.__cartInstalled__ = true;\n  var canvas = document.getElementById('cartCanvas');\n  var ctx = canvas.getContext('2d');\n  var m1Slider = document.getElementById('m1Slider');\n  var m1Val = document.getElementById('m1Val');\n  var m2Slider = document.getElementById('m2Slider');\n  var m2Val = document.getElementById('m2Val');\n  var out = document.getElementById('cartOut');\n  var playBtn = document.getElementById('playBtn');\n  var running = false, t = 0;\n  var K = 1, pushT = 0.35, scale = 130;\n  window.simState = { m1: 5, m2: 8, t: 0, running: false, push: true, v1: 0, v2: 0 };\n  function compute(){\n    var m1 = parseFloat(m1Slider.value), m2 = parseFloat(m2Slider.value);\n    window.simState.m1 = m1; window.simState.m2 = m2;\n    return { m1: m1, m2: m2, v1: K / m1, v2: K / m2 };\n  }\n  function cart(x, y, w, h, color, label){\n    ctx.fillStyle = color;\n    ctx.beginPath();\n    ctx.moveTo(x, y); ctx.lineTo(x + w, y); ctx.lineTo(x + w, y + h);\n    ctx.lineTo(x, y + h); ctx.closePath(); ctx.fill();\n    ctx.strokeStyle = '#0f172a'; ctx.lineWidth = 1.5;\n    ctx.strokeRect(x, y, w, h);\n    for (var wx = 0; wx < 2; wx++) {\n      var cx = x + w * (0.28 + wx * 0.44), cy = y + h + 6, r = 5;\n      ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.fillStyle = '#334155'; ctx.fill(); ctx.stroke();\n    }\n    ctx.fillStyle = '#fff'; ctx.font = 'bold 12px sans-serif';\n    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';\n    ctx.fillText(label, x + w / 2, y + h / 2);\n  }\n  function arrow(x1, y1, x2, y2, color){\n    var dx = x2 - x1, dy = y2 - y1;\n    var len = Math.sqrt(dx * dx + dy * dy);\n    if (len < 3) return;\n    var ux = dx / len, uy = dy / len;\n    ctx.strokeStyle = color; ctx.lineWidth = 3;\n    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2 - ux * 2, y2 - uy * 2); ctx.stroke();\n    var ah = 8;\n    ctx.fillStyle = color;\n    ctx.beginPath();\n    ctx.moveTo(x2, y2);\n    ctx.lineTo(x2 - ux * ah - uy * ah * 0.5, y2 - uy * ah + ux * ah * 0.5);\n    ctx.lineTo(x2 - ux * ah + uy * ah * 0.5, y2 - uy * ah - ux * ah * 0.5);\n    ctx.closePath(); ctx.fill();\n  }\n  function draw(){\n    var p = compute();\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    var GY = 300;\n    ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.moveTo(0, GY); ctx.lineTo(canvas.width, GY); ctx.stroke();\n    var cw = 70, ch = 44;\n    var cy = GY - ch;\n    var gap = 0;\n    var x1, x2;\n    if (running) {\n      if (t > pushT) {\n        var dt = t - pushT;\n        x1 = (canvas.width / 2 - cw) + p.v1 * scale * dt;\n        x2 = (canvas.width / 2) - p.v2 * scale * dt;\n        window.simState.push = false;\n      } else {\n        gap = 2 + t / pushT * 14;\n        x1 = canvas.width / 2 - cw - gap;\n        x2 = canvas.width / 2 + gap;\n        window.simState.push = true;\n      }\n    } else {\n      gap = 4;\n      x1 = canvas.width / 2 - cw - gap;\n      x2 = canvas.width / 2 + gap;\n      window.simState.push = true;\n    }\n    cart(x1, cy, cw, ch, '#dc2626', 'm₁');\n    cart(x2, cy, cw, ch, '#2563eb', 'm₂');\n    var midX = (x1 + cw + x2) / 2;\n    if (running && t <= pushT) {\n      ctx.strokeStyle = '#f59e0b'; ctx.lineWidth = 2.5;\n      ctx.beginPath();\n      for (var i = 0; i <= 6; i++) {\n        var sx = midX - 12 + i * 4;\n        var sy = cy + ch / 2 + (i % 2 === 0 ? -10 : 10);\n        if (i === 0) ctx.moveTo(sx, sy); else ctx.lineTo(sx, sy);\n      }\n      ctx.stroke();\n      arrow(x1 + cw, cy + ch / 2, x1 + cw + 56, cy + ch / 2, '#dc2626');\n      arrow(x2, cy + ch / 2, x2 - 56, cy + ch / 2, '#2563eb');\n      ctx.fillStyle = '#334155'; ctx.font = 'bold 13px sans-serif';\n      ctx.textAlign = 'center';\n      ctx.fillText('F₁₂', x1 + cw + 32, cy + ch / 2 - 14);\n      ctx.fillText('F₂₁', x2 - 32, cy + ch / 2 - 14);\n    }\n    if (running && t > pushT) {\n      ctx.fillStyle = '#334155'; ctx.font = '12px sans-serif';\n      ctx.textAlign = 'center';\n      ctx.fillText('v₁ = ' + p.v1.toFixed(2) + ' m/s', x1 + cw / 2, cy - 14);\n      ctx.fillText('v₂ = ' + p.v2.toFixed(2) + ' m/s', x2 + cw / 2, cy - 14);\n    }\n    m1Val.textContent = p.m1;\n    m2Val.textContent = p.m2;\n    var p1 = p.m1 * p.v1, p2 = p.m2 * p.v2;\n    out.textContent = running\n      ? (t <= pushT\n          ? 'أثناء الدفع: F₁₂ = F₂₁ (متساويتان في المقدار، متعاكستان في الاتجاه)'\n          : 'بعد التفاعل: v₁/v₂ = m₂/m₁ | كمية الحركة m₁v₁ = ' + p1.toFixed(1) + ' = m₂v₂ = ' + p2.toFixed(1))\n      : 'اضغط تشغيل لبدء التفاعل (القوتان متساويتان في المقدار ومتعاكستان في الاتجاه)';\n    window.simState.v1 = p.v1; window.simState.v2 = p.v2; window.simState.t = t;\n  }\n  playBtn.addEventListener('click', function(){\n    if (!running) { t = 0; }\n    running = !running;\n    window.simState.running = running;\n    playBtn.textContent = running ? 'إيقاف' : 'تشغيل التفاعل';\n  });\n  m1Slider.addEventListener('input', function(){});\n  m2Slider.addEventListener('input', function(){});\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  function loop(){\n    if (running) {\n      t += 0.016;\n      if (t > pushT + 6) t = 0;\n    }\n    draw();\n    requestAnimationFrame(loop);\n  }\n  loop();\n})();\n"
+    }
+  ]
+}

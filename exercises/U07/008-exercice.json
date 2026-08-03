@@ -1,0 +1,51 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 008 - النواس المرن الشاقولي",
+  "order_index": 8,
+  "source": "3AS U07 - Exercice 008",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 008"
+      },
+      {
+        "type": "text",
+        "content": "نواس مرن شاقولي: نابض ثابته k = 30 N/m، نعلق به كتلة m = 300 g فيحدث استطالة Δℓ₀. (خاص بالشعب الرياضية)."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب الاستطالة Δℓ₀ عند التوازن (g = 9.81 m/s²).",
+        "input_type": "numeric",
+        "placeholder": "Δℓ₀ = ... m"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أثبت أن معادلة الحركة حول موضع التوازن هي نفسها للنواس الأفقي: d²x/dt² + (k/m)x = 0.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب الدور الخاص T₀.",
+        "input_type": "numeric",
+        "placeholder": "T₀ = ... s"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "نزيح الكتلة مسافة X₀ = 3 cm إلى الأسفل ثم نحررها. اكتب x(t).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب سرعة الكتلة عند مرورها بموضع التوازن.",
+        "input_type": "numeric",
+        "placeholder": "v_max = ... m/s"
+      }
+    ]
+  }
+}

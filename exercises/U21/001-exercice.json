@@ -1,0 +1,17 @@
+{
+  "unit_id": 21,
+  "title": "تمرين 001 - حساب عمل قوة ثابتة",
+  "order_index": 1,
+  "source": "2AS U21 - Exercice 001",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 001", "level": 3 },
+      { "type": "text", "content": "يتحرك جسم (S) أفقيًا من موضع A إلى موضع B على مسار مستقيم تحت تأثير قوة F شدتها ثابتة. يعطى: F = 20 N و AB = 5 m." },
+      { "type": "question", "number": 1, "text": "احسب عمل القوة F عندما تصنع زاوية α = 60° مع المسار وجهتها في جهة الحركة. (بوحدة J)", "input_type": "numeric", "answer": { "value": 50, "tolerance": 0.01 }, "solution": "WAB(F) = F.AB.cosα = 20 × 5 × cos60° = 50 J." },
+      { "type": "question", "number": 2, "text": "احسب عمل القوة F عندما تكون موازية للمسار وفي جهة الحركة. (بوحدة J)", "input_type": "numeric", "answer": { "value": 100, "tolerance": 0.01 }, "solution": "عندما تكون القوة موازية وفي جهة الحركة α = 0 أي cosα = 1، إذن WAB(F) = 20 × 5 = 100 J." },
+      { "type": "question", "number": 3, "text": "احسب عمل القوة F عندما تكون موازية للمسار ومعاكسة لجهة الحركة. (بوحدة J)", "input_type": "numeric", "answer": { "value": -100, "tolerance": 0.01 }, "solution": "عندما تكون القوة معاكسة لجهة الحركة α = π أي cosα = −1، إذن WAB(F) = −20 × 5 = −100 J." },
+      { "type": "question", "number": 4, "text": "احسب عمل القوة F عندما تكون عمودية على المسار. (بوحدة J)", "input_type": "numeric", "answer": { "value": 0, "tolerance": 0.01 }, "solution": "عندما تكون القوة عمودية على المسار α = 90° أي cosα = 0، إذن WAB(F) = 0 J." },
+      { "type": "question", "number": 5, "text": "احسب عمل القوة F عندما تصنع زاوية 60° مع المسار وجهتها معاكسة لجهة الحركة. (بوحدة J)", "input_type": "numeric", "answer": { "value": -50, "tolerance": 0.01 }, "solution": "من الشكل α = 180° − 60° = 120°، إذن WAB(F) = 20 × 5 × cos120° = −50 J." }
+    ]
+  }
+}

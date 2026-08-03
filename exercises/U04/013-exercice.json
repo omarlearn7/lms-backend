@@ -1,0 +1,53 @@
+{
+  "unit_id": 4,
+  "title": "تمرين 013 - الصفة الغالبة في حمض متعدد البروتونات (H₃PO₄)",
+  "order_index": 13,
+  "source": "3AS U04 - Exercice 013",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 013"
+      },
+      {
+        "type": "text",
+        "content": "حمض الفوسفوريك H₃PO₄ هو حمض ثلاثي البروتونات له ثلاث ثنائيات مترافقة: H₃PO₄/H₂PO₄⁻ (pKa₁ = 2.15)، H₂PO₄⁻/HPO₄²⁻ (pKa₂ = 7.20)، HPO₄²⁻/PO₄³⁻ (pKa₃ = 12.35)."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب معادلات التفكك الثلاثة لحمض الفوسفوريك في الماء مع تحديد الثنائيات.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "حدد الصفة الغالبة في كل مجال من مجالات pH التالية: (أ) pH = 1، (ب) pH = 4، (ج) pH = 9، (د) pH = 14.",
+        "input_type": "text"
+      },
+      {
+        "type": "text",
+        "content": "نضيف محلول NaOH تدريجياً إلى محلول H₃PO₄."
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "عند pH = 4.7، ما هي الصفة الغالبة؟ إرشاد: pH = 4.7 يقع بين pKa₁ و pKa₂.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب النسبة [H₂PO₄⁻]/[H₃PO₄] عند pH = pKa₁.",
+        "input_type": "numeric",
+        "placeholder": "النسبة = ..."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "لأي مدى من pH تكون الصفة الغالبة هي HPO₄²⁻؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

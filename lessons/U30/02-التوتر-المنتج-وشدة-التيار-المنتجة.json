@@ -1,0 +1,131 @@
+{
+  "title": "التوتر المنتج وشدة التيار المنتجة",
+  "slug": "التوتر-المنتج-وشدة-التيار-المنتجة",
+  "description": "التوتر الفعال وشدة التيار الفعالة وعلاقتهما بالقيم الأعظمية",
+  "category_id": 2,
+  "unit_id": 30,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "1) تعريف التوتر المنتج (الفعال)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "التوتر المنتج أو شدة التيار المنتجة التي يرمز لها بـ Ueff هو التوتر المستمر (أو شدة التيار المستمر) الذي ينتج نفس الكمية من الحرارة التي ينتجها التوتر (أو التيار) المتناوب الجيبي بين طرفي ناقل أومي في نفس المدة الزمنية."
+    },
+    {
+      "type": "heading",
+      "text": "2) القياس بالمقاييس العادية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "تقاس القيمة المنتجة بواسطة مقيايسي الفولط والأمبير العاديين المضبوطين في وضع المتناوب، حيث تشير القيم المعطاة إلى القيمتين المنتجتين للتوتر والتيار."
+    },
+    {
+      "type": "heading",
+      "text": "3) علاقة التوتر المنتج بالتوتر الأعظمي",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "التوتر المنتج Ueff يتعلق بالتوتر الأعظمي Umax وفق العلاقة:"
+    },
+    {
+      "type": "formula",
+      "latex": "U_{eff} = \\frac{U_{max}}{\\sqrt{2}}"
+    },
+    {
+      "type": "text",
+      "content": "وشدة التيار المنتجة Ieff تتعلق بشدة التيار الأعظمية Imax وفق العلاقة:"
+    },
+    {
+      "type": "formula",
+      "latex": "I_{eff} = \\frac{I_{max}}{\\sqrt{2}}"
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "التوتر الفعال لتيار متناوب جيبي هو التوتر المستمر الذي:",
+      "input_type": "mcq",
+      "options": [
+        "ينتج نفس كمية الحرارة في نفس المدة",
+        "له نفس السعة",
+        "له نفس التواتر"
+      ],
+      "answer": {
+        "value": "ينتج نفس كمية الحرارة في نفس المدة"
+      },
+      "solution": "التوتر الفعال ينتج نفس كمية الحرارة التي ينتجها المتناوب في نفس المدة."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "العلاقة بين التوتر الفعال والتوتر الأعظمي:",
+      "input_type": "mcq",
+      "options": [
+        "Ueff = Umax/√2",
+        "Ueff = Umax.√2",
+        "Ueff = Umax"
+      ],
+      "answer": {
+        "value": "Ueff = Umax/√2"
+      },
+      "solution": "Ueff = Umax/√2."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "توتر أعظمي Umax = 311 V. قيمته الفعالة (بوحدة V):",
+      "input_type": "numeric",
+      "answer": {
+        "value": 220,
+        "tolerance": 2
+      },
+      "solution": "Ueff = Umax/√2 = 311/1.414 = 220 V."
+    },
+    {
+      "type": "question",
+      "number": 4,
+      "text": "قيمة يعطيها فولط متر عادي مضبوط على وضع المتناوب:",
+      "input_type": "mcq",
+      "options": [
+        "القيمة الفعالة",
+        "القيمة الأعظمية",
+        "القيمة اللحظية"
+      ],
+      "answer": {
+        "value": "القيمة الفعالة"
+      },
+      "solution": "مقياس الفولط العادي المضبوط على وضع المتناوب يعطي القيمة الفعالة."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة راسم الاهتزاز المهلجني - التوتر المتناوب الجيبي",
+        "width": 720,
+        "height": 360
+      },
+      "html": "<div id=\"wrap\">\n  <canvas id=\"cv\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"ctrl\">\n    <div class=\"row\"><label>التوتر الأعظمي Umax (V)</label><input type=\"range\" id=\"uSlider\" min=\"100\" max=\"400\" value=\"311\" step=\"1\"><span id=\"uVal\">311</span></div>\n    <div class=\"row\"><label>التردد f (Hz)</label><input type=\"range\" id=\"fSlider\" min=\"10\" max=\"100\" value=\"50\" step=\"1\"><span id=\"fVal\">50</span></div>\n    <div id=\"out\">Ueff = Umax/√2 = 219.9 V</div>\n    <button id=\"playBtn\">إيقاف المسح</button>\n  </div>\n</div>\n",
+      "css": "#wrap{font-family:inherit;direction:rtl;text-align:center}\n#cv{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;max-width:100%}\n#ctrl{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.row{display:flex;align-items:center;gap:10px;font-size:14px}\n.row label{width:200px;text-align:left}\n.row span{width:70px;text-align:center;font-weight:bold;color:#0f766e}\ninput[type=range]{width:220px}\n#out{padding:6px 12px;background:#ccfbf1;border:1px solid #99f6e4;border-radius:6px;font-weight:bold;color:#134e4a;margin-top:4px}\n#playBtn{margin-top:4px;padding:5px 16px;border:1px solid #0f766e;background:#0f766e;color:#fff;border-radius:6px;cursor:pointer;font-size:13px}",
+      "js": "(function(){\n  if (window.__scopeInstalled__) return;\n  window.__scopeInstalled__ = true;\n  var canvas = document.getElementById('cv');\n  var ctx = canvas.getContext('2d');\n  var uSlider = document.getElementById('uSlider'), uVal = document.getElementById('uVal');\n  var fSlider = document.getElementById('fSlider'), fVal = document.getElementById('fVal');\n  var out = document.getElementById('out');\n  var playBtn = document.getElementById('playBtn');\n  var running = true, t0 = 0;\n  window.simState = { Umax: 311, f: 50, Ueff: 219.9, running: true };\n  function draw(){\n    var Umax = parseFloat(uSlider.value), f = parseFloat(fSlider.value);\n    if (running) t0 += 0.016;\n    var Ueff = Umax / Math.sqrt(2);\n    window.simState.Umax = Umax; window.simState.f = f; window.simState.Ueff = Ueff;\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    ctx.fillStyle = '#0b1020'; ctx.fillRect(0, 0, canvas.width, canvas.height);\n    ctx.strokeStyle = '#1e293b'; ctx.lineWidth = 1;\n    var ox = 40, oy = 180;\n    for (var gx = ox; gx <= 680; gx += 20) { ctx.beginPath(); ctx.moveTo(gx, 30); ctx.lineTo(gx, 330); ctx.stroke(); }\n    for (var gy = 30; gy <= 330; gy += 20) { ctx.beginPath(); ctx.moveTo(ox, gy); ctx.lineTo(680, gy); ctx.stroke(); }\n    ctx.strokeStyle = '#334155'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(680, oy); ctx.stroke();\n    ctx.beginPath(); ctx.moveTo(ox, 30); ctx.lineTo(ox, 330); ctx.stroke();\n    var xScale = f * 4;\n    ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.moveTo(ox, oy - Umax * 0.5); ctx.lineTo(680, oy - Umax * 0.5); ctx.stroke();\n    ctx.beginPath(); ctx.moveTo(ox, oy + Umax * 0.5); ctx.lineTo(680, oy + Umax * 0.5); ctx.stroke();\n    ctx.strokeStyle = '#34d399'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.moveTo(ox, oy - Ueff * 0.5); ctx.lineTo(680, oy - Ueff * 0.5); ctx.stroke();\n    ctx.beginPath(); ctx.moveTo(ox, oy + Ueff * 0.5); ctx.lineTo(680, oy + Ueff * 0.5); ctx.stroke();\n    ctx.strokeStyle = '#22d3ee'; ctx.lineWidth = 3;\n    ctx.beginPath();\n    for (var x = ox; x <= 680; x += 2) {\n      var phase = (x - ox) / xScale * Math.PI * 2 - t0 * f;\n      var y = oy - Umax * 0.5 * Math.sin(phase);\n      if (x === ox) ctx.moveTo(x, y); else ctx.lineTo(x, y);\n    }\n    ctx.stroke();\n    ctx.fillStyle = '#94a3b8'; ctx.font = '12px sans-serif'; ctx.textAlign = 'right';\n    ctx.fillText('u(t) = Umax.sin(2π.f.t)', 676, 44);\n    ctx.fillStyle = '#fbbf24'; ctx.fillText('+Umax', 660, oy - Umax * 0.5 + 14);\n    ctx.fillStyle = '#34d399'; ctx.fillText('+Ueff', 660, oy - Ueff * 0.5 + 14);\n    uVal.textContent = Umax.toFixed(0); fVal.textContent = f.toFixed(0);\n    out.textContent = 'Ueff = Umax/√2 = ' + Umax.toFixed(0) + '/1.414 = ' + Ueff.toFixed(1) + ' V';\n    window.simState.time = t0;\n  }\n  function loop(){ draw(); requestAnimationFrame(loop); }\n  playBtn.addEventListener('click', function(){ running = !running; window.simState.running = running; playBtn.textContent = running ? 'إيقاف المسح' : 'تشغيل المسح'; });\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  loop();\n})();"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "التوتر الفعال Ueff = Umax/√2 هو التوتر المستمر المنتج لنفس الحرارة، وتقيسه المقاييس العادية المضبوطة على وضع المتناوب."
+    }
+  ]
+}

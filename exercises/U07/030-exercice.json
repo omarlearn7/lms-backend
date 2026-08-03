@@ -1,0 +1,50 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 030 - دارة مضبوطة (تطبيق الراديو)",
+  "order_index": 30,
+  "source": "3AS U07 - Exercice 030",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 030"
+      },
+      {
+        "type": "text",
+        "content": "في جهاز راديو، نستخدم دارة RLC مضبوطة لاختيار الموجة المطلوبة. L = 0.5 mH (ملي هنري)، ومكثف متغير C يتراوح بين 20 pF و 500 pF."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب مجال الترددات التي يمكن للدارة استقبالها.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "ما قيمة C لاستقبال إذاعة تبث على f = 1 MHz؟",
+        "input_type": "numeric",
+        "placeholder": "C = ... F"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "إذا كانت R = 10 Ω، فاحسب Q عند f = 1 MHz.",
+        "input_type": "numeric",
+        "placeholder": "Q = ..."
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب عرض الحزمة Δf. هل هو مناسب لاستقبال الإذاعة (تباعد المحطات 200 kHz)؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "كيف يمكن تحسين انتقائية (Sélectivité) الدارة؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

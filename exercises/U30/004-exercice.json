@@ -1,0 +1,15 @@
+{
+  "unit_id": 30,
+  "title": "تمرين 004 - قانون أوم في التيار المتناوب",
+  "order_index": 4,
+  "source": "2AS U30 - Exercice 004",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 004", "level": 3 },
+      { "type": "text", "content": "نربط ثنائي قطب مكون من وشيعة ومكثفة على التوالي بتوتر متناوب جيبي قيمته الفعالة Ueff = 220 V وتواتره f = 50 Hz. ممانعة ثنائي القطب Z = 110 Ω." },
+      { "type": "question", "number": 1, "text": "احسب شدة التيار الفعالة المارة في الدارة. (بوحدة A)", "input_type": "numeric", "answer": { "value": 2, "tolerance": 0.02 }, "solution": "Ieff = Ueff/Z = 220/110 = 2 A." },
+      { "type": "question", "number": 2, "text": "احسب القيمة الأعظمية لشدة التيار Imax. (بوحدة A)", "input_type": "numeric", "answer": { "value": 2.83, "tolerance": 0.02 }, "solution": "Imax = Ieff.√2 = 2 × 1.414 = 2.83 A." },
+      { "type": "question", "number": 3, "text": "استبدلنا ثنائي القطب بناقل أومي مقاومته R = 100 Ω. احسب شدة التيار الفعالة الجديدة. (بوحدة A)", "input_type": "numeric", "answer": { "value": 2.2, "tolerance": 0.02 }, "solution": "في الناقل الأومي Z = R إذن Ieff = Ueff/R = 220/100 = 2.2 A." }
+    ]
+  }
+}

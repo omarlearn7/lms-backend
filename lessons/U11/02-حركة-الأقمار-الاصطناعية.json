@@ -1,0 +1,157 @@
+{
+  "title": "حركة الأقمار الاصطناعية",
+  "slug": "حركة-الأقمار-الاصطناعية",
+  "description": "القمر الاصطناعي، مسارات الأقمار حسب سرعة الإطلاق، السرعة الفضائية الأولى والثانية",
+  "category_id": 2,
+  "unit_id": 11,
+  "grade_level": "سنة أولى ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "مقدمة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "تعد الأقمار الاصطناعية من أبرز تطبيقات الحركة الدائرية المنتظمة؛ فهي تدور حول الأرض وفق قوانين الميكانيك، وتعتمد مساراتها على السرعة التي تعطى لها عند وضعها في مدارها."
+    },
+    {
+      "type": "heading",
+      "text": "1) تعريف القمر الاصطناعي وإطلاقه",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "تطلق الأقمار الاصطناعية من قواعد خاصة تسمى قواعد الإطلاق، وتتم هذه العملية بواسطة صواريخ الإطلاق وفق القوانين الأساسية للميكانيك."
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "يتعلق شكل المسارات (أو المدارات) التي تأخذها الأقمار الاصطناعية بالسرعة التي تعطى لها عند النقطة P التي تمثل بداية وضعها في مدارها."
+    },
+    {
+      "type": "heading",
+      "text": "2) مسارات القمر الاصطناعي حسب سرعته عند النقطة P",
+      "level": 2
+    },
+    {
+      "type": "table",
+      "headers": [
+        "قيمة السرعة عند P",
+        "المسار الناتج"
+      ],
+      "rows": [
+        [
+          "سرعة ضعيفة",
+          "سقوط على الأرض بمسار على شكل قطعة مكافئ"
+        ],
+        [
+          "السرعة الفضائية الأولى (vS) ≈ 7.5 km/s على ارتفاع 800 km",
+          "مدار دائري حول الأرض (سرعة الاستقمار)"
+        ],
+        [
+          "سرعة أكبر قليلاً من vS",
+          "مدار إهليلجي"
+        ],
+        [
+          "السرعة الفضائية الثانية (vL) ≈ 11 km/s",
+          "تحرر القمر من الجاذبية الأرضية والابتعاد عن الأرض"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "3) السرعة الفضائية الأولى (سرعة الاستقمار)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "من أجل سرعة محددة تتعلق بارتفاع النقطة P عن سطح الأرض، لا يسقط القمر الاصطناعي بل يتخذ مساراً دائرياً، وتدعى هذه السرعة بالسرعة الفضائية الأولى أو سرعة الاستقمار ويرمز لها بـ $v_S$."
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "تقدر السرعة الفضائية الأولى بـ $v_S \\approx 7.5 \\ km/s$ من أجل مدار يبعد عن الأرض بمقدار 800 km."
+    },
+    {
+      "type": "heading",
+      "text": "4) السرعة الفضائية الثانية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "عندما يبلغ القمر الاصطناعي سرعة $v_L$ التي تدعى السرعة الفضائية الثانية وتقدر تقريباً بـ $11 \\ km/s$ (حيث $v_L > v_S$)، يتحرر القمر الاصطناعي من الجاذبية الأرضية ويبتعد عن الأرض."
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "السرعة الفضائية الأولى على ارتفاع 800 km تقدر ب:",
+      "input_type": "mcq",
+      "options": [
+        "7.5 km/s",
+        "11 km/s",
+        "3 km/s"
+      ],
+      "answer": {
+        "value": "7.5 km/s"
+      },
+      "solution": "السرعة الفضائية الأولى (سرعة الاستقمار) تقدر بـ 7.5 km/s من أجل مدار يبعد عن الأرض بـ 800 km."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "إذا كانت سرعة القمر الاصطناعي عند النقطة P أكبر قليلاً من vS فإنه يتخذ مساراً:",
+      "input_type": "mcq",
+      "options": [
+        "إهليلجياً",
+        "دائرياً",
+        "قطعة مكافئ"
+      ],
+      "answer": {
+        "value": "إهليلجياً"
+      },
+      "solution": "إذا كانت السرعة أكبر قليلاً من سرعة الاستقمار vS فإن القمر يتخذ مساراً إهليلجياً."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "لتحرر القمر الاصطناعي من الجاذبية الأرضية يجب أن تبلغ سرعته تقريباً:",
+      "input_type": "mcq",
+      "options": [
+        "11 km/s",
+        "7.5 km/s",
+        "300 km/s"
+      ],
+      "answer": {
+        "value": "11 km/s"
+      },
+      "solution": "السرعة الفضائية الثانية التي يتحرر بها القمر من الجاذبية الأرضية تقدر بـ 11 km/s تقريباً."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "تتخذ الأقمار الاصطناعية مساراً دائرياً حول الأرض عندما تعطى لها سرعة الاستقمار vS ≈ 7.5 km/s، ومساراً إهليلجياً إذا تجاوزتها قليلاً، وتتحرر من الجاذبية عند السرعة الفضائية الثانية vL ≈ 11 km/s."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة حركة الأقمار الاصطناعية - المدارات",
+        "width": 720,
+        "height": 430
+      },
+      "html": " <div id=\"satWrap\">\n  <canvas id=\"satCanvas\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"satControls\">\n    <div class=\"sc-row\"><label>الارتفاع h (km)</label><input type=\"range\" id=\"hSlider\" min=\"300\" max=\"36000\" value=\"700\" step=\"100\"><span id=\"hVal\">700</span></div>\n    <div class=\"sc-row\"><label>السرعة v (km/s)</label><input type=\"range\" id=\"vSlider\" min=\"0\" max=\"12\" value=\"8\" step=\"0.1\"><span id=\"vVal\">8.0</span></div>\n    <div id=\"satOut\">مدار إهليلجي</div>\n    <button id=\"playBtn\">تشغيل</button>\n  </div>\n</div>\n",
+      "css": "#satWrap{font-family:inherit;direction:rtl;text-align:center}\n#satCanvas{border:1px solid #cbd5e1;border-radius:8px;background:#0b1020}\n#satControls{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.sc-row{display:flex;align-items:center;gap:10px;font-size:14px}\n.sc-row label{width:200px;text-align:left}\n.sc-row span{width:60px;text-align:center;font-weight:bold;color:#22d3ee}\ninput[type=range]{width:220px}\n#satOut{padding:6px 12px;background:#0f172a;border:1px solid #155e75;border-radius:8px;font-size:13px;color:#67e8f9;direction:rtl}\nbutton{padding:6px 16px;border:none;border-radius:8px;background:#0891b2;color:#fff;font-size:14px;cursor:pointer}\n",
+      "js": "(function(){\n  if (window.__satInstalled__) return;\n  window.__satInstalled__ = true;\n  var canvas = document.getElementById('satCanvas');\n  var ctx = canvas.getContext('2d');\n  var hSlider = document.getElementById('hSlider');\n  var hVal = document.getElementById('hVal');\n  var vSlider = document.getElementById('vSlider');\n  var vVal = document.getElementById('vVal');\n  var out = document.getElementById('satOut');\n  var playBtn = document.getElementById('playBtn');\n  var GM = 3.986e5, Re = 6371;\n  var running = false, theta = 0;\n  window.simState = { h: 700, v: 8, vCirc: 0, vEsc: 0, e: 0, a: 0, p: 0, status: '', running: false, angle: 0 };\n  function compute(){\n    var h = parseFloat(hSlider.value), v = parseFloat(vSlider.value);\n    var r0 = Re + h;\n    var vCirc = Math.sqrt(GM / r0);\n    var vEsc = Math.sqrt(2 * GM / r0);\n    var hspec = r0 * v;\n    var aInv = 2 / r0 - (v * v) / GM;\n    var a = aInv > 0 ? 1 / aInv : -1 / Math.abs(aInv);\n    var p = (hspec * hspec) / GM;\n    var e = a > 0 ? Math.sqrt(Math.max(0, 1 - p / a)) : Math.sqrt(1 + p / Math.abs(a));\n    var status;\n    if (e < 0.02 && a > 0) status = 'مدار دائري';\n    else if (a > 0) {\n      var rmin = p / (1 + e);\n      status = rmin < Re ? 'مسار هابط (يصطدم بالأرض)' : 'مدار إهليلجي';\n    } else status = 'مسار فتحي (هروب من الجاذبية)';\n    window.simState.h = h; window.simState.v = v; window.simState.vCirc = vCirc;\n    window.simState.vEsc = vEsc; window.simState.e = e; window.simState.a = a; window.simState.p = p;\n    window.simState.status = status;\n    return { h: h, v: v, r0: r0, vCirc: vCirc, vEsc: vEsc, e: e, a: a, p: p, status: status };\n  }\n  function draw(){\n    var s = compute();\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    var cx = canvas.width / 2, cy = canvas.height / 2;\n    var maxR = s.e < 1 ? Math.min(s.p / (1 - s.e), s.r0 * 3.5) : s.r0 * 3.5;\n    var k = (Math.min(canvas.width, canvas.height) / 2 - 50) / maxR;\n    var er = Math.max(Re * k, 16);\n    ctx.fillStyle = '#0ea5e9';\n    ctx.beginPath(); ctx.arc(cx, cy, er, 0, Math.PI * 2); ctx.fill();\n    ctx.fillStyle = '#16a34a';\n    ctx.beginPath(); ctx.arc(cx, cy, er * 0.55, 0, Math.PI * 2); ctx.fill();\n    ctx.strokeStyle = '#0f172a'; ctx.lineWidth = 1;\n    ctx.beginPath(); ctx.arc(cx, cy, er, 0, Math.PI * 2); ctx.stroke();\n    var orbitColor = '#22c55e';\n    if (s.status.indexOf('إهليلجي') >= 0) orbitColor = '#f59e0b';\n    else if (s.status.indexOf('هابط') >= 0) orbitColor = '#ef4444';\n    else if (s.status.indexOf('فتحي') >= 0) orbitColor = '#3b82f6';\n    ctx.strokeStyle = orbitColor; ctx.lineWidth = 2;\n    ctx.setLineDash([6, 4]);\n    ctx.beginPath();\n    var started = false;\n    if (s.e < 1) {\n      for (var i = 0; i <= 360; i++) {\n        var th = (i / 360) * Math.PI * 2;\n        var r = s.p / (1 + s.e * Math.cos(th));\n        var px = cx + r * k * Math.cos(th);\n        var py = cy + r * k * Math.sin(th);\n        if (!started) { ctx.moveTo(px, py); started = true; } else ctx.lineTo(px, py);\n      }\n    } else {\n      var lim = Math.acos(-1 / s.e);\n      for (var j = 0; j <= 120; j++) {\n        var th2 = -lim + (j / 120) * 2 * lim;\n        var r2 = s.p / (1 + s.e * Math.cos(th2));\n        var px2 = cx + r2 * k * Math.cos(th2);\n        var py2 = cy + r2 * k * Math.sin(th2);\n        if (!started) { ctx.moveTo(px2, py2); started = true; } else ctx.lineTo(px2, py2);\n      }\n    }\n    ctx.stroke();\n    ctx.setLineDash([]);\n    var rr = s.e < 1 ? s.p / (1 + s.e * Math.cos(theta)) : s.p / (1 + s.e * Math.cos(theta));\n    var sx = cx + rr * k * Math.cos(theta);\n    var sy = cy + rr * k * Math.sin(theta);\n    ctx.fillStyle = '#facc15';\n    ctx.beginPath(); ctx.arc(sx, sy, 5, 0, Math.PI * 2); ctx.fill();\n    ctx.strokeStyle = '#0f172a'; ctx.lineWidth = 1;\n    ctx.beginPath(); ctx.arc(sx, sy, 5, 0, Math.PI * 2); ctx.stroke();\n    ctx.fillStyle = '#e2e8f0'; ctx.font = '11px sans-serif';\n    ctx.textAlign = 'left'; ctx.textBaseline = 'top';\n    ctx.fillText('الأرض', cx + er + 6, cy + er + 2);\n    ctx.textAlign = 'right';\n    ctx.fillText('v₀ الدائرية = ' + s.vCirc.toFixed(1) + ' km/s', canvas.width - 8, 8);\n    ctx.fillText('v₀ الهروب = ' + s.vEsc.toFixed(1) + ' km/s', canvas.width - 8, 22);\n    hVal.textContent = s.h;\n    vVal.textContent = s.v.toFixed(1);\n    out.textContent = s.status + ' | e = ' + s.e.toFixed(2) + ' | v الدائرية = ' + s.vCirc.toFixed(1) + ' km/s | v الهروب = ' + s.vEsc.toFixed(1) + ' km/s';\n    window.simState.angle = theta;\n  }\n  playBtn.addEventListener('click', function(){\n    running = !running;\n    window.simState.running = running;\n    playBtn.textContent = running ? 'إيقاف' : 'تشغيل';\n  });\n  hSlider.addEventListener('input', function(){});\n  vSlider.addEventListener('input', function(){});\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  function loop(){\n    if (running) {\n      var s = compute();\n      var r = s.p / (1 + s.e * Math.cos(theta));\n      var dth = 0.008 * (s.r0 / Math.max(r, 1));\n      theta += dth;\n      if (s.e >= 1) {\n        var lim = Math.acos(-1 / s.e);\n        theta = Math.max(-lim + 0.06, Math.min(lim - 0.06, theta));\n      }\n    }\n    draw();\n    requestAnimationFrame(loop);\n  }\n  loop();\n})();\n"
+    }
+  ]
+}

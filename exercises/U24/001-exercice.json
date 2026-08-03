@@ -1,0 +1,19 @@
+{
+  "unit_id": 24,
+  "title": "تمرين 001 - كمية المادة: الأمونياك وحمض الخل",
+  "order_index": 1,
+  "source": "2AS U24 - Exercice 001",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 001", "level": 3 },
+      { "type": "text", "content": "النشادر هو غاز صيغته الجزيئية المجملة NH3. يعطى: M(H) = 1 g/mol و M(N) = 14 g/mol و M(C) = 12 g/mol و M(O) = 16 g/mol و NA = 6.02 × 10²³ mol⁻¹ و VM = 22.4 L/mol." },
+      { "type": "question", "number": 1, "text": "الكتلة المولية الجزيئية للنشادر NH3 (بوحدة g/mol):", "input_type": "numeric", "answer": { "value": 17, "tolerance": 0.01 }, "solution": "M(NH₃) = M(N) + 3.M(H) = 14 + 3 = 17 g/mol." },
+      { "type": "question", "number": 2, "text": "كمية المادة الموجودة في 0.68 g من النشادر (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.04, "tolerance": 0.001 }, "solution": "n = m/M = 0.68/17 = 0.04 mol." },
+      { "type": "question", "number": 3, "text": "كمية المادة الموجودة في 15.68 L من غاز النشادر في الشرطين النظاميين (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.7, "tolerance": 0.01 }, "solution": "n = V/VM = 15.68/22.4 = 0.7 mol." },
+      { "type": "question", "number": 4, "text": "كمية المادة الموجودة في 3.01 × 10²² جزيء من النشادر (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.05, "tolerance": 0.001 }, "solution": "n = N/NA = 3.01 × 10²²/6.02 × 10²³ = 0.05 mol." },
+      { "type": "question", "number": 5, "text": "كتلة 8.96 L من غاز النشادر في الشرطين النظاميين (بوحدة g):", "input_type": "numeric", "answer": { "value": 6.8, "tolerance": 0.01 }, "solution": "n = 8.96/22.4 = 0.4 mol ثم m = n.M = 0.4 × 17 = 6.8 g." },
+      { "type": "question", "number": 6, "text": "حمض الخل سائل صيغته C2H4O2. كتلته المولية (بوحدة g/mol):", "input_type": "numeric", "answer": { "value": 60, "tolerance": 0.01 }, "solution": "M = 2.M(C) + 4.M(H) + 2.M(O) = 24 + 4 + 32 = 60 g/mol." },
+      { "type": "question", "number": 7, "text": "كمية المادة الموجودة في 200 mL من حمض الخل حيث ρ = 1050 g/L (بوحدة mol):", "input_type": "numeric", "answer": { "value": 3.5, "tolerance": 0.01 }, "solution": "m = ρ.V = 1050 × 0.2 = 210 g ثم n = m/M = 210/60 = 3.5 mol." }
+    ]
+  }
+}

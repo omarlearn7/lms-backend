@@ -1,0 +1,19 @@
+{
+  "unit_id": 31,
+  "title": "تمرين 001 - تسمية المركبات العضوية",
+  "order_index": 1,
+  "source": "2AS U31 - Exercice 001",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 001", "level": 3 },
+      { "type": "text", "content": "أكتب اسم المركبات العضوية ذات الصيغ الجزيئية نصف المفصلة التالية." },
+      { "type": "question", "number": 1, "text": "اكتب اسم المركب: CH3−CH2−CH3", "input_type": "text", "answer": { "value": "بروبان" }, "solution": "3 ذرات كربون مشبعة: بروبان." },
+      { "type": "question", "number": 2, "text": "اكتب اسم المركب: CH2=CH2", "input_type": "text", "answer": { "value": "إيثن (إيثيلين)" }, "solution": "ذرتا كربون برابطة مزدوجة: إيثن." },
+      { "type": "question", "number": 3, "text": "اكتب اسم المركب: CH≡CH", "input_type": "text", "answer": { "value": "إيثين (أسيتيلين)" }, "solution": "ذرتا كربون برابطة ثلاثية: إيثين." },
+      { "type": "question", "number": 4, "text": "اكتب اسم المركب: CH3−CH2−CH=CH2", "input_type": "text", "answer": { "value": "بوت-1-ن" }, "solution": "4 ذرات كربون برابطة مزدوجة عند الكربون 1: بوت-1-ن." },
+      { "type": "question", "number": 5, "text": "اكتب اسم المركب: CH3−CH=CH−CH3", "input_type": "text", "answer": { "value": "بوت-2-ن" }, "solution": "4 ذرات كربون برابطة مزدوجة عند الكربون 2: بوت-2-ن." },
+      { "type": "question", "number": 6, "text": "اكتب اسم المركب: CH3−CH2−CH2−OH", "input_type": "text", "answer": { "value": "بروبان-1-ول" }, "solution": "3 ذرات كربون حاملة لمجموعة OH عند الكربون 1: بروبان-1-ول." },
+      { "type": "question", "number": 7, "text": "حدد صنف الكحول في المركب: CH3−CHOH−CH3", "input_type": "mcq", "options": ["ثانوي", "أولي", "ثالثي"], "answer": { "value": "ثانوي" }, "solution": "ذرة الكربون الحاملة OH مرتبطة بذرتي كربون: كحول ثانوي." }
+    ]
+  }
+}

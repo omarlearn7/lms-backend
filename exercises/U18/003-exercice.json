@@ -1,0 +1,17 @@
+{
+  "unit_id": 18,
+  "title": "تمرين 003 - احتراق غاز الميثان",
+  "order_index": 3,
+  "source": "1AS U18 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 003: احتراق غاز الميثان" },
+      { "type": "text", "content": "ينمذج احتراق غاز الميثان بالأكسجين بالمعادلة: CH₄(g) + 2O₂(g) = CO₂(g) + 2H₂O(g). تُعطي متابعة التحول أن كميتي المادة الابتدائيتين n₀(CH₄) = n₀(O₂) = 0.2 mol، وأن التقدم الأعظمي xmax = 0.1 mol. نعطي M(H) = 1 g/mol و M(C) = 16 g/mol." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "المتفاعل المحد هو:", "input_type": "mcq", "options": ["O₂ لأن كميته تنعدم عند x = 0.1 mol", "CH₄ لأنه أول متفاعل", "لا يوجد محد"], "answer": { "value": "O₂ لأن كميته تنعدم عند x = 0.1 mol" }, "solution": "عند x = 0.1 mol: 0.2 − 2 × 0.1 = 0 فتنعدم كمية O₂، بينما CH₄ لم ينعدم، إذن O₂ هو المحد." },
+      { "type": "question", "number": 2, "text": "كمية مادة الماء الناتجة في نهاية التفاعل هي:", "input_type": "numeric", "answer": { "value": 0.2 }, "solution": "nf(H₂O) = 2 × xmax = 2 × 0.1 = 0.2 mol." },
+      { "type": "question", "number": 3, "text": "كتلة الماء الناتجة هي:", "input_type": "numeric", "answer": { "value": 3.6 }, "solution": "M(H₂O) = 2 × 1 + 16 = 18 g/mol، و m = 0.2 × 18 = 3.6 g." },
+      { "type": "question", "number": 4, "text": "حجم غاز CO₂ الناتج في الشروط النظامية هو:", "input_type": "numeric", "answer": { "value": 2.24 }, "solution": "nf(CO₂) = xmax = 0.1 mol، و V = 0.1 × 22.4 = 2.24 L." }
+    ]
+  }
+}

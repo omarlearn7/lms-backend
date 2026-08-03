@@ -1,0 +1,59 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 010 - عمود الوقود (H₂ / O₂)",
+  "order_index": 10,
+  "source": "3AS U06 - Exercice 010",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 010"
+      },
+      {
+        "type": "text",
+        "content": "عمود الوقود (Pile à combustible) يحول الطاقة الكيميائية لتفاعل H₂ و O₂ مباشرة إلى طاقة كهربائية. ناتجه الوحيد هو الماء."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: E°(H⁺/H₂) = 0.00 V, E°(O₂/H₂O) = +1.23 V. F = 96500 C/mol. نصف التفاعلات: 2 H⁺ + 2e⁻ ⇌ H₂(g) و O₂(g) + 4 H⁺ + 4e⁻ ⇌ 2 H₂O."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب معادلة الأكسدة عند المصعد ومعادلة الإرجاع عند المهبط.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أكتب المعادلة الإجمالية لتفاعل العمود.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب القوة المحركة الكهربائية النظرية E⁰_cell = E⁰(cathode) − E⁰(anode).",
+        "input_type": "numeric",
+        "placeholder": "E⁰_cell = ... V"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "في عملية electrolysis عكسية (تحليل الماء)، ما هو كمون التحليل الأدنى؟ قارن.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "إذا كان عمود الوقود يشتغل بكفاءة 60%، احسب الطاقة الفعلية المنتجة عند استهلاك 1 mol من H₂. (ΔG⁰ = −n·F·E⁰, ثم الطاقة الفعلية = 0.6 × |ΔG⁰|).",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "ما ميزة عمود الوقود مقارنة ببطارية الرصاص من حيث البيئة؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

@@ -21,6 +21,17 @@
         ]
       },
       {
+        "type": "diagram",
+        "diagram_type": "interactive_graph",
+        "props": {
+          "data": [[0,1.0],[5,1.5],[10,2.0],[15,2.5],[18,3.1],[19,3.5],[19.5,4.0],[20,7.0],[20.5,10.0],[21,10.5],[22,11.0],[25,11.5]],
+          "xLabel": "V_B (mL)",
+          "yLabel": "pH",
+          "title": "منحنى المعايرة pH = f(V_B)",
+          "showTangent": false
+        }
+      },
+      {
         "type": "question",
         "number": 1,
         "text": "اكتب معادلة تفاعل المعايرة.",

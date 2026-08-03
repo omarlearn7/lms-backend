@@ -1,0 +1,50 @@
+{
+  "unit_id": 4,
+  "title": "تمرين 005 - المحلول الممدد (Tampon) وحساب pH",
+  "order_index": 5,
+  "source": "3AS U04 - Exercice 005",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 005"
+      },
+      {
+        "type": "text",
+        "content": "نحضر محلول (S) بإذابة n_a = 0.10 mol من حمض الإيثانويك CH₃COOH و n_b = 0.10 mol من إيثانوات الصوديوم CH₃COONa في الماء المقطر للحصول على V = 1.0 L من المحلول. pK_a لثنائية CH₃COOH/CH₃COO⁻ يساوي 4.76."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "باستخدام معادلة هندرسون-هاسلباخ، احسب pH المحلول (S).",
+        "input_type": "numeric",
+        "placeholder": "pH = ... (بـ 0.01)"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "نضيف إلى (S) كمية n = 0.005 mol من حمض قوي HCl. اكتب معادلة التفاعل الحادث.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب pH المحلول بعد إضافة HCl.",
+        "input_type": "numeric",
+        "placeholder": "pH = ... (بـ 0.01)"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "نكرر التجربة بإضافة n = 0.005 mol من HCl إلى V = 1.0 L من الماء النقي. ما هو pH المحلول الجديد؟ قارن مع النتيجة السابقة واستنتج دور المحلول الممدد.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أذكر تطبيقين للمحلول الممدد في الحياة اليومية أو في المجال البيولوجي.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

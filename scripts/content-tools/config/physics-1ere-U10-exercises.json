@@ -1,0 +1,12 @@
+{
+  "prefix": "1AS",
+  "unit": "U10",
+  "items": [
+    { "file": "exercises/U10/001-exercice.json", "kind": "exercise" },
+    { "file": "exercises/U10/002-exercice.json", "kind": "exercise" },
+    { "file": "exercises/U10/003-exercice.json", "kind": "exercise" },
+    { "file": "exercises/U10/004-exercice.json", "kind": "exercise" },
+    { "file": "exercises/U10/005-exercice.json", "kind": "exercise" },
+    { "file": "quizzes/U10/quiz.json", "kind": "quiz" }
+  ]
+}

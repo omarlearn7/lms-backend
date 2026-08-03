@@ -1,0 +1,53 @@
+{
+  "unit_id": 5,
+  "title": "تمرين 004 - الطاقة المحررة في الانشطار النووي",
+  "order_index": 4,
+  "source": "3AS U05 - Exercice 004",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 004"
+      },
+      {
+        "type": "text",
+        "content": "تفاعل انشطار اليورانيوم 235 بقذفه بنيوترون: ²³⁵₉₂U + ¹₀n → ⁹⁴₃₈Sr + ¹³⁹₅₄Xe + 3¹₀n"
+      },
+      {
+        "type": "text",
+        "content": "الكتل الذرية: m(U) = 234.9935 u, m(Sr) = 93.8948 u, m(Xe) = 138.8882 u, m(n) = 1.0087 u. و 1 u = 931.5 MeV/c²."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "تحقق من انحفاظ العدد الكتلي A والعدد الذري Z في هذا التفاعل.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب نقص الكتلة Δm لهذا التفاعل بوحدة u.",
+        "input_type": "numeric",
+        "placeholder": "Δm = ... u"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب الطاقة المحررة من انشطار نواة واحدة بوحدة MeV ثم بوحدة J. (1 MeV = 1.602 × 10⁻¹³ J).",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا كانت كتلة عينة اليورانيوم 235 هي m = 1 g، أحسب عدد الأنوية الموجودة ثم الطاقة الكلية المحررة.",
+        "input_type": "text",
+        "placeholder": "N = ... , E_tot = ... J"
+      },
+      {
+        "type": "note",
+        "variant": "info",
+        "text": "تذكير: M(²³⁵U) ≈ 235 g/mol, N_A = 6.02 × 10²³ mol⁻¹."
+      }
+    ]
+  }
+}

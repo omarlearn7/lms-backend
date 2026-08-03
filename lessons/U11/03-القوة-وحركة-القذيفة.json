@@ -1,0 +1,182 @@
+{
+  "title": "القوة وحركة القذيفة",
+  "slug": "القوة-وحركة-القذيفة",
+  "description": "طبيعة حركة القذيفة، مسقط الحركة على المحورين، خصائص شعاع السرعة وشعاع تغير السرعة والقوة",
+  "category_id": 2,
+  "unit_id": 11,
+  "grade_level": "سنة أولى ثانوي",
+  "order_index": 3,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "مقدمة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "عندما يرمى جسم بسرعة ابتدائية لا يتحرك في خط مستقيم بل يسلك مساراً منحنياً، وتسمى هذه الحركة بحركة القذيفة، ومن أهم خصائصها أن مسقطها على المحورين ox و oy يكونان حركتين بسيطتين."
+    },
+    {
+      "type": "heading",
+      "text": "1) طبيعة الحركة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "عندما يقذف جسم (S) بسرعة ابتدائية $v_0$ يصنع شعاعها الزاوية $\\alpha$ مع المستوي الأفقي يكون المسار منحنياً."
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "مسقط حركة القذيفة على المحور ox هو حركة مستقيمة منتظمة، ومسقط حركتها على المحور oy هو حركة مستقيمة متغيرة بانتظام: متباطئة في حالة الصعود ومتسارعة في حالة النزول."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "مسقط الحركة",
+        "طبيعة الحركة"
+      ],
+      "rows": [
+        [
+          "على المحور (ox)",
+          "حركة مستقيمة منتظمة (vx ثابتة)"
+        ],
+        [
+          "على المحور (oy)",
+          "حركة مستقيمة متغيرة بانتظام (متباطئة في الصعود ومتسارعة في النزول)"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "2) خصائص شعاع السرعة $\\overrightarrow{v}$",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "شعاع السرعة يكون مماسياً للمسار في كل لحظة، وطوله يتناقص أثناء الصعود ويتزايد أثناء النزول."
+    },
+    {
+      "type": "text",
+      "content": "المركبة $v_x$ لشعاع السرعة على المحور ox ثابتة في المنحى والجهة والطويلة في جميع المواضع، أي: $v_{x0} = v_{x1} = v_{x2} = v_{x3} = \\ldots$"
+    },
+    {
+      "type": "text",
+      "content": "المركبة $v_y$ لشعاع السرعة على المحور oy ثابتة في المنحى، وطويلتها تتناقص بانتظام في حالة الصعود وتتزايد عند النزول."
+    },
+    {
+      "type": "heading",
+      "text": "3) خصائص شعاع تغير السرعة $\\overrightarrow{\\Delta v}$ وشعاع القوة $\\overrightarrow{F}$",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "في حركة القذيفة يكون شعاع تغير السرعة $\\overrightarrow{\\Delta v}$ ثابتاً في الطول ومتوجهاً نحو الأسفل في جميع المواضع، ونستنتج منه خصائص القوة $\\overrightarrow{F}$."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "الخاصية",
+        "شعاع تغير السرعة Δv",
+        "القوة F"
+      ],
+      "rows": [
+        [
+          "نقطة التأثير",
+          "موضع المتحرك",
+          "موضع المتحرك"
+        ],
+        [
+          "المنحى",
+          "الشاقول",
+          "الشاقول"
+        ],
+        [
+          "الجهة",
+          "نحو الأسفل",
+          "نحو الأسفل"
+        ],
+        [
+          "الطول",
+          "ثابت",
+          "ثابتة"
+        ]
+      ]
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "خصائص القوة المؤثرة على القذيفة هي نفسها خصائص قوة الثقل $\\overrightarrow{P}$، أي أن الجسم أثناء حركته يخضع لقوة الثقل فقط."
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "مسقط حركة القذيفة على المحور ox هو حركة:",
+      "input_type": "mcq",
+      "options": [
+        "مستقيمة منتظمة",
+        "مستقيمة متغيرة بانتظام",
+        "دائرية منتظمة"
+      ],
+      "answer": {
+        "value": "مستقيمة منتظمة"
+      },
+      "solution": "مسقط حركة القذيفة على المحور ox حركة مستقيمة منتظمة لأن المركبة vx ثابتة."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "شعاع تغير السرعة Δv في حركة القذيفة يكون:",
+      "input_type": "mcq",
+      "options": [
+        "شاقولياً نحو الأسفل وثابت في الطول",
+        "نحو مركز المسار",
+        "مماسياً للمسار"
+      ],
+      "answer": {
+        "value": "شاقولياً نحو الأسفل وثابت في الطول"
+      },
+      "solution": "شعاع تغير السرعة في حركة القذيفة ثابت في الطول ومتجه شاقولياً نحو الأسفل في جميع المواضع."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "القوة المؤثرة على القذيفة أثناء حركتها تذكرنا بخصائص قوة:",
+      "input_type": "mcq",
+      "options": [
+        "الثقل",
+        "التوتر",
+        "الشد"
+      ],
+      "answer": {
+        "value": "الثقل"
+      },
+      "solution": "خصائص القوة المؤثرة على القذيفة (شاقولية، نحو الأسفل، ثابتة) تذكرنا بخصائص قوة الثقل."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "حركة القذيفة منحنية، مسقطها على ox منتظم وعلى oy متغير بانتظام. شعاع السرعة مماسي والمركبة vx ثابتة، وشعاع تغير السرعة والقوة شاقوليان نحو الأسفل وثابتان في الطول."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة حركة القذيفة - المسار وشعاع السرعة",
+        "width": 720,
+        "height": 430
+      },
+      "html": " <div id=\"projWrap\">\n  <canvas id=\"projCanvas\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"projControls\">\n    <div class=\"pc-row\"><label>السرعة الابتدائية v₀ (m/s)</label><input type=\"range\" id=\"v0Slider\" min=\"10\" max=\"60\" value=\"30\" step=\"1\"><span id=\"v0Val\">30</span></div>\n    <div class=\"pc-row\"><label>زاوية القذف α (درجة)</label><input type=\"range\" id=\"angSlider\" min=\"5\" max=\"85\" value=\"45\" step=\"1\"><span id=\"angVal\">45°</span></div>\n    <div id=\"projOut\">المدى R = 90 m | الذروة H = 22.5 m | زمن التحليق T = 4.2 s</div>\n    <button id=\"playBtn\">تشغيل القذف</button>\n  </div>\n</div>\n",
+      "css": "#projWrap{font-family:inherit;direction:rtl;text-align:center}\n#projCanvas{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc}\n#projControls{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.pc-row{display:flex;align-items:center;gap:10px;font-size:14px}\n.pc-row label{width:200px;text-align:left}\n.pc-row span{width:52px;text-align:center;font-weight:bold;color:#0f766e}\ninput[type=range]{width:220px}\n#projOut{padding:6px 12px;background:#ccfbf1;border:1px solid #5eead4;border-radius:8px;font-size:13px;color:#115e59;direction:rtl}\nbutton{padding:6px 16px;border:none;border-radius:8px;background:#0d9488;color:#fff;font-size:14px;cursor:pointer}\n",
+      "js": "(function(){\n  if (window.__projInstalled__) return;\n  window.__projInstalled__ = true;\n  var canvas = document.getElementById('projCanvas');\n  var ctx = canvas.getContext('2d');\n  var v0Slider = document.getElementById('v0Slider');\n  var v0Val = document.getElementById('v0Val');\n  var angSlider = document.getElementById('angSlider');\n  var angVal = document.getElementById('angVal');\n  var out = document.getElementById('projOut');\n  var playBtn = document.getElementById('playBtn');\n  var D2R = Math.PI / 180;\n  var g = 10;\n  var running = false, t = 0;\n  window.simState = { v0: 30, alpha: 45, g: g, t: 0, running: false, x: 0, y: 0, T: 0, H: 0, R: 0, vx: 0, vy: 0 };\n  function compute(){\n    var v0 = parseFloat(v0Slider.value), alpha = parseFloat(angSlider.value);\n    var vx0 = v0 * Math.cos(alpha * D2R), vy0 = v0 * Math.sin(alpha * D2R);\n    var T = 2 * vy0 / g;\n    var H = (vy0 * vy0) / (2 * g);\n    var R = vx0 * T;\n    window.simState.v0 = v0; window.simState.alpha = alpha;\n    window.simState.T = T; window.simState.H = H; window.simState.R = R;\n    window.simState.vx = vx0; window.simState.vy = vy0;\n    return { v0: v0, alpha: alpha, vx0: vx0, vy0: vy0, T: T, H: H, R: R };\n  }\n  function groundY(){ return canvas.height - 40; }\n  function scaleX(p, R){ var pad = 50; return pad + (p / (R || 1)) * (canvas.width - 2 * pad); }\n  function scaleY(y, H){ var top = 24; var bottom = groundY(); var hmax = Math.max(H, 1); return bottom - (y / hmax) * (bottom - top); }\n  function draw(){\n    var p = compute();\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    var gy = groundY();\n    ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(canvas.width, gy); ctx.stroke();\n    ctx.fillStyle = '#64748b'; ctx.font = '12px sans-serif';\n    ctx.fillText('O', 6, gy - 6);\n    ctx.fillText('المدى R = ' + p.R.toFixed(1) + ' m', canvas.width - 180, gy - 6);\n    var pts = [];\n    var steps = 90;\n    for (var i = 0; i <= steps; i++) {\n      var tt = (i / steps) * p.T;\n      var xx = p.vx0 * tt;\n      var yy = p.vy0 * tt - 0.5 * g * tt * tt;\n      if (yy < 0) yy = 0;\n      pts.push([scaleX(xx, p.R), scaleY(yy, p.H)]);\n    }\n    ctx.strokeStyle = '#0d9488'; ctx.lineWidth = 2.5;\n    ctx.beginPath();\n    ctx.moveTo(pts[0][0], pts[0][1]);\n    for (var j = 1; j < pts.length; j++) ctx.lineTo(pts[j][0], pts[j][1]);\n    ctx.stroke();\n    var cx = scaleX(window.simState.x, p.R);\n    var cy = scaleY(window.simState.y, p.H);\n    ctx.fillStyle = '#f59e0b';\n    ctx.beginPath(); ctx.arc(cx, cy, 6, 0, Math.PI * 2); ctx.fill();\n    ctx.strokeStyle = '#b45309'; ctx.lineWidth = 1.5;\n    ctx.beginPath(); ctx.arc(cx, cy, 6, 0, Math.PI * 2); ctx.stroke();\n    if (running) {\n      var vx = p.vx0, vy = p.vy0 - g * t;\n      var vscale = 4;\n      var ax = cx + vx * vscale, ay = cy - vy * vscale;\n      ctx.strokeStyle = '#dc2626'; ctx.lineWidth = 2.5;\n      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(ax, ay); ctx.stroke();\n      ctx.fillStyle = '#dc2626';\n      ctx.beginPath(); ctx.arc(ax, ay, 3.5, 0, Math.PI * 2); ctx.fill();\n      ctx.strokeStyle = '#2563eb'; ctx.lineWidth = 2;\n      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(ax, cy); ctx.stroke();\n      ctx.strokeStyle = '#16a34a'; ctx.lineWidth = 2;\n      ctx.beginPath(); ctx.moveTo(ax, cy); ctx.lineTo(ax, ay); ctx.stroke();\n    }\n    v0Val.textContent = p.v0;\n    angVal.textContent = p.alpha + '°';\n    out.textContent = 'المدى R = ' + p.R.toFixed(1) + ' m | الذروة H = ' + p.H.toFixed(1) + ' m | زمن التحليق T = ' + p.T.toFixed(1) + ' s';\n  }\n  function loop(){\n    if (running) {\n      var p = compute();\n      if (t > p.T || window.simState.y < 0) {\n        t = 0;\n        running = false;\n        window.simState.running = false;\n        playBtn.textContent = 'تشغيل القذف';\n      } else {\n        t += 0.03;\n        window.simState.x = p.vx0 * t;\n        window.simState.y = p.vy0 * t - 0.5 * g * t * t;\n        if (window.simState.y < 0) window.simState.y = 0;\n      }\n      window.simState.t = t;\n    }\n    draw();\n    requestAnimationFrame(loop);\n  }\n  playBtn.addEventListener('click', function(){\n    if (!running) { t = 0; window.simState.x = 0; window.simState.y = 0; }\n    running = !running;\n    window.simState.running = running;\n    playBtn.textContent = running ? 'إيقاف' : 'تشغيل القذف';\n  });\n  v0Slider.addEventListener('input', function(){});\n  angSlider.addEventListener('input', function(){});\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  loop();\n})();\n"
+    }
+  ]
+}

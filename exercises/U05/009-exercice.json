@@ -1,0 +1,62 @@
+{
+  "unit_id": 5,
+  "title": "تمرين 009 - التصوير الطبي PET بالفلور 18",
+  "order_index": 9,
+  "source": "3AS U05 - Exercice 009",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 009"
+      },
+      {
+        "type": "text",
+        "content": "في التصوير المقطعي بالإصدار البوزيتروني (PET Scan)، يستخدم نظير الفلور ¹⁸₉F المشع β⁺ بعمر نصف t₁/₂ = 110 دقيقة."
+      },
+      {
+        "type": "text",
+        "content": "الكتل: m(¹⁸F) = 18.0009 u, m(¹⁸O) = 17.9992 u, m(e⁻) = 0.00055 u. يعطى: 1 u = 931.5 MeV/c², N_A = 6.02 × 10²³ mol⁻¹."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب معادلة التفكك β⁺ للفلور 18 مع تحديد النواة الابن.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب ثابت التفكك λ (بوحدة min⁻¹ ثم s⁻¹).",
+        "input_type": "text",
+        "placeholder": "λ = ... min⁻¹ = ... s⁻¹"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب الطاقة Q المحررة من تفكك نواة واحدة (MeV).",
+        "input_type": "numeric",
+        "placeholder": "Q = ... MeV"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا كان النشاط الابتدائي للحقنة A₀ = 400 MBq، أحسب عدد الأنوية N₀ المحقونة.",
+        "input_type": "text",
+        "placeholder": "N₀ = A₀ / λ = ..."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "بعد كم دقيقة يصبح النشاط 10% من قيمته الابتدائية؟",
+        "input_type": "numeric",
+        "placeholder": "t = ... min"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "لماذا يستخدم β⁺ بدلاً من β⁻ في التصوير الطبي؟ وما دور البوزيترون في تكوين الصورة؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

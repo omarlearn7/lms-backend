@@ -1,0 +1,21 @@
+{
+  "title": "عنوان الدرس",
+  "description": "وصف قصير للدرس",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 7,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 1,
+  "is_free": true,
+  "sections": [
+    { "type": "heading", "text": "مقدمة", "level": 2 },
+    { "type": "text", "content": "نص فقرة. الرياضيات داخل النص مكتوبة هكذا: $\\omega_0 = \\sqrt{\\frac{k}{m}}$" },
+    { "type": "formula", "latex": "T_0 = 2\\pi \\sqrt{\\frac{m}{k}}" },
+    { "type": "note", "variant": "warning", "text": "ملاحظة مهمة نص بسيط بدون وسوم" },
+    { "type": "table", "headers": ["الكمية", "الرمز"], "rows": [["التسارع", "$a$"], ["الزمن", "$t$"]] },
+    { "type": "divider" },
+    { "type": "question", "number": 1, "text": "ما هي وحدة قياس ثابت المرونة؟", "input_type": "mcq", "options": ["N/m", "N·m", "m/N"], "answer": { "value": "N/m" }, "solution": "الثابت k يقاس بـ N/m." },
+    { "type": "quiz", "questions": [{ "q": "سؤال سريع", "options": ["أ", "ب"], "correctIndex": 0, "explanation": "شرح" }] },
+    { "type": "simulation", "html": "<div id='app'><canvas id='canvas' width='600' height='300'></canvas><button id='playBtn'>تشغيل</button><button id='resetBtn'>تصفير</button></div>", "css": "#app{display:flex;flex-direction:column;align-items:center;gap:12px;margin:0 auto;max-width:100%}", "js": "let t=0;let running=false;const playBtn=document.getElementById('playBtn');function fit(){};playBtn.addEventListener('click',()=>{running=!running});function loop(){if(running)t+=0.02;requestAnimationFrame(loop)}loop();", "config": { "title": "محاكاة تفاعلية", "height": 400 } }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "unit_id": 5,
+  "title": "تمرين 014 - زمن الحياة المتوسط τ",
+  "order_index": 14,
+  "source": "3AS U05 - Exercice 014",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 014"
+      },
+      {
+        "type": "text",
+        "content": "زمن الحياة المتوسط (τ - Mean lifetime) هو مقلوب ثابت التفكك: τ = 1/λ. ويرتبط بعمر النصف بالعلاقة: t₁/₂ = τ · ln2 = 0.693 τ."
+      },
+      {
+        "type": "text",
+        "content": "نظير اليود ¹³¹I₅₃ يستخدم في العلاج الإشعاعي، له عمر نصف t₁/₂ = 8.02 أيام. عينة كتلتها m₀ = 0.1 g."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: M(¹³¹I) ≈ 131 g/mol, N_A = 6.02 × 10²³ mol⁻¹."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب τ (بالأيام ثم بالثواني).",
+        "input_type": "text",
+        "placeholder": "τ = t₁/₂ / ln2 = ... jours = ... s"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب λ (بوحدة s⁻¹).",
+        "input_type": "text",
+        "placeholder": "λ = 1/τ = ... s⁻¹"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب N₀ عدد الأنوية في العينة.",
+        "input_type": "text",
+        "placeholder": "N₀ = ..."
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "باستعمال N(t) = N₀ · e^(-t/τ)، أحسب عدد الأنوية المتبقية N عند t = τ. ماذا تلاحظ؟",
+        "input_type": "text",
+        "placeholder": "N(τ) = N₀ × e⁻¹ = ..."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب النسبة N(t)/N₀ عند t = t₁/₂ وعند t = τ. قارن.",
+        "input_type": "text",
+        "placeholder": "N(t₁/₂)/N₀ = 0.5 , N(τ)/N₀ = ..."
+      }
+    ]
+  }
+}

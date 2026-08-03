@@ -1,0 +1,17 @@
+{
+  "unit_id": 25,
+  "title": "تمرين 003 - فعل جول ومسعر حراري",
+  "order_index": 3,
+  "source": "2AS U25 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 003", "level": 3 },
+      { "type": "text", "content": "دارة كهربائية تتكون من مولد كهربائي يجري فيه تيار مستمر شدته I ومقياس أمبير ومقياس فولط وناقل أومي مقاومته R مغمور داخل مسعر حراري سعته الحرارية C = 80 J/°K ويحتوي على Ve = 0.25 L من الماء. عند غلق القاطعة يشير مقياس الأمبير إلى I = 0.6 A ومقياس الفولط إلى U = 12 V، وبعد نصف ساعة يرتفع توتر الجملة (مسعر + ماء) من θi = 20°C إلى θf. يعطى ce = 4180 J/(kg.°C) وكتلة الماء ρ = 1000 g/L." },
+      { "type": "question", "number": 1, "text": "قيمة المقاومة R (بوحدة Ω):", "input_type": "numeric", "answer": { "value": 20, "tolerance": 0.01 }, "solution": "R = U/I = 12/0.6 = 20 Ω." },
+      { "type": "question", "number": 2, "text": "الاستطاعة الكهربائية المحولة بفعل جول (بوحدة W):", "input_type": "numeric", "answer": { "value": 7.2, "tolerance": 0.01 }, "solution": "P = U.I = 12 × 0.6 = 7.2 W." },
+      { "type": "question", "number": 3, "text": "مقدار الطاقة الكهربائية المحولة بفعل جول خلال نصف ساعة (بوحدة J):", "input_type": "numeric", "answer": { "value": 12960, "tolerance": 1 }, "solution": "E = P.Δt = 7.2 × 1800 = 12960 J." },
+      { "type": "question", "number": 4, "text": "السعة الحرارية للجملة (مسعر + ماء) (بوحدة J/°C):", "input_type": "numeric", "answer": { "value": 1125, "tolerance": 1 }, "solution": "C = 80 + m.ce حيث m = 0.25 × 1000 = 250 g = 0.25 kg، إذن C = 80 + 0.25 × 4180 = 1125 J/°C." },
+      { "type": "question", "number": 5, "text": "درجة الحرارة النهائية θf للجملة (بوحدة °C):", "input_type": "numeric", "answer": { "value": 31.52, "tolerance": 0.05 }, "solution": "E = C.(θf − θi) إذن θf = 20 + 12960/1125 = 20 + 11.52 = 31.52°C." }
+    ]
+  }
+}

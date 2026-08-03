@@ -20,7 +20,7 @@
     {
       "type": "note",
       "variant": "info",
-      "text": "<strong>التوازن الكيميائي:</strong> حالة ديناميكية يكون فيها التركيزات ثابتة (لا تتغير مع الزمن)، والتفاعلان المباشر والعكسي يحدثان بنفس السرعة."
+      "text": "التوازن الكيميائي: حالة ديناميكية يكون فيها التركيزات ثابتة (لا تتغير مع الزمن)، والتفاعلان المباشر والعكسي يحدثان بنفس السرعة."
     },
     {
       "type": "divider"
@@ -45,7 +45,49 @@
     {
       "type": "note",
       "variant": "tip",
-      "text": "<strong>ملاحظة:</strong> $K$ لا يتغير بتغير التركيزات الابتدائية، بل يعتمد فقط على <strong>درجة الحرارة</strong> (T)."
+      "text": "ملاحظة: $K$ لا يتغير بتغير التركيزات الابتدائية، بل يعتمد فقط على درجة الحرارة (T)."
+    },
+    {
+      "type": "text",
+      "content": "<p>مثال على تغير $K$ مع $T$: <strong>الجداء الشاردي للماء</strong> $K_e = [H_3O^+][HO^-]$ يتغير مع درجة الحرارة:</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "درجة الحرارة",
+        "$0^\\circ C$",
+        "$25^\\circ C$",
+        "$40^\\circ C$",
+        "$60^\\circ C$",
+        "$80^\\circ C$",
+        "$100^\\circ C$"
+      ],
+      "rows": [
+        [
+          "$K_e$",
+          "$1.1 \\times 10^{-15}$",
+          "$1.0 \\times 10^{-14}$",
+          "$3.0 \\times 10^{-14}$",
+          "$1.0 \\times 10^{-13}$",
+          "$2.5 \\times 10^{-13}$",
+          "$5.5 \\times 10^{-13}$"
+        ],
+        [
+          "$pK_e$",
+          "15.0",
+          "14.0",
+          "13.5",
+          "13.0",
+          "12.6",
+          "12.3"
+        ]
+      ],
+      "caption": "تغير الجداء الشاردي للماء K_e مع درجة الحرارة"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "لهذا السبب، يكون $pH$ المحايد مساوياً لـ 7 فقط عند $25^\\circ C$. عند $60^\\circ C$, $pH_{محايد} = 6.5$."
     },
     {
       "type": "heading",
@@ -54,13 +96,72 @@
     },
     {
       "type": "table",
-      "headers": ["قيمة $K$", "التفسير"],
+      "headers": [
+        "قيمة $K$",
+        "التفسير"
+      ],
       "rows": [
-        ["$K \\gg 1$ (كبير جداً)", "التفاعل يسير كثيراً نحو اليمين (النواتج هي السائدة)"],
-        ["$K \\ll 1$ (صغير جداً)", "التفاعل يسير قليلاً نحو اليمين (المتفاعلات هي السائدة)"],
-        ["$K \\approx 1$", "خليط متوازن من المتفاعلات والنواتج"]
+        [
+          "$K \\gg 1$ (كبير جداً)",
+          "التفاعل يسير كثيراً نحو اليمين (النواتج هي السائدة)"
+        ],
+        [
+          "$K \\ll 1$ (صغير جداً)",
+          "التفاعل يسير قليلاً نحو اليمين (المتفاعلات هي السائدة)"
+        ],
+        [
+          "$K \\approx 1$",
+          "خليط متوازن من المتفاعلات والنواتج"
+        ]
       ],
       "caption": "تفسير قيمة ثابت التوازن K"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I-bis - كسر التفاعل Q (Quotient de réaction)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>لنفس التفاعل $aA + bB \\rightleftharpoons cC + dD$، نعرف <strong>كسر التفاعل</strong> $Q$ (أو خارج التفاعل) بالعلاقة نفسها التي يستعملها $K$، لكن باستعمال التركيزات اللحظية (غير المتوازنة):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "Q = \\frac{[C]^c \\cdot [D]^d}{[A]^a \\cdot [B]^b}"
+    },
+    {
+      "type": "text",
+      "content": "<p>عند بداية التفاعل، $Q = 0$ (لعدم وجود نواتج) أو قد تكون لـ $Q$ قيمة ابتدائية إذا وُجدت نواتج في البداية. يتغير $Q$ مع الزمن حتى يصل إلى $K$ عند التوازن.</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "العلاقة بين $Q$ و $K$",
+        "اتجاه سير التفاعل"
+      ],
+      "rows": [
+        [
+          "$Q < K$",
+          "التفاعل يسير نحو اليمين (→) — جهة النواتج"
+        ],
+        [
+          "$Q = K$",
+          "النظام في حالة توازن (لا تغير)"
+        ],
+        [
+          "$Q > K$",
+          "التفاعل يسير نحو اليسار (←) — جهة المتفاعلات"
+        ]
+      ],
+      "caption": "مقارنة كسر التفاعل Q مع ثابت التوازن K لتحديد اتجاه سير التفاعل"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "لماذا Q ≠ K في البداية؟ لأن بداية التفاعل تكون خارج التوازن. يتغير Q تدريجياً بتغير التركيزات اللحظية حتى يتساوى مع K، وعندها يصل النظام إلى التوازن. المحاكاة أعلاه توضح هذا التغير في الزمن الحقيقي."
     },
     {
       "type": "divider"
@@ -130,6 +231,23 @@
       "content": "<p>زيادة الضغط (أو نقصان الحجم) يزيح التوازن نحو الجهة ذات عدد المولات الأقل من الغازات.</p><p>إذا كان عدد مولات الغازات متساوياً في الطرفين، لا يؤثر تغيير الضغط على التوازن.</p>"
     },
     {
+      "type": "note",
+      "variant": "tip",
+      "text": "تفاعل مع المحاكاة: غير المعايير المختلفة (التركيز) وشاهد تأثيرها على النظام في الوقت الفعلي."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: التوازن الكيميائي",
+        "width": 700,
+        "height": 520
+      },
+      "html": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"ar\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>محاكاة التوازن الكيميائي</title>\n<style>\n*{margin:0;padding:0;box-sizing:border-box}\nbody{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:12px;min-height:100vh}\n.container{max-width:700px;width:100%}\nh1{text-align:center;font-size:16px;color:#fbbf24;margin-bottom:6px}\n.equation{text-align:center;font-size:15px;color:#e2e8f0;background:#1e293b;padding:8px;border-radius:6px;margin-bottom:8px;border:1px solid #334155}\n.equation .arrow{color:#22c55e;margin:0 8px}\n.equation .coeff{font-size:11px;color:#94a3b8}\ncanvas#mainCanvas{background:#0f172a;border:1px solid #334155;border-radius:8px;display:block;margin:0 auto;width:100%;max-width:680px;height:300px}\n.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;background:#1e293b;border-radius:8px;padding:10px;border:1px solid #334155}\n.ctrl-group{display:flex;flex-direction:column;gap:2px}\n.ctrl-group label{font-size:11px;color:#94a3b8}\n.ctrl-group .val{color:#fbbf24;font-size:12px;font-weight:700}\ninput[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}\ninput[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer}\n.dh-group{display:flex;gap:8px}\n.dh-btn{flex:1;background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px;font-size:11px;cursor:pointer;text-align:center;transition:all .15s}\n.dh-btn.active{background:#f59e0b;color:#0f172a;border-color:#f59e0b;font-weight:700}\n.data-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:12px;background:#1e293b;border-radius:8px;overflow:hidden;border:1px solid #334155}\n.data-table th{background:#0f172a;color:#94a3b8;padding:6px 8px;font-weight:400;border-bottom:1px solid #334155}\n.data-table td{padding:5px 8px;text-align:center;border-bottom:1px solid #0f172a}\n.data-table td.val{color:#fbbf24;font-weight:700;direction:ltr}\n.data-table tr:last-child td{border-bottom:none}\n.info-row{display:flex;gap:12px;justify-content:center;margin-top:6px;font-size:12px;color:#94a3b8}\n.info-row span{background:#1e293b;padding:4px 10px;border-radius:4px;border:1px solid #334155}\n.info-row .k-val{color:#22c55e;font-weight:700}\n.info-row .q-val{color:#f59e0b;font-weight:700}\n.info-row .shift{font-weight:700}\n.shift-right{color:#22c55e}\n.shift-left{color:#ef4444}\n.shift-none{color:#64748b}\n.bar-label{font-size:10px;color:#94a3b8}\n@media(max-width:500px){.controls{grid-template-columns:1fr}.info-row{flex-wrap:wrap}}\n</style>\n</head>\n<body>\n<div class=\"container\">\n<h1>محاكاة تفاعلية: التوازن الكيميائي</h1>\n<div class=\"equation\" id=\"eqDisplay\">A + B <span class=\"arrow\">⇌</span> C + D</div>\n\n<canvas id=\"mainCanvas\" width=\"680\" height=\"300\"></canvas>\n\n<div class=\"controls\">\n  <div class=\"ctrl-group\">\n    <label>تركيز A₀ الابتدائي: <span class=\"val\" id=\"a0Val\">1.00</span> mol/L</label>\n    <input type=\"range\" id=\"a0Slider\" min=\"0.1\" max=\"3.0\" step=\"0.05\" value=\"1.0\">\n  </div>\n  <div class=\"ctrl-group\">\n    <label>تركيز B₀ الابتدائي: <span class=\"val\" id=\"b0Val\">1.00</span> mol/L</label>\n    <input type=\"range\" id=\"b0Slider\" min=\"0.1\" max=\"3.0\" step=\"0.05\" value=\"1.0\">\n  </div>\n  <div class=\"ctrl-group\">\n    <label>درجة الحرارة: <span class=\"val\" id=\"tempVal\">25</span> °C</label>\n    <input type=\"range\" id=\"tempSlider\" min=\"0\" max=\"100\" step=\"1\" value=\"25\">\n    <div style=\"display:flex;justify-content:space-between;font-size:9px;color:#475569\"><span>بارد</span><span>ساخن</span></div>\n  </div>\n  <div class=\"ctrl-group\">\n    <label>طبيعة التفاعل (ΔH):</label>\n    <div class=\"dh-group\">\n      <button class=\"dh-btn active\" data-dh=\"-1\" id=\"dhExo\">طاردة للحرارة <span style=\"color:#ef4444\">↓</span></button>\n      <button class=\"dh-btn\" data-dh=\"1\" id=\"dhEndo\">ماصة للحرارة <span style=\"color:#f59e0b\">↑</span></button>\n    </div>\n  </div>\n</div>\n\n<div class=\"info-row\">\n  <span>K = <span class=\"k-val\" id=\"kDisplay\">4.00</span></span>\n  <span>Q = <span class=\"q-val\" id=\"qDisplay\">4.00</span></span>\n  <span>الإزاحة: <span class=\"shift\" id=\"shiftDisplay\">عند التوازن</span></span>\n  <span>x (التقدم) = <span id=\"xDisplay\">0.500</span> mol/L</span>\n</div>\n\n<table class=\"data-table\">\n  <tr><th>الحالة</th><th>[A] (mol/L)</th><th>[B] (mol/L)</th><th>[C] (mol/L)</th><th>[D] (mol/L)</th></tr>\n  <tr><td>ابتدائي</td><td class=\"val\" id=\"initA\">1.00</td><td class=\"val\" id=\"initB\">1.00</td><td class=\"val\" id=\"initC\">0.00</td><td class=\"val\" id=\"initD\">0.00</td></tr>\n  <tr><td>عند التوازن</td><td class=\"val\" id=\"eqA\">0.50</td><td class=\"val\" id=\"eqB\">0.50</td><td class=\"val\" id=\"eqC\">0.50</td><td class=\"val\" id=\"eqD\">0.50</td></tr>\n</table>\n</div>\n\n<script>\nconst canvas = document.getElementById('mainCanvas');\nconst ctx = canvas.getContext('2d');\n\nconst a0Slider = document.getElementById('a0Slider');\nconst b0Slider = document.getElementById('b0Slider');\nconst tempSlider = document.getElementById('tempSlider');\nconst dhBtns = document.querySelectorAll('.dh-btn');\nconst a0Val = document.getElementById('a0Val');\nconst b0Val = document.getElementById('b0Val');\nconst tempVal = document.getElementById('tempVal');\n\nconst initA = document.getElementById('initA');\nconst initB = document.getElementById('initB');\nconst initC = document.getElementById('initC');\nconst initD = document.getElementById('initD');\nconst eqA = document.getElementById('eqA');\nconst eqB = document.getElementById('eqB');\nconst eqC = document.getElementById('eqC');\nconst eqD = document.getElementById('eqD');\nconst kDisplay = document.getElementById('kDisplay');\nconst qDisplay = document.getElementById('qDisplay');\nconst shiftDisplay = document.getElementById('shiftDisplay');\nconst xDisplay = document.getElementById('xDisplay');\n\nlet dh = -1;\nlet animA = 0, animB = 0, animC = 0, animD = 0;\nlet targetA = 0, targetB = 0, targetC = 0, targetD = 0;\nlet prevA0 = 1, prevB0 = 1, prevTemp = 25;\nlet animating = false;\n\nfunction getParams() {\n  const A0 = parseFloat(a0Slider.value);\n  const B0 = parseFloat(b0Slider.value);\n  const T = parseFloat(tempSlider.value);\n  return { A0, B0, T };\n}\n\nfunction computeK(T) {\n  // K varies with temperature per van't Hoff\n  // At 25°C, K = 4.0 for exothermic; K = 0.25 for endothermic\n  const T0 = 25;\n  const K0 = dh === -1 ? 4.0 : 0.25;\n  const deltaH = dh === -1 ? -20000 : 20000; // J/mol\n  const R = 8.314;\n  const TK = T + 273.15;\n  const TK0 = T0 + 273.15;\n  return K0 * Math.exp(-deltaH / R * (1 / TK - 1 / TK0));\n}\n\nfunction computeEquilibrium(A0, B0, K) {\n  if (A0 <= 0 || B0 <= 0) return { A: A0, B: B0, C: 0, D: 0, x: 0 };\n  // Solve: K = x^2 / ((A0-x)(B0-x))\n  // x^2 = K(A0-x)(B0-x)\n  // x^2(1-K) + K(A0+B0)x - KA0B0 = 0\n  let x;\n  if (Math.abs(K - 1) < 1e-10) {\n    x = (A0 * B0) / (A0 + B0);\n  } else {\n    const a = 1 - K;\n    const b = K * (A0 + B0);\n    const c = -K * A0 * B0;\n    const disc = b * b - 4 * a * c;\n    if (disc < 0) return { A: A0, B: B0, C: 0, D: 0, x: 0 };\n    x = (-b + Math.sqrt(disc)) / (2 * a);\n  }\n  x = Math.max(0, Math.min(x, Math.min(A0, B0)));\n  return { A: A0 - x, B: B0 - x, C: x, D: x, x };\n}\n\nfunction update() {\n  const { A0, B0, T } = getParams();\n  const K = computeK(T);\n  const eq = computeEquilibrium(A0, B0, K);\n\n  targetA = eq.A;\n  targetB = eq.B;\n  targetC = eq.C;\n  targetD = eq.D;\n\n  // Compute Q from current equilibrium state (after shift)\n  const Q = eq.A > 0 && eq.B > 0 ? (eq.C * eq.D) / (eq.A * eq.B) : K;\n\n  // Determine shift direction\n  const Qratio = Q / K;\n  let shiftText, shiftClass;\n  if (Math.abs(Qratio - 1) < 0.01) {\n    shiftText = '⚖ عند التوازن';\n    shiftClass = 'shift-none';\n  } else if (Qratio < 1) {\n    shiftText = '← نحو النواتج (يمين)';\n    shiftClass = 'shift-right';\n  } else {\n    shiftText = '→ نحو المتفاعلات (يسار)';\n    shiftClass = 'shift-left';\n  }\n\n  kDisplay.textContent = K.toFixed(2);\n  qDisplay.textContent = Q.toFixed(2);\n  shiftDisplay.textContent = shiftText;\n  shiftDisplay.className = 'shift ' + shiftClass;\n  xDisplay.textContent = eq.x.toFixed(3);\n\n  initA.textContent = A0.toFixed(2);\n  initB.textContent = B0.toFixed(2);\n  initC.textContent = '0.00';\n  initD.textContent = '0.00';\n  eqA.textContent = eq.A.toFixed(2);\n  eqB.textContent = eq.B.toFixed(2);\n  eqC.textContent = eq.C.toFixed(2);\n  eqD.textContent = eq.D.toFixed(2);\n\n  prevA0 = A0; prevB0 = B0; prevTemp = T;\n  animating = true;\n  draw();\n  requestAnimationFrame(animate);\n}\n\nfunction lerp(a, b, t) { return a + (b - a) * t; }\n\nfunction animate() {\n  if (!animating) return;\n  const speed = 0.08;\n  animA = lerp(animA, targetA, speed);\n  animB = lerp(animB, targetB, speed);\n  animC = lerp(animC, targetC, speed);\n  animD = lerp(animD, targetD, speed);\n\n  const close = Math.abs(animA - targetA) < 0.001;\n  if (close) { animA = targetA; animB = targetB; animC = targetC; animD = targetD; animating = false; }\n  draw();\n  if (animating) requestAnimationFrame(animate);\n}\n\nfunction draw() {\n  const w = canvas.width, h = canvas.height;\n  ctx.clearRect(0, 0, w, h);\n\n  const padL = 60, padR = 60, padT = 30, padB = 30;\n  const chartW = w - padL - padR;\n  const chartH = h - padT - padB;\n  const halfW = chartW / 2;\n\n  const { A0, B0 } = getParams();\n  const vals = [A0, B0, animA, animB, animC, animD];\n  const maxVal = Math.max(Math.max(...vals), 0.5) * 1.15;\n\n  // Draw background\n  ctx.fillStyle = '#0f172a';\n  ctx.fillRect(0, 0, w, h);\n\n  // Title section labels\n  ctx.font = 'bold 12px sans-serif';\n  ctx.textAlign = 'center';\n\n  ctx.fillStyle = '#94a3b8';\n  ctx.fillText('الابتدائي', padL + halfW / 2, 16);\n  ctx.fillText('عند التوازن', padL + halfW + halfW / 2, 16);\n\n  // Separator line\n  ctx.strokeStyle = '#334155';\n  ctx.lineWidth = 1;\n  ctx.setLineDash([3, 3]);\n  ctx.beginPath();\n  ctx.moveTo(padL + halfW, padT);\n  ctx.lineTo(padL + halfW, padT + chartH);\n  ctx.stroke();\n  ctx.setLineDash([]);\n\n  // Draw bars: initial left, equilibrium right\n  const barW = halfW / 5 - 6;\n  const colors = { A: '#ef4444', B: '#f97316', C: '#22c55e', D: '#3b82f6' };\n\n  function drawBar(x, value, color, label, yOff) {\n    const barH = (value / maxVal) * chartH;\n    const y = padT + chartH - barH;\n    const grad = ctx.createLinearGradient(x, y, x, padT + chartH);\n    grad.addColorStop(0, color);\n    grad.addColorStop(1, color + '44');\n    ctx.fillStyle = grad;\n    ctx.beginPath();\n    ctx.roundRect(x, y, barW, barH, [3, 3, 0, 0]);\n    ctx.fill();\n\n    // Value label\n    ctx.fillStyle = '#e2e8f0';\n    ctx.font = 'bold 10px sans-serif';\n    ctx.textAlign = 'center';\n    ctx.fillText(value.toFixed(2), x + barW / 2, y - 4);\n\n    // Name label\n    ctx.fillStyle = '#94a3b8';\n    ctx.font = '10px sans-serif';\n    ctx.fillText(label, x + barW / 2, padT + chartH + 14);\n  }\n\n  // Initial bars (left half)\n  const xBaseL = padL + 4;\n  const spacingL = (halfW - 8) / 2;\n  drawBar(xBaseL + spacingL * 0, A0, colors.A, '[A]₀', 0);\n  drawBar(xBaseL + spacingL * 1, B0, colors.B, '[B]₀', 0);\n\n  // Equilibrium bars (right half)\n  const xBaseR = padL + halfW + 4;\n  const spacingR = (halfW - 8) / 4;\n  drawBar(xBaseR + spacingR * 0, animA, colors.A, '[A]', 0);\n  drawBar(xBaseR + spacingR * 1, animB, colors.B, '[B]', 0);\n  drawBar(xBaseR + spacingR * 2, animC, colors.C, '[C]', 0);\n  drawBar(xBaseR + spacingR * 3, animD, colors.D, '[D]', 0);\n\n  // Y-axis label\n  ctx.save();\n  ctx.translate(14, padT + chartH / 2);\n  ctx.rotate(-Math.PI / 2);\n  ctx.fillStyle = '#64748b';\n  ctx.font = '10px sans-serif';\n  ctx.textAlign = 'center';\n  ctx.fillText('التركيز (mol/L)', 0, 0);\n  ctx.restore();\n\n  // Y-axis grid\n  ctx.strokeStyle = '#1e293b';\n  ctx.lineWidth = 0.5;\n  for (let i = 0; i <= 4; i++) {\n    const y = padT + chartH * (1 - i / 4);\n    ctx.beginPath();\n    ctx.moveTo(padL - 4, y);\n    ctx.lineTo(padL + chartW, y);\n    ctx.stroke();\n    ctx.fillStyle = '#475569';\n    ctx.font = '9px sans-serif';\n    ctx.textAlign = 'right';\n    ctx.fillText((maxVal * i / 4).toFixed(1), padL - 8, y + 3);\n  }\n\n  // K value box\n  ctx.fillStyle = '#1e293b';\n  ctx.beginPath();\n  ctx.roundRect(w - 90, 4, 86, 22, 4);\n  ctx.fill();\n  ctx.fillStyle = '#22c55e';\n  ctx.font = 'bold 11px sans-serif';\n  ctx.textAlign = 'left';\n  ctx.fillText('K = ' + computeK(parseFloat(tempSlider.value)).toFixed(2), w - 84, 19);\n}\n\n// Polyfill roundRect\nif (!CanvasRenderingContext2D.prototype.roundRect) {\n  CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, radii) {\n    const r = Array.isArray(radii) ? radii : [radii, radii, radii, radii];\n    const [tl, tr, br, bl] = r.map(v => Math.min(v || 0, Math.min(w, h) / 2));\n    this.moveTo(x + tl, y);\n    this.lineTo(x + w - tr, y);\n    this.quadraticCurveTo(x + w, y, x + w, y + tr);\n    this.lineTo(x + w, y + h - br);\n    this.quadraticCurveTo(x + w, y + h, x + w - br, y + h);\n    this.lineTo(x + bl, y + h);\n    this.quadraticCurveTo(x, y + h, x, y + h - bl);\n    this.lineTo(x, y + tl);\n    this.quadraticCurveTo(x, y, x + tl, y);\n    this.closePath();\n  };\n}\n\na0Slider.addEventListener('input', () => {\n  a0Val.textContent = parseFloat(a0Slider.value).toFixed(2);\n  update();\n});\nb0Slider.addEventListener('input', () => {\n  b0Val.textContent = parseFloat(b0Slider.value).toFixed(2);\n  update();\n});\ntempSlider.addEventListener('input', () => {\n  tempVal.textContent = tempSlider.value;\n  update();\n});\ndhBtns.forEach(btn => {\n  btn.addEventListener('click', () => {\n    dhBtns.forEach(b => b.classList.remove('active'));\n    btn.classList.add('active');\n    dh = parseInt(btn.dataset.dh);\n    update();\n  });\n});\n\nupdate();\nanimate();\n</script>\n</body>\n</html>\n",
+      "css": "",
+      "js": ""
+    },
+    {
       "type": "heading",
       "text": "تأثير تغيير درجة الحرارة",
       "level": 3
@@ -140,13 +258,37 @@
     },
     {
       "type": "table",
-      "headers": ["العامل", "التغيير", "إزاحة التوازن"],
+      "headers": [
+        "العامل",
+        "التغيير",
+        "إزاحة التوازن"
+      ],
       "rows": [
-        ["التركيز", "زيادة [متفاعل]", "← نحو النواتج"],
-        ["التركيز", "زيادة [ناتج]", "← نحو المتفاعلات"],
-        ["الضغط", "زيادة الضغط", "← نحو عدد مولات غاز أقل"],
-        ["درجة الحرارة", "زيادة T (تفاعل طارد)", "← نحو المتفاعلات"],
-        ["درجة الحرارة", "زيادة T (تفاعل ماص)", "← نحو النواتج"]
+        [
+          "التركيز",
+          "زيادة [متفاعل]",
+          "← نحو النواتج"
+        ],
+        [
+          "التركيز",
+          "زيادة [ناتج]",
+          "← نحو المتفاعلات"
+        ],
+        [
+          "الضغط",
+          "زيادة الضغط",
+          "← نحو عدد مولات غاز أقل"
+        ],
+        [
+          "درجة الحرارة",
+          "زيادة T (تفاعل طارد)",
+          "← نحو المتفاعلات"
+        ],
+        [
+          "درجة الحرارة",
+          "زيادة T (تفاعل ماص)",
+          "← نحو النواتج"
+        ]
       ],
       "caption": "تأثير العوامل المختلفة على التوازن الكيميائي"
     },
@@ -165,7 +307,7 @@
     {
       "type": "note",
       "variant": "info",
-      "text": "<strong>خلاصة:</strong> درجة الحرارة هي العامل الوحيد الذي يغير قيمة $K$. تغيير التركيز أو الضغط يغير موضع التوازن لكن $K$ يبقى ثابتاً."
+      "text": "خلاصة: درجة الحرارة هي العامل الوحيد الذي يغير قيمة $K$. تغيير التركيز أو الضغط يغير موضع التوازن لكن $K$ يبقى ثابتاً."
     }
   ]
 }

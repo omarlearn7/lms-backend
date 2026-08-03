@@ -1,0 +1,50 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 028 - بكالوريا 2008: الاهتزازات الميكانيكية",
+  "order_index": 28,
+  "source": "3AS U07 - Bac 2008",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 028 (بكالوريا 2008)"
+      },
+      {
+        "type": "text",
+        "content": "نواس مرن أفقي (k = 25 N/m, m = 100 g). نزيح الكتلة بـ 4 cm ثم نحررها. سُجل المنحنى x(t) فارتفاع السعة كل دورة ينقص بنسبة 10%."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب ω₀ و T₀ في حالة عدم التخميد.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب X₁ (السعة بعد الدورة الأولى) و X₂ (بعد الثانية).",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "استنتج معامل التخميد h (تقريباً).",
+        "input_type": "numeric",
+        "placeholder": "h = ... N·s/m"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب الطاقة المبددة خلال الدورة الأولى.",
+        "input_type": "numeric",
+        "placeholder": "ΔE = ... J"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "بعد كم دورة تصبح السعة أقل من 1 mm؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 025 - تبديد الطاقة في دارة RLC",
+  "order_index": 25,
+  "source": "3AS U07 - Exercice 025",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 025"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC: L = 0.2 H, C = 50 µF, R = 10 Ω. نشحن المكثف تحت Q₀ = 50 µC ثم نغلق الدارة."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب الطاقة الابتدائية E₀.",
+        "input_type": "numeric",
+        "placeholder": "E₀ = ... J"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب ω₀, γ, ω_d وشبه الدور T.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أوجد ثابت الزمن τ = 2L/R.",
+        "input_type": "numeric",
+        "placeholder": "τ = ... s"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "بعد مرور زمن τ، كم تصبح الطاقة E(τ)؟",
+        "input_type": "numeric",
+        "placeholder": "E(τ) = ... J"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "بعد كم دورة تفقد الدارة 90% من طاقتها الابتدائية؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

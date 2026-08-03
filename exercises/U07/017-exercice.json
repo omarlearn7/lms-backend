@@ -1,0 +1,49 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 017 - حساب عرض حزمة الرنين (باند باس)",
+  "order_index": 17,
+  "source": "3AS U07 - Exercice 017",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 017"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC: R = 20 Ω, L = 0.1 H, C = 40 µF. مولد u(t) = 10 cos(ωt) V. نرمز بـ P_max لاستطاعة جول عند الرنين و P(f) عند تردد f."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب ω₀ و f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب I_max و P_max عند الرنين.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "عند أي ترددات f₁ و f₂ تكون P = P_max/2؟ (استخدم الشرط I = I_max/√2).",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب Δf = f₂ − f₁ باستخدام Δω = ω₀/Q.",
+        "input_type": "numeric",
+        "placeholder": "Δf = ... Hz"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ماذا تمثل الحزمة [f₁, f₂] بالنسبة للدارة؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

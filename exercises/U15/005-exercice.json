@@ -1,0 +1,18 @@
+{
+  "unit_id": 15,
+  "title": "تمرين 005 - ثلاث شحنات على مثلث قائم",
+  "order_index": 5,
+  "source": "1AS U15 - Exercice 005",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 005: ثلاث شحنات على رؤوس مثلث قائم" },
+      { "type": "text", "content": "نثبت 3 شحنات على رؤوس مثلث قائم متساوي الساقين: qA = qB = qC = +6 µC و a = 10 cm. مثل القوة الكهربائية التي تتأثر بها qB ثم احسب شدتها." },
+      { "type": "text", "content": "يعطى ثابت كولوم K = 9 × 10⁹ SI." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "شدة القوة FA/B التي تطبقها الشحنة qA على الشحنة qB تساوي:", "input_type": "numeric", "answer": { "value": 32.4, "tolerance": 0.1 }, "solution": "FA/B = K×qA×qB/a² = 9 × 10⁹ × 6 × 10⁻⁶ × 6 × 10⁻⁶ / (0.1)² = 32.4 N." },
+      { "type": "question", "number": 2, "text": "شدة القوة FC/B التي تطبقها الشحنة qC على الشحنة qB تساوي:", "input_type": "numeric", "answer": { "value": 32.4, "tolerance": 0.1 }, "solution": "FC/B = K×qC×qB/a² = 32.4 N لأن الشحنات متساوية والمسافات متساوية." },
+      { "type": "question", "number": 3, "text": "القوتان FA/B و FC/B متعامدتان، فشدة القوة المحصلة المؤثرة على qB تساوي:", "input_type": "numeric", "answer": { "value": 45.82, "tolerance": 0.1 }, "solution": "F = √(FA/B² + FC/B²) = √(32.4² + 32.4²) = 32.4 × √2 = 45.8 N." },
+      { "type": "question", "number": 4, "text": "جميع الشحنات الثلاث موجبة، فطبيعة القوى بينها:", "input_type": "mcq", "options": ["تنافرية", "تجاذبية", "معدومة"], "answer": { "value": "تنافرية" }, "solution": "الشحنات المتشابهة (كلها موجبة) تتنافر، فتتنافر qA و qB و qC فيما بينها." }
+    ]
+  }
+}

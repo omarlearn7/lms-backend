@@ -1,0 +1,16 @@
+{
+  "unit_id": 23,
+  "title": "تمرين 005 - سقوط حر لكرية تنس",
+  "order_index": 5,
+  "source": "2AS U23 - Exercice 005",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 005", "level": 3 },
+      { "type": "text", "content": "تترك كرة تنس (S) كتلتها m = 50 g دون سرعة ابتدائية من موضع A يقع على ارتفاع h من سطح الأرض فتصطدم بالأرض عند الموضع B بسرعة vB = 8 m/s. نهمل تأثير الهواء والاحتكاك. يعطى g = 10 m/s²." },
+      { "type": "question", "number": 1, "text": "بتطبيق مبدأ انحفاظ الطاقة على الجملة (كرة تنس + أرض) بين A و B، جد الارتفاع h الذي سقطت منه الكرة. (بوحدة m)", "input_type": "numeric", "answer": { "value": 3.2, "tolerance": 0.01 }, "solution": "مبدأ انحفاظ الطاقة: m.g.h = ½ m.vB² ومنه h = vB²/(2.g) = 64/20 = 3.2 m." },
+      { "type": "question", "number": 2, "text": "أحسب الطاقة الحركية لكرة التنس لحظة اصطدامها بالأرض. (بوحدة J)", "input_type": "numeric", "answer": { "value": 1.6, "tolerance": 0.01 }, "solution": "Ec(B) = ½ m.vB² = ½ × 0.05 × 64 = 1.6 J." },
+      { "type": "question", "number": 3, "text": "معادلة انحفاظ الطاقة بين الموضعين A و B هي:", "input_type": "mcq", "options": ["m.g.h = ½ m.vB²", "m.g.h = m.vB", "½ m.vB² = K.x0"], "answer": { "value": "m.g.h = ½ m.vB²" }, "solution": "الطاقة الكامنة في A تتحول كلها إلى طاقة حركية في B: m.g.h = ½ m.vB²." },
+      { "type": "question", "number": 4, "text": "إذا سقطت الكرة من ارتفاع مضاعف 2h فإن سرعة اصطدامها بالأرض:", "input_type": "mcq", "options": ["تتضاعف بـ √2", "تتضاعف بـ 2", "لا تتغير"], "answer": { "value": "تتضاعف بـ √2" }, "solution": "بما أن vB = √(2.g.h)، فإذا تضاعف الارتفاع تصبح vB′ = √(2.g.2h) = √2 × √(2.g.h) = √2 × vB." }
+    ]
+  }
+}

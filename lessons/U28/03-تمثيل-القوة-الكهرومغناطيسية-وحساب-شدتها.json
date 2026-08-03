@@ -1,0 +1,118 @@
+{
+  "title": "تمثيل القوة الكهرومغناطيسية وحساب شدتها",
+  "slug": "تمثيل-القوة-الكهرومغناطيسية-وحساب-شدتها",
+  "description": "تمثيل قوة لابلاص وحساب شدتها بالعلاقة F = B.I.L.sinθ",
+  "category_id": 2,
+  "unit_id": 28,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 3,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "1) تمثيل القوة الكهرومغناطيسية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "تمثل القوة الكهرومغناطيسية F بشعاع نقطة تأثيره منتصف الناقل المستقيم، حامله عمودي على الناقل وعلى الحقل المغناطيسي B في نفس الوقت، وجهته تحدد بقاعدة الأصابع الثلاثة لليد اليمنى."
+    },
+    {
+      "type": "heading",
+      "text": "2) شدة قوة لابلاص",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "تعطى شدة القوة الكهرومغناطيسية المؤثرة على ناقل مستقيم يمر فيه تيار داخل حقل مغناطيسي منتظم بالعلاقة:"
+    },
+    {
+      "type": "formula",
+      "latex": "F = B \\cdot I \\cdot L \\cdot \\sin\\theta"
+    },
+    {
+      "type": "text",
+      "content": "حيث: I شدة التيار الكهربائي بالأمبير (A)، L طول الجزء من الناقل المغمور داخل الحقل المغناطيسي بالمتر (m)، وθ الزاوية المحصورة بين الناقل الموجه في اتجاه التيار وشعاع الحقل B بالراديان (rad)."
+    },
+    {
+      "type": "text",
+      "content": "ملاحظات: إذا كان الناقل عموديًا على الحقل (θ = 90°) تكون F = B.I.L. وإذا كان موازيًا للحقل (θ = 0°) تنعدم القوة: F = 0."
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "شدة قوة لابلاص تعطى بالعلاقة:",
+      "input_type": "mcq",
+      "options": [
+        "F = B.I.L.sinθ",
+        "F = B.I.L.cosθ",
+        "F = B.I/L"
+      ],
+      "answer": {
+        "value": "F = B.I.L.sinθ"
+      },
+      "solution": "شدة قوة لابلاص: F = B.I.L.sinθ."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "إذا كان الناقل موازيًا للحقل المغناطيسي، فإن القوة الكهرومغناطيسية:",
+      "input_type": "mcq",
+      "options": [
+        "تنعدم",
+        "أعظمية",
+        "تتضاعف"
+      ],
+      "answer": {
+        "value": "تنعدم"
+      },
+      "solution": "sin 0° = 0 إذن F = 0."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "ناقل طوله L = 0.2 m يجتازه تيار I = 5 A عمودي على حقل B = 40 mT. شدة القوة (بوحدة N):",
+      "input_type": "numeric",
+      "answer": {
+        "value": 0.04,
+        "tolerance": 0.001
+      },
+      "solution": "F = B.I.L = 0.04 × 5 × 0.2 = 0.04 N."
+    },
+    {
+      "type": "question",
+      "number": 4,
+      "text": "ناقل يجتازه تيار I = 2 A داخل حقل B = 0.5 T ويصنع زاوية 30° معه، طوله L = 0.1 m. شدة القوة (بوحدة N):",
+      "input_type": "numeric",
+      "answer": {
+        "value": 0.05,
+        "tolerance": 0.001
+      },
+      "solution": "F = B.I.L.sin30° = 0.5 × 2 × 0.1 × 0.5 = 0.05 N."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة قوة لابلاص F = B.I.L.sinθ",
+        "width": 720,
+        "height": 360
+      },
+      "html": "<div id=\"wrap\">\n  <canvas id=\"cv\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"ctrl\">\n    <div class=\"row\"><label>الحقل المغناطيسي B (T)</label><input type=\"range\" id=\"bSlider\" min=\"0.1\" max=\"2\" value=\"0.5\" step=\"0.1\"><span id=\"bVal\">0.5</span></div>\n    <div class=\"row\"><label>شدة التيار I (A)</label><input type=\"range\" id=\"iSlider\" min=\"0.5\" max=\"10\" value=\"5\" step=\"0.5\"><span id=\"iVal\">5.0</span></div>\n    <div class=\"row\"><label>طول الناقل L (m)</label><input type=\"range\" id=\"lSlider\" min=\"0.05\" max=\"0.5\" value=\"0.2\" step=\"0.05\"><span id=\"lVal\">0.20</span></div>\n    <div class=\"row\"><label>الزاوية θ بين الناقل والحقل (°)</label><input type=\"range\" id=\"tSlider\" min=\"0\" max=\"90\" value=\"90\" step=\"1\"><span id=\"tVal\">90°</span></div>\n    <div id=\"out\">F = B.I.L.sinθ = 0.50 N</div>\n    <button id=\"playBtn\">عكس جهة التيار</button>\n  </div>\n</div>\n",
+      "css": "#wrap{font-family:inherit;direction:rtl;text-align:center}\n#cv{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;max-width:100%}\n#ctrl{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.row{display:flex;align-items:center;gap:10px;font-size:14px}\n.row label{width:200px;text-align:left}\n.row span{width:70px;text-align:center;font-weight:bold;color:#0f766e}\ninput[type=range]{width:220px}\n#out{padding:6px 12px;background:#ccfbf1;border:1px solid #99f6e4;border-radius:6px;font-weight:bold;color:#134e4a;margin-top:4px}\n#playBtn{margin-top:4px;padding:5px 16px;border:1px solid #0f766e;background:#0f766e;color:#fff;border-radius:6px;cursor:pointer;font-size:13px}",
+      "js": "(function(){\n  if (window.__laplaceInstalled__) return;\n  window.__laplaceInstalled__ = true;\n  var canvas = document.getElementById('cv');\n  var ctx = canvas.getContext('2d');\n  var bSlider = document.getElementById('bSlider'), bVal = document.getElementById('bVal');\n  var iSlider = document.getElementById('iSlider'), iVal = document.getElementById('iVal');\n  var lSlider = document.getElementById('lSlider'), lVal = document.getElementById('lVal');\n  var tSlider = document.getElementById('tSlider'), tVal = document.getElementById('tVal');\n  var out = document.getElementById('out');\n  var playBtn = document.getElementById('playBtn');\n  var flowDir = 1, flow = 0;\n  window.simState = { B: 0.5, I: 5, L: 0.2, theta: 90, F: 0.5, dir: 1 };\n  function draw(){\n    var B = parseFloat(bSlider.value), I = parseFloat(iSlider.value);\n    var L = parseFloat(lSlider.value), theta = parseFloat(tSlider.value);\n    var F = B * I * L * Math.sin(theta * Math.PI / 180);\n    window.simState.B = B; window.simState.I = I; window.simState.L = L;\n    window.simState.theta = theta; window.simState.F = F;\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 1; ctx.strokeRect(0.5, 0.5, canvas.width - 1, canvas.height - 1);\n    var cy = 190, cx = 210;\n    ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.moveTo(60, cy); ctx.lineTo(660, cy); ctx.stroke();\n    ctx.fillStyle = '#94a3b8'; ctx.font = '12px sans-serif'; ctx.textAlign = 'left';\n    ctx.fillText('B', 60, cy - 8);\n    ctx.strokeStyle = '#64748b'; ctx.lineWidth = 2;\n    for (var gx = 90; gx <= 630; gx += 60) {\n      ctx.beginPath(); ctx.moveTo(gx, cy - 18); ctx.lineTo(gx, cy - 2);\n      ctx.moveTo(gx, cy - 18); ctx.lineTo(gx - 5, cy - 12); ctx.moveTo(gx, cy - 18); ctx.lineTo(gx + 5, cy - 12); ctx.stroke();\n    }\n    ctx.fillStyle = '#334155'; ctx.font = '12px sans-serif'; ctx.textAlign = 'left';\n    ctx.fillText('الحقل B (أفقي نحو اليمين)', 60, cy + 20);\n    var ang = theta * Math.PI / 180;\n    var half = 46 + L * 240;\n    var ax = cx - half * Math.cos(ang), ay = cy - half * Math.sin(ang);\n    var bx = cx + half * Math.cos(ang), by = cy + half * Math.sin(ang);\n    ctx.strokeStyle = '#dc2626'; ctx.lineWidth = 5;\n    ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();\n    flow += 0.05 * flowDir;\n    var fl = flow % 20;\n    var dArrow = (L > 0.05) ? fl / 20 : 0.5;\n    var dpx = ax + (bx - ax) * dArrow, dpy = ay + (by - ay) * dArrow;\n    var nx = -Math.sin(ang) * flowDir, ny = Math.cos(ang) * flowDir;\n    ctx.fillStyle = '#f59e0b';\n    ctx.beginPath(); ctx.moveTo(dpx + nx * 9, dpy + ny * 9);\n    ctx.lineTo(dpx - nx * 3 - Math.cos(ang) * 7 * flowDir, dpy - ny * 3 - Math.sin(ang) * 7 * flowDir);\n    ctx.lineTo(dpx - nx * 3 + Math.cos(ang) * 7 * flowDir, dpy - ny * 3 + Math.sin(ang) * 7 * flowDir);\n    ctx.fill();\n    ctx.fillStyle = '#dc2626'; ctx.font = 'bold 13px sans-serif'; ctx.textAlign = 'center';\n    ctx.fillText('ناقل AB (I = ' + I.toFixed(1) + ' A)', (ax + bx) / 2, (ay + by) / 2 - 14);\n    ctx.fillStyle = '#0f172a'; ctx.textAlign = 'center';\n    ctx.fillText('θ = ' + theta + '°', cx + (Math.cos(ang)) * 60, cy - Math.sin(ang) * 60 - 12);\n    var fScale = F / 2;\n    var fH = fScale * 60;\n    ctx.strokeStyle = '#16a34a'; ctx.lineWidth = 4;\n    ctx.beginPath(); ctx.moveTo(560, cy); ctx.lineTo(560, cy - fH); ctx.stroke();\n    ctx.fillStyle = '#16a34a';\n    ctx.beginPath(); ctx.moveTo(560, cy - fH); ctx.lineTo(552, cy - fH + 12); ctx.lineTo(568, cy - fH + 12); ctx.fill();\n    ctx.fillStyle = '#15803d'; ctx.font = 'bold 13px sans-serif';\n    ctx.fillText('F = ' + F.toFixed(3) + ' N', 560, cy - fH - 10);\n    bVal.textContent = B.toFixed(1); iVal.textContent = I.toFixed(1);\n    lVal.textContent = L.toFixed(2); tVal.textContent = theta + '°';\n    out.textContent = 'F = B.I.L.sinθ = ' + B.toFixed(1) + ' × ' + I.toFixed(1) + ' × ' + L.toFixed(2) + ' × sin' + theta + '° = ' + F.toFixed(3) + ' N';\n    window.simState.time = (window.simState.time || 0) + 0.05;\n  }\n  function loop(){ draw(); requestAnimationFrame(loop); }\n  playBtn.addEventListener('click', function(){ flowDir = -flowDir; window.simState.dir = flowDir; });\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  loop();\n})();"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "شدة قوة لابلاص على ناقل مستقيم: F = B.I.L.sinθ. تكون أعظمية عندما يكون الناقل عموديًا على الحقل وتنعدم عندما يكون موازيًا له."
+    }
+  ]
+}

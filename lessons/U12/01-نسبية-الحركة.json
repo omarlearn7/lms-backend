@@ -1,0 +1,132 @@
+{
+  "title": "نسبية الحركة",
+  "slug": "نسبية-الحركة",
+  "description": "دراسة حركة كرة يلقيها دراج في مرجعين مختلفين ونتيجة تغير المسار والسرعة",
+  "category_id": 2,
+  "unit_id": 12,
+  "grade_level": "سنة أولى ثانوي",
+  "order_index": 1,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "مقدمة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "عرفنا في الوحدات السابقة أن الحركة تتعلق بالقوة، ونريد في هذه الوحدة أن نعرف إن كانت الحركة تتعلق بالمرجع أم لا، من خلال دراسة حركة كرة يلقيها دراج."
+    },
+    {
+      "type": "heading",
+      "text": "1) دراسة حركة كرة يلقيها دراج",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "نعتبر دراجاً مع دراجته يتحرك بسرعة ثابتة $v$، في لحظة ما يترك كرة تنس بدون سرعة ابتدائية من على ارتفاع معين من سطح الأرض، ونريد دراسة حركة الكرة الملقاة من طرف الدراج في مرجعين:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "المرجع",
+        "المسار الملاحظ",
+        "الحركة الملاحظة"
+      ],
+      "rows": [
+        [
+          "مرجع مرتبط بالأرض (ملاحظ واقف على الرصيف)",
+          "مسار منحني",
+          "مطابق تماماً لمسار كرة مقذوفة أفقياً (قذف أفقي)"
+        ],
+        [
+          "مرجع مرتبط بالدراج (ملاحظ يتحرك مع الدراج)",
+          "مسار مستقيم شاقولي نحو الأسفل",
+          "مطابق تماماً لحركة كرة تركت بدون سرعة ابتدائية (سقوط حر)"
+        ]
+      ]
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "بالنسبة للمرجع (1) المرتبط بالأرض، تكون الكرة خاضعة لقوة (حسب مبدأ العطالة) ولها سرعة ابتدائية (حالة القذف الأفقي)، أما بالنسبة للمرجع (2) المرتبط بالدراج، فتكون الكرة خاضعة لقوة ودون سرعة ابتدائية (سقوط حر)."
+    },
+    {
+      "type": "heading",
+      "text": "2) تفسير اختلاف المسار",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "عندما نقارن حركة نقطة من إطار الدراجة بمسقط مواضع الكرة على المحور $(x'x)$ نجد تطابقاً تاماً، يفسر ذلك بأن الكرة عند تركها تواصل حركتها المستقيمة المنتظمة وفق المحور $(x'x)$ بنفس السرعة التي تركت بها وهي سرعة الدراج، وبما أن حركة الدراج أيضاً مستقيمة منتظمة تكون في النهاية حركة الدراج مطابقة تماماً لمسقط حركة الكرة على المحور $(x'x)$."
+    },
+    {
+      "type": "heading",
+      "text": "3) النتيجة",
+      "level": 2
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "عندما ندرس حركة جسم في مرجعين مختلفين حيث يتحرك أحد المرجعين بحركة مستقيمة منتظمة بالنسبة للآخر، فإن مسار الحركة والسرعة الابتدائية يختلفان في كل من المرجعين، بينما تبقى القوة المطبقة على الجسم نفسها في كل منهما."
+    },
+    {
+      "type": "text",
+      "content": "أي أنه يمكن لكل من المسار والسرعة الابتدائية أن يتغيرا بتغير مرجع الدراسة، في حين تبقى القوة نفسها مهما كان المرجع."
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "بالنسبة لملاحظ مرتبط بالأرض، مسار الكرة التي يتركها دراج يتحرك بسرعة ثابتة يكون:",
+      "input_type": "mcq",
+      "options": [
+        "منحنياً (قذف أفقي)",
+        "مستقيماً شاقولياً",
+        "دائرياً"
+      ],
+      "answer": {
+        "value": "منحنياً (قذف أفقي)"
+      },
+      "solution": "بالنسبة للمرجع المرتبط بالأرض يبدو مسار الكرة منحنياً مطابقاً لمسار كرة مقذوفة أفقياً."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "عند تغيير مرجع الدراسة، ما الذي يبقى نفسه بالنسبة للقوة المطبقة على الجسم؟",
+      "input_type": "mcq",
+      "options": [
+        "القوة المطبقة",
+        "المسار",
+        "السرعة الابتدائية"
+      ],
+      "answer": {
+        "value": "القوة المطبقة"
+      },
+      "solution": "المسار والسرعة الابتدائية يتغيران بتغير المرجع، بينما تبقى القوة المطبقة على الجسم نفسها."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "الحركة نسبية: المسار والسرعة الابتدائية يعتمدان على المرجع المعتمد، بينما تبقى القوة المؤثرة على الجسم نفسها مهما كان المرجع."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة نسبية الحركة - المشي داخل قطار",
+        "width": 720,
+        "height": 430
+      },
+      "html": " <div id=\"relWrap\">\n  <canvas id=\"relCanvas\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"relControls\">\n    <div class=\"rc-row\"><label>سرعة القطار vₚ (m/s)</label><input type=\"range\" id=\"vtrainSlider\" min=\"0\" max=\"20\" value=\"8\" step=\"1\"><span id=\"vtrainVal\">8</span></div>\n    <div class=\"rc-row\"><label>سرعة الشخص نسبةً للقطار u (m/s)</label><input type=\"range\" id=\"uSlider\" min=\"-10\" max=\"10\" value=\"4\" step=\"1\"><span id=\"uVal\">+4</span></div>\n    <div id=\"relOut\">سرعة الشخص نسبةً للأرض = vₚ + u = 12 m/s</div>\n    <button id=\"playBtn\">تشغيل الحركة</button>\n  </div>\n</div>\n",
+      "css": "#relWrap{font-family:inherit;direction:rtl;text-align:center}\n#relCanvas{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc}\n#relControls{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.rc-row{display:flex;align-items:center;gap:10px;font-size:14px}\n.rc-row label{width:210px;text-align:left}\n.rc-row span{width:46px;text-align:center;font-weight:bold;color:#0f766e}\ninput[type=range]{width:220px}\n#relOut{padding:6px 12px;background:#ccfbf1;border:1px solid #5eead4;border-radius:8px;font-size:13px;color:#115e59;direction:rtl}\nbutton{padding:6px 16px;border:none;border-radius:8px;background:#0d9488;color:#fff;font-size:14px;cursor:pointer}\n",
+      "js": "(function(){\n  if (window.__relInstalled__) return;\n  window.__relInstalled__ = true;\n  var canvas = document.getElementById('relCanvas');\n  var ctx = canvas.getContext('2d');\n  var vtrainSlider = document.getElementById('vtrainSlider');\n  var vtrainVal = document.getElementById('vtrainVal');\n  var uSlider = document.getElementById('uSlider');\n  var uVal = document.getElementById('uVal');\n  var out = document.getElementById('relOut');\n  var playBtn = document.getElementById('playBtn');\n  var running = false, time = 0;\n  var trail = [];\n  window.simState = { vt: 8, u: 4, vAbs: 12, running: false, time: 0 };\n  function arrow(x1, y1, x2, y2, color, lw){\n    var dx = x2 - x1, dy = y2 - y1;\n    var len = Math.sqrt(dx * dx + dy * dy);\n    if (len < 4) return;\n    var ux = dx / len, uy = dy / len;\n    ctx.strokeStyle = color; ctx.lineWidth = lw || 3;\n    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2 - ux * 2, y2 - uy * 2); ctx.stroke();\n    var ah = 8;\n    ctx.fillStyle = color;\n    ctx.beginPath();\n    ctx.moveTo(x2, y2);\n    ctx.lineTo(x2 - ux * ah - uy * ah * 0.5, y2 - uy * ah + ux * ah * 0.5);\n    ctx.lineTo(x2 - ux * ah + uy * ah * 0.5, y2 - uy * ah - ux * ah * 0.5);\n    ctx.closePath(); ctx.fill();\n  }\n  function draw(){\n    var vt = parseFloat(vtrainSlider.value);\n    var u = parseFloat(uSlider.value);\n    var vAbs = vt + u;\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    var GY = 240;\n    ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.moveTo(0, GY); ctx.lineTo(canvas.width, GY); ctx.stroke();\n    ctx.fillStyle = '#64748b'; ctx.font = '12px sans-serif';\n    ctx.textAlign = 'left'; ctx.textBaseline = 'top';\n    ctx.fillText('مراقب أرضي', 10, GY + 12);\n    ctx.fillStyle = '#dc2626';\n    ctx.beginPath(); ctx.arc(40, GY - 8, 8, 0, Math.PI * 2); ctx.fill();\n    ctx.fillStyle = '#0f172a';\n    ctx.fillRect(34, GY, 12, 22);\n    var trainW = 420, trainH = 56;\n    var trainX = (time * vt * 7) % (canvas.width + trainW) - trainW;\n    var trainY = GY - trainH - 40;\n    ctx.fillStyle = '#e2e8f0';\n    ctx.fillRect(trainX, trainY, trainW, trainH);\n    ctx.strokeStyle = '#334155'; ctx.lineWidth = 2;\n    ctx.strokeRect(trainX, trainY, trainW, trainH);\n    ctx.fillStyle = '#334155';\n    for (var i = 0; i < 3; i++) ctx.fillRect(trainX + 8 + i * 16, trainY + trainH - 14, 9, 12);\n    var pw = trainX + 40 + (((time * u * 7) % Math.max(trainW - 80, 1)));\n    var personY = trainY + trainH / 2;\n    ctx.fillStyle = '#16a34a';\n    ctx.beginPath(); ctx.arc(pw, personY - 10, 7, 0, Math.PI * 2); ctx.fill();\n    ctx.fillStyle = '#0f172a';\n    ctx.fillRect(pw - 4, personY - 2, 8, 14);\n    trail.push([pw, personY]);\n    if (trail.length > 140) trail.shift();\n    ctx.strokeStyle = 'rgba(22,163,74,0.35)'; ctx.lineWidth = 1.5;\n    ctx.beginPath();\n    for (var ti = 0; ti < trail.length; ti++) {\n      if (ti === 0) ctx.moveTo(trail[ti][0], trail[ti][1]); else ctx.lineTo(trail[ti][0], trail[ti][1]);\n    }\n    ctx.stroke();\n    var topY = 22;\n    var vy = Math.max(6, Math.abs(vt) * 3);\n    var uy2 = Math.max(5, Math.abs(u) * 3);\n    var vyAbs = Math.max(6, Math.abs(vAbs) * 3);\n    arrow(80, topY, 80 + vy, topY, '#dc2626');\n    arrow(150, topY + 20, 150 + uy2, topY + 20, '#16a34a');\n    arrow(220, topY + 40, 220 + vyAbs, topY + 40, '#2563eb');\n    ctx.font = '12px sans-serif'; ctx.textBaseline = 'top';\n    ctx.fillStyle = '#dc2626'; ctx.textAlign = 'left';\n    ctx.fillText('vₚ (نسبة للأرض) = ' + vt + ' m/s', 90, topY - 2);\n    ctx.fillStyle = '#16a34a';\n    ctx.fillText('u (نسبة للقطار) = ' + (u > 0 ? '+' : '') + u + ' m/s', 160, topY + 18);\n    ctx.fillStyle = '#2563eb';\n    ctx.fillText('v (نسبة للأرض) = vₚ + u = ' + vAbs + ' m/s', 230, topY + 38);\n    vtrainVal.textContent = vt;\n    uVal.textContent = (u > 0 ? '+' : '') + u;\n    out.textContent = vAbs < 0\n      ? 'اتجاه حركة الشخص نسبةً للأرض عكس اتجاه القطار: v = ' + vAbs + ' m/s'\n      : 'سرعة الشخص نسبةً للأرض v = vₚ + u = ' + vAbs + ' m/s';\n    window.simState.vt = vt; window.simState.u = u; window.simState.vAbs = vAbs; window.simState.time = time;\n  }\n  playBtn.addEventListener('click', function(){\n    running = !running;\n    window.simState.running = running;\n    playBtn.textContent = running ? 'إيقاف' : 'تشغيل الحركة';\n  });\n  vtrainSlider.addEventListener('input', function(){ trail = []; });\n  uSlider.addEventListener('input', function(){ trail = []; });\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  function loop(){\n    if (running) { time += 0.016; if (time > 30) time = 0; }\n    draw();\n    requestAnimationFrame(loop);\n  }\n  loop();\n})();\n"
+    }
+  ]
+}

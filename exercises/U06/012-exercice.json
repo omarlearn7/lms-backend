@@ -1,0 +1,80 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 012 - العفوية والطاقة الحرة ΔG",
+  "order_index": 12,
+  "source": "3AS U06 - Exercice 012",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 012"
+      },
+      {
+        "type": "text",
+        "content": "ندرس عفوية التفاعلات التالية باستخدام العلاقة ΔG = −n·F·E (حيث F = 96500 C/mol). يعطى جدول كمونات الإرجاع المعيارية:"
+      },
+      {
+        "type": "table",
+        "headers": ["ثنائية Oxy/Réd", "E⁰ (V)"],
+        "rows": [
+          ["Zn²⁺/Zn", "−0.76"],
+          ["Fe²⁺/Fe", "−0.44"],
+          ["Pb²⁺/Pb", "−0.13"],
+          ["Cu²⁺/Cu", "+0.34"],
+          ["Fe³⁺/Fe²⁺", "+0.77"],
+          ["Ag⁺/Ag", "+0.80"]
+        ],
+        "caption": "كمونات الإرجاع المعيارية"
+      },
+      {
+        "type": "diagram",
+        "diagram_type": "interactive_graph",
+        "props": {
+          "chartType": "bar",
+          "data": [[0,-0.76],[1,-0.44],[2,-0.13],[3,0.34],[4,0.77],[5,0.80]],
+          "xLabels": ["Zn²⁺/Zn", "Fe²⁺/Fe", "Pb²⁺/Pb", "Cu²⁺/Cu", "Fe³⁺/Fe²⁺", "Ag⁺/Ag"],
+          "xLabel": "ثنائية Oxy/Réd",
+          "yLabel": "E⁰ (V)",
+          "title": "كمونات الإرجاع المعيارية",
+          "barColor": "#f59e0b"
+        }
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "نغمس صفيحة زنك Zn في محلول CuSO₄. أكتب معادلة التفاعل الكلي واحسب E⁰_cell.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب ΔG⁰ لهذا التفاعل (n = 2). هل التفاعل تلقائي؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "نغمس صفيحة نحاس Cu في محلول ZnSO₄. احسب E⁰_cell و ΔG⁰. ماذا تلاحظ؟ هل يحدث التفاعل؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "نغمس صفيحة حديد Fe في محلول AgNO₃. (a) أكتب معادلة التفاعل. (b) احسب E⁰_cell و ΔG⁰. هل يترسب الفضة على الحديد؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "نغمس صفيحة فضة Ag في محلول FeSO₄. هل يحدث تفاعل؟ علل باستخدام ΔG.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "خُلاصة: ما شرط عفوية تفاعل أكسدة-إرجاع بدلالة E⁰_cell و ΔG⁰؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

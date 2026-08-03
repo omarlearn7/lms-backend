@@ -1,0 +1,15 @@
+{
+  "unit_id": 29,
+  "title": "تمرين 002 - ذاتية الوشيعة والطاقة المخزنة",
+  "order_index": 2,
+  "source": "2AS U29 - Exercice 002",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 002", "level": 3 },
+      { "type": "text", "content": "يمر في وشيعة طويلة (حلزونية) تيار شدته i = 2.5 A فينشأ تدفق مغناطيسي عبر سطح الوشيعة قيمته Φ = 0.35 Wb." },
+      { "type": "question", "number": 1, "text": "احسب ذاتية الوشيعة L. (بوحدة H)", "input_type": "numeric", "answer": { "value": 0.14, "tolerance": 0.005 }, "solution": "L = Φ/i = 0.35/2.5 = 0.14 H." },
+      { "type": "question", "number": 2, "text": "احسب الطاقة المغناطيسية المخزنة في الوشيعة. (بوحدة J)", "input_type": "numeric", "answer": { "value": 0.44, "tolerance": 0.01 }, "solution": "EL = ½.L.i² = 0.5 × 0.14 × 6.25 = 0.44 J." },
+      { "type": "question", "number": 3, "text": "إذا قطعنا التيار فتغير التدفق من 0.35 Wb إلى 0 خلال 0.5 s، احسب القوة المحركة الكهربائية الذاتية. (بوحدة V)", "input_type": "numeric", "answer": { "value": 0.7, "tolerance": 0.02 }, "solution": "em = |ΔΦ|/Δt = 0.35/0.5 = 0.7 V." }
+    ]
+  }
+}

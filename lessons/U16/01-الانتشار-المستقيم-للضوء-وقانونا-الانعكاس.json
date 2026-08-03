@@ -1,0 +1,126 @@
+{
+  "title": "الانتشار المستقيم للضوء وقانونا الانعكاس",
+  "slug": "الانتشار-المستقيم-للضوء-وقانونا-الانعكاس",
+  "description": "مبدأ الانتشار المستقيم للضوء وظاهرة الانعكاس وقانوناها",
+  "category_id": 2,
+  "unit_id": 16,
+  "grade_level": "سنة أولى ثانوي",
+  "order_index": 1,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "1) الانتشار المستقيم للضوء",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "المصابح والأجسام المضيئة تسمح برؤية الأشياء الموجودة في الحجرة لأنها ترسل الضوء إليها، فنقول عن المصباح المشتعل إنه جسم مضيء أو منبع ضوئي، وعن الأجسام التي نراها بالاستثناء إنها أجسام مضاءة تعكس الضوء الذي تتلقاه من المنبع الضوئي."
+    },
+    {
+      "type": "text",
+      "content": "عندما يدخل ضوء الشمس حجرة مظلمة عن طريق ثقب صغير جداً، فإنه يحدد في الظلام شريطاً مضيئاً حافتاه مستقيمتان. إذن الملاحظة اليومية تسمح لنا بالاعتقاد أن الضوء ينتشر وفق خط مستقيم."
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "أقر الفيزيائي حسن ابن الهيثم (968 – 1019) ذلك كمبدأ أساسي في انتشار الضوء ويسمى بمبدأ الانتشار المستقيم للضوء، ونصه: ينتشر الضوء في الخلاء وفي كل الأوساط المتجانسة والشفافة وفق خط مستقيم."
+    },
+    {
+      "type": "heading",
+      "text": "2) ظاهرة انعكاس الضوء",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "انعكاس الضوء هو الظاهرة التي تتمثل في رجوع الضوء في نفس وسط انتشاره عندما يلاقي سطحاً فاصلاً بين هذا الوسط ووسط آخر، يسمى هذا السطح الفاصل بالمِرآة، وإذا كان مستوياً يسمى مِرآة مستوية."
+    },
+    {
+      "type": "text",
+      "content": "من أمثلة المرايا المستوية: صفيحة معدنية مصقولة جيداً، ماء راكد، وصفيحة زجاجية أحد وجهيها مفضض."
+    },
+    {
+      "type": "heading",
+      "text": "3) قانونا الانعكاس",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "الشعاع الضوئي (SI) الوارد يلتقي المِرآة في النقطة I فينعكس شعاع (IR). الزاوية i بين الشعاع الوارد والناظم (NI) تسمى زاوية الورود، والزاوية r بين الشعاع المنعكس والناظم تسمى زاوية الانعكاس."
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "القانون الأول: الشعاع الضوئي الوارد والشعاع الضوئي المنعكس في ظاهرة الانعكاس يقعان في مستوي واحد. القانون الثاني: زاوية الورود في ظاهرة الانعكاس تكون مساوية لزاوية الانعكاس مهما كانت زاوية الورود، أي i = r."
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "مبدأ الانتشار المستقيم للضوء أقره:",
+      "input_type": "mcq",
+      "options": [
+        "حسن ابن الهيثم",
+        "نيوتن",
+        "كولوم"
+      ],
+      "answer": {
+        "value": "حسن ابن الهيثم"
+      },
+      "solution": "أقر الفيزيائي حسن ابن الهيثم (968 – 1019) مبدأ الانتشار المستقيم للضوء."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "الانعكاس هو الظاهرة التي يتمثل فيها:",
+      "input_type": "mcq",
+      "options": [
+        "رجوع الضوء في نفس وسط انتشاره عند ملاقاته سطحاً فاصلاً",
+        "عبور الضوء وسطاً آخر",
+        "امتصاص الضوء"
+      ],
+      "answer": {
+        "value": "رجوع الضوء في نفس وسط انتشاره عند ملاقاته سطحاً فاصلاً"
+      },
+      "solution": "الانعكاس هو رجوع الضوء في نفس وسط انتشاره عندما يلاقي سطحاً فاصلاً."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "حسب القانون الثاني للانعكاس، زاوية الورود i وزاوية الانعكاس r:",
+      "input_type": "mcq",
+      "options": [
+        "متساويتان مهما كانت زاوية الورود",
+        "متكاملتان",
+        "مجموعهما 90°"
+      ],
+      "answer": {
+        "value": "متساويتان مهما كانت زاوية الورود"
+      },
+      "solution": "زاوية الورود في ظاهرة الانعكاس مساوية لزاوية الانعكاس أي i = r."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "الضوء ينتشر وفق خط مستقيم (مبدأ ابن الهيثم)، وعند ملاقاته سطحاً فاصلاً ينعكس راجعاً في نفس وسطه محققاً قانوني الانعكاس: في مستوي واحد و i = r."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة قانون الانعكاس والكاميرا ذات الثقب",
+        "width": 720,
+        "height": 440
+      },
+      "html": " <div id=\"optWrap\">\n  <canvas id=\"optCanvas\" width=\"720\" height=\"370\"></canvas>\n  <div id=\"optControls\">\n    <div class=\"oc-row\" id=\"iRow\"><label>زاوية السقوط i (درجة)</label><input type=\"range\" id=\"iSlider\" min=\"5\" max=\"85\" value=\"35\" step=\"1\"><span id=\"iVal\">35°</span></div>\n    <div class=\"oc-row\" id=\"hRow\"><label>ارتفاع الجسم h (px)</label><input type=\"range\" id=\"hSlider\" min=\"40\" max=\"140\" value=\"100\" step=\"5\"><span id=\"hVal\">100</span></div>\n    <div id=\"optOut\">i = r = 35°</div>\n    <button id=\"modeBtn\">الكاميرا ذات الثقب</button>\n    <button id=\"playBtn\">تشغيل النبضة</button>\n  </div>\n</div>\n",
+      "css": "#optWrap{font-family:inherit;direction:rtl;text-align:center}\n#optCanvas{border:1px solid #334155;border-radius:8px;background:#0f172a}\n#optControls{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.oc-row{display:flex;align-items:center;gap:10px;font-size:14px;color:#e2e8f0}\n.oc-row label{width:200px;text-align:left}\n.oc-row span{width:52px;text-align:center;font-weight:bold;color:#fbbf24}\ninput[type=range]{width:220px}\n#optOut{padding:6px 12px;background:#0f172a;border:1px solid #155e75;border-radius:8px;font-size:13px;color:#67e8f9;direction:rtl}\nbutton{padding:6px 16px;border:none;border-radius:8px;background:#0891b2;color:#fff;font-size:14px;cursor:pointer;margin:0 4px}\n",
+      "js": "(function(){\n  if (window.__optInstalled__) return;\n  window.__optInstalled__ = true;\n  var canvas = document.getElementById('optCanvas');\n  var ctx = canvas.getContext('2d');\n  var iSlider = document.getElementById('iSlider');\n  var iVal = document.getElementById('iVal');\n  var hSlider = document.getElementById('hSlider');\n  var hVal = document.getElementById('hVal');\n  var out = document.getElementById('optOut');\n  var modeBtn = document.getElementById('modeBtn');\n  var playBtn = document.getElementById('playBtn');\n  var D2R = Math.PI / 180;\n  var mode = 'reflect';\n  var running = false, pulse = 0;\n  window.simState = { mode: 'reflect', i: 35, running: false };\n  function line(x1, y1, x2, y2, color, width, dash){\n    ctx.strokeStyle = color; ctx.lineWidth = width;\n    ctx.setLineDash(dash || []);\n    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();\n    ctx.setLineDash([]);\n  }\n  function pulseDot(poly, color){\n    if (poly.length < 2) return;\n    var plen = 0;\n    for (var i = 1; i < poly.length; i++) plen += Math.sqrt(Math.pow(poly[i][0]-poly[i-1][0],2) + Math.pow(poly[i][1]-poly[i-1][1],2));\n    var pos = ((pulse % 1) + 1) % 1 * plen;\n    var acc = 0;\n    for (var j = 1; j < poly.length; j++) {\n      var seg = Math.sqrt(Math.pow(poly[j][0]-poly[j-1][0],2) + Math.pow(poly[j][1]-poly[j-1][1],2));\n      if (acc + seg >= pos) {\n        var t = seg ? (pos - acc) / seg : 0;\n        var px = poly[j-1][0] + (poly[j][0]-poly[j-1][0]) * t;\n        var py = poly[j-1][1] + (poly[j][1]-poly[j-1][1]) * t;\n        ctx.fillStyle = color;\n        ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI * 2); ctx.fill();\n        break;\n      }\n      acc += seg;\n    }\n  }\n  function drawReflect(){\n    var i = parseFloat(iSlider.value);\n    var Y = 250, X = 360;\n    line(60, Y, canvas.width - 60, Y, '#cbd5e1', 3);\n    ctx.strokeStyle = '#7dd3fc'; ctx.lineWidth = 2;\n    ctx.fillStyle = '#7dd3fc'; ctx.font = '12px sans-serif';\n    ctx.beginPath(); ctx.moveTo(X, Y); ctx.lineTo(X, Y - 90); ctx.stroke();\n    ctx.textAlign = 'left';\n    ctx.fillText('العمود', X + 6, Y - 90);\n    var srcX = X - 130 * Math.sin(i * D2R), srcY = Y - 130 * Math.cos(i * D2R);\n    line(srcX, srcY, X, Y, '#facc15', 3);\n    line(X, Y, X + 130 * Math.sin(i * D2R), Y - 130 * Math.cos(i * D2R), '#f87171', 3);\n    ctx.fillStyle = '#facc15';\n    ctx.textAlign = 'center';\n    ctx.fillText('i = ' + i + '°', (srcX + X) / 2 - 20, srcY + 10);\n    ctx.fillStyle = '#f87171';\n    ctx.fillText('r = ' + i + '°', X + 30, Y - 60);\n    out.textContent = 'زاوية السقوط i = ' + i + '° تساوي زاوية الانعكاس r = ' + i + '°';\n    window.simState.i = i;\n    if (running) pulseDot([[srcX, srcY], [X, Y], [X + 130 * Math.sin(i * D2R), Y - 130 * Math.cos(i * D2R)]], '#fff');\n  }\n  function drawPinhole(){\n    var h = parseFloat(hSlider.value);\n    var oX = 80, oY = 200, ph = 180, pHoleX = 360, scrX = 620;\n    line(oX, oY, oX, oY - h, '#4ade80', 6);\n    ctx.fillStyle = '#4ade80'; ctx.font = '12px sans-serif';\n    ctx.textAlign = 'left'; ctx.textBaseline = 'top';\n    ctx.fillText('الجسم', oX - 40, oY + 8);\n    line(pHoleX, 60, pHoleX, 320, '#64748b', 3);\n    ctx.fillStyle = '#94a3b8'; ctx.font = '11px sans-serif';\n    ctx.textAlign = 'center';\n    ctx.fillText('ثقب صغير', pHoleX, 54);\n    line(scrX, 60, scrX, 320, '#7c3aed', 3);\n    var tipY = oY - h;\n    var tipImgY = ph + (ph - tipY) * ((scrX - pHoleX) / (pHoleX - oX));\n    var baseImgY = ph + (ph - oY) * ((scrX - pHoleX) / (pHoleX - oX));\n    line(oX, tipY, pHoleX, ph, '#facc15', 1.5);\n    line(pHoleX, ph, scrX, tipImgY, '#facc15', 1.5);\n    line(oX, oY, pHoleX, ph, '#facc15', 1.5);\n    line(pHoleX, ph, scrX, baseImgY, '#facc15', 1.5);\n    line(scrX, tipImgY, scrX, baseImgY, '#4ade80', 6);\n    ctx.fillStyle = '#4ade80'; ctx.font = '12px sans-serif';\n    ctx.textAlign = 'right'; ctx.textBaseline = 'alphabetic';\n    ctx.fillText('صورة مقلوبة', scrX - 10, tipImgY - 10);\n    out.textContent = 'الضوء ينتشر في خط مستقيم: صورة الجسم مقلوبة';\n    if (running) pulseDot([[oX, tipY], [pHoleX, ph], [scrX, tipImgY]], '#fff');\n  }\n  function draw(){\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    if (mode === 'reflect') drawReflect(); else drawPinhole();\n    hVal.textContent = hSlider.value;\n    iVal.textContent = iSlider.value + '°';\n  }\n  modeBtn.addEventListener('click', function(){\n    mode = mode === 'reflect' ? 'pinhole' : 'reflect';\n    window.simState.mode = mode;\n    modeBtn.textContent = mode === 'reflect' ? 'الكاميرا ذات الثقب' : 'قانون الانعكاس';\n    out.textContent = mode === 'reflect' ? '' : 'الضوء ينتشر في خط مستقيم: صورة الجسم مقلوبة';\n  });\n  playBtn.addEventListener('click', function(){\n    running = !running;\n    window.simState.running = running;\n    playBtn.textContent = running ? 'إيقاف' : 'تشغيل النبضة';\n  });\n  iSlider.addEventListener('input', function(){});\n  hSlider.addEventListener('input', function(){});\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  function loop(){ if (running) pulse += 0.02; draw(); requestAnimationFrame(loop); }\n  loop();\n})();\n"
+    }
+  ]
+}

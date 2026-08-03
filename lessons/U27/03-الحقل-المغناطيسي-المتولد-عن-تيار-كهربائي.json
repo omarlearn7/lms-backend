@@ -1,0 +1,143 @@
+{
+  "title": "الحقل المغناطيسي المتولد عن تيار كهربائي",
+  "slug": "الحقل-المغناطيسي-المتولد-عن-تيار-كهربائي",
+  "description": "حقل التيار المستقيم والتيار الدائري والوشيعة المسطحة والوشيعة الحلزونية",
+  "category_id": 2,
+  "unit_id": 27,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 3,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "1) خصائص شعاع الحقل المتولد عن تيار",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "يشع التيار الكهربائي حقلًا مغناطيسيًا في الفضاء المحيط به. خصائص شعاع الحقل المغناطيسي المتولد عن تيار كهربائي: نقطة تأثيره نقطة من الحقل، حامله مماس لخط الحقل المار من تلك النقطة، جهته تتعلق بجهة التيار وتحدد بالقواعد المعروفة، وشدته تتعلق بشدة التيار والبعد عن السلك."
+    },
+    {
+      "type": "heading",
+      "text": "2) حقل تيار مستقيم",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "شعاع الحقل المغناطيسي المتولد عن تيار كهربائي مستقيم شدته I عند نقطة تبعد مسافة d عن السلك يعطى بالعلاقة:"
+    },
+    {
+      "type": "formula",
+      "latex": "B = 2 \\times 10^{-7} \\frac{I}{d}"
+    },
+    {
+      "type": "heading",
+      "text": "3) حقل تيار دائري ووشيعة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "عند مركز حلقة دائرية نصف قطرها R يجتازها تيار شدته I يكون الشعاع عموديًا على مستوي الحلقة وشدته:"
+    },
+    {
+      "type": "formula",
+      "latex": "B = 2\\pi \\times 10^{-7} \\frac{I}{R}"
+    },
+    {
+      "type": "text",
+      "content": "إذا كانت وشيعة مسطحة تتكون من N حلقة يكون:"
+    },
+    {
+      "type": "formula",
+      "latex": "B = 2\\pi \\times 10^{-7} \\frac{N \\cdot I}{R}"
+    },
+    {
+      "type": "text",
+      "content": "عند مركز وشيعة حلزونية طويلة (سولينود) عدد حلقاتها في المتر الواحد n يجتازها تيار شدته I يكون:"
+    },
+    {
+      "type": "formula",
+      "latex": "B = 4\\pi \\times 10^{-7} \\cdot n \\cdot I"
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "حقل تيار مستقيم شدته I عند نقطة تبعد d عن السلك:",
+      "input_type": "mcq",
+      "options": [
+        "B = 2×10⁻⁷.I/d",
+        "B = 2×10⁻⁷.d/I",
+        "B = 4π×10⁻⁷.I"
+      ],
+      "answer": {
+        "value": "B = 2×10⁻⁷.I/d"
+      },
+      "solution": "حقل تيار مستقيم: B = 2 × 10⁻⁷ × I/d."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "شعاع الحقل عند مركز حلقة دائرية يكون:",
+      "input_type": "mcq",
+      "options": [
+        "عموديًا على مستوي الحلقة",
+        "موازيًا لمستوي الحلقة",
+        "مماسيًا للحلقة"
+      ],
+      "answer": {
+        "value": "عموديًا على مستوي الحلقة"
+      },
+      "solution": "حامل شعاع الحقل عند مركز الحلقة عمودي على مستوي الحلقة."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "حقل داخل وشيعة حلزونية طويلة عدد حلقاتها n في المتر يجتازها تيار I:",
+      "input_type": "mcq",
+      "options": [
+        "B = 4π×10⁻⁷.n.I",
+        "B = 2π×10⁻⁷.n.I",
+        "B = 4π×10⁻⁷.n/R"
+      ],
+      "answer": {
+        "value": "B = 4π×10⁻⁷.n.I"
+      },
+      "solution": "حقل الوشيعة الحلزونية: B = 4π × 10⁻⁷ × n × I."
+    },
+    {
+      "type": "question",
+      "number": 4,
+      "text": "سلك مستقيم يجتازه تيار I = 5 A، حقل مغناطيسي عند نقطة تبعد d = 0.1 m (بوحدة T):",
+      "input_type": "numeric",
+      "answer": {
+        "value": 0.00001,
+        "tolerance": 1e-8
+      },
+      "solution": "B = 2 × 10⁻⁷ × I/d = 2 × 10⁻⁷ × 5/0.1 = 10⁻⁵ T."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة الحقل المغناطيسي المتولد عن تيار مستقيم",
+        "width": 720,
+        "height": 360
+      },
+      "html": "<div id=\"wrap\">\n  <canvas id=\"cv\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"ctrl\">\n    <div class=\"row\"><label>شدة التيار I (A)</label><input type=\"range\" id=\"iSlider\" min=\"0.5\" max=\"10\" value=\"5\" step=\"0.5\"><span id=\"iVal\">5.0</span></div>\n    <div id=\"out\">I = 5.0 A | B(d = 2 cm) = 50 µT | B(d = 5 cm) = 20 µT</div>\n    <button id=\"playBtn\">تشغيل دوران الأسهم</button>\n  </div>\n</div>\n",
+      "css": "#wrap{font-family:inherit;direction:rtl;text-align:center}\n#cv{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;max-width:100%}\n#ctrl{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.row{display:flex;align-items:center;gap:10px;font-size:14px}\n.row label{width:200px;text-align:left}\n.row span{width:70px;text-align:center;font-weight:bold;color:#0f766e}\ninput[type=range]{width:220px}\n#out{padding:6px 12px;background:#ccfbf1;border:1px solid #99f6e4;border-radius:6px;font-weight:bold;color:#134e4a;margin-top:4px}\n#playBtn{margin-top:4px;padding:5px 16px;border:1px solid #0f766e;background:#0f766e;color:#fff;border-radius:6px;cursor:pointer;font-size:13px}",
+      "js": "(function(){\n  if (window.__wireFieldInstalled__) return;\n  window.__wireFieldInstalled__ = true;\n  var canvas = document.getElementById('cv');\n  var ctx = canvas.getContext('2d');\n  var iSlider = document.getElementById('iSlider');\n  var iVal = document.getElementById('iVal');\n  var out = document.getElementById('out');\n  var playBtn = document.getElementById('playBtn');\n  var WX = 130, WY = 180, angle = 0, running = true;\n  window.simState = { I: 5, B2: 50, B5: 20, running: true };\n  function muT(I, dM) { return (2e-7 * I / (dM / 100)) * 1e6; }\n  function draw(){\n    var I = parseFloat(iSlider.value);\n    var B2 = muT(I, 2), B5 = muT(I, 5);\n    window.simState.I = I; window.simState.B2 = B2; window.simState.B5 = B5;\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 1; ctx.strokeRect(0.5, 0.5, canvas.width - 1, canvas.height - 1);\n    ctx.strokeStyle = '#e2e8f0'; ctx.lineWidth = 1;\n    for (var gx = 0; gx <= canvas.width; gx += 40) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, canvas.height); ctx.stroke(); }\n    for (var gy = 0; gy <= canvas.height; gy += 40) { ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(canvas.width, gy); ctx.stroke(); }\n    var radii = [40, 72, 104, 136, 164];\n    for (var r = 0; r < radii.length; r++) {\n      var R = radii[r];\n      ctx.strokeStyle = '#0369a1'; ctx.lineWidth = 1.5;\n      ctx.beginPath(); ctx.arc(WX, WY, R, 0, Math.PI * 2); ctx.stroke();\n      var n = Math.max(4, Math.round(R / 22));\n      for (var k = 0; k < n; k++) {\n        var a = (k / n) * Math.PI * 2 + angle;\n        var hx = WX + R * Math.cos(a), hy = WY + R * Math.sin(a);\n        var sx = WX + R * Math.cos(a + 0.22), sy = WY + R * Math.sin(a + 0.22);\n        var ex = WX + R * Math.cos(a - 0.22), ey = WY + R * Math.sin(a - 0.22);\n        ctx.strokeStyle = '#b91c1c'; ctx.lineWidth = 2;\n        ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(hx, hy); ctx.lineTo(ex, ey); ctx.stroke();\n      }\n    }\n    ctx.fillStyle = '#0f172a';\n    ctx.beginPath(); ctx.arc(WX, WY, 14, 0, Math.PI * 2); ctx.fill();\n    ctx.strokeStyle = '#fff'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.arc(WX, WY, 6, 0, Math.PI * 2); ctx.stroke();\n    ctx.fillStyle = '#fff'; ctx.font = 'bold 14px sans-serif'; ctx.textAlign = 'center';\n    ctx.fillText('I', WX, WY + 4);\n    ctx.font = '12px sans-serif'; ctx.fillStyle = '#0f172a'; ctx.textAlign = 'right';\n    ctx.fillText('التيار يخرج من المستوي (نحو المشاهد)', canvas.width - 12, 20);\n    ctx.fillText('خطوط الحقل حلقات دائرية مركزها السلك - الاتجاه: قاعدة اليد اليمنى', canvas.width - 12, 36);\n    iVal.textContent = I.toFixed(1);\n    out.textContent = 'I = ' + I.toFixed(1) + ' A | B(d = 2 cm) = ' + B2.toFixed(1) + ' µT | B(d = 5 cm) = ' + B5.toFixed(1) + ' µT';\n    window.simState.time = (window.simState.time || 0) + 0.05;\n  }\n  function loop(){ if (running) angle += 0.03; draw(); requestAnimationFrame(loop); }\n  playBtn.addEventListener('click', function(){ running = !running; window.simState.running = running; playBtn.textContent = running ? 'إيقاف الدوران' : 'تشغيل الدوران'; });\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  loop();\n})();"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "التيار الكهربائي يولد حقلًا مغناطيسيًا: المستقيم B = 2×10⁻⁷.I/d، الحلقة والوشيعة المسطحة B = 2π×10⁻⁷.N.I/R، الوشيعة الحلزونية B = 4π×10⁻⁷.n.I."
+    }
+  ]
+}

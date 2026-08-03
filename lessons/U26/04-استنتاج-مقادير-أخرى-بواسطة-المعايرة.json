@@ -1,0 +1,28 @@
+{
+  "title": "استنتاج مقادير أخرى بواسطة المعايرة",
+  "slug": "استنتاج-مقادير-أخرى-بواسطة-المعايرة",
+  "description": "استنتاج كمية المادة والكتلة والتركيز الكتلي انطلاقًا من التركيز المولي",
+  "category_id": 2,
+  "unit_id": 26,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 4,
+  "is_free": true,
+  "sections": [
+    { "type": "heading", "text": "1) استنتاج كمية المادة", "level": 2 },
+    { "type": "text", "content": "بعد تحديد التركيز المولي cA للمحلول المعاير عن طريق المعايرة، يمكن استنتاج كمية المادة المذابة في حجم V من المحلول:" },
+    { "type": "formula", "latex": "n = c_A \\cdot V" },
+    { "type": "heading", "text": "2) استنتاج الكتلة والتركيز الكتلي", "level": 2 },
+    { "type": "text", "content": "بمعرفة كمية المادة n والكتلة المولية M للنوع المذاب، نستنتج كتلته: m = n.M. والتركيز الكتلي للمحلول: Cm = m/V = cA.M." },
+    { "type": "formula", "latex": "C_m = c_A \\cdot M" },
+    { "type": "heading", "text": "3) مثال تطبيقي", "level": 2 },
+    { "type": "text", "content": "معايرة حمض كلور الهيدروجين بمحلول هيدروكسيد الصوديوم أعطت التركيز المولي ca = 0.01 mol/L لحجم 10 mL. كمية مادة الحمض: n = cA.V = 0.01 × 0.01 = 10⁻⁴ mol." },
+    { "type": "text", "content": "يمكن أيضًا استنتاج مقادير أخرى مثل النسبة الكتلية للنوع المذاب أو درجة النقاوة، وبذلك تعتبر المعايرة تقنية دقيقة لتعيين مقادير مجهولة بوساطة تحول كيميائي تام." },
+    { "type": "question", "number": 1, "text": "بمعرفة التركيز المولي cA والحجم V، كمية المادة المذابة n تعطى بالعلاقة:", "input_type": "mcq", "options": ["n = cA.V", "n = cA/V", "n = V/cA"], "answer": { "value": "n = cA.V" }, "solution": "كمية المادة المذابة: n = cA.V." },
+    { "type": "question", "number": 2, "text": "التركيز الكتلي Cm لمحلول تركيزه المولي cA وكتلة مولية M يعطى بالعلاقة:", "input_type": "mcq", "options": ["Cm = cA.M", "Cm = cA/M", "Cm = M/cA"], "answer": { "value": "Cm = cA.M" }, "solution": "التركيز الكتلي: Cm = m/V = cA.M." },
+    { "type": "question", "number": 3, "text": "محلول تركيزه المولي cA = 0.01 mol/L في حجم V = 250 mL. كمية المادة المذابة (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.0025, "tolerance": 0.0001 }, "solution": "n = cA.V = 0.01 × 0.25 = 2.5 × 10⁻³ mol." },
+    { "type": "question", "number": 4, "text": "الكتلة المذابة في المحلول السابق إذا كانت الكتلة المولية M = 36.5 g/mol (بوحدة g):", "input_type": "numeric", "answer": { "value": 0.09125, "tolerance": 0.001 }, "solution": "m = n.M = 2.5 × 10⁻³ × 36.5 = 0.09125 g." },
+    { "type": "divider" },
+    { "type": "heading", "text": "خلاصة", "level": 2 },
+    { "type": "text", "content": "من التركيز المولي المحدد بالمعايرة نستنتج كمية المادة n = cA.V والكتلة m = n.M والتركيز الكتلي Cm = cA.M." }
+  ]
+}

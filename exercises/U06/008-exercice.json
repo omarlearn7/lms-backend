@@ -1,0 +1,54 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 008 - خلية تركيز (معادلة نيرنست)",
+  "order_index": 8,
+  "source": "3AS U06 - Exercice 008",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 008"
+      },
+      {
+        "type": "text",
+        "content": "نحقق خلية تركيز من قطبين من النحاس Cu مغمورين في محلولي CuSO₄ بتركيزين مختلفين: [Cu²⁺]₁ = 0.01 mol/L و [Cu²⁺]₂ = 1.0 mol/L. يربط بينهما جسر ملحي."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: E°(Cu²⁺/Cu) = +0.34 V, F = 96500 C/mol. معادلة نيرنست عند 25°C: E = E° + (0.06/n) log[Cu²⁺]."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أي القطبين له كمون أعلى (E₂ أم E₁)؟ من سيكون المهبط ومن المصعد؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب كمون كل قطب E₁ و E₂ باستخدام معادلة نيرنست.",
+        "input_type": "text",
+        "placeholder": "E₁ = ... V, E₂ = ... V"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب القوة المحركة الكهربائية للخلية: E_cell = E₂ − E₁.",
+        "input_type": "numeric",
+        "placeholder": "E_cell = ... V"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "اكتب التفاعل الكلي الذي يحدث في الخلية أثناء التشغيل.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ماذا يحدث لـ E_cell مع مرور الزمن عندما يتساوى التركيزان؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

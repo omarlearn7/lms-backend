@@ -1,0 +1,50 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 004 - النواس المرن: الطاقة والسرعة",
+  "order_index": 4,
+  "source": "3AS U07 - Exercice 004",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 004"
+      },
+      {
+        "type": "text",
+        "content": "نواس مرن أفقي مكون من نابض ثابته k = 40 N/m وكتلة m = 100 g. نزيح الكتلة عن موضع توازنها بمقدار X₀ = 4 cm ثم نحررها دون سرعة ابتدائية. نهمل الاحتكاكات."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أوجد الدور الخاص T₀ والنبض الزاوي ω₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "اكتب المعادلة الزمنية x(t) للإزاحة.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أوجد عبارة السرعة v(t) ثم احسب قيمتها عند t = T₀/4.",
+        "input_type": "numeric",
+        "placeholder": "v(T₀/4) = ... m/s"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب الطاقة الميكانيكية Eₘ. ماذا تمثل بالنسبة للطاقة الحركية العظمى؟",
+        "input_type": "numeric",
+        "placeholder": "E_m = ... J"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "عند أي موضع تكون الطاقة الحركية مساوية لطاقة الوضع المرونية؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

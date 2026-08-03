@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكاة الصفة الغالبة والكاشف الملون</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:12px;min-height:100vh}
+.container{max-width:720px;width:100%}
+h1{text-align:center;font-size:15px;color:#fbbf24;margin-bottom:4px}
+.canvas-wrap{background:#0f172a;border:1px solid #334155;border-radius:8px;padding:4px;margin-bottom:6px}
+canvas#mainCanvas{display:block;margin:0 auto;width:100%;max-width:700px;height:350px}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#1e293b;border-radius:8px;padding:10px;border:1px solid #334155}
+.ctrl-group{display:flex;flex-direction:column;gap:2px}
+.ctrl-group label{font-size:11px;color:#94a3b8}
+.ctrl-group .val{color:#fbbf24;font-size:12px;font-weight:700}
+input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer}
+select{background:#334155;color:#e2e8f0;border:1px solid #475569;border-radius:4px;padding:4px;font-size:11px;width:100%;cursor:pointer}
+select:focus{outline:none;border-color:#f59e0b}
+.info-row{display:flex;gap:10px;justify-content:center;margin-top:6px;font-size:12px;color:#94a3b8;flex-wrap:wrap}
+.info-row span{background:#1e293b;padding:4px 10px;border-radius:4px;border:1px solid #334155}
+.info-row .no-wrap{white-space:nowrap}
+.color-swatch{display:inline-block;width:18px;height:18px;border-radius:50%;border:2px solid #1e293b;vertical-align:middle;margin-left:4px}
+.bar-label{font-size:10px;color:#94a3b8}
+.eq-box{font-family:'Courier New',monospace;direction:ltr;text-align:center;font-size:13px;color:#22c55e;background:#0f172a;padding:4px 8px;border-radius:4px}
+@media(max-width:500px){.controls{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>محاكاة تفاعلية: الصفة الغالبة والكاشف الملون</h1>
+
+<div class="canvas-wrap">
+  <canvas id="mainCanvas" width="700" height="350"></canvas>
+</div>
+
+<div class="controls">
+  <div class="ctrl-group">
+    <label>pH: <span class="val" id="phVal">4.76</span></label>
+    <input type="range" id="phSlider" min="0" max="14" step="0.01" value="4.76">
+  </div>
+  <div class="ctrl-group">
+    <label>الثنائية (أساس/حمض):</label>
+    <select id="pairSelect">
+      <option value="4.76|CH₃COOH|CH₃COO⁻">CH₃COOH / CH₃COO⁻ (pKa=4.76)</option>
+      <option value="9.25|NH₄⁺|NH₃">NH₄⁺ / NH₃ (pKa=9.25)</option>
+      <option value="3.75|HCOOH|HCOO⁻">HCOOH / HCOO⁻ (pKa=3.75)</option>
+      <option value="2.00|H₃PO₄|H₂PO₄⁻">H₃PO₄ / H₂PO₄⁻ (pKa=2.00)</option>
+      <option value="7.20|H₂PO₄⁻|HPO₄²⁻">H₂PO₄⁻ / HPO₄²⁻ (pKa=7.20)</option>
+      <option value="14.00|H₂O|HO⁻">H₂O / HO⁻ (pKa=14.0)</option>
+    </select>
+  </div>
+  <div class="ctrl-group">
+    <label>الكاشف الملون:</label>
+    <select id="indicatorSelect">
+      <option value="3.1,4.4|#ef4444,#f97316,#eab308|أحمر الميثيل">أحمر الميثيل (3.1–4.4)</option>
+      <option value="6.0,7.6|#eab308,#22c55e,#3b82f6|أزرق البروموتيمول" selected>أزرق البروموتيمول (6.0–7.6)</option>
+      <option value="8.2,10.0|#e2e8f0,#f0abfc,#ec4899|الفينولفتالين">الفينولفتالين (8.2–10.0)</option>
+    </select>
+  </div>
+  <div class="ctrl-group">
+    <label>اللون الحالي:</label>
+    <div id="colorDisplay" style="padding:4px 8px;border-radius:4px;text-align:center;font-size:12px;background:#334155;border:1px solid #475569">
+      <span class="color-swatch" id="colorSwatch" style="background:#22c55e"></span>
+      <span id="colorName">أخضر</span>
+    </div>
+  </div>
+</div>
+
+<div class="info-row">
+  <span>[HA]: <span class="val" id="haPct">50.0</span>%</span>
+  <span>[A⁻]: <span class="val" id="aPct">50.0</span>%</span>
+  <span>ص＝ <span class="val" id="ratioVal">1.00</span></span>
+  <span>pK<sub>a</sub> = <span class="val" id="pkaVal">4.76</span></span>
+  <span class="no-wrap">الصفة الغالبة: <span id="predominanceText">HA و A⁻ متساويان</span></span>
+</div>
+
+<script>
+const canvas = document.getElementById('mainCanvas');
+const ctx = canvas.getContext('2d');
+
+const phSlider = document.getElementById('phSlider');
+const phVal = document.getElementById('phVal');
+const pairSelect = document.getElementById('pairSelect');
+const indicatorSelect = document.getElementById('indicatorSelect');
+const haPct = document.getElementById('haPct');
+const aPct = document.getElementById('aPct');
+const ratioVal = document.getElementById('ratioVal');
+const pkaVal = document.getElementById('pkaVal');
+const predominanceText = document.getElementById('predominanceText');
+const colorSwatch = document.getElementById('colorSwatch');
+const colorName = document.getElementById('colorName');
+
+// Indicator data
+const indicatorData = {
+  'أحمر الميثيل': { lo: 3.1, hi: 4.4, colors: ['#ef4444','#f97316','#eab308'], nameAcid: 'أحمر', nameBase: 'أصفر', nameTrans: 'برتقالي' },
+  'أزرق البروموتيمول': { lo: 6.0, hi: 7.6, colors: ['#eab308','#22c55e','#3b82f6'], nameAcid: 'أصفر', nameBase: 'أزرق', nameTrans: 'أخضر' },
+  'الفينولفتالين': { lo: 8.2, hi: 10.0, colors: ['#e2e8f0','#f0abfc','#ec4899'], nameAcid: 'عديم اللون', nameBase: 'وردي', nameTrans: 'وردي فاتح' }
+};
+
+function hexToRgb(hex) {
+  const v = parseInt(hex.slice(1), 16);
+  return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
+}
+function rgbToHex(r, g, b) {
+  return '#' + [r, g, b].map(c => Math.round(c).toString(16).padStart(2, '0')).join('');
+}
+function lerpColor(c1, c2, t) {
+  return c1.map((a, i) => a + (c2[i] - a) * t);
+}
+
+function getIndicatorColor(pH, indicatorName) {
+  const ind = indicatorData[indicatorName];
+  if (!ind) return '#94a3b8';
+  if (pH < ind.lo) return ind.colors[0];
+  if (pH > ind.hi) return ind.colors[2];
+  const t = (pH - ind.lo) / (ind.hi - ind.lo);
+  const c1 = hexToRgb(ind.colors[0]);
+  const c2 = hexToRgb(ind.colors[2]);
+  return rgbToHex(...lerpColor(c1, c2, t));
+}
+
+function getIndicatorName(pH, indicatorName) {
+  const ind = indicatorData[indicatorName];
+  if (!ind) return '—';
+  if (pH < ind.lo) return ind.nameAcid;
+  if (pH > ind.hi) return ind.nameBase;
+  return ind.nameTrans;
+}
+
+
+
+function update() {
+  const pH = parseFloat(phSlider.value);
+  const [pkaStr, acidName, baseName] = pairSelect.value.split('|');
+  const pKa = parseFloat(pkaStr);
+  
+  phVal.textContent = pH.toFixed(2);
+  pkaVal.textContent = pKa.toFixed(2);
+  
+  // Compute distribution
+  const ratio = Math.pow(10, pH - pKa);
+  const aPctVal = 100 / (1 + 1 / ratio);
+  const haPctVal = 100 - aPctVal;
+  
+  haPct.textContent = haPctVal.toFixed(1);
+  aPct.textContent = aPctVal.toFixed(1);
+  ratioVal.textContent = ratio.toFixed(2);
+  
+  // Predominant species
+  let predom;
+  if (Math.abs(haPctVal - aPctVal) < 1) {
+    predom = `${acidName} و ${baseName} متساويان تقريباً`;
+  } else if (haPctVal > aPctVal) {
+    predom = `${acidName} غالبة (${haPctVal.toFixed(0)}%)`;
+  } else {
+    predom = `${baseName} غالبة (${aPctVal.toFixed(0)}%)`;
+  }
+  predominanceText.textContent = predom;
+  
+  // Indicator
+  const indicatorName = indicatorSelect.options[indicatorSelect.selectedIndex].text.split(' (')[0];
+  const indColor = getIndicatorColor(pH, indicatorName);
+  const indName = getIndicatorName(pH, indicatorName);
+  colorSwatch.style.background = indColor;
+  colorName.textContent = indName;
+  
+  draw(pH, pKa, acidName, baseName, haPctVal, aPctVal, ratio, indicatorName);
+}
+
+function draw(pH, pKa, acidName, baseName, haPct, aPct, ratio, indicatorName) {
+  const w = 700, h = 350;
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = '#0f172a';
+  ctx.fillRect(0, 0, w, h);
+  
+  const left = 30, right = 670, top = 20;
+  const axisY = top + 30;
+  const axisW = right - left;
+  const barTop = axisY + 28;
+  const barH = 50;
+  const pctBarTop = barTop + barH + 10;
+  const pHScaleH = 18;
+  const indicatorY = pctBarTop + pHScaleH + 22;
+  const indicatorH = 28;
+  const pkaMarkerY = axisY - 10;
+  
+  // Helper
+  function phToX(ph) {
+    return left + (ph / 14) * axisW;
+  }
+  
+  // Title: acid > base
+  ctx.fillStyle = '#64748b';
+  ctx.font = '9px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(acidName + ' (HA)', left, axisY - 8);
+  ctx.fillText(baseName + ' (A⁻)', right, axisY - 8);
+  
+  // pH scale axis line
+  ctx.strokeStyle = '#475569';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(left, axisY);
+  ctx.lineTo(right, axisY);
+  ctx.stroke();
+  
+  // pH tick marks
+  ctx.fillStyle = '#64748b';
+  ctx.font = '7px sans-serif';
+  ctx.textAlign = 'center';
+  for (let i = 0; i <= 14; i += 1) {
+    const x = phToX(i);
+    ctx.fillStyle = i % 2 === 0 ? '#64748b' : '#334155';
+    ctx.beginPath();
+    ctx.moveTo(x, axisY - 4);
+    ctx.lineTo(x, axisY + 4);
+    ctx.stroke();
+    if (i % 2 === 0) {
+      ctx.fillStyle = '#64748b';
+      ctx.fillText(i, x, axisY + 12);
+    }
+  }
+  ctx.fillStyle = '#475569';
+  ctx.font = '7px sans-serif';
+  ctx.fillText('pH', right + 6, axisY + 4);
+  
+  // Colored acid/base zones on axis
+  const pKaX = phToX(pKa);
+  
+  // Zone coloring (subtle)
+  ctx.globalAlpha = 0.06;
+  ctx.fillStyle = '#ef4444';
+  ctx.fillRect(left, axisY - 8, pKaX - left, 16);
+  ctx.fillStyle = '#3b82f6';
+  ctx.fillRect(pKaX, axisY - 8, right - pKaX, 16);
+  ctx.globalAlpha = 1;
+  
+  // pKa marker line (dashed, full height)
+  ctx.strokeStyle = '#f59e0b';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([4, 3]);
+  ctx.beginPath();
+  ctx.moveTo(pKaX, pkaMarkerY);
+  ctx.lineTo(pKaX, indicatorY + indicatorH + 10);
+  ctx.stroke();
+  ctx.setLineDash([]);
+  
+  // pKa label
+  ctx.fillStyle = '#f59e0b';
+  ctx.font = 'bold 9px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('pKa = ' + pKa.toFixed(2), pKaX, pkaMarkerY + 10);
+  
+  // Current pH arrow (triangle)
+  const curX = phToX(pH);
+  ctx.fillStyle = '#fbbf24';
+  ctx.beginPath();
+  ctx.moveTo(curX, axisY + 8);
+  ctx.lineTo(curX - 5, axisY + 2);
+  ctx.lineTo(curX + 5, axisY + 2);
+  ctx.closePath();
+  ctx.fill();
+  
+  // pH value label
+  ctx.fillStyle = '#fbbf24';
+  ctx.font = 'bold 11px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('pH = ' + pH.toFixed(2), curX, axisY + 26);
+  
+  // --- Distribution Horizontal Bars ---
+  const barLeft = left + 10;
+  const barWidth = right - left - 20;
+  
+  // HA bar (red)
+  const haW = (haPct / 100) * barWidth;
+  ctx.fillStyle = '#ef4444';
+  ctx.beginPath();
+  ctx.roundRect(barLeft, barTop, haW, 18, [0, 3, 3, 0]);
+  ctx.fill();
+  
+  // A- bar (blue)
+  const aW = (aPct / 100) * barWidth;
+  const aBarLeft = barLeft + barWidth - aW;
+  ctx.fillStyle = '#3b82f6';
+  ctx.beginPath();
+  ctx.roundRect(aBarLeft, barTop + 20, aW, 18, [3, 0, 0, 3]);
+  ctx.fill();
+  
+  // Bar labels
+  ctx.fillStyle = '#fbbf24';
+  ctx.font = 'bold 10px sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText(acidName + ' (' + haPct.toFixed(1) + '%)', barLeft + 4, barTop + 13);
+  ctx.textAlign = 'right';
+  ctx.fillText(baseName + ' (' + aPct.toFixed(1) + '%)', barLeft + barWidth - 4, barTop + 33);
+  
+  // Henderson-Hasselbalch equation display
+  ctx.fillStyle = '#22c55e';
+  ctx.font = '11px sans-serif';
+  ctx.textAlign = 'center';
+  const eqText = `pH = pKa + log([A⁻]/[HA])  →  ${pH.toFixed(2)} = ${pKa.toFixed(2)} + log(${ratio.toFixed(2)})`;
+  ctx.fillText(eqText, (left + right) / 2, pctBarTop + 12);
+  
+  // --- Indicator Section ---
+  const ind = indicatorData[indicatorName];
+  if (!ind) return;
+  
+  ctx.fillStyle = '#94a3b8';
+  ctx.font = '9px sans-serif';
+  ctx.textAlign = 'right';
+  ctx.fillText(indicatorName, right, indicatorY - 4);
+  
+  // Indicator strip
+  const loX = phToX(ind.lo);
+  const hiX = phToX(ind.hi);
+  const indY = indicatorY;
+  
+  // Background strip
+  ctx.fillStyle = '#1e293b';
+  ctx.beginPath();
+  ctx.roundRect(left, indY, barWidth, indicatorH, 4);
+  ctx.fill();
+  
+  // Acid color zone (left)
+  ctx.fillStyle = ind.colors[0];
+  ctx.fillRect(left + 2, indY + 2, loX - left - 2, indicatorH - 4);
+  
+  // Base color zone (right)
+  ctx.fillStyle = ind.colors[2];
+  ctx.fillRect(hiX, indY + 2, right - hiX - 2, indicatorH - 4);
+  
+  // Transition zone gradient
+  const grad = ctx.createLinearGradient(loX, indY, hiX, indY);
+  grad.addColorStop(0, ind.colors[0]);
+  grad.addColorStop(0.3, ind.colors[1]);
+  grad.addColorStop(0.7, ind.colors[1]);
+  grad.addColorStop(1, ind.colors[2]);
+  ctx.fillStyle = grad;
+  ctx.fillRect(loX, indY + 2, hiX - loX, indicatorH - 4);
+  
+  // Current pH marker on indicator
+  const markerX = Math.max(left + 2, Math.min(right - 2, curX));
+  ctx.fillStyle = '#0f172a';
+  ctx.beginPath();
+  ctx.arc(markerX, indY + indicatorH / 2, 5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#fbbf24';
+  ctx.beginPath();
+  ctx.arc(markerX, indY + indicatorH / 2, 3, 0, Math.PI * 2);
+  ctx.fill();
+  
+  // Indicator interval labels
+  ctx.fillStyle = '#64748b';
+  ctx.font = '7px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(ind.lo.toFixed(1), loX, indY + indicatorH + 10);
+  ctx.fillText(ind.hi.toFixed(1), hiX, indY + indicatorH + 10);
+  
+  // Region labels
+  ctx.fillStyle = ind.colors[0];
+  ctx.textAlign = 'center';
+  ctx.fillText(ind.nameAcid, (left + loX) / 2, indY + indicatorH / 2 + 4);
+  ctx.fillStyle = ind.colors[2];
+  ctx.fillText(ind.nameBase, (hiX + right) / 2, indY + indicatorH / 2 + 4);
+  ctx.fillStyle = '#e2e8f0';
+  ctx.fillText(ind.nameTrans, (loX + hiX) / 2, indY + indicatorH / 2 + 4);
+  
+  // Footer legend
+  ctx.fillStyle = '#64748b';
+  ctx.font = '7px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('حرك المؤشر لتغيير pH — لاحظ تغير الصفة الغالبة ولون الكاشف', (left + right) / 2, h - 8);
+}
+
+// Polyfill
+if (!CanvasRenderingContext2D.prototype.roundRect) {
+  CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, radii) {
+    const r = Array.isArray(radii) ? radii : [radii, radii, radii, radii];
+    const [tl, tr, br, bl] = r.map(v => Math.min(v || 0, Math.min(w, h) / 2));
+    this.moveTo(x + tl, y);
+    this.lineTo(x + w - tr, y);
+    this.quadraticCurveTo(x + w, y, x + w, y + tr);
+    this.lineTo(x + w, y + h - br);
+    this.quadraticCurveTo(x + w, y + h, x + w - br, y + h);
+    this.lineTo(x + bl, y + h);
+    this.quadraticCurveTo(x, y + h, x, y + h - bl);
+    this.lineTo(x, y + tl);
+    this.quadraticCurveTo(x, y, x, y + tl);
+    this.closePath();
+  };
+}
+
+phSlider.addEventListener('input', update);
+pairSelect.addEventListener('change', update);
+indicatorSelect.addEventListener('change', update);
+
+update();
+</script>
+</body>
+</html>

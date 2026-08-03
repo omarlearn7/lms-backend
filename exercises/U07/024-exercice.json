@@ -1,0 +1,51 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 024 - قياس L أو C بطريقة الرنين",
+  "order_index": 24,
+  "source": "3AS U07 - Exercice 024",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 024"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC متسلسلة مجهولة القيم. نصلها بمولد GBF ونغير تردده حتى نلاحظ الرنين عند f₀ = 200 Hz. في هذه الحالة، I_max = 0.15 A و U_m = 12 V."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب المقاومة R للدارة.",
+        "input_type": "numeric",
+        "placeholder": "R = ... Ω"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "إذا كان C = 10 µF معلومة، فاحسب L.",
+        "input_type": "numeric",
+        "placeholder": "L = ... H"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "إذا كان L = 0.5 H معلومة، فاحسب C.",
+        "input_type": "numeric",
+        "placeholder": "C = ... F"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب Q في كل حالة.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ما فائدة قياس الرنين في تحديد خصائص دارة مجهولة؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "title": "قانون فراداي ولنز",
+  "slug": "قانون-فراداي-ولنز",
+  "description": "قانونا فراداي ولنز في التحريض الكهرومغناطيسي",
+  "category_id": 2,
+  "unit_id": 29,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 2,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "1) قانون فراداي",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "ينص قانون فراداي على ما يلي: تكون الدارة محل قوة محركة كهربائية تحريضية أثناء حدوث تغير تدفق حقل مغناطيسي عبر سطحها. أي أن التحريض يحدث كلما تغير التدفق المغناطيسي عبر الدارة."
+    },
+    {
+      "type": "heading",
+      "text": "2) قانون لنز",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "عند تقريب القطب الشمالي للمغناطيس إلى وجه الوشيعة، فإنه يصبح وجهها شماليًا يعاكس (يقاوم) عملية تقريب القطب الشمالي، وعند إبعاده ينشأ وجهها جنوبيًا يقاوم إبعاد المغناطيس."
+    },
+    {
+      "type": "text",
+      "content": "يبين قانون لنز هذه النتيجة: إن التيار المتحرض هو بأفعاله يعاكس الأسباب التي أدت إلى نشوئه."
+    },
+    {
+      "type": "heading",
+      "text": "3) تحديد جهة التيار المتحرض",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "لتحديد جهة التيار المتحرض نطبق قانون لنز: يولد التيار المتحرض حقلًا مغناطيسيًا يعاكس تغير التدفق المسبب. ثم نحدد جهة التيار الموافقة لحقلها المغناطيسي المعاكس بقاعدة اليد اليمنى."
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "قانون فراداي ينص على أن الدارة تكون محل قوة محركة كهربائية تحريضية عند:",
+      "input_type": "mcq",
+      "options": [
+        "تغير التدفق المغناطيسي عبر سطحها",
+        "ثبات التدفق المغناطيسي",
+        "انعدام الحقل المغناطيسي"
+      ],
+      "answer": {
+        "value": "تغير التدفق المغناطيسي عبر سطحها"
+      },
+      "solution": "ينص قانون فراداي على حدوث تحريض عند تغير التدفق عبر الدارة."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "قانون لنز ينص على أن التيار المتحرض:",
+      "input_type": "mcq",
+      "options": [
+        "يعاكس بأفعاله الأسباب التي أدت إلى نشوئه",
+        "يساعد على تقوية السبب",
+        "لا علاقة له بالسبب"
+      ],
+      "answer": {
+        "value": "يعاكس بأفعاله الأسباب التي أدت إلى نشوئه"
+      },
+      "solution": "التيار المتحرض يعاكس بأفعاله الأسباب التي أدت إلى نشوئه."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "عند تقريب القطب الشمالي للمغناطيس من وشيعة، يكون الوجه المقابل للمغناطيس:",
+      "input_type": "mcq",
+      "options": [
+        "شماليًا يعاكس التقريب",
+        "جنوبيًا يساعد التقريب",
+        "لا قطبية له"
+      ],
+      "answer": {
+        "value": "شماليًا يعاكس التقريب"
+      },
+      "solution": "يصبح الوجه شماليًا يعاكس عملية تقريب القطب الشمالي."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة التحريض الكهرومغناطيسي - قانون فراداي ولنز",
+        "width": 720,
+        "height": 360
+      },
+      "html": "<div id=\"wrap\">\n  <canvas id=\"cv\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"ctrl\">\n    <div class=\"row\"><label>سرعة حركة المغناطيس v (m/s)</label><input type=\"range\" id=\"vSlider\" min=\"0.2\" max=\"3\" value=\"1\" step=\"0.1\"><span id=\"vVal\">1.0</span></div>\n    <div class=\"row\"><label>عدد حلقات الوشيعة N</label><input type=\"range\" id=\"nSlider\" min=\"10\" max=\"200\" value=\"100\" step=\"10\"><span id=\"nVal\">100</span></div>\n    <div id=\"out\">Φmax = 0.313 mWb | |e|max ≈ 0.157 V</div>\n    <button id=\"playBtn\">إيقاف الحركة</button>\n  </div>\n</div>\n",
+      "css": "#wrap{font-family:inherit;direction:rtl;text-align:center}\n#cv{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;max-width:100%}\n#ctrl{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.row{display:flex;align-items:center;gap:10px;font-size:14px}\n.row label{width:200px;text-align:left}\n.row span{width:70px;text-align:center;font-weight:bold;color:#0f766e}\ninput[type=range]{width:220px}\n#out{padding:6px 12px;background:#ccfbf1;border:1px solid #99f6e4;border-radius:6px;font-weight:bold;color:#134e4a;margin-top:4px}\n#playBtn{margin-top:4px;padding:5px 16px;border:1px solid #0f766e;background:#0f766e;color:#fff;border-radius:6px;cursor:pointer;font-size:13px}",
+      "js": "(function(){\n  if (window.__faradayInstalled__) return;\n  window.__faradayInstalled__ = true;\n  var canvas = document.getElementById('cv');\n  var ctx = canvas.getContext('2d');\n  var vSlider = document.getElementById('vSlider'), vVal = document.getElementById('vVal');\n  var nSlider = document.getElementById('nSlider'), nVal = document.getElementById('nVal');\n  var out = document.getElementById('out');\n  var playBtn = document.getElementById('playBtn');\n  var running = true, t = 0, prevPhi = null;\n  var S = 0.01, k = 2e-5;\n  var phiHist = [], eHist = [];\n  window.simState = { v: 1, N: 100, phiMax: 0, eMax: 0, running: true };\n  function draw(){\n    var v = parseFloat(vSlider.value), N = parseFloat(nSlider.value);\n    if (running) t += 0.03 * v;\n    var p = 0.07 + 0.03 * Math.sin(t);\n    var B = k / (p * p);\n    var phi = N * B * S;\n    var e = 0;\n    if (prevPhi !== null) e = -(phi - prevPhi) / (0.03 * v);\n    prevPhi = phi;\n    window.simState.v = v; window.simState.N = N;\n    window.simState.phi = phi; window.simState.e = e;\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    ctx.strokeStyle = '#94a3b8'; ctx.lineWidth = 1; ctx.strokeRect(0.5, 0.5, canvas.width - 1, canvas.height - 1);\n    var cx = 150, cy = 180;\n    ctx.strokeStyle = '#475569'; ctx.lineWidth = 3;\n    ctx.beginPath(); ctx.moveTo(cx - 95, cy - 85); ctx.lineTo(cx - 95, cy + 85);\n    ctx.moveTo(cx + 95, cy - 85); ctx.lineTo(cx + 95, cy + 85); ctx.stroke();\n    ctx.strokeStyle = '#1d4ed8'; ctx.lineWidth = 2;\n    for (var q = -3; q <= 3; q++) {\n      var tq = q / 4;\n      ctx.beginPath(); ctx.arc(cx + 95 * tq, cy, 22 * (1 - Math.abs(tq)), 0, Math.PI * 2); ctx.stroke();\n    }\n    ctx.fillStyle = '#0f172a'; ctx.font = 'bold 13px sans-serif'; ctx.textAlign = 'center';\n    ctx.fillText('وشيعة (N حلقات)', cx + 95, cy + 105);\n    var mx = cx + 95 + 130 * Math.sin(t) - 95;\n    var mxl = mx - 34, mxr = mx + 34;\n    ctx.fillStyle = '#dc2626'; ctx.fillRect(mxr, cy - 30, 34, 60);\n    ctx.fillStyle = '#2563eb'; ctx.fillRect(mxl, cy - 30, 34, 60);\n    ctx.fillStyle = '#fff'; ctx.font = 'bold 14px sans-serif';\n    ctx.fillText('S', mxr + 17, cy + 5); ctx.fillText('N', mxl + 17, cy + 5);\n    ctx.fillStyle = '#0f172a'; ctx.font = '12px sans-serif';\n    ctx.fillText('مغناطيس', mx, cy + 48);\n    var gx = 700, gy = 100;\n    ctx.strokeStyle = '#475569'; ctx.lineWidth = 2;\n    ctx.beginPath(); ctx.arc(gx, gy, 40, 0, Math.PI); ctx.stroke();\n    ctx.beginPath(); ctx.moveTo(gx - 40, gy); ctx.lineTo(gx + 40, gy); ctx.stroke();\n    ctx.fillStyle = '#334155'; ctx.font = 'bold 13px sans-serif';\n    ctx.fillText('جلفانومتر', gx, gy - 52);\n    var def = Math.max(-1, Math.min(1, e / 0.015));\n    ctx.strokeStyle = '#dc2626'; ctx.lineWidth = 3;\n    ctx.beginPath(); ctx.moveTo(gx, gy); ctx.lineTo(gx - def * 34, gy - 30); ctx.stroke();\n    var phx0 = 430, phy0 = 330, phw = 280, phh = 220, px = phx0;\n    phiHist.push([px, phy0 - (phi / 0.015) * 140]);\n    eHist.push([px, 220 - (e / 0.015) * 90]);\n    if (phiHist.length > phw) { phiHist.shift(); eHist.shift(); }\n    ctx.strokeStyle = '#e2e8f0'; ctx.lineWidth = 1;\n    for (var i = 0; i <= phw; i += 40) { ctx.beginPath(); ctx.moveTo(phx0 + i, 120); ctx.lineTo(phx0 + i, phy0); ctx.stroke(); }\n    for (var j = 0; j <= 4; j++) { ctx.beginPath(); ctx.moveTo(phx0, 120 + j * 52.5); ctx.lineTo(phx0 + phw, 120 + j * 52.5); ctx.stroke(); }\n    ctx.fillStyle = '#15803d'; ctx.font = 'bold 12px sans-serif'; ctx.textAlign = 'center';\n    ctx.fillText('Φ(t)', phx0 + 30, 116);\n    ctx.fillStyle = '#b91c1c'; ctx.fillText('e(t)', phx0 + 80, 116);\n    ctx.strokeStyle = '#15803d'; ctx.lineWidth = 2;\n    ctx.beginPath();\n    for (var h = 0; h < phiHist.length; h++) { if (h === 0) ctx.moveTo(phiHist[h][0], phiHist[h][1]); else ctx.lineTo(phiHist[h][0], phiHist[h][1]); }\n    ctx.stroke();\n    ctx.strokeStyle = '#b91c1c'; ctx.lineWidth = 2;\n    ctx.beginPath();\n    for (var h2 = 0; h2 < eHist.length; h2++) { if (h2 === 0) ctx.moveTo(eHist[h2][0], eHist[h2][1]); else ctx.lineTo(eHist[h2][0], eHist[h2][1]); }\n    ctx.stroke();\n    var phiMax = 0, eAbsMax = 0;\n    for (var m = 0; m < phiHist.length; m++) { var d = Math.abs(phiHist[m][1] - phy0); if (d > phiMax) phiMax = d; }\n    for (var m2 = 0; m2 < eHist.length; m2++) { var d2 = Math.abs(eHist[m2][1] - 220); if (d2 > eAbsMax) eAbsMax = d2; }\n    window.simState.phiMax = phiMax / 140 * 0.015;\n    window.simState.eMax = eAbsMax / 90 * 0.015;\n    vVal.textContent = v.toFixed(1); nVal.textContent = N.toFixed(0);\n    out.textContent = 'Φmax ≈ ' + (window.simState.phiMax * 1000).toFixed(1) + ' mWb | |e|max ≈ ' + (window.simState.eMax * 1000).toFixed(1) + ' mV | الوشيعة تعارض تغير التدفق (قانون لنز)';\n    window.simState.time = t;\n  }\n  function loop(){ draw(); requestAnimationFrame(loop); }\n  playBtn.addEventListener('click', function(){ running = !running; window.simState.running = running; playBtn.textContent = running ? 'إيقاف الحركة' : 'تشغيل الحركة'; });\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  loop();\n})();"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "قانون فراداي: تغير التدفق المغناطيسي عبر دارة يولّد فيها قوة محركة تحريضية. قانون لنز: التيار المتحرض بأفعاله يعاكس الأسباب التي أدت إلى نشوئه."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 009 - دارة LC: تحليل التذبذبات",
+  "order_index": 9,
+  "source": "3AS U07 - Exercice 009",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 009"
+      },
+      {
+        "type": "text",
+        "content": "دارة LC تتكون من مكثف سعته C = 5 µF مشحون تحت توتر U₀ = 12 V ووشيعة معامل تحريضها L. نغلق الدارة، فنسجل تذبذبات دورها T₀ = 0.5 ms."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب قيمة L.",
+        "input_type": "numeric",
+        "placeholder": "L = ... H"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أوجد الشحنة الابتدائية Q₀ للمكثف.",
+        "input_type": "numeric",
+        "placeholder": "Q₀ = ... C"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "اكتب المعادلة الزمنية q(t).",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أوجد المعادلة الزمنية i(t). أحسب I_max.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب الطاقة الكلية E_tot وبين أنها محفوظة.",
+        "input_type": "numeric",
+        "placeholder": "E_tot = ... J"
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "unit_id": 4,
+  "title": "تمرين 010 - ثابت الحموضة Ka من قياسات pH مختلفة",
+  "order_index": 10,
+  "source": "3AS U04 - Exercice 010",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 010"
+      },
+      {
+        "type": "text",
+        "content": "نحضر ثلاثة محاليل من حمض البنزويك C₆H₅COOH بتراكيز مختلفة ونقيس pH كلاً منها عند 25°C. pKa لثنائية C₆H₅COOH/C₆H₅COO⁻ يساوي 4.20."
+      },
+      {
+        "type": "table",
+        "headers": ["المحلول", "S₁", "S₂", "S₃"],
+        "rows": [
+          ["التركيز C (mol/L)", "1.0×10⁻²", "5.0×10⁻³", "1.0×10⁻³"],
+          ["pH مقاس", "3.10", "3.25", "3.60"]
+        ]
+      },
+      {
+        "type": "diagram",
+        "diagram_type": "interactive_graph",
+        "props": {
+          "chartType": "bar",
+          "data": [[0,3.10],[1,3.25],[2,3.60]],
+          "xLabels": ["S₁\nC=1.0×10⁻²", "S₂\nC=5.0×10⁻³", "S₃\nC=1.0×10⁻³"],
+          "xLabel": "المحلول",
+          "yLabel": "pH",
+          "title": "pH لمحاليل حمض البنزويك بتراكيز مختلفة",
+          "barColor": "#22c55e"
+        }
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب معادلة تفاعل حمض البنزويك مع الماء.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب تركيز أيون الأكسونيوم [H₃O⁺] في كل محلول.",
+        "input_type": "text",
+        "placeholder": "[H₃O⁺]₁ = ..."
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب نسبة التقدم النهائي τ = [H₃O⁺]/C في كل محلول. ماذا تلاحظ؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب قيمة Ka لكل محلول باستخدام العلاقة Ka = [H₃O⁺]² / (C − [H₃O⁺]). هل تتغير Ka مع التركيز؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "قارن قيمة Ka المستخرجة مع القيمة النظرية المشتقة من pKa. أحسب نسبة الخطأ.",
+        "input_type": "numeric",
+        "placeholder": "Ka_nظري = ..."
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "unit_id": 30,
+  "title": "تمرين 003 - قيم التوتر المتناوب الجيبي",
+  "order_index": 3,
+  "source": "2AS U30 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 003", "level": 3 },
+      { "type": "text", "content": "توتر متناوب جيبي قيمة دوره T = 20 ms وسعته Umax = 311 V مطبق بين طرفي ناقل أومي مقاومته R = 100 Ω." },
+      { "type": "question", "number": 1, "text": "احسب تواتر هذا التوتر. (بوحدة Hz)", "input_type": "numeric", "answer": { "value": 50, "tolerance": 1 }, "solution": "f = 1/T = 1/0.02 = 50 Hz." },
+      { "type": "question", "number": 2, "text": "احسب القيمة الفعالة Ueff. (بوحدة V)", "input_type": "numeric", "answer": { "value": 220, "tolerance": 2 }, "solution": "Ueff = Umax/√2 = 311/1.414 = 220 V." },
+      { "type": "question", "number": 3, "text": "احسب شدة التيار الفعالة المارة في الناقل الأومي. (بوحدة A)", "input_type": "numeric", "answer": { "value": 2.2, "tolerance": 0.02 }, "solution": "Ieff = Ueff/R = 220/100 = 2.2 A." },
+      { "type": "question", "number": 4, "text": "استنتج شدة التيار الأعظمية Imax. (بوحدة A)", "input_type": "numeric", "answer": { "value": 3.11, "tolerance": 0.02 }, "solution": "Imax = Ieff.√2 = 2.2 × 1.414 = 3.11 A." }
+    ]
+  }
+}

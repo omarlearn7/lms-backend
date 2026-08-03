@@ -1,0 +1,50 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 013 - الرنين في النواس المرن القسري",
+  "order_index": 13,
+  "source": "3AS U07 - Exercice 013",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 013"
+      },
+      {
+        "type": "text",
+        "content": "نواس مرن (m = 200 g, k = 50 N/m) يخضع لقوة مثيرة دورية F(t) = 5 cos(ωt) N. معامل التخميد h = 2 N·s/m."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب النبض الذاتي ω₀ والتردد الذاتي f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "اكتب عبارة سعة الاهتزازة X_m بدلالة ω.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب السعة العظمى X_max عند الرنين.",
+        "input_type": "numeric",
+        "placeholder": "X_max = ... m"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب عرض الرنين Δω.",
+        "input_type": "numeric",
+        "placeholder": "Δω = ... rad/s"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ماذا يحدث لـ X_max إذا زاد h؟ ارسم تقريبياً منحنيات X_m(ω) لقيم مختلفة لـ h.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

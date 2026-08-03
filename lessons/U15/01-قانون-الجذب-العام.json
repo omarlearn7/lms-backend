@@ -1,0 +1,128 @@
+{
+  "title": "قانون الجذب العام",
+  "slug": "قانون-الجذب-العام",
+  "description": "نص قانون نيوتن للجذب العام وعلاقته الرياضية",
+  "category_id": 2,
+  "unit_id": 15,
+  "grade_level": "سنة أولى ثانوي",
+  "order_index": 1,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "نص قانون الجذب العام",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "في عام 1687 أعطى إسحاق نيوتن قانون الجذب العام في كتابه الشهير على الشكل التالي: جسمان كيفيان يتجاذبان بقوة تتناسب مباشرة مع جداء كتلتيهما وعكسياً مع مربع المسافة التي تفصلهما."
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "هذا القانون هو أول قانون يصف أولى القوى الطبيعية على الشكل الذي ينص عليه القانون الثالث لنيوتن، أي أول صيغة للفعلين المتبادلين بين جملتين ميكانيكيتين من جراء كتلتهما."
+    },
+    {
+      "type": "text",
+      "content": "يلاحظ أن النص الذي صاغه نيوتن يتميز بعموميته: لا نجد فيه أي تمييز ولا تشخيص للجسمين إذ يعتبرهما كيفيين، ولا يحدد لحظة زمنية ولا مسافة ابتدائية ولا نهائية."
+    },
+    {
+      "type": "heading",
+      "text": "العلاقة الرياضية",
+      "level": 2
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "قوة الجذب العام المتبادلة بين جسمين A و B كتلتاهما على الترتيب MA و MB وتفصلهما المسافة d تعطى بالعلاقة: FA/B = FB/A = G × MA × MB / d²، حيث G = 6.67 × 10⁻¹¹ SI هو ثابت يدعى ثابت الجذب العام."
+    },
+    {
+      "type": "text",
+      "content": "القوة FA/B تطبق على الجسم B والقوة FB/A تطبق على الجسم A، فهما قوتان متبادلتان متساويتان في الشدة ومتعاكستان في الاتجاه، ولهما نفس خط التأثير وهو الخط الواصل بين مركزي الجسمين."
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "قانون الجذب العام صاغه:",
+      "input_type": "mcq",
+      "options": [
+        "إسحاق نيوتن سنة 1687",
+        "كولوم سنة 1785",
+        "أورستد سنة 1820"
+      ],
+      "answer": {
+        "value": "إسحاق نيوتن سنة 1687"
+      },
+      "solution": "أعطى إسحاق نيوتن قانون الجذب العام سنة 1687."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "قوة التجاذب بين جسمين تتناسب:",
+      "input_type": "mcq",
+      "options": [
+        "مباشرة مع جداء الكتلتين وعكسياً مع مربع المسافة",
+        "مباشرة مع المسافة",
+        "عكسياً مع جداء الكتلتين"
+      ],
+      "answer": {
+        "value": "مباشرة مع جداء الكتلتين وعكسياً مع مربع المسافة"
+      },
+      "solution": "قوة التجاذب تتناسب مباشرة مع جداء الكتلتين وعكسياً مع مربع المسافة الفاصلة."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "ثابت الجذب العام G يساوي:",
+      "input_type": "mcq",
+      "options": [
+        "6.67 × 10⁻¹¹ SI",
+        "9 × 10⁹ SI",
+        "8.31 SI"
+      ],
+      "answer": {
+        "value": "6.67 × 10⁻¹¹ SI"
+      },
+      "solution": "ثابت الجذب العام G = 6.67 × 10⁻¹¹ SI."
+    },
+    {
+      "type": "question",
+      "number": 4,
+      "text": "إذا تضاعفت المسافة بين جسمين فإن قوة التجاذب بينهما:",
+      "input_type": "mcq",
+      "options": [
+        "تصبح ربع قيمتها الأصلية",
+        "تصبح ضعفين",
+        "تبقى نفسها"
+      ],
+      "answer": {
+        "value": "تصبح ربع قيمتها الأصلية"
+      },
+      "solution": "القوة تتناسب عكسياً مع مربع المسافة، فتضاعف المسافة يجعل القوة تقسم على 4."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "قانون الجذب العام F = G×MA×MB/d² يصف التجاذب بين أي جسمين من جراء كتلتهما، وهو قانون عام يصاغ بعمومية تامة، وثابته G = 6.67 × 10⁻¹¹ SI."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة قانون الجذب العام - القوة بين كتلتين",
+        "width": 720,
+        "height": 430
+      },
+      "html": " <div id=\"gravWrap\">\n  <canvas id=\"gravCanvas\" width=\"720\" height=\"360\"></canvas>\n  <div id=\"gravControls\">\n    <div class=\"gc-row\"><label>الكتلة m₁ (kg)</label><input type=\"range\" id=\"m1Slider\" min=\"10\" max=\"100\" value=\"50\" step=\"5\"><span id=\"m1Val\">50</span></div>\n    <div class=\"gc-row\"><label>الكتلة m₂ (kg)</label><input type=\"range\" id=\"m2Slider\" min=\"10\" max=\"100\" value=\"50\" step=\"5\"><span id=\"m2Val\">50</span></div>\n    <div class=\"gc-row\"><label>المسافة r (m)</label><input type=\"range\" id=\"rSlider\" min=\"1\" max=\"10\" value=\"3\" step=\"0.5\"><span id=\"rVal\">3.0</span></div>\n    <div class=\"gc-row\"><label>مدار دائري حول m₁</label><input type=\"checkbox\" id=\"orbitChk\"><span id=\"orbitVal\">إيقاف</span></div>\n    <div id=\"gravOut\">F = 1.85e-8 N</div>\n    <button id=\"playBtn\">تشغيل الحركة</button>\n  </div>\n</div>\n",
+      "css": "#gravWrap{font-family:inherit;direction:rtl;text-align:center}\n#gravCanvas{border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc}\n#gravControls{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.gc-row{display:flex;align-items:center;gap:10px;font-size:14px}\n.gc-row label{width:190px;text-align:left}\n.gc-row span{width:52px;text-align:center;font-weight:bold;color:#0f766e}\ninput[type=range]{width:220px}\n#gravOut{padding:6px 12px;background:#ccfbf1;border:1px solid #5eead4;border-radius:8px;font-size:13px;color:#115e59;direction:rtl}\nbutton{padding:6px 16px;border:none;border-radius:8px;background:#0d9488;color:#fff;font-size:14px;cursor:pointer}\n",
+      "js": "(function(){\n  if (window.__gravInstalled__) return;\n  window.__gravInstalled__ = true;\n  var canvas = document.getElementById('gravCanvas');\n  var ctx = canvas.getContext('2d');\n  var m1Slider = document.getElementById('m1Slider');\n  var m1Val = document.getElementById('m1Val');\n  var m2Slider = document.getElementById('m2Slider');\n  var m2Val = document.getElementById('m2Val');\n  var rSlider = document.getElementById('rSlider');\n  var rVal = document.getElementById('rVal');\n  var orbitChk = document.getElementById('orbitChk');\n  var orbitVal = document.getElementById('orbitVal');\n  var out = document.getElementById('gravOut');\n  var playBtn = document.getElementById('playBtn');\n  var G = 6.67e-11;\n  var running = false, orbitAngle = 0, pulse = 0;\n  window.simState = { m1: 50, m2: 50, r: 3, F: 0, vOrb: 0, orbit: false, running: false, angle: 0 };\n  function compute(){\n    var m1 = parseFloat(m1Slider.value), m2 = parseFloat(m2Slider.value), r = parseFloat(rSlider.value);\n    var F = G * m1 * m2 / (r * r);\n    var vOrb = Math.sqrt(G * m1 / r);\n    var orbit = orbitChk.checked;\n    window.simState.m1 = m1; window.simState.m2 = m2; window.simState.r = r;\n    window.simState.F = F; window.simState.vOrb = vOrb; window.simState.orbit = orbit;\n    return { m1: m1, m2: m2, r: r, F: F, vOrb: vOrb, orbit: orbit };\n  }\n  function arrow(x1, y1, x2, y2, color){\n    var dx = x2 - x1, dy = y2 - y1;\n    var len = Math.sqrt(dx * dx + dy * dy);\n    if (len < 3) return;\n    var ux = dx / len, uy = dy / len;\n    var hlen = Math.max(8, Math.min(len - 3, 42));\n    var hx = x1 + ux * hlen, hy = y1 + uy * hlen;\n    ctx.strokeStyle = color; ctx.lineWidth = 3;\n    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(hx, hy); ctx.stroke();\n    var ah = 9;\n    ctx.fillStyle = color;\n    ctx.beginPath();\n    ctx.moveTo(hx + ux * ah, hy + uy * ah);\n    ctx.lineTo(hx - uy * ah + ux * 2, hy + ux * ah + uy * 2);\n    ctx.lineTo(hx + uy * ah + ux * 2, hy - ux * ah + uy * 2);\n    ctx.closePath(); ctx.fill();\n  }\n  function massDot(x, y, r, label, color){\n    ctx.fillStyle = color;\n    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();\n    ctx.strokeStyle = '#0f172a'; ctx.lineWidth = 1.5;\n    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.stroke();\n    ctx.fillStyle = '#fff'; ctx.font = 'bold 12px sans-serif';\n    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';\n    ctx.fillText(label, x, y + 1);\n  }\n  function draw(){\n    var p = compute();\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    var CX = canvas.width / 2, CY = canvas.height / 2;\n    var px1, py1, px2, py2;\n    if (p.orbit) {\n      px1 = CX; py1 = CY;\n      px2 = CX + (p.r / 10) * (canvas.width * 0.40) * Math.cos(orbitAngle);\n      py2 = CY + (p.r / 10) * (canvas.width * 0.40) * Math.sin(orbitAngle);\n      ctx.strokeStyle = '#cbd5e1'; ctx.lineWidth = 1.5;\n      ctx.setLineDash([6, 6]);\n      ctx.beginPath();\n      ctx.arc(px1, py1, (p.r / 10) * (canvas.width * 0.40), 0, Math.PI * 2);\n      ctx.stroke();\n      ctx.setLineDash([]);\n    } else {\n      var half = (p.r / 10) * (canvas.width * 0.34);\n      px1 = CX - half; py1 = CY;\n      px2 = CX + half; py2 = CY;\n    }\n    var r1 = Math.min(16 + p.m1 * 0.12, 34);\n    var r2 = Math.min(16 + p.m2 * 0.12, 34);\n    massDot(px1, py1, r1, 'm₁', '#dc2626');\n    massDot(px2, py2, r2, 'm₂', '#2563eb');\n    var dx = px2 - px1, dy = py2 - py1;\n    var d = Math.sqrt(dx * dx + dy * dy);\n    var ux = dx / d, uy = dy / d;\n    var flen = Math.min(90, 12 + Math.log10(1 + p.F * 1e9) * 22);\n    if (p.F < 1e-9) flen = 12;\n    arrow(px1 + ux * r1, py1 + uy * r1, px1 + ux * (r1 + flen), py1 + uy * (r1 + flen), '#dc2626');\n    arrow(px2 - ux * r2, py2 - uy * r2, px2 - ux * (r2 + flen), py2 - uy * (r2 + flen), '#2563eb');\n    if (running && !p.orbit) {\n      pulse += 0.04;\n      var pt = (pulse % 2) / 2;\n      var ppx = px1 + (px2 - px1) * pt, ppy = py1 + (py2 - py1) * pt;\n      ctx.fillStyle = '#f59e0b';\n      ctx.beginPath(); ctx.arc(ppx, ppy, 5, 0, Math.PI * 2); ctx.fill();\n    }\n    m1Val.textContent = p.m1;\n    m2Val.textContent = p.m2;\n    rVal.textContent = p.r.toFixed(1);\n    orbitVal.textContent = p.orbit ? 'تشغيل' : 'إيقاف';\n    var Fs = p.F < 1e-6 ? p.F.toExponential(1) : p.F.toFixed(1);\n    out.textContent = 'F = ' + Fs + ' N' + (p.orbit ? ' | سرعة المدار v = ' + p.vOrb.toExponential(1) + ' m/s' : '');\n    window.simState.angle = orbitAngle;\n  }\n  playBtn.addEventListener('click', function(){\n    running = !running;\n    window.simState.running = running;\n    playBtn.textContent = running ? 'إيقاف' : 'تشغيل الحركة';\n  });\n  m1Slider.addEventListener('input', function(){});\n  m2Slider.addEventListener('input', function(){});\n  rSlider.addEventListener('input', function(){});\n  orbitChk.addEventListener('change', function(){ orbitAngle = 0; });\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  function loop(){\n    var p = compute();\n    if (running && p.orbit) { orbitAngle += 0.02; }\n    draw();\n    requestAnimationFrame(loop);\n  }\n  loop();\n})();\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "unit_id": 26,
+  "title": "تمرين 001 - تفاعل الحديد مع الكلور",
+  "order_index": 1,
+  "source": "2AS U26 - Exercice 001",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 001", "level": 3 },
+      { "type": "text", "content": "نسخن سلكًا من الحديد Fe حتى الاحمرار ثم ندخله بسرعة داخل قارورة تحتوي على غاز الكلور Cl2 فنلاحظ تشكل دخان يميز كلور الحديد الثلاثي FeCl3. الجملة الكيميائية تتكون في الحالة الابتدائية من 44.8 g من الحديد و 20.16 L من غاز الكلور مقاسين في الشرطين النظاميين. يعطى M(Fe) = 56 g/mol و M(Cl) = 35.5 g/mol و VM = 22.4 L/mol." },
+      { "type": "question", "number": 1, "text": "المعادلة الكيميائية الموزونة الممذجة لهذا التفاعل هي:", "input_type": "mcq", "options": ["2Fe + 3Cl2 = 2FeCl3", "Fe + Cl2 = FeCl3", "Fe + 2Cl2 = FeCl3"], "answer": { "value": "2Fe + 3Cl2 = 2FeCl3" }, "solution": "بالموازنة: 2Fe + 3Cl2 = 2FeCl3." },
+      { "type": "question", "number": 2, "text": "كمية مادة الحديد Fe في الحالة الابتدائية (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.8, "tolerance": 0.01 }, "solution": "n(Fe) = m/M = 44.8/56 = 0.8 mol." },
+      { "type": "question", "number": 3, "text": "كمية مادة غاز الكلور Cl2 في الحالة الابتدائية (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.9, "tolerance": 0.01 }, "solution": "n(Cl2) = V/VM = 20.16/22.4 = 0.9 mol." },
+      { "type": "question", "number": 4, "text": "المزيج الابتدائي في نسب ستوكيومترية؟ (n0(Fe)/2 = 0.4 و n0(Cl2)/3 = 0.3):", "input_type": "mcq", "options": ["لا، الكلور هو المتفاعل المحد", "نعم، المزيج ستوكيومتري", "لا، الحديد هو المتفاعل المحد"], "answer": { "value": "لا، الكلور هو المتفاعل المحد" }, "solution": "n0(Fe)/2 = 0.4 و n0(Cl2)/3 = 0.3، القيمتان مختلفتان فالمزيج ليس ستوكيومتريًا، والكلور المتفاعل المحد لأن 0.3 < 0.4." },
+      { "type": "question", "number": 5, "text": "التقدم الأعظمي xmax (بوحدة mol):", "input_type": "numeric", "answer": { "value": 0.3, "tolerance": 0.01 }, "solution": "Fe: 0.8 − 2x = 0 → x = 0.4 و Cl2: 0.9 − 3x = 0 → x = 0.3. إذن xmax = 0.3 mol." },
+      { "type": "question", "number": 6, "text": "كتلة الحديد المتبقي في نهاية التفاعل (بوحدة g):", "input_type": "numeric", "answer": { "value": 11.2, "tolerance": 0.01 }, "solution": "n(Fe) المتبقية = 0.8 − 2 × 0.3 = 0.2 mol، إذن m = 0.2 × 56 = 11.2 g." },
+      { "type": "question", "number": 7, "text": "كتلة كلور الحديد الثلاثي FeCl3 الناتج (بوحدة g):", "input_type": "numeric", "answer": { "value": 97.5, "tolerance": 0.1 }, "solution": "n(FeCl3) = 2 × 0.3 = 0.6 mol و M(FeCl3) = 56 + 3 × 35.5 = 162.5 g/mol، إذن m = 0.6 × 162.5 = 97.5 g." }
+    ]
+  }
+}

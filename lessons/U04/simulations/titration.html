@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكاة المعايرة حمض-أساس</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:12px;min-height:100vh}
+.container{max-width:720px;width:100%}
+h1{text-align:center;font-size:16px;color:#fbbf24;margin-bottom:6px}
+.canvas-wrap{background:#0f172a;border:1px solid #334155;border-radius:8px;padding:4px;margin-bottom:8px}
+canvas#mainCanvas{display:block;margin:0 auto;width:100%;max-width:700px;height:380px}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#1e293b;border-radius:8px;padding:10px;border:1px solid #334155}
+.ctrl-group{display:flex;flex-direction:column;gap:2px}
+.ctrl-group label{font-size:11px;color:#94a3b8}
+.ctrl-group .val{color:#fbbf24;font-size:12px;font-weight:700}
+.ctrl-group .hint{font-size:9px;color:#475569}
+input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer}
+.full{grid-column:1/-1}
+.mode-group{display:flex;gap:6px}
+.mode-btn{flex:1;background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:5px;font-size:11px;cursor:pointer;text-align:center;transition:all .15s}
+.mode-btn.active{background:#3b82f6;color:#fff;border-color:#3b82f6;font-weight:700}
+.info-row{display:flex;gap:10px;justify-content:center;margin-top:6px;font-size:12px;color:#94a3b8;flex-wrap:wrap}
+.info-row span{background:#1e293b;padding:4px 10px;border-radius:4px;border:1px solid #334155}
+.info-row .ph-val{color:#22c55e;font-weight:700;font-size:14px}
+.info-row .eq-val{color:#f59e0b;font-weight:700}
+.info-row .state{font-weight:700}
+.state-acid{color:#ef4444}
+.state-base{color:#3b82f6}
+.state-neutral{color:#22c55e}
+.badge{display:inline-block;background:#1e293b;color:#fbbf24;border:1px solid #334155;border-radius:4px;padding:2px 8px;font-size:11px;text-align:center;direction:ltr}
+@media(max-width:500px){.controls{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>محاكاة تفاعلية: المعايرة حمض-أساس</h1>
+
+<div class="canvas-wrap">
+  <canvas id="mainCanvas" width="700" height="380"></canvas>
+</div>
+
+<div class="controls">
+  <div class="ctrl-group">
+    <label>الحجم المضاف من الأساس: <span class="val" id="volVal">0.0</span> mL</label>
+    <input type="range" id="volSlider" min="0" max="50" step="0.1" value="0">
+    <div style="display:flex;justify-content:space-between;font-size:9px;color:#475569"><span>0 mL</span><span>50 mL</span></div>
+  </div>
+  <div class="ctrl-group">
+    <label>تركيز الحمض (C<sub>a</sub>): <span class="val" id="caVal">0.10</span> mol/L</label>
+    <input type="range" id="caSlider" min="0.01" max="0.50" step="0.01" value="0.10">
+  </div>
+  <div class="ctrl-group">
+    <label>تركيز الأساس (C<sub>b</sub>): <span class="val" id="cbVal">0.10</span> mol/L</label>
+    <input type="range" id="cbSlider" min="0.01" max="0.50" step="0.01" value="0.10">
+  </div>
+  <div class="ctrl-group">
+    <label>حجم الحمض (V<sub>a</sub>): <span class="val" id="vaVal">20.0</span> mL</label>
+    <input type="range" id="vaSlider" min="5" max="50" step="0.5" value="20">
+  </div>
+  <div class="ctrl-group full">
+    <label>نوع المعايرة:</label>
+    <div class="mode-group">
+      <button class="mode-btn active" data-mode="ss" id="modeSS">حمض قوي / أساس قوي</button>
+      <button class="mode-btn" data-mode="sw" id="modeSW">حمض قوي / أساس ضعيف</button>
+      <button class="mode-btn" data-mode="ws" id="modeWS">حمض ضعيف / أساس قوي</button>
+    </div>
+  </div>
+</div>
+
+<div class="info-row">
+  <span>pH = <span class="ph-val" id="phDisplay">1.00</span></span>
+  <span>نقطة التكافؤ: <span class="eq-val" id="eqDisplay">20.0</span> mL</span>
+  <span>الحالة: <span class="state" id="stateDisplay">حمضي</span></span>
+  <span class="badge" id="volAddedBadge">المضاف: 0.0 mL</span>
+</div>
+</div>
+
+<script>
+const canvas = document.getElementById('mainCanvas');
+const ctx = canvas.getContext('2d');
+
+const volSlider = document.getElementById('volSlider');
+const caSlider = document.getElementById('caSlider');
+const cbSlider = document.getElementById('cbSlider');
+const vaSlider = document.getElementById('vaSlider');
+const modeBtns = document.querySelectorAll('.mode-btn');
+const volVal = document.getElementById('volVal');
+const caVal = document.getElementById('caVal');
+const cbVal = document.getElementById('cbVal');
+const vaVal = document.getElementById('vaVal');
+const phDisplay = document.getElementById('phDisplay');
+const eqDisplay = document.getElementById('eqDisplay');
+const stateDisplay = document.getElementById('stateDisplay');
+const volAddedBadge = document.getElementById('volAddedBadge');
+
+let mode = 'ss'; // ss=strong/strong, sw=strong/weak, ws=weak/strong
+// Weak acid pKa for CH3COOH
+const pKa = 4.76;
+const pKb = 4.75; // for NH3
+
+function computePH(Vb, Va, Ca, Cb, mode) {
+  Vb = parseFloat(Vb);
+  Va = parseFloat(Va);
+  Ca = parseFloat(Ca);
+  Cb = parseFloat(Cb);
+  const Vtotal = (Va + Vb) / 1000; // in L
+  const n_a = Ca * Va / 1000; // moles of acid
+  const n_b = Cb * Vb / 1000; // moles of base added
+  const Veq = Ca * Va / Cb; // equivalence volume
+
+  if (Vb <= 0) {
+    if (mode === 'ss' || mode === 'sw') {
+      return { pH: -Math.log10(Ca), Veq, state: 'حمضي' };
+    } else {
+      // weak acid
+      const H = Math.sqrt(Ca * Math.pow(10, -pKa));
+      return { pH: -Math.log10(H), Veq, state: 'حمضي' };
+    }
+  }
+
+  if (Math.abs(Vb - Veq) < 0.001) {
+    if (mode === 'ss') return { pH: 7.00, Veq, state: 'متعادل' };
+    if (mode === 'sw') {
+      // strong acid / weak base -> salt of weak base, acidic
+      const C_salt = n_a / Vtotal;
+      const H = Math.sqrt(Math.pow(10, -14) / Math.pow(10, -pKb) * C_salt);
+      return { pH: -Math.log10(H), Veq, state: 'حمضي' };
+    }
+    if (mode === 'ws') {
+      // weak acid / strong base -> salt of weak acid, basic
+      const C_salt = n_a / Vtotal;
+      const OH = Math.sqrt(Math.pow(10, -14) / Math.pow(10, -pKa) * C_salt);
+      return { pH: 14 + Math.log10(OH), Veq, state: 'قاعدي' };
+    }
+  }
+
+  if (Vb < Veq) {
+    // Before equivalence: excess acid
+    const n_excess = n_a - n_b;
+    if (mode === 'ss' || mode === 'sw') {
+      const H = n_excess / Vtotal;
+      return { pH: -Math.log10(H), Veq, state: 'حمضي' };
+    } else if (mode === 'ws') {
+      // Buffer region: HA + OH- -> A- + H2O
+      const n_A = n_b;
+      const n_HA = n_a - n_b;
+      const pH = pKa + Math.log10(n_A / n_HA);
+      return { pH, Veq, state: 'حمضي' };
+    }
+  } else {
+    // After equivalence: excess base
+    const n_excess = n_b - n_a;
+    if (mode === 'ss' || mode === 'ws') {
+      const OH = n_excess / Vtotal;
+      return { pH: 14 + Math.log10(OH), Veq, state: 'قاعدي' };
+    } else if (mode === 'sw') {
+      // Weak base excess (e.g. NH3)
+      const Cb_excess = n_excess / Vtotal;
+      const Kb = Math.pow(10, -pKb);
+      const OH = Math.sqrt(Kb * Cb_excess);
+      return { pH: 14 + Math.log10(OH), Veq, state: 'قاعدي' };
+    }
+  }
+  return { pH: 7, Veq, state: 'متعادل' };
+}
+
+function getIndicatorColor(pH) {
+  if (pH < 3.1) return '#ef4444';
+  if (pH < 4.4) return '#f97316';
+  if (pH < 7.0) return '#eab308';
+  if (pH < 8.2) return '#22c55e';
+  if (pH < 10.0) return '#3b82f6';
+  return '#8b5cf6';
+}
+
+function getWaterColor(pH) {
+  // Gradual color based on pH
+  if (pH < 2) return 'rgba(239,68,68,0.25)';
+  if (pH < 4) return 'rgba(239,68,68,0.12)';
+  if (pH < 6) return 'rgba(234,179,8,0.08)';
+  if (pH < 8) return 'rgba(34,197,94,0.04)';
+  if (pH < 10) return 'rgba(59,130,246,0.10)';
+  if (pH < 12) return 'rgba(59,130,246,0.20)';
+  return 'rgba(139,92,246,0.25)';
+}
+
+function update() {
+  const Vb = parseFloat(volSlider.value);
+  const Va = parseFloat(vaSlider.value);
+  const Ca = parseFloat(caSlider.value);
+  const Cb = parseFloat(cbSlider.value);
+
+  const result = computePH(Vb, Va, Ca, Cb, mode);
+  const pH = Math.max(0, Math.min(14, result.pH));
+  const Veq = result.Veq;
+
+  volVal.textContent = Vb.toFixed(1);
+  caVal.textContent = Ca.toFixed(2);
+  cbVal.textContent = Cb.toFixed(2);
+  vaVal.textContent = Va.toFixed(1);
+  phDisplay.textContent = pH.toFixed(2);
+  eqDisplay.textContent = Veq.toFixed(1);
+  stateDisplay.textContent = result.state;
+  stateDisplay.className = 'state ' + (result.state === 'حمضي' ? 'state-acid' : result.state === 'قاعدي' ? 'state-base' : 'state-neutral');
+  volAddedBadge.textContent = 'المضاف: ' + Vb.toFixed(1) + ' mL';
+
+  draw(pH, Vb, Veq);
+}
+
+function draw(pH, Vb, Veq) {
+  const w = 700, h = 380;
+  ctx.clearRect(0, 0, w, h);
+
+  // Layout: left side (0-250) burette + beaker, right side (250-690) curve
+  const curveL = 260, curveR = 690, curveT = 15, curveB = 270;
+  const curveW = curveR - curveL;
+  const curveH = curveB - curveT;
+
+  // Background
+  ctx.fillStyle = '#0f172a';
+  ctx.fillRect(0, 0, w, h);
+  ctx.fillStyle = '#1e293b';
+  ctx.fillRect(curveL, curveT, curveW, curveH);
+
+  // ---- LEFT: Burette + Beaker ----
+  drawBurette(pH, Vb, Veq);
+
+  // ---- RIGHT: pH Curve ----
+  drawPHCurve(curveL, curveT, curveW, curveH, pH, Vb, Veq);
+
+  // ---- Bottom info bar ----
+  drawInfoBar(h, pH, Vb, Veq);
+}
+
+function drawBurette(pH, Vb, Veq) {
+  // Burette (left side, top)
+  const bx = 70, by = 25, bw = 36, bh = 140;
+  ctx.fillStyle = '#1e293b';
+  ctx.beginPath();
+  ctx.roundRect(bx, by, bw, bh, 4);
+  ctx.fill();
+  ctx.strokeStyle = '#475569';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  // Burette liquid level
+  const maxV = 50;
+  const fillH = (Vb / maxV) * (bh - 12);
+  const ligY = by + bh - 6 - fillH;
+  ctx.fillStyle = '#93c5fd66';
+  ctx.beginPath();
+  ctx.roundRect(bx + 3, ligY, bw - 6, fillH, [0, 0, 2, 2]);
+  ctx.fill();
+
+  // Burette tip
+  ctx.fillStyle = '#475569';
+  ctx.fillRect(bx + bw / 2 - 4, by + bh, 8, 16);
+  ctx.fillRect(bx + bw / 2 - 3, by + bh + 14, 6, 8);
+  ctx.fillStyle = '#334155';
+  ctx.fillRect(bx + bw / 2 - 1, by + bh + 20, 2, 8);
+
+  // Burette label
+  ctx.fillStyle = '#94a3b8';
+  ctx.font = '9px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('الأساس', bx + bw / 2, by - 6);
+
+  // Burette volume marks
+  ctx.fillStyle = '#475569';
+  ctx.font = '7px sans-serif';
+  for (let i = 0; i <= 5; i++) {
+    const y = by + 8 + (bh - 16) * (i / 5);
+    ctx.fillRect(bx + bw, y, 5, 0.5);
+    ctx.fillText((maxV * (1 - i / 5)).toFixed(0), bx + bw + 8, y + 3);
+  }
+
+  // Beaker (below burette)
+  const bex = bx - 15, bey = by + bh + 40, bew = bw + 30, beh = 68;
+  const waterTop = bey + 14;
+
+  // Beaker outline
+  ctx.strokeStyle = '#475569';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.moveTo(bex, bey);
+  ctx.lineTo(bex, bey + beh);
+  ctx.lineTo(bex + bew, bey + beh);
+  ctx.lineTo(bex + bew, bey);
+  ctx.stroke();
+
+  // Water in beaker
+  const watCol = getWaterColor(pH);
+  ctx.fillStyle = watCol;
+  ctx.beginPath();
+  ctx.moveTo(bex + 2, waterTop);
+  ctx.lineTo(bex + 2, bey + beh - 2);
+  ctx.lineTo(bex + bew - 2, bey + beh - 2);
+  ctx.lineTo(bex + bew - 2, waterTop);
+  ctx.closePath();
+  ctx.fill();
+
+  // Water surface
+  ctx.strokeStyle = watCol.replace('0.25', '0.5').replace('0.20', '0.4').replace('0.12', '0.3').replace('0.10', '0.3').replace('0.08', '0.2').replace('0.04', '0.15');
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  const waveAmp = 2;
+  for (let x = bex + 2; x <= bex + bew - 2; x++) {
+    const wy = waterTop + Math.sin((x + Vb * 20) * 0.15) * waveAmp;
+    x === bex + 2 ? ctx.moveTo(x, wy) : ctx.lineTo(x, wy);
+  }
+  ctx.stroke();
+
+  // pH meter display
+  ctx.fillStyle = '#0f172a';
+  ctx.beginPath();
+  ctx.roundRect(bex + 8, bey + beh + 6, bew - 16, 22, 4);
+  ctx.fill();
+  ctx.strokeStyle = '#334155';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+  ctx.fillStyle = '#22c55e';
+  ctx.font = 'bold 13px monospace';
+  ctx.textAlign = 'center';
+  ctx.fillText('pH ' + pH.toFixed(2), bex + bew / 2, bey + beh + 22);
+
+  // Beaker label
+  ctx.fillStyle = '#94a3b8';
+  ctx.font = '9px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('الحمض + كاشف', bex + bew / 2, bey - 6);
+
+  // Drop animation (if adding)
+  if (Vb > 0) {
+    const dropY = by + bh + 20 + Math.sin(Vb * 5) * 6;
+    ctx.fillStyle = '#93c5fd';
+    ctx.beginPath();
+    ctx.arc(bx + bw / 2, dropY, 2.5, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function drawPHCurve(lx, ly, cw, ch, pH, Vb, Veq) {
+  // Axis
+  ctx.strokeStyle = '#475569';
+  ctx.lineWidth = 0.5;
+  ctx.beginPath();
+  ctx.moveTo(lx + 30, ly + 6);
+  ctx.lineTo(lx + 30, ly + ch - 4);
+  ctx.lineTo(lx + cw, ly + ch - 4);
+  ctx.stroke();
+
+  // Y-axis labels (pH)
+  ctx.fillStyle = '#64748b';
+  ctx.font = '8px sans-serif';
+  ctx.textAlign = 'right';
+  for (let i = 0; i <= 14; i += 2) {
+    const y = ly + ch - 8 - (i / 14) * (ch - 16);
+    if (y >= ly + 6 && y <= ly + ch - 4) {
+      ctx.fillText(i, lx + 26, y + 3);
+      ctx.beginPath();
+      ctx.moveTo(lx + 30, y);
+      ctx.lineTo(lx + cw, y);
+      ctx.strokeStyle = '#1e293b';
+      ctx.stroke();
+      ctx.strokeStyle = '#475569';
+    }
+  }
+
+  // X-axis labels (volume)
+  ctx.textAlign = 'center';
+  for (let i = 0; i <= 50; i += 10) {
+    const x = lx + 30 + (i / 50) * (cw - 30);
+    if (x >= lx + 30 && x <= lx + cw) {
+      ctx.fillText(i, x, ly + ch + 10);
+      ctx.beginPath();
+      ctx.moveTo(x, ly + ch - 4);
+      ctx.lineTo(x, ly + 6);
+      ctx.strokeStyle = '#1e293b';
+      ctx.stroke();
+      ctx.strokeStyle = '#475569';
+    }
+  }
+
+  // Axis labels
+  ctx.fillStyle = '#64748b';
+  ctx.font = '8px sans-serif';
+  ctx.textAlign = 'right';
+  ctx.fillText('pH', lx + cw - 2, ly + 10);
+  ctx.textAlign = 'center';
+  ctx.fillText('V (mL)', lx + 30 + (cw - 30) / 2, ly + ch + 22);
+
+  // Draw curve
+  const Va = parseFloat(vaSlider.value);
+  const Ca = parseFloat(caSlider.value);
+  const Cb = parseFloat(cbSlider.value);
+
+  ctx.strokeStyle = '#22c55e';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  let first = true;
+
+  // Draw curve at high resolution; don't exceed many samples
+  for (let v = 0; v <= 50; v += 0.2) {
+    const res = computePH(v, Va, Ca, Cb, mode);
+    const ph = Math.max(0, Math.min(14, res.pH));
+    const x = lx + 30 + (v / 50) * (cw - 30);
+    const y = ly + ch - 8 - (ph / 14) * (ch - 16);
+    if (x >= lx + 30 && x <= lx + cw && y >= ly + 4 && y <= ly + ch) {
+      if (first) { ctx.moveTo(x, y); first = false; }
+      else ctx.lineTo(x, y);
+    }
+  }
+  ctx.stroke();
+
+  // Current point marker
+  const curRes = computePH(Vb, Va, Ca, Cb, mode);
+  const curPH = Math.max(0, Math.min(14, curRes.pH));
+  const cx = lx + 30 + (Vb / 50) * (cw - 30);
+  const cy = ly + ch - 8 - (curPH / 14) * (ch - 16);
+  if (cx >= lx + 30 && cx <= lx + cw && cy >= ly + 4 && cy <= ly + ch) {
+    ctx.fillStyle = '#f59e0b';
+    ctx.beginPath();
+    ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#000';
+    ctx.beginPath();
+    ctx.arc(cx, cy, 2.5, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  // Equivalence point marker
+  const ex = lx + 30 + (Veq / 50) * (cw - 30);
+  if (ex >= lx + 30 && ex <= lx + cw) {
+    ctx.strokeStyle = '#f59e0b';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 3]);
+    ctx.beginPath();
+    ctx.moveTo(ex, ly + 6);
+    ctx.lineTo(ex, ly + ch - 4);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#f59e0b';
+    ctx.font = '8px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('V_eq=' + Veq.toFixed(1) + ' mL', ex, ly + ch + 2);
+  }
+}
+
+function drawInfoBar(h, pH, Vb, Veq) {
+  // Progress bar showing titration progress
+  const px = 10, py = h - 20, pw = 230, ph = 12;
+  ctx.fillStyle = '#1e293b';
+  ctx.beginPath();
+  ctx.roundRect(px, py, pw, ph, 6);
+  ctx.fill();
+  const prog = Math.min(Vb / (Veq * 2), 1);
+  ctx.fillStyle = prog < 0.5 ? '#3b82f6' : '#22c55e';
+  ctx.beginPath();
+  ctx.roundRect(px + 2, py + 2, (pw - 4) * Math.min(Vb / (Veq * 2), 1), ph - 4, 4);
+  ctx.fill();
+  ctx.fillStyle = '#94a3b8';
+  ctx.font = '8px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('التقدم', px + pw / 2, py + 10);
+
+  // Color legend
+  const lx = 260, ly = h - 20;
+  ctx.fillStyle = '#ef4444';
+  ctx.beginPath();
+  ctx.arc(lx, ly + 5, 5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#94a3b8';
+  ctx.font = '8px sans-serif';
+  ctx.textAlign = 'right';
+  ctx.fillText('حمضي', lx - 8, ly + 9);
+
+  ctx.fillStyle = '#22c55e';
+  ctx.beginPath();
+  ctx.arc(lx + 50, ly + 5, 5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#94a3b8';
+  ctx.fillText('متعادل', lx + 42, ly + 9);
+
+  ctx.fillStyle = '#3b82f6';
+  ctx.beginPath();
+  ctx.arc(lx + 100, ly + 5, 5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#94a3b8';
+  ctx.fillText('قاعدي', lx + 92, ly + 9);
+}
+
+function updateMode(m) {
+  mode = m;
+  modeBtns.forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === m);
+  });
+  update();
+}
+
+volSlider.addEventListener('input', update);
+caSlider.addEventListener('input', update);
+cbSlider.addEventListener('input', update);
+vaSlider.addEventListener('input', update);
+modeBtns.forEach(btn => {
+  btn.addEventListener('click', () => updateMode(btn.dataset.mode));
+});
+
+// Polyfill roundRect
+if (!CanvasRenderingContext2D.prototype.roundRect) {
+  CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, radii) {
+    const r = Array.isArray(radii) ? radii : [radii, radii, radii, radii];
+    const [tl, tr, br, bl] = r.map(v => Math.min(v || 0, Math.min(w, h) / 2));
+    this.moveTo(x + tl, y);
+    this.lineTo(x + w - tr, y);
+    this.quadraticCurveTo(x + w, y, x + w, y + tr);
+    this.lineTo(x + w, y + h - br);
+    this.quadraticCurveTo(x + w, y + h, x + w - br, y + h);
+    this.lineTo(x + bl, y + h);
+    this.quadraticCurveTo(x, y + h, x, y + h - bl);
+    this.lineTo(x, y + tl);
+    this.quadraticCurveTo(x, y, x + tl, y);
+    this.closePath();
+  };
+}
+
+update();
+</script>
+</body>
+</html>

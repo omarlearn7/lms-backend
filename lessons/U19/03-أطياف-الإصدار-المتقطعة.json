@@ -1,0 +1,128 @@
+{
+  "title": "أطياف الإصدار المتقطعة",
+  "slug": "أطياف-الإصدار-المتقطعة",
+  "description": "أطياف الخطوط الصادرة عن الغازات تحت ضغط منخفض",
+  "category_id": 2,
+  "unit_id": 19,
+  "grade_level": "سنة أولى ثانوي",
+  "order_index": 3,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "1) طيف الإصدار المتقطع",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "طيف الإصدار المتقطع هو الطيف الذي لا نشاهد فيه كل ألوان الطيف المستمر، فهو يتألف من عدد محدود من الخطوط الملونة، أي من الإشعاعات وحيدة اللون المتقطعة."
+    },
+    {
+      "type": "heading",
+      "text": "2) مصدر أطياف الإصدار المتقطعة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "تنتج أطياف الإصدار المتقطعة عن الغازات الموجودة تحت ضغط منخفض، هذه الغازات يمكن أن تكون غازات خاملة مثل الهيليوم He والنيون Ne، أو أبعرة المعادن مثل الليثيوم Li والصوديوم Na والزئبق Hg."
+    },
+    {
+      "type": "heading",
+      "text": "3) مميزات الطيف المتقطع",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "يتعلق عدد الخطوط وشدة إضاءتها بطبيعة العنصر الكيميائي الذي يصدر هذا الضوء، فلكل عنصر مجموعة خطوط مميزة تكون بمثابة بصمته الخاصة."
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "تستعمل أنابيب جيسلر التي تحتوي على غاز أو بخار معدن تحت ضغط منخفض ومثارة بتوتر كهربائي مرتفع للحصول على أطياف الإصدار المتقطعة للأغازات والأبخرة."
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "طيف الإصدار المتقطع يتكون من:",
+      "input_type": "mcq",
+      "options": [
+        "عدد محدود من الخطوط الملونة",
+        "عدد لا متناه من الإشعاعات المتصلة",
+        "خطوط سوداء على خلفية ملوّنة"
+      ],
+      "answer": {
+        "value": "عدد محدود من الخطوط الملونة"
+      },
+      "solution": "الطيف المتقطع يتألف من عدد محدود من الخطوط الملونة المتقطعة."
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "أطياف الإصدار المتقطعة تصدر عن:",
+      "input_type": "mcq",
+      "options": [
+        "الغازات تحت ضغط منخفض",
+        "الأجسام الصلبة المتوهجة",
+        "السوائل المسخنة"
+      ],
+      "answer": {
+        "value": "الغازات تحت ضغط منخفض"
+      },
+      "solution": "الغازات تحت ضغط منخفض تعطي أطياف إصدار متقطعة."
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "عدد خطوط الطيف المتقطع وشدة إضاءتها تتعلق بـ:",
+      "input_type": "mcq",
+      "options": [
+        "طبيعة العنصر الكيميائي الصادر للضوء",
+        "حجم الأنبوب",
+        "نوع المطياف فقط"
+      ],
+      "answer": {
+        "value": "طبيعة العنصر الكيميائي الصادر للضوء"
+      },
+      "solution": "عدد الخطوط وشدة إضاءتها تعتمدان على طبيعة العنصر الكيميائي."
+    },
+    {
+      "type": "question",
+      "number": 4,
+      "text": "أحد الأمثلة على غاز يعطي طيفاً متقطعاً هو:",
+      "input_type": "mcq",
+      "options": [
+        "الهيليوم He",
+        "الهواء",
+        "بخار الماء في الجو"
+      ],
+      "answer": {
+        "value": "الهيليوم He"
+      },
+      "solution": "الغازات الخاملة مثل الهيليوم والنيون تحت ضغط منخفض تعطي أطيافاً متقطعة."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "طيف الإصدار المتقطع يتكون من خطوط ملونة محدودة تصدر عن الغازات تحت ضغط منخفض (غازات خاملة أو أبخرة معادن)، وعدد خطوطه يعتمد على طبيعة العنصر الكيميائي."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة أطياف الإصدار والامتصاص المتقطعة",
+        "width": 720,
+        "height": 470
+      },
+      "html": " <div id=\"specWrap\">\n  <canvas id=\"specCanvas\" width=\"720\" height=\"400\"></canvas>\n  <div id=\"specControls\">\n    <div class=\"sp-row\" id=\"emitRows\">\n      <span>المستوى الأعلى n₂</span><input type=\"range\" id=\"nhSlider\" min=\"2\" max=\"6\" value=\"3\" step=\"1\"><span id=\"nhVal\">3</span>\n      <span>المستوى الأدنى n₁</span><input type=\"range\" id=\"nlSlider\" min=\"1\" max=\"5\" value=\"2\" step=\"1\"><span id=\"nlVal\">2</span>\n    </div>\n    <div class=\"sp-row\" id=\"absRows\" style=\"display:none\">\n      <span>طاقة الفوتون E (eV)</span><input type=\"range\" id=\"eSlider\" min=\"1.5\" max=\"13.6\" value=\"3.0\" step=\"0.1\"><span id=\"eVal\">3.0</span>\n    </div>\n    <div id=\"specOut\">إصدار: ΔE = 1.89 eV | λ = 656.3 nm (أحمر)</div>\n    <button id=\"modeBtn\">وضع الامتصاص</button>\n    <button id=\"playBtn\">تشغيل الانتقال</button>\n  </div>\n</div>\n",
+      "css": "#specWrap{font-family:inherit;direction:rtl;text-align:center}\n#specCanvas{border:1px solid #334155;border-radius:8px;background:#0b1020}\n#specControls{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:center}\n.sp-row{display:flex;align-items:center;gap:8px;font-size:13px;color:#e2e8f0;flex-wrap:wrap;justify-content:center}\n.sp-row span:first-child{font-weight:bold}\n.sp-row span:not(:first-child){width:40px;text-align:center;font-weight:bold;color:#fbbf24}\ninput[type=range]{width:140px}\n#specOut{padding:6px 12px;background:#0f172a;border:1px solid #155e75;border-radius:8px;font-size:13px;color:#67e8f9;direction:rtl}\nbutton{padding:6px 16px;border:none;border-radius:8px;background:#0891b2;color:#fff;font-size:14px;cursor:pointer;margin:0 4px}\n",
+      "js": "(function(){\n  if (window.__specInstalled__) return;\n  window.__specInstalled__ = true;\n  var canvas = document.getElementById('specCanvas');\n  var ctx = canvas.getContext('2d');\n  var nhSlider = document.getElementById('nhSlider');\n  var nhVal = document.getElementById('nhVal');\n  var nlSlider = document.getElementById('nlSlider');\n  var nlVal = document.getElementById('nlVal');\n  var eSlider = document.getElementById('eSlider');\n  var eVal = document.getElementById('eVal');\n  var out = document.getElementById('specOut');\n  var modeBtn = document.getElementById('modeBtn');\n  var playBtn = document.getElementById('playBtn');\n  var emitRows = document.getElementById('emitRows');\n  var absRows = document.getElementById('absRows');\n  var mode = 'emit';\n  var running = false, pulse = 0;\n  var E1 = 13.6;\n  window.simState = { mode: 'emit', nHigh: 3, nLow: 2, dE: 0, lambda: 0, running: false };\n  function En(n){ return -E1 / (n * n); }\n  function wlColor(nm){\n    var r, g, b;\n    if (nm >= 380 && nm < 440) { r = -(nm - 440) / 60; g = 0; b = 1; }\n    else if (nm >= 440 && nm < 490) { r = 0; g = (nm - 440) / 50; b = 1; }\n    else if (nm >= 490 && nm < 510) { r = 0; g = 1; b = -(nm - 510) / 20; }\n    else if (nm >= 510 && nm < 580) { r = (nm - 510) / 70; g = 1; b = 0; }\n    else if (nm >= 580 && nm < 645) { r = 1; g = -(nm - 645) / 65; b = 0; }\n    else if (nm >= 645 && nm <= 760) { r = 1; g = 0; b = 0; }\n    else { r = 1; g = 1; b = 1; }\n    return 'rgb(' + Math.round(r * 255) + ',' + Math.round(g * 255) + ',' + Math.round(b * 255) + ')';\n  }\n  function rainbow(x, y, w, h){\n    var grad = ctx.createLinearGradient(x, 0, x + w, 0);\n    grad.addColorStop(0, wlColor(380));\n    grad.addColorStop(0.2, wlColor(450));\n    grad.addColorStop(0.4, wlColor(500));\n    grad.addColorStop(0.6, wlColor(560));\n    grad.addColorStop(0.8, wlColor(640));\n    grad.addColorStop(1, wlColor(760));\n    ctx.fillStyle = grad;\n    ctx.fillRect(x, y, w, h);\n  }\n  function nmToX(nm){ return 50 + ((nm - 380) / 380) * (canvas.width - 100); }\n  function drawLevels(nHigh, nLow){\n    var x0 = 60, w = 240;\n    var topY = 40, bottomY = 300;\n    var yOf = function(n){ return bottomY - ((E1 - E1 / (n * n)) / E1) * (bottomY - topY); };\n    ctx.strokeStyle = '#64748b'; ctx.lineWidth = 1.5;\n    for (var n = 1; n <= 6; n++) {\n      var y = yOf(n);\n      ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x0 + w, y); ctx.stroke();\n      ctx.fillStyle = '#94a3b8'; ctx.font = '12px sans-serif';\n      ctx.textAlign = 'right'; ctx.textBaseline = 'middle';\n      ctx.fillText('n=' + n + '  E=' + En(n).toFixed(2) + ' eV', x0 - 8, y);\n    }\n    var y1 = yOf(nLow), y2 = yOf(nHigh);\n    ctx.strokeStyle = '#f59e0b'; ctx.lineWidth = 2.5;\n    ctx.beginPath(); ctx.moveTo(x0 + w / 2, y2); ctx.lineTo(x0 + w / 2, y1); ctx.stroke();\n    ctx.fillStyle = '#f59e0b';\n    ctx.beginPath();\n    var tipY = mode === 'emit' ? y1 : y2;\n    ctx.moveTo(x0 + w / 2, tipY);\n    ctx.lineTo(x0 + w / 2 - 7, tipY + (mode === 'emit' ? -7 : 7));\n    ctx.lineTo(x0 + w / 2 + 7, tipY + (mode === 'emit' ? -7 : 7));\n    ctx.closePath(); ctx.fill();\n    if (running) {\n      var fromY = mode === 'emit' ? y2 : y1;\n      var toY = mode === 'emit' ? y1 : y2;\n      var py = fromY + (toY - fromY) * ((pulse % 1) + 1) % 1;\n      ctx.fillStyle = '#fff';\n      ctx.beginPath(); ctx.arc(x0 + w / 2, py, 5, 0, Math.PI * 2); ctx.fill();\n    }\n  }\n  function drawEmit(){\n    var nh = parseInt(nhSlider.value), nl = parseInt(nlSlider.value);\n    if (nl >= nh) { nl = nh - 1; nlSlider.value = nl; }\n    var dE = E1 * (1 / (nl * nl) - 1 / (nh * nh));\n    var lambda = 1240 / dE;\n    drawLevels(nh, nl);\n    var sy = 330, sh = 24;\n    rainbow(50, sy, canvas.width - 100, sh);\n    ctx.strokeStyle = '#cbd5e1'; ctx.lineWidth = 2;\n    ctx.strokeRect(50, sy, canvas.width - 100, sh);\n    var inVis = lambda >= 380 && lambda <= 760;\n    var lx = inVis ? nmToX(lambda) : (lambda < 380 ? 50 : canvas.width - 50);\n    ctx.strokeStyle = '#fff'; ctx.lineWidth = 3;\n    ctx.beginPath(); ctx.moveTo(lx, sy - 6); ctx.lineTo(lx, sy + sh + 6); ctx.stroke();\n    var colName = inVis ? (lambda < 490 ? 'بنفسجي/أزرق' : lambda < 570 ? 'أخضر' : lambda < 610 ? 'أصفر' : 'أحمر') : (lambda < 380 ? 'تحت البنفسجي UV' : 'تحت الأحمر IR');\n    out.textContent = 'إصدار: ΔE = ' + dE.toFixed(2) + ' eV | λ = ' + lambda.toFixed(0) + ' nm (' + colName + ')';\n    window.simState.nHigh = nh; window.simState.nLow = nl;\n    window.simState.dE = dE; window.simState.lambda = lambda;\n    nhVal.textContent = nh;\n    nlVal.textContent = nl;\n  }\n  function drawAbsorb(){\n    var E = parseFloat(eSlider.value);\n    var nl = parseInt(nlSlider.value);\n    var best = null, bestD = 1e9;\n    for (var n = nl + 1; n <= 6; n++) {\n      var dE = E1 * (1 / (nl * nl) - 1 / (n * n));\n      if (Math.abs(dE - E) < bestD) { bestD = Math.abs(dE - E); best = n; }\n    }\n    var absorbed = bestD < 0.06 && best;\n    var dE = absorbed ? E1 * (1 / (nl * nl) - 1 / (best * best)) : E;\n    var lambda = 1240 / dE;\n    if (absorbed) drawLevels(best, nl); else drawLevels(2, nl);\n    var sy = 330, sh = 24;\n    rainbow(50, sy, canvas.width - 100, sh);\n    var wls = [410, 434, 486, 656];\n    for (var i = 0; i < wls.length; i++) {\n      ctx.strokeStyle = '#000'; ctx.lineWidth = 4;\n      var dx = nmToX(wls[i]);\n      ctx.beginPath(); ctx.moveTo(dx, sy - 4); ctx.lineTo(dx, sy + sh + 4); ctx.stroke();\n    }\n    ctx.strokeStyle = '#cbd5e1'; ctx.lineWidth = 2;\n    ctx.strokeRect(50, sy, canvas.width - 100, sh);\n    if (absorbed) {\n      ctx.fillStyle = '#fff'; ctx.font = 'bold 12px sans-serif';\n      ctx.textAlign = 'center'; ctx.textBaseline = 'top';\n      ctx.fillText('فوتون ممتص', nmToX(lambda), sy + sh + 8);\n    }\n    out.textContent = absorbed\n      ? 'امتصاص: الفوتون (E=' + E.toFixed(2) + ' eV) ينقل الإلكترون من n=' + nl + ' إلى n=' + best + ' | λ = ' + lambda.toFixed(0) + ' nm'\n      : 'لا امتصاص: طاقة الفوتون (' + E.toFixed(2) + ' eV) لا تطابق أي انتقال من n=' + nl;\n    window.simState.dE = dE; window.simState.lambda = lambda;\n    eVal.textContent = E.toFixed(1);\n  }\n  function draw(){\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    ctx.fillStyle = '#0b1020'; ctx.fillRect(0, 0, canvas.width, canvas.height);\n    if (mode === 'emit') drawEmit(); else drawAbsorb();\n  }\n  modeBtn.addEventListener('click', function(){\n    mode = mode === 'emit' ? 'abs' : 'emit';\n    window.simState.mode = mode;\n    modeBtn.textContent = mode === 'emit' ? 'وضع الامتصاص' : 'وضع الإصدار';\n    emitRows.style.display = mode === 'emit' ? 'flex' : 'none';\n    absRows.style.display = mode === 'emit' ? 'none' : 'flex';\n    out.textContent = '';\n  });\n  playBtn.addEventListener('click', function(){\n    running = !running;\n    window.simState.running = running;\n    playBtn.textContent = running ? 'إيقاف' : 'تشغيل الانتقال';\n  });\n  nhSlider.addEventListener('input', function(){});\n  nlSlider.addEventListener('input', function(){});\n  eSlider.addEventListener('input', function(){});\n  function fit(){ canvas.style.maxWidth = '100%'; }\n  if (!window.__fitInstalled__) { fit(); window.addEventListener('resize', fit); window.__fitInstalled__ = true; }\n  function loop(){ if (running) pulse += 0.02; draw(); requestAnimationFrame(loop); }\n  loop();\n})();\n"
+    }
+  ]
+}

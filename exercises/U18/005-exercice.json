@@ -1,0 +1,19 @@
+{
+  "unit_id": 18,
+  "title": "تمرين 005 - تفاعل الزنك مع حمض كلور الماء",
+  "order_index": 5,
+  "source": "1AS U18 - Exercice 005",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 005: تفاعل الزنك مع حمض كلور الماء" },
+      { "type": "text", "content": "لدينا محلول حمض كلور الماء حجمه V = 200 mL وتركيزه c₀ = 0.2 mol/L، نضيف إليه قطعة من الزنك كتلتها m₀، فينطلق غاز الهيدروجين بمقدار V(H₂) = 0.224 L في الشروط النظامية وفق: Zn(s) + 2H₃O⁺(aq) = Zn²⁺(aq) + H₂(g) + 2H₂O(ℓ). نعطي M(Zn) = 65 g/mol." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "كمية مادة شوارد الهيدرونيوم الابتدائية n₀(H₃O⁺) هي:", "input_type": "numeric", "answer": { "value": 0.04 }, "solution": "n₀(H₃O⁺) = c₀ × V = 0.2 × 0.2 = 0.04 mol." },
+      { "type": "question", "number": 2, "text": "التقدم الأعظمي xmax هو:", "input_type": "numeric", "answer": { "value": 0.01 }, "solution": "nf(H₂) = V/VM = 0.224/22.4 = 0.01 mol، ومن جدول التقدم nf(H₂) = xmax إذن xmax = 0.01 mol." },
+      { "type": "question", "number": 3, "text": "المتفاعل المحد هو:", "input_type": "mcq", "options": ["الزنك Zn لأن nf(H₃O⁺) = 0.02 ≠ 0", "حمض كلور الماء H₃O⁺", "لا يوجد محد"], "answer": { "value": "الزنك Zn لأن nf(H₃O⁺) = 0.02 ≠ 0" }, "solution": "nf(H₃O⁺) = 0.04 − 2 × 0.01 = 0.02 ≠ 0، إذن الزنك هو المتفاعل المحد." },
+      { "type": "question", "number": 4, "text": "الكتلة الابتدائية m₀ لقطعة الزنك هي:", "input_type": "numeric", "answer": { "value": 0.65 }, "solution": "بما أن الزنك محد: n₀(Zn) = xmax = 0.01 mol، و m₀ = 65 × 0.01 = 0.65 g." },
+      { "type": "question", "number": 5, "text": "تركيز شوارد Zn²⁺ في نهاية التفاعل هو:", "input_type": "numeric", "answer": { "value": 0.05 }, "solution": "nf(Zn²⁺) = xmax = 0.01 mol، و [Zn²⁺] = 0.01/0.2 = 0.05 mol/L." },
+      { "type": "question", "number": 6, "text": "تركيز شوارد Cl⁻ في نهاية التفاعل هو:", "input_type": "numeric", "answer": { "value": 0.2 }, "solution": "شوارد Cl⁻ لم تشارك في التفاعل، فتركيزها يبقى مساوياً c₀ = 0.2 mol/L." }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "unit_id": 4,
+  "title": "تمرين 003 - تأثير الضغط ودرجة الحرارة على التوازن الكيميائي",
+  "order_index": 3,
+  "source": "3AS U04 - Exercice 003",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 003"
+      },
+      {
+        "type": "text",
+        "content": "التفاعل التالي في حالة توازن: $\\text{N}_2\\text{O}_4 \\rightleftharpoons 2\\text{NO}_2 \\quad \\Delta H > 0$ (ماص للحرارة)."
+      },
+      {
+        "type": "table",
+        "headers": ["", "$\\text{N}_2\\text{O}_4$", "$\\text{NO}_2$"],
+        "rows": [
+          ["التركيز عند التوازن (mol/L)", "0.050", "0.200"]
+        ]
+      },
+      {
+        "type": "diagram",
+        "diagram_type": "interactive_graph",
+        "props": {
+          "chartType": "bar",
+          "data": [[0,0.050],[1,0.200]],
+          "xLabels": ["N₂O₄", "NO₂"],
+          "xLabel": "المادة",
+          "yLabel": "التركيز (mol/L)",
+          "title": "تراكيز التوازن N₂O₄ و NO₂"
+        }
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب ثابت التوازن K_c لهذا التفاعل عند درجة الحرارة T₁.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "نضغط الوعاء (ننقص الحجم). في أي اتجاه يزيح النظام التوازن؟ علل باستخدام قاعدة لوشاتيلييه.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "نرفع درجة الحرارة من T₁ إلى T₂. هل تزداد قيمة K_c أم تنقص؟ علل.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا أصبحت التراكيز الجديدة بعد تغيير الحجم: $[\\text{N}_2\\text{O}_4] = 0.080$ mol/L و $[\\text{NO}_2] = 0.120$ mol/L عند T₁. احسب K_c وتأكد مما إذا كان النظام في حالة توازن جديد أم لا.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "title": "الاضطراب والموجة الميكانيكية المتوالية",
+  "description": "مفهوم الاضطراب وأنواعه، سرعة الانتشار في الوسط المرن، تعريف الموجة الميكانيكية، التأخر الزمني مع أمثلة تطبيقية",
+  "category": "الفيزياء",
+  "category_id": 2,
+  "unit_id": 8,
+  "grade_level": "سنة ثالثة ثانوي",
+  "order_index": 1,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "الاضطراب والموجة الميكانيكية المتوالية",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>عندما نرمي حجراً في ماء هادئ، أو نهزّ طرف حبل مشدود، أو نضغط على حلقات نابض، نلاحظ <strong>اضطراباً</strong> ينطلق من موضع التأثير وينتشر في الوسط. في هذا الدرس ندرس مفهوم الاضطراب، أنواعه، سرعة انتشاره، ثم ننتقل إلى تعريف <strong>الموجة الميكانيكية المتوالية</strong> وخصائصها.</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "I - مفهوم الاضطراب (La perturbation)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الوسط المرن</strong> (Milieu élastique) هو الوسط الذي يتغير شكله نتيجة تأثير خارجي ويعود إلى شكله الأصلي عند زوال هذا التأثير، مثل: النابض، سطح سائل، الحبل المطاطي...</p>"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "تعريف الاضطراب: هو التغير المفاجئ والمحلي في وسط مرن. المكان الأول لحدوث الاضطراب يسمى المنبع (Source) — عادةً نرمز له بالحرف $S$."
+    },
+    {
+      "type": "text",
+      "content": "<p>ينتقل الاضطراب من نقطة إلى أخرى من الوسط المرن بسرعة <strong>ثابتة</strong>.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>مقدمة الاضطراب</strong> (Front) تسمى <strong>جبهة الاضطراب</strong>، وتقابلها في الجهة الثانية <strong>مؤخرة الاضطراب</strong> (ذيل الاضطراب).</p>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "II - أنواع الاضطراب",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>هناك نوعان من الاضطراب، نميّزهما بالعلاقة بين <strong>منحى الاضطراب</strong> (اتجاه حركة حلقات الوسط) و<strong>منحى الانتشار</strong>:</p>"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "النوع",
+        "الشرط",
+        "مثال"
+      ],
+      "rows": [
+        [
+          "اضطراب طولي (Longitudinal)",
+          "منحى الاضطراب موازٍ لمنحى الانتشار",
+          "ضغط حلقات نابض أفقياً — انتشار في الغازات (الصوت)"
+        ],
+        [
+          "اضطراب عرضي (Transversal)",
+          "منحى الاضطراب عمودي على منحى الانتشار",
+          "هزّ حبل مطاطي نحو الأعلى — سطح سائل"
+        ]
+      ],
+      "caption": "أنواع الاضطراب"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>مثال (1) — اضطرب طولي على طول نابض:</strong> نضغط أفقياً على بعض حلقات نابض طويل مشدود أفقياً ثم نتركها حرة، نلاحظ عودة هذه الحلقات إلى وضع توازنها محدثة ضغطاً على الحلقات المجاورة، وهكذا ينتقل الاضطراب (ضغط) طولياً. إذا باعدنا الحلقات بدل ضغطها يحدث انتشار تمدد. انتشار الاضطراب في غاز يشبه تماماً انتشار الاضطراب الطولي على النابض.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>مثال (2) — اضطراب عرضي على طول حبل:</strong> نربط طرف حبل مطاطي ونشدّه أفقياً ثم نهزّه نحو الأعلى (اضطراب شاقولي)، نلاحظ أن التشوه الشاقولي المتولد عند النهاية $S$ ينتشر أفقياً (انتشار أفقي) على طول الحبل محافظاً على شكله الابتدائي.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>مثال (3) — اضطراب عرضي على سطح سائل:</strong> نرمي حجراً في بركة ماء هادئ، نلاحظ تشكل حلقة دائرية مركزها نقطة السقوط $S$ تتسع وتتباعد أفقياً.</p>"
+    },
+    {
+      "type": "simulation",
+      "config": {
+        "title": "محاكاة تفاعلية: اضطراب طولي على نابض (ضغط وتخلخل)",
+        "height": 260
+      },
+      "html": " <div class=\"cont\"> <h1>محاكاة: اضطراب طولي على نابض (منحى الاضطراب موازٍ لمنحى الانتشار)</h1> <canvas id=\"spring\" width=\"680\" height=\"250\"></canvas> <div class=\"ctrls\"> <div class=\"row\"> <div class=\"grp wide\"><label>t: <span id=\"tVal\" class=\"vl\">0.00</span> s</label><input type=\"range\" id=\"tSld\" min=\"0\" max=\"300\" value=\"0\" step=\"1\"></div> <div class=\"grp\"><div class=\"btn\" id=\"playBtn\">▶</div></div> <div class=\"grp\"><div class=\"btn\" id=\"rstBtn\">↺</div></div> </div> <div class=\"row\"> <div class=\"grp\"><label>v: <span id=\"vVal\">2.0</span> m/s</label><input type=\"range\" id=\"vSld\" min=\"0.5\" max=\"6\" value=\"2\" step=\"0.25\"></div> <div class=\"grp\"><label>ℓ (طول النابض): <span id=\"lenVal\">8.0</span> m</label><input type=\"range\" id=\"lenSld\" min=\"4\" max=\"12\" value=\"8\" step=\"0.5\"></div> <div class=\"grp\"><label>طول الاضطراب: <span id=\"perVal\">2.0</span> m</label><input type=\"range\" id=\"perSld\" min=\"1\" max=\"5\" value=\"2\" step=\"0.25\"></div> </div> <div class=\"row stats\"> <span>مقدمة F: <b id=\"fVal\" style=\"color:#22c55e\">—</b></span> <span>ذيل Q: <b id=\"qVal\" style=\"color:#fbbf24\">—</b></span> <span>المنطقة: <b id=\"zVal\" style=\"color:#38bdf8\">—</b></span> </div> </div> </div>",
+      "css": "*{margin:0;padding:0;box-sizing:border-box}body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;padding:6px}.cont{max-width:700px;width:100%;margin:0 auto}h1{text-align:center;font-size:12px;color:#fbbf24;margin-bottom:3px}canvas{background:#0f172a;border:1px solid #334155;border-radius:6px;display:block;margin:0 auto;width:100%;max-width:680px}.ctrls{display:flex;flex-direction:column;gap:2px;margin-top:3px;background:#1e293b;border-radius:6px;padding:5px;border:1px solid #334155}.row{display:flex;gap:3px;align-items:center;flex-wrap:wrap}.grp{flex:1;min-width:70px;display:flex;flex-direction:column;gap:1px}.grp label{font-size:9px;color:#94a3b8;white-space:nowrap}.vl{color:#fbbf24;font-size:12px;font-weight:700}.grp.wide{flex:2}.btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:10px;cursor:pointer;text-align:center;min-width:40px}.btn:hover{background:#475569;color:#e2e8f0}.btn.active{background:#166534;color:#86efac;border-color:#22c55e}.stats{flex-wrap:wrap;justify-content:center;gap:10px;font-size:10px;color:#94a3b8;margin-top:1px}.stats b{font-size:11px}.cond{text-align:center;font-size:10px;color:#e2e8f0;background:#0f172a;border:1px solid #334155;border-radius:4px;padding:3px;margin-top:3px}.cond b{color:#38bdf8}input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#f59e0b;cursor:pointer}",
+      "js": " var c=document.getElementById('spring'),ctx=c.getContext('2d'); var W=680,H=250,pL=40,pR=20,pT=30,pB=20,gW=W-pL-pR,gH=H-pT-pB,axisY=pT+gH/2; var v=2,L=8,per=2,A=0.15,N=40; var simT=0,playing=false,timer=null; var scale=gW/L,rest=gW/N; function toX(x){return pL+x*scale;} function uAt(x){var f=v*simT,q=Math.max(0,f-per);if(f<=0)return 0;if(x<=q||x>=f)return 0;var uu=(x-q)/(f-q);return A*Math.sin(Math.PI*uu);} function draw(){ ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H); ctx.strokeStyle='#475569';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pL,axisY);ctx.lineTo(pL+gW,axisY);ctx.stroke(); ctx.strokeStyle='rgba(71,85,105,0.25)';ctx.lineWidth=.5; for(var i=0;i<=6;i++){var xx=pL+i*(gW/6);ctx.beginPath();ctx.moveTo(xx,pT);ctx.lineTo(xx,pT+gH);ctx.stroke();ctx.fillStyle='#64748b';ctx.font='9px sans-serif';ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText((i*2).toFixed(0),xx,pT+gH+3);} ctx.fillStyle='#94a3b8';ctx.font='9px sans-serif';ctx.textAlign='right';ctx.textBaseline='middle';ctx.fillText('x (m)',pL-4,axisY); var px=[];for(var i=0;i<=N;i++){var x=i*L/N;var u=uAt(x);px.push(toX(x+u));} var sp=[];for(var i=0;i<N;i++){sp.push(px[i+1]-px[i]);} for(var i=0;i<=N;i++){ var col='#64748b'; if(i<N&&sp[i]<rest*0.85)col='#38bdf8'; else if(i>0&&sp[i-1]>rest*1.15)col='#f8fafc'; ctx.fillStyle=col;ctx.fillRect(px[i]-2,axisY-15,4,30); } var f=v*simT,q=Math.max(0,f-per); if(f>0&&q<L){ for(var i=0;i<N;i++){if(sp[i]<rest*0.85){var j=i;while(j+1<N&&sp[j+1]<rest*0.85){j++;}var cx=(px[i]+px[j+1])/2;ctx.fillStyle='#38bdf8';ctx.font='bold 11px sans-serif';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText('ضغط',cx,axisY-17);break;}} for(var i=0;i<N;i++){if(sp[i]>rest*1.15){var j=i;while(j+1<N&&sp[j+1]>rest*1.15){j++;}var rx=(px[i]+px[j+1])/2;ctx.fillStyle='#f8fafc';ctx.font='bold 11px sans-serif';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText('تخلخل',rx,axisY-17);break;}} } if(f>0&&f<=L){var fx=toX(f);ctx.fillStyle='#22c55e';ctx.fillRect(fx-3,axisY+22,6,6);ctx.fillStyle='#22c55e';ctx.font='9px sans-serif';ctx.textBaseline='middle';ctx.fillText('مقدمة F',fx,axisY+32);} if(q>0){var qx=toX(q);ctx.fillStyle='#fbbf24';ctx.fillRect(qx-3,axisY+22,6,6);ctx.fillStyle='#fbbf24';ctx.font='9px sans-serif';ctx.textBaseline='middle';ctx.fillText('ذيل Q',qx,axisY+32);} ctx.strokeStyle='#ef4444';ctx.lineWidth=1;ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(toX(L),axisY-18);ctx.lineTo(toX(L),axisY+18);ctx.stroke();ctx.setLineDash([]); ctx.strokeStyle='#22c55e';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(pL+gW-110,axisY+52);ctx.lineTo(pL+gW-42,axisY+52);ctx.stroke(); ctx.beginPath();ctx.moveTo(pL+gW-42,axisY+52);ctx.lineTo(pL+gW-50,axisY+47);ctx.lineTo(pL+gW-50,axisY+57);ctx.closePath();ctx.fillStyle='#22c55e';ctx.fill(); ctx.fillStyle='#22c55e';ctx.font='9px sans-serif';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('منحى الانتشار →',pL+gW-42,axisY+56); } function upd(){ document.getElementById('tVal').textContent=simT.toFixed(2); document.getElementById('tSld').value=Math.round(simT*20); var f=v*simT,q=Math.max(0,f-per); document.getElementById('fVal').textContent=(f<=L)?(f.toFixed(2)+' m'):'خرج من النابض'; document.getElementById('qVal').textContent=(q>0)?(q.toFixed(2)+' m'):'لم تبدأ'; document.getElementById('zVal').textContent=(f>0&&q<L)?'ضغط ثم تخلخل':'—'; } var lastT=null;\nfunction rAFloop(){\n  if(!playing)return;\n  var now=performance.now();\n  if(lastT===null)lastT=now;\n  var dt=now-lastT;lastT=now;\n  simT+=dt*0.0004;\n  if(simT>12)simT=0;\n  draw();upd();;\n  timer=requestAnimationFrame(rAFloop);\n} function start(){if(playing)return;playing=true;lastT=null;timer=requestAnimationFrame(rAFloop);document.getElementById('playBtn').textContent='⏸';} function stop(){playing=false;if(timer)cancelAnimationFrame(timer);timer=null;document.getElementById('playBtn').textContent='▶';} document.getElementById('playBtn').onclick=function(){playing?stop():start();}; document.getElementById('rstBtn').onclick=function(){stop();simT=0;draw();upd();}; document.getElementById('tSld').oninput=function(){simT=parseFloat(this.value)/20;draw();upd();}; document.getElementById('vSld').oninput=function(){v=parseFloat(this.value);document.getElementById('vVal').textContent=v.toFixed(2);draw();}; document.getElementById('lenSld').oninput=function(){L=parseFloat(this.value);scale=gW/L;document.getElementById('lenVal').textContent=L.toFixed(1);draw();}; document.getElementById('perSld').oninput=function(){per=parseFloat(this.value);document.getElementById('perVal').textContent=per.toFixed(2);draw();}; draw();upd();;(function(){if(window.__fitInstalled__)return;window.__fitInstalled__=true;var _bw=c.width,_bh=c.height;function fit(){var dpr=window.devicePixelRatio||1;var nw=_bw*dpr,nh=_bh*dpr;if(c.width!==nw||c.height!==nh){c.width=nw;c.height=nh}ctx.setTransform(dpr,0,0,dpr,0,0);draw();upd()}window.addEventListener(\"resize\",fit);fit()})();"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "III - سرعة انتشار الاضطراب",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>سرعة انتشار الاضطراب</strong> $v$ هي سرعة انتقال الاضطراب في الوسط المرن، أي النسبة بين المسافة $d$ التي يقطعها هذا الاضطراب والمدة الزمنية $\\Delta t$ اللازمة لذلك:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "v = \\frac{d}{\\Delta t}"
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "الوحدات: $v$ بـ $m/s$، $d$ بـ $m$، $\\Delta t$ بـ $s$. الاضطراب ينتقل من نقطة إلى أخرى بسرعة ثابتة في وسط متجانس (لا تعتمد على شكل الاضطراب ولا على شدة المنبع)."
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>سرعة انتشار الاضطراب على طول حبل:</strong> تتعلق بشدة قوة توتر الحبل $T$ (بـ $N$) وبالكثافة الخطية للكتلة $\\mu$ (بـ $Kg/m$):</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "v = \\sqrt{\\frac{T}{\\mu}}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث <strong>الكثافة الخطية للكتلة</strong> $\\mu$ هي نسبة كتلة الحبل $m$ إلى طوله $L$:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\mu = \\frac{m}{L}"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "مهم: السرعة تزداد بزيادة التوتر $T$ وتنقص بزيادة الكثافة الخطية $\\mu$. في مسائل هذه الوحدة غالباً يُحسب التوتر من شرط التوازن: $T = M g$ (حبل مشدود بكتلة معلّقة)."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "IV - الموجة الميكانيكية (Onde mécanique)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الموجة الميكانيكية</strong> هي ظاهرة انتشار اضطراب (إشارة) في وسط مادي مرن <strong>دون انتقال لمادة الوسط</strong> — يبقى كل جزء من الوسط مهتزاً حول موضعه فقط، وتنتقل الطاقة والحركة.</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>الفرق بين انتشار موجة وحركة جسم صلب:</strong></p><ul><li>تنتشر الموجة في <strong>كل الاتجاهات</strong> انطلاقاً من منبعها، بينما حركة الجسم الصلب تتم وفق مسار معين.</li><li>لا يرافق انتشار موجة انتقال لمادة الوسط، بينما انتقال الجسم يتم بانتقال المادة المكونة له.</li><li>لا تنتشر الموجة الميكانيكية في <strong>الفراغ</strong>، ويكون انتشارها في الأجسام الصلبة أسرع من انتشارها في السوائل والغازات؛ بينما انتقال جسم صلب يتم بسهولة أكبر في الفراغ.</li><li>تحافظ الموجة الميكانيكية على خصائصها بعد تلاقيها بأمواج أخرى، بينما تتغير حركة الجسم الصلب عند تصادمه بأجسام أخرى.</li></ul>"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "V - التأخر الزمني (Le retard)",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "<p>كل نقطة $M$ من وسط مرن تنتشر فيه موجة بسرعة $v$ تكرر الاضطراب المتولد في المنبع $S$ وبفرق زمني يسمى <strong>التأخر الزمني</strong> $\\tau$:</p>"
+    },
+    {
+      "type": "formula",
+      "latex": "\\tau = \\frac{d}{v}"
+    },
+    {
+      "type": "text",
+      "content": "<p>حيث $d$ هي المسافة بين النقطة $M$ والمنبع $S$ ($d = SM$). الاضطراب الناتج في النقطة $M$ عند اللحظة $t = \\tau$ هو نفسه المتولد في المنبع $S$ عند اللحظة $t = 0$.</p>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "ملاحظة: نقطة من الوسط تكون ساكنة قبل لحظة بلوغ الاضطراب إليها وبعد اجتيازه لها؛ وتكون متحركة فقط أثناء اجتياز الاضطراب لها خلال المدة الزمنية اللازمة لمرور طول الاضطراب."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "محاكاة تفاعلية: انتشار اضطراب عرضي على حبل",
+      "level": 2
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة تفاعلية: انتشار اضطراب عرضي على حبل",
+        "width": 700,
+        "height": 460
+      },
+      "html": "<div class=\"cont\"><h1>محاكاة: انتشار اضطراب عرضي على حبل (v = d/Δt)</h1><canvas id=\"rope\" width=\"680\" height=\"260\"></canvas><div class=\"ctrls\"><div class=\"row\"><div class=\"grp wide\"><label>t: <span id=\"tVal\" class=\"vl\">0.00</span> s</label><input type=\"range\" id=\"tSld\" min=\"0\" max=\"300\" value=\"0\" step=\"1\"></div><div class=\"grp\"><div class=\"btn\" id=\"playBtn\">▶</div></div><div class=\"grp\"><div class=\"btn\" id=\"rstBtn\">↺</div></div></div><div class=\"row\"><div class=\"grp\"><label>v: <span id=\"vVal\">2.0</span> m/s</label><input type=\"range\" id=\"vSld\" min=\"0.5\" max=\"6\" value=\"2\" step=\"0.25\"></div><div class=\"grp\"><label>SF (طول الحبل): <span id=\"lenVal\">8.0</span> m</label><input type=\"range\" id=\"lenSld\" min=\"4\" max=\"12\" value=\"8\" step=\"0.5\"></div><div class=\"grp\"><label>L<sub>اضطراب</sub>: <span id=\"perVal\">3.0</span> m</label><input type=\"range\" id=\"perSld\" min=\"1\" max=\"6\" value=\"3\" step=\"0.25\"></div></div><div class=\"row stats\"><span>الاضطراب عند: <b id=\"dVal\" style=\"color:#38bdf8\">0.00</b> m</span><span>مقدمة: <b id=\"fVal\" style=\"color:#22c55e\">—</b></span><span>مؤخرة: <b id=\"qVal\" style=\"color:#fbbf24\">—</b></span></div></div></div>",
+      "css": "*{margin:0;padding:0;box-sizing:border-box}body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;padding:6px}.cont{max-width:700px;width:100%;margin:0 auto}h1{text-align:center;font-size:12px;color:#fbbf24;margin-bottom:3px}canvas{background:#0f172a;border:1px solid #334155;border-radius:6px;display:block;margin:0 auto;width:100%;max-width:680px;height:260px}.ctrls{display:flex;flex-direction:column;gap:2px;margin-top:3px;background:#1e293b;border-radius:6px;padding:5px;border:1px solid #334155}.row{display:flex;gap:3px;align-items:center;flex-wrap:wrap}.grp{flex:1;min-width:70px;display:flex;flex-direction:column;gap:1px}.grp label{font-size:9px;color:#94a3b8;white-space:nowrap}.vl{color:#fbbf24;font-size:12px;font-weight:700}.grp.wide{flex:2}.btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:10px;cursor:pointer;text-align:center;min-width:40px}.btn:hover{background:#475569;color:#e2e8f0}.btn.active{background:#166534;color:#86efac;border-color:#22c55e}.stats{flex-wrap:wrap;justify-content:center;gap:10px;font-size:10px;color:#94a3b8;margin-top:1px}.stats b{font-size:11px}input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#f59e0b;cursor:pointer}",
+      "js": "var c=document.getElementById('rope'),ctx=c.getContext('2d');var W=680,H=260,pL=50,pR=20,pT=20,pB=30,gW=W-pL-pR,gH=H-pT-pB,mid=pT+gH/2;var v=2,L=8,per=3;var simT=0,playing=false,timer=null;var scale=(gW)/12;var durN=0;function frontPos(){return v*simT}function tailPos(){return Math.max(0,frontPos()-per)}function yAt(x){var f=frontPos(),q=tailPos();if(x<=q||x>=f)return 0;var u=(x-q)/(f-q);return Math.sin(Math.PI*u)}function toX(x){return pL+x*scale}function draw(){ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);ctx.strokeStyle='#475569';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pL,mid);ctx.lineTo(pL+gW,mid);ctx.stroke();for(var i=0;i<=6;i++){var xx=pL+i*(gW/6);ctx.strokeStyle='rgba(71,85,105,0.25)';ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(xx,pT);ctx.lineTo(xx,pT+gH);ctx.stroke();ctx.fillStyle='#64748b';ctx.font='9px sans-serif';ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText((i*2).toFixed(0),xx,pT+gH+3)}ctx.fillStyle='#94a3b8';ctx.font='9px sans-serif';ctx.textAlign='right';ctx.textBaseline='middle';ctx.fillText('x (m)',pL-4,mid);ctx.strokeStyle='#38bdf8';ctx.lineWidth=2.5;ctx.beginPath();for(var px=0;px<=gW;px+=2){var xm=(px/scale);var y=mid-yAt(xm)*(gH/2.6);if(px===0)ctx.moveTo(pL+px,y);else ctx.lineTo(pL+px,y)}ctx.stroke();var f=frontPos();if(f<=L){var fx=toX(f);ctx.fillStyle='#22c55e';ctx.fillRect(fx-4,mid-4,8,8);ctx.fillStyle='#22c55e';ctx.font='9px sans-serif';ctx.textAlign='center';ctx.fillText('مقدمة F',fx,mid-12)}var q=tailPos();if(q>0){var qx=toX(q);ctx.fillStyle='#fbbf24';ctx.fillRect(qx-4,mid-4,8,8);ctx.fillStyle='#fbbf24';ctx.font='9px sans-serif';ctx.textAlign='center';ctx.fillText('ذيل Q',qx,mid-12)}ctx.strokeStyle='#ef4444';ctx.lineWidth=1;ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(toX(L),pT);ctx.lineTo(toX(L),pT+gH);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#ef4444';ctx.font='9px sans-serif';ctx.textAlign='center';ctx.fillText('نهاية الحبل',toX(L),pT+gH+3)}function upd(){simT=Math.min(simT,10);var f=frontPos();var fv=(f<=L)?f.toFixed(2):'بلغ النهاية';var q=tailPos();document.getElementById('dVal').textContent=Math.min(f,L).toFixed(2);document.getElementById('fVal').textContent=fv;document.getElementById('qVal').textContent=(q>0?q.toFixed(2):'لم تغادر');document.getElementById('tVal').textContent=simT.toFixed(2);document.getElementById('tSld').value=Math.round(simT*20)}var lastT=null;\nfunction rAFloop(){\n  if(!playing)return;\n  var now=performance.now();\n  if(lastT===null)lastT=now;\n  var dt=now-lastT;lastT=now;\n  simT+=dt*0.0004;\n  if(simT>10)simT=0;\n  draw();upd();\n  timer=requestAnimationFrame(rAFloop);\n}function start(){if(playing)return;playing=true;lastT=null;timer=requestAnimationFrame(rAFloop);document.getElementById('playBtn').textContent='⏸'}function stop(){playing=false;if(timer)cancelAnimationFrame(timer);timer=null;document.getElementById('playBtn').textContent='▶'}document.getElementById('playBtn').onclick=function(){playing?stop():start()};document.getElementById('rstBtn').onclick=function(){stop();simT=0;draw();upd()};document.getElementById('tSld').oninput=function(){simT=parseFloat(this.value)/20;draw();upd()};document.getElementById('vSld').oninput=function(){v=parseFloat(this.value);document.getElementById('vVal').textContent=v.toFixed(2);draw()};document.getElementById('lenSld').oninput=function(){L=parseFloat(this.value);document.getElementById('lenVal').textContent=L.toFixed(1);draw()};document.getElementById('perSld').oninput=function(){per=parseFloat(this.value);document.getElementById('perVal').textContent=per.toFixed(2);draw()};draw();upd();;(function(){if(window.__fitInstalled__)return;window.__fitInstalled__=true;var _bw=c.width,_bh=c.height;function fit(){var dpr=window.devicePixelRatio||1;var nw=_bw*dpr,nh=_bh*dpr;if(c.width!==nw||c.height!==nh){c.width=nw;c.height=nh}ctx.setTransform(dpr,0,0,dpr,0,0);draw();upd()}window.addEventListener(\"resize\",fit);fit()})();"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "مثال تطبيقي 1: سرعة الانتشار وحالة النقاط",
+      "level": 3
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "المعطيات: نحــدث اضطراباً قصيراً في النهاية $S$ لحبل مرن طوله $\\ell = 8\\, m$ عند اللحظة $t=0$، فتتولد موجة ميكانيكية تنتشر على طول الحبل لتصل إلى نهايته الثانية بعد مدة $\\Delta t = 1{,}6\\, s$. نقطتان $P_1$ و $P_2$ من الحبل تبعدان عن النهاية $S$ بمقدار $SP_1 = 4\\, m$ و $SP_2 = 5\\, m$."
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>1. حساب سرعة الانتشار:</strong></p><p>الاضطراب قطع المسافة $\\ell = 8\\, m$ (طول الحبل) خلال المدة $\\Delta t = 1{,}6\\, s$:</p><p>$v = \\frac{d}{\\Delta t} = \\frac{8}{1{,}6} = 5\\, m/s$</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>2. الحالة الحركية (ساكنة أم متحركة) للنقطتين $P_1$ و $P_2$ عند $t = 1\\, s$:</strong></p><p>السرعة ثابتة، إذن عند $t = 1\\, s$ يقطع الاضطراب المسافة: $d = v \\cdot t = 5 \\times 1 = 5\\, m$</p><ul><li>بما أن $d = 5\\, m > SP_1 = 4\\, m$: الاضطراب <strong>اجتاز</strong> النقطة $P_1$ → النقطة $P_1$ <strong>ساكنة</strong>.</li><li>بما أن $d = 5\\, m = SP_2$: الاضطراب <strong>بلغ</strong> النقطة $P_2$ → النقطة $P_2$ <strong>متحركة</strong> (بداية حركتها).</li></ul>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>3. لحظة بلوغ الاضطراب للنقطة $P_3$ (حيث $SP_3 = 6\\, m$):</strong></p><p>$t_3 = \\frac{SP_3}{v} = \\frac{6}{5} = 1{,}2\\, s$</p>"
+    },
+    {
+      "type": "note",
+      "variant": "tip",
+      "text": "النقطة الساكنة والمتحركة: $d > SP$ تعني أن الاضطراب تجاوز النقطة (ساكنة)، $d = SP$ تعني وصول الاضطراب إليها الآن (متحركة)، و $d < SP$ تعني أن الاضطراب لم يصلها بعد (ساكنة)."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "مثال تطبيقي 2: سرعة الاضطراب بدلالة التوتر",
+      "level": 3
+    },
+    {
+      "type": "note",
+      "variant": "info",
+      "text": "المعطيات: حبل $OA$ كتلته $m = 1{,}25\\, g$ وطوله $\\ell = 1\\, m$ مشدود بجسم كتلته $M = 200\\, g$. نحدث اضطراباً لمدّة قصيرة على الحبل. تعطى: $g = 10\\, m/s^2$ و $v = \\sqrt{\\frac{T}{\\mu}}$."
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>1. نوع الاضطراب:</strong> عرضي (منحاه الشاقولي عمودي على منحى الانتشار الأفقي).</p><p><strong>2. حساب سرعة الانتشار:</strong></p><p>من شرط التوازن للجسم المعلّق: $T = P = M g = 0{,}2 \\times 10 = 2\\, N$</p><p>الكثافة الخطية: $\\mu = \\frac{m}{\\ell} = \\frac{1{,}25 \\times 10^{-3}}{1} = 1{,}25 \\times 10^{-3}\\, Kg/m$</p><p>$v = \\sqrt{\\frac{T}{\\mu}} = \\sqrt{\\frac{2}{1{,}25 \\times 10^{-3}}} = \\sqrt{1600} = 40\\, m/s$</p>"
+    },
+    {
+      "type": "text",
+      "content": "<p><strong>3. لحظة وصول الاضطراب إلى النقطة $A$:</strong></p><p>$t = \\frac{\\ell}{v} = \\frac{1}{40} = 0{,}025\\, s$</p><p><strong>4. إذا استبدلنا الكتلة $M$ بكتلة $M' = \\frac{M}{4}$:</strong></p><p>$v' = \\sqrt{\\frac{T'}{\\mu}} = \\sqrt{\\frac{M g / 4}{\\mu}} = \\frac{1}{2} \\sqrt{\\frac{T}{\\mu}} = \\frac{v}{2} = 20\\, m/s$</p><p>$t' = \\frac{\\ell}{v'} = \\frac{1}{20} = 0{,}05\\, s$</p>"
+    },
+    {
+      "type": "note",
+      "variant": "warning",
+      "text": "استنتاج: إنقاص التوتر إلى الربع يقسم السرعة إلى النصف. إذن السرعة $v \\propto \\sqrt{T}$ — يجب دائماً تحويل الكتل إلى $Kg$ ($g$ إلى $Kg$) قبل التعويض."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة الدرس",
+      "level": 2
+    },
+    {
+      "type": "table",
+      "headers": [
+        "المفهوم",
+        "التعريف / العلاقة"
+      ],
+      "rows": [
+        [
+          "الوسط المرن",
+          "وسط يتغير شكله بتأثير خارجي ويعود لأصله عند زواله"
+        ],
+        [
+          "الاضطراب",
+          "تغير مفاجئ ومحلي في وسط مرن — نوعان: طولي وعرضي"
+        ],
+        [
+          "سرعة الانتشار",
+          "$v = \\frac{d}{\\Delta t}$ — ثابتة في وسط متجانس"
+        ],
+        [
+          "سرعة على حبل",
+          "$v = \\sqrt{\\frac{T}{\\mu}}$ مع $\\mu = \\frac{m}{L}$"
+        ],
+        [
+          "الموجة الميكانيكية",
+          "انتشار اضطراب في وسط مرن دون انتقال المادة"
+        ],
+        [
+          "التأخر الزمني",
+          "$\\tau = \\frac{d}{v}$ ($d$ المسافة بين النقطة والمنبع)"
+        ]
+      ],
+      "caption": "ملخص المفاهيم الأساسية"
+    }
+  ]
+}

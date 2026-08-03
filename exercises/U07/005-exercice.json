@@ -1,0 +1,51 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 005 - النواس البسيط",
+  "order_index": 5,
+  "source": "3AS U07 - Exercice 005",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 005"
+      },
+      {
+        "type": "text",
+        "content": "نواس بسيط طول خيطه L = 1.5 m، كتلته m = 200 g. نزيحه عن وضع التوازن بزاوية θ₀ = 8° ثم نحرره دون سرعة ابتدائية. نأخذ g = 9.81 m/s²."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب الدور الخاص T₀ للنواس.",
+        "input_type": "numeric",
+        "placeholder": "T₀ = ... s"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب التواتر الذاتي f₀ والنبض ω₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "إذا كان الطول L مجهولاً، وقسنا T₀ = 2.85 s، فاحسب قيمة g. ماذا تستنتج؟",
+        "input_type": "numeric",
+        "placeholder": "g = ... m/s²"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "هل يتغير الدور إذا استبدلنا الكتلة بـ m' = 400 g؟ ولماذا؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب الطاقة الميكانيكية للنواس البسيط علماً أن Eₘ = mgL(1 − cos θ₀).",
+        "input_type": "numeric",
+        "placeholder": "E_m = ... J"
+      }
+    ]
+  }
+}

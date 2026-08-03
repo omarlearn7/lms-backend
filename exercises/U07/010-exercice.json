@@ -1,0 +1,49 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 010 - دارة RLC: تحديد نظام التخميد",
+  "order_index": 10,
+  "source": "3AS U07 - Exercice 010",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 010"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC متسلسلة: L = 0.5 H, C = 100 µF. نوصل مقاومة متغيرة R ونلاحظ السلوك."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب ω₀ و T₀ للدارة.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب قيمة مقاومة التخميد الناقد R_c.",
+        "input_type": "numeric",
+        "placeholder": "R_c = ... Ω"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "نختار R₁ = 50 Ω. حدد نظام التخميد وميزه.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "نختار R₂ = 250 Ω. حدد نظام التخميد وميزه.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "متى نستخدم نظام التخميد الناقد؟ أعط مثالاً.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

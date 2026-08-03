@@ -1,0 +1,19 @@
+{
+  "unit_id": 14,
+  "title": "تمرين 002 - الحجم المولي وقانون الغاز المثالي",
+  "order_index": 2,
+  "source": "1AS U14 - Exercice 002",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 002: الحجم المولي وقانون الغاز المثالي" },
+      { "type": "text", "content": "عينة من غاز تشغل الحجم V = 6.15 L في شرطين يكون فيهما الضغط مساوياً P = 2 atm ودرجة الحرارة θ = 27°C. كتلة هذه العينة هي m = 8 g." },
+      { "type": "text", "content": "يعطى: R = 8.31 SI، 1 atm = 1.013 × 10⁵ Pa، M(H) = 1 g/mol، M(C) = 12 g/mol، M(O) = 16 g/mol." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "الحجم المولي للغاز في هذه الشروط يعطى بالعلاقة:", "input_type": "mcq", "options": ["VM = R(θ + 273)/P", "VM = P(θ + 273)/R", "VM = R×P/(θ + 273)"], "answer": { "value": "VM = R(θ + 273)/P" }, "solution": "بتطبيق قانون الغاز المثالي على 1 mol: PV = RT ومنه VM = RT/P = R(θ+273)/P." },
+      { "type": "question", "number": 2, "text": "قيمة الحجم المولي VM في هذه الشروط تساوي (L/mol):", "input_type": "numeric", "answer": { "value": 12.3, "tolerance": 0.1 }, "solution": "VM = 8.31 × (27 + 273) / (2 × 1.013 × 10⁵) = 8.31 × 300 / 202600 = 1.23 × 10⁻² m³/mol = 12.3 L/mol." },
+      { "type": "question", "number": 3, "text": "كمية مادة العينة (بعدة طرق) تساوي:", "input_type": "numeric", "answer": { "value": 0.5, "tolerance": 0.01 }, "solution": "n = V/VM = 6.15/12.3 = 0.5 mol، أو بتطبيق قانون الغاز المثالي مباشرة." },
+      { "type": "question", "number": 4, "text": "الكتلة المولية لهذا الغاز تساوي:", "input_type": "numeric", "answer": { "value": 16, "tolerance": 0.01 }, "solution": "M = m/n = 8/0.5 = 16 g/mol." },
+      { "type": "question", "number": 5, "text": "الصيغة الجزيئية المجملة لهذا الغاز من بين الصيغ: CO2، CH4، O2 هي:", "input_type": "mcq", "options": ["CH4", "O2", "CO2"], "answer": { "value": "CH4" }, "solution": "M(CH4) = 12 + 4 × 1 = 16 g/mol، فهي المطابقة للكتلة المولية المحسوبة." }
+    ]
+  }
+}

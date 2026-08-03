@@ -1,0 +1,20 @@
+{
+  "unit_id": 18,
+  "title": "تمرين 002 - تفاعل الحديد مع غاز الكلور",
+  "order_index": 2,
+  "source": "1AS U18 - Exercice 002",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 002: تفاعل الحديد مع غاز الكلور" },
+      { "type": "text", "content": "نسخن سلكاً من الحديد حتى الاحمرار ثم ندخله في قارورة تحتوي غاز الكلور، فيتكون كلور الحديد الثلاثي FeCl₃ وفق: 2Fe + 3Cl₂ = 2FeCl₃. الحالة الابتدائية: 44.8 g من الحديد و 20.16 L من غاز Cl₂ (الشروط النظامية). نعطي M(Fe) = 56 g/mol و M(Cl) = 35.5 g/mol." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "كمية مادة الحديد الابتدائية n₀(Fe) هي:", "input_type": "numeric", "answer": { "value": 0.8 }, "solution": "n₀(Fe) = m/M = 44.8/56 = 0.8 mol." },
+      { "type": "question", "number": 2, "text": "كمية مادة الكلور الابتدائية n₀(Cl₂) هي:", "input_type": "numeric", "answer": { "value": 0.9 }, "solution": "n₀(Cl₂) = V/VM = 20.16/22.4 = 0.9 mol." },
+      { "type": "question", "number": 3, "text": "هل المزيج الابتدائي في نسب ستوكيومترية؟", "input_type": "mcq", "options": ["لا، لأن n₀(Fe)/2 = 0.4 بينما n₀(Cl₂)/3 = 0.3", "نعم، لأنهما مختلفان", "نعم، لأن كميتيهما مختلفة"], "answer": { "value": "لا، لأن n₀(Fe)/2 = 0.4 بينما n₀(Cl₂)/3 = 0.3" }, "solution": "n₀(Fe)/2 = 0.4 mol و n₀(Cl₂)/3 = 0.3 mol، القيمتان مختلفتان إذن المزيج ليس ستوكيومترياً." },
+      { "type": "question", "number": 4, "text": "التقدم الأعظمي xmax هو:", "input_type": "numeric", "answer": { "value": 0.3 }, "solution": "بفرض Fe محداً: 0.8 − 2xmax = 0 ⇒ xmax = 0.4. وبفرض Cl₂ محداً: 0.9 − 3xmax = 0 ⇒ xmax = 0.3. نأخذ الأصغر xmax = 0.3 mol." },
+      { "type": "question", "number": 5, "text": "المتفاعل المحد هو:", "input_type": "mcq", "options": ["Cl₂", "Fe", "لا يوجد"], "answer": { "value": "Cl₂" }, "solution": "الكلور يعطي أصغر تقدم 0.3 mol، فهو المتفاعل المحد." },
+      { "type": "question", "number": 6, "text": "كتلة الحديد المتبقية في نهاية التفاعل هي:", "input_type": "numeric", "answer": { "value": 11.2 }, "solution": "nf(Fe) = 0.8 − 2 × 0.3 = 0.2 mol، و m = 56 × 0.2 = 11.2 g." },
+      { "type": "question", "number": 7, "text": "كتلة FeCl₃ المتشكلة في نهاية التفاعل هي:", "input_type": "numeric", "answer": { "value": 97.5 }, "solution": "nf(FeCl₃) = 2 × 0.3 = 0.6 mol، و M(FeCl₃) = 56 + 3 × 35.5 = 162.5 g/mol، و m = 162.5 × 0.6 = 97.5 g." }
+    ]
+  }
+}

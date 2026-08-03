@@ -1,0 +1,50 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 016 - القيم الفعالة واستطاعة جول",
+  "order_index": 16,
+  "source": "3AS U07 - Exercice 016",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 016"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC متسلسلة: R = 30 Ω, L = 0.3 H, C = 12 µF. مولد u(t) = 60√2 sin(500t) V."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "هل الدارة في حالة رنين؟ برر.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب U_eff و I_eff.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب الاستطاعة الحرارية P (Joule) المبددة في R.",
+        "input_type": "numeric",
+        "placeholder": "P = ... W"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا كانت P = 120 W عند الرنين، فما قيمة I_eff و R؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب الطاقة المحولة حرارياً خلال دقيقة واحدة.",
+        "input_type": "numeric",
+        "placeholder": "E = ... J"
+      }
+    ]
+  }
+}

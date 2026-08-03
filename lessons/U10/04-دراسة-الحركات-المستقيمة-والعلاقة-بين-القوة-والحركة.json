@@ -1,0 +1,229 @@
+{
+  "title": "دراسة الحركات المستقيمة والعلاقة بين القوة والحركة",
+  "slug": "دراسة-الحركات-المستقيمة-والعلاقة-بين-القوة-والحركة",
+  "description": "الحركة المستقيمة المنتظمة والمتغيرة بانتظام ودون انتظام، والمخططات البيانية للفاصلة والسرعة وتغير السرعة",
+  "category_id": 2,
+  "unit_id": 10,
+  "grade_level": "سنة أولى ثانوي",
+  "order_index": 4,
+  "is_free": true,
+  "sections": [
+    {
+      "type": "heading",
+      "text": "مقدمة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "ندرس في هذا الدرس الأنواع الثلاثة للحركات المستقيمة ونحلل المخططات البيانية الموافقة لها (الفاصلة $x(t)$ والسرعة $v(t)$ وتغير السرعة $\\Delta v(t)$)."
+    },
+    {
+      "type": "heading",
+      "text": "1) الحركة المستقيمة المنتظمة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "في الحركة المستقيمة المنتظمة لا يخضع المتحرك لأي قوة (مبدأ العطالة)، ويكون شعاع السرعة ثابتاً في المنحى والجهة والطول، وبالتالي يكون شعاع تغير السرعة $\\overrightarrow{\\Delta v}$ معدوماً."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "البيان",
+        "شكله ومعادلته"
+      ],
+      "rows": [
+        [
+          "الفاصلة $x = f(t)$",
+          "مستقيم معادلته $x = at + b$، وميله يمثل السرعة $v = (x_2 - x_1)/(t_2 - t_1)$"
+        ],
+        [
+          "السرعة $v = f(t)$",
+          "مستقيم يوازي محور الأزمنة (قيمة ثابتة)"
+        ],
+        [
+          "تغير السرعة $\\Delta v = f(t)$",
+          "مستقيم منطبق على محور الأزمنة (قيمة معدومة)"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "content": "المسافة المقطوعة بين لحظتين $t_2$ و$t_1$: تحسب من بيان الفاصلة بالفرق $d = x_2 - x_1$، ومن بيان السرعة بمساحة المستطيل المحصور بين المنحنى ومحور الأزمنة:"
+    },
+    {
+      "type": "formula",
+      "latex": "d = v \\times (t_2 - t_1)"
+    },
+    {
+      "type": "question",
+      "number": 1,
+      "text": "متحرك حركة مستقيمة منتظمة سرعته v = 5 m/s. المسافة المقطوعة خلال مدة 10 s هي:",
+      "input_type": "numeric",
+      "answer": {
+        "value": 50,
+        "tolerance": 0.01
+      },
+      "solution": "$d = v \\times \\Delta t = 5 \\times 10 = 50\\,m$."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "2) الحركة المستقيمة المتغيرة بانتظام",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "عندما يخضع متحرك لقوة $\\overrightarrow{F}$ ثابتة (في المنحى والجهة والطول) تكون حركته مستقيمة متغيرة بانتظام: متسارعة بانتظام إذا كانت القوة في جهة الحركة، ومتباطئة بانتظام إذا كانت معاكسة لجهة الحركة."
+    },
+    {
+      "type": "text",
+      "content": "في هذه الحركة يحافظ شعاع السرعة على منحاه وجهته وتتغير طوله بانتظام، ويكون شعاع تغير السرعة $\\overrightarrow{\\Delta v}$ ثابتاً في المنحى والجهة والطول."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "البيان",
+        "شكله ومعادلته"
+      ],
+      "rows": [
+        [
+          "الفاصلة $x = f(t)$",
+          "خط منحني"
+        ],
+        [
+          "السرعة $v = f(t)$",
+          "مستقيم معادلته $v = at + b$"
+        ],
+        [
+          "تغير السرعة $\\Delta v = f(t)$",
+          "مستقيم يوازي محور الأزمنة (قيمة ثابتة)"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "content": "المسافة المقطوعة تحسب بيانياً من بيان السرعة بمساحة شبه المنحرف المحصور بين المنحنى ومحور الأزمنة:"
+    },
+    {
+      "type": "formula",
+      "latex": "d = \\frac{(v_1 + v_2) \\times (t_2 - t_1)}{2}"
+    },
+    {
+      "type": "question",
+      "number": 2,
+      "text": "جسم سرعته عند اللحظة t₁ = 2 s هي v₁ = 4 m/s وعند t₂ = 6 s هي v₂ = 20 m/s، وحركته مستقيمة متغيرة بانتظام. المسافة المقطوعة بين اللحظتين هي:",
+      "input_type": "numeric",
+      "answer": {
+        "value": 48,
+        "tolerance": 0.01
+      },
+      "solution": "$d = ((v_1+v_2)/2) \\times (t_2-t_1) = ((4+20)/2) \\times 4 = 12 \\times 4 = 48\\,m$."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "3) الحركة المستقيمة المتغيرة دون انتظام",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "عندما يخضع جسم لقوة $\\overrightarrow{F}$ غير ثابتة تكون حركته مستقيمة متغيرة دون انتظام، ويحافظ شعاع السرعة على منحاه وجهته بينما تتغير طوله دون انتظام، ولا يكون شعاع تغير السرعة $\\overrightarrow{\\Delta v}$ ثابتاً."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "الحركة",
+        "القوة",
+        "شعاع تغير السرعة"
+      ],
+      "rows": [
+        [
+          "مستقيمة منتظمة",
+          "معدومة",
+          "معدوم"
+        ],
+        [
+          "مستقيمة متغيرة بانتظام",
+          "ثابتة",
+          "ثابت"
+        ],
+        [
+          "مستقيمة متغيرة دون انتظام",
+          "غير ثابتة",
+          "غير ثابت"
+        ]
+      ]
+    },
+    {
+      "type": "question",
+      "number": 3,
+      "text": "جسم في حركة مستقيمة متغيرة دون انتظام، فإن القوة المؤثرة عليه تكون:",
+      "input_type": "mcq",
+      "options": [
+        "غير ثابتة",
+        "ثابتة",
+        "معدومة"
+      ],
+      "answer": {
+        "value": "غير ثابتة"
+      },
+      "solution": "الحركة المتغيرة دون انتظام تنتج عن قوة غير ثابتة."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "4) محاكاة مخططات الحركات المستقيمة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "تسمح المحاكاة التالية بمشاهدة المخططات البيانية (الفاصلة $x(t)$، السرعة $v(t)$، تغير السرعة $\\Delta v(t)$) للأنواع الثلاثة من الحركات المستقيمة، وتحريك جسم حسب نوع الحركة المختار."
+    },
+    {
+      "type": "simulation",
+      "kind": "custom",
+      "config": {
+        "title": "محاكاة مخططات الحركات المستقيمة",
+        "width": 680,
+        "height": 520
+      },
+      "html": "<div class=\"cont\"><h1>محاكاة مخططات الحركات المستقيمة</h1><div class=\"mode-row\"><div class=\"mode-btn active\" data-mode=\"uniform\">منتظمة</div><div class=\"mode-btn\" data-mode=\"accel\">متسارعة بانتظام</div><div class=\"mode-btn\" data-mode=\"decel\">متباطئة بانتظام</div></div><canvas id=\"mcg\" width=\"660\" height=\"380\"></canvas><div class=\"ctrls\"><div class=\"row\"><div class=\"grp wide\"><label>t: <span id=\"tVal\">0.00</span> s</label><input type=\"range\" id=\"tSld\" min=\"0\" max=\"400\" value=\"0\" step=\"1\"></div><div class=\"grp\"><div class=\"btn\" id=\"playBtn\">&#9654;</div></div><div class=\"grp\"><div class=\"btn\" id=\"rstBtn\">&#8634;</div></div></div><div class=\"row\"><div class=\"grp speed-group\"><div class=\"btn speed-btn active\" data-speed=\"1\">1&#215;</div><div class=\"btn speed-btn\" data-speed=\"2\">2&#215;</div><div class=\"btn speed-btn\" data-speed=\"5\">5&#215;</div></div></div></div></div>",
+      "css": "*{margin:0;padding:0;box-sizing:border-box}body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;padding:6px}.cont{max-width:680px;width:100%;margin:0 auto}h1{text-align:center;font-size:12px;color:#fbbf24;margin-bottom:3px}.mode-row{display:flex;gap:4px;justify-content:center;margin-bottom:4px}.mode-btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 10px;font-size:10px;cursor:pointer}.mode-btn.active{background:#166534;color:#86efac;border-color:#22c55e;font-weight:700}canvas{background:#0f172a;border:1px solid #334155;border-radius:6px;display:block;margin:0 auto;width:100%;max-width:660px;height:380px}.ctrls{display:flex;flex-direction:column;gap:2px;margin-top:3px;background:#1e293b;border-radius:6px;padding:5px;border:1px solid #334155}.row{display:flex;gap:3px;align-items:center;flex-wrap:wrap}.grp{flex:1;min-width:70px;display:flex;flex-direction:column;gap:1px}.grp label{font-size:9px;color:#94a3b8;white-space:nowrap}.grp.wide{flex:2}.btn{background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:4px 8px;font-size:10px;cursor:pointer;text-align:center;min-width:40px}.btn:hover{background:#475569;color:#e2e8f0}.btn.active{background:#166534;color:#86efac;border-color:#22c55e}.speed-group{display:flex;gap:2px;min-width:100%}.speed-btn{flex:1;padding:1px 2px;font-size:8px;min-width:0;text-align:center}.speed-btn.active{background:#3b82f6;color:#fff;border-color:#3b82f6;font-weight:700}input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#f59e0b;cursor:pointer}",
+      "js": "var c=document.getElementById('mcg'),ctx=c.getContext('2d');var W=660,H=380,pL=52,pR=10;var mode='uniform',tau=0.5,maxT=8,tStep=0.02;var simTime=0,playing=false,speed=1,timer=null;var panes=[{y:50,h:96},{y:150,h:96},{y:250,h:96}];function xf(t){if(mode==='uniform')return 2*t;if(mode==='accel')return t+0.25*t*t;return 4*t-0.25*t*t}function vf(t){if(mode==='uniform')return 2;if(mode==='accel')return 1+0.5*t;return Math.max(0,4-0.5*t)}function dvf(t){if(mode==='uniform')return 0;if(mode==='accel')return 0.5;return -0.5}function xRange(){return[-0.5,xf(maxT)*1.1]}function range2(f){var mn=0,mx=0;for(var t=0;t<=maxT;t+=0.1){var v=f(t);mn=Math.min(mn,v);mx=Math.max(mx,v)}var pad=(mx-mn)*0.15+0.001;return[mn-pad,mx+pad]}function draw(){ctx.clearRect(0,0,W,H);ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);var ty=28,tx0=pL,tx1=W-pR;ctx.strokeStyle='#475569';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(tx0,ty);ctx.lineTo(tx1,ty);ctx.stroke();var xm=Math.max(xf(maxT),0.001);for(var k=0;k<=maxT/tau;k++){var tt=k*tau;if(tt>simTime)break;var px=tx0+(xf(tt)/xm)*(tx1-tx0);ctx.fillStyle='rgba(148,163,184,0.6)';ctx.beginPath();ctx.arc(px,ty,2,0,Math.PI*2);ctx.fill()}var bx=tx0+(xf(simTime)/xm)*(tx1-tx0);ctx.fillStyle='#f59e0b';ctx.beginPath();ctx.arc(bx,ty,5,0,Math.PI*2);ctx.fill();ctx.fillStyle='#94a3b8';ctx.font='8px sans-serif';ctx.textAlign='left';ctx.textBaseline='bottom';ctx.fillText('حركة '+(mode==='uniform'?'منتظمة':mode==='accel'?'متسارعة بانتظام':'متباطئة بانتظام'),tx0,ty-6);var labels=['x(t)','v(t)','Δv(t)'];for(var i=0;i<3;i++){var p=panes[i];var f=i===0?xf:i===1?vf:dvf;var rng=i===0?xRange():range2(f);var gW=W-pL-pR;var y0=rng[1],y1=rng[0];function gx(t){return pL+(t/maxT)*gW}function gy(v){return p.y+((v-y0)/(y1-y0))*p.h}ctx.strokeStyle='#475569';ctx.lineWidth=1;ctx.strokeRect(pL,p.y,gW,p.h);ctx.strokeStyle='rgba(71,85,105,0.35)';ctx.lineWidth=.5;for(var g=0;g<=4;g++){var yy=p.y+(g/4)*p.h;ctx.beginPath();ctx.moveTo(pL,yy);ctx.lineTo(pL+gW,yy);ctx.stroke()}if(y0<0&&y1>0){ctx.strokeStyle='rgba(148,163,184,0.6)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pL,gy(0));ctx.lineTo(pL+gW,gy(0));ctx.stroke()}ctx.fillStyle='#64748b';ctx.font='7px sans-serif';ctx.textAlign='center';ctx.textBaseline='top';for(var tt2=0;tt2<=maxT;tt2+=2){ctx.fillText(tt2,gx(tt2),p.y+p.h+2)}ctx.fillStyle='#94a3b8';ctx.font='7px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.save();ctx.translate(9,p.y+p.h/2);ctx.rotate(-Math.PI/2);ctx.fillText(labels[i],0,0);ctx.restore();ctx.strokeStyle=i===0?'#38bdf8':i===1?'#22c55e':'#fbbf24';ctx.lineWidth=1.8;ctx.setLineDash(i===1?[5,3]:[]);ctx.beginPath();var started=false;for(var t=0;t<=maxT;t+=0.02){var vv=f(t);var xx=gx(t),yy=gy(vv);if(!started){ctx.moveTo(xx,yy);started=true}else ctx.lineTo(xx,yy)}ctx.stroke();ctx.setLineDash([]);var cx=gx(simTime);ctx.strokeStyle='#f59e0b';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(cx,p.y);ctx.lineTo(cx,p.y+p.h);ctx.stroke()}document.getElementById('tVal').textContent=simTime.toFixed(2);window.simState={mode:mode,t:simTime,x:xf(simTime),v:vf(simTime),dv:dvf(simTime)}}function stopPlay(){cancelAnimationFrame(timer);playing=false;document.getElementById('playBtn').textContent='▶'}var lastT=null;function rAFloop(){if(!playing){stopPlay();return}var now=performance.now();if(lastT===null)lastT=now;var dt=now-lastT;lastT=now;simTime+=tStep*speed*dt/30;if(simTime>maxT)simTime=0;document.getElementById('tSld').value=Math.round(simTime/tStep);draw();timer=requestAnimationFrame(rAFloop)}function startLoop(){if(!playing)return;lastT=null;timer=requestAnimationFrame(rAFloop)}function togglePlay(){if(playing){stopPlay()}else{playing=true;document.getElementById('playBtn').textContent='⏸';startLoop()}}document.getElementById('playBtn').onclick=togglePlay;document.getElementById('rstBtn').onclick=function(){stopPlay();simTime=0;document.getElementById('tSld').value=0;draw()};document.getElementById('tSld').oninput=function(){stopPlay();simTime=+this.value*tStep;draw()};document.querySelectorAll('.mode-btn').forEach(function(b){b.onclick=function(){stopPlay();simTime=0;mode=b.getAttribute('data-mode');document.querySelectorAll('.mode-btn').forEach(function(x){x.className='mode-btn'});b.className='mode-btn active';draw()}});document.querySelectorAll('.speed-btn').forEach(function(b){b.onclick=function(){speed=+b.getAttribute('data-speed');document.querySelectorAll('.speed-btn').forEach(function(x){x.className='btn speed-btn'});b.className='btn speed-btn active'}});draw();(function(){if(window.__fitInstalled__)return;window.__fitInstalled__=true;var _bw=c.width,_bh=c.height;function fit(){var dpr=window.devicePixelRatio||1;var nw=_bw*dpr,nh=_bh*dpr;if(c.width!==nw||c.height!==nh){c.width=nw;c.height=nh}ctx.setTransform(dpr,0,0,dpr,0,0);draw()}window.addEventListener('resize',fit);fit()})();"
+    },
+    {
+      "type": "question",
+      "number": 4,
+      "text": "باستعمال المحاكاة: في الحركة المستقيمة المنتظمة، بيان تغير السرعة Δv(t) يكون:",
+      "input_type": "mcq",
+      "options": [
+        "مستقيماً منطبقاً على محور الأزمنة",
+        "مستقيماً مائلاً",
+        "منحنياً"
+      ],
+      "answer": {
+        "value": "مستقيماً منطبقاً على محور الأزمنة"
+      },
+      "solution": "في الحركة المستقيمة المنتظمة Δv معدوم، فبيانه مستقيم منطبق على محور الأزمنة."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "text": "خلاصة",
+      "level": 2
+    },
+    {
+      "type": "text",
+      "content": "الحركة المستقيمة المنتظمة لا تخضع لقوة وبيان سرعتها ثابت، والحركة المتغيرة بانتظام تخضع لقوة ثابتة (ميل بيان $v(t)$ ثابت)، والحركة المتغيرة دون انتظام تخضع لقوة غير ثابتة."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "unit_id": 31,
+  "title": "تمرين 004 - تفاعلات الإماهة ونزع الماء",
+  "order_index": 4,
+  "source": "2AS U31 - Exercice 004",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 004", "level": 3 },
+      { "type": "text", "content": "أكمل معادلات التفاعلات العضوية التالية." },
+      { "type": "question", "number": 1, "text": "أكمل: CH2=CH2 + H−OH = ؟", "input_type": "text", "answer": { "value": "CH3−CH2OH (إيثانول)" }, "solution": "إماهة الإيثيلين تنتج الإيثانول: CH2=CH2 + H2O = CH3−CH2OH." },
+      { "type": "question", "number": 2, "text": "أكمل: 2CH3OH = ؟ + H2O", "input_type": "text", "answer": { "value": "CH3−O−CH3 (ثنائي ميثيل إيثرأوكسيد)" }, "solution": "نزع الماء من جزيئي ميثانول: 2CH3OH = CH3−O−CH3 + H2O." },
+      { "type": "question", "number": 3, "text": "أكمل: CH3−CH2OH = ؟ + H2O", "input_type": "text", "answer": { "value": "CH2=CH2 (إيثن)" }, "solution": "نزع الماء من جزيء إيثانول واحد ينتج إيثن: CH3−CH2OH = CH2=CH2 + H2O." },
+      { "type": "question", "number": 4, "text": "إماهة الألكن تتم بوجود وسيط حمضي مثل:", "input_type": "mcq", "options": ["حمض الكبريت H2SO4", "كلور الصوديوم", "الماء النقي"], "answer": { "value": "حمض الكبريت H2SO4" }, "solution": "الإماهة تتم بوجود H3PO4 أو H2SO4." }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "unit_id": 29,
+  "title": "تمرين 003 - تغير التدفق عبر حلقة دائرية",
+  "order_index": 3,
+  "source": "2AS U29 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 003", "level": 3 },
+      { "type": "text", "content": "حلقة دائرية مساحة سطحها S = 20 cm² موضوعه في حقل مغناطيسي منتظم شدته B = 0.1 T عمودي على مستوي الحلقة." },
+      { "type": "question", "number": 1, "text": "احسب التدفق المغناطيسي عبر الحلقة عندما يكون الناظم على السطح موازيًا للحقل (θ = 0°). (بوحدة Wb)", "input_type": "numeric", "answer": { "value": 0.0002, "tolerance": 1e-06 }, "solution": "Φ = B.S.cos0° = 0.1 × 20 × 10⁻⁴ = 2 × 10⁻⁴ Wb." },
+      { "type": "question", "number": 2, "text": "ندير الحلقة بحيث يصبح الناظم يصنع زاوية 60° مع الحقل، احسب التدفق الجديد. (بوحدة Wb)", "input_type": "numeric", "answer": { "value": 0.0001, "tolerance": 1e-06 }, "solution": "Φ = B.S.cos60° = 0.1 × 20 × 10⁻⁴ × 0.5 = 10⁻⁴ Wb." },
+      { "type": "question", "number": 3, "text": "التحول تم خلال Δt = 0.1 s. احسب القوة المحركة الكهربائية التحريضية المتوسطة. (بوحدة V)", "input_type": "numeric", "answer": { "value": 0.001, "tolerance": 1e-05 }, "solution": "ΔΦ = 10⁻⁴ − 2 × 10⁻⁴ = −10⁻⁴ Wb إذن em = 10⁻⁴/0.1 = 10⁻³ V." }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "unit_id": 31,
+  "title": "تمرين 003 - المركبات الأكسجينية",
+  "order_index": 3,
+  "source": "2AS U31 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 003", "level": 3 },
+      { "type": "text", "content": "أكتب اسم المركبات الأكسجينية التالية مع تحديد الصنف." },
+      { "type": "question", "number": 1, "text": "اسم المركب: CH3−CHO", "input_type": "text", "answer": { "value": "إيثانال" }, "solution": "مجموعة CHO: إيثانال (ألدهيد)." },
+      { "type": "question", "number": 2, "text": "اسم المركب: CH3−CO−CH3", "input_type": "text", "answer": { "value": "بروبانون" }, "solution": "مجموعة CO داخلية: بروبانون (كيتون)." },
+      { "type": "question", "number": 3, "text": "اسم المركب: CH3−COOH", "input_type": "text", "answer": { "value": "حمض الإيثانويك" }, "solution": "مجموعة COOH: حمض الإيثانويك." },
+      { "type": "question", "number": 4, "text": "اسم المركب: CH3−COO−CH3", "input_type": "text", "answer": { "value": "إيثانوات الميثيل" }, "solution": "مجموعة COO: إستر إيثانوات الميثيل." },
+      { "type": "question", "number": 5, "text": "المجموعة الوظيفية للألدهيد هي:", "input_type": "mcq", "options": ["CHO", "OH", "COOH"], "answer": { "value": "CHO" }, "solution": "المجموعة الوظيفية للألدهيد هي CHO." },
+      { "type": "question", "number": 6, "text": "مركب صيغته العامة CnH2nO2 مع مجموعة COOH يسمى:", "input_type": "mcq", "options": ["حمض كربوكسيلي", "ألدهيد", "كيتون"], "answer": { "value": "حمض كربوكسيلي" }, "solution": "المركب الحامل COOH حمض كربوكسيلي." }
+    ]
+  }
+}

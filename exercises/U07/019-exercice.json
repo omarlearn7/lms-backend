@@ -1,0 +1,50 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 019 - بكالوريا 2016: دارة RLC",
+  "order_index": 19,
+  "source": "3AS U07 - Bac 2016",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 019 (بكالوريا 2016)"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC متسلسلة: R = 100 Ω, L = 0.5 H, C = 2 µF. مولد u(t) = 12 sin(ωt) V."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب ω₀ و f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "عند ω = ω₀، احسب I_max و U_Cmax.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب معامل الجودة Q.",
+        "input_type": "numeric",
+        "placeholder": "Q = ..."
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب U_Cmax/U_max. ماذا تستنتج؟",
+        "input_type": "numeric",
+        "placeholder": "U_Cmax/U_max = ..."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب الطاقة القصوى المخزنة في المكثف والوشيعة عند الرنين.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

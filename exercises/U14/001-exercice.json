@@ -1,0 +1,18 @@
+{
+  "unit_id": 14,
+  "title": "تمرين 001 - دراسة غاز النشادر",
+  "order_index": 1,
+  "source": "1AS U14 - Exercice 001",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 001: دراسة غاز النشادر" },
+      { "type": "text", "content": "النشادر هو غاز صيغته الجزيئية المجملة NH3. احسب ما يلي: الكتلة المولية الجزيئية للنشادر، كمية المادة الموجودة في 0.68 g من النشادر، كمية المادة الموجودة في 15.68 L من غاز النشادر في الشروط النظامية، وكمية المادة في 3.01 × 10²² جزيء من النشادر." },
+      { "type": "text", "content": "يعطى: M(N) = 14 g/mol و M(H) = 1 g/mol، الحجم المولي في الشروط النظامية VM = 22.4 L/mol و NA = 6.02 × 10²³ mol⁻¹." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "الكتلة المولية الجزيئية للنشادر M(NH3) تساوي:", "input_type": "numeric", "answer": { "value": 17, "tolerance": 0.01 }, "solution": "M(NH3) = M(N) + 3M(H) = 14 + 3 × 1 = 17 g/mol." },
+      { "type": "question", "number": 2, "text": "كمية المادة الموجودة في 0.68 g من النشادر تساوي:", "input_type": "numeric", "answer": { "value": 0.04, "tolerance": 0.01 }, "solution": "n = m/M = 0.68/17 = 0.04 mol." },
+      { "type": "question", "number": 3, "text": "كمية المادة الموجودة في 15.68 L من غاز النشادر في الشروط النظامية تساوي:", "input_type": "numeric", "answer": { "value": 0.7, "tolerance": 0.01 }, "solution": "n = V/VM = 15.68/22.4 = 0.7 mol." },
+      { "type": "question", "number": 4, "text": "كمية المادة الموجودة في 3.01 × 10²² جزيء من النشادر تساوي:", "input_type": "numeric", "answer": { "value": 0.05, "tolerance": 0.01 }, "solution": "n = N/NA = 3.01 × 10²² / 6.02 × 10²³ = 0.05 mol." }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "unit_id": 8,
+  "title": "تمرين 005 - سرعة اضطراب على حبل مشدود بكتلة",
+  "order_index": 5,
+  "source": "3AS U08 - Exercice 005",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 005"
+      },
+      {
+        "type": "text",
+        "content": "<p>ندرس انتشار اضطراب على طول حبل $\\ell = OA$ كتلته $m = 1{,}25\\, g$ وطوله $\\ell = 1\\, m$ مشدود بجسم كتلته $M = 200\\, g$. نحدث اضطراباً لمدة قصيرة على الحبل في لحظة نعتبرها مبدأ الأزمنة. تعطى سرعة انتشار الاضطراب على طول الحبل المشدود بقوة $T$ وكتلته الخطية $\\mu$ بالعلاقة $v = \\sqrt{T/\\mu}$، ويعطى $g = 10\\, m/s^2$.</p>"
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "ما هو نوع الاضطراب؟",
+        "input_type": "mcq",
+        "options": ["عرضي", "طولي"],
+        "answer": { "value": "عرضي" },
+        "solution": "عرضي لأن منحاه (الشاقولي) عمودي على منحى الانتشار (الحبل الأفقي)."
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب سرعة انتشار الاضطراب على الحبل.",
+        "input_type": "numeric",
+        "placeholder": "v = ... m/s",
+        "answer": { "value": 40, "tolerance": 1 },
+        "solution": "من شرط التوازن: T = P = M·g = 0,2×10 = 2 N. الكتلة الخطية: μ = m/ℓ = 1,25×10⁻³/1 = 1,25×10⁻³ kg/m. إذن v = √(T/μ) = √(2/(1,25×10⁻³)) = √1600 = 40 m/s."
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "ما هي لحظة وصول الاضطراب إلى النقطة $A$؟",
+        "input_type": "numeric",
+        "placeholder": "t = ... s",
+        "answer": { "value": 0.025, "tolerance": 0.001 },
+        "solution": "بما أن السرعة ثابتة: ℓ = v·t ⇒ t = ℓ/v = 1/40 = 0,025 s."
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب السرعة الجديدة $v'$ إذا استبدلنا الكتلة $M$ بكتلة $M' = M/4$.",
+        "input_type": "numeric",
+        "placeholder": "v' = ... m/s",
+        "answer": { "value": 20, "tolerance": 1 },
+        "solution": "من أجل M' = M/4: T' = M·g/4 = 0,5 N. v' = √(T'/μ) = √(0,5/(1,25×10⁻³)) = √400 = 20 m/s = v/2."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "استنتج اللحظة الجديدة لوصول الاضطراب إلى النقطة $A$ بعد استبدال الكتلة.",
+        "input_type": "numeric",
+        "placeholder": "t' = ... s",
+        "answer": { "value": 0.05, "tolerance": 0.001 },
+        "solution": "t' = ℓ/v' = 1/20 = 0,05 s (الزمن تضاعف لأن السرعة تنصفت)."
+      }
+    ]
+  }
+}

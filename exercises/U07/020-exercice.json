@@ -1,0 +1,52 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 020 - بكالوريا 2017: الاهتزازات القسرية",
+  "order_index": 20,
+  "source": "3AS U07 - Bac 2017",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 020 (بكالوريا 2017)"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC متسلسلة: R = 50 Ω, L, C. عند تردد المولد f₀ = 500 Hz، يسجل التيار I_max = 240 mA وتوتر المولد U_max = 12 V."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "بيّن أن الدارة في حالة رنين عند f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب المعاوقة Z عند الرنين.",
+        "input_type": "numeric",
+        "placeholder": "Z = ... Ω"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "إذا كان L = 0.2 H، فاحسب C.",
+        "input_type": "numeric",
+        "placeholder": "C = ... F"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب عرض الحزمة Δf إذا علمت أن Q = 12.5.",
+        "input_type": "numeric",
+        "placeholder": "Δf = ... Hz"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ما هي قيمة التيار I عند ترددات حدود الحزمة (f₁, f₂)؟",
+        "input_type": "numeric",
+        "placeholder": "I = ... mA"
+      }
+    ]
+  }
+}

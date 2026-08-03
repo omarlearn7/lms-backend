@@ -1,0 +1,77 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 011 - مقارنة الأعمدة الكهربائية",
+  "order_index": 11,
+  "source": "3AS U06 - Exercice 011",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 011"
+      },
+      {
+        "type": "text",
+        "content": "نقارن بين نوعين من البطاريات المستخدمة في السيارات والأجهزة الإلكترونية:"
+      },
+      {
+        "type": "table",
+        "headers": ["الخاصية", "بطارية الرصاص (Pb)", "بطارية Li-ion"],
+        "rows": [
+          ["التفاعل عند المهبط", "PbO₂ + SO₄²⁻ + 4 H⁺ + 2e⁻ → PbSO₄ + 2 H₂O", "Li⁺ + CoO₂ + e⁻ → LiCoO₂"],
+          ["التفاعل عند المصعد", "Pb + SO₄²⁻ → PbSO₄ + 2e⁻", "Li → Li⁺ + e⁻"],
+          ["E⁰_cell (V)", "2.0 V (لخلية واحدة)", "3.7 V"],
+          ["الكتلة (kg)", "15 kg", "0.5 kg"],
+          ["السعة (Ah)", "60 Ah", "5 Ah"],
+          ["قابلة للشحن", "نعم", "نعم"]
+        ],
+        "caption": "مقارنة بين بطارية الرصاص و Li-ion"
+      },
+      {
+        "type": "diagram",
+        "diagram_type": "interactive_graph",
+        "props": {
+          "chartType": "bar",
+          "series": [
+            {"label": "بطارية الرصاص", "data": [[0,2.0],[1,15],[2,60]], "color": "#f87171"},
+            {"label": "بطارية Li-ion", "data": [[0,3.7],[1,0.5],[2,5]], "color": "#34d399"}
+          ],
+          "xLabels": ["E⁰_cell (V)", "الكتلة (kg)", "السعة (Ah)"],
+          "xLabel": "الخاصية",
+          "yLabel": "القيمة",
+          "title": "مقارنة بطارية الرصاص و Li-ion"
+        }
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أي البطاريتين تعطي كموناً أعلى لكل خلية؟ ما عدد الخلايا المطلوبة للحصول على 12 V في كل حالة؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب الطاقة المخزنة (Wh) لكل بطارية: E = Q × V حيث Q السعة (Ah) و V الكمون.",
+        "input_type": "text",
+        "placeholder": "E(Pb) = ... Wh, E(Li-ion) = ... Wh"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب كثافة الطاقة (Wh/kg) لكل بطارية. أيهما أفضل للتطبيقات المحمولة؟ لماذا؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "هل يمكن استخدام بطارية Li-ion في تشغيل محرك سيارة (تحتاج 2-3 kW)؟ علل.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أذكر ميزة بيئية لكل نوع.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

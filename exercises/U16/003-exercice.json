@@ -1,0 +1,17 @@
+{
+  "unit_id": 16,
+  "title": "تمرين 003 - انحراف الضوء في الموشور",
+  "order_index": 3,
+  "source": "1AS U16 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 003: انحراف الضوء في الموشور" },
+      { "type": "text", "content": "يرد شعاع ضوئي وحيد اللون من الهواء (n1 = 1) إلى موشور زاوية رأسه A = 60° وقرينته n2 = 1.5، ثم يخرج مرة ثانية من الموشور إلى الهواء. زاوية الورود على الوجه الأول هي i1 = 49°." },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "زاوية الانكسار r1 عند دخول الشعاع الموشور تساوي:", "input_type": "mcq", "options": ["30°", "49°", "60°"], "answer": { "value": "30°" }, "solution": "sin r1 = sin i1 / n2 = sin 49° / 1.5 = 0.5، ومنه r1 = 30°." },
+      { "type": "question", "number": 2, "text": "زاوية الورود i2 على الوجه الثاني تساوي:", "input_type": "mcq", "options": ["A − r1 = 30°", "60°", "49°"], "answer": { "value": "A − r1 = 30°" }, "solution": "حسب علاقات الموشور A = r1 + i2، ومنه i2 = 60° − 30° = 30°." },
+      { "type": "question", "number": 3, "text": "زاوية الخروج r2 من الموشور تساوي:", "input_type": "mcq", "options": ["49°", "30°", "60°"], "answer": { "value": "49°" }, "solution": "sin r2 = n2 × sin i2 / n1 = 1.5 × sin 30° = 0.75، ومنه r2 ≈ 49°." },
+      { "type": "question", "number": 4, "text": "مقدار الانحراف الكلي D يساوي:", "input_type": "mcq", "options": ["38°", "60°", "98°"], "answer": { "value": "38°" }, "solution": "D = i1 + r2 − A = 49° + 49° − 60° = 38°." }
+    ]
+  }
+}

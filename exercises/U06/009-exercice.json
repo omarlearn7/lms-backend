@@ -1,0 +1,61 @@
+{
+  "unit_id": 6,
+  "title": "تمرين 009 - التحليل الكهربائي (إرجاع Cu)",
+  "order_index": 9,
+  "source": "3AS U06 - Exercice 009",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 009"
+      },
+      {
+        "type": "text",
+        "content": "نجري تحليلاً كهربائياً لمحلول CuSO₄ بتركيز C = 0.5 mol/L باستخدام قطبين من البلاتين. يمر تيار شدته I = 2 A لمدة t = 30 دقيقة."
+      },
+      {
+        "type": "text",
+        "content": "يعطى: M(Cu) = 63.5 g/mol, F = 96500 C/mol. التفاعل عند المهبط: Cu²⁺ + 2e⁻ → Cu(s)."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أي قطب هو المهبط (Cathode)؟ وأي قطب هو المصعد (Anode)؟ ماذا يحدث عند كل منهما؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "اكتب معادلة التفاعل عند المصعد (تأكسد الماء): 2 H₂O → O₂ + 4 H⁺ + 4e⁻.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب كمية الكهرباء Q المارة (Q = I × t).",
+        "input_type": "numeric",
+        "placeholder": "Q = ... C"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب كمية المادة n(Cu) المترسبة ثم كتلتها m(Cu) باستخدام قانون فاراداي: m = M·I·t / (n·F).",
+        "input_type": "text",
+        "placeholder": "n(Cu) = ... mol, m(Cu) = ... g"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب حجم غاز O₂ المنطلق عند المصعد في STP (V_m = 24 L/mol).",
+        "input_type": "numeric",
+        "placeholder": "V(O₂) = ... L"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "ماذا يحدث لتركيز Cu²⁺ في المحلول مع مرور الزمن؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

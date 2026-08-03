@@ -1,0 +1,22 @@
+{
+  "title": "اختبار الوحدة 11 - التوترات والتيارات الكهربائية المتناوبة",
+  "slug": "اختبار-الوحدة-11-التوترات-والتيارات-الكهربائية-المتناوبة",
+  "description": "اختبار شامل للوحدة الحادية عشرة: التيار المتناوب الجيبي",
+  "category_id": 2,
+  "unit_id": 30,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 10,
+  "is_free": true,
+  "sections": [
+    { "type": "question", "number": 1, "text": "دور التوتر المتناوب الجيبي يقاس بـ:", "input_type": "mcq", "options": ["الثانية", "الهرتز", "الفولط"], "answer": { "value": "الثانية" }, "solution": "يقاس الدور بالثانية (s)." },
+    { "type": "question", "number": 2, "text": "التواتر يتعلق بالدور وفق العلاقة:", "input_type": "mcq", "options": ["f = 1/T", "f = T", "f = 2T"], "answer": { "value": "f = 1/T" }, "solution": "f = 1/T." },
+    { "type": "question", "number": 3, "text": "توتر دوري دوره T = 0.02 s، تواتره (بوحدة Hz):", "input_type": "numeric", "answer": { "value": 50, "tolerance": 1 }, "solution": "f = 1/T = 1/0.02 = 50 Hz." },
+    { "type": "question", "number": 4, "text": "القيمة التي يعطيها فولط متر عادي مضبوط على وضع المتناوب:", "input_type": "mcq", "options": ["القيمة الفعالة", "القيمة الأعظمية", "القيمة اللحظية"], "answer": { "value": "القيمة الفعالة" }, "solution": "يعطي الفولط متر العادي القيمة الفعالة." },
+    { "type": "question", "number": 5, "text": "العلاقة بين التوتر الفعال والتوتر الأعظمي:", "input_type": "mcq", "options": ["Ueff = Umax/√2", "Ueff = Umax.√2", "Ueff = Umax"], "answer": { "value": "Ueff = Umax/√2" }, "solution": "Ueff = Umax/√2." },
+    { "type": "question", "number": 6, "text": "توتر أعظمي Umax = 311 V، قيمته الفعالة (بوحدة V):", "input_type": "numeric", "answer": { "value": 220, "tolerance": 2 }, "solution": "Ueff = 311/1.414 = 220 V." },
+    { "type": "question", "number": 7, "text": "قانون أوم في التيار المتناوب الجيبي:", "input_type": "mcq", "options": ["U = Z.I", "U = I/Z", "U = Z/I"], "answer": { "value": "U = Z.I" }, "solution": "قانون أوم في التيار المتناوب: U = Z.I." },
+    { "type": "question", "number": 8, "text": "وحدة الممانعة Z هي:", "input_type": "mcq", "options": ["الأوم", "الفولط", "الأمبير"], "answer": { "value": "الأوم" }, "solution": "تقاس الممانعة بالأوم (Ω)." },
+    { "type": "question", "number": 9, "text": "توتر فعال 220 V في دارة ممانعتها 110 Ω، شدة التيار الفعالة (بوحدة A):", "input_type": "numeric", "answer": { "value": 2, "tolerance": 0.02 }, "solution": "I = U/Z = 220/110 = 2 A." },
+    { "type": "question", "number": 10, "text": "ترتيب المراحل الثلاث للتحويل من المتناوب إلى المستمر:", "input_type": "mcq", "options": ["التخفيض ثم التقويم ثم التمليس", "التقويم ثم التخفيض ثم التمليس", "التمليس ثم التقويم ثم التخفيض"], "answer": { "value": "التخفيض ثم التقويم ثم التمليس" }, "solution": "تخفيض بالمحول، تقويم بالصمام الثنائي، تمليس بالمكثفة." }
+  ]
+}

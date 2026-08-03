@@ -1,0 +1,50 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 022 - شامل للوحدة: تحليل جملة مهتزة",
+  "order_index": 22,
+  "source": "3AS U07 - Exercice 022",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 022 (شامل)"
+      },
+      {
+        "type": "text",
+        "content": "نظام نابض-كتلة (m = 0.4 kg, k = 60 N/m) يهتز أفقياً. سجلت الإزاحة x(t) = 0.05 cos(12.25t) m."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أوجد ω₀ و T₀ و f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أوجد X₀ و v_max و a_max.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب الطاقة Eₘ.",
+        "input_type": "numeric",
+        "placeholder": "E_m = ... J"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "نفس النظام يخضع لقوة مثيرة F(t) = 15 cos(ωt) N مع h = 3 N·s/m. أوجد ω_r (نبض الرنين) و X_max.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "دارة RLC مكافئة: إذا كان L = 0.3 H و R = 15 Ω، فجد قيمة C المكافئة.",
+        "input_type": "numeric",
+        "placeholder": "C = ... F"
+      }
+    ]
+  }
+}

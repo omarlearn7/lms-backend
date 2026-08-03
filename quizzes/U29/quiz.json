@@ -1,0 +1,22 @@
+{
+  "title": "اختبار الوحدة 10 - التحريض الكهرومغناطيسي",
+  "slug": "اختبار-الوحدة-10-التحريض-الكهرومغناطيسي",
+  "description": "اختبار شامل للوحدة العاشرة: التحريض الكهرومغناطيسي",
+  "category_id": 2,
+  "unit_id": 29,
+  "grade_level": "سنة ثانية ثانوي",
+  "order_index": 10,
+  "is_free": true,
+  "sections": [
+    { "type": "question", "number": 1, "text": "التيار الناشئ عند تقريب مغناطيس من وشيعة في دارة مغلقة يسمى:", "input_type": "mcq", "options": ["التيار المتحرض", "التيار المتناوب", "التيار المستمر"], "answer": { "value": "التيار المتحرض" }, "solution": "يسمى التيار الناشئ بالتيار المتحرض." },
+    { "type": "question", "number": 2, "text": "وحدة التدفق المغناطيسي هي:", "input_type": "mcq", "options": ["الويبر", "التسلا", "الفولط"], "answer": { "value": "الويبر" }, "solution": "يقاس التدفق المغناطيسي بالويبر (Wb)." },
+    { "type": "question", "number": 3, "text": "عبارة التدفق المغناطيسي عبر وشيعة من N لفة:", "input_type": "mcq", "options": ["Φ = N.B.S.cosθ", "Φ = B.S.cosθ", "Φ = N.B.S.sinθ"], "answer": { "value": "Φ = N.B.S.cosθ" }, "solution": "عبر وشيعة من N لفة: Φ = N.B.S.cosθ." },
+    { "type": "question", "number": 4, "text": "قانون فراداي ينص على توليد قوة محركة كهربائية تحريضية عند:", "input_type": "mcq", "options": ["تغير التدفق عبر الدارة", "ثبات التدفق", "انعدام التيار"], "answer": { "value": "تغير التدفق عبر الدارة" }, "solution": "قانون فراداي: التغير في التدفق يولّد قوة محركة تحريضية." },
+    { "type": "question", "number": 5, "text": "قانون لنز ينص على أن التيار المتحرض:", "input_type": "mcq", "options": ["يعاكس بأفعاله الأسباب التي أدت إلى نشوئه", "يقوي السبب", "لا يتأثر بالسبب"], "answer": { "value": "يعاكس بأفعاله الأسباب التي أدت إلى نشوئه" }, "solution": "التيار المتحرض يعاكس الأسباب التي أدت إلى نشوئه." },
+    { "type": "question", "number": 6, "text": "القوة المحركة الكهربائية التحريضية المتوسطة:", "input_type": "mcq", "options": ["em = −ΔΦ/Δt", "em = ΔΦ.Δt", "em = ΔΦ + Δt"], "answer": { "value": "em = −ΔΦ/Δt" }, "solution": "em = −ΔΦ/Δt." },
+    { "type": "question", "number": 7, "text": "حلقة مساحة سطحها S = 20 cm² في حقل B = 0.1 T عمودي عليها، التدفق عبر الحلقة (بوحدة Wb):", "input_type": "numeric", "answer": { "value": 0.0002, "tolerance": 1e-06 }, "solution": "Φ = B.S = 0.1 × 20 × 10⁻⁴ = 2 × 10⁻⁴ Wb." },
+    { "type": "question", "number": 8, "text": "شدة التيار المتحرض في دارة مغلقة مقاومتها R:", "input_type": "mcq", "options": ["I = e/R", "I = e.R", "I = R/e"], "answer": { "value": "I = e/R" }, "solution": "I = e/R." },
+    { "type": "question", "number": 9, "text": "وشيعة تتغير تدقيها من Φ1 = 4.55 × 10⁻³ Wb إلى Φ2 = 1.80 × 10⁻³ Wb خلال 0.04 s، القوة المحركة الكهربائية (بوحدة V):", "input_type": "numeric", "answer": { "value": 0.0688, "tolerance": 0.0001 }, "solution": "em = (4.55 − 1.80) × 10⁻³/0.04 = 6.88 × 10⁻² V." },
+    { "type": "question", "number": 10, "text": "وشيعة ذاتية L = 0.14 H يجتازها تيار i = 2.5 A، الطاقة المخزنة (بوحدة J):", "input_type": "numeric", "answer": { "value": 0.44, "tolerance": 0.01 }, "solution": "EL = ½.L.i² = 0.5 × 0.14 × 6.25 = 0.44 J." }
+  ]
+}

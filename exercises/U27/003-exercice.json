@@ -1,0 +1,15 @@
+{
+  "unit_id": 27,
+  "title": "تمرين 003 - حساب شدة الحقل المغناطيسي المتولد عن تيار",
+  "order_index": 3,
+  "source": "2AS U27 - Exercice 003",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 003", "level": 3 },
+      { "type": "text", "content": "احسب شدة الحقل المغناطيسي المتولد نتيجة مرور تيار كهربائي في الحالات التالية." },
+      { "type": "question", "number": 1, "text": "في نقطة M تبعد بمسافة d = 10 cm عن ناقل مستقيم كبير الطول يجتازه تيار شدته I = 12 A. (بوحدة T)", "input_type": "numeric", "answer": { "value": 0.000024, "tolerance": 1e-07 }, "solution": "B = 2 × 10⁻⁷ × I/d = 2 × 10⁻⁷ × 12/0.1 = 2.4 × 10⁻⁵ T." },
+      { "type": "question", "number": 2, "text": "في مركز وشيعة مسطحة نصف قطرها R = 4 cm وعدد حلقاتها N = 50 يجتازها تيار كهربائي شدته I = 5 A. (بوحدة T)", "input_type": "numeric", "answer": { "value": 0.00393, "tolerance": 1e-05 }, "solution": "B = 2π × 10⁻⁷ × N.I/R = 2π × 10⁻⁷ × 50 × 5/0.04 = 3.93 × 10⁻³ T." },
+      { "type": "question", "number": 3, "text": "في المنطقة المركزية لوشيعة تحتوي على 400 حلقة في المتر يجتازها تيار شدته 16 A. (بوحدة T)", "input_type": "numeric", "answer": { "value": 0.00804, "tolerance": 1e-05 }, "solution": "B = 4π × 10⁻⁷ × n.I = 4π × 10⁻⁷ × 400 × 16 = 8.04 × 10⁻³ T." }
+    ]
+  }
+}

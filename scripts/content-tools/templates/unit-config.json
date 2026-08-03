@@ -1,0 +1,11 @@
+{
+  "module": "math",
+  "level": "3eme",
+  "level_label": "سنة ثالثة ثانوي",
+  "grade_level": "grade_3",
+  "category": { "name": "الرياضيات", "slug": "math", "description": "دروس الرياضيات" },
+  "units": [
+    { "title": "الوحدة 1 <العنوان>", "order_index": 1, "description": "وصف قصير للوحدة" },
+    { "title": "الوحدة 2 <العنوان>", "order_index": 2, "description": "" }
+  ]
+}

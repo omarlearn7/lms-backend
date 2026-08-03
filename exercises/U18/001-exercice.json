@@ -1,0 +1,23 @@
+{
+  "unit_id": 18,
+  "title": "تمرين 001 - موازنة المعادلات الكيميائية",
+  "order_index": 1,
+  "source": "1AS U18 - Exercice 001",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "تمرين 001: موازنة المعادلات الكيميائية" },
+      { "type": "text", "content": "نعتبر المعادلات الكيميائية غير الموزونة التالية:" },
+      { "type": "table", "headers": ["الرقم", "المعادلة"], "rows": [
+        ["1", "2Sb + ... Cl₂ = ... SbCl₃"],
+        ["2", "... Li + ... O₂ = 2 Li₂O"],
+        ["3", "... S + ... Al = Al₂S₃"],
+        ["4", "... Fe + ... O₂ = Fe₃O₄"]
+      ] },
+      { "type": "divider" },
+      { "type": "question", "number": 1, "text": "الموازنة الصحيحة للمعادلة 2Sb + ... Cl₂ = ... SbCl₃ هي:", "input_type": "mcq", "options": ["2Sb + 3Cl₂ = 2SbCl₃", "Sb + Cl₂ = SbCl₃", "2Sb + 2Cl₂ = 2SbCl₃"], "answer": { "value": "2Sb + 3Cl₂ = 2SbCl₃" }, "solution": "2Sb + 3Cl₂ = 2SbCl₃: ذرات Sb: 2 = 2، وذرات Cl: 6 = 6." },
+      { "type": "question", "number": 2, "text": "الموازنة الصحيحة للمعادلة ... Li + ... O₂ = 2 Li₂O هي:", "input_type": "mcq", "options": ["4Li + O₂ = 2Li₂O", "2Li + O₂ = Li₂O", "Li + O₂ = Li₂O"], "answer": { "value": "4Li + O₂ = 2Li₂O" }, "solution": "4Li + O₂ = 2Li₂O: ذرات Li: 4 = 4، وذرات O: 2 = 2." },
+      { "type": "question", "number": 3, "text": "الموازنة الصحيحة للمعادلة ... S + ... Al = Al₂S₃ هي:", "input_type": "mcq", "options": ["3S + 2Al = Al₂S₃", "S + Al = Al₂S₃", "2S + 3Al = Al₂S₃"], "answer": { "value": "3S + 2Al = Al₂S₃" }, "solution": "3S + 2Al = Al₂S₃: ذرات S: 3 = 3، وذرات Al: 2 = 2." },
+      { "type": "question", "number": 4, "text": "الموازنة الصحيحة للمعادلة ... Fe + ... O₂ = Fe₃O₄ هي:", "input_type": "mcq", "options": ["3Fe + 2O₂ = Fe₃O₄", "Fe + O₂ = Fe₃O₄", "2Fe + 3O₂ = Fe₃O₄"], "answer": { "value": "3Fe + 2O₂ = Fe₃O₄" }, "solution": "3Fe + 2O₂ = Fe₃O₄: ذرات Fe: 3 = 3، وذرات O: 4 = 4." }
+    ]
+  }
+}

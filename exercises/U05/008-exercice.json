@@ -1,0 +1,63 @@
+{
+  "unit_id": 5,
+  "title": "تمرين 008 - تفكك α لعنصر البولونيوم",
+  "order_index": 8,
+  "source": "3AS U05 - Exercice 008",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 008"
+      },
+      {
+        "type": "text",
+        "content": "نظير البولونيوم ²¹⁰₈₄Po مشع α بعمر نصف t₁/₂ = 138 يوماً. لدينا عينة كتلتها m₀ = 1 mg."
+      },
+      {
+        "type": "text",
+        "content": "الكتل الذرية: m(Po) = 209.9829 u, m(Pb) = 205.9745 u, m(α) = 4.0026 u. يعطى: 1 u = 931.5 MeV/c², M(Po) ≈ 210 g/mol, N_A = 6.02 × 10²³ mol⁻¹."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب معادلة تفكك α لعنصر البولونيوم مع تحديد النواة الابن.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب ثابت التفكك λ (بوحدة s⁻¹).",
+        "input_type": "text",
+        "placeholder": "λ = t₁/₂ / ln2 ... s⁻¹"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب نقص الكتلة Δm لهذا التفكك بوحدة u ثم بوحدة kg.",
+        "input_type": "text",
+        "placeholder": "Δm = ... u = ... kg"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب الطاقة المحررة Q (MeV) من تفكك نواة واحدة.",
+        "input_type": "numeric",
+        "placeholder": "Q = ... MeV"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب عدد الأنوية N₀ في العينة الابتدائية ثم الطاقة الكلية المحررة من العينة كاملة.",
+        "input_type": "text",
+        "placeholder": "N₀ = ... , E_tot = ... J"
+      },
+      {
+        "type": "question",
+        "number": 6,
+        "text": "بعد كم يوماً تبقى 25% فقط من كتلة البولونيوم الابتدائية؟",
+        "input_type": "numeric",
+        "placeholder": "t = ... jours"
+      }
+    ]
+  }
+}

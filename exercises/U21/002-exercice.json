@@ -1,0 +1,17 @@
+{
+  "unit_id": 21,
+  "title": "تمرين 002 - عمل قوة الثقل على مسار ABCDE",
+  "order_index": 2,
+  "source": "2AS U21 - Exercice 002",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 002", "level": 3 },
+      { "type": "text", "content": "يتحرك جسم (S) كتلته m = 2 kg بدون احتكاك على المسار ABCDE الموضح في الشكل، والذي يتكون من: مستوي مائل AB يميل على الأفق بزاوية α، ومستوي أفقي BC. يعطى: AB = 10 m و R = 8 m و g = 10 m/s² و α = 30° و β = 60°." },
+      { "type": "question", "number": 1, "text": "احسب عمل قوة الثقل عند الانتقال من الموضع A إلى الموضع B. (بوحدة J)", "input_type": "numeric", "answer": { "value": 100, "tolerance": 0.01 }, "solution": "h = AB.sinα = 10 × sin30° = 5 m، إذن WAB(P) = m.g.h = 2 × 10 × 5 = 100 J." },
+      { "type": "question", "number": 2, "text": "احسب عمل قوة الثقل عند الانتقال من الموضع B إلى الموضع C. (بوحدة J)", "input_type": "numeric", "answer": { "value": 0, "tolerance": 0.01 }, "solution": "على المستوي الأفقي BC قوة الثقل عمودية على المسار فيكون عملها معدوماً: WBC(P) = 0 J." },
+      { "type": "question", "number": 3, "text": "احسب عمل قوة الثقل عند الانتقال من الموضع C إلى الموضع D. (بوحدة J)", "input_type": "numeric", "answer": { "value": 160, "tolerance": 0.01 }, "solution": "من الشكل h = R = 8 m، إذن WCD(P) = m.g.R = 2 × 10 × 8 = 160 J." },
+      { "type": "question", "number": 4, "text": "احسب عمل قوة الثقل عند الانتقال من الموضع D إلى الموضع E. (بوحدة J)", "input_type": "numeric", "answer": { "value": -80, "tolerance": 0.01 }, "solution": "h' = R(1 − cosβ) = 8(1 − cos60°) = 4 m، إذن WDE(P) = −m.g.R(1 − cosβ) = −2 × 10 × 4 = −80 J." },
+      { "type": "question", "number": 5, "text": "هل عمل قوة الثقل في هذه الحالة يتعلق بالمسار المتبع؟", "input_type": "mcq", "options": ["لا، يعتمد على الموضعين الابتدائي والنهائي فقط", "نعم، يعتمد على طول المسار", "يعتمد على شكل المسار فقط"], "answer": { "value": "لا، يعتمد على الموضعين الابتدائي والنهائي فقط" }, "solution": "عمل قوة الثقل لا يتعلق بالمسار المتبع بل بالموضعين الابتدائي والنهائي أي بفرق الارتفاع بينهما فقط." }
+    ]
+  }
+}

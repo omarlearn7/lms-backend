@@ -1,0 +1,57 @@
+{
+  "unit_id": 4,
+  "title": "تمرين 011 - تحضير محاليل بالتخفيف",
+  "order_index": 11,
+  "source": "3AS U04 - Exercice 011",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 011"
+      },
+      {
+        "type": "text",
+        "content": "يتوفر لدينا محلول تجاري من حمض كلور الهيدروجين HCl تركيزه C₀ = 0.50 mol/L. نريد تحضير المحاليل التالية بالتخفيف بالماء المقطر: (S₁) حجم V₁ = 100 mL بتركيز C₁ = 0.10 mol/L، (S₂) حجم V₂ = 250 mL بتركيز C₂ = 0.010 mol/L."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب الحجم V₀₁ من المحلول التجاري اللازم لتحضير (S₁).",
+        "input_type": "numeric",
+        "placeholder": "V₀₁ = ... mL"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب الحجم V₀₂ من المحلول التجاري اللازم لتحضير (S₂).",
+        "input_type": "numeric",
+        "placeholder": "V₀₂ = ... mL"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب pH المحلول (S₁).",
+        "input_type": "numeric",
+        "placeholder": "pH(S₁) = ..."
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب pH المحلول (S₂).",
+        "input_type": "numeric",
+        "placeholder": "pH(S₂) = ..."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "نمزج المحلولين (S₁) و (S₂) فنحصل على (S₃) حجمه V₃ = 350 mL. أحسب تركيز HCl في المزيج ثم pH.",
+        "input_type": "text"
+      },
+      {
+        "type": "note",
+        "variant": "info",
+        "text": "تذكير: قوانين التخفيف C₀·V₀ = C₁·V₁. HCl حمض قوي، إذن pH = −log C."
+      }
+    ]
+  }
+}

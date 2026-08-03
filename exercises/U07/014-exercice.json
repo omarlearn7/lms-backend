@@ -1,0 +1,51 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 014 - رنين RLC: حساب f₀ و Q وعرض الحزمة",
+  "order_index": 14,
+  "source": "3AS U07 - Exercice 014",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 014"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC متسلسلة: R = 50 Ω, L = 0.4 H, C = 16 µF. موصولة بمولد جيبي u(t) = 24 cos(ωt) V."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب ω₀ و f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب معامل الجودة Q.",
+        "input_type": "numeric",
+        "placeholder": "Q = ..."
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب عرض الرنين Δω و Δf.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب التيار العظمي I_max عند الرنين.",
+        "input_type": "numeric",
+        "placeholder": "I_max = ... A"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "احسب التوتر العظمي بين طرفي المكثف عند الرنين. قارنه مع U_m.",
+        "input_type": "numeric",
+        "placeholder": "U_Cmax = ... V"
+      }
+    ]
+  }
+}

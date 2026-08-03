@@ -1,0 +1,12 @@
+{
+  "prefix": "2AS",
+  "unit": "U27",
+  "items": [
+    { "file": "exercises/U27/001-exercice.json", "kind": "exercise" },
+    { "file": "exercises/U27/002-exercice.json", "kind": "exercise" },
+    { "file": "exercises/U27/003-exercice.json", "kind": "exercise" },
+    { "file": "exercises/U27/004-exercice.json", "kind": "exercise" },
+    { "file": "exercises/U27/005-exercice.json", "kind": "exercise" },
+    { "file": "quizzes/U27/quiz.json", "kind": "quiz" }
+  ]
+}

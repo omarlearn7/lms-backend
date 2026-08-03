@@ -1,0 +1,52 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 029 - بكالوريا 2010: رنين RLC",
+  "order_index": 29,
+  "source": "3AS U07 - Bac 2010",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 029 (بكالوريا 2010)"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC متسلسلة: R = 120 Ω, L, C. عند f₀ = 100 Hz يمر تيار I_eff = 0.2 A لتوتر U_eff = 24 V."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أثبت أن الدارة في حالة رنين عند f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب المقاومة R والتحقق من القيمة المعطاة.",
+        "input_type": "numeric",
+        "placeholder": "R = ... Ω"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "إذا كان L = 0.4 H، فاحسب C.",
+        "input_type": "numeric",
+        "placeholder": "C = ... F"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب التوتر U_C بين طرفي المكثف عند الرنين.",
+        "input_type": "numeric",
+        "placeholder": "U_C = ... V"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب الطاقة المخزنة في المكثف عند الرنين.",
+        "input_type": "numeric",
+        "placeholder": "E_C = ... J"
+      }
+    ]
+  }
+}

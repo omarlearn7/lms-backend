@@ -1,0 +1,55 @@
+{
+  "unit_id": 5,
+  "title": "تمرين 005 - طاقة الربط النووي والاندماج",
+  "order_index": 5,
+  "source": "3AS U05 - Exercice 005",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 005"
+      },
+      {
+        "type": "text",
+        "content": "تفاعل الاندماج النووي للديوتيريوم ²₁H والتريتيوم ³₁H: ²₁H + ³₁H → ⁴₂He + ¹₀n"
+      },
+      {
+        "type": "text",
+        "content": "الكتل الذرية: m(²H) = 2.0136 u, m(³H) = 3.0155 u, m(⁴He) = 4.0015 u, m(n) = 1.0087 u. m_p = 1.0073 u, m_n = 1.0087 u. 1 u = 931.5 MeV/c²."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "تحقق من انحفاظ A و Z في تفاعل الاندماج.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب نقص الكتلة Δm بالوحدة u.",
+        "input_type": "numeric",
+        "placeholder": "Δm = ... u"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب الطاقة المحررة من اندماج نواة واحدة بوحدة MeV.",
+        "input_type": "numeric",
+        "placeholder": "E = ... MeV"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أحسب طاقة الربط E_l لنواة الهليوم ⁴₂He.",
+        "input_type": "numeric",
+        "placeholder": "E_l = ... MeV"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب طاقة الربط لكل نوكليون (E_l/A) لنواة الهليوم. قارنها مع الحديد (⁵⁶Fe, 8.8 MeV/نوكليون). ماذا تستنتج؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

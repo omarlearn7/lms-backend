@@ -1,0 +1,18 @@
+{
+  "unit_id": 31,
+  "title": "تمرين 002 - الصيغ الجزيئية والأصناف",
+  "order_index": 2,
+  "source": "2AS U31 - Exercice 002",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 002", "level": 3 },
+      { "type": "text", "content": "أكمل الجدول بتحديد الصيغة العامة والصنف لكل مركب عضوي." },
+      { "type": "question", "number": 1, "text": "الصيغة العامة للألكان المحتوي على n ذرة كربون:", "input_type": "mcq", "options": ["CnH2n+2", "CnH2n", "CnH2n−2"], "answer": { "value": "CnH2n+2" }, "solution": "الألكانات: CnH2n+2." },
+      { "type": "question", "number": 2, "text": "الصيغة العامة للألكين:", "input_type": "mcq", "options": ["CnH2n", "CnH2n+2", "CnH2n−2"], "answer": { "value": "CnH2n" }, "solution": "الألكينات: CnH2n." },
+      { "type": "question", "number": 3, "text": "الصيغة العامة للكحول:", "input_type": "mcq", "options": ["CnH2n+1OH", "CnH2nO", "CnH2nO2"], "answer": { "value": "CnH2n+1OH" }, "solution": "الكحولات: CnH2n+1OH." },
+      { "type": "question", "number": 4, "text": "الصيغة الجزيئية لمركب ألكان فيه 5 ذرات كربون:", "input_type": "mcq", "options": ["C5H12", "C5H10", "C5H8"], "answer": { "value": "C5H12" }, "solution": "C5H(2×5+2) = C5H12." },
+      { "type": "question", "number": 5, "text": "الصيغة الجزيئية لمركب ألكين فيه 4 ذرات كربون:", "input_type": "mcq", "options": ["C4H8", "C4H10", "C4H6"], "answer": { "value": "C4H8" }, "solution": "C4H(2×4) = C4H8." },
+      { "type": "question", "number": 6, "text": "مركب صيغته C2H6O هو:", "input_type": "mcq", "options": ["إيثانول", "ميثان", "إيثان"], "answer": { "value": "إيثانول" }, "solution": "C2H6O = C2H5OH إيثانول." }
+    ]
+  }
+}

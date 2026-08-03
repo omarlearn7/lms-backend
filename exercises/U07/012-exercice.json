@@ -1,0 +1,50 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 012 - شبه الدور في دارة RLC مخمدة",
+  "order_index": 12,
+  "source": "3AS U07 - Exercice 012",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 012"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC: L = 0.2 H, C = 8 µF, R = 20 Ω. نغلق الدارة بعد شحن المكثف تحت Q₀ = 15 µC."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب T₀ (الدور الذاتي غير المخمد) و ω₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "هل التخميد ضعيف؟ برر (احسب R² و 4L/C).",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أحسب النبض المخمد ω_d وشبه الدور T = 2π/ω_d.",
+        "input_type": "numeric",
+        "placeholder": "T = ... s"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "احسب نسبة T/T₀. ماذا تلاحظ؟",
+        "input_type": "numeric",
+        "placeholder": "T/T₀ = ..."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "أحسب ثابت الزمن τ = 2L/R. كم دورة تقريباً حتى تصبح السعة أقل من 5% من Q₀؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

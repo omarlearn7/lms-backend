@@ -1,0 +1,17 @@
+{
+  "unit_id": 10,
+  "title": "تمرين 001 - السرعة المتوسطة وجدول المواضع",
+  "order_index": 1,
+  "source": "1AS U10 - Exercice 001",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 001" },
+      { "type": "text", "content": "جسم نقطي (S) يتحرك على مسار مستقيم، يبدأ حركته من الموضع (A) باتجاه الموضع (B)، فيقطع مسافة AB = 2 m بعد 2 s من بدء حركته، ثم مسافة BC = 3 m بعد 1 s من مروره بالموضع (B) باتجاه موضع آخر (C)." },
+      { "type": "question", "number": 1, "text": "أحسب السرعة المتوسطة للمتحرك بين الموضعين A وB.", "input_type": "numeric", "placeholder": "v = ... m/s", "answer": { "value": 1, "tolerance": 0.01 }, "solution": "$v_1 = AB/\\Delta t_1 = 2/2 = 1\\,m/s$." },
+      { "type": "question", "number": 2, "text": "أحسب السرعة المتوسطة للمتحرك بين الموضعين B وC.", "input_type": "numeric", "placeholder": "v = ... m/s", "answer": { "value": 3, "tolerance": 0.01 }, "solution": "$v_2 = BC/\\Delta t_2 = 3/1 = 3\\,m/s$." },
+      { "type": "question", "number": 3, "text": "هل حركة المتحرك مستقيمة منتظمة؟", "input_type": "mcq", "options": ["لا، لأن السرعة غير ثابتة", "نعم، لأن المسار مستقيم", "نعم، لأن السرعة ثابتة"], "answer": { "value": "لا، لأن السرعة غير ثابتة" }, "solution": "السرعة تغيرت من 1 m/s إلى 3 m/s، فحركة المتحرك مستقيمة متغيرة." },
+      { "type": "question", "number": 4, "text": "أحسب السرعة المتوسطة الكلية للمتحرك بين A وC.", "input_type": "numeric", "placeholder": "v = ... m/s", "answer": { "value": 1.67, "tolerance": 0.01 }, "solution": "المسافة الكلية d = 2 + 3 = 5 m، والمدة الكلية Δt = 2 + 1 = 3 s، إذن $v = 5/3 \\approx 1.67\\,m/s$." },
+      { "type": "question", "number": 5, "text": "في معلم خطي مبدؤه عند A وجهته في جهة الحركة، فاصلة الموضع B تساوي:", "input_type": "numeric", "answer": { "value": 2, "tolerance": 0.01 }, "solution": "بعد الموضع B عن مبدأ المعلم A هو AB = 2 m." }
+    ]
+  }
+}

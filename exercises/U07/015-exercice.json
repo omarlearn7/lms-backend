@@ -1,0 +1,49 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 015 - الممانعة وزاوية الطور في RLC",
+  "order_index": 15,
+  "source": "3AS U07 - Exercice 015",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 015"
+      },
+      {
+        "type": "text",
+        "content": "دارة RLC: R = 100 Ω, L = 0.2 H, C = 10 µF, مولد u(t) = 50 cos(ωt) V. نغير التردد f."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب عبارة الممانعة Z بدلالة ω.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب Z عند f = f₀ (الرنين).",
+        "input_type": "numeric",
+        "placeholder": "Z = ... Ω"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "احسب Z عند f = 0.5f₀ وعند f = 2f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "أكتب عبارة زاوية الطور φ بين i(t) و u(t). أحسب φ عند f = 0.5f₀.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "ارسم كيفياً تغير Z(f) و φ(f) بدلالة التردد.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

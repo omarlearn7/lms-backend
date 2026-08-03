@@ -1,0 +1,20 @@
+{
+  "unit_id": 21,
+  "title": "تمرين 004 - جسم على مسار ABCD",
+  "order_index": 4,
+  "source": "2AS U21 - Exercice 004",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 004", "level": 3 },
+      { "type": "text", "content": "جسم (S) نعتبره نقطيًا (أبعاده مهملة) كتلته m = 1 kg يتحرك على المسار ABCD حيث: AB مستوي مائل طوله AB = 2 m ويميل على الأفق بزاوية α = 30° فيه الاحتكاك مهمل، و BC مسار مستقيم أفقي طوله BC = 2 m يخضع فيه الجسم لقوة احتكاك f شدتها ثابتة. يعطى g = 10 m/s²." },
+      { "type": "question", "number": 1, "text": "يدفع الجسم (S) من الموضع A بسرعة ابتدائية vA = 4 m/s. اكتب معادلة انحفاظ الطاقة للجملة (جسم S) أثناء الانتقال من A إلى B:", "input_type": "equation", "answer": ["ECA + WAB(P) = ECB", "ECA + mgh = ECB"], "solution": "على المستوي المائل AB يتأثر الجسم بالثقل P في جهة الحركة وبرد الفعل R عمودية على المسار، إذن ECA + WAB(P) = ECB." },
+      { "type": "question", "number": 2, "text": "احسب سرعة الجسم عند الموضع B أسفل المستوي المائل. (بوحدة m/s)", "input_type": "numeric", "answer": { "value": 6, "tolerance": 0.01 }, "solution": "h = AB.sinα = 2 × sin30° = 1 m. vB = √(vA² + 2g.h) = √(16 + 2 × 10 × 1) = √36 = 6 m/s." },
+      { "type": "text", "content": "يصل الجسم (S) إلى الموضع C بسرعة vC = 4 m/s." },
+      { "type": "question", "number": 3, "text": "اكتب معادلة انحفاظ الطاقة للجملة (جسم S) أثناء الانتقال من B إلى C:", "input_type": "equation", "answer": ["ECB − WBC(f) = ECC", "ECB - WBC(f) = ECC"], "solution": "على المسار الأفقي BC يؤثر على الجسم الاحتكاك f معاكسًا لجهة الحركة (تقديم طاقة): ECB − WBC(f) = ECC." },
+      { "type": "question", "number": 4, "text": "جد شدة قوة الاحتكاك f. (بوحدة N)", "input_type": "numeric", "answer": { "value": 5, "tolerance": 0.01 }, "solution": "f = m(vB² − vC²)/(2.BC) = 1 × (36 − 16)/(2 × 2) = 20/4 = 5 N." },
+      { "type": "text", "content": "عند وصول الجسم (S) إلى النقطة C التي تبعد عن سطح الأرض بمقدار h، ينطلق في الهواء ويسقط تحت تأثير ثقله حتى يصطدم بالأرض في الموضع D بسرعة vD = 7 m/s." },
+      { "type": "question", "number": 5, "text": "اكتب معادلة انحفاظ الطاقة للجملة (جسم S) أثناء الانتقال من C إلى D:", "input_type": "equation", "answer": ["ECC + WCD(P) = ECD", "ECC + mgh' = ECD"], "solution": "أثناء السقوط يكون الثقل في جهة الحركة (اكتساب طاقة) وتهمل كل قوى الاحتكاك ودفع أرخميدس: ECC + WCD(P) = ECD." },
+      { "type": "question", "number": 6, "text": "جد الارتفاع h. (بوحدة m)", "input_type": "numeric", "answer": { "value": 1.65, "tolerance": 0.01 }, "solution": "h = (vD² − vC²)/(2g) = (49 − 16)/(2 × 10) = 33/20 = 1.65 m." }
+    ]
+  }
+}

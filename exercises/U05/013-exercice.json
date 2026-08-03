@@ -1,0 +1,54 @@
+{
+  "unit_id": 5,
+  "title": "تمرين 013 - إشعاع γ وإزالة الإثارة",
+  "order_index": 13,
+  "source": "3AS U05 - Exercice 013",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 013"
+      },
+      {
+        "type": "text",
+        "content": "نظير الكوبالت ⁶⁰₂₇Co مشع β⁻. عندما تتفكك نواة الكوبالت، تولد نواة نيكل في حالة مثارة ⁶⁰₂₈Ni* التي تعود بعدها إلى حالتها الأساسية بإصدار إشعاع γ."
+      },
+      {
+        "type": "text",
+        "content": "الكتل: m(⁶⁰Co) = 59.9338 u, m(⁶⁰Ni) = 59.9308 u, m(e⁻) ≈ 0.00055 u. يعطى: 1 u = 931.5 MeV/c²."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أكتب معادلة تفكك β⁻ للكوبالت 60.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب الطاقة Q₁ المحررة من تفكك β⁻ (MeV).",
+        "input_type": "numeric",
+        "placeholder": "Q₁ = ... MeV"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "أكتب معادلة إزالة الإثارة: ⁶⁰₂₈Ni* → ⁶⁰₂₈Ni + γ.",
+        "input_type": "equation"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "إذا علمت أن أشعة γ الصادرة لها طاقتان: E_γ₁ = 1.17 MeV و E_γ₂ = 1.33 MeV. أحسب طاقة الإثارة الكلية لنواة النيكل.",
+        "input_type": "text",
+        "placeholder": "E_excitation = ... MeV"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "لماذا لا يصدر γ من النواة الأم مباشرة؟ ولماذا يرافق γ كل تفككات β⁻ و β⁺ في بعض الأنوية؟",
+        "input_type": "text"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "unit_id": 7,
+  "title": "تمرين 007 - تغذية الاهتزازات الميكانيكية",
+  "order_index": 7,
+  "source": "3AS U07 - Exercice 007",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 007"
+      },
+      {
+        "type": "text",
+        "content": "نظام نابض-كتلة (k = 20 N/m, m = 0.2 kg) مهتز حراً. نغذيه بطاقة خارجية كلما نقصت طاقته الميكانيكية عن 95% من طاقته الابتدائية (E₀ = 25 mJ)."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "احسب الدور الخاص T₀ للنظام.",
+        "input_type": "numeric",
+        "placeholder": "T₀ = ... s"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "احسب السعة الابتدائية X₀ من الطاقة E₀.",
+        "input_type": "numeric",
+        "placeholder": "X₀ = ... m"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "إذا كانت قدرة التغذية P_inj = 0.5 W، فما مقدار الطاقة المحقونة في كل دورة إذا استمرت التغذية مدة Δt = 50 ms؟",
+        "input_type": "numeric",
+        "placeholder": "E_inj = ... J"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "قارن هذا النظام بالنظام الحر غير المخمد والنظام المخمد.",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "اذكر تطبيقاً عملياً لتغذية الاهتزازات.",
+        "input_type": "text"
+      }
+    ]
+  }
+}

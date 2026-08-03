@@ -1,0 +1,16 @@
+{
+  "unit_id": 32,
+  "title": "تمرين 001 - علاقة التبديل",
+  "order_index": 1,
+  "source": "2AS U32 - Exercice 001",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 001", "level": 3 },
+      { "type": "text", "content": "عدسة مقربة بعدها المحرقي f = 9 cm، نضع أمامها جسمًا حقيقيًا AB طوله AB = 1.5 cm على بعد P = 12 cm من هذه العدسة وبشكل عمودي على محورها البصري حيث يقع B على هذا المحور." },
+      { "type": "question", "number": 1, "text": "أحسب بعد الخيال P' عن العدسة.", "input_type": "numeric", "answer": { "value": "36", "unit": "cm", "tolerance": 0.5 }, "solution": "بتطبيق علاقة التبديل: 1/P + 1/P' = 1/f أي 1/12 + 1/P' = 1/9 ومنه 1/P' = 1/36، إذن P' = 36 cm." },
+      { "type": "question", "number": 2, "text": "بين أن التكبير γ للعدسة يساوي −3.", "input_type": "numeric", "answer": { "value": "-3", "tolerance": 0.1 }, "solution": "γ = −P'/P = −36/12 = −3." },
+      { "type": "question", "number": 3, "text": "أحسب طول الخيال A'B'.", "input_type": "numeric", "answer": { "value": "4.5", "unit": "cm", "tolerance": 0.1 }, "solution": "A'B' = |γ| × AB = 3 × 1.5 = 4.5 cm." },
+      { "type": "question", "number": 4, "text": "طبيعة الخيال المحصل عليه هنا هي:", "input_type": "mcq", "options": ["حقيقي مقلوب", "وهمي غير مقلوب", "حقيقي غير مقلوب"], "answer": { "value": "حقيقي مقلوب" }, "solution": "بما أن γ < 0 و P' > 0 فالخيال حقيقي ومقلوب." }
+    ]
+  }
+}

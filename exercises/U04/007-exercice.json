@@ -1,0 +1,59 @@
+{
+  "unit_id": 4,
+  "title": "تمرين 007 - مخطط الصفة الغالبة",
+  "order_index": 7,
+  "source": "3AS U04 - Exercice 007",
+  "content_json": {
+    "sections": [
+      {
+        "type": "heading",
+        "text": "التمرين 007"
+      },
+      {
+        "type": "text",
+        "content": "لثنائي $CH_3COOH/CH_3COO^-$ حيث $pK_a = 4.76$. لدينا محلول من حمض الإيثانويك تركيزه $C = 0.10$ mol/L."
+      },
+      {
+        "type": "question",
+        "number": 1,
+        "text": "أحسب $pH$ هذا المحلول (الحمض ضعيف).",
+        "input_type": "numeric",
+        "placeholder": "pH = ... (بـ 0.01)"
+      },
+      {
+        "type": "question",
+        "number": 2,
+        "text": "أحسب النسبة $[CH_3COO^-]/[CH_3COOH]$ ثم أحسب النسبة المئوية $\\%CH_3COOH$ و $\\%CH_3COO^-$ في المحلول. ما هي الصفة الغالبة؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 3,
+        "text": "نضيف كمية من $NaOH$ حتى يصبح $pH = 5.76$. أحسب النسبة $[CH_3COO^-]/[CH_3COOH]$ الجديدة. ما هي الصفة الغالبة الآن؟",
+        "input_type": "text"
+      },
+      {
+        "type": "question",
+        "number": 4,
+        "text": "عند أي قيمة $pH$ يكون $\\%CH_3COOH = \\%CH_3COO^- = 50\\%$؟",
+        "input_type": "numeric",
+        "placeholder": "pH = ..."
+      },
+      {
+        "type": "question",
+        "number": 5,
+        "text": "املأ الجدول التالي:",
+        "input_type": "text"
+      },
+      {
+        "type": "table",
+        "headers": ["pH", "$[CH_3COO^-]/[CH_3COOH]$", "الصفة الغالبة"],
+        "rows": [
+          ["3.00", "", ""],
+          ["4.76", "", ""],
+          ["6.00", "", ""]
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "unit_id": 30,
+  "title": "تمرين 002 - دراسة محول كهربائي",
+  "order_index": 2,
+  "source": "2AS U30 - Exercice 002",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 002", "level": 3 },
+      { "type": "text", "content": "محول عدد لفات وشيعته الأولية N1 = 600 وعدد لفات وشيعته الثانوية N2 = 150. نربط طرفي الوشيعة الأولية إلى توتر متناوب جيبي سعته U1max = 24 V وتواتره f = 20 Hz وطرفي الوشيعة الثانوية إلى مقاومة R = 10 Ω." },
+      { "type": "question", "number": 1, "text": "ما هو نوع التوتر الذي يظهر بين طرفي الوشيعة الثانوية؟", "input_type": "mcq", "options": ["متناوب جيبي", "مستمر", "مربع"], "answer": { "value": "متناوب جيبي" }, "solution": "التوتر الثانوي من نفس طبيعة التوتر الأولي: متناوب جيبي." },
+      { "type": "question", "number": 2, "text": "احسب سعة التوتر U2max الذي يظهر بين طرفي الوشيعة الثانوية. (بوحدة V)", "input_type": "numeric", "answer": { "value": 6, "tolerance": 0.1 }, "solution": "U2max/U1max = N2/N1 إذن U2max = (150/600) × 24 = 6 V." },
+      { "type": "question", "number": 3, "text": "ما هو تواتر التوتر الثانوي؟ (بوحدة Hz)", "input_type": "numeric", "answer": { "value": 20, "tolerance": 1 }, "solution": "التواتر لا يتغير عبر المحول: f = 20 Hz." },
+      { "type": "question", "number": 4, "text": "احسب معامل التحويل K ثم حدد نوع المحول.", "input_type": "mcq", "options": ["K = 0.25، محول خافض", "K = 4، محول رافع", "K = 0.25، محول رافع"], "answer": { "value": "K = 0.25، محول خافض" }, "solution": "K = N2/N1 = 150/600 = 0.25، وبما أن K < 1 فالمحول خافض للتوتر." },
+      { "type": "question", "number": 5, "text": "احسب القيمة الفعالة U2eff بين طرفي الناقل الأومي. (بوحدة V)", "input_type": "numeric", "answer": { "value": 4.24, "tolerance": 0.02 }, "solution": "U2eff = U2max/√2 = 6/1.414 = 4.24 V." },
+      { "type": "question", "number": 6, "text": "احسب شدة التيار الفعالة المارة في المقاومة. (بوحدة A)", "input_type": "numeric", "answer": { "value": 0.424, "tolerance": 0.005 }, "solution": "Ieff = U2eff/R = 4.24/10 = 0.424 A = 424 mA." }
+    ]
+  }
+}

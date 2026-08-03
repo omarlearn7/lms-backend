@@ -1,0 +1,16 @@
+{
+  "unit_id": 22,
+  "title": "تمرين 002 - عزم قوة الثقل لجسم معلق",
+  "order_index": 2,
+  "source": "2AS U22 - Exercice 002",
+  "content_json": {
+    "sections": [
+      { "type": "heading", "text": "التمرين 002", "level": 3 },
+      { "type": "text", "content": "جسم (S) نعتبره نقطيًا كتلته m = 100 g معلق بخيط طوله ℓ = 40 cm. احسب عزم الثقل P في الحالات الثلاث المبينة في الشكل. يعطى: g = 10 m/s² و α = 30°." },
+      { "type": "question", "number": 1, "text": "الحالة 1: الخيط شاقولي والجسم في أخفض موضع. عزم الثقل يساوي:", "input_type": "numeric", "answer": { "value": 0.4, "tolerance": 0.01 }, "solution": "في هذه الحالة d = ℓ = 0.4 m، إذن M = m.g.d = 0.1 × 10 × 0.4 = 0.4 N.m." },
+      { "type": "question", "number": 2, "text": "الحالة 2: الخيط يصنع زاوية α = 30° مع الشاقول. عزم الثقل يساوي:", "input_type": "numeric", "answer": { "value": 0.2, "tolerance": 0.01 }, "solution": "في هذه الحالة d = ℓ.sinα = 0.4 × sin30° = 0.2 m، إذن M = m.g.ℓ.sinα = 0.1 × 10 × 0.4 × 0.5 = 0.2 N.m." },
+      { "type": "question", "number": 3, "text": "الحالة 3: حامل الثقل يمر من مركز الدوران. عزم الثقل يساوي:", "input_type": "numeric", "answer": { "value": 0, "tolerance": 0.01 }, "solution": "لأن حامل P مار من مركز الدوران فإن d = 0 وبالتالي M = P.d = 0 N.m." },
+      { "type": "question", "number": 4, "text": "عندما يصنع الخيط زاوية مع الشاقول، عزم الثقل:", "input_type": "mcq", "options": ["يعتمد على الزاوية α", "يبقى ثابتًا مهما تغيرت الزاوية", "ينعدم دائمًا"], "answer": { "value": "يعتمد على الزاوية α" }, "solution": "عزم الثقل في هذه الحالة M = m.g.ℓ.sinα يعتمد على الزاوية α بين الخيط والشاقول." }
+    ]
+  }
+}

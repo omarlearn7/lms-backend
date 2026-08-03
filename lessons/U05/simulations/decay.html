@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكاة التناقص الإشعاعي</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI',Tahoma,sans-serif;display:flex;justify-content:center;padding:12px;min-height:100vh}
+.container{max-width:700px;width:100%}
+h1{text-align:center;font-size:15px;color:#fbbf24;margin-bottom:4px}
+canvas#mainCanvas{background:#0f172a;border:1px solid #334155;border-radius:8px;display:block;margin:0 auto;width:100%;max-width:680px;height:340px}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;background:#1e293b;border-radius:8px;padding:10px;border:1px solid #334155}
+.ctrl-group{display:flex;flex-direction:column;gap:2px}
+.ctrl-group label{font-size:11px;color:#94a3b8}
+.ctrl-group .val{color:#fbbf24;font-size:12px;font-weight:700}
+input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:#334155;border-radius:2px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#f59e0b;cursor:pointer}
+.btn-group{display:flex;gap:6px}
+.btn{flex:1;background:#334155;color:#94a3b8;border:1px solid #475569;border-radius:4px;padding:5px;font-size:11px;cursor:pointer;text-align:center;transition:all .15s}
+.btn.active{background:#3b82f6;color:#fff;border-color:#3b82f6;font-weight:700}
+.btn:hover{background:#475569;color:#e2e8f0}
+.info-row{display:flex;gap:10px;justify-content:center;margin-top:6px;font-size:12px;color:#94a3b8;flex-wrap:wrap}
+.info-row span{background:#1e293b;padding:4px 10px;border-radius:4px;border:1px solid #334155}
+.info-row .big{font-size:14px;font-weight:700}
+.info-row .n-val{color:#38bdf8}
+.info-row .a-val{color:#f59e0b}
+.info-row .t-val{color:#22c55e}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>محاكاة التناقص الإشعاعي: N(t) = N₀ · e⁻λᵗ</h1>
+  <canvas id="mainCanvas" width="680" height="340"></canvas>
+  <div class="controls">
+    <div class="ctrl-group full">
+      <label>ثابت النشاط الإشعاعي λ: <span class="val" id="lambdaDisplay">0.10 s⁻¹</span></label>
+      <input type="range" id="lambdaSlider" min="0.01" max="0.50" step="0.01" value="0.10">
+    </div>
+    <div class="ctrl-group full">
+      <label>عمر النصف t₁/₂: <span class="val" id="halfLifeDisplay">6.93 s</span></label>
+    </div>
+    <div class="btn-group full">
+      <div class="btn active" id="playBtn">تشغيل ▶</div>
+      <div class="btn" id="resetBtn">إعادة تعيين ↺</div>
+    </div>
+  </div>
+  <div class="info-row">
+    <span>الزمن: <span class="t-val big" id="timeDisplay">0.0</span> s</span>
+    <span>N(t): <span class="n-val big" id="nDisplay">1000</span></span>
+    <span>A(t): <span class="a-val big" id="aDisplay">100.0</span> Bq</span>
+    <span>N(t)/N₀: <span class="big" id="ratioDisplay">100</span>%</span>
+  </div>
+</div>
+<script>
+const canvas = document.getElementById('mainCanvas');
+const ctx = canvas.getContext('2d');
+const W = canvas.width, H = canvas.height;
+
+const N0 = 1000;
+let lambda = 0.10;
+let t = 0;
+let playing = true;
+let animId = null;
+
+const plotLeft = 70, plotRight = 640, plotTop = 30, plotBottom = 310;
+const plotW = plotRight - plotLeft, plotH = plotBottom - plotTop;
+
+const T_MAX = 30;
+
+function n(t) { return N0 * Math.exp(-lambda * t); }
+function a(t) { return lambda * n(t); }
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+
+  // Grid
+  ctx.strokeStyle = '#1e293b';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([3, 3]);
+  for (let i = 0; i <= 4; i++) {
+    const y = plotTop + (i / 4) * plotH;
+    ctx.beginPath(); ctx.moveTo(plotLeft, y); ctx.lineTo(plotRight, y);
+    ctx.stroke();
+  }
+  for (let i = 0; i <= 6; i++) {
+    const x = plotLeft + (i / 6) * plotW;
+    ctx.beginPath(); ctx.moveTo(x, plotTop); ctx.lineTo(x, plotBottom);
+    ctx.stroke();
+  }
+  ctx.setLineDash([]);
+
+  // Axes
+  ctx.strokeStyle = '#475569';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(plotLeft, plotTop); ctx.lineTo(plotLeft, plotBottom); ctx.lineTo(plotRight, plotBottom);
+  ctx.stroke();
+
+  // Labels
+  ctx.fillStyle = '#94a3b8';
+  ctx.font = '11px sans-serif';
+  ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  for (let i = 0; i <= 6; i++) {
+    const val = (i / 6) * T_MAX;
+    const x = plotLeft + (i / 6) * plotW;
+    ctx.fillText(val.toFixed(0), x, plotBottom + 4);
+  }
+  ctx.fillText('t (s)', plotRight, plotBottom + 4);
+
+  ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+  for (let i = 0; i <= 4; i++) {
+    const val = 100 - (i / 4) * 100;
+    const y = plotTop + (i / 4) * plotH;
+    ctx.fillText(val.toFixed(0) + '%', plotLeft - 6, y);
+  }
+  ctx.textAlign = 'center';
+  ctx.save(); ctx.translate(15, (plotTop + plotBottom) / 2); ctx.rotate(-Math.PI / 2);
+  ctx.fillText('N(t) / N₀', 0, 0);
+  ctx.restore();
+
+  // Draw N(t) curve
+  ctx.strokeStyle = '#38bdf8';
+  ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  for (let px = 0; px <= plotW; px++) {
+    const tv = (px / plotW) * T_MAX;
+    const nv = n(tv);
+    const nx = plotLeft + px;
+    const ny = plotBottom - (nv / N0) * plotH;
+    px === 0 ? ctx.moveTo(nx, ny) : ctx.lineTo(nx, ny);
+  }
+  ctx.stroke();
+
+  // A(t) curve (dashed)
+  ctx.strokeStyle = '#f59e0b';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([4, 3]);
+  const A0 = a(0);
+  ctx.beginPath();
+  for (let px = 0; px <= plotW; px++) {
+    const tv = (px / plotW) * T_MAX;
+    const av = a(tv);
+    const nx = plotLeft + px;
+    const ny = plotBottom - (av / A0) * plotH;
+    px === 0 ? ctx.moveTo(nx, ny) : ctx.lineTo(nx, ny);
+  }
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Current position marker
+  const curN = n(t);
+  const curA = a(t);
+  const nx = plotLeft + (t / T_MAX) * plotW;
+  const ny = plotBottom - (curN / N0) * plotH;
+  const ny2 = plotBottom - (curA / A0) * plotH;
+
+  // N marker
+  ctx.fillStyle = '#38bdf8';
+  ctx.beginPath(); ctx.arc(nx, ny, 5, 0, 2 * Math.PI); ctx.fill();
+  ctx.strokeStyle = '#e2e8f0';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  // A marker
+  ctx.fillStyle = '#f59e0b';
+  ctx.beginPath(); ctx.arc(nx, ny2, 4, 0, 2 * Math.PI); ctx.fill();
+
+  // Vertical dashed line at current t
+  ctx.strokeStyle = '#64748b';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([3, 3]);
+  ctx.beginPath(); ctx.moveTo(nx, plotTop); ctx.lineTo(nx, plotBottom); ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Half-life markers
+  const hl = Math.log(2) / lambda;
+  ctx.fillStyle = '#22c55e';
+  ctx.font = '10px sans-serif';
+  for (let k = 1; k <= 4; k++) {
+    const tx = k * hl;
+    if (tx > T_MAX) break;
+    const hx = plotLeft + (tx / T_MAX) * plotW;
+    const hn = n(tx);
+    const hy = plotBottom - (hn / N0) * plotH;
+    ctx.strokeStyle = '#22c55e';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([2, 4]);
+    ctx.beginPath(); ctx.moveTo(hx, hy); ctx.lineTo(hx, plotBottom); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillText(`${k}t₁/₂`, hx - 12, plotBottom + 4);
+  }
+
+  // Legend
+  ctx.fillStyle = '#1e293b';
+  ctx.fillRect(470, 36, 155, 48);
+  ctx.strokeStyle = '#334155';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(470, 36, 155, 48);
+  ctx.strokeStyle = '#38bdf8';
+  ctx.lineWidth = 2.5;
+  ctx.beginPath(); ctx.moveTo(478, 50); ctx.lineTo(508, 50); ctx.stroke();
+  ctx.fillStyle = '#e2e8f0';
+  ctx.font = '10px sans-serif';
+  ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+  ctx.fillText('N(t) / N₀', 515, 50);
+  ctx.strokeStyle = '#f59e0b';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([4, 3]);
+  ctx.beginPath(); ctx.moveTo(478, 72); ctx.lineTo(508, 72); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#e2e8f0';
+  ctx.fillText('A(t) / A₀', 515, 72);
+}
+
+function update() {
+  document.getElementById('lambdaDisplay').textContent = lambda.toFixed(2) + ' s⁻¹';
+  const hl = Math.log(2) / lambda;
+  document.getElementById('halfLifeDisplay').textContent = hl.toFixed(2) + ' s';
+  document.getElementById('timeDisplay').textContent = t.toFixed(1);
+  document.getElementById('nDisplay').textContent = Math.round(n(t));
+  document.getElementById('aDisplay').textContent = a(t).toFixed(1);
+  document.getElementById('ratioDisplay').textContent = ((n(t) / N0) * 100).toFixed(1);
+}
+
+function step(dt) {
+  if (!playing) return;
+  t += dt;
+  if (t > T_MAX) { t = 0; }
+  draw();
+  update();
+}
+
+function animate(ts) {
+  step(0.1);
+  animId = requestAnimationFrame(animate);
+}
+
+// Event listeners
+document.getElementById('lambdaSlider').addEventListener('input', function() {
+  lambda = parseFloat(this.value);
+  t = Math.min(t, T_MAX);
+  draw();
+  update();
+});
+
+document.getElementById('playBtn').addEventListener('click', function() {
+  playing = !playing;
+  this.textContent = playing ? 'إيقاف مؤقت ⏸' : 'تشغيل ▶';
+  this.classList.toggle('active', playing);
+});
+
+document.getElementById('resetBtn').addEventListener('click', function() {
+  t = 0;
+  draw();
+  update();
+});
+
+draw();
+update();
+animId = requestAnimationFrame(animate);
+</script>
+</body>
+</html>
