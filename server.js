@@ -14,6 +14,8 @@ function isAllowedOrigin(origin) {
   if (origin === 'http://localhost:5173' || origin === 'http://localhost:3000') return true;
   if (origin === FRONTEND_URL) return true;
   if (/^https:\/\/[a-f0-9]+\.lms-frontend-4nk\.pages\.dev$/.test(origin)) return true;
+  // Production apex + any Cloudflare Pages alias of this project
+  if (origin === 'https://lms-frontend-4nk.pages.dev') return true;
   return false;
 }
 
