@@ -3,6 +3,7 @@ const express = require('express');
 const { createClient } = require('@supabase/supabase-js');
 const { body, param, query, validationResult } = require('express-validator');
 const { requireAuth, requireTeacherOrAdmin } = require('../middleware/supabase');
+const { sanitizeContentJson } = require('../lib/sanitize');
 
 const router = express.Router();
 
@@ -175,6 +176,7 @@ router.post('/', requireAuth, requireTeacherOrAdmin, [
     if (!handleValidation(req, res)) return;
 
     const { title, content_json, category_id, grade_level, order_index, is_free, description, thumbnail_url } = req.body;
+    const cleanContentJson = sanitizeContentJson(content_json);
 
     let slug = slugify(title);
     const { data: existing } = await supabase.from('lessons').select('id').eq('slug', slug).single();
@@ -192,7 +194,7 @@ router.post('/', requireAuth, requireTeacherOrAdmin, [
         grade_level: grade_level || null,
         order_index: order_index || 0,
         is_free: is_free || false,
-        content_json,
+        content_json: cleanContentJson,
         thumbnail_url: thumbnail_url || null,
         created_by: req.user.id,
       }])
@@ -227,7 +229,9 @@ router.put('/:id', requireAuth, requireTeacherOrAdmin, [
     const allowed = ['title', 'content_json', 'category_id', 'grade_level', 'order_index', 'is_free', 'description', 'thumbnail_url'];
 
     for (const key of allowed) {
-      if (req.body[key] !== undefined) updates[key] = req.body[key];
+      if (req.body[key] !== undefined) {
+        updates[key] = key === 'content_json' ? sanitizeContentJson(req.body[key]) : req.body[key];
+      }
     }
 
     if (updates.title) {
