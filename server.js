@@ -4,19 +4,22 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
+const { startScanner } = require('./lib/payment-scanner');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 const FRONTEND_URL = process.env.FRONTEND_URL || 'https://lms-frontend-4nk.pages.dev';
 
-function isAllowedOrigin(origin) {
-  if (!origin) return false;
-  if (origin === 'http://localhost:5173' || origin === 'http://localhost:3000') return true;
-  if (origin === FRONTEND_URL) return true;
-  if (/^https:\/\/[a-f0-9]+\.lms-frontend-4nk\.pages\.dev$/.test(origin)) return true;
+// cors requires the origin option to be callback-style: (origin, callback) => callback(null, allowed)
+function isAllowedOrigin(origin, callback) {
+  if (!origin) return callback(null, false);
+  if (origin === 'http://localhost:5173' || origin === 'http://localhost:3000') return callback(null, true);
+  if (origin === FRONTEND_URL) return callback(null, true);
+  if (/^https:\/\/[a-f0-9]+\.lms-frontend-4nk\.pages\.dev$/.test(origin)) return callback(null, true);
   // Production apex + any Cloudflare Pages alias of this project
-  if (origin === 'https://lms-frontend-4nk.pages.dev') return true;
-  return false;
+  if (origin === 'https://lms-frontend-4nk.pages.dev') return callback(null, true);
+  return callback(null, false);
 }
 
 app.use(helmet());
@@ -71,3 +74,7 @@ app.use('/api/admin', require('./routes/admin'));
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+// Background USDT (BEP-20) payment scanner: auto-verifies payments by sender
+// wallet binding + amount, grants access, and logs unmatched transfers.
+startScanner(60 * 1000);

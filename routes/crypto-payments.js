@@ -6,6 +6,9 @@ const { body, query, param, validationResult } = require('express-validator');
 const { requireAuth, requireAdmin } = require('../middleware/supabase');
 const { sendReceipt } = require('../lib/mail');
 const rateLimit = require('express-rate-limit');
+const { getDzdRate, dzdToUsdt } = require('../lib/p2p-rate');
+const { getProvider } = require('../lib/bsc-rpc');
+const { scanOnce, completePayment, reconcileExpiredFlags, fetchIncomingTransfers } = require('../lib/payment-scanner');
 
 const router = express.Router();
 
@@ -43,6 +46,9 @@ const ERC20_ABI = [
   'function decimals() view returns (uint8)'
 ];
 
+const WALLET_RE = /^0x[a-fA-F0-9]{40}$/;
+const TXHASH_RE = /0x[a-fA-F0-9]{64}/;
+
 function handleValidation(req, res) {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -50,20 +56,82 @@ function handleValidation(req, res) {
   }
 }
 
+async function fetchOrder(orderId) {
+  const { data, error } = await supabase
+    .from('payments')
+    .select('id, status, expires_at, user_id, product_id, exact_crypto_amount, payer_address, payment_source, products(title, type, duration_days)')
+    .eq('id', orderId)
+    .single();
+  if (error || !data) return null;
+  return data;
+}
+
+async function markExpired(orderId) {
+  await supabase.from('payments').update({ status: 'expired' }).eq('id', orderId);
+}
+
+async function verifyTransferOnChain(txHash) {
+  // Returns { from, amountStr } if the tx contains a USDT transfer of the
+  // expected amount to the platform wallet, else null.
+  const provider = await getProvider();
+  const receipt = await provider.getTransactionReceipt(txHash);
+  if (!receipt) return { found: false, reason: 'not_found' };
+  const contract = new ethers.Contract(USDT_BSC_ADDRESS, ERC20_ABI, provider);
+  for (const log of receipt.logs) {
+    if (String(log.address).toLowerCase() !== USDT_BSC_ADDRESS.toLowerCase()) continue;
+    let parsed;
+    try {
+      parsed = contract.interface.parseLog(log);
+    } catch (e) {
+      continue;
+    }
+    if (!parsed || !parsed.args) continue;
+    const from = parsed.args.from;
+    const to = parsed.args.to;
+    const value = parsed.args.value;
+    if (!to || String(to).toLowerCase() !== RECEIVER_WALLET.toLowerCase()) continue;
+    return { found: true, from, amountStr: ethers.formatUnits(value, 18) };
+  }
+  return { found: false, reason: 'no_transfer' };
+}
+
+async function sendReceiptFor(req, order, txHash) {
+  const product = Array.isArray(order.products) ? order.products[0] : order.products;
+  if (req.user && req.user.email) {
+    try {
+      await sendReceipt({
+        to: req.user.email,
+        amount: order.exact_crypto_amount,
+        currency: 'USDT',
+        txId: txHash,
+        productTitle: product && product.title,
+        date: new Date().toLocaleString('fr-FR'),
+        paymentSource: order.payment_source,
+      });
+    } catch (err) {
+      console.error('Receipt email error:', err);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // POST /api/crypto/create-invoice
+// ---------------------------------------------------------------------------
 router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
   body('productId').isUUID().withMessage('Invalid productId'),
   body('paymentSource').optional().isIn(['binance', 'web3']).withMessage('Invalid paymentSource'),
+  body('payerAddress').matches(WALLET_RE).withMessage('Payer wallet address is required and must be a valid 0x... address'),
 ], async (req, res) => {
   try {
     if (!handleValidation(req, res)) return;
     const userId = req.user.id;
-    const { productId, paymentSource } = req.body;
+    const { productId, paymentSource, payerAddress } = req.body;
     const source = paymentSource === 'binance' ? 'binance' : 'web3';
+    const payerAddressLower = String(payerAddress).toLowerCase();
 
     const { data: product, error: pError } = await supabase
       .from('products')
-      .select('id, title, description, type, duration_days, base_price')
+      .select('id, title, description, type, duration_days, base_price, base_price_dzd')
       .eq('id', productId)
       .eq('is_active', true)
       .single();
@@ -72,14 +140,34 @@ router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
       return res.status(404).json({ error: 'Product not found or inactive' });
     }
 
-    const basePrice = parseFloat(product.base_price);
-    let isUnique = false;
-    let finalCryptoAmount = basePrice;
-    let attempts = 0;
+    // DZD-anchored pricing: convert via the LIVE Binance P2P rate.
+    // Falls back to the legacy USDT base price if the live rate is unavailable.
+    let basePriceUsdt;
+    let baseAmountDzd = null;
+    let rateSnapshot = null;
+    if (product.base_price_dzd != null) {
+      try {
+        const rateData = await getDzdRate();
+        // Use the BUY side (what the user actually pays to acquire USDT on P2P)
+        // so the USDT amount equals the advertised DZD price.
+        basePriceUsdt = dzdToUsdt(parseFloat(product.base_price_dzd), rateData.buy);
+        baseAmountDzd = parseFloat(product.base_price_dzd);
+        rateSnapshot = { rate: rateData.buy, buy: rateData.buy, sell: rateData.sell, mid: rateData.rate };
+      } catch (rateErr) {
+        console.error('Live rate unavailable, using USDT base:', rateErr.message);
+        basePriceUsdt = parseFloat(product.base_price);
+      }
+    } else {
+      basePriceUsdt = parseFloat(product.base_price);
+    }
 
+    // Unique micro-decimal amount (defense-in-depth; sender binding is primary).
+    let isUnique = false;
+    let finalCryptoAmount = basePriceUsdt;
+    let attempts = 0;
     while (!isUnique && attempts < 100) {
       const randomFraction = (Math.floor(Math.random() * 999) + 1) / 100000;
-      finalCryptoAmount = parseFloat((basePrice + randomFraction).toFixed(5));
+      finalCryptoAmount = parseFloat((basePriceUsdt + randomFraction).toFixed(5));
 
       const { data: collision } = await supabase
         .from('payments')
@@ -87,14 +175,23 @@ router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
         .eq('exact_crypto_amount', finalCryptoAmount)
         .eq('status', 'pending');
 
-      if (!collision || collision.length === 0) {
-        isUnique = true;
-      }
+      if (!collision || collision.length === 0) isUnique = true;
       attempts++;
     }
 
     if (!isUnique) {
       return res.status(500).json({ error: 'Could not generate unique amount, try again' });
+    }
+
+    // Check the bound wallet actually holds enough USDT (non-blocking UX hint).
+    let payerBalance = null;
+    try {
+      const provider = await getProvider();
+      const contract = new ethers.Contract(USDT_BSC_ADDRESS, ERC20_ABI, provider);
+      const bal = await contract.balanceOf(payerAddressLower);
+      payerBalance = parseFloat(ethers.formatUnits(bal, 18));
+    } catch (err) {
+      console.error('Balance check error:', err.message);
     }
 
     const expiresAt = new Date(Date.now() + 20 * 60 * 1000).toISOString();
@@ -104,13 +201,16 @@ router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
       .insert([{
         user_id: userId,
         product_id: productId,
-        base_amount: basePrice,
+        base_amount: parseFloat(basePriceUsdt.toFixed(5)),
         exact_crypto_amount: finalCryptoAmount,
+        base_amount_dzd: baseAmountDzd,
+        rate_dzd_per_usdt: rateSnapshot ? rateSnapshot.rate : null,
+        payer_address: payerAddressLower,
         payment_source: source,
         status: 'pending',
         expires_at: expiresAt
       }])
-      .select('id, exact_crypto_amount, payment_source, status, expires_at')
+      .select('id, exact_crypto_amount, base_amount_dzd, rate_dzd_per_usdt, payer_address, payment_source, status, expires_at')
       .single();
 
     if (iError) throw iError;
@@ -130,7 +230,9 @@ router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
       receiver_wallet: RECEIVER_WALLET,
       network: 'BSC (BNB Smart Chain)',
       token: 'USDT (BEP-20)',
-      token_address: USDT_BSC_ADDRESS
+      token_address: USDT_BSC_ADDRESS,
+      rate: rateSnapshot,
+      payer_balance: payerBalance,
     });
 
   } catch (err) {
@@ -139,7 +241,11 @@ router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
   }
 });
 
+// ---------------------------------------------------------------------------
 // POST /api/crypto/verify-payment
+// Re-scans recent blocks for a transfer that matches this invoice
+// (sender address + amount). Completion is atomic + tx_hash consumed once.
+// ---------------------------------------------------------------------------
 router.post('/verify-payment', requireAuth, cryptoWriteLimiter, [
   body('orderId').isUUID().withMessage('Invalid orderId'),
 ], async (req, res) => {
@@ -147,101 +253,42 @@ router.post('/verify-payment', requireAuth, cryptoWriteLimiter, [
     if (!handleValidation(req, res)) return;
     const { orderId } = req.body;
 
-    const { data: order, error: oError } = await supabase
-      .from('payments')
-      .select('id, status, expires_at, user_id, product_id, exact_crypto_amount, payment_source, products(title, type, duration_days)')
-      .eq('id', orderId)
-      .single();
-
-    if (oError || !order) {
-      return res.status(400).json({ error: 'Order not found' });
-    }
-
-    if (order.user_id !== req.user.id) {
-      return res.status(403).json({ error: 'Access denied' });
-    }
-
+    const order = await fetchOrder(orderId);
+    if (!order) return res.status(400).json({ error: 'Order not found' });
+    if (order.user_id !== req.user.id) return res.status(403).json({ error: 'Access denied' });
     if (order.status === 'completed') {
       return res.status(200).json({ success: true, status: 'completed', message: 'Payment already verified' });
     }
-
     if (order.status === 'expired' || new Date(order.expires_at) < new Date()) {
-      if (order.status === 'pending') {
-        await supabase.from('payments').update({ status: 'expired' }).eq('id', orderId);
-      }
+      if (order.status === 'pending') await markExpired(orderId);
       return res.status(200).json({ success: false, status: 'expired', message: 'Invoice expired. Please create a new one.' });
     }
+    if (!RECEIVER_WALLET) return res.status(500).json({ error: 'Payment system not configured' });
 
-    if (!RECEIVER_WALLET) {
-      return res.status(500).json({ error: 'Payment system not configured' });
-    }
-
-    const provider = new ethers.JsonRpcProvider(BSC_RPC);
+    const provider = await getProvider();
     const contract = new ethers.Contract(USDT_BSC_ADDRESS, ERC20_ABI, provider);
 
     const latestBlock = await provider.getBlockNumber();
     const fromBlock = Math.max(latestBlock - 400, 0);
+    const logs = await fetchIncomingTransfers(provider, contract, fromBlock, latestBlock);
 
-    const filter = contract.filters.Transfer(null, RECEIVER_WALLET);
-    const logs = await contract.queryFilter(filter, fromBlock, latestBlock);
-
-    let matched = false;
+    const expectedCents = Math.round(parseFloat(order.exact_crypto_amount) * 1e6);
     let txHash = null;
-    const expectedAmount = order.exact_crypto_amount;
+    let fromAddress = null;
 
     for (const log of logs) {
-      const rawValue = log.args.value;
-      const amountStr = ethers.formatUnits(rawValue, 18);
-
-      const receivedCents = Math.round(parseFloat(amountStr) * 100000);
-      const expectedCents = Math.round(expectedAmount * 100000);
-
-      if (receivedCents === expectedCents) {
-        matched = true;
-        txHash = log.transactionHash;
-        break;
-      }
+      const receivedCents = Math.round(parseFloat(ethers.formatUnits(log.args.value, 18)) * 1e6);
+      if (receivedCents !== expectedCents) continue;
+      const from = log.args.from;
+      if (order.payer_address && String(from).toLowerCase() !== String(order.payer_address).toLowerCase()) continue;
+      txHash = log.transactionHash;
+      fromAddress = from;
+      break;
     }
 
-    if (matched) {
-      await supabase
-        .from('payments')
-        .update({ status: 'completed', tx_hash: txHash })
-        .eq('id', orderId);
-
-      let expiresAt = null;
-      const productType = Array.isArray(order.products) ? order.products[0] : order.products;
-      if (productType && productType.type === 'subscription' && productType.duration_days) {
-        const exp = new Date();
-        exp.setDate(exp.getDate() + productType.duration_days);
-        expiresAt = exp.toISOString();
-      }
-
-      await supabase.from('user_access').insert([{
-        user_id: order.user_id,
-        product_id: order.product_id,
-        expires_at: expiresAt,
-        is_active: true
-      }]);
-
-      await supabase
-        .from('profiles')
-        .update({ subscription_active: true })
-        .eq('id', order.user_id);
-
-      const product = Array.isArray(order.products) ? order.products[0] : order.products;
-      if (req.user.email) {
-        sendReceipt({
-          to: req.user.email,
-          amount: order.exact_crypto_amount,
-          currency: 'USDT',
-          txId: txHash,
-          productTitle: product && product.title,
-          date: new Date().toLocaleString('fr-FR'),
-          paymentSource: order.payment_source,
-        });
-      }
-
+    if (txHash) {
+      const didComplete = await completePayment(order, txHash, fromAddress);
+      if (didComplete) await sendReceiptFor(req, order, txHash);
       return res.status(200).json({
         success: true,
         status: 'completed',
@@ -262,7 +309,79 @@ router.post('/verify-payment', requireAuth, cryptoWriteLimiter, [
   }
 });
 
+// ---------------------------------------------------------------------------
+// POST /api/crypto/verify-by-txlink
+// User pastes a BSCScan link / tx hash. We pull THAT exact tx on-chain and
+// verify receiver + amount. Works for Binance-direct withdrawals and any
+// wallet. tx_hash is consumed once via the unique DB constraint.
+// ---------------------------------------------------------------------------
+router.post('/verify-by-txlink', requireAuth, cryptoWriteLimiter, [
+  body('orderId').isUUID().withMessage('Invalid orderId'),
+  body('txLink').isString().isLength({ min: 10, max: 2000 }).withMessage('Transaction link is required'),
+], async (req, res) => {
+  try {
+    if (!handleValidation(req, res)) return;
+    const { orderId, txLink } = req.body;
+
+    const order = await fetchOrder(orderId);
+    if (!order) return res.status(400).json({ error: 'Order not found' });
+    if (order.user_id !== req.user.id) return res.status(403).json({ error: 'Access denied' });
+    if (order.status === 'completed') {
+      return res.status(200).json({ success: true, status: 'completed', message: 'Payment already verified' });
+    }
+    if (order.status === 'expired' || new Date(order.expires_at) < new Date()) {
+      if (order.status === 'pending') await markExpired(orderId);
+      return res.status(200).json({ success: false, status: 'expired', message: 'Invoice expired. Please create a new one.' });
+    }
+    if (!RECEIVER_WALLET) return res.status(500).json({ error: 'Payment system not configured' });
+
+    const match = String(txLink).match(TXHASH_RE);
+    if (!match) {
+      return res.status(400).json({ error: 'Could not read a transaction hash from that link' });
+    }
+    const txHash = match[0];
+
+    const { found, reason, from, amountStr } = await verifyTransferOnChain(txHash);
+
+    if (!found) {
+      return res.status(200).json({
+        success: false,
+        status: reason === 'not_found' ? 'pending' : 'mismatch',
+        message: reason === 'not_found'
+          ? 'المعاملة غير موجودة بعد على السلسلة. انتظر دقيقة وأعد المحاولة.'
+          : 'هذه المعاملة لا ترسل USDT إلى محفظتنا. تأكد من أنك نسخت الرابط الصحيح.',
+      });
+    }
+
+    const expectedCents = Math.round(parseFloat(order.exact_crypto_amount) * 1e6);
+    const receivedCents = Math.round(parseFloat(amountStr) * 1e6);
+
+    if (receivedCents !== expectedCents) {
+      return res.status(200).json({
+        success: false,
+        status: 'mismatch',
+        message: `المبلغ المرسل (${amountStr} USDT) لا يطابق المبلغ المطلوب (${order.exact_crypto_amount} USDT).`,
+      });
+    }
+
+    const didComplete = await completePayment(order, txHash, from);
+    if (didComplete) await sendReceiptFor(req, order, txHash);
+    return res.status(200).json({
+      success: true,
+      status: 'completed',
+      message: 'Payment verified! Access granted.',
+      tx_hash: txHash
+    });
+
+  } catch (err) {
+    console.error('Verify by txlink error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // POST /api/crypto/check-access
+// ---------------------------------------------------------------------------
 router.post('/check-access', requireAuth, async (req, res) => {
   try {
     const userId = req.user.id;
@@ -347,12 +466,116 @@ router.post('/check-access', requireAuth, async (req, res) => {
   }
 });
 
+// ---------------------------------------------------------------------------
+// GET /api/crypto/rate (public) — live USDT/DZD Binance P2P rate
+// ---------------------------------------------------------------------------
+router.get('/rate', async (req, res) => {
+  try {
+    const rateData = await getDzdRate();
+    return res.status(200).json({ ...rateData, age_ms: Date.now() - rateData.fetchedAt });
+  } catch (err) {
+    return res.status(502).json({ error: 'Rate unavailable', message: err.message });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/crypto/scan (admin) — trigger a wallet scan manually
+// ---------------------------------------------------------------------------
+router.post('/scan', requireAuth, adminOpsLimiter, requireAdmin, async (req, res) => {
+  try {
+    const results = await scanOnce();
+    return res.status(200).json(results);
+  } catch (err) {
+    console.error('Manual scan error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/crypto/reconcile-flags (admin) — clear stale subscription_active
+// ---------------------------------------------------------------------------
+router.post('/reconcile-flags', requireAuth, adminOpsLimiter, requireAdmin, async (req, res) => {
+  try {
+    const cleared = await reconcileExpiredFlags();
+    return res.status(200).json({ cleared });
+  } catch (err) {
+    console.error('Reconcile flags error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/crypto/incoming-transfers (admin) — reconcile queue
+// ---------------------------------------------------------------------------
+router.get('/incoming-transfers', requireAuth, adminOpsLimiter, requireAdmin, [
+  query('status').optional().isIn(['unmatched', 'matched', 'ignored']).withMessage('Invalid status'),
+], async (req, res) => {
+  try {
+    if (!handleValidation(req, res)) return;
+    let q = supabase
+      .from('incoming_transfers')
+      .select('id, tx_hash, from_address, amount, status, matched_payment_id, detected_at')
+      .order('detected_at', { ascending: false })
+      .limit(100);
+    if (req.query.status) q = q.eq('status', req.query.status);
+    const { data, error } = await q;
+    if (error) throw error;
+    return res.status(200).json(data || []);
+  } catch (err) {
+    console.error('Fetch incoming transfers error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/crypto/reconcile (admin) — force-complete a payment from a tx hash
+// ---------------------------------------------------------------------------
+router.post('/reconcile', requireAuth, adminOpsLimiter, requireAdmin, [
+  body('paymentId').isUUID().withMessage('Invalid paymentId'),
+  body('txHash').matches(/^0x[a-fA-F0-9]{64}$/).withMessage('Invalid tx hash'),
+], async (req, res) => {
+  try {
+    if (!handleValidation(req, res)) return;
+    const { paymentId, txHash } = req.body;
+
+    const order = await fetchOrder(paymentId);
+    if (!order) return res.status(404).json({ error: 'Payment not found' });
+    if (order.status === 'completed') {
+      return res.status(200).json({ success: true, message: 'Payment already completed' });
+    }
+
+    const { found, reason, from, amountStr } = await verifyTransferOnChain(txHash);
+    if (!found) {
+      return res.status(400).json({ error: reason === 'not_found' ? 'Transaction not found on chain' : 'No USDT transfer to our wallet in that tx' });
+    }
+
+    const expectedCents = Math.round(parseFloat(order.exact_crypto_amount) * 1e6);
+    const receivedCents = Math.round(parseFloat(amountStr) * 1e6);
+    if (receivedCents !== expectedCents) {
+      return res.status(400).json({ error: `Amount mismatch: received ${amountStr} USDT, expected ${order.exact_crypto_amount} USDT` });
+    }
+
+    const didComplete = await completePayment(order, txHash, from);
+    if (!didComplete) {
+      return res.status(200).json({ success: true, message: 'Already completed by another process' });
+    }
+    if (req.user && req.user.email) await sendReceiptFor(req, order, txHash);
+
+    return res.status(200).json({ success: true, tx_hash: txHash });
+  } catch (err) {
+    console.error('Reconcile error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // GET /api/crypto/products (public)
+// ---------------------------------------------------------------------------
 router.get('/products', async (req, res) => {
   try {
     const { data: products, error } = await supabase
       .from('products')
-      .select('id, title, description, type, duration_days, base_price, sort_order')
+      .select('id, title, description, type, duration_days, base_price, base_price_dzd, discount_2nd_pct, discount_3rd_pct, max_family_size, sort_order')
       .eq('is_active', true)
       .order('sort_order', { ascending: true });
 
@@ -364,12 +587,14 @@ router.get('/products', async (req, res) => {
   }
 });
 
+// ---------------------------------------------------------------------------
 // GET /api/crypto/products/all (admin)
+// ---------------------------------------------------------------------------
 router.get('/products/all', requireAuth, adminOpsLimiter, requireAdmin, async (req, res) => {
   try {
     const { data: products, error } = await supabase
       .from('products')
-      .select('id, title, description, type, duration_days, base_price, is_active, sort_order, created_at')
+      .select('id, title, description, type, duration_days, base_price, base_price_dzd, discount_2nd_pct, discount_3rd_pct, max_family_size, is_active, sort_order, created_at')
       .order('sort_order', { ascending: true });
 
     if (error) throw error;
@@ -380,35 +605,54 @@ router.get('/products/all', requireAuth, adminOpsLimiter, requireAdmin, async (r
   }
 });
 
+// ---------------------------------------------------------------------------
 // POST /api/crypto/products (admin)
+// ---------------------------------------------------------------------------
 router.post('/products', requireAuth, adminOpsLimiter, requireAdmin, [
   body('title').isString().isLength({ min: 1, max: 200 }).withMessage('Title required (max 200 chars)'),
   body('type').isIn(['subscription', 'course', 'bundle']).withMessage('Invalid product type'),
-  body('base_price').isFloat({ min: 0 }).withMessage('base_price must be a positive number'),
-  body('duration_days').optional().isInt({ min: 1, max: 3650 }).withMessage('Duration must be 1-3650 days'),
+  body('base_price').optional({ values: 'falsy' }).isFloat({ min: 0 }).withMessage('base_price must be a positive number'),
+  body('base_price_dzd').optional({ values: 'falsy' }).isFloat({ min: 0 }).withMessage('base_price_dzd must be a positive number'),
+  body('discount_2nd_pct').optional({ values: 'falsy' }).isFloat({ min: 0, max: 100 }).withMessage('discount 2nd must be 0-100'),
+  body('discount_3rd_pct').optional({ values: 'falsy' }).isFloat({ min: 0, max: 100 }).withMessage('discount 3rd must be 0-100'),
+  body('max_family_size').optional({ values: 'falsy' }).isInt({ min: 1, max: 10 }).withMessage('max_family_size must be 1-10'),
+  body('duration_days').optional({ values: 'falsy' }).isInt({ min: 1, max: 3650 }).withMessage('Duration must be 1-3650 days'),
   body('description').optional().isString().isLength({ max: 2000 }).withMessage('Description max 2000 chars'),
 ], async (req, res) => {
   try {
     if (!handleValidation(req, res)) return;
-    const { id, title, description, type, duration_days, base_price, is_active, sort_order } = req.body;
+    const {
+      id, title, description, type, duration_days, base_price, base_price_dzd,
+      discount_2nd_pct, discount_3rd_pct, max_family_size, is_active, sort_order,
+    } = req.body;
+
+    const payload = {
+      title, description, type,
+      duration_days: duration_days ?? null,
+      base_price: base_price ?? null,
+      base_price_dzd: base_price_dzd ?? null,
+      discount_2nd_pct: discount_2nd_pct ?? 0,
+      discount_3rd_pct: discount_3rd_pct ?? 0,
+      max_family_size: max_family_size ?? 1,
+      is_active: is_active ?? true,
+      sort_order: sort_order ?? 0,
+    };
 
     if (id) {
       const { data, error } = await supabase
         .from('products')
-        .update({ title, description, type, duration_days, base_price, is_active, sort_order })
+        .update(payload)
         .eq('id', id)
         .select()
         .single();
-
       if (error) throw error;
       return res.status(200).json(data);
     } else {
       const { data, error } = await supabase
         .from('products')
-        .insert([{ title, description, type, duration_days, base_price, is_active, sort_order }])
+        .insert([payload])
         .select()
         .single();
-
       if (error) throw error;
       return res.status(201).json(data);
     }
@@ -448,14 +692,10 @@ router.get('/payments', requireAuth, adminOpsLimiter, requireAdmin, [
 
     let queryBuilder = supabase
       .from('payments')
-      .select('id, user_id, product_id, base_amount, exact_crypto_amount, status, payment_source, tx_hash, created_at, expires_at, products(title, type)');
+      .select('id, user_id, product_id, base_amount, base_amount_dzd, exact_crypto_amount, status, payment_source, payer_address, from_address, tx_hash, created_at, expires_at, verified_at, products(title, type)');
 
-    if (userId) {
-      queryBuilder = queryBuilder.eq('user_id', userId);
-    }
-    if (status) {
-      queryBuilder = queryBuilder.eq('status', status);
-    }
+    if (userId) queryBuilder = queryBuilder.eq('user_id', userId);
+    if (status) queryBuilder = queryBuilder.eq('status', status);
 
     queryBuilder = queryBuilder.order('created_at', { ascending: false }).limit(100);
 
