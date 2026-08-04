@@ -38,6 +38,92 @@ function accountStatus(profile, activeAccessByUser, now) {
   return 'locked';
 }
 
+// POST /api/admin/create-user (admin) — manually create any account (student/teacher/parent/admin)
+router.post('/create-user', requireAuth, requireAdmin, async (req, res) => {
+  try {
+    const {
+      role, first_name, last_name, email, password,
+      grade_level, phone, country, parent_id, teaching_subject,
+      trial_days,
+    } = req.body || {};
+
+    const allowedRoles = ['student', 'teacher', 'parent', 'admin'];
+    const normalizedRole = String(role || 'student').toLowerCase();
+    if (!allowedRoles.includes(normalizedRole)) {
+      return res.status(400).json({ error: 'Invalid role. Must be one of: student, teacher, parent, admin.' });
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email))) {
+      return res.status(400).json({ error: 'A valid email is required.' });
+    }
+    if (normalizedRole === 'student' && !grade_level) {
+      return res.status(400).json({ error: 'grade_level is required for student accounts.' });
+    }
+
+    const generatedPassword = password && password.length >= 8
+      ? password
+      : Array.from({ length: 12 }, () => {
+          const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+          return chars[Math.floor(Math.random() * chars.length)];
+        }).join('');
+
+    const { data: authData, error: authError } = await supabase.auth.admin.createUser({
+      email,
+      password: generatedPassword,
+      email_confirm: true,
+      user_metadata: {
+        first_name: first_name || '',
+        last_name: last_name || '',
+        role: normalizedRole,
+      },
+    });
+
+    if (authError) {
+      return res.status(400).json({ error: authError.message });
+    }
+
+    const trialEndsAt = trial_days && Number(trial_days) > 0
+      ? new Date(Date.now() + Number(trial_days) * 24 * 60 * 60 * 1000).toISOString()
+      : null;
+
+    const profileRow = {
+      id: authData.user.id,
+      role: normalizedRole,
+      first_name: first_name || '',
+      last_name: last_name || '',
+      country: country || 'dz',
+      subscription_active: !!trialEndsAt,
+    };
+    if (normalizedRole === 'student') {
+      profileRow.grade_level = grade_level;
+      if (parent_id) profileRow.parent_id = parent_id;
+    }
+    if (normalizedRole === 'parent') profileRow.parent_type = 'أب';
+    if (normalizedRole === 'teacher' && teaching_subject) profileRow.teaching_subject = teaching_subject;
+    if (phone) profileRow.phone = phone;
+    if (trialEndsAt) profileRow.trial_ends_at = trialEndsAt;
+
+    const { error: profileError } = await supabase
+      .from('profiles')
+      .upsert([profileRow]);
+
+    if (profileError) {
+      console.error('Profile creation error:', profileError);
+      return res.status(500).json({ error: 'Account created but profile failed: ' + profileError.message });
+    }
+
+    return res.status(201).json({
+      message: 'Account created successfully.',
+      userId: authData.user.id,
+      email: authData.user.email,
+      password: generatedPassword,
+      trial_ends_at: trialEndsAt,
+    });
+  } catch (err) {
+    console.error('Create user error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // GET /api/admin/export-users (admin) — CSV of all contacts for campaigns
 router.get('/export-users', requireAuth, requireAdmin, async (req, res) => {
   try {
