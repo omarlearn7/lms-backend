@@ -59,7 +59,7 @@ function handleValidation(req, res) {
 async function fetchOrder(orderId) {
   const { data, error } = await supabase
     .from('payments')
-    .select('id, status, expires_at, user_id, product_id, exact_crypto_amount, payer_address, payment_source, products(title, type, duration_days)')
+    .select('id, status, expires_at, user_id, product_id, exact_crypto_amount, payer_address, payment_source, family_size, products(title, type, duration_days)')
     .eq('id', orderId)
     .single();
   if (error || !data) return null;
@@ -121,23 +121,39 @@ router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
   body('productId').isUUID().withMessage('Invalid productId'),
   body('paymentSource').optional().isIn(['binance', 'web3']).withMessage('Invalid paymentSource'),
   body('payerAddress').matches(WALLET_RE).withMessage('Payer wallet address is required and must be a valid 0x... address'),
+  body('familySize').optional().isInt({ min: 1, max: 10 }).withMessage('familySize must be 1-10'),
 ], async (req, res) => {
   try {
     if (!handleValidation(req, res)) return;
     const userId = req.user.id;
     const { productId, paymentSource, payerAddress } = req.body;
+    const requestedFamilySize = req.body.familySize ? parseInt(req.body.familySize, 10) : 1;
     const source = paymentSource === 'binance' ? 'binance' : 'web3';
     const payerAddressLower = String(payerAddress).toLowerCase();
 
     const { data: product, error: pError } = await supabase
       .from('products')
-      .select('id, title, description, type, duration_days, base_price, base_price_dzd')
+      .select('id, title, description, type, duration_days, base_price, base_price_dzd, discount_2nd_pct, discount_3rd_pct, max_family_size')
       .eq('id', productId)
       .eq('is_active', true)
       .single();
 
     if (pError || !product) {
       return res.status(404).json({ error: 'Product not found or inactive' });
+    }
+
+    // Family / sibling discount grid (approved pricing model):
+    //   1st member 100% | 2nd member (100 - discount_2nd_pct)% | 3rd+ (100 - discount_3rd_pct)%
+    // family_size = people covered (account holder + children), capped by max_family_size.
+    const maxFamily = product.max_family_size || 1;
+    const familySize = Math.min(requestedFamilySize, maxFamily);
+    const d2 = parseFloat(product.discount_2nd_pct) || 0;
+    const d3 = parseFloat(product.discount_3rd_pct) || 0;
+    let familyFactor = 0;
+    for (let i = 1; i <= familySize; i++) {
+      if (i === 1) familyFactor += 1;
+      else if (i === 2) familyFactor += 1 - d2 / 100;
+      else familyFactor += 1 - d3 / 100;
     }
 
     // DZD-anchored pricing: convert via the LIVE Binance P2P rate.
@@ -150,15 +166,16 @@ router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
         const rateData = await getDzdRate();
         // Use the BUY side (what the user actually pays to acquire USDT on P2P)
         // so the USDT amount equals the advertised DZD price.
-        basePriceUsdt = dzdToUsdt(parseFloat(product.base_price_dzd), rateData.buy);
-        baseAmountDzd = parseFloat(product.base_price_dzd);
+        const totalDzd = Math.round(parseFloat(product.base_price_dzd) * familyFactor * 100) / 100;
+        basePriceUsdt = dzdToUsdt(totalDzd, rateData.buy);
+        baseAmountDzd = totalDzd;
         rateSnapshot = { rate: rateData.buy, buy: rateData.buy, sell: rateData.sell, mid: rateData.rate };
       } catch (rateErr) {
         console.error('Live rate unavailable, using USDT base:', rateErr.message);
-        basePriceUsdt = parseFloat(product.base_price);
+        basePriceUsdt = parseFloat(product.base_price) * familyFactor;
       }
     } else {
-      basePriceUsdt = parseFloat(product.base_price);
+      basePriceUsdt = parseFloat(product.base_price) * familyFactor;
     }
 
     // Unique micro-decimal amount (defense-in-depth; sender binding is primary).
@@ -207,6 +224,7 @@ router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
         rate_dzd_per_usdt: rateSnapshot ? rateSnapshot.rate : null,
         payer_address: payerAddressLower,
         payment_source: source,
+        family_size: familySize,
         status: 'pending',
         expires_at: expiresAt
       }])
@@ -227,6 +245,8 @@ router.post('/create-invoice', requireAuth, cryptoWriteLimiter, [
       product_description: product.description,
       product_type: product.type,
       duration_days: product.duration_days,
+      family_size: familySize,
+      family_factor: Math.round(familyFactor * 1000) / 1000,
       receiver_wallet: RECEIVER_WALLET,
       network: 'BSC (BNB Smart Chain)',
       token: 'USDT (BEP-20)',
